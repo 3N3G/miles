@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "tcs-async-rl-recon",
+  "sources": [
+    {
+      "url": "https://huggingface.co/datasets/ian-and-friends/tcs_v3",
+      "label": "Requested TCS dataset"
+    }
+  ],
+  "evidence": [],
+  "jobs": [],
+  "sessions": [
+    {
+      "agent": "codex",
+      "sessionId": "01a1ed24-1032-7731-910b-824f484f5f71",
+      "machine": "home",
+      "directory": "/home/ubuntu/miles"
+    }
+  ],
+  "workspace": {
+    "machine": "home",
+    "directory": "/home/ubuntu/miles"
+  },
+  "createdAt": "2026-11-18T17:51:14.141180Z",
+  "changes": [
+    {
+      "id": "bc715dee-3075-4450-8895-c446d4b8674a",
+      "at": "2026-11-18T17:51:14.141180Z",
+      "actor": "codex",
+      "summary": "Started approved reconnaissance for TCS async RL, with FOCS/STOC 2026 held out and no GPU submissions",
+      "revision": 1
+    }
+  ],
+  "projectId": "understanding",
+  "title": "Prepare TCS async RL on Ian's Miles fork",
+  "endpoint": "Audit the dataset and held-out boundary, stage the pinned code on an accessible cluster, and present a reviewable experiment proposal",
+  "state": "running",
+  "summary": "User requests reconnaissance before async RL on ian-and-friends/tcs_v3. FOCS 2026 and STOC 2026 must remain held out. Suggested starting model is Qwen3.5-4B with gpt-6-luna at medium effort and 90k or 128k output tokens. AMD is reachable as geney on login1.hpcfund. Five existing AMD jobs were observed and left unchanged. Flame is inaccessible because its SSH host key differs from the trusted entry. No GPU jobs or paid judge calls are authorized by this reconnaissance.",
+  "nextAction": "Inspect authenticated dataset metadata and non-held-out examples, check AMD runtime support, and clone the source at its pinned revision.",
+  "owner": "Codex",
+  "revision": 1,
+  "updatedAt": "2026-11-18T17:51:14.141180Z"
+}

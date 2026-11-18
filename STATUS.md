@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User requests reconnaissance before async RL on ian-and-friends/tcs_v3. FOCS 2026 and STOC 2026 must remain held out. Suggested starting model is Qwen3.5-4B with gpt-6-luna at medium effort and 90k or
+  Next: Inspect authenticated dataset metadata and non-held-out examples, check AMD runtime support, and clone the source at its pinned revision.
 
 ## Next / blocked
 
