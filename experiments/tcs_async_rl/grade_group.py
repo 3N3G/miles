@@ -7,6 +7,7 @@ import fcntl
 import hashlib
 import json
 import statistics
+import subprocess
 from pathlib import Path
 
 from experiments.tcs_async_rl.group_inference import _append_json
@@ -130,6 +131,15 @@ async def grade_group(*, run_dir, input_file, config_path, key_file, controls_on
     prompt = (config_path.parent / config["prompt_file"]).read_text()
     directory = run_dir / "judging"
     directory.mkdir(parents=True, exist_ok=True)
+    manifest = {
+        "code_commit": subprocess.check_output(
+            ["git", "-C", str(Path(__file__).resolve().parents[2]), "rev-parse", "HEAD"], text=True
+        ).strip(),
+        "judge_config": config,
+        "judge": judge,
+        "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
+    }
+    (directory / "grader-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     key = load_credentials(key_file)[judge["api_key_env"]]
     budget = Budget(directory, config)
     semaphore = asyncio.Semaphore(config["max_concurrency"])

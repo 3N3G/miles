@@ -45,7 +45,7 @@ def _run(argv, path):
     return result.returncode
 
 
-def _record_completion(job_id, state, run_dir, hf_url):
+def _record_completion(job_id, state, run_dir, hf_url, repo):
     event = {
         "recorded_at_utc": datetime.datetime.now(datetime.UTC).isoformat(),
         "cluster": "hpcfund",
@@ -63,10 +63,10 @@ def _record_completion(job_id, state, run_dir, hf_url):
             all_zero=result["all_zero"],
             uniform_scores=result["uniform_scores"],
         )
-    with (ROOT / "experiments/tcs_async_rl/jobs.jsonl").open("a") as output:
+    with (repo / "experiments/tcs_async_rl/jobs.jsonl").open("a") as output:
         output.write(json.dumps(event) + "\n")
     current = json.loads(
-        subprocess.check_output(["workstate", "--repo", str(ROOT), "get", "tcs-async-rl-recon"], text=True)
+        subprocess.check_output(["workstate", "--repo", str(repo), "get", "tcs-async-rl-recon"], text=True)
     )
     jobs = [{**job, "status": state["state"]} if job["id"] == job_id else job for job in current["jobs"]]
     detail = (
@@ -93,7 +93,7 @@ def _record_completion(job_id, state, run_dir, hf_url):
         [
             "workstate",
             "--repo",
-            str(ROOT),
+            str(repo),
             "put",
             "tcs-async-rl-recon",
             "--expected-revision",
@@ -108,16 +108,16 @@ def _record_completion(job_id, state, run_dir, hf_url):
         check=True,
     )
     paths = ["experiments/tcs_async_rl/jobs.jsonl", ".workstreams/tcs-async-rl-recon.json", "STATUS.md"]
-    subprocess.run(["git", "add", *paths], cwd=ROOT, check=True)
+    subprocess.run(["git", "add", *paths], cwd=repo, check=True)
     subprocess.run(
         ["git", "commit", "--only", "-m", f"Record AMD group job {job_id} completion", "--", *paths],
-        cwd=ROOT,
+        cwd=repo,
         check=True,
     )
-    subprocess.run(["git", "push"], cwd=ROOT, check=True)
+    subprocess.run(["git", "push"], cwd=repo, check=True)
 
 
-def watch(*, job_id, remote_run_dir, run_dir, poll_seconds):
+def watch(*, job_id, remote_run_dir, run_dir, poll_seconds, state_repo):
     run_dir.mkdir(parents=True, exist_ok=True)
     while True:
         try:
@@ -166,7 +166,7 @@ def watch(*, job_id, remote_run_dir, run_dir, poll_seconds):
     (run_dir / "upload.log").write_text(upload.stdout + upload.stderr)
     urls = [line for line in upload.stdout.splitlines() if line.startswith("https://huggingface.co/datasets/")]
     hf_url = urls[-1] if upload.returncode == 0 and urls else None
-    _record_completion(job_id, state, run_dir, hf_url)
+    _record_completion(job_id, state, run_dir, hf_url, state_repo)
     (run_dir / "watcher-complete.json").write_text(
         json.dumps({"scheduler": state, "hf_results": hf_url}, indent=2) + "\n"
     )
@@ -178,6 +178,7 @@ def main():
     parser.add_argument("--remote-run-dir", required=True)
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--poll-seconds", type=int, default=60)
+    parser.add_argument("--state-repo", type=Path, default=ROOT)
     args = parser.parse_args()
     args.run_dir.mkdir(parents=True, exist_ok=True)
     with (args.run_dir / "watcher.lock").open("a") as lock:
@@ -187,6 +188,7 @@ def main():
             remote_run_dir=args.remote_run_dir,
             run_dir=args.run_dir,
             poll_seconds=args.poll_seconds,
+            state_repo=args.state_repo,
         )
 
 
