@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "ian-radixark-comparison",
+  "sources": [
+    {
+      "url": "https://github.com/IanYHWu/miles",
+      "label": "Ian's fork"
+    },
+    {
+      "url": "https://github.com/radixark/miles",
+      "label": "RadixArk upstream"
+    }
+  ],
+  "evidence": [],
+  "jobs": [],
+  "sessions": [
+    {
+      "agent": "codex",
+      "sessionId": "01a1ed24-1032-7731-910b-824f484f5f71",
+      "machine": "home",
+      "directory": "/home/ubuntu/miles"
+    }
+  ],
+  "workspace": {
+    "machine": "home",
+    "directory": "/home/ubuntu/miles"
+  },
+  "createdAt": "2026-11-18T05:33:13.934810Z",
+  "changes": [
+    {
+      "id": "d131b3b4-561b-4a5d-a00a-81805ad02787",
+      "at": "2026-11-18T05:33:13.934810Z",
+      "actor": "codex",
+      "summary": "Started source and history comparison of the Ian fork against RadixArk main",
+      "revision": 1
+    }
+  ],
+  "projectId": "misc",
+  "title": "Compare Ian's Miles fork with RadixArk",
+  "endpoint": "Explain the fork's architecture and source-verified differences from RadixArk main",
+  "state": "running",
+  "summary": "Reading repository rules, fork history, and upstream history. Fork starts at 80a407b9.",
+  "nextAction": "Identify the merge base and inspect each fork-only change.",
+  "owner": "Codex",
+  "revision": 1,
+  "updatedAt": "2026-11-18T05:33:13.934810Z"
+}
