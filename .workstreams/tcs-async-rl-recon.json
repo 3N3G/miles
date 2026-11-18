@@ -33,6 +33,22 @@
     {
       "url": "https://github.com/3N3G/miles",
       "label": "Verified user-owned fork; parent IanYHWu/miles"
+    },
+    {
+      "url": "https://www.amd.com/en/products/accelerators/instinct/mi350/mi350x.html",
+      "label": "Published MI350X capacity and peak BF16 rate; not measured runtime"
+    },
+    {
+      "url": "https://docs.nvidia.com/megatron-core/developer-guide/latest/user-guide/features/dist_optimizer.html",
+      "label": "Optimizer state memory formulas"
+    },
+    {
+      "url": "https://docs.nvidia.com/nemo/megatron-bridge/nightly/training/memory-estimator.html",
+      "label": "DP/CP sharding assumptions and estimator limits"
+    },
+    {
+      "url": "https://aistudio.google.com/docs/models",
+      "label": "Verified Gemini backup model identity"
     }
   ],
   "evidence": [
@@ -55,6 +71,42 @@
     {
       "path": "scripts/models/qwen3.5-4B.py",
       "label": "Existing 4B architecture definition"
+    },
+    {
+      "path": "experiments/tcs_async_rl/config.proposed.json",
+      "label": "Concrete resource-based configuration proposal with unresolved fields explicit"
+    },
+    {
+      "path": "experiments/tcs_async_rl/RESOURCE_BUDGET.md",
+      "label": "GPU inventory, parameter/KV/Adam calculations, compute sensitivity, and API status"
+    },
+    {
+      "path": "experiments/tcs_async_rl/resource_estimate.py",
+      "label": "CPU-only reproducible memory/compute estimator"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/resource_estimate.json",
+      "label": "Generated component estimates and unmeasured-throughput scenarios"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/gpu_snapshot_20261118.json",
+      "label": "Timestamped scheduler snapshot; not a reservation"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/judge_access_20261118.json",
+      "label": "Metadata-only API checks; no credentials or response bodies stored"
+    },
+    {
+      "path": "tests/fast/test_tcs_resource_estimate.py",
+      "label": "Four CPU checks against hand-calculated geometry and budget arithmetic"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/credential_presence_20261118.json",
+      "label": "User-authorized provider assignment-name check only; no values extracted"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/flame_access_20261118.json",
+      "label": "Running Flame VM and IAP reachability; SSH host-key verification remains unresolved"
     }
   ],
   "jobs": [],
@@ -127,15 +179,29 @@
       "actor": "codex",
       "summary": "Started user-requested GPU resource sizing and bounded judge API access checks",
       "revision": 8
+    },
+    {
+      "id": "20b0213c-51cf-4b88-ba1a-0933fa8de16a",
+      "at": "2026-11-18T20:03:44.421256Z",
+      "actor": "codex",
+      "summary": "Completed GPU resource calculations and configuration proposal; tested available judge access and recorded missing/invalid credentials",
+      "revision": 9
+    },
+    {
+      "id": "c83abe5b-5ce3-41df-8f65-9c3c9ddcfa0e",
+      "at": "2026-11-18T20:11:12.824214Z",
+      "actor": "codex",
+      "summary": "Confirmed provider key assignment names at the user-specified path and diagnosed repaired Flame SSH without changing trust settings",
+      "revision": 10
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
-  "endpoint": "Audit the dataset and held-out boundary, stage the pinned code on an accessible cluster, and present a reviewable experiment proposal",
-  "state": "running",
-  "summary": "Sizing Qwen3.5-4B async RL from current AMD capacity and 90k output. The user authorized checking Luna access and a Gemini backup. No GPU submissions are authorized by this sizing step.",
-  "nextAction": "Compute parameter, KV-cache, optimizer, logits, and attention costs; test judge access locally on credential hosts; write an evidence-backed configuration proposal.",
+  "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
+  "state": "needs-you",
+  "summary": "Resource proposal: 2 trainer + 6 rollout GPUs, retaining 64x32 batch. Four CPU checks pass. VM provider key names are confirmed; API validity is pending. Flame awaits host-key verification. No GPU run.",
+  "nextAction": "Verify the repaired Flame host key and review the proposed GPU configuration and pilot limits. Provider calls remain untested after the names-only check.",
   "owner": "Codex",
-  "revision": 8,
-  "updatedAt": "2026-11-18T19:43:44.575601Z"
+  "revision": 10,
+  "updatedAt": "2026-11-18T20:11:12.824214Z"
 }

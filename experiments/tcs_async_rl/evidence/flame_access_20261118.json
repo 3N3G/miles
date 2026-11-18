@@ -1,0 +1,19 @@
+{
+  "recorded_at_utc": "2026-11-18T20:10:24.654209+00:00",
+  "host": "orchard-login-001",
+  "cloud_project": "cmu-gpu-cloud",
+  "cloud_zone": "us-central1-c",
+  "cloud_instance_state": "RUNNING",
+  "iap_transport": "reached SSH handshake",
+  "ssh_exit": 255,
+  "ssh_failure": "Host key verification failed after server key change",
+  "presented_ed25519_fingerprint": "SHA256:A7VaRWl2lzXVUdArY/+N+Ob9K+Q0hzomXTFlyqC7x8A",
+  "independent_cloud_verification": {
+    "guest_attributes": "403 permission denied",
+    "serial_output": "permission denied"
+  },
+  "known_hosts_changed": false,
+  "strict_host_checking_disabled": false,
+  "remote_gpu_inventory_checked": false,
+  "remote_credential_file_checked": false
+}

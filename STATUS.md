@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Sizing Qwen3.5-4B async RL from current AMD capacity and 90k output. The user authorized checking Luna access and a Gemini backup. No GPU submissions are authorized by this sizing step.
-  Next: Compute parameter, KV-cache, optimizer, logits, and attention costs; test judge access locally on credential hosts; write an evidence-backed configuration proposal.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Resource proposal: 2 trainer + 6 rollout GPUs, retaining 64x32 batch. Four CPU checks pass. VM provider key names are confirmed; API validity is pending. Flame awaits host-key verification. No GPU run
+  Next: Verify the repaired Flame host key and review the proposed GPU configuration and pilot limits. Provider calls remain untested after the names-only check.
 
 ## Finished
 

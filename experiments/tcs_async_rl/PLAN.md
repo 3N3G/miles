@@ -7,6 +7,8 @@ No GPU jobs or paid judge calls have been submitted.
 
 The code is staged on AMD. The dataset has 2,519 eligible questions and 385 held-out questions.
 The main untested pieces are the ROCm training stack, long sequences, and a calibrated reward adapter.
+There is now a concrete [configuration proposal](config.proposed.json), with resource calculations in
+[RESOURCE_BUDGET.md](RESOURCE_BUDGET.md). Missing paths and decisions are explicit null fields.
 See [open decisions](../../QUESTIONS.md) before implementing experiment choices or requesting resources.
 The user created [3N3G/miles](https://github.com/3N3G/miles), forked from Ian's repository.
 VM Git writes use a dedicated SSH deploy key. Read/write access is verified and preparation commits are pushed.
@@ -119,8 +121,9 @@ The logging and post-save hooks are optional. A truthy custom logging return ski
 The existing per-sample generic judge entrypoint is `miles/rollout/llm_judge.py:171`.
 Request Ian's referenced module and its imported helpers, judge prompt, parser, and non-secret configuration.
 
-Proposed reward: binary decisions on existing rubric items, with supplied weights normalized by seven.
-Review partial credit, zero-credit warnings, truncated answers, missing final answers, and parser failures explicitly.
+The user selected the supplied seven-point rubrics with Luna at medium effort and a Gemini backup.
+No new rubric is needed. The adapter must preserve rubric items/weights and parse the judge's response.
+Retain per-item decisions and the supplied weights. Log truncated answers, missing answers, and parser failures explicitly.
 Do not convert judge transport failures into zero rewards. Do not invent a scalar 1–10 grading scale.
 Calibrate on about ten human-labeled eligible examples. Swap candidate/reference order and average.
 Use an independent second-provider assessment before reporting correctness or learning gains.
@@ -139,8 +142,12 @@ The dated tag `miles-rocm10-mi35x-20261016` does not exist. Do not rely on the d
 Image construction and GPU tests must run through Slurm, not on the login node.
 
 The reference requests eight actor GPUs plus eight rollout GPUs: sixteen GPUs in total.
-Proposed first topology: one eight-GPU AMD node, four actor GPUs and four rollout GPUs.
-Candidate actor layout is TP2/CP2/PP1. Candidate rollout layout is two TP2 engines.
+The resource-based proposal is one eight-GPU AMD node, two actor GPUs and six rollout GPUs.
+Candidate actor layout is TP2/CP1/PP1. Candidate rollout layout is three TP2 engines, 64 running requests each.
+The [configuration proposal](config.proposed.json) retains Ian's 64x32/global-2048 batch and optimizer settings.
+It lowers async admission to 256 and makes FP32 gradient accumulation explicit.
+Model-state memory does not require lowering global batch size. Accumulation separates it from resident GPU sequences.
+The compute sensitivity table compares that batch with a 256-sample alternative. No smaller batch is silently selected.
 These are untested choices requiring approval. Preserve existing jobs and use the current scheduler limits.
 Observed mi3508x MaxTime is four days. This differs from the older global note's twelve-hour limit.
 No allocation or walltime has been selected.
@@ -169,8 +176,8 @@ The reference's 64x32 batch contains 2,048 trajectories.
 It permits 184,320,000 output tokens at 90,000 each, or 262,144,000 at 128,000 each.
 One pass over all eligible prompts with 32 samples permits 7.25B or 10.32B output tokens respectively.
 These are upper bounds, not expected runtime or token use.
-Proposed learning-pilot batch: four prompts x eight responses = global batch 32, after measuring base rewards.
-Pilot duration, concurrency, seeds, and all spending limits remain unapproved.
+The earlier 4x8 pilot suggestion was not selected. Use the canonical JSON for the current proposal.
+Pilot duration, proposed topology/concurrency, seeds, and spending limits remain unapproved.
 
 ### Metrics, controls, seeds, and statistical test
 
@@ -186,6 +193,14 @@ Review the exact metric, seeds, evaluation sample, and test before running.
 ## Results
 
 No learning or GPU-runtime results exist for this experiment.
+The new CPU estimator passes four tests. Public tensor headers establish 4.206B text parameters,
+0.121B MTP parameters, and 0.334B vision parameters. See the linked resource report for assumptions.
+Judge access checks found no OpenAI credential in VM/AMD process environments.
+The AMD process-environment Gemini credential was rejected as `API_KEY_INVALID`.
+The user then identified `~/.config/api-keys.env`. An authorized names-only check found both provider assignments on the VM.
+Values were not parsed, extracted, displayed, or copied. No API request used this file's credentials.
+Flame's login VM is RUNNING and reachable through IAP, but its changed SSH host key still needs verification.
+No generation request was sent. Provider validity remains untested with the newly identified credential file.
 The dataset audit, tokenizer previews, and registry checks are reconnaissance evidence only.
 Private local evidence: `/home/ubuntu/.cache/miles/tcs-v3-recon/`.
 The pinned dataset subdirectory contains `audit.json`, shard hashes, and `random_nonheldout_example.json`.
@@ -201,9 +216,9 @@ Pending results and the user's interpretation.
 
 ## Next steps (most to least important)
 
-1. Resolve the linked research decisions and the writable GitHub destination.
-2. Freeze the data manifest, grading prompt/parser, pilot limits, and exact jobs for review.
-3. After approval, validate the ROCm stack and long-sequence path before a learning allocation.
+1. Keep the located credentials private. Authenticated tests with those credentials remain pending after the names-only check.
+2. Review the resource-based configuration, resolve thinking mode/limits, and freeze the data manifest and adapter.
+3. Finalize a bounded GPU qualification job for review, then validate memory/throughput before the learning allocation.
 4. Upload every experiment run through the repository's result workflow and record its exact source revision.
 
 ## Questions

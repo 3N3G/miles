@@ -1,0 +1,37 @@
+{
+  "observed_at_utc": "2026-11-18T19:51:44.910270+00:00",
+  "cluster": "hpcfund",
+  "source_command": "sinfo -N -h -o %P|%N|%T",
+  "note": "Snapshot, not a reservation. GPU counts per node follow partition topology; no device-level query ran.",
+  "partitions": {
+    "mi3508x": {
+      "nodes": 4,
+      "nominal_gpus_per_node": 8,
+      "allocated": 4,
+      "idle": 0
+    },
+    "mi3501x": {
+      "nodes": 8,
+      "nominal_gpus_per_node": 1,
+      "allocated": 5,
+      "idle": 2,
+      "down": 1
+    },
+    "mi3008x": {
+      "nodes": 2,
+      "nominal_gpus_per_node": 8,
+      "allocated": 2,
+      "idle": 0
+    },
+    "mi2508x": {
+      "nodes": 10,
+      "nominal_logical_gpus_per_node": 8,
+      "allocated": 8,
+      "idle": 0,
+      "down": 2
+    }
+  },
+  "mi3508x_partition_max_walltime": "4-00:00:00",
+  "qos": "alloc_aviralkumar_09082026_09302027",
+  "qos_selected_limit_fields": "empty in sacctmgr output; this does not establish an exclusive user entitlement"
+}

@@ -1,0 +1,32 @@
+{
+  "recorded_at_utc": "2026-11-18T19:57:42.308471+00:00",
+  "credential_source": "existing process environments only; no credential file opened",
+  "generation_requests_sent": 0,
+  "checks": [
+    {
+      "host": "home",
+      "provider": "openai",
+      "status": "OPENAI_API_KEY_not_in_process_environment"
+    },
+    {
+      "host": "login1.hpcfund",
+      "provider": "openai",
+      "model": "gpt-6-luna",
+      "status": "OPENAI_API_KEY_not_in_process_environment"
+    },
+    {
+      "host": "login1.hpcfund",
+      "provider": "gemini",
+      "model": "gemini-4-argon",
+      "method": "GET model metadata",
+      "http_status": 400,
+      "error_status": "INVALID_ARGUMENT",
+      "reason": "API_KEY_INVALID"
+    },
+    {
+      "host": "flame",
+      "status": "SSH_connection_closed; no credential or API check completed"
+    }
+  ],
+  "note": "No inference or judge quality is validated by these checks. No key values, request headers, or provider response bodies are stored."
+}

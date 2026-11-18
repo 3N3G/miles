@@ -16,15 +16,26 @@
 - Blocks: exact jobs, walltimes, sample counts, judge concurrency, and paid calls.
 - Status: asked in chat. No GPU job or paid API call has been submitted.
 
-## 2026-11-18: Development split and reward contract
+## 2026-11-18: Development split
 
-- Question: approve a paper-level development split and the judge's rubric-scoring contract?
+- Question: reserve which eligible papers for development?
 - Options: reserve development papers within the ten eligible cohorts, or use training diagnostics only.
-  Grade existing rubric items as binary decisions with their supplied weights, or review another rule.
 - Recommendation: reserve development papers. Review a small human-labeled judge packet before training.
   Use a second provider for independent assessment. Do not infer proof correctness from judge agreement.
-- Blocks: implementing the experiment's data manifest, judge prompt, parser, reward, and selection rule.
-- Status: proposed in [the experiment draft](experiments/tcs_async_rl/PLAN.md). No split or reward is implemented.
+- Blocks: the experiment's development manifest and checkpoint-selection rule.
+- Status: the supplied seven-point rubrics and Luna/Gemini provider roles are selected. No development split is implemented.
+
+## 2026-11-18: Flame host key after repair
+
+- Question: does the repaired login host have ED25519 fingerprint
+  `SHA256:A7VaRWl2lzXVUdArY/+N+Ob9K+Q0hzomXTFlyqC7x8A`?
+- Evidence: the Cloud API reports the login VM RUNNING. IAP reaches its SSH server, but host-key verification fails.
+  The authenticated Cloud API denies guest-attribute and serial-output access, so those checks cannot verify the key.
+- Options: verify the fingerprint through an administrator or trusted console and update this host's entry,
+  or leave the saved entry unchanged while using AMD.
+- Recommendation: verify the fingerprint before updating the saved host key. Keep strict host checking enabled.
+- Blocks: reading current Flame GPU inventory and using its login host. AMD preparation continues.
+- Status: asked in chat. No saved host key was changed.
 
 # Answered questions
 
@@ -40,3 +51,12 @@
   Use the matching planned total context of 98,304 tokens. The judge budget remains separate.
   The 90k option came from Ian's quoted suggestion, not measured Qwen generation lengths.
   This token-budget decision does not authorize GPU submissions or paid judge calls.
+- 2026-11-18: work backward from available GPU resources and reuse Ian's relevant settings.
+  The resource-based JSON proposes two trainer GPUs, six rollout GPUs, and the original 64x32/global-2048 batch.
+  This is a reviewable proposal, not a submitted training run. GPU memory/throughput still needs qualification.
+- 2026-11-18: use each dataset question's existing rubric with GPT-6 Luna, and prepare a Gemini backup.
+  The user authorized API-key checks. Checks used process environments only and sent no generation requests.
+- 2026-11-18: judge key assignments are in `~/.config/api-keys.env` on the VM.
+  The user authorized checking existence, not values. Both `OPENAI_API_KEY` and `GEMINI_API_KEY` assignments exist.
+  Values were not parsed, extracted, displayed, or copied. No API request used this file's credentials.
+  The earlier invalid Gemini result applies to AMD's process environment, not this file. Provider validity is unknown.

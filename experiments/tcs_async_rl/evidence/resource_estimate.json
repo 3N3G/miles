@@ -1,0 +1,125 @@
+{
+  "memory": {
+    "train_parameters_with_selected_mtp": 4326350848,
+    "checkpoint_bf16_weights_gib": 8.679675102233887,
+    "kv_bytes_per_token_without_mtp": 32768,
+    "kv_bytes_per_token_with_selected_mtp": 36864,
+    "kv_gib_per_full_context_trajectory": 3.375,
+    "linear_recurrent_and_conv_mib_per_trajectory": 49.125,
+    "engine_count": 3,
+    "engine_gpus": 2,
+    "requests_per_engine": 64,
+    "engine_static_budget_gib": 386.23809814453125,
+    "engine_known_components_gib": 227.7499876022339,
+    "engine_with_explicit_workspace_reserve_gib": 247.7499876022339,
+    "engine_remaining_planning_headroom_gib": 138.48811054229736,
+    "training_layouts": [
+      {
+        "gpus": 1,
+        "tp": 1,
+        "cp": 1,
+        "dp": 1,
+        "model_grad_adam_gib_per_gpu": 72.52610778808594,
+        "saved_hidden_checkpoints_gib_per_gpu": 15.46875,
+        "materialized_bf16_logits_gib_per_gpu": 45.46875,
+        "one_bf16_logits_tile_mib_per_gpu": 242.5
+      },
+      {
+        "gpus": 2,
+        "tp": 2,
+        "cp": 1,
+        "dp": 1,
+        "model_grad_adam_gib_per_gpu": 36.26305389404297,
+        "saved_hidden_checkpoints_gib_per_gpu": 7.734375,
+        "materialized_bf16_logits_gib_per_gpu": 22.734375,
+        "one_bf16_logits_tile_mib_per_gpu": 121.25
+      },
+      {
+        "gpus": 4,
+        "tp": 2,
+        "cp": 2,
+        "dp": 1,
+        "model_grad_adam_gib_per_gpu": 24.175369262695312,
+        "saved_hidden_checkpoints_gib_per_gpu": 3.8671875,
+        "materialized_bf16_logits_gib_per_gpu": 11.3671875,
+        "one_bf16_logits_tile_mib_per_gpu": 121.25
+      }
+    ],
+    "limits": "Not measured peak memory. Activations inside recomputed layers, allocator/communication buffers, prefix-state checkpoints, speculative buffers and engine workspaces require profiling. The 20 GiB engine reserve is an assumption."
+  },
+  "compute_scenarios": [
+    {
+      "output_tokens_per_sample": 4096,
+      "prompt_tokens_assumed": 2000,
+      "global_batch": 256,
+      "output_tokens_per_update": 1048576,
+      "training_pflop_per_sample": 0.252950343057408,
+      "rollout_hours_at_aggregate_1000_tokens_s": 0.2912711111111111,
+      "rollout_hours_at_aggregate_4000_tokens_s": 0.07281777777777777,
+      "rollout_hours_at_aggregate_8000_tokens_s": 0.036408888888888886,
+      "train_hours_at_assumed_10pct_peak": 0.0389408987503226,
+      "train_hours_at_assumed_30pct_peak": 0.012980299583440866
+    },
+    {
+      "output_tokens_per_sample": 4096,
+      "prompt_tokens_assumed": 2000,
+      "global_batch": 2048,
+      "output_tokens_per_update": 8388608,
+      "training_pflop_per_sample": 0.252950343057408,
+      "rollout_hours_at_aggregate_1000_tokens_s": 2.3301688888888887,
+      "rollout_hours_at_aggregate_4000_tokens_s": 0.5825422222222222,
+      "rollout_hours_at_aggregate_8000_tokens_s": 0.2912711111111111,
+      "train_hours_at_assumed_10pct_peak": 0.3115271900025808,
+      "train_hours_at_assumed_30pct_peak": 0.10384239666752693
+    },
+    {
+      "output_tokens_per_sample": 16384,
+      "prompt_tokens_assumed": 2000,
+      "global_batch": 256,
+      "output_tokens_per_update": 4194304,
+      "training_pflop_per_sample": 0.829455884353536,
+      "rollout_hours_at_aggregate_1000_tokens_s": 1.1650844444444444,
+      "rollout_hours_at_aggregate_4000_tokens_s": 0.2912711111111111,
+      "rollout_hours_at_aggregate_8000_tokens_s": 0.14563555555555555,
+      "train_hours_at_assumed_10pct_peak": 0.1276920885738423,
+      "train_hours_at_assumed_30pct_peak": 0.04256402952461409
+    },
+    {
+      "output_tokens_per_sample": 16384,
+      "prompt_tokens_assumed": 2000,
+      "global_batch": 2048,
+      "output_tokens_per_update": 33554432,
+      "training_pflop_per_sample": 0.829455884353536,
+      "rollout_hours_at_aggregate_1000_tokens_s": 9.320675555555555,
+      "rollout_hours_at_aggregate_4000_tokens_s": 2.3301688888888887,
+      "rollout_hours_at_aggregate_8000_tokens_s": 1.1650844444444444,
+      "train_hours_at_assumed_10pct_peak": 1.0215367085907383,
+      "train_hours_at_assumed_30pct_peak": 0.34051223619691273
+    },
+    {
+      "output_tokens_per_sample": 90000,
+      "prompt_tokens_assumed": 2000,
+      "global_batch": 256,
+      "output_tokens_per_update": 23040000,
+      "training_pflop_per_sample": 6.148231135232,
+      "rollout_hours_at_aggregate_1000_tokens_s": 6.4,
+      "rollout_hours_at_aggregate_4000_tokens_s": 1.6,
+      "rollout_hours_at_aggregate_8000_tokens_s": 0.8,
+      "train_hours_at_assumed_10pct_peak": 0.9465005788757265,
+      "train_hours_at_assumed_30pct_peak": 0.31550019295857545
+    },
+    {
+      "output_tokens_per_sample": 90000,
+      "prompt_tokens_assumed": 2000,
+      "global_batch": 2048,
+      "output_tokens_per_update": 184320000,
+      "training_pflop_per_sample": 6.148231135232,
+      "rollout_hours_at_aggregate_1000_tokens_s": 51.2,
+      "rollout_hours_at_aggregate_4000_tokens_s": 12.8,
+      "rollout_hours_at_aggregate_8000_tokens_s": 6.4,
+      "train_hours_at_assumed_10pct_peak": 7.572004631005812,
+      "train_hours_at_assumed_30pct_peak": 2.5240015436686036
+    }
+  ],
+  "compute_limitations": "Sensitivity calculations, not throughput predictions. Aggregate rollout tokens/s and training utilization are assumed; GDN recurrence, network, judge latency, speculative effects and pipeline bubbles are not modeled."
+}
