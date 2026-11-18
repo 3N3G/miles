@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Preparing the approved AMD inference-only group check: one seeded eligible prompt, 32 responses, thinking on, no learning. Judge credential loading is being clarified.
+  Next: Freeze the diagnostic plan and inputs, submit the bounded AMD job, and inspect the saved group and grades.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Thinking is enabled; Luna stays medium. FP32 logits are implemented but unselected. Reward signal and recovery remain unmeasured. All 16 CPU checks pass. No GPU submission.
-  Next: Review the reward/precision/recovery audit and approve the bounded AMD qualification. Before learning: calibrate grading, measure base-model group variance, and test checkpoints.
+- Nothing recorded.
 
 ## Finished
 

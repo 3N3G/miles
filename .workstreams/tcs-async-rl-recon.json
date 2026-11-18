@@ -264,15 +264,22 @@
       "actor": "codex",
       "summary": "Enabled approved Qwen thinking, preserved Luna medium, audited precision and reward/logging risks, and validated durable stage logs",
       "revision": 15
+    },
+    {
+      "id": "7b4a3915-1556-4c04-af02-5dc66a6fc19c",
+      "at": "2026-11-18T22:30:15.342273Z",
+      "actor": "codex",
+      "summary": "User approved a quick AMD group inference check; started preparation and execution",
+      "revision": 16
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
-  "state": "needs-you",
-  "summary": "Thinking is enabled; Luna stays medium. FP32 logits are implemented but unselected. Reward signal and recovery remain unmeasured. All 16 CPU checks pass. No GPU submission.",
-  "nextAction": "Review the reward/precision/recovery audit and approve the bounded AMD qualification. Before learning: calibrate grading, measure base-model group variance, and test checkpoints.",
+  "state": "running",
+  "summary": "Preparing the approved AMD inference-only group check: one seeded eligible prompt, 32 responses, thinking on, no learning. Judge credential loading is being clarified.",
+  "nextAction": "Freeze the diagnostic plan and inputs, submit the bounded AMD job, and inspect the saved group and grades.",
   "owner": "Codex",
-  "revision": 15,
-  "updatedAt": "2026-11-18T22:23:15.303347Z"
+  "revision": 16,
+  "updatedAt": "2026-11-18T22:30:15.342273Z"
 }
