@@ -5,9 +5,42 @@
     {
       "url": "https://huggingface.co/datasets/ian-and-friends/tcs_v3",
       "label": "Requested TCS dataset"
+    },
+    {
+      "url": "https://github.com/IanYHWu/miles/tree/80a407b98a819add3e17383dc3238e3df9296f98",
+      "label": "Source staged on AMD"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.5-4B/tree/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "label": "Inspected Qwen model revision"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "label": "Verified judge API model metadata"
     }
   ],
-  "evidence": [],
+  "evidence": [
+    {
+      "path": "experiments/tcs_async_rl/PLAN.md",
+      "label": "Source-backed reconnaissance and unapproved experiment proposal"
+    },
+    {
+      "path": "QUESTIONS.md",
+      "label": "Open research, resource, and source-publication decisions"
+    },
+    {
+      "path": "docs/user-guide/judged-training.md",
+      "label": "Existing judge transport and CISPO contract"
+    },
+    {
+      "path": "miles/rollout/rm_hub/__init__.py",
+      "label": "Batch reward contract differs from generic per-sample judge"
+    },
+    {
+      "path": "scripts/models/qwen3.5-4B.py",
+      "label": "Existing 4B architecture definition"
+    }
+  ],
   "jobs": [],
   "sessions": [
     {
@@ -29,15 +62,29 @@
       "actor": "codex",
       "summary": "Started approved reconnaissance for TCS async RL, with FOCS/STOC 2026 held out and no GPU submissions",
       "revision": 1
+    },
+    {
+      "id": "eaa3a8d6-c144-490d-8872-86a8305307c8",
+      "at": "2026-11-18T17:55:38.064406Z",
+      "actor": "codex",
+      "summary": "Audited eligible data, cloned pinned source on AMD, and recorded runtime and access limits",
+      "revision": 2
+    },
+    {
+      "id": "79526f62-052a-4109-a102-3211003642d2",
+      "at": "2026-11-18T18:03:12.450390Z",
+      "actor": "codex",
+      "summary": "Finished reconnaissance, staged code on AMD, and prepared concrete findings and pending research decisions",
+      "revision": 3
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Audit the dataset and held-out boundary, stage the pinned code on an accessible cluster, and present a reviewable experiment proposal",
-  "state": "running",
-  "summary": "User requests reconnaissance before async RL on ian-and-friends/tcs_v3. FOCS 2026 and STOC 2026 must remain held out. Suggested starting model is Qwen3.5-4B with gpt-6-luna at medium effort and 90k or 128k output tokens. AMD is reachable as geney on login1.hpcfund. Five existing AMD jobs were observed and left unchanged. Flame is inaccessible because its SSH host key differs from the trusted entry. No GPU jobs or paid judge calls are authorized by this reconnaissance.",
-  "nextAction": "Inspect authenticated dataset metadata and non-held-out examples, check AMD runtime support, and clone the source at its pinned revision.",
+  "state": "needs-you",
+  "summary": "Reconnaissance completed and a draft experiment plan is ready for review. AMD has a clean source clone at /work1/aviralkumar/geney/miles-ian, exactly 80a407b98a819add3e17383dc3238e3df9296f98. Dataset revision 8e486f2d980d926fa5543efe7f1f2adf475ce3ea has 2519 eligible questions and 385 protected questions (FOCS_2026=201, STOC_2026=184). Only the ten eligible Parquet shards were downloaded. They contain 1235 proof-writing and 1284 proof-strategy questions, 2283 labeled hard, and nonempty problems, answers, and 7-point prose rubrics. No exact normalized duplicate problem or answer exists within eligible data. Qwen4B tokenizer problem lengths are median574/p95=1032/max2026. All raw private examples and audit outputs remain under /home/ubuntu/.cache/miles/tcs-v3-recon/. The supplied command requires 16 GPUs and 16k context settings, and its external adaptive_rl hooks are absent. Its group reward hook accepts a list, while the generic llm_judge transport is per-sample; ordinary eval also rejects group-rm. The 4B checkpoint has tied embeddings and one MTP layer. ROCm tiled-head/MTP correctness and long-context training remain untested. Apptainer1.4.5 is available. Registry metadata verifies the Linux/amd64 Miles ROCm image digest sha256:25597c01ab3fc8e77bfeb48434262c535080dc6857c8d591165b4b9304425019, 19387976373 compressed bytes. It was not pulled or built. The example dated tag for20261016 is missing. Flame remains unavailable due to a changed SSH host key. No GPU jobs or paid judge calls were submitted. Solver budget meaning, thinking mode, resource caps, development split, reward contract, and writable GitHub destination require user decisions. Local records are committed, but pushes to the Ian origin fail authentication.",
+  "nextAction": "Review experiments/tcs_async_rl/PLAN.md and QUESTIONS.md. Resolve solver output budget, thinking mode, pilot limits, reward/split choices, and writable source destination before implementation or job submission.",
   "owner": "Codex",
-  "revision": 1,
-  "updatedAt": "2026-11-18T17:51:14.141180Z"
+  "revision": 3,
+  "updatedAt": "2026-11-18T18:03:12.450390Z"
 }
