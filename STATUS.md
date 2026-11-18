@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Compare Ian's Miles fork with RadixArk](.workstreams/ian-radixark-comparison.json): Reading repository rules, fork history, and upstream history. Fork starts at 80a407b9.
-  Next: Identify the merge base and inspect each fork-only change.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,4 +16,4 @@
 
 ## Finished
 
-- Nothing recorded.
+- [Compare Ian's Miles fork with RadixArk](.workstreams/ian-radixark-comparison.json): Compared IanYHWu/miles 80a407b9 with fetched RadixArk main 55766eb710afe0dec5c48e71bc30931cbef01849 (2026-11-17). Common base f569caa8fd4892b078048412458da27bbc06060d is dated 2026-10-16. Fork has 9 u

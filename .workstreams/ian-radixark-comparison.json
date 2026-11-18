@@ -3,15 +3,56 @@
   "id": "ian-radixark-comparison",
   "sources": [
     {
-      "url": "https://github.com/IanYHWu/miles",
-      "label": "Ian's fork"
+      "url": "https://github.com/IanYHWu/miles/tree/80a407b98a819add3e17383dc3238e3df9296f98",
+      "label": "Ian fork snapshot"
     },
     {
-      "url": "https://github.com/radixark/miles",
-      "label": "RadixArk upstream"
+      "url": "https://github.com/radixark/miles/commit/f569caa8fd4892b078048412458da27bbc06060d",
+      "label": "2026-10-16 common base"
+    },
+    {
+      "url": "https://github.com/radixark/miles/commit/55766eb710afe0dec5c48e71bc30931cbef01849",
+      "label": "Fetched upstream main snapshot"
+    },
+    {
+      "url": "https://github.com/radixark/miles/commit/cbea8cb01eefc276aa646ad917335074304a26ce",
+      "label": "Upstream fused LM head added 2026-11-16"
     }
   ],
-  "evidence": [],
+  "evidence": [
+    {
+      "path": "train.py",
+      "label": "Existing synchronous RL orchestration"
+    },
+    {
+      "path": "train_sft.py",
+      "label": "New SFT driver, validation, recovery, and save-safe prefetch"
+    },
+    {
+      "path": "docs/user-guide/judged-training.md",
+      "label": "CISPO CLI, judge adapter, streaming-save contract, and async fixes"
+    },
+    {
+      "path": "miles/rollout/llm_judge.py",
+      "label": "Application-owned prompts and rewards with bounded async transport retries"
+    },
+    {
+      "path": "miles/utils/sft_checkpoint.py",
+      "label": "Atomic SFT manifest and data/model checkpoint recovery"
+    },
+    {
+      "path": "miles/backends/megatron_utils/lm_head.py",
+      "label": "FP32 projection, DDP gradient readiness, and tiled MTP integration"
+    },
+    {
+      "path": "changelogs/2026-10-24-fused-lm-head-and-mtp.md",
+      "label": "Recorded GPU validation and explicit coverage limits; not rerun here"
+    },
+    {
+      "path": "miles/backends/megatron_utils/actor.py",
+      "label": "HF export cadence uses rollout_id + 1 at checkpoint saves"
+    }
+  ],
   "jobs": [],
   "sessions": [
     {
@@ -33,15 +74,29 @@
       "actor": "codex",
       "summary": "Started source and history comparison of the Ian fork against RadixArk main",
       "revision": 1
+    },
+    {
+      "id": "a61eea31-bc7f-4b2b-9f53-66c383a95866",
+      "at": "2026-11-18T05:36:18.581963Z",
+      "actor": "codex",
+      "summary": "Completed source comparison, verified upstream overlap, and recorded validation limits and unavailable push authentication",
+      "revision": 2
+    },
+    {
+      "id": "7d53de0a-ef3e-4ab3-a269-a80f4dfb0d0f",
+      "at": "2026-11-18T05:36:37.247364Z",
+      "actor": "codex",
+      "summary": "Verified the full fork revision in the evidence link and tightened the push failure description",
+      "revision": 3
     }
   ],
   "projectId": "misc",
   "title": "Compare Ian's Miles fork with RadixArk",
   "endpoint": "Explain the fork's architecture and source-verified differences from RadixArk main",
-  "state": "running",
-  "summary": "Reading repository rules, fork history, and upstream history. Fork starts at 80a407b9.",
-  "nextAction": "Identify the merge base and inspect each fork-only change.",
+  "state": "finished",
+  "summary": "Compared IanYHWu/miles 80a407b9 with fetched RadixArk main 55766eb710afe0dec5c48e71bc30931cbef01849 (2026-11-17). Common base f569caa8fd4892b078048412458da27bbc06060d is dated 2026-10-16. Fork has 9 unique commits, including 5 non-merge commits and 4 PR merges. Upstream has 597 unique commits after the common base. Ian's complete patch changes 43 files (+4786/-86), including tests and documentation. Core architecture remains SGLang rollout plus Ray worker orchestration and the existing training backends. Fork additions concentrate on Megatron. c9360896 adds normal-CLI CISPO, an application-adapted async OpenAI-compatible judge transport, a synchronous SFT driver with token-weighted validation and atomic full-state checkpoint recovery/retention, streaming model-only checkpoint saving, a Qwen3.5-122B-A10B model definition, and async resume-evaluation/save-order fixes. CISPO already existed in base upstream's Tinker loss API. 70b6ca8b adds opt-in fused_lm_head with checkpointed logits tiles, FP32 logits from bf16 operands, tiled MTP loss, and DDP gradient readiness handling. 36449093 prefetches SFT batches without crossing checkpoint boundaries. 3d36ec88 reconnects a dropped Ray log stream while its job is still running. 8c0c2a8b adds save_hf_interval; exports happen only at checkpoint saves satisfying (rollout_id + 1) modulo the interval. The PR titles mention 27B runs, but the fork patch contains reusable framework changes rather than those run recipes or datasets. Current upstream also added fused_lm_head in cbea8cb0 (#4645, 2026-11-16), with a different implementation. Upstream explicitly leaves MTP logits materialized and has no lm_head_logits_dtype option; it supports MuP scaling and some single-LoRA configurations that Ian's implementation rejects. Current upstream lacks this fork's train_sft.py, llm_judge transport, streaming model checkpoint option, and save_hf_interval. The changelog records GPU checks and benchmark results, including 9B MTP train-step peak memory 3.50 GiB versus 1.23 GiB in tiled model mode. These measurements were not rerun here. Its recorded validation omits the real 122B topology, fully async judged RL, and long 65k-token real-model sequences. No code or experiment settings changed during this comparison. Workstream state is committed locally; HTTPS push could not obtain credentials and SSH GitHub authentication was denied.",
+  "nextAction": "No comparison work remains. Push the local workstream commits once GitHub write authentication is available.",
   "owner": "Codex",
-  "revision": 1,
-  "updatedAt": "2026-11-18T05:33:13.934810Z"
+  "revision": 3,
+  "updatedAt": "2026-11-18T05:36:37.247364Z"
 }
