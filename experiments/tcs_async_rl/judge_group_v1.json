@@ -1,0 +1,17 @@
+{
+  "training_config": "config.proposed.json",
+  "prompt_file": "rubric_judge_prompt.txt",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "max_concurrency": 4,
+  "max_attempts": 3,
+  "timeout_seconds": 600,
+  "usd_cap": 5,
+  "input_usd_per_million": 0.1,
+  "output_usd_per_million": 0.5,
+  "long_input_threshold_tokens": 272000,
+  "long_input_multiplier": 2,
+  "long_output_multiplier": 1.5,
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+  "grade_status": "provisional_uncalibrated",
+  "answer_extraction": "Only text after closing thinking delimiter; unfinished thinking is ungraded, not zero"
+}

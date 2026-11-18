@@ -1,0 +1,14 @@
+{
+  "host": "VM",
+  "scope": "Metadata GET only. No credential values or response bodies retained.",
+  "checks": [
+    {
+      "variable": "OPENAI_API_KEY",
+      "http_status": 200
+    },
+    {
+      "variable": "GEMINI_API_KEY",
+      "http_status": 401
+    }
+  ]
+}
