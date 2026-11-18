@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Preparing AMD launch files and a bounded GPU qualification plan. Fresh scheduler check: all four MI350 nodes are allocated. No GPU submission.
+  Next: Validate launch arguments, judge integration, and the AMD container path. Present the exact proposed jobs for review.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Resource proposal: 2 trainer + 6 rollout GPUs, retaining 64x32 batch. Four CPU checks pass. VM provider key names are confirmed; API validity is pending. Flame awaits host-key verification. No GPU run
-  Next: Verify the repaired Flame host key and review the proposed GPU configuration and pilot limits. Provider calls remain untested after the names-only check.
+- Nothing recorded.
 
 ## Finished
 

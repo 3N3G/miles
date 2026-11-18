@@ -193,15 +193,22 @@
       "actor": "codex",
       "summary": "Confirmed provider key assignment names at the user-specified path and diagnosed repaired Flame SSH without changing trust settings",
       "revision": 10
+    },
+    {
+      "id": "0f0bf7f6-1b67-43af-90c4-ea896b016879",
+      "at": "2026-11-18T21:51:58.786486Z",
+      "actor": "codex",
+      "summary": "Started AMD launch preparation and fresh prerequisite checks at the user request",
+      "revision": 11
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
-  "state": "needs-you",
-  "summary": "Resource proposal: 2 trainer + 6 rollout GPUs, retaining 64x32 batch. Four CPU checks pass. VM provider key names are confirmed; API validity is pending. Flame awaits host-key verification. No GPU run.",
-  "nextAction": "Verify the repaired Flame host key and review the proposed GPU configuration and pilot limits. Provider calls remain untested after the names-only check.",
+  "state": "running",
+  "summary": "Preparing AMD launch files and a bounded GPU qualification plan. Fresh scheduler check: all four MI350 nodes are allocated. No GPU submission.",
+  "nextAction": "Validate launch arguments, judge integration, and the AMD container path. Present the exact proposed jobs for review.",
   "owner": "Codex",
-  "revision": 10,
-  "updatedAt": "2026-11-18T20:11:12.824214Z"
+  "revision": 11,
+  "updatedAt": "2026-11-18T21:51:58.786486Z"
 }
