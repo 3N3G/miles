@@ -1,13 +1,5 @@
 # Open questions
 
-## 2026-11-18: TCS solver and judge token budgets
-
-- Question: do 90k/128k tokens mean the Qwen answer limit or the judge completion limit?
-- Options: Qwen at 90,000 tokens, Qwen at 128,000 tokens, or a judge-side limit.
-- Recommendation: treat these as candidate solver limits. Keep the judge budget separate.
-- Blocks: final context sizes, memory checks, walltime estimates, and a submission-ready plan.
-- Status: asked in chat. No limit has been selected.
-
 ## 2026-11-18: TCS thinking mode
 
 - Question: should Qwen use thinking mode? Ian's reference command disables it.
@@ -40,7 +32,11 @@
   SODA 2026 remains eligible. No held-out Parquet shard was downloaded.
 - 2026-11-18: Ian's command is a usage example. Replace settings that do not fit TCS.
   The reference command does not freeze batch sizes, topology, hooks, or experiment-specific settings.
-- 2026-11-18: create a user-owned Miles fork. User said, "github yea lets fork."
-  Creation is authorized. GitHub authentication is still missing on the VM and AMD.
-  The available GitHub integration is not installed/connected. No fork has been created.
+- 2026-11-18: the user created `3N3G/miles`. GitHub metadata confirms its parent is `IanYHWu/miles`.
+  Use SSH for VM writes and HTTPS for AMD reads. A dedicated deploy key was generated on the VM.
+  Its public half is ready for the user to register with write access.
   Keep private dataset examples outside the public source repository.
+- 2026-11-18: use a 90,000-token solver output cap. User said, "yeah lets do 90k."
+  Use the matching planned total context of 98,304 tokens. The judge budget remains separate.
+  The 90k option came from Ian's quoted suggestion, not measured Qwen generation lengths.
+  This token-budget decision does not authorize GPU submissions or paid judge calls.

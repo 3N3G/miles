@@ -29,6 +29,10 @@
     {
       "url": "https://github.com/IanYHWu/miles/blob/80a407b98a819add3e17383dc3238e3df9296f98/miles/backends/megatron_utils/actor.py#L867-L881",
       "label": "Post-save checkpoint hook"
+    },
+    {
+      "url": "https://github.com/3N3G/miles",
+      "label": "Verified user-owned fork; parent IanYHWu/miles"
     }
   ],
   "evidence": [
@@ -102,15 +106,22 @@
       "actor": "codex",
       "summary": "Recorded authorized fork creation, missing GitHub authentication, and exact hook/context code references",
       "revision": 5
+    },
+    {
+      "id": "e56b2026-78a6-4047-b745-41b396500f8a",
+      "at": "2026-11-18T19:15:13.367156Z",
+      "actor": "codex",
+      "summary": "Verified the created fork, prepared repository-specific SSH authentication, and recorded the approved 90k solver output ceiling",
+      "revision": 6
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Audit the dataset and held-out boundary, stage the pinned code on an accessible cluster, and present a reviewable experiment proposal",
   "state": "needs-you",
-  "summary": "AMD source and data audit are ready. The user approved a Miles fork; creation needs GitHub access. Hook call sites and context-budget semantics are documented. No GPU jobs or paid API calls ran.",
-  "nextAction": "Obtain authenticated GitHub access and create the authorized fork. Resolve solver output versus total context, thinking mode, pilot caps, and reward/split choices.",
+  "summary": "Fork 3N3G/miles is verified. VM and AMD remotes now use it. The VM deploy public key awaits registration. User selected a 90,000-token solver output cap. No GPU jobs or paid API calls ran.",
+  "nextAction": "After the user adds the VM public deploy key with write access, verify SSH Git access, push local records, and pull on AMD. Resolve thinking mode, pilot caps, and reward/split choices before jobs.",
   "owner": "Codex",
-  "revision": 5,
-  "updatedAt": "2026-11-18T18:50:44.182229Z"
+  "revision": 6,
+  "updatedAt": "2026-11-18T19:15:13.367156Z"
 }

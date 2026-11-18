@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD source and data audit are ready. The user approved a Miles fork; creation needs GitHub access. Hook call sites and context-budget semantics are documented. No GPU jobs or paid API calls ran.
-  Next: Obtain authenticated GitHub access and create the authorized fork. Resolve solver output versus total context, thinking mode, pilot caps, and reward/split choices.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fork 3N3G/miles is verified. VM and AMD remotes now use it. The VM deploy public key awaits registration. User selected a 90,000-token solver output cap. No GPU jobs or paid API calls ran.
+  Next: After the user adds the VM public deploy key with write access, verify SSH Git access, push local records, and pull on AMD. Resolve thinking mode, pilot caps, and reward/split choi
 
 ## Finished
 

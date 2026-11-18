@@ -8,14 +8,16 @@ No GPU jobs or paid judge calls have been submitted.
 The code is staged on AMD. The dataset has 2,519 eligible questions and 385 held-out questions.
 The main untested pieces are the ROCm training stack, long sequences, and a calibrated reward adapter.
 See [open decisions](../../QUESTIONS.md) before implementing experiment choices or requesting resources.
-The user approved creating a personal Miles fork. Creation awaits authenticated GitHub access.
+The user created [3N3G/miles](https://github.com/3N3G/miles), forked from Ian's repository.
+VM Git writes are configured for a dedicated SSH deploy key. Its public key awaits registration.
 
 ## Background / motivation
 
 The user requests fully async RL on `ian-and-friends/tcs_v3` using Ian's Miles fork.
 Ian supplied a Qwen3.5-2B CISPO command from a different experiment.
 He suggested Qwen3.5-4B and `gpt-6-luna` at medium effort for this work.
-The stated 90k/128k output budget and solver thinking mode remain open questions.
+The user selected a 90,000-token solver output cap. Solver thinking mode remains open.
+The 90k option comes from Ian's suggestion. It is not an estimate of required response length.
 
 The original command's main settings are `--fully-async`, GRPO advantages, CISPO,
 rollout log probabilities, no actor scoring forward, epsilon offsets 10/4, and learning rate 1e-6.
@@ -140,8 +142,12 @@ These are untested choices requiring approval. Preserve existing jobs and use th
 Observed mi3508x MaxTime is four days. This differs from the older global note's twelve-hour limit.
 No allocation or walltime has been selected.
 
-The reference's 16,384-token context flags cannot serve 90k/128k output.
-Set solver response, total context, trainer sequence, and engine context limits together after the budget decision.
+Selected solver output cap: 90,000 tokens. Planned matching total context: 98,304 tokens.
+This leaves 8,304 tokens for the full prompt, including its chat template and any approved instructions.
+Set the trainer sequence configuration and engine context capacity consistently with 98,304 tokens.
+The reference's 16,384-token context flags cannot serve this output budget.
+The 90k cap is a ceiling. Generation can stop earlier. Measure actual lengths and cap-hit rates.
+Reference answers have median 1,589 and 95th-percentile 4,058 tokens. They do not measure Qwen's generated thinking.
 Context means prompt tokens plus generated tokens. Qwen's generated thinking tokens count toward its output budget.
 For arithmetic only: a 2,000-token prompt plus 128,000 generated tokens needs 130,000 total tokens.
 A 131,072-token context would fit that example. A 128,000-token total context permits only 126,000 generated tokens.
