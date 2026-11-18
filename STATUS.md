@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 530287 is queued. Luna controls passed: reference 7/7, empty/irrelevant 0/7, estimated $0.0148. Twenty-nine CPU checks pass. VM monitor is prepared. Jobs: hpcfund/530287 PENDING
-  Next: Start the committed VM monitor for job 530287, then collect and provisionally grade the generated group when Slurm finishes.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD group job 530287 is queued. Verified VM monitor PID 688120 will collect, grade, plot, and upload results. Luna controls passed 7/0/0. No Qwen results yet. Jobs: hpcfund/530287 PENDING
+  Next: Watch monitor PID 688120 and AMD job 530287. Inspect group grades and raw cases after completion. Diagnose any inference failure under standing repair approval.
 
 ## Next / blocked
 
