@@ -157,7 +157,13 @@
       "label": "Incremental generation and private data boundary checks"
     }
   ],
-  "jobs": [],
+  "jobs": [
+    {
+      "id": "530287",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    }
+  ],
   "sessions": [
     {
       "agent": "codex",
@@ -290,15 +296,22 @@
       "actor": "codex",
       "summary": "Froze approved group inference plan, private input hash, one-GPU bounds, and passing checks",
       "revision": 17
+    },
+    {
+      "id": "96e1a4fa-48be-4ee2-a580-423874943c33",
+      "at": "2026-11-18T22:38:28.941735Z",
+      "actor": "codex",
+      "summary": "Submitted approved AMD inference job 530287 and recorded immutable source/config/input provenance",
+      "revision": 18
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
   "state": "running",
-  "summary": "Approved group check is frozen: one seeded eligible prompt, 32 thinking responses, one MI350 GPU, four-hour ceiling. Twenty CPU checks pass. VM-only grading credentials are authorized.",
-  "nextAction": "Stage the private input and committed source snapshot, submit the AMD diagnostic, and record its job ID.",
+  "summary": "AMD job 530287 submitted: one eligible prompt, 32 thinking responses, one MI350 GPU, four-hour cap. No learning. Judge loading is authorized locally on the VM.",
+  "nextAction": "Monitor the queued inference job. Validate Luna access and prepare provisional rubric grades and controls on the VM.",
   "owner": "Codex",
-  "revision": 17,
-  "updatedAt": "2026-11-18T22:36:27.027981Z"
+  "revision": 18,
+  "updatedAt": "2026-11-18T22:38:28.941735Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Approved group check is frozen: one seeded eligible prompt, 32 thinking responses, one MI350 GPU, four-hour ceiling. Twenty CPU checks pass. VM-only grading credentials are authorized.
-  Next: Stage the private input and committed source snapshot, submit the AMD diagnostic, and record its job ID.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 530287 submitted: one eligible prompt, 32 thinking responses, one MI350 GPU, four-hour cap. No learning. Judge loading is authorized locally on the VM. Jobs: hpcfund/530287 SUBMITTED
+  Next: Monitor the queued inference job. Validate Luna access and prepare provisional rubric grades and controls on the VM.
 
 ## Next / blocked
 
