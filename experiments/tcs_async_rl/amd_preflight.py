@@ -30,6 +30,10 @@ CONFIG = Path(__file__).with_name("qualification.proposed.json")
 
 def load_configs(path=CONFIG):
     qualification = json.loads(path.read_text())
+    if "container_config" in qualification:
+        qualification["container"] = json.loads((path.parent / qualification["container_config"]).read_text())[
+            "container"
+        ]
     training = json.loads((path.parent / qualification["training_config"]).read_text())
     return qualification, training
 
@@ -57,12 +61,13 @@ def render_job(*, repo, work_dir, run_dir, expected_commit, config_path=CONFIG):
     return "\n".join(
         [
             f"#!{qualification['host_python']}",
-            "#SBATCH --job-name=tcs-amd-qualification",
+            f"#SBATCH --job-name={qualification.get('job_name', 'tcs-amd-qualification')}",
             f"#SBATCH --partition={allocation['partition']}",
             f"#SBATCH --account={allocation['account']}",
             f"#SBATCH --qos={allocation['qos']}",
             f"#SBATCH --nodes={allocation['nodes']}",
             "#SBATCH --ntasks=1",
+            f"#SBATCH --cpus-per-task={allocation.get('cpus_per_task', 1)}",
             "#SBATCH --exclusive",
             f"#SBATCH --time={allocation['walltime']}",
             f"#SBATCH --chdir={repo}",
@@ -190,7 +195,7 @@ def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
         "qualification": qualification,
         "training_proposal": training,
         "qualification_sha256": hashlib.sha256(config_path.read_bytes()).hexdigest(),
-        "scope": "Environment qualification only. Not an RL experiment or full memory proof.",
+        "scope": qualification.get("scope"),
     }
     (run_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     env = _public_environment()
@@ -241,6 +246,11 @@ def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
 
 def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, training, env):
     prefix = container_prefix(image=sandbox, repo=ROOT, work_dir=work_dir)
+    if qualification.get("mode") == "group_inference":
+        _run_group_check(
+            prefix=prefix, work_dir=work_dir, run_dir=run_dir, config_path=config_path, training=training, env=env
+        )
+        return
     module = ["python3", "-m", "experiments.tcs_async_rl.gpu_qualification"]
     _run(
         "imports",
@@ -304,6 +314,34 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
         prefix
         + module
         + ["inference", "--model-dir", str(model_dir), "--config", str(config_path), "--run-dir", str(run_dir)],
+        run_dir=run_dir,
+        env=env,
+    )
+
+
+def _run_group_check(*, prefix, work_dir, run_dir, config_path, training, env):
+    model = training["model"]
+    model_dir = work_dir / "models" / f"Qwen3.5-4B-{model['revision']}"
+    _run(
+        "model",
+        prefix + ["hf", "download", model["repo_id"], "--revision", model["revision"], "--local-dir", str(model_dir)],
+        run_dir=run_dir,
+        env=env,
+    )
+    _run(
+        "group-inference",
+        prefix
+        + [
+            "python3",
+            "-m",
+            "experiments.tcs_async_rl.group_inference",
+            "--model-dir",
+            str(model_dir),
+            "--config",
+            str(config_path),
+            "--run-dir",
+            str(run_dir),
+        ],
         run_dir=run_dir,
         env=env,
     )

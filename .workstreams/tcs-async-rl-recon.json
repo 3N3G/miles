@@ -143,6 +143,18 @@
     {
       "path": "experiments/tcs_async_rl/evidence/thinking_template_check_20261118.json",
       "label": "Validated approved thinking template without publishing private question text"
+    },
+    {
+      "path": "experiments/tcs_async_rl/GROUP_CHECK_PLAN.md",
+      "label": "Approved one-prompt, 32-response AMD diagnostic plan"
+    },
+    {
+      "path": "experiments/tcs_async_rl/group_check_v1.json",
+      "label": "Immutable submitted diagnostic configuration after launch"
+    },
+    {
+      "path": "experiments/tcs_async_rl/group_inference.py",
+      "label": "Incremental generation and private data boundary checks"
     }
   ],
   "jobs": [],
@@ -271,15 +283,22 @@
       "actor": "codex",
       "summary": "User approved a quick AMD group inference check; started preparation and execution",
       "revision": 16
+    },
+    {
+      "id": "5b09bcb6-163d-4b62-aa74-3378ee657d9a",
+      "at": "2026-11-18T22:36:27.027981Z",
+      "actor": "codex",
+      "summary": "Froze approved group inference plan, private input hash, one-GPU bounds, and passing checks",
+      "revision": 17
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
   "state": "running",
-  "summary": "Preparing the approved AMD inference-only group check: one seeded eligible prompt, 32 responses, thinking on, no learning. Judge credential loading is being clarified.",
-  "nextAction": "Freeze the diagnostic plan and inputs, submit the bounded AMD job, and inspect the saved group and grades.",
+  "summary": "Approved group check is frozen: one seeded eligible prompt, 32 thinking responses, one MI350 GPU, four-hour ceiling. Twenty CPU checks pass. VM-only grading credentials are authorized.",
+  "nextAction": "Stage the private input and committed source snapshot, submit the AMD diagnostic, and record its job ID.",
   "owner": "Codex",
-  "revision": 16,
-  "updatedAt": "2026-11-18T22:30:15.342273Z"
+  "revision": 17,
+  "updatedAt": "2026-11-18T22:36:27.027981Z"
 }
