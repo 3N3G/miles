@@ -12,7 +12,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Reconnaissance completed and a draft experiment plan is ready for review. AMD has a clean source clone at /work1/aviralkumar/geney/miles-ian, exactly 80a407b98a819add3e17383dc3238e3df9296f98. Dataset 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD source is staged and 2,519 eligible questions are audited. FOCS/STOC 2026 remain sealed (385 questions). Runtime and judge integration need checks. No jobs or paid API calls ran.
   Next: Review experiments/tcs_async_rl/PLAN.md and QUESTIONS.md. Resolve solver output budget, thinking mode, pilot limits, reward/split choices, and writable source destination before im
 
 ## Finished
