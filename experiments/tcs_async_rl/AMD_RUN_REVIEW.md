@@ -31,6 +31,10 @@ This operational record owns the launch procedure. Configuration files own numer
 - `~/.config/api-keys.env` exists on the VM. Both provider assignment names were confirmed without inspecting values.
   That file is absent on AMD. Earlier AMD Gemini environment access failed. No credential file was copied.
 - Flame is unnecessary for this AMD job. Its changed SSH host key remains unverified.
+- The [test-only scheduler check](evidence/amd_submission_check_20261118.json) passed partition access,
+  account, allocation balance, one-node size, and the two-hour limit. It returned 256 processors.
+  Its provisional start estimate is not a reservation. A follow-up queue check found no qualification job.
+  Fourteen CPU checks passed. No container, GPU, or learning check has executed.
 
 ## Render and validate, without submission
 

@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Prepared a 16 GPU-hour AMD environment check with zero judge calls or learning. All 14 CPU checks pass. Scheduler validation is next.
-  Next: Sync the reviewed files to AMD and validate the Slurm request without submitting. Present the full learning proposal and remaining gates.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD qualification is prepared and Slurm test-only passed. Fourteen CPU checks pass. Awaiting approval for one node, two hours, no API calls or learning.
+  Next: Approve the bounded AMD qualification. Full learning still needs runtime validation, a TCS judge adapter, credential access, development split, thinking choice, and spending/horizo
 
 ## Finished
 

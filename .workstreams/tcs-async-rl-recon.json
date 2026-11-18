@@ -131,6 +131,10 @@
     {
       "path": "tests/fast/test_tcs_amd_preflight.py",
       "label": "CPU allocation, error-handling, secret-exclusion and context checks"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/amd_submission_check_20261118.json",
+      "label": "Successful AMD test-only scheduling check, no GPU submission"
     }
   ],
   "jobs": [],
@@ -231,15 +235,22 @@
       "actor": "codex",
       "summary": "Prepared guarded AMD qualification runner, reviewed scope, and fourteen passing CPU checks",
       "revision": 12
+    },
+    {
+      "id": "ebe644b4-94a5-404b-be58-156195605b22",
+      "at": "2026-11-18T22:05:22.506819Z",
+      "actor": "codex",
+      "summary": "Validated the AMD scheduler request without submission and prepared the complete run review",
+      "revision": 13
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
-  "state": "running",
-  "summary": "Prepared a 16 GPU-hour AMD environment check with zero judge calls or learning. All 14 CPU checks pass. Scheduler validation is next.",
-  "nextAction": "Sync the reviewed files to AMD and validate the Slurm request without submitting. Present the full learning proposal and remaining gates.",
+  "state": "needs-you",
+  "summary": "AMD qualification is prepared and Slurm test-only passed. Fourteen CPU checks pass. Awaiting approval for one node, two hours, no API calls or learning.",
+  "nextAction": "Approve the bounded AMD qualification. Full learning still needs runtime validation, a TCS judge adapter, credential access, development split, thinking choice, and spending/horizon limits.",
   "owner": "Codex",
-  "revision": 12,
-  "updatedAt": "2026-11-18T22:02:32.673344Z"
+  "revision": 13,
+  "updatedAt": "2026-11-18T22:05:22.506819Z"
 }

@@ -1,0 +1,27 @@
+{
+  "observed_at_utc": "2026-11-18T22:03:53.608874+00:00",
+  "cluster": "hpcfund",
+  "source_commit": "96b85de6f0d60a85d7f3d1ea380816e2a5471ea0",
+  "test_only_exit_code": 0,
+  "command": "sbatch --test-only /work1/aviralkumar/geney/tcs-async-rl/runs/qualification-v1/job.py",
+  "checks": {
+    "account": true,
+    "partition_access": true,
+    "active_allocation": true,
+    "allocation_balance": true,
+    "walltime_two_hours": true,
+    "one_node": true
+  },
+  "allocation_processors": 256,
+  "scheduler_estimated_start_local": "2026-11-18T23:22:40",
+  "estimate_node": "k007-004",
+  "note": "Test-only diagnostic, not a submission, job record, reservation, or guaranteed start. Batch file must be regenerated if the source commit changes.",
+  "scheduler_timezone": "CST, UTC-06:00, verified by date -Is and date +%Z",
+  "scheduler_estimated_start_utc": "2026-11-19T05:22:40+00:00",
+  "user_jobs_after_test_only": 12,
+  "qualification_job_present_after_test_only": false,
+  "mi3508x_nodes": 4,
+  "mi3508x_allocated_nodes": 4,
+  "amd_provider_file_exists": false,
+  "hf_prior_run_inventory": "Recursive private result inventory did not complete within the bounded preparation window and was stopped. No earlier result or absence of a result is inferred. No GPU run was repeated."
+}

@@ -17,6 +17,7 @@
   See `experiments/tcs_async_rl/QUALIFICATION_PLAN.md`. This does not select a learning horizon or spending cap.
 - Blocks: exact jobs, walltimes, sample counts, judge concurrency, and paid calls.
 - Status: asked in chat. No GPU job or paid API call has been submitted.
+  The concrete first request passed `sbatch --test-only`. Submission still awaits approval.
 
 ## 2026-11-18: Development split
 
