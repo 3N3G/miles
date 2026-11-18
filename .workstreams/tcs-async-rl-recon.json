@@ -120,15 +120,22 @@
       "actor": "codex",
       "summary": "Verified the registered deploy key, published the preparation commits, and synchronized the AMD checkout",
       "revision": 7
+    },
+    {
+      "id": "af526a69-083b-476d-94b1-9d19ccd26055",
+      "at": "2026-11-18T19:43:44.575601Z",
+      "actor": "codex",
+      "summary": "Started user-requested GPU resource sizing and bounded judge API access checks",
+      "revision": 8
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Audit the dataset and held-out boundary, stage the pinned code on an accessible cluster, and present a reviewable experiment proposal",
-  "state": "needs-you",
-  "summary": "SSH read/write access to 3N3G/miles is verified. Preparation commits are pushed and AMD is synchronized. Solver output cap is 90,000 tokens. No GPU jobs or paid API calls ran.",
-  "nextAction": "Resolve thinking mode, pilot GPU/API caps, and the reward/development split contract. Then finalize the exact runtime checks and experiment jobs for review.",
+  "state": "running",
+  "summary": "Sizing Qwen3.5-4B async RL from current AMD capacity and 90k output. The user authorized checking Luna access and a Gemini backup. No GPU submissions are authorized by this sizing step.",
+  "nextAction": "Compute parameter, KV-cache, optimizer, logits, and attention costs; test judge access locally on credential hosts; write an evidence-backed configuration proposal.",
   "owner": "Codex",
-  "revision": 7,
-  "updatedAt": "2026-11-18T19:25:56.324107Z"
+  "revision": 8,
+  "updatedAt": "2026-11-18T19:43:44.575601Z"
 }

@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Sizing Qwen3.5-4B async RL from current AMD capacity and 90k output. The user authorized checking Luna access and a Gemini backup. No GPU submissions are authorized by this sizing step.
+  Next: Compute parameter, KV-cache, optimizer, logits, and attention costs; test judge access locally on credential hosts; write an evidence-backed configuration proposal.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): SSH read/write access to 3N3G/miles is verified. Preparation commits are pushed and AMD is synchronized. Solver output cap is 90,000 tokens. No GPU jobs or paid API calls ran.
-  Next: Resolve thinking mode, pilot GPU/API caps, and the reward/development split contract. Then finalize the exact runtime checks and experiment jobs for review.
+- Nothing recorded.
 
 ## Finished
 
