@@ -9,7 +9,8 @@ The code is staged on AMD. The dataset has 2,519 eligible questions and 385 held
 The main untested pieces are the ROCm training stack, long sequences, and a calibrated reward adapter.
 See [open decisions](../../QUESTIONS.md) before implementing experiment choices or requesting resources.
 The user created [3N3G/miles](https://github.com/3N3G/miles), forked from Ian's repository.
-VM Git writes are configured for a dedicated SSH deploy key. Its public key awaits registration.
+VM Git writes use a dedicated SSH deploy key. Read/write access is verified and preparation commits are pushed.
+The AMD checkout reads the user fork over HTTPS and is synchronized.
 
 ## Background / motivation
 
@@ -44,6 +45,7 @@ Groups with identical rewards supply no GRPO learning signal.
 ### Models and source revisions
 
 - Miles: `80a407b98a819add3e17383dc3238e3df9296f98` from Ian's fork.
+  The user fork adds preparation records. Record its exact commit for each submitted job.
 - Candidate solver: `Qwen/Qwen3.5-4B`, revision `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a`.
   Only its config and tokenizer were downloaded. No model weights were downloaded.
 - Candidate judge: `gpt-6-luna`, medium reasoning effort. API access has not been tested.
@@ -126,7 +128,8 @@ Earlier TCS judge checks disagreed on both dataset-reference controls. Agreement
 
 ### Resource proposal and checks
 
-AMD source: `/work1/aviralkumar/geney/miles-ian`. Its checkout is clean and matches the pinned commit.
+AMD source: `/work1/aviralkumar/geney/miles-ian`. Its clean checkout follows `3N3G/miles/main`.
+It contains Ian's pinned runtime baseline plus preparation records. No Miles runtime code was changed.
 Apptainer 1.4.5 is available. The only existing image found was a vLLM ROCm inference image.
 A candidate Miles image exists at:
 `docker.io/rocm/sgl-dev@sha256:25597c01ab3fc8e77bfeb48434262c535080dc6857c8d591165b4b9304425019`.

@@ -12,9 +12,9 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fork 3N3G/miles is verified. VM and AMD remotes now use it. The VM deploy public key awaits registration. User selected a 90,000-token solver output cap. No GPU jobs or paid API calls ran.
-  Next: After the user adds the VM public deploy key with write access, verify SSH Git access, push local records, and pull on AMD. Resolve thinking mode, pilot caps, and reward/split choi
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): SSH read/write access to 3N3G/miles is verified. Preparation commits are pushed and AMD is synchronized. Solver output cap is 90,000 tokens. No GPU jobs or paid API calls ran.
+  Next: Resolve thinking mode, pilot GPU/API caps, and the reward/development split contract. Then finalize the exact runtime checks and experiment jobs for review.
 
 ## Finished
 
-- [Compare Ian's Miles fork with RadixArk](.workstreams/ian-radixark-comparison.json): Compared IanYHWu/miles 80a407b9 with fetched RadixArk main 55766eb710afe0dec5c48e71bc30931cbef01849 (2026-11-17). Common base f569caa8fd4892b078048412458da27bbc06060d is dated 2026-10-16. Fork has 9 u
+- [Compare Ian's Miles fork with RadixArk](.workstreams/ian-radixark-comparison.json): Compared Ian’s fork with the pinned RadixArk snapshot. Ian added five code commits across 43 files. Findings and workstream records are now published in 3N3G/miles.

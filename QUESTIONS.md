@@ -33,8 +33,8 @@
 - 2026-11-18: Ian's command is a usage example. Replace settings that do not fit TCS.
   The reference command does not freeze batch sizes, topology, hooks, or experiment-specific settings.
 - 2026-11-18: the user created `3N3G/miles`. GitHub metadata confirms its parent is `IanYHWu/miles`.
-  Use SSH for VM writes and HTTPS for AMD reads. A dedicated deploy key was generated on the VM.
-  Its public half is ready for the user to register with write access.
+  Use SSH for VM writes and HTTPS for AMD reads. The user registered the VM's dedicated deploy key.
+  SSH read/write access is verified. Preparation commits are pushed and the AMD checkout is synchronized.
   Keep private dataset examples outside the public source repository.
 - 2026-11-18: use a 90,000-token solver output cap. User said, "yeah lets do 90k."
   Use the matching planned total context of 98,304 tokens. The judge budget remains separate.
