@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Auditing zero-reward risk, FP32 output-head support, logging and recovery. Solver thinking is approved. The meaning of high effort is being clarified. No GPU submission.
+  Next: Record thinking mode, inspect precision and recovery paths, and prepare evidence-backed launch checks.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD qualification is prepared and Slurm test-only passed. Fourteen CPU checks pass. Awaiting approval for one node, two hours, no API calls or learning.
-  Next: Approve the bounded AMD qualification. Full learning still needs runtime validation, a TCS judge adapter, credential access, development split, thinking choice, and spending/horizo
+- Nothing recorded.
 
 ## Finished
 

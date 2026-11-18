@@ -242,15 +242,22 @@
       "actor": "codex",
       "summary": "Validated the AMD scheduler request without submission and prepared the complete run review",
       "revision": 13
+    },
+    {
+      "id": "867146fe-a343-40b4-9f3c-999ac4cc09e8",
+      "at": "2026-11-18T22:17:20.089885Z",
+      "actor": "codex",
+      "summary": "Started reward-signal, precision, and logging audit; user approved solver thinking",
+      "revision": 14
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
-  "state": "needs-you",
-  "summary": "AMD qualification is prepared and Slurm test-only passed. Fourteen CPU checks pass. Awaiting approval for one node, two hours, no API calls or learning.",
-  "nextAction": "Approve the bounded AMD qualification. Full learning still needs runtime validation, a TCS judge adapter, credential access, development split, thinking choice, and spending/horizon limits.",
+  "state": "running",
+  "summary": "Auditing zero-reward risk, FP32 output-head support, logging and recovery. Solver thinking is approved. The meaning of high effort is being clarified. No GPU submission.",
+  "nextAction": "Record thinking mode, inspect precision and recovery paths, and prepare evidence-backed launch checks.",
   "owner": "Codex",
-  "revision": 13,
-  "updatedAt": "2026-11-18T22:05:22.506819Z"
+  "revision": 14,
+  "updatedAt": "2026-11-18T22:17:20.089885Z"
 }
