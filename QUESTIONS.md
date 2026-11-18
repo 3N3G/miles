@@ -34,17 +34,13 @@
 - Blocks: implementing the experiment's data manifest, judge prompt, parser, reward, and selection rule.
 - Status: proposed in [the experiment draft](experiments/tcs_async_rl/PLAN.md). No split or reward is implemented.
 
-## 2026-11-18: Writable experiment source of truth
-
-- Question: which writable GitHub repository should own the TCS experiment code and records?
-- Options: a user-owned Miles fork, or the existing private TCS repository with Miles pinned separately.
-- Recommendation: keep private dataset examples and experiment glue in a private experiment repository.
-  Keep Miles pinned to Ian's source revision until an explicit framework change is needed.
-- Blocks: publishing new local records and deploying experiment-specific changes through GitHub.
-- Evidence: both HTTPS and SSH pushes to the current origin fail authentication.
-  The unchanged public Miles source is already cloned on AMD.
-
 # Answered questions
 
 - 2026-11-18: hold out FOCS 2026 and STOC 2026. User's explicit instruction.
   SODA 2026 remains eligible. No held-out Parquet shard was downloaded.
+- 2026-11-18: Ian's command is a usage example. Replace settings that do not fit TCS.
+  The reference command does not freeze batch sizes, topology, hooks, or experiment-specific settings.
+- 2026-11-18: create a user-owned Miles fork. User said, "github yea lets fork."
+  Creation is authorized. GitHub authentication is still missing on the VM and AMD.
+  The available GitHub integration is not installed/connected. No fork has been created.
+  Keep private dataset examples outside the public source repository.

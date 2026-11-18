@@ -17,6 +17,18 @@
     {
       "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
       "label": "Verified judge API model metadata"
+    },
+    {
+      "url": "https://github.com/IanYHWu/miles/blob/80a407b98a819add3e17383dc3238e3df9296f98/miles/rollout/rm_hub/__init__.py#L103-L105",
+      "label": "Group reward hook dispatch"
+    },
+    {
+      "url": "https://github.com/IanYHWu/miles/blob/80a407b98a819add3e17383dc3238e3df9296f98/miles/ray/rollout/metrics.py#L75-L81",
+      "label": "Custom rollout logging hook"
+    },
+    {
+      "url": "https://github.com/IanYHWu/miles/blob/80a407b98a819add3e17383dc3238e3df9296f98/miles/backends/megatron_utils/actor.py#L867-L881",
+      "label": "Post-save checkpoint hook"
     }
   ],
   "evidence": [
@@ -83,15 +95,22 @@
       "actor": "codex",
       "summary": "Keep the generated phone-readable status concise; detailed evidence lives in the linked plan",
       "revision": 4
+    },
+    {
+      "id": "7c1b7b11-2004-4313-900f-4ba60d487919",
+      "at": "2026-11-18T18:50:44.182229Z",
+      "actor": "codex",
+      "summary": "Recorded authorized fork creation, missing GitHub authentication, and exact hook/context code references",
+      "revision": 5
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Audit the dataset and held-out boundary, stage the pinned code on an accessible cluster, and present a reviewable experiment proposal",
   "state": "needs-you",
-  "summary": "AMD source is staged and 2,519 eligible questions are audited. FOCS/STOC 2026 remain sealed (385 questions). Runtime and judge integration need checks. No jobs or paid API calls ran.",
-  "nextAction": "Review experiments/tcs_async_rl/PLAN.md and QUESTIONS.md. Resolve solver output budget, thinking mode, pilot limits, reward/split choices, and writable source destination before implementation or job submission.",
+  "summary": "AMD source and data audit are ready. The user approved a Miles fork; creation needs GitHub access. Hook call sites and context-budget semantics are documented. No GPU jobs or paid API calls ran.",
+  "nextAction": "Obtain authenticated GitHub access and create the authorized fork. Resolve solver output versus total context, thinking mode, pilot caps, and reward/split choices.",
   "owner": "Codex",
-  "revision": 4,
-  "updatedAt": "2026-11-18T18:03:40.038406Z"
+  "revision": 5,
+  "updatedAt": "2026-11-18T18:50:44.182229Z"
 }

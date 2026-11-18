@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD source is staged and 2,519 eligible questions are audited. FOCS/STOC 2026 remain sealed (385 questions). Runtime and judge integration need checks. No jobs or paid API calls ran.
-  Next: Review experiments/tcs_async_rl/PLAN.md and QUESTIONS.md. Resolve solver output budget, thinking mode, pilot limits, reward/split choices, and writable source destination before im
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD source and data audit are ready. The user approved a Miles fork; creation needs GitHub access. Hook call sites and context-budget semantics are documented. No GPU jobs or paid API calls ran.
+  Next: Obtain authenticated GitHub access and create the authorized fork. Resolve solver output versus total context, thinking mode, pilot caps, and reward/split choices.
 
 ## Finished
 

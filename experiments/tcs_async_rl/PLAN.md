@@ -8,6 +8,7 @@ No GPU jobs or paid judge calls have been submitted.
 The code is staged on AMD. The dataset has 2,519 eligible questions and 385 held-out questions.
 The main untested pieces are the ROCm training stack, long sequences, and a calibrated reward adapter.
 See [open decisions](../../QUESTIONS.md) before implementing experiment choices or requesting resources.
+The user approved creating a personal Miles fork. Creation awaits authenticated GitHub access.
 
 ## Background / motivation
 
@@ -22,6 +23,8 @@ It uses Adam betas 0.9/0.98, weight decay 0.1, temperature 1, top-p 1, and top-k
 Its async settings are staleness 6, unused-sample retry, buffer factor 1, and 2,048 concurrent samples.
 It also trains one MTP layer with loss weight 0.2 and uses EAGLE speculative decoding.
 These are reference settings. They are not an approved TCS configuration.
+The user explicitly confirmed that this command illustrates how to call Miles.
+Replace experiment-specific settings when preparing the reviewed TCS configuration.
 
 ## Concrete question we are answering
 
@@ -99,6 +102,19 @@ The reference's `--group-rm` calls its reward hook with a list.
 Standard eval rollout also rejects `--group-rm` in this source.
 Review whether to keep a batched wrapper or use per-sample reward calls.
 
+Exact hook calls in the pinned source:
+
+| Hook from Ian's command | Call site | Arguments |
+| --- | --- | --- |
+| `adaptive_rl.miles_hooks.reward` | [`rm_hub/__init__.py`](../../miles/rollout/rm_hub/__init__.py#L103) | `await hook(args, samples, **kwargs)` in group mode |
+| `adaptive_rl.miles_hooks.log_rollout` | [`rollout/metrics.py`](../../miles/ray/rollout/metrics.py#L78) | `hook(rollout_id, args, samples, rollout_extra_metrics, rollout_time)` |
+| `adaptive_rl.miles_hooks.keep_two_checkpoints` | [`megatron_utils/actor.py`](../../miles/backends/megatron_utils/actor.py#L867) | `hook(args, rollout_id, checkpoint_dir, hf_checkpoint_dir)` after saving, on rank zero |
+
+The first call is entered by `sglang_rollout.py:414` after a group's generation completes.
+The logging and post-save hooks are optional. A truthy custom logging return skips default rollout logging.
+The existing per-sample generic judge entrypoint is `miles/rollout/llm_judge.py:171`.
+Request Ian's referenced module and its imported helpers, judge prompt, parser, and non-secret configuration.
+
 Proposed reward: binary decisions on existing rubric items, with supplied weights normalized by seven.
 Review partial credit, zero-credit warnings, truncated answers, missing final answers, and parser failures explicitly.
 Do not convert judge transport failures into zero rewards. Do not invent a scalar 1–10 grading scale.
@@ -126,6 +142,15 @@ No allocation or walltime has been selected.
 
 The reference's 16,384-token context flags cannot serve 90k/128k output.
 Set solver response, total context, trainer sequence, and engine context limits together after the budget decision.
+Context means prompt tokens plus generated tokens. Qwen's generated thinking tokens count toward its output budget.
+For arithmetic only: a 2,000-token prompt plus 128,000 generated tokens needs 130,000 total tokens.
+A 131,072-token context would fit that example. A 128,000-token total context permits only 126,000 generated tokens.
+The phrase "128k" must therefore be resolved to an exact token count and either output or total context.
+`--rollout-max-response-len` limits generation. `--rollout-max-context-len` limits prompt plus generation.
+The request builder enforces the smaller of the output cap and remaining context (`generate_endpoint_utils.py:67`).
+`--sglang-context-length` sets engine capacity. `--seq-length` sets trainer sequence configuration.
+This source derives `max_position_embeddings` from `seq_length` in `megatron_utils/arguments.py:35`.
+The judge has a separate input/output budget. The solver's output becomes part of the judge's input.
 Dynamic batch token budgets do not split one oversized sample. Tiled logits do not remove attention memory costs.
 Ian's new tiled-head tests are registered for CUDA. ROCm correctness and MTP need an explicit check.
 Qwen GDN context parallelism requires the FLA backend in this source.
