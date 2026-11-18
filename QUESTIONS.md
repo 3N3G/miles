@@ -13,6 +13,8 @@
 - Question: what GPU-hour and judge-API spending caps should the pilot use?
 - Options: a bounded technical smoke test, or a bounded smoke test plus learning pilot.
 - Recommendation: approve a short runtime check before a learning allocation.
+- Concrete first proposal: one MI350 eight-GPU node for two hours maximum, zero judge calls and no learning.
+  See `experiments/tcs_async_rl/QUALIFICATION_PLAN.md`. This does not select a learning horizon or spending cap.
 - Blocks: exact jobs, walltimes, sample counts, judge concurrency, and paid calls.
 - Status: asked in chat. No GPU job or paid API call has been submitted.
 
@@ -36,6 +38,16 @@
 - Recommendation: verify the fingerprint before updating the saved host key. Keep strict host checking enabled.
 - Blocks: reading current Flame GPU inventory and using its login host. AMD preparation continues.
 - Status: asked in chat. No saved host key was changed.
+
+## 2026-11-18: Runtime judge credential route
+
+- Question: how should the AMD training workers reach a permitted judge client?
+- Evidence: the provider assignment names exist in the VM credential file. That file is absent on AMD.
+  The current instruction permits checking names only. Neither provider has been validated with those file credentials.
+- Options: a user-configured environment loader on AMD, or a judge service on the VM that owns provider access.
+- Recommendation: choose the existing permitted loader if one is available. Keep key values out of logs and Ray job JSON.
+- Blocks: authenticated judge validation and learning submission. The prepared GPU qualification needs no credentials.
+- Status: unresolved. No credential values were read or copied.
 
 # Answered questions
 

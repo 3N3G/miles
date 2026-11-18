@@ -107,6 +107,30 @@
     {
       "path": "experiments/tcs_async_rl/evidence/flame_access_20261118.json",
       "label": "Running Flame VM and IAP reachability; SSH host-key verification remains unresolved"
+    },
+    {
+      "path": "experiments/tcs_async_rl/QUALIFICATION_PLAN.md",
+      "label": "Bounded technical qualification plan, without private data or judge calls"
+    },
+    {
+      "path": "experiments/tcs_async_rl/AMD_RUN_REVIEW.md",
+      "label": "Complete run review and operational submission procedure"
+    },
+    {
+      "path": "experiments/tcs_async_rl/qualification.proposed.json",
+      "label": "Canonical first-job allocation and scope"
+    },
+    {
+      "path": "experiments/tcs_async_rl/amd_preflight.py",
+      "label": "Non-submitting Slurm renderer and guarded allocation runner"
+    },
+    {
+      "path": "experiments/tcs_async_rl/gpu_qualification.py",
+      "label": "GPU import, communication, and long-context inference checks"
+    },
+    {
+      "path": "tests/fast/test_tcs_amd_preflight.py",
+      "label": "CPU allocation, error-handling, secret-exclusion and context checks"
     }
   ],
   "jobs": [],
@@ -200,15 +224,22 @@
       "actor": "codex",
       "summary": "Started AMD launch preparation and fresh prerequisite checks at the user request",
       "revision": 11
+    },
+    {
+      "id": "8126779e-1fe3-4e34-8f18-722dbdbff6a1",
+      "at": "2026-11-18T22:02:32.673344Z",
+      "actor": "codex",
+      "summary": "Prepared guarded AMD qualification runner, reviewed scope, and fourteen passing CPU checks",
+      "revision": 12
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
   "state": "running",
-  "summary": "Preparing AMD launch files and a bounded GPU qualification plan. Fresh scheduler check: all four MI350 nodes are allocated. No GPU submission.",
-  "nextAction": "Validate launch arguments, judge integration, and the AMD container path. Present the exact proposed jobs for review.",
+  "summary": "Prepared a 16 GPU-hour AMD environment check with zero judge calls or learning. All 14 CPU checks pass. Scheduler validation is next.",
+  "nextAction": "Sync the reviewed files to AMD and validate the Slurm request without submitting. Present the full learning proposal and remaining gates.",
   "owner": "Codex",
-  "revision": 11,
-  "updatedAt": "2026-11-18T21:51:58.786486Z"
+  "revision": 12,
+  "updatedAt": "2026-11-18T22:02:32.673344Z"
 }

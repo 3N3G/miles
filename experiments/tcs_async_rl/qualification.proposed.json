@@ -1,0 +1,31 @@
+{
+  "status": "proposal_not_a_submission_authorization",
+  "purpose": "AMD environment and long-context inference qualification only",
+  "host_python": "/usr/bin/python3.12",
+  "allocation": {
+    "partition": "mi3508x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 8,
+    "walltime": "02:00:00"
+  },
+  "container": {
+    "uri": "docker://rocm/sgl-dev@sha256:25597c01ab3fc8e77bfeb48434262c535080dc6857c8d591165b4b9304425019",
+    "minimum_free_bytes": 128849018880,
+    "unprivileged_sandbox": true
+  },
+  "training_config": "config.proposed.json",
+  "inference": {
+    "short_prompt_tokens": 4096,
+    "generated_tokens": 32,
+    "seed": 20261118
+  },
+  "scope": {
+    "private_dataset_reads": false,
+    "judge_calls": 0,
+    "optimizer_updates": 0,
+    "full_model_backward_verified": false,
+    "production_concurrency_verified": false
+  }
+}

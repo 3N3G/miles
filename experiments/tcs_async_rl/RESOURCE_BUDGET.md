@@ -149,6 +149,8 @@ Formatting and lint pass. No GPU test, model conversion, or long-context measure
 The JSON file is a configuration proposal, not a native Miles config loader or a runnable launch command.
 Required paths, the TCS reward adapter, thinking mode, and run/spending limits remain explicit null fields.
 The next GPU action should be a bounded memory/throughput qualification of the proposed topology, after review.
+The prepared [first qualification job](QUALIFICATION_PLAN.md) covers the environment, output head, and one inference engine.
+It is bounded to 16 GPU-hours. Full-model backward and simultaneous training/generation need a later integration check.
 
 ## Sources
 

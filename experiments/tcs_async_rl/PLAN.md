@@ -10,6 +10,8 @@ The main untested pieces are the ROCm training stack, long sequences, and a cali
 There is now a concrete [configuration proposal](config.proposed.json), with resource calculations in
 [RESOURCE_BUDGET.md](RESOURCE_BUDGET.md). Missing paths and decisions are explicit null fields.
 See [open decisions](../../QUESTIONS.md) before implementing experiment choices or requesting resources.
+The next proposed allocation is a bounded [AMD environment qualification](QUALIFICATION_PLAN.md).
+Its [operational review](AMD_RUN_REVIEW.md) separates the prepared first job from the unfinished learning configuration.
 The user created [3N3G/miles](https://github.com/3N3G/miles), forked from Ian's repository.
 VM Git writes use a dedicated SSH deploy key. Read/write access is verified and preparation commits are pushed.
 The AMD checkout reads the user fork over HTTPS and is synchronized.
@@ -150,7 +152,8 @@ Model-state memory does not require lowering global batch size. Accumulation sep
 The compute sensitivity table compares that batch with a 256-sample alternative. No smaller batch is silently selected.
 These are untested choices requiring approval. Preserve existing jobs and use the current scheduler limits.
 Observed mi3508x MaxTime is four days. This differs from the older global note's twelve-hour limit.
-No allocation or walltime has been selected.
+The first proposed technical allocation is one node for two hours, at most 16 GPU-hours.
+It makes no judge calls and does not train. The learning allocation and duration remain unselected.
 
 Selected solver output cap: 90,000 tokens. Planned matching total context: 98,304 tokens.
 This leaves 8,304 tokens for the full prompt, including its chat template and any approved instructions.
@@ -218,7 +221,7 @@ Pending results and the user's interpretation.
 
 1. Keep the located credentials private. Authenticated tests with those credentials remain pending after the names-only check.
 2. Review the resource-based configuration, resolve thinking mode/limits, and freeze the data manifest and adapter.
-3. Finalize a bounded GPU qualification job for review, then validate memory/throughput before the learning allocation.
+3. Review the prepared qualification job, then validate the remaining full training path before a learning allocation.
 4. Upload every experiment run through the repository's result workflow and record its exact source revision.
 
 ## Questions

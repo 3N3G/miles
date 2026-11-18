@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Preparing AMD launch files and a bounded GPU qualification plan. Fresh scheduler check: all four MI350 nodes are allocated. No GPU submission.
-  Next: Validate launch arguments, judge integration, and the AMD container path. Present the exact proposed jobs for review.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Prepared a 16 GPU-hour AMD environment check with zero judge calls or learning. All 14 CPU checks pass. Scheduler validation is next.
+  Next: Sync the reviewed files to AMD and validate the Slurm request without submitting. Present the full learning proposal and remaining gates.
 
 ## Next / blocked
 
