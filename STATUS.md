@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Auditing zero-reward risk, FP32 output-head support, logging and recovery. Solver thinking is approved. The meaning of high effort is being clarified. No GPU submission.
-  Next: Record thinking mode, inspect precision and recovery paths, and prepare evidence-backed launch checks.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Thinking is enabled; Luna stays medium. FP32 logits are implemented but unselected. Reward signal and recovery remain unmeasured. All 16 CPU checks pass. No GPU submission.
+  Next: Review the reward/precision/recovery audit and approve the bounded AMD qualification. Before learning: calibrate grading, measure base-model group variance, and test checkpoints.
 
 ## Finished
 

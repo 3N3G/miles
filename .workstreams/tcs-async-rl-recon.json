@@ -135,6 +135,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/amd_submission_check_20261118.json",
       "label": "Successful AMD test-only scheduling check, no GPU submission"
+    },
+    {
+      "path": "experiments/tcs_async_rl/RUNTIME_READINESS.md",
+      "label": "Source-backed reward, FP32-logit, logging and recovery audit"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/thinking_template_check_20261118.json",
+      "label": "Validated approved thinking template without publishing private question text"
     }
   ],
   "jobs": [],
@@ -249,15 +257,22 @@
       "actor": "codex",
       "summary": "Started reward-signal, precision, and logging audit; user approved solver thinking",
       "revision": 14
+    },
+    {
+      "id": "4e77360e-1d4a-46cd-968d-ca02c0678495",
+      "at": "2026-11-18T22:23:15.303347Z",
+      "actor": "codex",
+      "summary": "Enabled approved Qwen thinking, preserved Luna medium, audited precision and reward/logging risks, and validated durable stage logs",
+      "revision": 15
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
-  "state": "running",
-  "summary": "Auditing zero-reward risk, FP32 output-head support, logging and recovery. Solver thinking is approved. The meaning of high effort is being clarified. No GPU submission.",
-  "nextAction": "Record thinking mode, inspect precision and recovery paths, and prepare evidence-backed launch checks.",
+  "state": "needs-you",
+  "summary": "Thinking is enabled; Luna stays medium. FP32 logits are implemented but unselected. Reward signal and recovery remain unmeasured. All 16 CPU checks pass. No GPU submission.",
+  "nextAction": "Review the reward/precision/recovery audit and approve the bounded AMD qualification. Before learning: calibrate grading, measure base-model group variance, and test checkpoints.",
   "owner": "Codex",
-  "revision": 14,
-  "updatedAt": "2026-11-18T22:17:20.089885Z"
+  "revision": 15,
+  "updatedAt": "2026-11-18T22:23:15.303347Z"
 }

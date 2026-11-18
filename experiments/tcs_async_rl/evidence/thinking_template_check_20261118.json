@@ -1,0 +1,12 @@
+{
+  "observed_at_utc": "2026-11-18T22:23:15.191977+00:00",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "config_sha256": "607505e5b83e54d2126bd45fcfc991e955de713ea982577b59b72a43a5dcbae3",
+  "enable_thinking": true,
+  "judge_reasoning_effort": "medium",
+  "sample_selection": "Previously seeded eligible SODA_2023 example; no held-out content read",
+  "prompt_tokens": 374,
+  "prompt_sha256": "ec73429ca8f8a774a8c12834fa16ff490b0abe4ec9fa381d964165585aba464c",
+  "assistant_suffix": "<|im_start|>assistant\n<think>\n",
+  "scope": "Tokenizer formatting only; no GPU generation or paid API request"
+}

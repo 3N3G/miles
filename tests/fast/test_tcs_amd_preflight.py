@@ -1,6 +1,7 @@
 """CPU checks for allocation safety, secret exclusion, and context accounting."""
 
 import ast
+import json
 import os
 import subprocess
 import tempfile
@@ -103,6 +104,29 @@ class TestAMDPreflight(unittest.TestCase):
             with patch("subprocess.run", return_value=subprocess.CompletedProcess([], 2)):
                 with self.assertRaisesRegex(RuntimeError, "failed"):
                     _run("imports", ["check"], run_dir=Path(temporary), env={})
+
+    def test_stage_start_is_durable_before_subprocess_starts(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            journal = Path(temporary) / "stages.jsonl"
+
+            def inspect_started(argv, **kwargs):
+                records = [json.loads(line) for line in journal.read_text().splitlines()]
+                self.assertEqual([record["event"] for record in records], ["started"])
+                return subprocess.CompletedProcess(argv, 0)
+
+            with patch("subprocess.run", side_effect=inspect_started):
+                _run("imports", ["check"], run_dir=Path(temporary), env={})
+            records = [json.loads(line) for line in journal.read_text().splitlines()]
+            self.assertEqual([record["event"] for record in records], ["started", "succeeded"])
+
+    def test_launch_exception_is_recorded_as_failure(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            with patch("subprocess.run", side_effect=FileNotFoundError):
+                with self.assertRaises(FileNotFoundError):
+                    _run("imports", ["missing"], run_dir=Path(temporary), env={})
+            records = [json.loads(line) for line in (Path(temporary) / "stages.jsonl").read_text().splitlines()]
+            self.assertEqual([record["event"] for record in records], ["started", "failed"])
+            self.assertEqual(records[-1]["error_type"], "FileNotFoundError")
 
 
 if __name__ == "__main__":

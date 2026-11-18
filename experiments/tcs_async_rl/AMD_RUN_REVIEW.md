@@ -72,7 +72,7 @@ The [resource budget](RESOURCE_BUDGET.md) explains the arithmetic and its limits
 | Data | Ten eligible cohorts, 2,519 questions before development reservation |
 | Protected test | FOCS 2026 and STOC 2026, 385 questions, content still untouched |
 | Prompt | Dataset problem through Qwen chat template, no reference or rubric in solver input |
-| Thinking | Unresolved. Enable thinking is the recommendation for review |
+| Thinking | User approved Qwen thinking on and Luna medium. Qwen exposes a Boolean control |
 | Length | User selected 90,000 generated tokens. Planned total context is 98,304 |
 | Topology | Two trainer GPUs, three two-GPU rollout engines, same node |
 | Parallelism | Tensor parallelism two, context and pipeline parallelism one |
@@ -109,10 +109,13 @@ Choose an explicit update count and measured spending limits before launching le
 ### Gates before learning submission
 
 1. Complete the initial environment check, then qualify full-model backward, conversion, async updates, and restart.
-2. Approve thinking mode and the paper-level development split. Freeze the formatted solver input.
+2. Approve the paper-level development split. Freeze the formatted solver input with the approved thinking mode.
 3. Implement and review the rubric adapter. Calibrate judges against approximately ten human-labeled examples.
 4. Establish a permitted credential loader or VM judge service. Confirm authenticated API access without exposing values.
 5. Freeze a complete learning plan with horizon, seeds, baselines, metrics, checkpoint policy, and spending caps.
 
 The GPU submission rule comes from the user's global AGENTS instructions: “Ask me first before: ... submitting a new GPU job.”
 Preparing files and running CPU checks does not authorize the first allocation.
+
+The [runtime readiness audit](RUNTIME_READINESS.md) covers the unmeasured reward signal,
+existing FP32-logit paths, default metrics, and recovery limits. Logging does not establish crash prevention.

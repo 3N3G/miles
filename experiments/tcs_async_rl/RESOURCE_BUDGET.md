@@ -147,7 +147,8 @@ judge output, swapped presentation, or retries. Actual judge tokenization and in
 Four CPU tests check hand-derived KV geometry, optimizer sharding, batch/concurrency separation, and token/time arithmetic.
 Formatting and lint pass. No GPU test, model conversion, or long-context measurement was run.
 The JSON file is a configuration proposal, not a native Miles config loader or a runnable launch command.
-Required paths, the TCS reward adapter, thinking mode, and run/spending limits remain explicit null fields.
+Required paths, the TCS reward adapter, and run/spending limits remain explicit null fields.
+The user approved solver thinking. The canonical config now enables it and keeps Luna at medium effort.
 The next GPU action should be a bounded memory/throughput qualification of the proposed topology, after review.
 The prepared [first qualification job](QUALIFICATION_PLAN.md) covers the environment, output head, and one inference engine.
 It is bounded to 16 GPU-hours. Full-model backward and simultaneous training/generation need a later integration check.

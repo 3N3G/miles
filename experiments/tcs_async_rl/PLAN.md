@@ -21,7 +21,8 @@ The AMD checkout reads the user fork over HTTPS and is synchronized.
 The user requests fully async RL on `ian-and-friends/tcs_v3` using Ian's Miles fork.
 Ian supplied a Qwen3.5-2B CISPO command from a different experiment.
 He suggested Qwen3.5-4B and `gpt-6-luna` at medium effort for this work.
-The user selected a 90,000-token solver output cap. Solver thinking mode remains open.
+The user selected a 90,000-token solver output cap and enabled Qwen thinking.
+The user explicitly kept Luna judging at medium effort. Qwen has no high-effort template control.
 The 90k option comes from Ian's suggestion. It is not an estimate of required response length.
 
 The original command's main settings are `--fully-async`, GRPO advantages, CISPO,
@@ -99,8 +100,8 @@ The fraction, seed, duplicate policy, and exact manifest require review. No spli
 
 ### Solver and reward interface
 
-Proposed solver input: the dataset's problem through the model's chat template.
-No system prompt, extra paper context, filtering, or thinking mode has been selected.
+Proposed solver input: the dataset's problem through the model's chat template, with thinking enabled by user choice.
+No system prompt, extra paper context, or filtering has been selected.
 Keep reference answers and rubrics on the judge side. Preserve cohort, paper, and question identity.
 
 The application must implement the reward adapter. Ian's `adaptive_rl.miles_hooks` is not in this repository.
@@ -220,7 +221,7 @@ Pending results and the user's interpretation.
 ## Next steps (most to least important)
 
 1. Keep the located credentials private. Authenticated tests with those credentials remain pending after the names-only check.
-2. Review the resource-based configuration, resolve thinking mode/limits, and freeze the data manifest and adapter.
+2. Review resource settings and run limits, then freeze the data manifest and adapter. Thinking is approved.
 3. Review the prepared qualification job, then validate the remaining full training path before a learning allocation.
 4. Upload every experiment run through the repository's result workflow and record its exact source revision.
 

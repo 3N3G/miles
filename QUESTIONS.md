@@ -1,12 +1,20 @@
 # Open questions
 
-## 2026-11-18: TCS thinking mode
+## 2026-11-18: Output-head precision
 
-- Question: should Qwen use thinking mode? Ian's reference command disables it.
-- Options: enable thinking, or preserve the reference's disabled mode.
-- Recommendation: enable it for the proposed reasoning pilot, subject to the user's decision.
-- Blocks: the exact solver prompt and the rule for which answer text the judge sees.
-- Status: asked in chat. Both tokenizer template previews are saved locally.
+- Question: enable FP32 logits on both trainer and rollout engine for learning?
+- Options: qualify and select matched FP32 logits, or retain model-dtype logits after measuring numerical mismatch.
+- Recommendation: test existing FP32 paths on AMD and compare fixed-weight probabilities before selecting.
+- Blocks: final precision flags. FP32 is implemented but not selected by the current proposal.
+- Status: evidence and existing GPU checks are documented in `experiments/tcs_async_rl/RUNTIME_READINESS.md`.
+
+## 2026-11-18: Thinking text passed to the grader
+
+- Question: grade only the final answer, or also the generated thinking text?
+- Options: final answer only, or full generated text.
+- Recommendation: final answer only, with explicit handling of unfinished thinking and truncated output.
+- Blocks: the adapter's extraction policy and calibration packet. Neither policy is implemented yet.
+- Status: solver thinking is approved. Preserve the supplied rubric and review the adapter before learning.
 
 ## 2026-11-18: Pilot resource limits
 
@@ -52,6 +60,9 @@
 
 # Answered questions
 
+- 2026-11-18: enable Qwen thinking and keep Luna at medium effort. User's explicit reply.
+  The pinned Qwen template exposes `enable_thinking`, without a high-effort control.
+  The proposed config now sets `apply_chat_template_kwargs={"enable_thinking": true}`.
 - 2026-11-18: hold out FOCS 2026 and STOC 2026. User's explicit instruction.
   SODA 2026 remains eligible. No held-out Parquet shard was downloaded.
 - 2026-11-18: Ian's command is a usage example. Replace settings that do not fit TCS.

@@ -19,6 +19,7 @@ import os
 import shlex
 import shutil
 import subprocess
+import time
 from pathlib import Path
 
 from experiments.tcs_async_rl.resource_estimate import model_inputs
@@ -115,18 +116,52 @@ def _public_environment():
     }
 
 
-def _run(stage, argv, *, run_dir, env):
-    print(f"[{stage}] {shlex.join(map(str, argv))}", flush=True)
-    started = datetime.datetime.now(datetime.UTC).isoformat()
-    with (run_dir / f"{stage}.log").open("w") as log:
-        result = subprocess.run(argv, env=env, stdout=log, stderr=subprocess.STDOUT, check=False)
-    record = {"stage": stage, "started_at": started, "returncode": result.returncode, "argv": list(map(str, argv))}
+def _record_stage(run_dir, record):
     with (run_dir / "stages.jsonl").open("a") as output:
         output.write(json.dumps(record) + "\n")
-    if result.returncode:
-        raise RuntimeError(f"Stage {stage} failed ({result.returncode}); see {stage}.log")
-    if stage == "lm-head-98k" and "OOM" in (run_dir / f"{stage}.log").read_text():
-        raise RuntimeError("The benchmark caught an out-of-memory error; qualification failed")
+        output.flush()
+        os.fsync(output.fileno())
+
+
+def _run(stage, argv, *, run_dir, env):
+    print(f"[{stage}] {shlex.join(map(str, argv))}", flush=True)
+    started = time.monotonic()
+    record = {
+        "stage": stage,
+        "started_at": datetime.datetime.now(datetime.UTC).isoformat(),
+        "argv": list(map(str, argv)),
+    }
+    # Persist before launch: a killed or hung process still leaves its active stage.
+    _record_stage(run_dir, {**record, "event": "started"})
+    result = None
+    try:
+        with (run_dir / f"{stage}.log").open("w") as log:
+            result = subprocess.run(argv, env=env, stdout=log, stderr=subprocess.STDOUT, check=False)
+        if result.returncode:
+            raise RuntimeError(f"Stage {stage} failed ({result.returncode}); see {stage}.log")
+        if stage == "lm-head-98k" and "OOM" in (run_dir / f"{stage}.log").read_text():
+            raise RuntimeError("The benchmark caught an out-of-memory error; qualification failed")
+    except BaseException as error:
+        _record_stage(
+            run_dir,
+            {
+                **record,
+                "event": "failed",
+                "elapsed_seconds": time.monotonic() - started,
+                "returncode": result.returncode if result is not None else None,
+                "error_type": type(error).__name__,
+            },
+        )
+        raise
+    _record_stage(
+        run_dir,
+        {
+            **record,
+            "event": "succeeded",
+            "elapsed_seconds": time.monotonic() - started,
+            "returncode": result.returncode,
+        },
+    )
 
 
 def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
