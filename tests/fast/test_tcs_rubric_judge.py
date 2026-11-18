@@ -51,6 +51,14 @@ class RubricJudgeTests(unittest.TestCase):
             reserve_cost({"messages": [{"content": "a" * 10000}], "max_completion_tokens": 8192}, config), 0.004096
         )
 
+    def test_parallel_budget_objects_share_the_spending_cap(self):
+        with tempfile.TemporaryDirectory() as directory:
+            first = Budget(Path(directory), {"usd_cap": 1})
+            second = Budget(Path(directory), {"usd_cap": 1})
+            first.reserve(0.8, "first")
+            with self.assertRaisesRegex(RuntimeError, "cap"):
+                second.reserve(0.3, "second")
+
     def test_local_loader_does_not_evaluate_shell(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "dummy-assignments"

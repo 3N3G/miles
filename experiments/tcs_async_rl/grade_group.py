@@ -3,6 +3,7 @@
 import argparse
 import asyncio
 import datetime
+import fcntl
 import hashlib
 import json
 import statistics
@@ -41,25 +42,32 @@ class Budget:
             self.total = sum(json.loads(line)["usd_delta"] for line in self.path.read_text().splitlines())
 
     def reserve(self, amount, call_id):
-        if self.total + amount > self.config["usd_cap"]:
-            raise RuntimeError("Judge spending cap reached; no request sent")
-        self._record(amount, "reserved", call_id)
+        self._record(amount, "reserved", call_id, enforce_cap=True)
 
     def settle(self, reserved, actual, call_id):
         self._record(actual - reserved, "settled", call_id)
 
-    def _record(self, delta, event, call_id):
-        self.total += delta
-        _append_json(
-            self.path,
-            {
-                "at": datetime.datetime.now(datetime.UTC).isoformat(),
-                "event": event,
-                "call_id": call_id,
-                "usd_delta": delta,
-                "usd_total": self.total,
-            },
-        )
+    def _record(self, delta, event, call_id, enforce_cap=False):
+        with (self.directory / "budget.lock").open("a") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            self.total = (
+                sum(json.loads(line)["usd_delta"] for line in self.path.read_text().splitlines())
+                if self.path.exists()
+                else 0.0
+            )
+            if enforce_cap and self.total + delta > self.config["usd_cap"]:
+                raise RuntimeError("Judge spending cap reached; no request sent")
+            self.total += delta
+            _append_json(
+                self.path,
+                {
+                    "at": datetime.datetime.now(datetime.UTC).isoformat(),
+                    "event": event,
+                    "call_id": call_id,
+                    "usd_delta": delta,
+                    "usd_total": self.total,
+                },
+            )
 
 
 async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt, key, budget, semaphore, directory):
@@ -165,7 +173,7 @@ async def grade_group(*, run_dir, input_file, config_path, key_file, controls_on
         "uniform_scores": len(set(scores)) == 1 if scores else None,
         "population_score_variance": statistics.pvariance(scores) if scores else None,
         "usd_spent_or_reserved": budget.total,
-        "independent_judge_status": "Gemini metadata access returned HTTP 401; not validated",
+        "independent_judge_status": "not_run_by_this_command",
         "human_calibration": "pending",
         "grades": results,
     }

@@ -13,8 +13,9 @@
 - Question: grade only the final answer, or also the generated thinking text?
 - Options: final answer only, or full generated text.
 - Recommendation: final answer only, with explicit handling of unfinished thinking and truncated output.
-- Blocks: the adapter's extraction policy and calibration packet. Neither policy is implemented yet.
-- Status: solver thinking is approved. Preserve the supplied rubric and review the adapter before learning.
+- Blocks: the production adapter's extraction policy and calibration packet.
+- Status: the approved diagnostic extracts the final answer and leaves unfinished thinking ungraded.
+  The online Miles adapter still needs review before learning.
 
 ## 2026-11-18: Pilot resource limits
 
@@ -24,8 +25,8 @@
 - Concrete first proposal: one MI350 eight-GPU node for two hours maximum, zero judge calls and no learning.
   See `experiments/tcs_async_rl/QUALIFICATION_PLAN.md`. This does not select a learning horizon or spending cap.
 - Blocks: exact jobs, walltimes, sample counts, judge concurrency, and paid calls.
-- Status: asked in chat. No GPU job or paid API call has been submitted.
-  The concrete first request passed `sbatch --test-only`. Submission still awaits approval.
+- Status: the user approved the separate one-prompt inference check. Its one-GPU, four-hour job is submitted.
+  The eight-GPU technical qualification and full learning allocation remain separate proposals.
 
 ## 2026-11-18: Development split
 
@@ -52,14 +53,26 @@
 
 - Question: how should the AMD training workers reach a permitted judge client?
 - Evidence: the provider assignment names exist in the VM credential file. That file is absent on AMD.
-  The current instruction permits checking names only. Neither provider has been validated with those file credentials.
+  The user authorized VM-only loading for the group diagnostic. Luna metadata and six control calls succeeded.
+  Gemini metadata returned HTTP 401. No credential was transferred to AMD.
 - Options: a user-configured environment loader on AMD, or a judge service on the VM that owns provider access.
 - Recommendation: choose the existing permitted loader if one is available. Keep key values out of logs and Ray job JSON.
-- Blocks: authenticated judge validation and learning submission. The prepared GPU qualification needs no credentials.
-- Status: unresolved. No credential values were read or copied.
+- Blocks: online judging during learning. Post-hoc diagnostic grading on the VM works.
+- Status: the production route remains unresolved. The approved local loader does not deploy a VM judge service.
+
+## 2026-11-18: Gemini backup access
+
+- Question: does Gemini use a direct Google API credential or a different provider endpoint?
+- Options: repair direct Google access, or provide the intended endpoint configuration without credential values.
+- Recommendation: validate the intended route before relying on Gemini as an independent judge.
+- Blocks: backup/independent-provider validation, not the approved GPU generation or provisional Luna grading.
+- Status: authorized VM metadata GET returned HTTP 401. No Gemini generation request was sent.
 
 # Answered questions
 
+- 2026-11-18: user approved a quick AMD inference check of one group.
+  Job and immutable input/config/source provenance are recorded in `experiments/tcs_async_rl/jobs.jsonl`.
+  User also authorized loading the VM credential file locally and grading the group without displaying or copying values.
 - 2026-11-18: enable Qwen thinking and keep Luna at medium effort. User's explicit reply.
   The pinned Qwen template exposes `enable_thinking`, without a high-effort control.
   The proposed config now sets `apply_chat_template_kwargs={"enable_thinking": true}`.
@@ -81,6 +94,6 @@
 - 2026-11-18: use each dataset question's existing rubric with GPT-6 Luna, and prepare a Gemini backup.
   The user authorized API-key checks. Checks used process environments only and sent no generation requests.
 - 2026-11-18: judge key assignments are in `~/.config/api-keys.env` on the VM.
-  The user authorized checking existence, not values. Both `OPENAI_API_KEY` and `GEMINI_API_KEY` assignments exist.
-  Values were not parsed, extracted, displayed, or copied. No API request used this file's credentials.
-  The earlier invalid Gemini result applies to AMD's process environment, not this file. Provider validity is unknown.
+  The initial permission covered assignment-name checks only. Both provider names were present.
+  The user later authorized the VM client to load those values locally and grade the group.
+  Luna access works. Gemini metadata returned HTTP 401. No credential value was displayed or transferred to AMD.

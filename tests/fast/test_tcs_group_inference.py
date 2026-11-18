@@ -3,14 +3,27 @@
 import asyncio
 import hashlib
 import json
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from experiments.tcs_async_rl.group_inference import final_answer, generate_group, load_input
+from experiments.tcs_async_rl.watch_group import remote_state
 
 
 class GroupInferenceTests(unittest.TestCase):
+    def test_monitor_distinguishes_queued_from_completed(self):
+        for status in ("PENDING", "COMPLETED"):
+            result = subprocess.CompletedProcess([], 0, stdout=f"{status}|0:0|00:01:00|start|end\n")
+            with patch("subprocess.run", return_value=result):
+                self.assertEqual(remote_state("123")["state"], status)
+
+    def test_monitor_rejects_a_non_numeric_job_id(self):
+        with self.assertRaises(ValueError):
+            remote_state("123;command")
+
     def test_thinking_only_is_not_a_zero_score(self):
         self.assertIsNone(final_answer("Let me reason for longer."))
         self.assertEqual(final_answer("thinking</think>\nA proof.<|im_end|>"), "A proof.")

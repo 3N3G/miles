@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 530287 submitted: one eligible prompt, 32 thinking responses, one MI350 GPU, four-hour cap. No learning. Judge loading is authorized locally on the VM. Jobs: hpcfund/530287 SUBMITTED
-  Next: Monitor the queued inference job. Validate Luna access and prepare provisional rubric grades and controls on the VM.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 530287 is queued. Luna controls passed: reference 7/7, empty/irrelevant 0/7, estimated $0.0148. Twenty-nine CPU checks pass. VM monitor is prepared. Jobs: hpcfund/530287 PENDING
+  Next: Start the committed VM monitor for job 530287, then collect and provisionally grade the generated group when Slurm finishes.
 
 ## Next / blocked
 

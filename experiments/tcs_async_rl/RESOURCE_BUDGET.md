@@ -136,9 +136,11 @@ The user then identified `~/.config/api-keys.env` and requested a check of key e
 That [names-only check](evidence/credential_presence_20261118.json) found `OPENAI_API_KEY` and `GEMINI_API_KEY` on the VM.
 Values were not parsed, extracted, displayed, or copied. No authenticated request used those file credentials.
 The AMD invalid-key result does not establish anything about the file credentials.
-Flame's SSH host key needs verification after repair. **Neither provider is validated for this run yet.**
-No generation request or dataset grading request was sent.
-API budget estimates can follow once that route works and a small grading sample measures actual usage.
+Those initial probes did not validate either provider. A subsequent authorized VM-only credential loader
+validated Luna metadata access and completed six grading control calls. Gemini returned HTTP 401.
+The reference scored 7/7 and the empty/irrelevant controls scored 0/7, in both orders. Human calibration remains pending.
+No credential was transferred to AMD. The online RL judge route is not deployed.
+The one-group diagnostic has a $5 grading cap and stores usage receipts. Its initial controls cost an estimated $0.014775.
 For scale only: at standard Luna input pricing, 184.32M judge input tokens cost $18.432 before reference/rubric text,
 judge output, swapped presentation, or retries. Actual judge tokenization and input length require measurement.
 

@@ -1,7 +1,7 @@
 # Experiment: TCS async RL with Ian's Miles fork
 
-Status: reconnaissance complete. Experiment design is a draft, not an approved run plan.
-No GPU jobs or paid judge calls have been submitted.
+Status: the learning experiment remains a draft. The user approved a separate one-group inference diagnostic.
+Its GPU submission is recorded in the job registry. The Luna control check has completed.
 
 ## TLDR
 
@@ -53,7 +53,7 @@ Groups with identical rewards supply no GRPO learning signal.
   The user fork adds preparation records. Record its exact commit for each submitted job.
 - Candidate solver: `Qwen/Qwen3.5-4B`, revision `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a`.
   Only its config and tokenizer were downloaded. No model weights were downloaded.
-- Candidate judge: `gpt-6-luna`, medium reasoning effort. API access has not been tested.
+- Candidate judge: `gpt-6-luna`, medium reasoning effort. VM API access and provisional rubric controls now work.
   Official docs confirm Chat Completions support. Sampling knobs such as temperature must be omitted with reasoning enabled.
 - The 4B model has 32 layers, hidden size 2,560, 16 attention heads, four KV heads, and a 262,144-token context.
   It has one MTP layer and tied embeddings. The supplied 2B dimensions and checkpoints cannot be reused.
@@ -104,7 +104,8 @@ Proposed solver input: the dataset's problem through the model's chat template, 
 No system prompt, extra paper context, or filtering has been selected.
 Keep reference answers and rubrics on the judge side. Preserve cohort, paper, and question identity.
 
-The application must implement the reward adapter. Ian's `adaptive_rl.miles_hooks` is not in this repository.
+The online Miles reward adapter remains to implement. A separate diagnostic rubric grader is now available.
+Ian's `adaptive_rl.miles_hooks` is not in this repository.
 The existing generic transport supplies HTTP, retries, and concurrency, not a TCS grading policy.
 The reference's `--group-rm` calls its reward hook with a list.
 `miles.rollout.llm_judge.reward` accepts one sample. A direct substitution would violate that contract.
@@ -204,7 +205,10 @@ The AMD process-environment Gemini credential was rejected as `API_KEY_INVALID`.
 The user then identified `~/.config/api-keys.env`. An authorized names-only check found both provider assignments on the VM.
 Values were not parsed, extracted, displayed, or copied. No API request used this file's credentials.
 Flame's login VM is RUNNING and reachable through IAP, but its changed SSH host key still needs verification.
-No generation request was sent. Provider validity remains untested with the newly identified credential file.
+Those initial checks sent no generation request. A later user-authorized VM loader validated Luna metadata access.
+The subsequent six Luna control calls scored the supplied reference 7/7 and empty/irrelevant answers 0/7 in both orders.
+These controls are not expert calibration. Gemini's authorized metadata probe returned HTTP 401.
+The approved Qwen group diagnostic is pending GPU execution. See its plan and job registry for live-state sources.
 The dataset audit, tokenizer previews, and registry checks are reconnaissance evidence only.
 Private local evidence: `/home/ubuntu/.cache/miles/tcs-v3-recon/`.
 The pinned dataset subdirectory contains `audit.json`, shard hashes, and `random_nonheldout_example.json`.

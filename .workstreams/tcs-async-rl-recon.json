@@ -49,6 +49,10 @@
     {
       "url": "https://aistudio.google.com/docs/models",
       "label": "Verified Gemini backup model identity"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/3c1d5429154a3acb2ca8560a24162ab9a25fa341/miles/group-check-v1",
+      "label": "Private Luna control receipts and exact judge inputs"
     }
   ],
   "evidence": [
@@ -155,13 +159,25 @@
     {
       "path": "experiments/tcs_async_rl/group_inference.py",
       "label": "Incremental generation and private data boundary checks"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/group_control_check_20261118.json",
+      "label": "Six successful Luna rubric control calls, provisional scores and usage provenance"
+    },
+    {
+      "path": "experiments/tcs_async_rl/watch_group.py",
+      "label": "Read-only Slurm monitor with VM grading, analysis, and result upload"
+    },
+    {
+      "path": "experiments/tcs_async_rl/analyze_group.py",
+      "label": "Descriptive figures and a seed-selected raw example, without correctness claims"
     }
   ],
   "jobs": [
     {
       "id": "530287",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "PENDING"
     }
   ],
   "sessions": [
@@ -303,15 +319,22 @@
       "actor": "codex",
       "summary": "Submitted approved AMD inference job 530287 and recorded immutable source/config/input provenance",
       "revision": 18
+    },
+    {
+      "id": "1b8bcc36-fb20-44fd-b64b-f93bf9b6cd8b",
+      "at": "2026-11-18T22:51:29.831670Z",
+      "actor": "codex",
+      "summary": "Validated Luna grading controls, uploaded private receipts, and prepared durable job monitoring and analysis",
+      "revision": 19
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
   "state": "running",
-  "summary": "AMD job 530287 submitted: one eligible prompt, 32 thinking responses, one MI350 GPU, four-hour cap. No learning. Judge loading is authorized locally on the VM.",
-  "nextAction": "Monitor the queued inference job. Validate Luna access and prepare provisional rubric grades and controls on the VM.",
+  "summary": "AMD job 530287 is queued. Luna controls passed: reference 7/7, empty/irrelevant 0/7, estimated $0.0148. Twenty-nine CPU checks pass. VM monitor is prepared.",
+  "nextAction": "Start the committed VM monitor for job 530287, then collect and provisionally grade the generated group when Slurm finishes.",
   "owner": "Codex",
-  "revision": 18,
-  "updatedAt": "2026-11-18T22:38:28.941735Z"
+  "revision": 19,
+  "updatedAt": "2026-11-18T22:51:29.831670Z"
 }

@@ -1,0 +1,22 @@
+{
+  "recorded_at_utc": "2026-11-18T22:49:33.288897+00:00",
+  "judge_code_commit": "d4884118",
+  "kind": "provisional_rubric_controls",
+  "question": "SODA_2023 node_25; same seeded diagnostic question",
+  "api_calls": 6,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "mean_scores_out_of_seven": {
+    "control-reference": 7.0,
+    "control-empty": 0.0,
+    "control-irrelevant": 0.0
+  },
+  "both_answer_orders": true,
+  "prompt_tokens": 27706,
+  "completion_tokens": 24008,
+  "estimated_usd": 0.014774599999999994,
+  "human_calibration": "not_done",
+  "independent_judge": "Gemini metadata HTTP 401; no independent grade",
+  "hf_commit": "3c1d5429154a3acb2ca8560a24162ab9a25fa341",
+  "raw_receipts_url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/3c1d5429154a3acb2ca8560a24162ab9a25fa341/miles/group-check-v1"
+}

@@ -1,6 +1,8 @@
 # Reward signal, output precision, and recovery audit
 
-No TCS model rollout, judge call, or learning update has run. Code support is not measured readiness.
+At the original audit, no TCS model rollout, judge call, or learning update had run. Code support is not measured readiness.
+The later approved group diagnostic is now submitted. Luna's basic controls passed, without expert calibration.
+See the job registry and private run artifacts for current execution evidence.
 The training configuration now enables Qwen thinking. The user explicitly kept Luna at medium effort.
 Qwen's pinned template exposes a Boolean thinking switch, without a high-effort setting.
 The 90,000-token generation ceiling remains unchanged.
