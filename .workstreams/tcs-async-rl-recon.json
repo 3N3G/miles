@@ -53,6 +53,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/3c1d5429154a3acb2ca8560a24162ab9a25fa341/miles/group-check-v1",
       "label": "Private Luna control receipts and exact judge inputs"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v1",
+      "label": "Private results for AMD inference job 530287"
     }
   ],
   "evidence": [
@@ -177,7 +181,7 @@
     {
       "id": "530287",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "FAILED"
     }
   ],
   "sessions": [
@@ -333,15 +337,22 @@
       "actor": "codex",
       "summary": "Started and verified durable VM monitoring for the submitted AMD group inference job",
       "revision": 20
+    },
+    {
+      "id": "c761d1a3-268a-4780-ad4b-9f187d126d91",
+      "at": "2026-11-19T02:30:36.743003Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 530287",
+      "revision": 21
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
   "state": "running",
-  "summary": "AMD group job 530287 is queued. Verified VM monitor PID 688120 will collect, grade, plot, and upload results. Luna controls passed 7/0/0. No Qwen results yet.",
-  "nextAction": "Watch monitor PID 688120 and AMD job 530287. Inspect group grades and raw cases after completion. Diagnose any inference failure under standing repair approval.",
+  "summary": "AMD job 530287 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
+  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 20,
-  "updatedAt": "2026-11-18T22:54:14.025047Z"
+  "revision": 21,
+  "updatedAt": "2026-11-19T02:30:36.743003Z"
 }

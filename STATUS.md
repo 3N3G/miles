@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD group job 530287 is queued. Verified VM monitor PID 688120 will collect, grade, plot, and upload results. Luna controls passed 7/0/0. No Qwen results yet. Jobs: hpcfund/530287 PENDING
-  Next: Watch monitor PID 688120 and AMD job 530287. Inspect group grades and raw cases after completion. Diagnose any inference failure under standing repair approval.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 530287 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 
