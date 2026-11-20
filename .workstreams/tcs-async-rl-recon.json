@@ -531,6 +531,11 @@
   ],
   "jobs": [
     {
+      "id": "535170",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "535067",
       "cluster": "hpcfund",
       "status": "COMPLETED"
@@ -1538,15 +1543,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 535067",
       "revision": 122
+    },
+    {
+      "id": "3741e928-84b2-4853-a5a3-62d0a3c7bd43",
+      "at": "2026-11-20T19:41:39.268795Z",
+      "actor": "codex",
+      "summary": "Advanced the approved difficulty progression and submitted medium job 535170",
+      "revision": 123
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 535067 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending.",
-  "nextAction": "Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.",
+  "summary": "Easy had 15 positive and 13 zero graded finals, plus four capped missing finals. Medium job 535170 submitted after passing its controls.",
+  "nextAction": "Monitor and grade medium, inspect the real reward differences, then update the RL plan with both distributions.",
   "owner": "Codex",
-  "revision": 122,
-  "updatedAt": "2026-11-20T19:38:40.724307Z"
+  "revision": 123,
+  "updatedAt": "2026-11-20T19:41:39.268795Z"
 }

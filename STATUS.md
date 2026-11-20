@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 535067 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/535067 COMPLETED; hpcfund/534576 COMPLETED
-  Next: Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy had 15 positive and 13 zero graded finals, plus four capped missing finals. Medium job 535170 submitted after passing its controls. Jobs: hpcfund/535170 SUBMITTED; hpcfund/535067 COMPLETED
+  Next: Monitor and grade medium, inspect the real reward differences, then update the RL plan with both distributions.
 
 ## Next / blocked
 
