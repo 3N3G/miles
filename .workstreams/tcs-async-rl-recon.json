@@ -65,6 +65,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/c97f670029af32c5415ac7340cf216db6078dbb0/miles/online-reward-check-v1",
       "label": "Immutable online reward control artifacts"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v3-mi210",
+      "label": "Private results for AMD inference job 533964"
     }
   ],
   "evidence": [
@@ -243,7 +247,7 @@
     {
       "id": "533964",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "FAILED"
     }
   ],
   "sessions": [
@@ -497,15 +501,22 @@
       "actor": "codex",
       "summary": "Observed active MI210 kernel compilation in the repaired work cache",
       "revision": 34
+    },
+    {
+      "id": "ec21c980-b451-41b3-9914-926503a916df",
+      "at": "2026-11-20T10:16:47.942318Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 533964",
+      "revision": 35
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "MI210 fallback 533964 is RUNNING on k006-004-v4 and compiling AITER in the writable work cache. The image pull was skipped. MI350 533702 remains queued. No Qwen responses or real reward variance yet.",
-  "nextAction": "Inspect compiler/import completion, BF16 kernel validation, model startup, and incremental Qwen outputs. Keep the queued MI350 fallback.",
+  "summary": "AMD job 533964 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
+  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 34,
-  "updatedAt": "2026-11-20T10:15:59.142998Z"
+  "revision": 35,
+  "updatedAt": "2026-11-20T10:16:47.942318Z"
 }

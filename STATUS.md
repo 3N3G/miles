@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI210 fallback 533964 is RUNNING on k006-004-v4 and compiling AITER in the writable work cache. The image pull was skipped. MI350 533702 remains queued. No Qwen responses or real reward variance yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Inspect compiler/import completion, BF16 kernel validation, model startup, and incremental Qwen outputs. Keep the queued MI350 fallback.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 533964 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 
