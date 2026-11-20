@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native repaired group failed: 28/28 finals scored zero, four finals missing and five repetition caps. MI300 group is active. No RL updates. Jobs: hpcfund/534576 RUNNING; hpcfund/534575 COMPLETED
-  Next: Grade the active MI300 group. The alternative-question proposal is ready and awaits the user data-scope decision.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI300 group remains active. Native repaired group has 28 zero grades and four missing finals. Alternative-question proposal needs a data-scope decision. Jobs: hpcfund/534576 RUNNING; hpcfund/534575 COMPLETED
+  Next: Choose whether to check the two proposed eligible questions. Monitoring and grading of the current MI300 group continue.
 
 ## Finished
 
