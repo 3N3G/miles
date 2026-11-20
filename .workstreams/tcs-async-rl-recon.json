@@ -291,6 +291,11 @@
       "id": "534033",
       "cluster": "hpcfund",
       "status": "SUBMITTED"
+    },
+    {
+      "id": "534034",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -607,15 +612,22 @@
       "actor": "codex",
       "summary": "Submitted SGLang-cache repair job 534033",
       "revision": 43
+    },
+    {
+      "id": "493ed2b6-33e5-443f-a1d0-bf623b9eed48",
+      "at": "2026-11-20T10:29:42.112247Z",
+      "actor": "codex",
+      "summary": "Submitted SGLang-cache repair job 534034",
+      "revision": 44
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Submitted v5 mi2101x group 534033 with central SGLang cache and both AITER overrides. All 42 CPU checks pass. No real Qwen grades yet.",
+  "summary": "Submitted v5 mi3501x group 534034 with central SGLang cache and both AITER overrides. All 42 CPU checks pass. No real Qwen grades yet.",
   "nextAction": "Inspect repaired imports and BF16 kernels, then model startup and incremental outputs. Grade the complete group and cancel its unused own fallback.",
   "owner": "Codex",
-  "revision": 43,
-  "updatedAt": "2026-11-20T10:29:36.919086Z"
+  "revision": 44,
+  "updatedAt": "2026-11-20T10:29:42.112247Z"
 }
