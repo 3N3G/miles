@@ -31,3 +31,11 @@ Do not change either active generation job. Full native GPU/runtime compatibilit
 
 Private first-attempt results:
 https://huggingface.co/datasets/3N3G/internalization-runs/tree/b5396bea8f0b28c332cbe1c5a927e7b7a6012686/miles/native-imports-v1
+
+## Repaired result
+
+Job 534140 completed successfully in 66 seconds. Native `train_async.py --help` returned zero.
+This validates the repaired import path against the actual pinned container.
+Miles suppresses Megatron argument help. Missing Megatron flags in this output are not evidence of unsupported arguments.
+The source includes the planned FP32-gradient flag. Exact full argument validation and GPU execution remain untested.
+Private results: https://huggingface.co/datasets/3N3G/internalization-runs/tree/10a47765916dfc157493779b884017272e99f302/miles/native-imports-v2
