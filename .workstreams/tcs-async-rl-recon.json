@@ -185,6 +185,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v12-mi350",
       "label": "Private results for AMD inference job 534575"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v13-mi300-vllm32",
+      "label": "Private results for AMD inference job 534576"
     }
   ],
   "evidence": [
@@ -1430,15 +1434,22 @@
       "actor": "codex",
       "summary": "Recorded terminal MI300 generation and continued final grading",
       "revision": 113
+    },
+    {
+      "id": "65653f47-830f-4776-b5ca-f18453b62a65",
+      "at": "2026-11-20T17:27:04.076577Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 534576",
+      "revision": 114
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "needs-you",
-  "summary": "Both repaired GPU groups finished and failed completion: each has four missing finals. All 28 native grades and the first 23 MI300 grades are zero.",
-  "nextAction": "Finish the last five MI300 grades and archival. The proposed alternative-question check needs the pending user decision.",
+  "state": "running",
+  "summary": "AMD job 534576 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending.",
+  "nextAction": "Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.",
   "owner": "Codex",
-  "revision": 113,
-  "updatedAt": "2026-11-20T17:26:33.818646Z"
+  "revision": 114,
+  "updatedAt": "2026-11-20T17:27:04.076577Z"
 }
