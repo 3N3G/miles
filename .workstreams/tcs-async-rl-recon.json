@@ -421,6 +421,11 @@
       "status": "SUBMITTED"
     },
     {
+      "id": "534425",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "534333",
       "cluster": "hpcfund",
       "status": "COMPLETED"
@@ -1188,6 +1193,13 @@
       "actor": "codex",
       "summary": "Recorded complete native zero-grade evidence and prepared the same-profile queue fallback",
       "revision": 92
+    },
+    {
+      "id": "737941df-9306-4527-9387-061f63fe3507",
+      "at": "2026-11-20T14:29:24.850313Z",
+      "actor": "codex",
+      "summary": "Submitted same-profile compatible-runtime repair 534425",
+      "revision": 93
     }
   ],
   "projectId": "understanding",
@@ -1195,8 +1207,8 @@
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
   "summary": "Native v9: 31 final answers all scored zero, one 90k loop. Native repair queued. Preparing the same bounded profile on compatible MI210.",
-  "nextAction": "Start the bounded MI210 replacement, verify real generation, then stop the owned obsolete unbounded job.",
+  "nextAction": "Verify bounded fallback generation, then stop the owned obsolete unbounded job. Native support validation remains queued.",
   "owner": "Codex",
-  "revision": 92,
-  "updatedAt": "2026-11-20T14:28:48.394757Z"
+  "revision": 93,
+  "updatedAt": "2026-11-20T14:29:24.850313Z"
 }
