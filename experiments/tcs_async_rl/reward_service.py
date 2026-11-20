@@ -11,7 +11,7 @@ from pathlib import Path
 from experiments.tcs_async_rl.grade_group import Budget, grade_one
 from experiments.tcs_async_rl.group_inference import final_answer
 from experiments.tcs_async_rl.judge_client import load_credentials
-from experiments.tcs_async_rl.reward_hook import question_key
+from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, question_key
 
 
 class Scorer:
@@ -29,6 +29,7 @@ class Scorer:
         self.semaphore = asyncio.Semaphore(self.config["max_concurrency"])
         self.in_flight = {}
         manifest = {
+            "protocol_version": REWARD_PROTOCOL_VERSION,
             "code_commit": subprocess.check_output(
                 ["git", "-C", str(Path(__file__).resolve().parents[2]), "rev-parse", "HEAD"], text=True
             ).strip(),
@@ -45,14 +46,22 @@ class Scorer:
             raise ValueError("Expected a question identity and response text")
         if request.get("question_key") != self.question_key:
             raise ValueError("Question differs from the approved smoke input")
+        truncated = request.get("generator_truncated", False)
+        if type(truncated) is not bool:
+            raise ValueError("Generator finish classification must be Boolean")
         candidate = final_answer(request.get("response", ""))
         if not candidate:
-            raise ValueError("No completed final answer; not a zero grade")
+            if not truncated:
+                raise ValueError("No completed final answer or recorded model token limit")
+            # A legitimate model length limit can leave the final answer empty.
+            # Send that empty answer to the same rubric judge. Provider failures still raise.
+            candidate = ""
         identity = "online-" + hashlib.sha256(candidate.encode()).hexdigest()[:24]
         if identity not in self.in_flight:
             self.in_flight[identity] = asyncio.create_task(self._score(identity, candidate))
         try:
-            return await asyncio.shield(self.in_flight[identity])
+            result = await asyncio.shield(self.in_flight[identity])
+            return {**result, "generator_truncated": truncated}
         except Exception:
             self.in_flight.pop(identity, None)
             raise
@@ -77,6 +86,8 @@ class Scorer:
             )
         )
         scores = [grade["candidate"]["score"] for grade in grades]
+        if not candidate and scores != [0, 0]:
+            raise ValueError("Empty-final rubric control failed; do not reward a truncated empty answer")
         result = {
             "reward": statistics.mean(scores),
             "judge_order_gap": abs(scores[0] - scores[1]),
@@ -101,6 +112,7 @@ def make_app(scorer):
         return web.json_response(
             {
                 "ready": True,
+                "protocol_version": REWARD_PROTOCOL_VERSION,
                 "question_key": scorer.question_key,
                 "model": scorer.judge["primary_model"],
                 "reasoning_effort": scorer.judge["reasoning_effort"],

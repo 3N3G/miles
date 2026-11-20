@@ -18,7 +18,7 @@ from types import SimpleNamespace
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
-from experiments.tcs_async_rl.reward_hook import prepare_smoke_row, question_key
+from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, prepare_smoke_row, question_key
 from experiments.tcs_async_rl.rl_artifacts import export_rollouts
 
 
@@ -95,6 +95,8 @@ def wait_for_judge(url, expected_key, *, judge, seconds=600):
                 status = json.load(response)
             if status.get("question_key") != expected_key or status.get("ready") is not True:
                 raise ValueError("Reward service does not match the approved question")
+            if status.get("protocol_version") != REWARD_PROTOCOL_VERSION:
+                raise ValueError("Reward service does not implement the expected generator finish handling")
             if (
                 status.get("model") != judge["primary_model"]
                 or status.get("reasoning_effort") != judge["reasoning_effort"]

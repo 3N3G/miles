@@ -18,7 +18,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
-from experiments.tcs_async_rl.reward_hook import question_key
+from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, question_key
 from experiments.tcs_async_rl.watch_group import ACTIVE, remote_state
 
 
@@ -166,6 +166,7 @@ def main():
     user = next(line.split(maxsplit=1)[1] for line in ssh_settings.splitlines() if line.startswith("user "))
     expected_health = {
         "ready": True,
+        "protocol_version": REWARD_PROTOCOL_VERSION,
         "question_key": question_key(json.loads(args.input_file.read_text())),
         "model": training["judge"]["primary_model"],
         "reasoning_effort": training["judge"]["reasoning_effort"],

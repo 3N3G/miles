@@ -2,13 +2,25 @@ import asyncio
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import AsyncMock, patch
 
-from experiments.tcs_async_rl.reward_hook import prepare_smoke_row, question_key, validate_reward
+from experiments.tcs_async_rl.reward_hook import prepare_smoke_row, question_key, scoring_request, validate_reward
 from experiments.tcs_async_rl.reward_service import Scorer
 
 
 class RewardHookTests(unittest.TestCase):
+    def test_only_a_recorded_model_length_limit_allows_an_empty_final(self):
+        sample = SimpleNamespace(
+            status=SimpleNamespace(value="truncated"),
+            response="Wait. Wait.",
+            metadata={"question_key": "question"},
+        )
+        self.assertTrue(scoring_request(sample)["generator_truncated"])
+        sample.status.value = "aborted"
+        with self.assertRaisesRegex(ValueError, "token limit"):
+            scoring_request(sample)
+
     def test_actor_prompt_contains_no_solution_or_rubric(self):
         row = {
             "problem": "question",
@@ -86,6 +98,33 @@ class RewardServiceTests(unittest.IsolatedAsyncioTestCase):
                 with self.assertRaises(RuntimeError):
                     await scorer.score(request)
             self.assertFalse(scorer.in_flight)
+
+    async def test_model_length_limit_uses_the_real_empty_answer_judgments(self):
+        async def grade(**kwargs):
+            self.assertEqual(kwargs["candidate"], "")
+            return {"candidate": {"score": 0}}
+
+        with tempfile.TemporaryDirectory() as directory:
+            scorer = self.scorer(directory)
+            request = {
+                "question_key": scorer.question_key,
+                "response": "Wait. Wait.",
+                "generator_truncated": True,
+            }
+            with patch("experiments.tcs_async_rl.reward_service.grade_one", side_effect=grade) as mocked:
+                result = await scorer.score(request)
+            self.assertEqual(mocked.call_count, 2)
+            self.assertEqual(result["reward"], 0)
+            self.assertTrue(result["generator_truncated"])
+            scorer.in_flight.clear()
+            with patch("experiments.tcs_async_rl.reward_service.grade_one", return_value={"candidate": {"score": 1}}):
+                with self.assertRaisesRegex(ValueError, "Empty-final rubric control failed"):
+                    await scorer.score(request)
+            with patch(
+                "experiments.tcs_async_rl.reward_service.grade_one", side_effect=RuntimeError("provider failed")
+            ):
+                with self.assertRaisesRegex(RuntimeError, "provider failed"):
+                    await scorer.score(request)
 
 
 if __name__ == "__main__":

@@ -60,7 +60,10 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
 - Reward: the supplied weighted seven-point rubric. Luna medium judges the final answer in both anonymous orders.
   Average the two candidate scores. The VM owns provider credentials and private judge receipts.
   AMD calls a loopback endpoint through an SSH reverse tunnel. Failed/incomplete judgments stop the run.
-  Unfinished model thinking is not silently scored zero. No reward shaping or provider substitution occurs.
+  A recorded model token limit can leave an empty final answer. The same judge grades that empty answer in both orders.
+  Both empty verdicts must be zero. Unexpected incomplete outputs, provider failures and parser failures stop the run.
+  Record model truncation separately. The diagnostic gate still requires 32 nonempty final answers.
+  No old diagnostic response is rescored. See [the finish-handling repair](REWARD_FINISH_HANDLING_REPAIR_20261120.md).
 - Controls: reuse the passing diagnostic controls. Submission requires all 32 diagnostic final answers graded,
   at least two measured reward values, and reference/empty/irrelevant scores 7/0/0.
   Human calibration and an independent-provider audit remain pending. All rewards are provisional.
