@@ -980,15 +980,22 @@
       "actor": "codex",
       "summary": "Recorded resource forecasts and an exact claim check; put active jobs first in generated status",
       "revision": 74
+    },
+    {
+      "id": "76484751-7897-428e-b652-ba42c9b8d026",
+      "at": "2026-11-20T12:37:53.118535Z",
+      "actor": "codex",
+      "summary": "Recorded first replacement grades and clarified conditional diagnostic data scope",
+      "revision": 75
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Exact native run arguments, private PID namespace and both alias regressions passed in job 534191. Replacement 534174 is generating eight concurrent requests at full token caps. Four original candidates scored 0/7. No complete 32-grade gate or RL submission yet.",
-  "nextAction": "Complete the 32-answer group and verify reward variation. Then submit rl_smoke_v3 and debug through two optimizer updates.",
+  "summary": "Replacement 534174 has two completed/graded answers, both 0/7 in both Luna orders. Four preserved original answers also scored zero. Current group continues. Exact native arguments passed. Asked whether other eligible questions are in scope if the full group stays constant.",
+  "nextAction": "Finish the current group. Resolve fallback question scope if rewards stay constant. Submit RL only after genuine reward variation.",
   "owner": "Codex",
-  "revision": 74,
-  "updatedAt": "2026-11-20T12:20:14.874978Z"
+  "revision": 75,
+  "updatedAt": "2026-11-20T12:37:53.118535Z"
 }

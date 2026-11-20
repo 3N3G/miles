@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Exact native run arguments, private PID namespace and both alias regressions passed in job 534191. Replacement 534174 is generating eight concurrent requests at full token caps. Four original candidat Jobs: hpcfund/534174 RUNNING; hpcfund/534034 PENDING
-  Next: Complete the 32-answer group and verify reward variation. Then submit rl_smoke_v3 and debug through two optimizer updates.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Replacement 534174 has two completed/graded answers, both 0/7 in both Luna orders. Four preserved original answers also scored zero. Current group continues. Exact native arguments passed. Asked wheth Jobs: hpcfund/534174 RUNNING; hpcfund/534034 PENDING
+  Next: Finish the current group. Resolve fallback question scope if rewards stay constant. Submit RL only after genuine reward variation.
 
 ## Next / blocked
 

@@ -59,6 +59,19 @@
 - Blocks: an online W&B URL, not the authorized rollout or RL runtime checks.
 - Status: asked in chat on 2026-11-20. No key value was requested.
 
+## 2026-11-20: Diagnostic scope if the fixed question stays constant
+
+- Question: does continued checking include other eligible training questions, including easier ones,
+  if the complete replacement group has constant rewards?
+- Evidence: the four original completions and the first two replacement completions received zero
+  in both Luna orders. These are incomplete diagnostic groups on one question, not a corpus estimate.
+- Options: check other eligible training questions, or keep the current question fixed.
+- Recommendation: allow other eligible questions for runtime feasibility. Preserve Qwen3.5-4B,
+  the prompt format, 90k cap, supplied per-question rubrics and sealed FOCS/STOC 2026 split.
+  Report any resulting question selection explicitly. Do not claim representative corpus success.
+- Blocks: additional-question diagnostic submissions only. The current group and native runtime work continue.
+- Status: asked asynchronously on 2026-11-20. No answer or expanded data authorization is assumed.
+
 # Answered questions
 
 - 2026-11-18: user approved a quick AMD inference check of one group.
