@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy had 15 positive and 13 zero graded finals, plus four capped missing finals. Medium job 535170 submitted after passing its controls. Jobs: hpcfund/535170 PENDING; hpcfund/535067 COMPLETED
-  Next: Monitor and grade medium, inspect the real reward differences, then update the RL plan with both distributions.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy completed: 15 positive grades, 13 zeros, four capped missing finals. Medium job 535170 is pending. No RL update yet. Jobs: hpcfund/535170 PENDING; hpcfund/535067 COMPLETED
+  Next: Monitor and grade medium, compare both distributions, and resolve recorded-cap qualification before any affected RL submission.
 
 ## Next / blocked
 

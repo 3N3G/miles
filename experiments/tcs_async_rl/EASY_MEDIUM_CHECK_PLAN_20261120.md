@@ -69,7 +69,12 @@ Run the existing native sampling-support control before generating the group.
 
 ## Results
 
-Not run at plan creation. Easy judge controls are being checked before GPU submission.
+The easy group completed with 15 positive grades, 13 zeros and four capped missing finals.
+Both orders agreed on zero versus positive for all 28 graded answers.
+The complete setup, mathematical checks and limits are in `EASY_GROUP_FINDINGS_20261120.md`.
+This supported the conditional medium submission. Medium is pending as of 2026-11-20 20:02 UTC.
+The easy group still fails the original requirement for 32 nonempty final answers before RL.
+Cap handling for that qualification rule is an open question in `QUESTIONS.md`.
 
 ## Global takeaways
 

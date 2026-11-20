@@ -201,6 +201,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/easy-check-v14-mi350",
       "label": "Private results for AMD inference job 535067"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ff81a3d2b6e0f3b34a01bcc01cfa2258c90ed34c/miles/easy-check-v14-mi350",
+      "label": "Immutable easy-group outputs, paired judgments, plots and mathematical audit"
     }
   ],
   "evidence": [
@@ -531,6 +535,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/medium_v15_scheduler_budget_20261120.json",
       "label": "Owned pending medium job reservation reduced within the approved ceiling, with sampling unchanged"
+    },
+    {
+      "path": "experiments/tcs_async_rl/EASY_GROUP_FINDINGS_20261120.md",
+      "label": "Complete easy-question results and mathematical spot-checks"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/easy_group_v14_outcome_20261120.json",
+      "label": "Exact easy-group counts and immutable result archive"
     }
   ],
   "jobs": [
@@ -1561,15 +1573,22 @@
       "actor": "codex",
       "summary": "Recorded the owned medium job scheduling-budget adjustment without changing sampling",
       "revision": 124
+    },
+    {
+      "id": "adb0009f-800e-433e-9564-21373d90d7c9",
+      "at": "2026-11-20T20:03:56.673824Z",
+      "actor": "codex",
+      "summary": "Published the easy distribution and recorded the pending cap qualification decision",
+      "revision": 125
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Easy had 15 positive and 13 zero graded finals, plus four capped missing finals. Medium job 535170 submitted after passing its controls.",
-  "nextAction": "Monitor and grade medium, inspect the real reward differences, then update the RL plan with both distributions.",
+  "summary": "Easy completed: 15 positive grades, 13 zeros, four capped missing finals. Medium job 535170 is pending. No RL update yet.",
+  "nextAction": "Monitor and grade medium, compare both distributions, and resolve recorded-cap qualification before any affected RL submission.",
   "owner": "Codex",
-  "revision": 124,
-  "updatedAt": "2026-11-20T19:44:46.952183Z"
+  "revision": 125,
+  "updatedAt": "2026-11-20T20:03:56.673824Z"
 }

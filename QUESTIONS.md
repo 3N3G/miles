@@ -84,6 +84,19 @@
 - Status: the user raised this efficiency concern. Calculations and assumptions are in
   `experiments/tcs_async_rl/evidence/rl_signal_efficiency_20261120.json`.
 
+## 2026-11-20: Recorded output limits in the RL qualification group
+
+- Question: may recorded 90,000-token limits receive actual Luna empty-answer grades for RL qualification,
+  or must all 32 diagnostic generations have nonempty final answers?
+- Evidence: the easy group has 15 positive grades, 13 zeros and four capped missing finals.
+  Original diagnostic grades leave those four ungraded. The existing production adapter already recognizes recorded
+  model limits and asks Luna to grade an empty final answer in both orders. Both verdicts must be zero.
+- Options: accept recorded caps with actual empty-answer judgments, or retain the strict 32-nonempty-finals requirement.
+- Recommendation: accept explicit recorded caps after actual judging. Keep unexpected missing finals and provider failures fatal.
+- Blocks: choosing the RL qualification policy if the selected group has capped missing finals.
+  It does not block the already approved medium diagnostic or its unchanged grading policy.
+- Status: asked in chat on 2026-11-20. No response yet. No scores or qualification rules were changed.
+
 # Answered questions
 
 - 2026-11-18: user approved a quick AMD inference check of one group.

@@ -1,0 +1,71 @@
+{
+  "observed_at_utc": "2026-11-20T19:59:23.523419+00:00",
+  "job_id": "535067",
+  "status": "COMPLETED",
+  "config": "experiments/tcs_async_rl/group_check_v14_easy_mi350.json",
+  "source_commit": "87d975836be0569b6f6f575a86182cb2de549b66",
+  "input_sha256": "a8d04b9664a76d1e41218122b7947c5953f2415c0ff12df7f36a4dc0d37554ea",
+  "difficulty": "easy",
+  "question_identity": {
+    "cohort": "SODA_2025",
+    "row": 25,
+    "paper_id": "Approximating_Traveling_Salesman_Problems_Using_a_Bridge_Lemma",
+    "node_id": "node_08"
+  },
+  "responses": 32,
+  "natural_stops": 28,
+  "nonempty_finals": 28,
+  "model_caps": 4,
+  "missing_final_indices": [
+    3,
+    15,
+    19,
+    26
+  ],
+  "scored_responses": 28,
+  "positive_scored_finals": 15,
+  "zero_scored_finals": 13,
+  "mean_score_histogram": {
+    "0.0": 13,
+    "3.0": 1,
+    "5.0": 7,
+    "6.0": 5,
+    "7.0": 2
+  },
+  "mean_over_graded_finals": 2.9285714285714284,
+  "original_population_variance": 7.923469387755102,
+  "order_disagreement_count": 8,
+  "zero_nonzero_order_agreement_count": 28,
+  "paired_reference_histogram": {
+    "7.0": 62
+  },
+  "candidate_controls": {
+    "control-reference": 7.0,
+    "control-empty": 0.0,
+    "control-irrelevant": 0.0
+  },
+  "generated_tokens": {
+    "min": 53699,
+    "median": 73896.0,
+    "max": 90000,
+    "total": 2361916
+  },
+  "allocation_elapsed": "00:21:17",
+  "generation_sampling": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "max_new_tokens": 90000,
+    "skip_special_tokens": false
+  },
+  "judge_cost_estimate_usd": 0.079412,
+  "readiness": {
+    "advance_to_medium": true,
+    "original_strict_RL_gate_passes": false,
+    "strict_failure_reason": "Four final answers missing. Their rewards remain ungraded in this original diagnostic.",
+    "cap_handling_decision": "Asked the user. Production already supports real empty-answer judgments for recorded model limits."
+  },
+  "scope": "One preselected easy question. No optimizer updates, corpus-wide performance estimate, human calibration or independent-provider validation.",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ff81a3d2b6e0f3b34a01bcc01cfa2258c90ed34c/miles/easy-check-v14-mi350",
+  "mathematical_review": "The root-count shortcut in seed-selected answer 13 is false on a three-vertex weighted path. Positive answer 0 uses a valid parent-edge deletion and marginal expectation construction, but its full text is not certified."
+}
