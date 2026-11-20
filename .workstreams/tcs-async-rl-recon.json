@@ -81,6 +81,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v4-mi350",
       "label": "Private results for AMD inference job 534013"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v5-mi210",
+      "label": "Private results for AMD inference job 534033"
     }
   ],
   "evidence": [
@@ -290,7 +294,7 @@
     {
       "id": "534033",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "FAILED"
     },
     {
       "id": "534034",
@@ -619,15 +623,22 @@
       "actor": "codex",
       "summary": "Submitted SGLang-cache repair job 534034",
       "revision": 44
+    },
+    {
+      "id": "ede4c02b-4299-40ba-90fd-52bdbddffd05",
+      "at": "2026-11-20T10:31:14.418377Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 534033",
+      "revision": 45
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Submitted v5 mi3501x group 534034 with central SGLang cache and both AITER overrides. All 42 CPU checks pass. No real Qwen grades yet.",
-  "nextAction": "Inspect repaired imports and BF16 kernels, then model startup and incremental outputs. Grade the complete group and cancel its unused own fallback.",
+  "summary": "AMD job 534033 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
+  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 44,
-  "updatedAt": "2026-11-20T10:29:42.112247Z"
+  "revision": 45,
+  "updatedAt": "2026-11-20T10:31:14.418377Z"
 }
