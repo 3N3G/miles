@@ -1,0 +1,13 @@
+{
+  "recorded_at_utc": "2026-11-20T07:24:05.315084+00:00",
+  "original_job": "530287",
+  "code_commit": "d420d44b",
+  "error": "AITER default JIT cache fell back to read-only /home1",
+  "original_function_source_sha256": "584ff1c389c2dceefb0b7decb1a8705c847a653617fb797bf122c5977ee542af",
+  "original_function_tested": true,
+  "explicit_cache_selected": true,
+  "cache_write_succeeded": true,
+  "gpu_imports": false,
+  "cpu_suite_passed": 29,
+  "gpu_startup_validation": "pending replacement job"
+}
