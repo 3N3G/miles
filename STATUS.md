@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534098 ended CANCELLED. 4 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eight-request replacement 534174 loaded and is decoding at ~113–121 tokens/s; profiled 1182234 KV token positions. Four original candidates scored 0/7 in both orders and are archived. Original 534098  Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
   Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked

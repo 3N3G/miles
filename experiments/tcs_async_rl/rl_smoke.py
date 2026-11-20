@@ -14,6 +14,7 @@ import time
 import urllib.error
 import urllib.request
 from pathlib import Path
+from types import SimpleNamespace
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.group_inference import load_input
@@ -111,6 +112,7 @@ def main():
     from transformers import AutoTokenizer
 
     from miles.utils.external_utils import command_utils as U
+    from miles.utils.external_utils.command_utils.common import train_env_vars
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
@@ -125,6 +127,14 @@ def main():
     host_pid_namespace = os.environ.get("TCS_HOST_PID_NAMESPACE")
     if not host_pid_namespace or os.readlink("/proc/self/ns/pid") == host_pid_namespace:
         raise RuntimeError("Host preflight must verify a private PID namespace before Ray cleanup")
+    # Conversion precedes Ray submission. Reuse its Megatron communication defaults here too.
+    os.environ.update(
+        train_env_vars(
+            SimpleNamespace(train_backend_fsdp=False, extra_env_vars={}),
+            {},
+            config=U.ExecuteTrainConfig(output_dir=str(cli.run_dir)),
+        )
+    )
     if cli.validate_arguments_only:
         from miles.utils.arguments import parse_args
         from miles.utils.external_utils.model_args_utils import load_model_args

@@ -75,3 +75,14 @@ SGLang registering its own unrelated ASR/OCR configurations during an optional i
 Restrict the assertion to the alias under test. Keep the no-fallback-import assertion.
 The corrected focused test passed on the VM. Repeat both tests and exact argument validation
 from `native_imports_v5.json`. Preserve the failed test output at https://huggingface.co/datasets/3N3G/internalization-runs/tree/4c31ef170a421284e78c967c6ed04806bf4e847a/miles/native-imports-v4
+
+## Communication-environment repair
+
+Job 534173 passed both native-alias regression tests. Full argument validation then required
+`CUDA_DEVICE_MAX_CONNECTIONS=1`; the diagnostic exited after 87 seconds without training.
+The framework owns this Megatron default in `command_utils.common.train_env_vars`.
+Ray training receives it automatically. The converter launches before Ray and needs it too.
+Call that existing helper before conversion and diagnostic validation. Do not duplicate its constants
+or change communication/model parallelism. Repeat exact validation from `native_imports_v6.json`.
+The helper receives the Megatron request fields it reads and the same ExecuteTrainConfig type as training.
+Private attempt results: https://huggingface.co/datasets/3N3G/internalization-runs/tree/4098ab12f2d0269267332f69a3ad595f76277bd6/miles/native-imports-v5

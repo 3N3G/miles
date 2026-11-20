@@ -121,6 +121,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v6-mi210-vllm",
       "label": "Private results for AMD inference job 534098"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/4098ab12f2d0269267332f69a3ad595f76277bd6/miles/native-imports-v5",
+      "label": "Passing alias tests and missing pre-conversion communication environment"
     }
   ],
   "evidence": [
@@ -331,6 +335,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/group_v6_partial_001_20261120.json",
       "label": "First completed Qwen answer: zero in both orders, group gate still open"
+    },
+    {
+      "path": "experiments/tcs_async_rl/VLLM_CAPACITY_REPAIR_20261120.md",
+      "label": "Measured lengths motivated eight-request capacity repair"
     }
   ],
   "jobs": [
@@ -412,12 +420,12 @@
     {
       "id": "534173",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "FAILED"
     },
     {
       "id": "534174",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "RUNNING"
     }
   ],
   "sessions": [
@@ -916,15 +924,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534098",
       "revision": 69
+    },
+    {
+      "id": "57704f4d-6e18-4a93-bff4-ba618d8000a6",
+      "at": "2026-11-20T12:02:36.705125Z",
+      "actor": "codex",
+      "summary": "Validated replacement capacity and repaired the pre-conversion Megatron environment",
+      "revision": 70
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534098 ended CANCELLED. 4 provisional group grades saved. Human calibration remains pending.",
+  "summary": "Eight-request replacement 534174 loaded and is decoding at ~113–121 tokens/s; profiled 1182234 KV token positions. Four original candidates scored 0/7 in both orders and are archived. Original 534098 cancelled. Native alias tests passed; applied framework environment before conversion/validation.",
   "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 69,
-  "updatedAt": "2026-11-20T12:00:47.157582Z"
+  "revision": 70,
+  "updatedAt": "2026-11-20T12:02:36.705125Z"
 }

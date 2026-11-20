@@ -1,0 +1,27 @@
+{
+  "status": "authorized_runtime_diagnostic_20261120",
+  "mode": "training_arguments",
+  "job_name": "tcs-native-args-v6",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.proposed.json",
+  "container_config": "qualification.proposed.json",
+  "allocation": {
+    "partition": "mi2101x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 1,
+    "cpus_per_task": 4,
+    "walltime": "00:10:00"
+  },
+  "scope": {
+    "purpose": "Validate exact native model/run arguments and private process namespace. No launcher or training.",
+    "private_dataset_reads": false,
+    "judge_calls": 0,
+    "optimizer_updates": 0,
+    "full_model_backward_verified": false,
+    "gpu_kernels_verified": false,
+    "maximum_gpu_hours": 0.1666666667
+  },
+  "rl_config": "rl_smoke_v2.json"
+}
