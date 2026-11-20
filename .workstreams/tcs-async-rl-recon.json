@@ -523,6 +523,11 @@
   ],
   "jobs": [
     {
+      "id": "535067",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "534576",
       "cluster": "hpcfund",
       "status": "COMPLETED"
@@ -1497,15 +1502,22 @@
       "actor": "codex",
       "summary": "Recorded the approved difficulty progression and preserved the earlier hard-question runs",
       "revision": 118
+    },
+    {
+      "id": "cb967a80-5846-4c6a-9c81-9c225dd28021",
+      "at": "2026-11-20T19:09:27.158434Z",
+      "actor": "codex",
+      "summary": "Submitted the approved easy-question diagnostic 535067 after passing controls",
+      "revision": 119
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "User approved an easy-question group first, then medium if the easy rewards are useful. Keep the model, judge, 90k cap and held-out split.",
-  "nextAction": "Validate the selected easy input, pin its config, and submit one AMD MI350 job. Review its rewards before the medium check.",
+  "summary": "Easy-question AMD job 535067 submitted. Its judge controls and paired references passed. Medium is conditional on the easy reward distribution.",
+  "nextAction": "Monitor and grade the easy group. Inspect real awarded points before advancing to the medium question.",
   "owner": "Codex",
-  "revision": 118,
-  "updatedAt": "2026-11-20T19:07:37.932954Z"
+  "revision": 119,
+  "updatedAt": "2026-11-20T19:09:27.158434Z"
 }

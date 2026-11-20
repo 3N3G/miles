@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved an easy-question group first, then medium if the easy rewards are useful. Keep the model, judge, 90k cap and held-out split. Jobs: hpcfund/534576 COMPLETED; hpcfund/534575 COMPLETED
-  Next: Validate the selected easy input, pin its config, and submit one AMD MI350 job. Review its rewards before the medium check.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy-question AMD job 535067 submitted. Its judge controls and paired references passed. Medium is conditional on the easy reward distribution. Jobs: hpcfund/535067 SUBMITTED; hpcfund/534576 COMPLETED
+  Next: Monitor and grade the easy group. Inspect real awarded points before advancing to the medium question.
 
 ## Next / blocked
 
