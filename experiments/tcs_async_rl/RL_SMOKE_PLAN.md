@@ -24,6 +24,12 @@ The native backend then rejected support capture with EAGLE. `rl_smoke_v6.json` 
 Actor MTP training and all scientific settings remain unchanged. Its gate points to native group v12.
 Old-profile grades cannot open its gate. No reward definition, question or judge changes.
 
+The user then approved an easy question followed by medium if easy produced a useful distribution.
+That sequence is authoritative in [the easy/medium plan](EASY_MEDIUM_CHECK_PLAN_20261120.md).
+All older RL snapshots remain unchanged and bound to their original failed hard-question gates.
+A fresh RL snapshot must bind the selected new question, exact input hash and actual qualification evidence.
+Do not submit v6 against new-question grades. Selection waits for the medium result.
+
 ## Background / motivation
 
 Generation alone does not validate backward computation, optimizer state, weight publication, or resumable saving.
@@ -45,12 +51,14 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
 
 ## Methodology
 
-- Model and data revisions: the current candidate `rl_smoke_v6.json` inherits `config.sampling_repair_v2.json`.
-  Earlier snapshots remain preserved. Every current diagnostic gate is closed.
-- Data: the same single SODA 2023 polygon-packing question from `GROUP_CHECK_PLAN.md`.
+- Model and data revisions: `rl_smoke_v6.json` inherits `config.sampling_repair_v2.json`.
+  It remains an unsubmitted historical candidate. A new question needs a new versioned snapshot.
+- Data in historical snapshots: the same single SODA 2023 polygon-packing question from `GROUP_CHECK_PLAN.md`.
   For example, it asks for constructive strip packing with approximation bound 51 and related guarantees.
   Its six rubric items have weights 2, 1, 1, 1, 1, 1. Private artifacts contain the complete input and reference.
-  FOCS 2026 and STOC 2026 remain sealed. No new questions are selected for this check.
+  The approved easy/medium sequence now permits selecting one of its two preselected training questions instead.
+  Its full setup and distinct supplied rubrics are in that plan and the private inputs.
+  FOCS 2026 and STOC 2026 remain sealed. No additional question draw is authorized by this update.
 - Generator: Qwen3.5-4B with thinking enabled, 90,000 output-token ceiling and 98,304 total context.
   Temperature one, top-p 0.95, top-k 20. Keep terminal/thinking markers so extraction matches the diagnostic.
 - Runtime: one eight-GPU MI350 node, two trainer GPUs and six rollout GPUs in three engines.
@@ -107,7 +115,12 @@ See [native findings](REPAIRED_GROUP_FINDINGS_20261120.md) and [vLLM findings](V
 The supplied reference also received inconsistent verdicts in several saved calls. Their disputed reasons fail local checks.
 Preserve these verdicts, inspect paired-reference scores alongside candidate rewards, and retain the provisional-grade limitation.
 No diagnostic reward, prompt, model or rubric was changed to open the gate.
-The [alternative-question proposal](QUESTION_SCREEN_PROPOSAL_20261120.md) needs the user's data-scope decision.
+The user approved the [easy/medium sequence](EASY_MEDIUM_CHECK_PLAN_20261120.md).
+The easy group completed with 15 positive grades, 13 zeros and four capped missing finals.
+See [its standalone findings](EASY_GROUP_FINDINGS_20261120.md). Medium is pending.
+The easy group supports the medium diagnostic but fails the original 32-nonempty-finals qualification rule.
+The user was asked whether actual empty-answer judgments for recorded model limits may satisfy that rule.
+No rule or missing-answer reward has been changed. RL remains unsubmitted.
 
 ## Global takeaways
 
