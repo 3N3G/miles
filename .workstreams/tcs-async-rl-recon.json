@@ -511,6 +511,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/judge_reference_audit_20261120.json",
       "label": "Three saved inconsistent reference verdicts and independent local checks"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/rl_signal_efficiency_20261120.json",
+      "label": "Measured token cost, hypothetical 1/32 calculation, and the unmeasured corpus-coverage question"
     }
   ],
   "jobs": [
@@ -1468,15 +1472,22 @@
       "actor": "codex",
       "summary": "Recorded both failed reward gates, completed archives and the required question-scope decision",
       "revision": 115
+    },
+    {
+      "id": "73eb432e-1ffa-4d17-812f-7dc081c6e78b",
+      "at": "2026-11-20T18:05:34.600948Z",
+      "actor": "codex",
+      "summary": "Recorded the user efficiency concern and separated pipeline qualification from corpus feasibility",
+      "revision": 116
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "needs-you",
-  "summary": "Both repaired groups failed: 28/28 nonempty finals scored zero in each, with four missing finals each. No RL job submitted. Question choice pending.",
-  "nextAction": "Approve or reject the proposed two eligible training questions. Preserve the judge limitations and the closed RL gate.",
+  "summary": "Only one unique question has been tested, with zero reward variation. Dataset-wide feasibility is unmeasured. The user raised corpus RL efficiency.",
+  "nextAction": "Decide whether to propose a representative reward-coverage screen before choosing the corpus RL initialization.",
   "owner": "Codex",
-  "revision": 115,
-  "updatedAt": "2026-11-20T17:33:59.993332Z"
+  "revision": 116,
+  "updatedAt": "2026-11-20T18:05:34.600948Z"
 }

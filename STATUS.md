@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Both repaired groups failed: 28/28 nonempty finals scored zero in each, with four missing finals each. No RL job submitted. Question choice pending. Jobs: hpcfund/534576 COMPLETED; hpcfund/534575 COMPLETED
-  Next: Approve or reject the proposed two eligible training questions. Preserve the judge limitations and the closed RL gate.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Only one unique question has been tested, with zero reward variation. Dataset-wide feasibility is unmeasured. The user raised corpus RL efficiency. Jobs: hpcfund/534576 COMPLETED; hpcfund/534575 COMPLETED
+  Next: Decide whether to propose a representative reward-coverage screen before choosing the corpus RL initialization.
 
 ## Finished
 

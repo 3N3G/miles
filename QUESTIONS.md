@@ -90,6 +90,19 @@
 - Status: the read-only receipt audit is in `experiments/tcs_async_rl/evidence/judge_reference_audit_20261120.json`.
   No new judge calls or score corrections were made. Gemini access remains unverified.
 
+## 2026-11-20: Dataset-wide RL feasibility versus software qualification
+
+- Question: should the next proposed check measure representative reward coverage before choosing a corpus RL setup?
+- Evidence: only one unique question has generated answers. Both latest groups have constant zero scores.
+  Their combined generation cost was 3,410,866 tokens. This is a cost total, not independent evidence across questions.
+- Options: retain the two-question software check, propose a representative eligible-question baseline,
+  or propose a different initialization such as a stronger model or supervised warm-start.
+- Recommendation: measure representative per-question reward variation and token cost with calibrated judgments first.
+  A single qualifying question would establish software feasibility, not efficient corpus learning.
+- Blocks: choosing the corpus-scale training setup. No new model, data, reward, token limit or GPU job is approved here.
+- Status: the user raised this efficiency concern. Calculations and assumptions are in
+  `experiments/tcs_async_rl/evidence/rl_signal_efficiency_20261120.json`.
+
 # Answered questions
 
 - 2026-11-18: user approved a quick AMD inference check of one group.

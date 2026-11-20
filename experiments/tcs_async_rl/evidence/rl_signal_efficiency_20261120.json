@@ -1,0 +1,41 @@
+{
+  "recorded_at_utc": "2026-11-20T18:05:34.489849+00:00",
+  "scope": "Decision support requested by the user. No new experiment or GPU job is authorized by this discussion.",
+  "observed": {
+    "unique_questions_generated": 1,
+    "source_outcomes": [
+      "evidence/native_group_v12_outcome_20261120.json",
+      "evidence/mi300_group_v13_outcome_20261120.json"
+    ],
+    "latest_two_groups_generated_tokens": 3410866,
+    "latest_two_groups_capped_paths": 14,
+    "tokens_in_capped_paths": 1260000,
+    "fraction_of_generated_tokens_in_capped_paths": 0.3694076518983742,
+    "per_group_nonempty_finals_scored_zero": [
+      28,
+      28
+    ],
+    "missing_final_answers_are_not_relabelled_zero": true,
+    "dataset_wide_reward_coverage": "UNMEASURED"
+  },
+  "illustration": {
+    "not_an_empirical_success_estimate": true,
+    "assumptions": "Independent rollouts on one question with binary rewards and fixed per-rollout positive probability p.",
+    "p": 0.03125,
+    "group_size": 32,
+    "probability_of_mixed_reward_group": 0.6379447107436834,
+    "formula": "1 - (1-p)^G - p^G"
+  },
+  "implementation": {
+    "reward_centering": "miles/ray/rollout/train_data_conversion.py:329",
+    "constant_group_policy_reward_advantage": 0,
+    "auxiliary_mtp_loss_may_still_produce_updates": true
+  },
+  "primary_source": "https://arxiv.org/html/2503.14476v1#S3.SS2",
+  "decision_options": [
+    "Keep the two-question check as software qualification only.",
+    "Propose a representative eligible-question feasibility screen with calibrated per-question reward distributions and token costs.",
+    "If broader evidence shows little usable variation, compare a stronger starting model or supervised warm-start using training-only references."
+  ],
+  "recommendation": "Measure representative reward coverage before selecting a corpus RL setup. Finding one qualifying question is insufficient evidence of corpus-level learning efficiency."
+}
