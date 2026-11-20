@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native launcher import/help check 534140 passed in 66 seconds after optional encoder repair. Qwen group 534098 is generating but has no completed answers yet. Native MI350 group 534034 remains queued. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Inspect completed raw answers and actual rubric variation. Qualify the native Miles runtime, then submit and debug the authorized two-update RL check. W&B is prepared offline.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First Qwen answer completed at 28,515 tokens and scored 0/7 in both Luna orders. Controls remain 7/0/0. Group 534098 continues with 31 candidates outstanding. Native launcher imports passed; MI350 SGL Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufact
 
 ## Next / blocked
 

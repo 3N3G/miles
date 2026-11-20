@@ -1,0 +1,31 @@
+{
+  "observed_at_utc": "2026-11-20T11:41:14.387839+00:00",
+  "job_id": "534098",
+  "diagnostic_total_candidates": 32,
+  "completed_and_scored": 1,
+  "sample_index": 0,
+  "seed": 20261118,
+  "generated_tokens": 28515,
+  "elapsed_seconds": 1709.5628275861964,
+  "finish_reason": "stop",
+  "candidate_scores_by_order": [
+    0,
+    0
+  ],
+  "mean_candidate_score": 0,
+  "reference_scores_by_order": [
+    7,
+    7
+  ],
+  "control_scores": {
+    "reference": 7,
+    "empty": 0,
+    "irrelevant": 0
+  },
+  "all_six_candidate_rubric_items_failed_in_both_orders": true,
+  "human_calibration": "pending",
+  "independent_provider_audit": "pending",
+  "selection_note": "First completed candidate, not a typical or randomly selected example. No group-level reward-variance conclusion.",
+  "private_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/73af4fb245492611cc03d32d197fe64557415e52/miles/group-check-v6-mi210-vllm",
+  "rl_gate_passed": false
+}
