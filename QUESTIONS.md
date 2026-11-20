@@ -74,8 +74,10 @@
 ## 2026-11-20: Dataset-wide RL feasibility versus software qualification
 
 - Question: should the next proposed check measure representative reward coverage before choosing a corpus RL setup?
-- Evidence: only one unique question has generated answers. Both latest groups have constant zero scores.
-  Their combined generation cost was 3,410,866 tokens. This is a cost total, not independent evidence across questions.
+- Evidence at the original efficiency concern: one unique hard question had generated answers.
+  Its two latest groups had constant zero scores and cost 3,410,866 generated tokens in total.
+  The subsequent preselected easy question has 15 positive grades, 13 zeros and four capped missing finals.
+  Medium remains pending. One question per difficulty cannot estimate coverage or determine corpus sampling weights.
 - Options: retain the two-question software check, propose a representative eligible-question baseline,
   or propose a different initialization such as a stronger model or supervised warm-start.
 - Recommendation: measure representative per-question reward variation and token cost with calibrated judgments first.
@@ -83,6 +85,11 @@
 - Blocks: choosing the corpus-scale training setup. No new model, data, reward, token limit or GPU job is approved here.
 - Status: the user raised this efficiency concern. Calculations and assumptions are in
   `experiments/tcs_async_rl/evidence/rl_signal_efficiency_20261120.json`.
+  On 2026-11-20 the user asked how medium would inform the RL problem distribution.
+  These checks can inform the starting difficulty and the prompt for the bounded runtime check.
+  No easy/medium corpus mixture or adaptive sampling rule has been selected.
+  A proposed broader screen would measure real within-question reward variation, completion, judge reliability and token cost
+  on preselected questions across difficulties and papers before choosing weights. That screen is not yet approved.
 
 ## 2026-11-20: Recorded output limits in the RL qualification group
 
