@@ -61,6 +61,7 @@ class TestAMDPreflight(unittest.TestCase):
         self.assertIn("--no-home", argv)
         self.assertIn(f"PYTHONPATH={ROOT}:/root/Megatron-LM:/sgl-workspace/sglang/python", argv)
         self.assertIn("HF_HOME=/work/tcs/cache/huggingface", argv)
+        self.assertIn("AITER_JIT_DIR=/work/tcs/cache/aiter/sandbox", argv)
 
     def test_long_case_reaches_exact_context_boundary(self):
         qualification, training = load_configs()

@@ -87,6 +87,7 @@ def container_prefix(*, image, repo, work_dir):
         "HF_HOME": str(cache / "huggingface"),
         "XDG_CACHE_HOME": str(cache),
         "TRITON_CACHE_DIR": str(cache / "triton"),
+        "AITER_JIT_DIR": str(cache / "aiter" / image.name),
         "TORCH_EXTENSIONS_DIR": str(cache / "torch_extensions"),
         "TORCHINDUCTOR_CACHE_DIR": str(cache / "torch_inductor"),
         "PYTHONUNBUFFERED": "1",
@@ -320,6 +321,17 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
 
 
 def _run_group_check(*, prefix, work_dir, run_dir, config_path, training, env):
+    _run(
+        "engine-import",
+        prefix
+        + [
+            "python3",
+            "-c",
+            "from sglang.srt.entrypoints.engine import Engine; from aiter.jit.core import get_user_jit_dir; print('AITER_JIT_DIR=' + get_user_jit_dir()); print('Engine import OK')",
+        ],
+        run_dir=run_dir,
+        env=env,
+    )
     model = training["model"]
     model_dir = work_dir / "models" / f"Qwen3.5-4B-{model['revision']}"
     _run(
