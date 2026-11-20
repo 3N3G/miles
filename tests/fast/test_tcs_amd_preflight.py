@@ -1,6 +1,7 @@
 """CPU checks for allocation safety, secret exclusion, and context accounting."""
 
 import ast
+import hashlib
 import json
 import os
 import subprocess
@@ -14,6 +15,7 @@ from experiments.tcs_async_rl.amd_preflight import (
     ROOT,
     _public_environment,
     _run,
+    _run_runtime_comparison,
     container_prefix,
     load_configs,
     render_job,
@@ -23,6 +25,27 @@ from experiments.tcs_async_rl.gpu_qualification import engine_arguments, validat
 
 
 class TestAMDPreflight(unittest.TestCase):
+    def test_failed_primary_does_not_skip_control_or_claim_success(self):
+        with tempfile.TemporaryDirectory() as directory:
+            run = Path(directory)
+            control = run / "control.sif"
+            control.touch()
+            config = {
+                "control_image": {"path": str(control), "sha256": hashlib.sha256(b"").hexdigest()},
+                "allocation": {"partition": "mi2101x"},
+            }
+            with patch(
+                "experiments.tcs_async_rl.amd_preflight._run", side_effect=RuntimeError("GPU failure")
+            ) as runner:
+                with self.assertRaisesRegex(RuntimeError, "No tested runtime"):
+                    _run_runtime_comparison(
+                        sandbox=run / "primary", work_dir=run, run_dir=run, qualification=config, env={}
+                    )
+            self.assertEqual(runner.call_count, 3)
+            cases = json.loads((run / "runtime-comparison.json").read_text())["cases"]
+            self.assertEqual([case["case"] for case in cases], ["primary-host", "primary-container", "control-host"])
+            self.assertFalse(any(case["passed_basic_kernels"] for case in cases))
+
     def test_render_has_real_limits_and_no_submission(self):
         rendered = render_job(
             repo=ROOT, work_dir=Path("/work/tcs"), run_dir=Path("/work/tcs/run"), expected_commit="abc123"

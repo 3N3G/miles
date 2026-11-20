@@ -279,6 +279,10 @@
     {
       "path": "experiments/tcs_async_rl/MI210_BUNDLED_ROCM_20261120.md",
       "label": "Measured Torch-only failure and bounded host-versus-bundled runtime hypothesis"
+    },
+    {
+      "path": "experiments/tcs_async_rl/MI210_RUNTIME_CONTROL_20261120.md",
+      "label": "Three-case basic-kernel software-control plan and ten-minute bound"
     }
   ],
   "jobs": [
@@ -698,15 +702,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534048",
       "revision": 51
+    },
+    {
+      "id": "4d179b50-fea6-4241-be64-45f79366c400",
+      "at": "2026-11-20T10:50:39.021272Z",
+      "actor": "codex",
+      "summary": "Prepared an existing-image control and pre-GPU-initialization diagnostics",
+      "revision": 52
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534048 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "Bundled-runtime probe 534048 could not initialize the GPU. Preparing a bounded three-case software control using the existing AMD vLLM image, with image-hash and pre-initialization library/driver metadata. All 44 CPU checks pass. MI350 534034 remains queued.",
+  "nextAction": "Run the software-control diagnostic without model/data/API work, then select the smallest evidenced runtime repair. Preserve all failed runtime results and keep the MI350 fallback.",
   "owner": "Codex",
-  "revision": 51,
-  "updatedAt": "2026-11-20T10:40:38.011967Z"
+  "revision": 52,
+  "updatedAt": "2026-11-20T10:50:39.021272Z"
 }

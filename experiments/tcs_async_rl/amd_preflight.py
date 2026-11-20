@@ -292,6 +292,11 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
         cache_namespace=cache_namespace,
         rocm_library_mode=library_mode,
     )
+    if qualification.get("mode") == "runtime_comparison":
+        _run_runtime_comparison(
+            sandbox=sandbox, work_dir=work_dir, run_dir=run_dir, qualification=qualification, env=env
+        )
+        return
     if qualification.get("mode") == "compatibility":
         for phase in ("torch-only", "after-engine-import"):
             _run(
@@ -401,6 +406,56 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
         run_dir=run_dir,
         env=env,
     )
+
+
+def _run_runtime_comparison(*, sandbox, work_dir, run_dir, qualification, env):
+    control_config = qualification["control_image"]
+    control = Path(control_config["path"])
+    with control.open("rb") as stream:
+        digest = hashlib.file_digest(stream, "sha256").hexdigest()
+    if digest != control_config["sha256"]:
+        raise ValueError("Existing control image changed; do not use an unverified runtime")
+    results = []
+    cases = (
+        ("primary-host", sandbox, "host"),
+        ("primary-container", sandbox, "container"),
+        ("control-host", control, "host"),
+    )
+    for label, image, mode in cases:
+        directory = run_dir / label
+        directory.mkdir(exist_ok=True)
+        prefix = container_prefix(
+            image=image,
+            repo=ROOT,
+            work_dir=work_dir,
+            cache_namespace=qualification["allocation"]["partition"] + "-" + mode,
+            rocm_library_mode=mode,
+        )
+        try:
+            _run(
+                label,
+                prefix
+                + [
+                    "python3",
+                    "-m",
+                    "experiments.tcs_async_rl.compatibility_probe",
+                    "--phase",
+                    "torch-only",
+                    "--run-dir",
+                    str(directory),
+                ],
+                run_dir=run_dir,
+                env=env,
+            )
+            passed = True
+        except RuntimeError:
+            passed = False
+        results.append({"case": label, "image": str(image), "library_mode": mode, "passed_basic_kernels": passed})
+        (run_dir / "runtime-comparison.json").write_text(
+            json.dumps({"control_image_sha256": digest, "cases": results}, indent=2) + "\n"
+        )
+    if not any(case["passed_basic_kernels"] for case in results):
+        raise RuntimeError("No tested runtime passed basic GPU kernels; inspect each preserved result")
 
 
 def _run_group_check(*, prefix, work_dir, run_dir, config_path, training, env):
