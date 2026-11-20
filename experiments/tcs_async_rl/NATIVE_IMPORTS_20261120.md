@@ -66,3 +66,12 @@ It passed on the VM with Transformers 5.19.0. Broader fixture loading needs Torc
 The next job runs both native-preservation and explicit-override tests in the real image,
 then repeats the exact argument/PID check from `native_imports_v4.json`. No training is launched.
 Private failed-attempt results: https://huggingface.co/datasets/3N3G/internalization-runs/tree/1c7477f54075c579f43b57c13f824194d09c1838/miles/native-imports-v3
+
+## Regression-scope correction
+
+Job 534165 stopped in the focused test after 27 seconds.
+The explicit native override test passed. The new preservation test incorrectly rejected
+SGLang registering its own unrelated ASR/OCR configurations during an optional import.
+Restrict the assertion to the alias under test. Keep the no-fallback-import assertion.
+The corrected focused test passed on the VM. Repeat both tests and exact argument validation
+from `native_imports_v5.json`. Preserve the failed test output at https://huggingface.co/datasets/3N3G/internalization-runs/tree/4c31ef170a421284e78c967c6ed04806bf4e847a/miles/native-imports-v4

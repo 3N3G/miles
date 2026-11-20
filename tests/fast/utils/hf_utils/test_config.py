@@ -81,7 +81,8 @@ class TestLoadHfConfig:
         ):
             assert hf_config_module.load_hf_config(str(tmp_path)) is expected
             assert hf_config_module.load_hf_config(str(tmp_path)) is expected
-        register.assert_not_called()
+        # SGLang's optional config import may register its own unrelated model types.
+        assert all(call.args[0] != alias.model_type for call in register.call_args_list)
         importer.import_module.assert_not_called()
 
     def test_native_support_overridden_when_flag_set(self, tmp_path):

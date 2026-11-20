@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Three completed Qwen answers have provisional 0/7 rewards in both orders; group continues. Submitted 534165 to verify the native alias repair, exact run arguments and process isolation. SGLang MI350 5 Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Four initial Qwen answers completed at 28,515–39,958 tokens. Three graded so far, all 0/7 in both orders. Corrected an overbroad regression assertion after diagnostic 534165. Exact native argument val Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
   Next: Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufact
 
 ## Next / blocked
