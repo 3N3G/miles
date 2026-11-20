@@ -80,17 +80,18 @@ def render_job(*, repo, work_dir, run_dir, expected_commit, config_path=CONFIG):
     )
 
 
-def container_prefix(*, image, repo, work_dir, isolate_processes=False, runtime_dir=None):
+def container_prefix(*, image, repo, work_dir, isolate_processes=False, runtime_dir=None, cache_namespace=None):
     cache = work_dir / "cache"
+    gpu_cache = Path(image.name) / cache_namespace if cache_namespace else Path(image.name)
     environment = {
         "PYTHONPATH": f"{repo}:/root/Megatron-LM:/sgl-workspace/sglang/python",
         "MILES_HARDWARE_PLATFORM": "rocm",
         "HF_HOME": str(cache / "huggingface"),
         "XDG_CACHE_HOME": str(cache),
-        "TRITON_CACHE_DIR": str(cache / "triton"),
-        "AITER_JIT_DIR": str(cache / "aiter" / image.name),
-        "TORCH_EXTENSIONS_DIR": str(cache / "torch_extensions"),
-        "TORCHINDUCTOR_CACHE_DIR": str(cache / "torch_inductor"),
+        "TRITON_CACHE_DIR": str(cache / "triton" / gpu_cache),
+        "AITER_JIT_DIR": str(cache / "aiter" / gpu_cache),
+        "TORCH_EXTENSIONS_DIR": str(cache / "torch_extensions" / gpu_cache),
+        "TORCHINDUCTOR_CACHE_DIR": str(cache / "torch_inductor" / gpu_cache),
         "PYTHONUNBUFFERED": "1",
         "TOKENIZERS_PARALLELISM": "false",
     }
@@ -276,6 +277,7 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
         work_dir=work_dir,
         isolate_processes=qualification.get("mode") == "rl_smoke",
         runtime_dir=runtime_dir,
+        cache_namespace=qualification["allocation"]["partition"],
     )
     if qualification.get("mode") == "group_inference":
         _run_group_check(
@@ -377,7 +379,7 @@ def _run_group_check(*, prefix, work_dir, run_dir, config_path, training, env):
         + [
             "python3",
             "-c",
-            "from sglang.srt.entrypoints.engine import Engine; from aiter.jit.core import get_user_jit_dir; print('AITER_JIT_DIR=' + get_user_jit_dir()); print('Engine import OK')",
+            "from sglang.srt.entrypoints.engine import Engine; from aiter.jit.core import get_user_jit_dir; import torch; x=torch.ones((16,16), device='cuda', dtype=torch.bfloat16); y=x@x; torch.cuda.synchronize(); assert bool((y==16).all()); print('AITER_JIT_DIR=' + get_user_jit_dir()); print('Engine import and BF16 matmul OK')",
         ],
         run_dir=run_dir,
         env=env,

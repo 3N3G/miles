@@ -219,6 +219,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/rl_launch_audit_20261120.json",
       "label": "Slurm metadata, Unix socket length, and clean-container launch audit"
+    },
+    {
+      "path": "experiments/tcs_async_rl/RESOURCE_FALLBACK_20261120.md",
+      "label": "Same-question MI210 fallback plan and bounded memory estimate"
+    },
+    {
+      "path": "experiments/tcs_async_rl/group_check_v3_mi210.json",
+      "label": "Unchanged 32 candidates and 90k cap with four concurrent requests"
     }
   ],
   "jobs": [
@@ -463,15 +471,22 @@
       "actor": "codex",
       "summary": "Archived completed VM reward controls privately and rechecked Flame trust failure",
       "revision": 31
+    },
+    {
+      "id": "01af407c-2cdf-4255-ab8a-868c31f986c9",
+      "at": "2026-11-20T10:13:04.272170Z",
+      "actor": "codex",
+      "summary": "Prepared an available MI210 inference fallback with unchanged scientific settings",
+      "revision": 32
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD group 533702 remains queued. The RL launch audit fixed dropped Slurm metadata under --cleanenv and a Ray Unix-socket path that exceeded 107 bytes. Run-owned storage now has a short container alias. All 41 CPU checks pass; GPU generation and RL remain unverified.",
-  "nextAction": "Continue monitoring queued 533702. Inspect and grade its actual responses before RL submission. Pin the latest audited RL source and start its own-allocation tunnel watcher.",
+  "summary": "MI350 group 533702 is still queued. Found 11 idle MI210 GPUs and prepared the identical 32-candidate diagnostic at concurrency four. Estimated weights/cache/state plus 20 GiB reserve: 42.37 GiB. Forty-two CPU checks pass. Preparing a bounded fallback without cancelling MI350.",
+  "nextAction": "Submit the pinned MI210 resource fallback, record it immediately, and inspect actual imports, BF16 kernels, model initialization and generation. Keep the MI350 request until compatibility or a usable group is confirmed.",
   "owner": "Codex",
-  "revision": 31,
-  "updatedAt": "2026-11-20T09:31:22.226334Z"
+  "revision": 32,
+  "updatedAt": "2026-11-20T10:13:04.272170Z"
 }

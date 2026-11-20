@@ -76,6 +76,15 @@ class TestAMDPreflight(unittest.TestCase):
         self.assertIn("CUDA_VISIBLE_DEVICES=0,1", argv)
         self.assertFalse(any("API_KEY" in value for value in argv))
 
+    def test_gpu_compilation_caches_are_separate_across_partitions(self):
+        common = dict(image=Path("/work/sandbox"), repo=ROOT, work_dir=Path("/work/tcs"))
+        older = container_prefix(**common, cache_namespace="mi2101x")
+        newer = container_prefix(**common, cache_namespace="mi3508x")
+        for name in ("AITER_JIT_DIR", "TRITON_CACHE_DIR", "TORCH_EXTENSIONS_DIR", "TORCHINDUCTOR_CACHE_DIR"):
+            first = next(value for value in older if value.startswith(name + "="))
+            second = next(value for value in newer if value.startswith(name + "="))
+            self.assertNotEqual(first, second)
+
     def test_long_case_reaches_exact_context_boundary(self):
         qualification, training = load_configs()
         self.assertLess(

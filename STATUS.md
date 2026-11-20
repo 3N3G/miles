@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD group 533702 remains queued. The RL launch audit fixed dropped Slurm metadata under --cleanenv and a Ray Unix-socket path that exceeded 107 bytes. Run-owned storage now has a short container alias Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Continue monitoring queued 533702. Inspect and grade its actual responses before RL submission. Pin the latest audited RL source and start its own-allocation tunnel watcher.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI350 group 533702 is still queued. Found 11 idle MI210 GPUs and prepared the identical 32-candidate diagnostic at concurrency four. Estimated weights/cache/state plus 20 GiB reserve: 42.37 GiB. Forty Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Submit the pinned MI210 resource fallback, record it immediately, and inspect actual imports, BF16 kernels, model initialization and generation. Keep the MI350 request until compat
 
 ## Next / blocked
 
