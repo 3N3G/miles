@@ -1,0 +1,25 @@
+{
+  "job_id": "534333",
+  "completed_requests": 32,
+  "natural_nonempty_final_answers": 31,
+  "length_limited_without_final": 1,
+  "scored_final_answers": 31,
+  "all_scored_answers_zero_both_orders": true,
+  "controls": {
+    "control-reference": 7.0,
+    "control-empty": 0.0,
+    "control-irrelevant": 0.0
+  },
+  "completion_tokens": {
+    "minimum": 24388,
+    "median": 36754.0,
+    "maximum": 90000,
+    "total": 1216469
+  },
+  "elapsed_seconds": 1730,
+  "judge_usd": 0.17417539999999998,
+  "raw_example_sample_index": 13,
+  "rl_gate_passed": false,
+  "limits": "One fixed hard training question, provisional Luna medium rubric grades. No held-out reads or optimizer updates.",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/594628a23409b88d262a3b4393db9348452abbd6/miles/group-check-v9-mi350"
+}

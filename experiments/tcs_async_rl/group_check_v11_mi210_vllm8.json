@@ -1,0 +1,49 @@
+{
+  "status": "authorized_same_profile_sampling_repair_fallback_20261120",
+  "mode": "group_inference_vllm",
+  "job_name": "tcs-group-v11-vllm8",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.sampling_repair_v1.json",
+  "container_config": "qualification.proposed.json",
+  "allocation": {
+    "partition": "mi2101x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 1,
+    "cpus_per_task": 16,
+    "walltime": "04:00:00"
+  },
+  "input_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/group-check-v1-input.json",
+  "input_sha256": "ae2f8bd7f8cf699a6ce3cac9c460e15fa4de9e5f3c5a737bdea8610fd7113fe0",
+  "selection": {
+    "seed": 20261118,
+    "cohort": "SODA_2023",
+    "row": 81,
+    "paper_id": "Online_Sorting_and_Translational_Packing_of_Convex_Polygons",
+    "node_id": "node_25"
+  },
+  "inference": {
+    "seed": 20261118,
+    "tensor_parallel_size": 1,
+    "max_running_requests": 8,
+    "backend": "vllm",
+    "speculative_decoding": false,
+    "enforce_eager": true,
+    "validate_first_sample": 25
+  },
+  "scope": {
+    "prompt_count": 1,
+    "optimizer_updates": 0,
+    "heldout_reads": 0,
+    "judge_location": "VM after generation; credentials never transferred",
+    "maximum_gpu_hours": 4
+  },
+  "repair_of": "group_check_v9_mi350.json",
+  "repair": "Check the same bounded sampling repair and fixed question in the measured compatible MI210 runtime while native MI350 repair waits. Validate original failed seed 25 first. Does not qualify SGLang sampling metadata or training.",
+  "control_image": {
+    "path": "/work1/aviralkumar/geney/containers/vllm-rocm-v0.29.0.sif",
+    "sha256": "546dafa14c2afdb0a87a89bc892faa1a8238c3f9e25bd860e6715aa1fad2cbcd",
+    "source": "guessing-equational-theories/scripts/serve_acquisition.py IMAGE_SHA256"
+  }
+}

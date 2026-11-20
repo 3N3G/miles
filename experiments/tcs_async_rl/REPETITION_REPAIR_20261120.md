@@ -61,3 +61,15 @@ If training fails, record and validate a runtime repair within the same scientif
 
 CPU controls reject a missing sampled token, non-normalized support, a failed first sample, and a mismatched gate profile.
 Native sampling metadata, completion of the failed seed, full-group reliability and nonconstant rewards remain unverified.
+
+## Compatible-runtime fallback during the native queue wait
+
+At 14:27 UTC, AMD forecast job 534420 at 11:02:30 CST, about 2.5 hours later.
+The forecast is not a reservation. Use the already measured compatible MI210 image in parallel.
+Fresh `group_check_v11_mi210_vllm8.json` uses the same bounded profile, fixed question and all 32 original seeds.
+It retains target-model vLLM decoding and eight-request admission from the measured working capacity repair.
+Validate sample 25 before the remaining 31. Save the actual sampling signature for its own gate.
+This fallback does not validate SGLang support metadata. Keep the native diagnostic queued.
+Once the bounded fallback passes model startup and starts real generation, stop the owned unbounded v7 job.
+Preserve and grade its partial answers. Old-profile answers cannot open the repaired profile's gate.
+One MI210, four-hour maximum. Do not claim success from submission or a startup log.

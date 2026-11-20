@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534333 ended COMPLETED. 31 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/534174 RUNNING; hpcfund/534420 SUBMITTED
-  Next: Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native v9: 31 final answers all scored zero, one 90k loop. Native repair queued. Preparing the same bounded profile on compatible MI210. Jobs: hpcfund/534174 RUNNING; hpcfund/534420 SUBMITTED
+  Next: Start the bounded MI210 replacement, verify real generation, then stop the owned obsolete unbounded job.
 
 ## Next / blocked
 

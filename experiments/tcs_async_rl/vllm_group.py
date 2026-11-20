@@ -17,7 +17,7 @@ import time
 from pathlib import Path
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
-from experiments.tcs_async_rl.group_inference import generate_group, load_input, progress_monitor
+from experiments.tcs_async_rl.group_inference import generate_group, load_input, progress_monitor, sampling_parameters
 
 
 def completion_payload(token_ids, sampling, model):
@@ -87,6 +87,7 @@ async def run(*, config_path, model_dir, run_dir):
     from transformers import AutoTokenizer
 
     config, training = load_configs(config_path)
+    os.environ["VLLM_NO_USAGE_STATS"] = "1"
     if config["inference"]["speculative_decoding"] is not False or config["inference"]["enforce_eager"] is not True:
         raise ValueError("This qualified serving repair requires eager, target-model decoding")
     if not os.environ.get("SLURM_JOB_ID") or not torch.version.hip or torch.cuda.device_count() != 1:
@@ -155,6 +156,7 @@ async def run(*, config_path, model_dir, run_dir):
     }
     (run_dir / "environment.json").write_text(json.dumps(environment, indent=2) + "\n")
     (run_dir / "server-command.json").write_text(json.dumps(argv, indent=2) + "\n")
+    (run_dir / "sampling-parameters.json").write_text(json.dumps(sampling_parameters(training), indent=2) + "\n")
     (run_dir / "input.json").write_text(json.dumps(row, ensure_ascii=False, indent=2) + "\n")
     (run_dir / "formatted-prompt.txt").write_text(formatted)
     print(json.dumps(environment), flush=True)
@@ -173,6 +175,7 @@ async def run(*, config_path, model_dir, run_dir):
                     training=training,
                     seed=config["inference"]["seed"],
                     run_dir=run_dir,
+                    validate_first_sample=config["inference"].get("validate_first_sample"),
                 )
                 summary = {
                     "completed": len(responses),
