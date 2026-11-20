@@ -278,7 +278,8 @@ def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
 
 def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, training, env):
     runtime_dir = None
-    if qualification.get("mode") == "rl_smoke":
+    isolate_processes = qualification.get("mode") in ("rl_smoke", "training_arguments")
+    if isolate_processes:
         runtime_dir = run_dir / "ray"
         runtime_dir.mkdir(exist_ok=True)
     library_mode = qualification.get("rocm_library_mode", "host")
@@ -287,7 +288,7 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
         image=sandbox,
         repo=ROOT,
         work_dir=work_dir,
-        isolate_processes=qualification.get("mode") == "rl_smoke",
+        isolate_processes=isolate_processes,
         runtime_dir=runtime_dir,
         cache_namespace=cache_namespace,
         rocm_library_mode=library_mode,
@@ -359,6 +360,26 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
     if qualification.get("mode") == "training_imports":
         # Parse help only. This starts no Ray cluster and performs no training.
         _run("training-help", prefix + ["python3", "train_async.py", "--help"], run_dir=run_dir, env=env)
+        return
+    if qualification.get("mode") == "training_arguments":
+        _run(
+            "training-arguments",
+            prefix
+            + [
+                "python3",
+                "-m",
+                "experiments.tcs_async_rl.rl_smoke",
+                "--config",
+                str(config_path.parent / qualification["rl_config"]),
+                "--work-dir",
+                str(work_dir),
+                "--run-dir",
+                str(run_dir),
+                "--validate-arguments-only",
+            ],
+            run_dir=run_dir,
+            env=env,
+        )
         return
     if qualification.get("mode") == "group_inference":
         _run_group_check(

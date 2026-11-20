@@ -9,6 +9,7 @@ import hashlib
 import json
 import os
 import shlex
+import sys
 import time
 import urllib.error
 import urllib.request
@@ -115,18 +116,32 @@ def main():
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--work-dir", type=Path, required=True)
     parser.add_argument("--run-dir", type=Path, required=True)
+    parser.add_argument("--validate-arguments-only", action="store_true")
     cli = parser.parse_args()
     config, training = load_configs(cli.config)
-    if (
-        not os.environ.get("SLURM_JOB_ID")
-        or not torch.version.hip
-        or torch.cuda.device_count() != config["allocation"]["gpus"]
-    ):
-        raise RuntimeError("Requires the approved ROCm Slurm allocation")
+    if not os.environ.get("SLURM_JOB_ID") or not torch.version.hip:
+        raise RuntimeError("Requires a ROCm Slurm allocation")
     # Broad upstream launcher cleanup is safe only inside our private PID namespace.
     host_pid_namespace = os.environ.get("TCS_HOST_PID_NAMESPACE")
     if not host_pid_namespace or os.readlink("/proc/self/ns/pid") == host_pid_namespace:
         raise RuntimeError("Host preflight must verify a private PID namespace before Ray cleanup")
+    if cli.validate_arguments_only:
+        from miles.utils.arguments import parse_args
+        from miles.utils.external_utils.model_args_utils import load_model_args
+
+        args, _ = resolved_args(
+            config, training, work_dir=cli.work_dir, run_dir=cli.run_dir, run_id="tcs-argument-check"
+        )
+        sys.argv = [sys.argv[0], *shlex.split(load_model_args("qwen3.5-4B")), *native_argv(args)]
+        parsed = parse_args()
+        (cli.run_dir / "validated-native-arguments.json").write_text(
+            json.dumps({"requested": args, "validated": vars(parsed), "optimizer_updates": 0}, indent=2, default=str)
+            + "\n"
+        )
+        print("Native argument validation and private PID namespace passed. No launcher started.", flush=True)
+        return
+    if torch.cuda.device_count() != config["allocation"]["gpus"]:
+        raise RuntimeError("Requires the approved GPU count before RL execution")
     input_config, _ = load_configs(cli.config.parent / config["input_config"])
     row = load_input(input_config, training)
     gate_file = Path(config["gate_file"])

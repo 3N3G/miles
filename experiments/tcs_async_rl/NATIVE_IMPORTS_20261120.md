@@ -39,3 +39,16 @@ This validates the repaired import path against the actual pinned container.
 Miles suppresses Megatron argument help. Missing Megatron flags in this output are not evidence of unsupported arguments.
 The source includes the planned FP32-gradient flag. Exact full argument validation and GPU execution remain untested.
 Private results: https://huggingface.co/datasets/3N3G/internalization-runs/tree/10a47765916dfc157493779b884017272e99f302/miles/native-imports-v2
+
+## Exact argument and process-isolation check
+
+The help check does not execute native argument validation or test the required private process namespace.
+Run `native_imports_v3.json` on one MI210 for at most ten minutes.
+Use the same container and actual model arguments from the framework model script.
+Resolve the authorized bounded run snapshot `rl_smoke_v2.json`, then call the native parser.
+The v2 RL snapshot changes only diagnostic gate/input paths and its job name. It changes no scientific setting.
+This diagnostic explicitly returns before any conversion, Ray launcher, reward call, or optimizer update.
+It verifies a different PID namespace from the host before parsing. It reads public model configuration only.
+If native validation requires the not-yet-converted checkpoint or a GPU kernel, record that boundary as unqualified.
+Do not fabricate a checkpoint or bypass a native validation requirement to claim success.
+The regular RL path retains its full group gate, private namespace guard and eight-GPU count check.
