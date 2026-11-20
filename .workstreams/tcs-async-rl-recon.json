@@ -347,6 +347,11 @@
       "id": "534065",
       "cluster": "hpcfund",
       "status": "COMPLETED"
+    },
+    {
+      "id": "534098",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -747,15 +752,22 @@
       "actor": "codex",
       "summary": "Selected the measured compatible runtime for the unchanged frozen-model group",
       "revision": 55
+    },
+    {
+      "id": "c4c007bd-f562-4e13-96f3-f0c52db14952",
+      "at": "2026-11-20T11:04:15.419361Z",
+      "actor": "codex",
+      "summary": "Submitted compatible-image frozen-policy group 534098",
+      "revision": 56
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "MI210 runtime control 534065 passed FP32/BF16 kernels in the verified existing ROCm 7.2.3 image, while the primary image failed both wrapper modes. Prepared an eager vLLM frozen-policy group check with all 32 candidates, prompt tokens, seeds, 90k cap and rubric fixed. All 46 CPU checks pass.",
-  "nextAction": "Submit the compatible-image group check, inspect actual Qwen startup and outputs, and grade on the VM. Retain MI350 SGLang 534034 for separate Miles runtime qualification before debugging the approved RL run.",
+  "summary": "Submitted compatible-image frozen-policy group 534098: 32 candidates, four concurrent, unchanged thinking prompt, seeds, 90k cap and rubric. Native SGLang 534034 remains queued. No Qwen grades yet.",
+  "nextAction": "Inspect actual Qwen model load and per-response outputs, then grade the group with the existing private VM client. Submit/debug the bounded Miles RL run after complete varied real rewards.",
   "owner": "Codex",
-  "revision": 55,
-  "updatedAt": "2026-11-20T11:03:26.125338Z"
+  "revision": 56,
+  "updatedAt": "2026-11-20T11:04:15.419361Z"
 }

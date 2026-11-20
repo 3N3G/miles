@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI210 runtime control 534065 passed FP32/BF16 kernels in the verified existing ROCm 7.2.3 image, while the primary image failed both wrapper modes. Prepared an eager vLLM frozen-policy group check wit Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Submit the compatible-image group check, inspect actual Qwen startup and outputs, and grade on the VM. Retain MI350 SGLang 534034 for separate Miles runtime qualification before de
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted compatible-image frozen-policy group 534098: 32 candidates, four concurrent, unchanged thinking prompt, seeds, 90k cap and rubric. Native SGLang 534034 remains queued. No Qwen grades yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Inspect actual Qwen model load and per-response outputs, then grade the group with the existing private VM client. Submit/debug the bounded Miles RL run after complete varied real 
 
 ## Next / blocked
 
