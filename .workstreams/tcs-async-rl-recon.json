@@ -404,9 +404,14 @@
       "status": "RUNNING"
     },
     {
+      "id": "534420",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "534333",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "534352",
@@ -1150,15 +1155,22 @@
       "actor": "codex",
       "summary": "Prepared an authorized sampling repair for the real 90k repetition failure",
       "revision": 89
+    },
+    {
+      "id": "64076eec-c732-43dd-b32a-0f420b80f0f6",
+      "at": "2026-11-20T14:26:09.772307Z",
+      "actor": "codex",
+      "summary": "Submitted authorized repetition repair 534420",
+      "revision": 90
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Native completed 32 requests, with 31 final answers and one 90k repetition loop. Bounded sampling repair prepared; native grades pending.",
-  "nextAction": "Submit the documented sampling repair. Validate support metadata and the failed seed before its remaining group.",
+  "summary": "Native v9: 31 complete finals, one 90k repetition loop. Submitted bounded-sampling repair 534420. Original grading continues.",
+  "nextAction": "Check the native sampling-support control, then failed seed 25 and the full replacement group.",
   "owner": "Codex",
-  "revision": 89,
-  "updatedAt": "2026-11-20T14:25:34.633559Z"
+  "revision": 90,
+  "updatedAt": "2026-11-20T14:26:09.772307Z"
 }
