@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native v9: 31 final answers all scored zero, one 90k loop. Native repair queued. Preparing the same bounded profile on compatible MI210. Jobs: hpcfund/534174 RUNNING; hpcfund/534420 SUBMITTED
-  Next: Verify bounded fallback generation, then stop the owned obsolete unbounded job. Native support validation remains queued.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native v9: 31 zero grades and one repetition failure. Bounded MI210 replacement is generating. Stopped the owned old unfiltered job; native repair queued. Jobs: hpcfund/534174 CANCEL_REQUESTED; hpcfund/534420 SUBMITTED
+  Next: Validate the failed seed and repaired group. Preserve the old partial results and check native support metadata when allocated.
 
 ## Next / blocked
 

@@ -413,7 +413,7 @@
     {
       "id": "534174",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "CANCEL_REQUESTED"
     },
     {
       "id": "534420",
@@ -423,7 +423,7 @@
     {
       "id": "534425",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "RUNNING"
     },
     {
       "id": "534333",
@@ -1200,15 +1200,22 @@
       "actor": "codex",
       "summary": "Submitted same-profile compatible-runtime repair 534425",
       "revision": 93
+    },
+    {
+      "id": "e6cec1a0-3959-4e2c-a8f7-26ea07b99626",
+      "at": "2026-11-20T14:33:11.009833Z",
+      "actor": "codex",
+      "summary": "Verified replacement decoding and requested cancellation of the obsolete owned profile",
+      "revision": 94
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Native v9: 31 final answers all scored zero, one 90k loop. Native repair queued. Preparing the same bounded profile on compatible MI210.",
-  "nextAction": "Verify bounded fallback generation, then stop the owned obsolete unbounded job. Native support validation remains queued.",
+  "summary": "Native v9: 31 zero grades and one repetition failure. Bounded MI210 replacement is generating. Stopped the owned old unfiltered job; native repair queued.",
+  "nextAction": "Validate the failed seed and repaired group. Preserve the old partial results and check native support metadata when allocated.",
   "owner": "Codex",
-  "revision": 93,
-  "updatedAt": "2026-11-20T14:29:24.850313Z"
+  "revision": 94,
+  "updatedAt": "2026-11-20T14:33:11.009833Z"
 }
