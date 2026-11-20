@@ -58,6 +58,9 @@
 - Recommendation: keep offline W&B and TensorBoard now. Sync later if a permitted loader is available.
 - Blocks: an online W&B URL, not the authorized rollout or RL runtime checks.
 - Status: asked in chat on 2026-11-20. No key value was requested.
+  Rechecked for the user's login question: neither machine has a W&B environment key or default netrc file.
+  Prepared the VM CLI with `uvx --from wandb==0.31.0 wandb login --help` and verified the `--verify` option.
+  User can run `uvx --from wandb==0.31.0 wandb login --verify` on the VM for later offline-run uploads.
 
 ## 2026-11-20: Judge calibration evidence
 
