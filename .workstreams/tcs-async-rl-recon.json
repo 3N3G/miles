@@ -299,6 +299,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/runtime_image_candidates_20261120.json",
       "label": "Pinned ROCm 7.2.4 training-image fallback metadata, not GPU-qualified"
+    },
+    {
+      "path": "experiments/tcs_async_rl/NATIVE_IMPORTS_20261120.md",
+      "label": "Bounded native training import diagnostic"
     }
   ],
   "jobs": [
@@ -354,6 +358,11 @@
     },
     {
       "id": "534098",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
+      "id": "534132",
       "cluster": "hpcfund",
       "status": "SUBMITTED"
     }
@@ -770,15 +779,22 @@
       "actor": "codex",
       "summary": "Verified actual model load and active generation; recorded untested stable training-image fallback",
       "revision": 57
+    },
+    {
+      "id": "66b79750-4e2b-4ac4-bbf5-6bf41142dfe3",
+      "at": "2026-11-20T11:22:25.734773Z",
+      "actor": "codex",
+      "summary": "Submitted native training import diagnostic 534132",
+      "revision": 58
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD 534098 loaded pinned Qwen3.5-4B and is generating four concurrent requests in the verified ROCm 7.2.3 image. Full 98,304 context accepted. No complete Qwen answer or grade yet. Native SGLang MI350 534034 remains queued.",
+  "summary": "Qwen group 534098 is generating on MI210. Submitted native launcher import/help diagnostic 534132 before eight-GPU training. Native MI350 group 534034 remains queued. No Qwen grade yet.",
   "nextAction": "Inspect completed raw answers and actual rubric variation. Qualify the native Miles runtime, then submit and debug the authorized two-update RL check. W&B is prepared offline.",
   "owner": "Codex",
-  "revision": 57,
-  "updatedAt": "2026-11-20T11:19:28.094335Z"
+  "revision": 58,
+  "updatedAt": "2026-11-20T11:22:25.734773Z"
 }
