@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Bounded seed 25 completed at 40,004 tokens but scored zero. Native support capture rejects EAGLE. Prepared target-only and larger-memory repairs. Jobs: hpcfund/534425 RUNNING; hpcfund/534575 SUBMITTED
-  Next: Validate target-only native support capture and the larger-memory fallback. Keep the old compatible trial until replacement checks pass.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI300 fallback passed kernels and cache capacity; 32 bounded requests generating at about 646 tok/s. Native target-only check running. No varied group yet. Jobs: hpcfund/534425 CANCEL_REQUESTED; hpcfund/534575 RUNNING
+  Next: Validate native support capture and grade the complete repaired group. Preserve the retired MI210 outputs.
 
 ## Next / blocked
 
