@@ -1,0 +1,22 @@
+{
+  "observed_at_utc": "2026-11-20T07:55:34.139676+00:00",
+  "cluster": "hpcfund",
+  "source_commit": "aca2f99f",
+  "real_queued_job": "533702",
+  "group_start_estimate_cluster_central": "2026-11-20T05:35:26",
+  "rl_sbatch_test_only": {
+    "accepted": true,
+    "partition": "mi3508x",
+    "nodes": 1,
+    "walltime": "04:00:00",
+    "start_estimate_cluster_central": "2026-11-20T17:43:19",
+    "submitted": false
+  },
+  "shorter_walltime_tests": {
+    "one_hour_group_start_estimate_cluster_central": "2026-11-20T07:56:59",
+    "one_hour_rl_start_estimate_cluster_central": "2026-11-20T17:43:19",
+    "time_min_one_hour_improved_estimates": false,
+    "submitted": false
+  },
+  "action": "Keep job 533702 unchanged. No duplicate generation or RL job submitted. Estimates are not reservations."
+}

@@ -11,5 +11,10 @@
   ],
   "incomplete_answer_status": 422,
   "usd_spent_or_reserved": 0.0050574,
-  "scope": "Real reference control through the online reward transport; not calibration or an AMD tunnel check"
+  "scope": "Real reference control through the online reward transport; not calibration or an AMD tunnel check",
+  "miles_hook_cached_reference_result": {
+    "reward": 7.0,
+    "judge_order_gap": 0.0
+  },
+  "additional_paid_calls_for_hook_check": 0
 }
