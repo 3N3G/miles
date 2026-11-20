@@ -177,6 +177,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v10-mi350",
       "label": "Private results for AMD inference job 534420"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v11-mi210-vllm8",
+      "label": "Private results for AMD inference job 534425"
     }
   ],
   "evidence": [
@@ -441,7 +445,7 @@
     {
       "id": "534425",
       "cluster": "hpcfund",
-      "status": "CANCEL_REQUESTED"
+      "status": "CANCELLED"
     },
     {
       "id": "534575",
@@ -1301,15 +1305,22 @@
       "actor": "codex",
       "summary": "Verified larger-memory model capacity and retired only the owned slower attempt",
       "revision": 102
+    },
+    {
+      "id": "1b972361-a2c8-4578-ac50-7d398bf4c5fa",
+      "at": "2026-11-20T15:56:23.053528Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 534425",
+      "revision": 103
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "MI300 fallback passed kernels and cache capacity; 32 bounded requests generating at about 646 tok/s. Native target-only check running. No varied group yet.",
-  "nextAction": "Validate native support capture and grade the complete repaired group. Preserve the retired MI210 outputs.",
+  "summary": "AMD job 534425 ended CANCELLED. 2 provisional group grades saved. Human calibration remains pending.",
+  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 102,
-  "updatedAt": "2026-11-20T15:54:44.658139Z"
+  "revision": 103,
+  "updatedAt": "2026-11-20T15:56:23.053528Z"
 }

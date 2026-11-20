@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI300 fallback passed kernels and cache capacity; 32 bounded requests generating at about 646 tok/s. Native target-only check running. No varied group yet. Jobs: hpcfund/534425 CANCEL_REQUESTED; hpcfund/534575 RUNNING
-  Next: Validate native support capture and grade the complete repaired group. Preserve the retired MI210 outputs.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534425 ended CANCELLED. 2 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/534425 CANCELLED; hpcfund/534575 RUNNING
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 
