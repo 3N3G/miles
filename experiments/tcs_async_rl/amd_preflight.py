@@ -79,7 +79,7 @@ def render_job(*, repo, work_dir, run_dir, expected_commit, config_path=CONFIG):
     )
 
 
-def container_prefix(*, image, repo, work_dir):
+def container_prefix(*, image, repo, work_dir, isolate_processes=False):
     cache = work_dir / "cache"
     environment = {
         "PYTHONPATH": f"{repo}:/root/Megatron-LM:/sgl-workspace/sglang/python",
@@ -106,6 +106,9 @@ def container_prefix(*, image, repo, work_dir):
         "--pwd",
         str(repo),
     ]
+    if isolate_processes:
+        argv.append("--pid")
+        environment["TCS_HOST_PID_NAMESPACE"] = os.readlink("/proc/self/ns/pid")
     for key, value in environment.items():
         argv += ["--env", f"{key}={value}"]
     return argv + [str(image)]
@@ -246,10 +249,32 @@ def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
 
 
 def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, training, env):
-    prefix = container_prefix(image=sandbox, repo=ROOT, work_dir=work_dir)
+    prefix = container_prefix(
+        image=sandbox, repo=ROOT, work_dir=work_dir, isolate_processes=qualification.get("mode") == "rl_smoke"
+    )
     if qualification.get("mode") == "group_inference":
         _run_group_check(
             prefix=prefix, work_dir=work_dir, run_dir=run_dir, config_path=config_path, training=training, env=env
+        )
+        return
+    if qualification.get("mode") == "rl_smoke":
+        _run("training-help", prefix + ["python3", "train_async.py", "--help"], run_dir=run_dir, env=env)
+        _run(
+            "rl-smoke",
+            prefix
+            + [
+                "python3",
+                "-m",
+                "experiments.tcs_async_rl.rl_smoke",
+                "--config",
+                str(config_path),
+                "--work-dir",
+                str(work_dir),
+                "--run-dir",
+                str(run_dir),
+            ],
+            run_dir=run_dir,
+            env=env,
         )
         return
     module = ["python3", "-m", "experiments.tcs_async_rl.gpu_qualification"]

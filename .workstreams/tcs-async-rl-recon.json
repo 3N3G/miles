@@ -187,6 +187,18 @@
     {
       "path": "experiments/tcs_async_rl/evidence/aiter_cache_repair_check_20261120.json",
       "label": "Pinned AITER cache-selection function and writable-path validation"
+    },
+    {
+      "path": "experiments/tcs_async_rl/RL_SMOKE_PLAN.md",
+      "label": "Authorized bounded first RL runtime plan"
+    },
+    {
+      "path": "experiments/tcs_async_rl/rl_smoke_v1.json",
+      "label": "First RL runtime configuration; submission requires measured varied rewards"
+    },
+    {
+      "path": "experiments/tcs_async_rl/reward_service.py",
+      "label": "VM-local provider client and private scoring receipts"
     }
   ],
   "jobs": [
@@ -389,15 +401,22 @@
       "actor": "codex",
       "summary": "User extended authorization through nonconstant rollout rewards and a working RL run with W&B logging",
       "revision": 25
+    },
+    {
+      "id": "0a0554de-b5f4-42ee-87e1-03d541022c1b",
+      "at": "2026-11-20T07:46:49.831576Z",
+      "actor": "codex",
+      "summary": "Prepared guarded two-update RL runtime and VM-only online rubric scoring",
+      "revision": 26
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "User approved continued rollout debugging, then RL submission/debugging and W&B logging. Replacement 533702 is queued. Preparing the online reward and RL launch paths while waiting.",
-  "nextAction": "Check W&B authentication safely, wire online rubric scoring through the VM, and prepare the first bounded RL run while monitoring 533702.",
+  "summary": "Replacement group job 533702 remains queued. Prepared a guarded two-update async RL check, VM-only rubric service, offline W&B/TensorBoard logs, and 37 passing CPU checks. No RL job submitted before reward gate passes.",
+  "nextAction": "Validate the local reward service with a real reference call, monitor 533702, then submit the pinned RL runtime check only after nonconstant diagnostic grades.",
   "owner": "Codex",
-  "revision": 25,
-  "updatedAt": "2026-11-20T07:31:17.545890Z"
+  "revision": 26,
+  "updatedAt": "2026-11-20T07:46:49.831576Z"
 }

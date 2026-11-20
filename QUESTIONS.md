@@ -17,17 +17,6 @@
 - Status: the approved diagnostic extracts the final answer and leaves unfinished thinking ungraded.
   The online Miles adapter still needs review before learning.
 
-## 2026-11-18: Pilot resource limits
-
-- Question: what GPU-hour and judge-API spending caps should the pilot use?
-- Options: a bounded technical smoke test, or a bounded smoke test plus learning pilot.
-- Recommendation: approve a short runtime check before a learning allocation.
-- Concrete first proposal: one MI350 eight-GPU node for two hours maximum, zero judge calls and no learning.
-  See `experiments/tcs_async_rl/QUALIFICATION_PLAN.md`. This does not select a learning horizon or spending cap.
-- Blocks: exact jobs, walltimes, sample counts, judge concurrency, and paid calls.
-- Status: the user approved the separate one-prompt inference check. Its one-GPU, four-hour job is submitted.
-  The eight-GPU technical qualification and full learning allocation remain separate proposals.
-
 ## 2026-11-18: Development split
 
 - Question: reserve which eligible papers for development?
@@ -49,17 +38,6 @@
 - Blocks: reading current Flame GPU inventory and using its login host. AMD preparation continues.
 - Status: asked in chat. No saved host key was changed.
 
-## 2026-11-18: Runtime judge credential route
-
-- Question: how should the AMD training workers reach a permitted judge client?
-- Evidence: the provider assignment names exist in the VM credential file. That file is absent on AMD.
-  The user authorized VM-only loading for the group diagnostic. Luna metadata and six control calls succeeded.
-  Gemini metadata returned HTTP 401. No credential was transferred to AMD.
-- Options: a user-configured environment loader on AMD, or a judge service on the VM that owns provider access.
-- Recommendation: choose the existing permitted loader if one is available. Keep key values out of logs and Ray job JSON.
-- Blocks: online judging during learning. Post-hoc diagnostic grading on the VM works.
-- Status: the production route remains unresolved. The approved local loader does not deploy a VM judge service.
-
 ## 2026-11-18: Gemini backup access
 
 - Question: does Gemini use a direct Google API credential or a different provider endpoint?
@@ -67,6 +45,16 @@
 - Recommendation: validate the intended route before relying on Gemini as an independent judge.
 - Blocks: backup/independent-provider validation, not the approved GPU generation or provisional Luna grading.
 - Status: authorized VM metadata GET returned HTTP 401. No Gemini generation request was sent.
+
+## 2026-11-20: W&B authentication for runtime logs
+
+- Question: where is the user's existing W&B credential loader or login?
+- Evidence: no W&B environment assignment or default login was found on the VM or AMD.
+  The user-specified provider file has no W&B assignment name. No credential values were inspected.
+- Options: preserve native offline W&B files, or sync from the VM through an existing authenticated loader.
+- Recommendation: keep offline W&B and TensorBoard now. Sync later if a permitted loader is available.
+- Blocks: an online W&B URL, not the authorized rollout or RL runtime checks.
+- Status: asked in chat on 2026-11-20. No key value was requested.
 
 # Answered questions
 
@@ -97,3 +85,12 @@
   The initial permission covered assignment-name checks only. Both provider names were present.
   The user later authorized the VM client to load those values locally and grade the group.
   Luna access works. Gemini metadata returned HTTP 401. No credential value was displayed or transferred to AMD.
+
+- 2026-11-20: user authorized continued rollout repair until non-constant real rubric rewards,
+  then RL submission and debugging until a run works. The first bounded runtime plan is
+  `experiments/tcs_async_rl/RL_SMOKE_PLAN.md`: two updates on the same diagnostic question,
+  one eight-GPU node for at most four hours, and a separate $5 judge cap.
+  The full-corpus development split and learning horizon remain undecided.
+- 2026-11-20: use the already authorized VM credential loader for online Luna scoring during
+  the requested RL run. The provider client remains on the VM, reached through a loopback SSH tunnel.
+  No provider key is copied to AMD or placed in Ray job arguments.

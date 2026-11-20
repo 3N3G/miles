@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved continued rollout debugging, then RL submission/debugging and W&B logging. Replacement 533702 is queued. Preparing the online reward and RL launch paths while waiting. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Check W&B authentication safely, wire online rubric scoring through the VM, and prepare the first bounded RL run while monitoring 533702.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Replacement group job 533702 remains queued. Prepared a guarded two-update async RL check, VM-only rubric service, offline W&B/TensorBoard logs, and 37 passing CPU checks. No RL job submitted before r Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Validate the local reward service with a real reference call, monitor 533702, then submit the pinned RL runtime check only after nonconstant diagnostic grades.
 
 ## Next / blocked
 
