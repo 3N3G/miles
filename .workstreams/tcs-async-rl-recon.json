@@ -379,14 +379,19 @@
   ],
   "jobs": [
     {
-      "id": "534296",
-      "cluster": "hpcfund",
-      "status": "FAILED"
-    },
-    {
       "id": "534174",
       "cluster": "hpcfund",
       "status": "RUNNING"
+    },
+    {
+      "id": "534317",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
+      "id": "534296",
+      "cluster": "hpcfund",
+      "status": "FAILED"
     },
     {
       "id": "534034",
@@ -1059,15 +1064,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534296",
       "revision": 81
+    },
+    {
+      "id": "4c21b7d9-6a24-47b4-95d8-0c9902b95694",
+      "at": "2026-11-20T13:40:40.967244Z",
+      "actor": "codex",
+      "summary": "Submitted MIOpen-repaired reference comparison 534317",
+      "revision": 82
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534296 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
+  "summary": "Fourteen of 32 vLLM answers graded, all zero in both orders. Native 534296 cleared FlyDSL but failed later on a separate SGLang JIT cache under home. Submitted repaired numerical reference check 534317.",
   "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 81,
-  "updatedAt": "2026-11-20T13:38:58.464208Z"
+  "revision": 82,
+  "updatedAt": "2026-11-20T13:40:40.967244Z"
 }

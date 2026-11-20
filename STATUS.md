@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534296 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/534296 FAILED; hpcfund/534174 RUNNING
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fourteen of 32 vLLM answers graded, all zero in both orders. Native 534296 cleared FlyDSL but failed later on a separate SGLang JIT cache under home. Submitted repaired numerical reference check 53431 Jobs: hpcfund/534174 RUNNING; hpcfund/534317 SUBMITTED
   Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
