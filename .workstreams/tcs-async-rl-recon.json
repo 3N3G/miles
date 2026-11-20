@@ -203,6 +203,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/online_reward_check_20261120.json",
       "label": "Real VM online reward transport control and usage"
+    },
+    {
+      "path": "experiments/tcs_async_rl/reward_tunnel.py",
+      "label": "Own-allocation-only SSH reward tunnel and health monitor"
     }
   ],
   "jobs": [
@@ -426,15 +430,22 @@
       "actor": "codex",
       "summary": "Finished portable RL response exports and strict input/judge submission guards",
       "revision": 28
+    },
+    {
+      "id": "2d3c472f-4df3-4811-a53b-9a4ed5ac9cf4",
+      "at": "2026-11-20T08:39:06.896893Z",
+      "actor": "codex",
+      "summary": "Prepared allocation-bound reward tunnel lifecycle and forty passing CPU checks",
+      "revision": 29
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Rollout 533702 is still queued. Local Luna service and actual Miles reward hook pass reference controls. The two-update RL launcher now exports consumed responses, pins gate input identity and judge effort, and preserves offline W&B/TensorBoard logs. All 37 CPU checks pass.",
-  "nextAction": "Continue minute-by-minute monitoring. After varied real group grades, annotate gate evidence with the verified input hash, pin current RL source, submit, and attach the VM tunnel.",
+  "summary": "Group job 533702 remains queued. Prepared the bounded RL launch, VM rubric service, portable consumed-response export, and an allocation-aware SSH tunnel watcher. Real local reference scoring passes; 40 CPU checks pass. No Qwen group grades or RL submission yet.",
+  "nextAction": "Wait for the rollout allocation, inspect startup and every completion, then grade. After the complete group has varied real rewards, submit the pinned RL check and start its tunnel watcher.",
   "owner": "Codex",
-  "revision": 28,
-  "updatedAt": "2026-11-20T08:15:37.623950Z"
+  "revision": 29,
+  "updatedAt": "2026-11-20T08:39:06.896893Z"
 }

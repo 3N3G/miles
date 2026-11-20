@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Rollout 533702 is still queued. Local Luna service and actual Miles reward hook pass reference controls. The two-update RL launcher now exports consumed responses, pins gate input identity and judge e Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Continue minute-by-minute monitoring. After varied real group grades, annotate gate evidence with the verified input hash, pin current RL source, submit, and attach the VM tunnel.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Group job 533702 remains queued. Prepared the bounded RL launch, VM rubric service, portable consumed-response export, and an allocation-aware SSH tunnel watcher. Real local reference scoring passes;  Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Wait for the rollout allocation, inspect startup and every completion, then grade. After the complete group has varied real rewards, submit the pinned RL check and start its tunnel
 
 ## Next / blocked
 
