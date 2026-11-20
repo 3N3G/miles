@@ -182,6 +182,11 @@
       "id": "530287",
       "cluster": "hpcfund",
       "status": "FAILED"
+    },
+    {
+      "id": "533702",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -351,15 +356,22 @@
       "actor": "codex",
       "summary": "Diagnosed initial inference failure and started authorized cache-path repair",
       "revision": 22
+    },
+    {
+      "id": "14d1a190-3b9a-42d1-a1be-df0492ab32af",
+      "at": "2026-11-20T07:24:31.679066Z",
+      "actor": "codex",
+      "summary": "Submitted authorized cache-path repair job 533702 with preserved scientific settings",
+      "revision": 23
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
   "state": "running",
-  "summary": "Initial AMD job failed before generation: AITER tried to write its JIT cache under read-only /home1. Zero Qwen responses exist. Repairing the cache path for the same approved group check.",
-  "nextAction": "Set a writable AITER cache, validate startup, preserve v1, and submit the repaired inference job using cached model/container assets.",
+  "summary": "Repaired AMD job 533702 submitted. Writable AITER cache validated. Same 32-response group and 90k thinking cap. Original job 530287 produced no responses.",
+  "nextAction": "Monitor replacement engine startup directly, then collect and grade the group.",
   "owner": "Codex",
-  "revision": 22,
-  "updatedAt": "2026-11-20T07:21:41.115513Z"
+  "revision": 23,
+  "updatedAt": "2026-11-20T07:24:31.679066Z"
 }

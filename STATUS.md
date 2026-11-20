@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Initial AMD job failed before generation: AITER tried to write its JIT cache under read-only /home1. Zero Qwen responses exist. Repairing the cache path for the same approved group check. Jobs: hpcfund/530287 FAILED
-  Next: Set a writable AITER cache, validate startup, preserve v1, and submit the repaired inference job using cached model/container assets.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Repaired AMD job 533702 submitted. Writable AITER cache validated. Same 32-response group and 90k thinking cap. Original job 530287 produced no responses. Jobs: hpcfund/530287 FAILED; hpcfund/533702 SUBMITTED
+  Next: Monitor replacement engine startup directly, then collect and grade the group.
 
 ## Next / blocked
 
