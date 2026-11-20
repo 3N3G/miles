@@ -62,6 +62,7 @@ class TestAMDPreflight(unittest.TestCase):
         self.assertIn(f"PYTHONPATH={ROOT}:/root/Megatron-LM:/sgl-workspace/sglang/python", argv)
         self.assertIn("HF_HOME=/work/tcs/cache/huggingface", argv)
         self.assertIn("AITER_JIT_DIR=/work/tcs/cache/aiter/sandbox", argv)
+        self.assertIn("AITER_ROOT_DIR=/work/tcs/cache/aiter_cpp/sandbox", argv)
 
     def test_clean_container_receives_only_explicit_job_and_device_metadata(self):
         fake = {
@@ -80,7 +81,13 @@ class TestAMDPreflight(unittest.TestCase):
         common = dict(image=Path("/work/sandbox"), repo=ROOT, work_dir=Path("/work/tcs"))
         older = container_prefix(**common, cache_namespace="mi2101x")
         newer = container_prefix(**common, cache_namespace="mi3508x")
-        for name in ("AITER_JIT_DIR", "TRITON_CACHE_DIR", "TORCH_EXTENSIONS_DIR", "TORCHINDUCTOR_CACHE_DIR"):
+        for name in (
+            "AITER_JIT_DIR",
+            "AITER_ROOT_DIR",
+            "TRITON_CACHE_DIR",
+            "TORCH_EXTENSIONS_DIR",
+            "TORCHINDUCTOR_CACHE_DIR",
+        ):
             first = next(value for value in older if value.startswith(name + "="))
             second = next(value for value in newer if value.startswith(name + "="))
             self.assertNotEqual(first, second)

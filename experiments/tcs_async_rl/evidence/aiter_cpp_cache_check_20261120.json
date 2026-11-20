@@ -1,0 +1,8 @@
+{
+  "source_sha256": "f3e76e75a2262c5c716065660345b502229e4d17afa56a90799f358de0028a33",
+  "source": "aiter/csrc/cpp_itfs/utils.py",
+  "environment_knob": "AITER_ROOT_DIR",
+  "selected_build_dir": "/work1/aviralkumar/geney/tcs-async-rl/cache/aiter_cpp/cache-root-check/build",
+  "write_succeeded": true,
+  "scope": "Pinned assignments only; no GPU, AITER, or Torch imports on login"
+}

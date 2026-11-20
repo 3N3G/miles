@@ -198,6 +198,7 @@ def main():
         key: os.environ[key]
         for key in (
             "AITER_JIT_DIR",
+            "AITER_ROOT_DIR",
             "XDG_CACHE_HOME",
             "TRITON_CACHE_DIR",
             "TORCH_EXTENSIONS_DIR",

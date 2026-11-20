@@ -90,6 +90,7 @@ def container_prefix(*, image, repo, work_dir, isolate_processes=False, runtime_
         "XDG_CACHE_HOME": str(cache),
         "TRITON_CACHE_DIR": str(cache / "triton" / gpu_cache),
         "AITER_JIT_DIR": str(cache / "aiter" / gpu_cache),
+        "AITER_ROOT_DIR": str(cache / "aiter_cpp" / gpu_cache),
         "TORCH_EXTENSIONS_DIR": str(cache / "torch_extensions" / gpu_cache),
         "TORCHINDUCTOR_CACHE_DIR": str(cache / "torch_inductor" / gpu_cache),
         "PYTHONUNBUFFERED": "1",

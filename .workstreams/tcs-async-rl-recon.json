@@ -231,6 +231,14 @@
     {
       "path": "experiments/tcs_async_rl/group_check_v3_mi210.json",
       "label": "Unchanged 32 candidates and 90k cap with four concurrent requests"
+    },
+    {
+      "path": "experiments/tcs_async_rl/SECOND_CACHE_REPAIR_20261120.md",
+      "label": "Second cache failure, exact repair, validation, and bounded replacement plan"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/aiter_cpp_cache_check_20261120.json",
+      "label": "Pinned C++ cache assignment and write validation"
     }
   ],
   "jobs": [
@@ -508,15 +516,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 533964",
       "revision": 35
+    },
+    {
+      "id": "aea85389-f312-4451-8032-2406af62cd5b",
+      "at": "2026-11-20T10:20:51.537829Z",
+      "actor": "codex",
+      "summary": "Diagnosed and repaired the independent AITER C++ cache before replacement submissions",
+      "revision": 36
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 533964 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "MI210 job 533964 failed before generation after successful core compilation. A second independent AITER C++ cache still defaulted to unmounted home. Added AITER_ROOT_DIR, validated its exact pinned path selection, and prepared immutable replacements. Forty-two CPU checks pass.",
+  "nextAction": "Cancel own queued 533702 because its same image/cache settings have this known failure. Submit repaired MI210 and queued MI350 snapshots, record both, and monitor startup directly.",
   "owner": "Codex",
-  "revision": 35,
-  "updatedAt": "2026-11-20T10:16:47.942318Z"
+  "revision": 36,
+  "updatedAt": "2026-11-20T10:20:51.537829Z"
 }
