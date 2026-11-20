@@ -404,6 +404,16 @@
       "id": "534165",
       "cluster": "hpcfund",
       "status": "FAILED"
+    },
+    {
+      "id": "534173",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
+      "id": "534174",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -881,15 +891,29 @@
       "actor": "codex",
       "summary": "Corrected a regression assertion that counted unrelated third-party registrations",
       "revision": 66
+    },
+    {
+      "id": "ac28dae4-f172-4058-84c3-93fb6fa6f02f",
+      "at": "2026-11-20T11:56:30.325716Z",
+      "actor": "codex",
+      "summary": "Submitted approved runtime job 534173",
+      "revision": 67
+    },
+    {
+      "id": "11323244-1842-43e3-ab08-06ffa8533a7f",
+      "at": "2026-11-20T11:56:31.837301Z",
+      "actor": "codex",
+      "summary": "Submitted approved runtime job 534174",
+      "revision": 68
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Four initial Qwen answers completed at 28,515–39,958 tokens. Three graded so far, all 0/7 in both orders. Corrected an overbroad regression assertion after diagnostic 534165. Exact native argument validation remains pending.",
+  "summary": "Submitted eight-request capacity repair for the same fixed 32-candidate group. Four original answers scored 0/7 in both orders. Original job stays active until replacement memory/profile/decode validation. Native MI350 remains queued.",
   "nextAction": "Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufacture variance.",
   "owner": "Codex",
-  "revision": 66,
-  "updatedAt": "2026-11-20T11:53:02.486553Z"
+  "revision": 68,
+  "updatedAt": "2026-11-20T11:56:31.837301Z"
 }

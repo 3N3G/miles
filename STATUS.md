@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Four initial Qwen answers completed at 28,515–39,958 tokens. Three graded so far, all 0/7 in both orders. Corrected an overbroad regression assertion after diagnostic 534165. Exact native argument val Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted eight-request capacity repair for the same fixed 32-candidate group. Four original answers scored 0/7 in both orders. Original job stays active until replacement memory/profile/decode valida Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
   Next: Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufact
 
 ## Next / blocked
