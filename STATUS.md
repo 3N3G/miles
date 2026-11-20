@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native offline W&B control passed. Bounded MI210 seed 25 is decoding; native validation queued. Original native 31 scores were zero. Jobs: hpcfund/534174 CANCELLED; hpcfund/534420 PENDING
-  Next: Finish the fixed seed and group, then verify real reward variation. Native sampling metadata remains queued.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534420 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/534174 CANCELLED; hpcfund/534420 FAILED
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 

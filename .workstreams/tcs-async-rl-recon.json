@@ -173,6 +173,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7e1467f2a72cb1c24c0c55f49d799840c7de3074/miles/offline-logging-control-v1",
       "label": "Durable offline W&B control files and exact primary-image provenance"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v10-mi350",
+      "label": "Private results for AMD inference job 534420"
     }
   ],
   "evidence": [
@@ -438,7 +442,7 @@
     {
       "id": "534420",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "FAILED"
     },
     {
       "id": "534425",
@@ -1248,15 +1252,22 @@
       "actor": "codex",
       "summary": "Verified the actual native offline W&B adapter without a new GPU job",
       "revision": 97
+    },
+    {
+      "id": "352f155d-3d48-431f-a0fb-820e70145c41",
+      "at": "2026-11-20T15:35:25.033150Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 534420",
+      "revision": 98
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Native offline W&B control passed. Bounded MI210 seed 25 is decoding; native validation queued. Original native 31 scores were zero.",
-  "nextAction": "Finish the fixed seed and group, then verify real reward variation. Native sampling metadata remains queued.",
+  "summary": "AMD job 534420 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
+  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 97,
-  "updatedAt": "2026-11-20T14:54:17.280402Z"
+  "revision": 98,
+  "updatedAt": "2026-11-20T15:35:25.033150Z"
 }
