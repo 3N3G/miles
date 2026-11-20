@@ -298,8 +298,13 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
             sandbox=sandbox, work_dir=work_dir, run_dir=run_dir, qualification=qualification, env=env
         )
         return
-    if qualification.get("mode") == "group_inference_vllm":
-        image, digest = _verified_control_image(qualification["control_image"])
+    if qualification.get("mode") in ("group_inference_vllm", "policy_reference"):
+        serving = (
+            load_configs(config_path.parent / qualification["group_config"])[0]
+            if qualification["mode"] == "policy_reference"
+            else qualification
+        )
+        image, digest = _verified_control_image(serving["control_image"])
         (run_dir / "runtime-image.json").write_text(json.dumps({"path": str(image), "sha256": digest}) + "\n")
         prefix = container_prefix(
             image=image, repo=ROOT, work_dir=work_dir, cache_namespace=qualification["allocation"]["partition"]
@@ -321,13 +326,14 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
         )
         model = training["model"]
         model_dir = work_dir / "models" / f"Qwen3.5-4B-{model['revision']}"
+        reference = qualification["mode"] == "policy_reference"
         _run(
-            "group-inference",
+            "policy-reference" if reference else "group-inference",
             prefix
             + [
                 "python3",
                 "-m",
-                "experiments.tcs_async_rl.vllm_group",
+                "experiments.tcs_async_rl.policy_reference" if reference else "experiments.tcs_async_rl.vllm_group",
                 "--config",
                 str(config_path),
                 "--model-dir",
