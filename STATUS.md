@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534065 ended COMPLETED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI210 runtime control 534065 passed FP32/BF16 kernels in the verified existing ROCm 7.2.3 image, while the primary image failed both wrapper modes. Prepared an eager vLLM frozen-policy group check wit Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Submit the compatible-image group check, inspect actual Qwen startup and outputs, and grade on the VM. Retain MI350 SGLang 534034 for separate Miles runtime qualification before de
 
 ## Next / blocked
 

@@ -297,6 +297,47 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
             sandbox=sandbox, work_dir=work_dir, run_dir=run_dir, qualification=qualification, env=env
         )
         return
+    if qualification.get("mode") == "group_inference_vllm":
+        image, digest = _verified_control_image(qualification["control_image"])
+        (run_dir / "runtime-image.json").write_text(json.dumps({"path": str(image), "sha256": digest}) + "\n")
+        prefix = container_prefix(
+            image=image, repo=ROOT, work_dir=work_dir, cache_namespace=qualification["allocation"]["partition"]
+        )
+        _run(
+            "torch-kernels",
+            prefix
+            + [
+                "python3",
+                "-m",
+                "experiments.tcs_async_rl.compatibility_probe",
+                "--phase",
+                "torch-only",
+                "--run-dir",
+                str(run_dir),
+            ],
+            run_dir=run_dir,
+            env=env,
+        )
+        model = training["model"]
+        model_dir = work_dir / "models" / f"Qwen3.5-4B-{model['revision']}"
+        _run(
+            "group-inference",
+            prefix
+            + [
+                "python3",
+                "-m",
+                "experiments.tcs_async_rl.vllm_group",
+                "--config",
+                str(config_path),
+                "--model-dir",
+                str(model_dir),
+                "--run-dir",
+                str(run_dir),
+            ],
+            run_dir=run_dir,
+            env=env,
+        )
+        return
     if qualification.get("mode") == "compatibility":
         for phase in ("torch-only", "after-engine-import"):
             _run(
@@ -408,13 +449,17 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
     )
 
 
-def _run_runtime_comparison(*, sandbox, work_dir, run_dir, qualification, env):
-    control_config = qualification["control_image"]
+def _verified_control_image(control_config):
     control = Path(control_config["path"])
     with control.open("rb") as stream:
         digest = hashlib.file_digest(stream, "sha256").hexdigest()
     if digest != control_config["sha256"]:
         raise ValueError("Existing control image changed; do not use an unverified runtime")
+    return control, digest
+
+
+def _run_runtime_comparison(*, sandbox, work_dir, run_dir, qualification, env):
+    control, digest = _verified_control_image(qualification["control_image"])
     results = []
     cases = (
         ("primary-host", sandbox, "host"),

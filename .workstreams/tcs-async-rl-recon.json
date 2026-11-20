@@ -287,6 +287,14 @@
     {
       "path": "experiments/tcs_async_rl/MI210_RUNTIME_CONTROL_20261120.md",
       "label": "Three-case basic-kernel software-control plan and ten-minute bound"
+    },
+    {
+      "path": "experiments/tcs_async_rl/VLLM_GROUP_REPAIR_20261120.md",
+      "label": "Measured compatible runtime and fixed-policy serving repair plan"
+    },
+    {
+      "path": "experiments/tcs_async_rl/group_check_v6_mi210_vllm.json",
+      "label": "Compatible-image 32-response diagnostic with unchanged data/reward/token controls"
     }
   ],
   "jobs": [
@@ -732,15 +740,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534065",
       "revision": 54
+    },
+    {
+      "id": "13ffc153-127e-498a-864f-3d13b9dca4ef",
+      "at": "2026-11-20T11:03:26.125338Z",
+      "actor": "codex",
+      "summary": "Selected the measured compatible runtime for the unchanged frozen-model group",
+      "revision": 55
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534065 ended COMPLETED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "MI210 runtime control 534065 passed FP32/BF16 kernels in the verified existing ROCm 7.2.3 image, while the primary image failed both wrapper modes. Prepared an eager vLLM frozen-policy group check with all 32 candidates, prompt tokens, seeds, 90k cap and rubric fixed. All 46 CPU checks pass.",
+  "nextAction": "Submit the compatible-image group check, inspect actual Qwen startup and outputs, and grade on the VM. Retain MI350 SGLang 534034 for separate Miles runtime qualification before debugging the approved RL run.",
   "owner": "Codex",
-  "revision": 54,
-  "updatedAt": "2026-11-20T10:53:22.997782Z"
+  "revision": 55,
+  "updatedAt": "2026-11-20T11:03:26.125338Z"
 }
