@@ -72,7 +72,7 @@
 - Blocks: additional-question diagnostic submissions only. The current group and native runtime work continue.
 - Status: asked asynchronously on 2026-11-20. No answer or expanded data authorization is assumed.
   Updated after the bounded-sampling native group completed: 28/32 nonempty final answers, five model length limits,
-  and the first nine graded answers all zero. All five capped tails repeat. Full grading is underway.
+  and all 28 graded final answers zero in both orders. All five capped tails repeat. Full grading is complete.
   The alternate MI300 group on the same question continues. Asked again with this measured outcome.
 
 # Answered questions

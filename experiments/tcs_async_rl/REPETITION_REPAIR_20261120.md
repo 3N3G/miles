@@ -105,3 +105,12 @@ Check the measured model cache before retiring the slower owned trial.
 The failed seed has already passed in this compatible backend. Generate a fresh full group concurrently, including that seed.
 Do not stitch in its old answer. This fallback does not qualify SGLang metadata or trainer backward computation.
 The one-GPU/four-hour cap remains. Record every result and preserve each old attempt.
+
+## Completed target-only native result
+
+The native support control passed. The previously unfinished seed stopped naturally at 47,474 tokens.
+The full group still had five repetition caps, including four outputs without a final answer.
+All 28 nonempty finals scored zero in both judge orders. The runtime gate remains closed.
+See [the standalone findings](REPAIRED_GROUP_FINDINGS_20261120.md) for the setup, counts, raw example and independent claim check.
+The bounded filters did not eliminate repetition in this deployment. This result does not isolate their causal effect.
+The compatible MI300 full group continues on the same question. No new question is approved yet.

@@ -467,6 +467,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/alternative_question_proposal_20261120.json",
       "label": "Preselected eligible input identities, pool sizes and exact hashes"
+    },
+    {
+      "path": "experiments/tcs_async_rl/REPAIRED_GROUP_FINDINGS_20261120.md",
+      "label": "Complete repaired native results and independent exact claim check"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/native_group_v12_outcome_20261120.json",
+      "label": "Complete native reward outcome and immutable private archive"
     }
   ],
   "jobs": [
@@ -1375,15 +1383,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534575",
       "revision": 108
+    },
+    {
+      "id": "c2bcbeaa-4572-4386-ba8c-f791f4c09e11",
+      "at": "2026-11-20T16:17:58.883902Z",
+      "actor": "codex",
+      "summary": "Recorded all 28 native zero grades, exact claim check and immutable full archive",
+      "revision": 109
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534575 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending.",
-  "nextAction": "Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.",
+  "summary": "Native repaired group failed: 28/28 finals scored zero, four finals missing and five repetition caps. MI300 group is active. No RL updates.",
+  "nextAction": "Grade the active MI300 group. The alternative-question proposal is ready and awaits the user data-scope decision.",
   "owner": "Codex",
-  "revision": 108,
-  "updatedAt": "2026-11-20T16:15:57.699433Z"
+  "revision": 109,
+  "updatedAt": "2026-11-20T16:17:58.883902Z"
 }

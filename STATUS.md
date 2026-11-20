@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534575 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/534576 RUNNING; hpcfund/534575 COMPLETED
-  Next: Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native repaired group failed: 28/28 finals scored zero, four finals missing and five repetition caps. MI300 group is active. No RL updates. Jobs: hpcfund/534576 RUNNING; hpcfund/534575 COMPLETED
+  Next: Grade the active MI300 group. The alternative-question proposal is ready and awaits the user data-scope decision.
 
 ## Next / blocked
 
