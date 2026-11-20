@@ -12,6 +12,7 @@ import hashlib
 import json
 import re
 import shlex
+import signal
 import subprocess
 import time
 from pathlib import Path
@@ -147,7 +148,13 @@ def watch(*, job_id, expected_name, expected_user, run_dir, expected_health, por
         stop_tunnel(tunnel)
 
 
+def _exit_on_termination(signum, frame):
+    # Run watch()'s finally block so its own SSH client does not outlive the monitor.
+    raise SystemExit(0)
+
+
 def main():
+    signal.signal(signal.SIGTERM, _exit_on_termination)
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--job-id", required=True)
     parser.add_argument("--config", type=Path, default=Path(__file__).with_name("rl_smoke_v1.json"))

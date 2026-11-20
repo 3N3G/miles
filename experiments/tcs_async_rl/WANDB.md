@@ -21,4 +21,7 @@ uvx --from wandb==0.31.0 wandb sync --entity geney --project tcs-async-rl <offli
 Every fresh RL snapshot must set `wandb_team=geney` and `wandb_project=tcs-async-rl`.
 The native adapter passes `wandb_team` as W&B's `entity` argument.
 Keep historical snapshots unchanged. No new question-bound RL snapshot has been selected while medium is pending.
-Record actual uploaded run URLs after synchronization. Project access alone does not establish successful run upload.
+The existing native offline logging control was uploaded and read back successfully.
+Its [run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/offline-logging-control-v1) contains the actual control metric at one.
+See `evidence/wandb_sync_control_20261120.json`. This control is not an RL training run.
+Record each RL run's actual uploaded URL after synchronization.

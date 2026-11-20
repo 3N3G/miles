@@ -1,0 +1,13 @@
+{
+  "observed_at_utc": "2026-11-20T23:28:26.827907+00:00",
+  "entity": "geney",
+  "organization": "geney-org",
+  "project": "tcs-async-rl",
+  "run_id": "offline-logging-control-v1",
+  "run_url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/offline-logging-control-v1",
+  "state": "finished",
+  "uploaded_native_control_metric": 1,
+  "new_gpu_jobs": 0,
+  "scope": "Upload and readback of the existing native offline logging control. No RL training.",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/c865d5828fea28a6d43af489ceadb85e838c5a5d/miles/offline-logging-control-v1"
+}

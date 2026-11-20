@@ -68,6 +68,8 @@ def resolved_args(config, training, *, work_dir, run_dir, run_id):
         wandb_run_id=run_id,
         tb_project_name=str(run_dir / "tensorboard"),
         tb_experiment_name=run_id,
+        # Keep audit events outside excluded model checkpoint directories.
+        save_debug_event_data=str(run_dir / "events"),
         save_debug_rollout_data=str(run_dir / "rollout_data" / "rollout-{rollout_id}.pt"),
     )
     if any(value is None for value in args.values()):

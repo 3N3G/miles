@@ -30,6 +30,11 @@ All older RL snapshots remain unchanged and bound to their original failed hard-
 A fresh RL snapshot must bind the selected new question, exact input hash and actual qualification evidence.
 Do not submit v6 against new-question grades. Selection waits for the medium result.
 
+The user subsequently requested automatic submission and monitoring after medium.
+`rl_smoke_v7_medium.json` is the conditional medium candidate, with unchanged training and sampling settings.
+Its exact gate, at-most-once submission and monitoring procedure are in [AUTO_HANDOFF.md](AUTO_HANDOFF.md).
+It remains closed until the full medium result qualifies. A failed gate does not select another question.
+
 ## Background / motivation
 
 Generation alone does not validate backward computation, optimizer state, weight publication, or resumable saving.
@@ -108,7 +113,7 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
 
 ## Results
 
-Not submitted. Both repaired frozen-model groups failed the gate.
+No RL job has been submitted as of the automatic-handoff setup. Both repaired hard-question groups failed the gate.
 Each returned 32 generations with 28 nonempty finals. All 28 scored zero in both orders, on the same fixed question.
 The native group had five repetition caps. The compatible vLLM group had nine. Each had four missing finals.
 See [native findings](REPAIRED_GROUP_FINDINGS_20261120.md) and [vLLM findings](VLLM_GROUP_FINDINGS_20261120.md).

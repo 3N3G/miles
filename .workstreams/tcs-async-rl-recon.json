@@ -555,6 +555,22 @@
     {
       "path": "experiments/tcs_async_rl/evidence/wandb_destination_20261120.json",
       "label": "Authenticated W&B destination checks without credential values"
+    },
+    {
+      "path": "experiments/tcs_async_rl/AUTO_HANDOFF.md",
+      "label": "Conditional at-most-once RL handoff and monitoring"
+    },
+    {
+      "path": "experiments/tcs_async_rl/rl_smoke_v7_medium.json",
+      "label": "Frozen medium-gated two-update candidate"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/automatic_handoff_validation_20261120.json",
+      "label": "65 passing CPU tests and non-submitting Slurm preview"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/wandb_sync_control_20261120.json",
+      "label": "Successful upload and readback of the native offline W&B control"
     }
   ],
   "jobs": [
@@ -1606,15 +1622,22 @@
       "actor": "codex",
       "summary": "Started the requested durable medium-to-RL handoff",
       "revision": 127
+    },
+    {
+      "id": "d53b6f4e-c270-404a-8ef4-e3b40b921111",
+      "at": "2026-11-20T23:31:51.024862Z",
+      "actor": "codex",
+      "summary": "Validated the conditional RL handoff and real W&B upload path",
+      "revision": 128
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Medium 535170 is pending. The user requested automatic RL submission and monitoring after its diagnostic. Existing watcher only grades and archives.",
-  "nextAction": "Implement, validate and arm a durable medium-to-RL handoff under the existing reward gate and two-update authorization.",
+  "summary": "Automatic medium-to-RL controller implemented and validated with 65 CPU tests. W&B offline upload and API readback passed. No RL job submitted.",
+  "nextAction": "Commit and freeze the controller, then arm its VM process to wait for medium and enforce the original reward gate.",
   "owner": "Codex",
-  "revision": 127,
-  "updatedAt": "2026-11-20T23:15:26.454938Z"
+  "revision": 128,
+  "updatedAt": "2026-11-20T23:31:51.024862Z"
 }

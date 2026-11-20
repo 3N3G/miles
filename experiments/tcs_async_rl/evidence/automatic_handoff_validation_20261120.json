@@ -1,0 +1,13 @@
+{
+  "observed_at_utc": "2026-11-20T23:31:49.880607+00:00",
+  "config": "experiments/tcs_async_rl/rl_smoke_v7_medium.json",
+  "fast_tests_passed": 65,
+  "new_gpu_jobs": 0,
+  "reserved_reward_port_available": 18493,
+  "native_args_resolved": true,
+  "batch_consistent": true,
+  "wandb_entity": "geney",
+  "wandb_project": "tcs-async-rl",
+  "job_script": "#!/usr/bin/python3.12\n#SBATCH --job-name=tcs-rl-medium-v7\n#SBATCH --partition=mi3508x\n#SBATCH --account=aviralkumar\n#SBATCH --qos=alloc_aviralkumar_09082026_09302027\n#SBATCH --nodes=1\n#SBATCH --ntasks=1\n#SBATCH --cpus-per-task=64\n#SBATCH --exclusive\n#SBATCH --time=04:00:00\n#SBATCH --chdir=/work1/aviralkumar/geney/tcs-async-rl/checkouts/rl-medium-v7\n#SBATCH --output=/work1/aviralkumar/geney/tcs-async-rl/runs/rl-medium-v7/slurm-%j.log\nimport subprocess\nsubprocess.run(['/usr/bin/python3.12', '-m', 'experiments.tcs_async_rl.amd_preflight', '--config', 'experiments/tcs_async_rl/rl_smoke_v7_medium.json', '--work-dir', '/work1/aviralkumar/geney/tcs-async-rl', '--run-dir', '/work1/aviralkumar/geney/tcs-async-rl/runs/rl-medium-v7', '--expected-commit', 'FROZEN_COMMIT_AT_ARMING', '--run-in-allocation'], check=True)\n",
+  "scope": "Non-submitting render and fast tests. No native backward pass or RL allocation yet."
+}

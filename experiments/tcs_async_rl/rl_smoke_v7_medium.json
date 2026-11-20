@@ -1,0 +1,49 @@
+{
+  "status": "authorized_automatic_medium_handoff_20261120_strict_gate_required",
+  "mode": "rl_smoke",
+  "job_name": "tcs-rl-medium-v7",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.sampling_repair_v2.json",
+  "container_config": "qualification.proposed.json",
+  "input_config": "group_check_v15_medium_mi350.json",
+  "gate_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/medium-check-v15-qualified-grades.json",
+  "allocation": {
+    "partition": "mi3508x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 8,
+    "cpus_per_task": 64,
+    "walltime": "04:00:00"
+  },
+  "overrides": {
+    "rollout_batch_size": 1,
+    "global_batch_size": 32,
+    "num_rollout": 2,
+    "async_max_concurrent_samples": 32,
+    "rollout_skip_special_tokens": false,
+    "save_interval": 1,
+    "seed": 20261118,
+    "max_position_embeddings": 98304,
+    "custom_rm_path": "experiments.tcs_async_rl.reward_hook.reward",
+    "rm_url": "http://127.0.0.1:18493/score",
+    "use_wandb": true,
+    "wandb_mode": "offline",
+    "wandb_project": "tcs-async-rl",
+    "disable_wandb_random_suffix": true,
+    "wandb_always_use_train_step": true,
+    "use_tensorboard": true,
+    "check_weight_update_equal": true,
+    "wandb_team": "geney"
+  },
+  "scope": {
+    "purpose": "Two-update runtime qualification, not a learning-effect estimate",
+    "prompt_count": 1,
+    "optimizer_updates": 2,
+    "heldout_reads": 0,
+    "maximum_gpu_hours": 32,
+    "judge_usd_cap": 5,
+    "judge_location": "VM loopback service through SSH; provider credentials remain on VM",
+    "interpretation": "Provisional rubric rewards. Human and independent-provider calibration remain pending."
+  }
+}
