@@ -515,6 +515,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/rl_signal_efficiency_20261120.json",
       "label": "Measured token cost, hypothetical 1/32 calculation, and the unmeasured corpus-coverage question"
+    },
+    {
+      "path": "experiments/tcs_async_rl/EASY_MEDIUM_CHECK_PLAN_20261120.md",
+      "label": "User-approved easy-first then conditional-medium diagnostic sequence"
     }
   ],
   "jobs": [
@@ -1486,6 +1490,13 @@
       "actor": "codex",
       "summary": "Claimed the user-approved easy-then-medium diagnostic sequence",
       "revision": 117
+    },
+    {
+      "id": "fc24c0d4-2785-4d8e-9eef-351d3a897895",
+      "at": "2026-11-20T19:07:37.932954Z",
+      "actor": "codex",
+      "summary": "Recorded the approved difficulty progression and preserved the earlier hard-question runs",
+      "revision": 118
     }
   ],
   "projectId": "understanding",
@@ -1495,6 +1506,6 @@
   "summary": "User approved an easy-question group first, then medium if the easy rewards are useful. Keep the model, judge, 90k cap and held-out split.",
   "nextAction": "Validate the selected easy input, pin its config, and submit one AMD MI350 job. Review its rewards before the medium check.",
   "owner": "Codex",
-  "revision": 117,
-  "updatedAt": "2026-11-20T19:03:30.608743Z"
+  "revision": 118,
+  "updatedAt": "2026-11-20T19:07:37.932954Z"
 }

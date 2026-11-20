@@ -1,0 +1,42 @@
+{
+  "status": "authorized_easy_first_medium_if_easy_distribution_is_useful_20261120",
+  "mode": "group_inference",
+  "job_name": "tcs-medium-v15",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.sampling_repair_v2.json",
+  "container_config": "qualification.proposed.json",
+  "allocation": {
+    "partition": "mi3501x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 1,
+    "cpus_per_task": 16,
+    "walltime": "04:00:00"
+  },
+  "input_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/medium-check-v15-input.json",
+  "input_sha256": "205bddcca16bfbb58ff979e34a4c255ea9cdc091a49b4fcedec415c5ba0314bf",
+  "selection": {
+    "seed": 20261118,
+    "cohort": "STOC_2023",
+    "row": 89,
+    "paper_id": "Faster_Walsh-Hadamard_and_Discrete_Fourier_Transforms_From_Matrix_Non-Rigidity",
+    "node_id": "node_28"
+  },
+  "inference": {
+    "seed": 20261118,
+    "tensor_parallel_size": 1,
+    "max_running_requests": 32,
+    "validate_sampling_support": true
+  },
+  "scope": {
+    "prompt_count": 1,
+    "optimizer_updates": 0,
+    "heldout_reads": 0,
+    "judge_location": "VM after generation; credentials never transferred",
+    "maximum_gpu_hours": 4,
+    "purpose": "Easy-then-medium reward diagnostic. No optimizer updates or corpus learning claim.",
+    "submission_condition": "Submit only after the easy distribution and raw awarded criteria have been reviewed as useful."
+  },
+  "selection_method": "Preselected uniformly within the declared difficulty stratum before generation. See the approved easy-medium plan."
+}

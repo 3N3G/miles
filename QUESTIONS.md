@@ -59,25 +59,6 @@
 - Blocks: an online W&B URL, not the authorized rollout or RL runtime checks.
 - Status: asked in chat on 2026-11-20. No key value was requested.
 
-## 2026-11-20: Diagnostic scope if the fixed question stays constant
-
-- Question: does continued checking include other eligible training questions, including easier ones,
-  if the complete replacement group has constant rewards?
-- Evidence: the four original completions and the first two replacement completions received zero
-  in both Luna orders. These are incomplete diagnostic groups on one question, not a corpus estimate.
-- Options: check other eligible training questions, or keep the current question fixed.
-- Recommendation: allow other eligible questions for runtime feasibility. Preserve Qwen3.5-4B,
-  the prompt format, 90k cap, supplied per-question rubrics and sealed FOCS/STOC 2026 split.
-  Report any resulting question selection explicitly. Do not claim representative corpus success.
-- Blocks: additional-question diagnostic submissions only. The current group and native runtime work continue.
-- Status: asked asynchronously on 2026-11-20. No answer or expanded data authorization is assumed.
-  Updated after the bounded-sampling native group completed: 28/32 nonempty final answers, five model length limits,
-  and all 28 graded final answers zero in both orders. All five capped tails repeat. Full grading is complete.
-  The alternate MI300 group also finished with 28/28 nonempty finals scored zero in both orders,
-  four missing finals and nine repetition caps. No RL job was submitted.
-  A concrete two-question proposal is ready in `experiments/tcs_async_rl/QUESTION_SCREEN_PROPOSAL_20261120.md`.
-  The scope decision remains unanswered.
-
 ## 2026-11-20: Judge calibration evidence
 
 - Question: what human scores should be assigned to the saved calibration examples before interpreting learning results?
@@ -141,3 +122,8 @@
 - 2026-11-20: use the already authorized VM credential loader for online Luna scoring during
   the requested RL run. The provider client remains on the VM, reached through a loopback SSH tunnel.
   No provider key is copied to AMD or placed in Ray job arguments.
+
+- 2026-11-20: user approved one preselected easy question, followed by medium if its reward distribution is good,
+  then using those results to inform the RL run. The approved sequence is in
+  `experiments/tcs_async_rl/EASY_MEDIUM_CHECK_PLAN_20261120.md`.
+  This resolves permission to change the diagnostic question. It does not establish corpus-wide feasibility.

@@ -1,0 +1,42 @@
+{
+  "status": "authorized_easy_first_medium_if_easy_distribution_is_useful_20261120",
+  "mode": "group_inference",
+  "job_name": "tcs-easy-v14",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.sampling_repair_v2.json",
+  "container_config": "qualification.proposed.json",
+  "allocation": {
+    "partition": "mi3501x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 1,
+    "cpus_per_task": 16,
+    "walltime": "04:00:00"
+  },
+  "input_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/easy-check-v14-input.json",
+  "input_sha256": "a8d04b9664a76d1e41218122b7947c5953f2415c0ff12df7f36a4dc0d37554ea",
+  "selection": {
+    "seed": 20261118,
+    "cohort": "SODA_2025",
+    "row": 25,
+    "paper_id": "Approximating_Traveling_Salesman_Problems_Using_a_Bridge_Lemma",
+    "node_id": "node_08"
+  },
+  "inference": {
+    "seed": 20261118,
+    "tensor_parallel_size": 1,
+    "max_running_requests": 32,
+    "validate_sampling_support": true
+  },
+  "scope": {
+    "prompt_count": 1,
+    "optimizer_updates": 0,
+    "heldout_reads": 0,
+    "judge_location": "VM after generation; credentials never transferred",
+    "maximum_gpu_hours": 4,
+    "purpose": "Easy-then-medium reward diagnostic. No optimizer updates or corpus learning claim.",
+    "submission_condition": "First stage authorized now."
+  },
+  "selection_method": "Preselected uniformly within the declared difficulty stratum before generation. See the approved easy-medium plan."
+}
