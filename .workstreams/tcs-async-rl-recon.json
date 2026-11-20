@@ -344,15 +344,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 530287",
       "revision": 21
+    },
+    {
+      "id": "71fda8f8-a570-4adf-9bdd-0d0af295f76f",
+      "at": "2026-11-20T07:21:41.115513Z",
+      "actor": "codex",
+      "summary": "Diagnosed initial inference failure and started authorized cache-path repair",
+      "revision": 22
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
   "state": "running",
-  "summary": "AMD job 530287 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "Initial AMD job failed before generation: AITER tried to write its JIT cache under read-only /home1. Zero Qwen responses exist. Repairing the cache path for the same approved group check.",
+  "nextAction": "Set a writable AITER cache, validate startup, preserve v1, and submit the repaired inference job using cached model/container assets.",
   "owner": "Codex",
-  "revision": 21,
-  "updatedAt": "2026-11-19T02:30:36.743003Z"
+  "revision": 22,
+  "updatedAt": "2026-11-20T07:21:41.115513Z"
 }

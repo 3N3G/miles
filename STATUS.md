@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 530287 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Initial AMD job failed before generation: AITER tried to write its JIT cache under read-only /home1. Zero Qwen responses exist. Repairing the cache path for the same approved group check. Jobs: hpcfund/530287 FAILED
+  Next: Set a writable AITER cache, validate startup, preserve v1, and submit the repaired inference job using cached model/container assets.
 
 ## Next / blocked
 
