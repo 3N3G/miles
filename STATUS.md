@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Replacement group job 533702 remains queued. Prepared a guarded two-update async RL check, VM-only rubric service, offline W&B/TensorBoard logs, and 37 passing CPU checks. No RL job submitted before r Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Validate the local reward service with a real reference call, monitor 533702, then submit the pinned RL runtime check only after nonconstant diagnostic grades.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Group job 533702 remains queued. The VM online reward transport passed real Luna reference calls in both orders (7/7), rejected unfinished thinking, and recorded $0.0050574 usage. RL runtime code and  Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Keep monitoring the AMD group. Once 32 complete real grades vary, pin the RL source, transfer gate evidence, submit, and attach the VM scoring tunnel.
 
 ## Next / blocked
 

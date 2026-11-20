@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-11-20T07:48:24.457909+00:00",
+  "source_commit": "bb15cd4d",
+  "transport": "VM loopback HTTP; provider values loaded only in VM service",
+  "judge": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "reference_score": 7.0,
+  "reference_order_scores": [
+    7.0,
+    7.0
+  ],
+  "incomplete_answer_status": 422,
+  "usd_spent_or_reserved": 0.0050574,
+  "scope": "Real reference control through the online reward transport; not calibration or an AMD tunnel check"
+}

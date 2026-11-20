@@ -45,7 +45,7 @@ def _run(argv, path):
     return result.returncode
 
 
-def _record_completion(job_id, state, run_dir, hf_url, repo):
+def _record_completion(job_id, state, run_dir, hf_url, repo, continue_to_rl=False):
     event = {
         "recorded_at_utc": datetime.datetime.now(datetime.UTC).isoformat(),
         "cluster": "hpcfund",
@@ -76,12 +76,16 @@ def _record_completion(job_id, state, run_dir, hf_url, repo):
     )
     succeeded = state["state"] == "COMPLETED" and state.get("grading_returncode") == 0 and hf_url is not None
     update = {
-        "state": "needs-you" if succeeded else "running",
+        "state": "needs-you" if succeeded and not continue_to_rl else "running",
         "summary": f"AMD job {job_id} ended {state['state']}. {detail} Human calibration remains pending.",
         "nextAction": (
-            "Review the saved group and provisional grades before selecting a learning run."
-            if succeeded
-            else "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results."
+            "Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check."
+            if succeeded and continue_to_rl
+            else (
+                "Review the saved group and provisional grades before selecting a learning run."
+                if succeeded
+                else "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results."
+            )
         ),
         "jobs": jobs,
     }
@@ -117,7 +121,7 @@ def _record_completion(job_id, state, run_dir, hf_url, repo):
     subprocess.run(["git", "push"], cwd=repo, check=True)
 
 
-def watch(*, job_id, remote_run_dir, run_dir, poll_seconds, state_repo):
+def watch(*, job_id, remote_run_dir, run_dir, poll_seconds, state_repo, continue_to_rl=False):
     run_dir.mkdir(parents=True, exist_ok=True)
     while True:
         try:
@@ -166,7 +170,7 @@ def watch(*, job_id, remote_run_dir, run_dir, poll_seconds, state_repo):
     (run_dir / "upload.log").write_text(upload.stdout + upload.stderr)
     urls = [line for line in upload.stdout.splitlines() if line.startswith("https://huggingface.co/datasets/")]
     hf_url = urls[-1] if upload.returncode == 0 and urls else None
-    _record_completion(job_id, state, run_dir, hf_url, state_repo)
+    _record_completion(job_id, state, run_dir, hf_url, state_repo, continue_to_rl=continue_to_rl)
     (run_dir / "watcher-complete.json").write_text(
         json.dumps({"scheduler": state, "hf_results": hf_url}, indent=2) + "\n"
     )
@@ -179,6 +183,9 @@ def main():
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--poll-seconds", type=int, default=60)
     parser.add_argument("--state-repo", type=Path, default=ROOT)
+    parser.add_argument(
+        "--continue-to-rl", action="store_true", help="Keep the workstream active for an already approved RL run"
+    )
     args = parser.parse_args()
     args.run_dir.mkdir(parents=True, exist_ok=True)
     with (args.run_dir / "watcher.lock").open("a") as lock:
@@ -189,6 +196,7 @@ def main():
             run_dir=args.run_dir,
             poll_seconds=args.poll_seconds,
             state_repo=args.state_repo,
+            continue_to_rl=args.continue_to_rl,
         )
 
 

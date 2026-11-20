@@ -145,6 +145,11 @@ def main():
         RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES="1",
         RAY_EXPERIMENTAL_NOSET_CUDA_VISIBLE_DEVICES="1",
         RAY_TMPDIR=str(cli.run_dir / "ray"),
+        # The native TensorBoard adapter otherwise prefixes even absolute paths.
+        TENSORBOARD_DIR=str(cli.run_dir / "tensorboard"),
+        WANDB_CACHE_DIR=str(cli.work_dir / "cache" / "wandb"),
+        WANDB_CONFIG_DIR=str(cli.run_dir / "wandb" / "config"),
+        WANDB_DATA_DIR=str(cli.run_dir / "wandb" / "data"),
     )
     if devices := os.environ.get("HIP_VISIBLE_DEVICES"):
         os.environ["CUDA_VISIBLE_DEVICES"] = devices
@@ -180,6 +185,10 @@ def main():
             "HF_HOME",
             "MILES_HARDWARE_PLATFORM",
             "RAY_TMPDIR",
+            "TENSORBOARD_DIR",
+            "WANDB_CACHE_DIR",
+            "WANDB_CONFIG_DIR",
+            "WANDB_DATA_DIR",
         )
     }
     backend.execute_train(
