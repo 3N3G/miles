@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI210 job 533964 failed before generation after successful core compilation. A second independent AITER C++ cache still defaulted to unmounted home. Added AITER_ROOT_DIR, validated its exact pinned pa Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Cancel own queued 533702 because its same image/cache settings have this known failure. Submit repaired MI210 and queued MI350 snapshots, record both, and monitor startup directly.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted repaired mi2101x group 534010. Both AITER caches now point to work storage. Forty-two CPU checks pass. No actual Qwen group grades yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Monitor repaired startup, BF16 kernel check, model initialization and incremental responses. Cancel the unused own fallback after a complete group has varied real grades.
 
 ## Next / blocked
 

@@ -256,6 +256,11 @@
       "id": "533964",
       "cluster": "hpcfund",
       "status": "FAILED"
+    },
+    {
+      "id": "534010",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -523,15 +528,22 @@
       "actor": "codex",
       "summary": "Diagnosed and repaired the independent AITER C++ cache before replacement submissions",
       "revision": 36
+    },
+    {
+      "id": "fd4cc173-c9f9-491a-969b-7278efe093fe",
+      "at": "2026-11-20T10:22:28.854075Z",
+      "actor": "codex",
+      "summary": "Submitted repaired mi2101x diagnostic 534010",
+      "revision": 37
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "MI210 job 533964 failed before generation after successful core compilation. A second independent AITER C++ cache still defaulted to unmounted home. Added AITER_ROOT_DIR, validated its exact pinned path selection, and prepared immutable replacements. Forty-two CPU checks pass.",
-  "nextAction": "Cancel own queued 533702 because its same image/cache settings have this known failure. Submit repaired MI210 and queued MI350 snapshots, record both, and monitor startup directly.",
+  "summary": "Submitted repaired mi2101x group 534010. Both AITER caches now point to work storage. Forty-two CPU checks pass. No actual Qwen group grades yet.",
+  "nextAction": "Monitor repaired startup, BF16 kernel check, model initialization and incremental responses. Cancel the unused own fallback after a complete group has varied real grades.",
   "owner": "Codex",
-  "revision": 36,
-  "updatedAt": "2026-11-20T10:20:51.537829Z"
+  "revision": 37,
+  "updatedAt": "2026-11-20T10:22:28.854075Z"
 }
