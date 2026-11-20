@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted repaired mi3501x group 534013. Both AITER caches now point to work storage. Forty-two CPU checks pass. No actual Qwen group grades yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Monitor repaired startup, BF16 kernel check, model initialization and incremental responses. Cancel the unused own fallback after a complete group has varied real grades.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 533702 ended CANCELLED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 
