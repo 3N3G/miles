@@ -207,6 +207,10 @@
     {
       "path": "experiments/tcs_async_rl/reward_tunnel.py",
       "label": "Own-allocation-only SSH reward tunnel and health monitor"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/rl_launch_audit_20261120.json",
+      "label": "Slurm metadata, Unix socket length, and clean-container launch audit"
     }
   ],
   "jobs": [
@@ -437,15 +441,22 @@
       "actor": "codex",
       "summary": "Prepared allocation-bound reward tunnel lifecycle and forty passing CPU checks",
       "revision": 29
+    },
+    {
+      "id": "82ab2924-11d2-44c9-a710-b35024f6d0bf",
+      "at": "2026-11-20T09:27:42.626591Z",
+      "actor": "codex",
+      "summary": "Fixed clean-container job metadata and excessive Ray Unix-socket paths before GPU launch",
+      "revision": 30
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Group job 533702 remains queued. Prepared the bounded RL launch, VM rubric service, portable consumed-response export, and an allocation-aware SSH tunnel watcher. Real local reference scoring passes; 40 CPU checks pass. No Qwen group grades or RL submission yet.",
-  "nextAction": "Wait for the rollout allocation, inspect startup and every completion, then grade. After the complete group has varied real rewards, submit the pinned RL check and start its tunnel watcher.",
+  "summary": "AMD group 533702 remains queued. The RL launch audit fixed dropped Slurm metadata under --cleanenv and a Ray Unix-socket path that exceeded 107 bytes. Run-owned storage now has a short container alias. All 41 CPU checks pass; GPU generation and RL remain unverified.",
+  "nextAction": "Continue monitoring queued 533702. Inspect and grade its actual responses before RL submission. Pin the latest audited RL source and start its own-allocation tunnel watcher.",
   "owner": "Codex",
-  "revision": 29,
-  "updatedAt": "2026-11-20T08:39:06.896893Z"
+  "revision": 30,
+  "updatedAt": "2026-11-20T09:27:42.626591Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Group job 533702 remains queued. Prepared the bounded RL launch, VM rubric service, portable consumed-response export, and an allocation-aware SSH tunnel watcher. Real local reference scoring passes;  Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Wait for the rollout allocation, inspect startup and every completion, then grade. After the complete group has varied real rewards, submit the pinned RL check and start its tunnel
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD group 533702 remains queued. The RL launch audit fixed dropped Slurm metadata under --cleanenv and a Ray Unix-socket path that exceeded 107 bytes. Run-owned storage now has a short container alias Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Continue monitoring queued 533702. Inspect and grade its actual responses before RL submission. Pin the latest audited RL source and start its own-allocation tunnel watcher.
 
 ## Next / blocked
 

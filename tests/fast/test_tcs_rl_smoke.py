@@ -55,9 +55,11 @@ class RLSmokeTests(unittest.TestCase):
     def test_private_pid_namespace_is_mandatory_for_rl_container(self):
         common = dict(image=Path("/work/image"), repo=Path("/repo"), work_dir=Path("/work"))
         ordinary = container_prefix(**common)
-        isolated = container_prefix(**common, isolate_processes=True)
+        isolated = container_prefix(**common, isolate_processes=True, runtime_dir=Path("/work/run/ray"))
         self.assertNotIn("--pid", ordinary)
         self.assertIn("--pid", isolated)
+        self.assertIn("/work/run/ray:/tcs-ray", isolated)
+        self.assertIn("RAY_TMPDIR=/tcs-ray", isolated)
         self.assertTrue(any(value.startswith("TCS_HOST_PID_NAMESPACE=pid:[") for value in isolated))
 
 

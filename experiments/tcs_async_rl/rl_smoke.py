@@ -165,7 +165,6 @@ def main():
         NCCL_NVLS_ENABLE="0",
         RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES="1",
         RAY_EXPERIMENTAL_NOSET_CUDA_VISIBLE_DEVICES="1",
-        RAY_TMPDIR=str(cli.run_dir / "ray"),
         # The native TensorBoard adapter otherwise prefixes even absolute paths.
         TENSORBOARD_DIR=str(cli.run_dir / "tensorboard"),
         WANDB_CACHE_DIR=str(cli.work_dir / "cache" / "wandb"),

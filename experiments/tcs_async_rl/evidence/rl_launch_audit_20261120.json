@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-11-20T09:27:42.533512+00:00",
+  "image_config": "qualification.proposed.json",
+  "clean_environment_fix": "Forward explicit Slurm allocation metadata and device visibility through --env. No provider keys forwarded.",
+  "ray_source": "ray/_private/node.py session timestamp/PID and sockets; ray/_private/utils.py validate_socket_filename",
+  "ray_socket_limit_bytes": 107,
+  "old_socket_path_bytes": 125,
+  "new_socket_path_bytes": 75,
+  "new_container_alias": "/tcs-ray",
+  "storage": "Alias binds to the run-owned Ray directory on the AMD work filesystem",
+  "vm_linux_socket_check": {
+    "125": "OSError: AF_UNIX path too long",
+    "75": "bound"
+  },
+  "cpu_tests_passed": 41,
+  "actual_apptainer_bind_and_training_verified": false
+}

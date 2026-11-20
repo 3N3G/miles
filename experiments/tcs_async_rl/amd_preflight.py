@@ -26,6 +26,7 @@ from experiments.tcs_async_rl.resource_estimate import model_inputs
 
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG = Path(__file__).with_name("qualification.proposed.json")
+RAY_RUNTIME_PATH = "/tcs-ray"
 
 
 def load_configs(path=CONFIG):
@@ -79,7 +80,7 @@ def render_job(*, repo, work_dir, run_dir, expected_commit, config_path=CONFIG):
     )
 
 
-def container_prefix(*, image, repo, work_dir, isolate_processes=False):
+def container_prefix(*, image, repo, work_dir, isolate_processes=False, runtime_dir=None):
     cache = work_dir / "cache"
     environment = {
         "PYTHONPATH": f"{repo}:/root/Megatron-LM:/sgl-workspace/sglang/python",
@@ -93,6 +94,18 @@ def container_prefix(*, image, repo, work_dir, isolate_processes=False):
         "PYTHONUNBUFFERED": "1",
         "TOKENIZERS_PARALLELISM": "false",
     }
+    for key in (
+        "SLURM_JOB_ID",
+        "SLURM_JOB_PARTITION",
+        "SLURM_JOB_NUM_NODES",
+        "SLURM_JOB_NODELIST",
+        "SLURM_CPUS_PER_TASK",
+        "ROCR_VISIBLE_DEVICES",
+        "HIP_VISIBLE_DEVICES",
+        "CUDA_VISIBLE_DEVICES",
+    ):
+        if key in os.environ:
+            environment[key] = os.environ[key]
     argv = [
         "apptainer",
         "exec",
@@ -107,7 +120,11 @@ def container_prefix(*, image, repo, work_dir, isolate_processes=False):
         str(repo),
     ]
     if isolate_processes:
+        if runtime_dir is None:
+            raise ValueError("Isolated RL requires a run-owned Ray runtime directory")
         argv.append("--pid")
+        argv += ["--bind", f"{runtime_dir}:{RAY_RUNTIME_PATH}"]
+        environment["RAY_TMPDIR"] = RAY_RUNTIME_PATH
         environment["TCS_HOST_PID_NAMESPACE"] = os.readlink("/proc/self/ns/pid")
     for key, value in environment.items():
         argv += ["--env", f"{key}={value}"]
@@ -249,8 +266,16 @@ def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
 
 
 def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, training, env):
+    runtime_dir = None
+    if qualification.get("mode") == "rl_smoke":
+        runtime_dir = run_dir / "ray"
+        runtime_dir.mkdir(exist_ok=True)
     prefix = container_prefix(
-        image=sandbox, repo=ROOT, work_dir=work_dir, isolate_processes=qualification.get("mode") == "rl_smoke"
+        image=sandbox,
+        repo=ROOT,
+        work_dir=work_dir,
+        isolate_processes=qualification.get("mode") == "rl_smoke",
+        runtime_dir=runtime_dir,
     )
     if qualification.get("mode") == "group_inference":
         _run_group_check(

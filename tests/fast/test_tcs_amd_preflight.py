@@ -63,6 +63,19 @@ class TestAMDPreflight(unittest.TestCase):
         self.assertIn("HF_HOME=/work/tcs/cache/huggingface", argv)
         self.assertIn("AITER_JIT_DIR=/work/tcs/cache/aiter/sandbox", argv)
 
+    def test_clean_container_receives_only_explicit_job_and_device_metadata(self):
+        fake = {
+            "SLURM_JOB_ID": "123",
+            "CUDA_VISIBLE_DEVICES": "0,1",
+            "OPENAI_API_KEY": "dummy",
+            "WANDB_API_KEY": "dummy",
+        }
+        with patch.dict(os.environ, fake, clear=True):
+            argv = container_prefix(image=Path("/work/sandbox"), repo=ROOT, work_dir=Path("/work/tcs"))
+        self.assertIn("SLURM_JOB_ID=123", argv)
+        self.assertIn("CUDA_VISIBLE_DEVICES=0,1", argv)
+        self.assertFalse(any("API_KEY" in value for value in argv))
+
     def test_long_case_reaches_exact_context_boundary(self):
         qualification, training = load_configs()
         self.assertLess(
