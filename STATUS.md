@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 14/32 Qwen answers graded, all zero. Native cache repair ready. HF/vLLM matched three greedy tokens but failed one numerical tolerance. Jobs: hpcfund/534174 RUNNING; hpcfund/534317 FAILED
-  Next: Submit the native cache repair, diagnose the short-prefix discrepancy, and finish grading the fixed group.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 14/32 fixed-question grades remain zero. Submitted native JIT cache repair 534333. Short-prefix numerical discrepancy saved. Jobs: hpcfund/534174 RUNNING; hpcfund/534333 SUBMITTED
+  Next: Monitor both group jobs and diagnose the saved numerical discrepancy before RL.
 
 ## Next / blocked
 

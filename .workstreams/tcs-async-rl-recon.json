@@ -388,6 +388,11 @@
       "status": "RUNNING"
     },
     {
+      "id": "534333",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "534317",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -1082,15 +1087,22 @@
       "actor": "codex",
       "summary": "Repaired native JIT cache and recorded the failed numerical criterion",
       "revision": 83
+    },
+    {
+      "id": "9b844ca2-6cac-4ca3-94d2-610c34d6bd99",
+      "at": "2026-11-20T13:46:20.877876Z",
+      "actor": "codex",
+      "summary": "Submitted native JIT-cache replacement 534333",
+      "revision": 84
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "14/32 Qwen answers graded, all zero. Native cache repair ready. HF/vLLM matched three greedy tokens but failed one numerical tolerance.",
-  "nextAction": "Submit the native cache repair, diagnose the short-prefix discrepancy, and finish grading the fixed group.",
+  "summary": "14/32 fixed-question grades remain zero. Submitted native JIT cache repair 534333. Short-prefix numerical discrepancy saved.",
+  "nextAction": "Monitor both group jobs and diagnose the saved numerical discrepancy before RL.",
   "owner": "Codex",
-  "revision": 83,
-  "updatedAt": "2026-11-20T13:45:47.560975Z"
+  "revision": 84,
+  "updatedAt": "2026-11-20T13:46:20.877876Z"
 }
