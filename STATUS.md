@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Initial job generated 0/32 responses due to a read-only AITER cache. Known cache failure repaired and CPU-validated. Replacement 533702 is queued with monitor PID 850931. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Observe replacement 533702 startup and all 32 responses. Existing pinned assets and judge controls are cached. No inference-quality result exists yet.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved continued rollout debugging, then RL submission/debugging and W&B logging. Replacement 533702 is queued. Preparing the online reward and RL launch paths while waiting. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Check W&B authentication safely, wire online rubric scoring through the VM, and prepare the first bounded RL run while monitoring 533702.
 
 ## Next / blocked
 

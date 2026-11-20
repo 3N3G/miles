@@ -382,15 +382,22 @@
       "actor": "codex",
       "summary": "Verified replacement-job monitor and preserved the original inference failure evidence",
       "revision": 24
+    },
+    {
+      "id": "8ea73d2c-1aba-4c93-a8e5-9f39a1697c73",
+      "at": "2026-11-20T07:31:17.545890Z",
+      "actor": "codex",
+      "summary": "User extended authorization through nonconstant rollout rewards and a working RL run with W&B logging",
+      "revision": 25
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
-  "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
+  "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Initial job generated 0/32 responses due to a read-only AITER cache. Known cache failure repaired and CPU-validated. Replacement 533702 is queued with monitor PID 850931.",
-  "nextAction": "Observe replacement 533702 startup and all 32 responses. Existing pinned assets and judge controls are cached. No inference-quality result exists yet.",
+  "summary": "User approved continued rollout debugging, then RL submission/debugging and W&B logging. Replacement 533702 is queued. Preparing the online reward and RL launch paths while waiting.",
+  "nextAction": "Check W&B authentication safely, wire online rubric scoring through the VM, and prepare the first bounded RL run while monitoring 533702.",
   "owner": "Codex",
-  "revision": 24,
-  "updatedAt": "2026-11-20T07:27:04.797514Z"
+  "revision": 25,
+  "updatedAt": "2026-11-20T07:31:17.545890Z"
 }
