@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Original native group: 31 zero grades, one 90k loop. Bounded MI210 trial is decoding; native validation is queued. No RL updates. Jobs: hpcfund/534174 CANCELLED; hpcfund/534420 PENDING
-  Next: Validate the failed seed and new group. Keep the supplied rubric and held-out cohorts fixed.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native offline W&B control passed. Bounded MI210 seed 25 is decoding; native validation queued. Original native 31 scores were zero. Jobs: hpcfund/534174 CANCELLED; hpcfund/534420 PENDING
+  Next: Finish the fixed seed and group, then verify real reward variation. Native sampling metadata remains queued.
 
 ## Next / blocked
 

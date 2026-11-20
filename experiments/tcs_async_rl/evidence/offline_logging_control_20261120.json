@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "wandb_version": "0.31.0",
+  "mode": "offline",
+  "native_adapter": "miles.utils.tracking_utils.wandb_utils.init_wandb_primary",
+  "slurm_parent_job_id": "534425",
+  "slurm_step_id": "1",
+  "new_gpu_jobs": 0,
+  "code_commit": "f0ad2b51552647c7391ba94ebb07b72f96468141",
+  "image": "/work1/aviralkumar/geney/tcs-async-rl/containers/25597c01ab3fc8e77bfeb48434262c535080dc6857c8d591165b4b9304425019.sandbox",
+  "online_account_authentication_verified": false,
+  "scope": "Native primary adapter and durable offline output only. No online-account authentication or RL update.",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7e1467f2a72cb1c24c0c55f49d799840c7de3074/miles/offline-logging-control-v1"
+}

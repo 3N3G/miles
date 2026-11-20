@@ -169,6 +169,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ee9d513a726ef0299ea9e295c4c4109e3bd9819c/miles/group-check-v9-mi350",
       "label": "Original native group plus independent exact check of the selected answer"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7e1467f2a72cb1c24c0c55f49d799840c7de3074/miles/offline-logging-control-v1",
+      "label": "Durable offline W&B control files and exact primary-image provenance"
     }
   ],
   "evidence": [
@@ -419,6 +423,10 @@
     {
       "path": "experiments/tcs_async_rl/NATIVE_GROUP_FINDINGS_20261120.md",
       "label": "Standalone measured results with a uniformly selected raw claim and exact counterexample"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/offline_logging_control_20261120.json",
+      "label": "Native W&B adapter passed an offline CPU control inside the actual training image"
     }
   ],
   "jobs": [
@@ -1233,15 +1241,22 @@
       "actor": "codex",
       "summary": "Saved standalone native findings and restored the active repair status after old-job archival",
       "revision": 96
+    },
+    {
+      "id": "14f0c1dc-7d0b-4122-8b00-59481d020468",
+      "at": "2026-11-20T14:54:17.280402Z",
+      "actor": "codex",
+      "summary": "Verified the actual native offline W&B adapter without a new GPU job",
+      "revision": 97
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Original native group: 31 zero grades, one 90k loop. Bounded MI210 trial is decoding; native validation is queued. No RL updates.",
-  "nextAction": "Validate the failed seed and new group. Keep the supplied rubric and held-out cohorts fixed.",
+  "summary": "Native offline W&B control passed. Bounded MI210 seed 25 is decoding; native validation queued. Original native 31 scores were zero.",
+  "nextAction": "Finish the fixed seed and group, then verify real reward variation. Native sampling metadata remains queued.",
   "owner": "Codex",
-  "revision": 96,
-  "updatedAt": "2026-11-20T14:41:27.166023Z"
+  "revision": 97,
+  "updatedAt": "2026-11-20T14:54:17.280402Z"
 }
