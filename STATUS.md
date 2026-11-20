@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Bundled-runtime probe 534048 could not initialize the GPU. Preparing a bounded three-case software control using the existing AMD vLLM image, with image-hash and pre-initialization library/driver meta Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Run the software-control diagnostic without model/data/API work, then select the smallest evidenced runtime repair. Preserve all failed runtime results and keep the MI350 fallback.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted ten-minute MI210 runtime control 534065. It compares the primary image in two library modes with the verified existing vLLM image. Repaired MI350 534034 remains queued. No Qwen answers or gr Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Inspect all runtime-control cases and select a repair from actual kernel and loaded-library evidence.
 
 ## Next / blocked
 

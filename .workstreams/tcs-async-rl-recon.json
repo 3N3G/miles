@@ -330,6 +330,11 @@
       "id": "534048",
       "cluster": "hpcfund",
       "status": "FAILED"
+    },
+    {
+      "id": "534065",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -709,15 +714,22 @@
       "actor": "codex",
       "summary": "Prepared an existing-image control and pre-GPU-initialization diagnostics",
       "revision": 52
+    },
+    {
+      "id": "68ac0ace-5b86-4331-b6c3-cf5d0b146bda",
+      "at": "2026-11-20T10:52:23.208444Z",
+      "actor": "codex",
+      "summary": "Submitted basic-kernel software control 534065",
+      "revision": 53
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Bundled-runtime probe 534048 could not initialize the GPU. Preparing a bounded three-case software control using the existing AMD vLLM image, with image-hash and pre-initialization library/driver metadata. All 44 CPU checks pass. MI350 534034 remains queued.",
-  "nextAction": "Run the software-control diagnostic without model/data/API work, then select the smallest evidenced runtime repair. Preserve all failed runtime results and keep the MI350 fallback.",
+  "summary": "Submitted ten-minute MI210 runtime control 534065. It compares the primary image in two library modes with the verified existing vLLM image. Repaired MI350 534034 remains queued. No Qwen answers or grades yet.",
+  "nextAction": "Inspect all runtime-control cases and select a repair from actual kernel and loaded-library evidence.",
   "owner": "Codex",
-  "revision": 52,
-  "updatedAt": "2026-11-20T10:50:39.021272Z"
+  "revision": 53,
+  "updatedAt": "2026-11-20T10:52:23.208444Z"
 }
