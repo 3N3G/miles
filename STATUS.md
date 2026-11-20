@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Repaired AMD job 533702 submitted. Writable AITER cache validated. Same 32-response group and 90k thinking cap. Original job 530287 produced no responses. Jobs: hpcfund/530287 FAILED; hpcfund/533702 SUBMITTED
-  Next: Monitor replacement engine startup directly, then collect and grade the group.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Initial job generated 0/32 responses due to a read-only AITER cache. Known cache failure repaired and CPU-validated. Replacement 533702 is queued with monitor PID 850931. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Observe replacement 533702 startup and all 32 responses. Existing pinned assets and judge controls are cached. No inference-quality result exists yet.
 
 ## Next / blocked
 

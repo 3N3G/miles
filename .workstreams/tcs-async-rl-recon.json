@@ -175,6 +175,18 @@
     {
       "path": "experiments/tcs_async_rl/analyze_group.py",
       "label": "Descriptive figures and a seed-selected raw example, without correctness claims"
+    },
+    {
+      "path": "experiments/tcs_async_rl/REPAIR_20261120.md",
+      "label": "Failure diagnosis, preserved v1, exact cache repair, validation and rerun plan"
+    },
+    {
+      "path": "experiments/tcs_async_rl/group_check_v2.json",
+      "label": "Replacement config with unchanged scientific settings"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/aiter_cache_repair_check_20261120.json",
+      "label": "Pinned AITER cache-selection function and writable-path validation"
     }
   ],
   "jobs": [
@@ -186,7 +198,7 @@
     {
       "id": "533702",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "PENDING"
     }
   ],
   "sessions": [
@@ -363,15 +375,22 @@
       "actor": "codex",
       "summary": "Submitted authorized cache-path repair job 533702 with preserved scientific settings",
       "revision": 23
+    },
+    {
+      "id": "609b1b26-989d-4ab0-b4c9-5ccce3ddec10",
+      "at": "2026-11-20T07:27:04.797514Z",
+      "actor": "codex",
+      "summary": "Verified replacement-job monitor and preserved the original inference failure evidence",
+      "revision": 24
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Produce a reproducible TCS async RL configuration, resource budget, verified judge access, and a reviewed run plan on an available cluster",
   "state": "running",
-  "summary": "Repaired AMD job 533702 submitted. Writable AITER cache validated. Same 32-response group and 90k thinking cap. Original job 530287 produced no responses.",
-  "nextAction": "Monitor replacement engine startup directly, then collect and grade the group.",
+  "summary": "Initial job generated 0/32 responses due to a read-only AITER cache. Known cache failure repaired and CPU-validated. Replacement 533702 is queued with monitor PID 850931.",
+  "nextAction": "Observe replacement 533702 startup and all 32 responses. Existing pinned assets and judge controls are cached. No inference-quality result exists yet.",
   "owner": "Codex",
-  "revision": 23,
-  "updatedAt": "2026-11-20T07:24:31.679066Z"
+  "revision": 24,
+  "updatedAt": "2026-11-20T07:27:04.797514Z"
 }
