@@ -1,0 +1,14 @@
+{
+  "source_sha256": "cbcd45243abc25a89d85a0fcf2e6e1bec4c9e73c2ce9982a9da6b96d1f04e429",
+  "environment_knob": "SGLANG_CACHE_DIR",
+  "derived_deep_gemm_dir": "/work1/aviralkumar/geney/tcs-async-rl/cache/sglang/cache-root-check/deep_gemm",
+  "third_party_defaults": {
+    "TRITON_CACHE_DIR": "/work1/aviralkumar/geney/tcs-async-rl/cache/sglang/cache-root-check/triton",
+    "TORCHINDUCTOR_CACHE_DIR": "/work1/aviralkumar/geney/tcs-async-rl/cache/sglang/cache-root-check/inductor",
+    "CUDA_CACHE_PATH": "/work1/aviralkumar/geney/tcs-async-rl/cache/sglang/cache-root-check/nv",
+    "TILELANG_CACHE_DIR": "/work1/aviralkumar/geney/tcs-async-rl/cache/sglang/cache-root-check/tilelang",
+    "FLASHINFER_WORKSPACE_BASE": "/work1/aviralkumar/geney/tcs-async-rl/cache/sglang/cache-root-check"
+  },
+  "write_succeeded": true,
+  "scope": "Exact pinned path helpers only; no SGLang, Torch, or GPU imports on login"
+}

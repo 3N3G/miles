@@ -247,6 +247,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/aiter_cpp_cache_check_20261120.json",
       "label": "Pinned C++ cache assignment and write validation"
+    },
+    {
+      "path": "experiments/tcs_async_rl/SGLANG_CACHE_REPAIR_20261120.md",
+      "label": "Third cache failure, central SGLang repair, and immutable rerun plan"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/sglang_cache_check_20261120.json",
+      "label": "Pinned central cache path derivation and writable directory validation"
     }
   ],
   "jobs": [
@@ -569,15 +577,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534010",
       "revision": 40
+    },
+    {
+      "id": "9d3e68fe-c9ea-484e-a1a9-1f1783d6dcc0",
+      "at": "2026-11-20T10:28:14.678015Z",
+      "actor": "codex",
+      "summary": "Repaired SGLang master cache after both AITER overrides passed",
+      "revision": 41
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534010 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "MI210 534010 passed both AITER paths but failed on SGLang DeepGEMM default home cache before generation. Added central SGLANG_CACHE_DIR and validated its exact derived paths. Forty-two CPU checks pass. Preparing fresh v5 snapshots; no Qwen scores yet.",
+  "nextAction": "Cancel own known-bad queued 534013, submit the repaired MI210/MI350 snapshots, and inspect actual imports, BF16 kernels and model startup.",
   "owner": "Codex",
-  "revision": 40,
-  "updatedAt": "2026-11-20T10:23:11.643851Z"
+  "revision": 41,
+  "updatedAt": "2026-11-20T10:28:14.678015Z"
 }

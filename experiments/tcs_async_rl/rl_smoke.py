@@ -199,6 +199,7 @@ def main():
         for key in (
             "AITER_JIT_DIR",
             "AITER_ROOT_DIR",
+            "SGLANG_CACHE_DIR",
             "XDG_CACHE_HOME",
             "TRITON_CACHE_DIR",
             "TORCH_EXTENSIONS_DIR",

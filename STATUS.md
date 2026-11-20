@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534010 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI210 534010 passed both AITER paths but failed on SGLang DeepGEMM default home cache before generation. Added central SGLANG_CACHE_DIR and validated its exact derived paths. Forty-two CPU checks pass Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Cancel own known-bad queued 534013, submit the repaired MI210/MI350 snapshots, and inspect actual imports, BF16 kernels and model startup.
 
 ## Next / blocked
 

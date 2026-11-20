@@ -63,6 +63,7 @@ class TestAMDPreflight(unittest.TestCase):
         self.assertIn("HF_HOME=/work/tcs/cache/huggingface", argv)
         self.assertIn("AITER_JIT_DIR=/work/tcs/cache/aiter/sandbox", argv)
         self.assertIn("AITER_ROOT_DIR=/work/tcs/cache/aiter_cpp/sandbox", argv)
+        self.assertIn("SGLANG_CACHE_DIR=/work/tcs/cache/sglang/sandbox", argv)
 
     def test_clean_container_receives_only_explicit_job_and_device_metadata(self):
         fake = {
@@ -84,6 +85,7 @@ class TestAMDPreflight(unittest.TestCase):
         for name in (
             "AITER_JIT_DIR",
             "AITER_ROOT_DIR",
+            "SGLANG_CACHE_DIR",
             "TRITON_CACHE_DIR",
             "TORCH_EXTENSIONS_DIR",
             "TORCHINDUCTOR_CACHE_DIR",
