@@ -1,0 +1,16 @@
+{
+  "job_id": "534575",
+  "code_commit": "d22f801493fa8987169868c6d331a6d59c98dd35",
+  "sampled_tokens": 16,
+  "support_capture_and_normalized_behavior_logprobs": "PASSED",
+  "resolved_inference_mode": {
+    "speculative_algorithm": null
+  },
+  "previously_truncated_seed": {
+    "sample_index": 25,
+    "new_completion_tokens": 47474,
+    "stop": "natural",
+    "nonempty_final": true
+  },
+  "scope": "Actual generator control only. Trainer backward computation is not yet tested."
+}

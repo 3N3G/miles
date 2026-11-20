@@ -439,14 +439,17 @@
     {
       "path": "experiments/tcs_async_rl/evidence/mi300_capacity_control_20261120.json",
       "label": "Actual larger-memory GPU, safe full-budget cache capacity and measured generation"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/online_reward_check_v2_20261120.json",
+      "label": "Live protocol-2 reward service controls and immutable private receipts"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/native_support_replay_control_20261120.json",
+      "label": "Actual native bounded sampling support capture passed without EAGLE"
     }
   ],
   "jobs": [
-    {
-      "id": "534425",
-      "cluster": "hpcfund",
-      "status": "CANCELLED"
-    },
     {
       "id": "534575",
       "cluster": "hpcfund",
@@ -456,6 +459,11 @@
       "id": "534576",
       "cluster": "hpcfund",
       "status": "RUNNING"
+    },
+    {
+      "id": "534425",
+      "cluster": "hpcfund",
+      "status": "CANCELLED"
     },
     {
       "id": "534174",
@@ -1312,15 +1320,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534425",
       "revision": 103
+    },
+    {
+      "id": "60a5f2ea-c302-413f-98e7-6f6e6cf78767",
+      "at": "2026-11-20T15:59:24.767293Z",
+      "actor": "codex",
+      "summary": "Verified native support metadata and recorded live protocol-2 service controls",
+      "revision": 104
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534425 ended CANCELLED. 2 provisional group grades saved. Human calibration remains pending.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "Native MI350 and compatible MI300 repaired groups are active. Native support replay passed. The failed seed now finishes naturally. No nonconstant group yet.",
+  "nextAction": "Grade both active groups. Submit the bounded RL check only after a complete group has genuine reward variation.",
   "owner": "Codex",
-  "revision": 103,
-  "updatedAt": "2026-11-20T15:56:23.053528Z"
+  "revision": 104,
+  "updatedAt": "2026-11-20T15:59:24.767293Z"
 }

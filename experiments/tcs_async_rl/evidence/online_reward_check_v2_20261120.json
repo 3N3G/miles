@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "observed_at_utc": "2026-11-20T15:14:31.860011+00:00",
+  "protocol_version": 2,
+  "controls": {
+    "reference": {
+      "http_status": 200,
+      "body": {
+        "reward": 7.0,
+        "judge_order_gap": 0.0,
+        "scores": [
+          7.0,
+          7.0
+        ],
+        "identity": "online-5747c863615817ce791047e9",
+        "generator_truncated": false
+      }
+    },
+    "recorded_length_limit": {
+      "http_status": 200,
+      "body": {
+        "reward": 0.0,
+        "judge_order_gap": 0.0,
+        "scores": [
+          0.0,
+          0.0
+        ],
+        "identity": "online-e3b0c44298fc1c149afbf4c8",
+        "generator_truncated": true
+      }
+    },
+    "unclassified_incomplete": {
+      "http_status": 422,
+      "body": {
+        "error_type": "ValueError"
+      }
+    }
+  },
+  "preserved_failure": {
+    "source_job_id": "534333",
+    "sample_index": 25,
+    "raw_response_sha256": "98c193e01005cbafdb474a84822b83bb6558863aeb46c94045baf20b59d6c761",
+    "raw_response_bytes": 533341
+  },
+  "scope": "Separate service validation. Original group grades and diagnostic gate remain unchanged.",
+  "active_service": {
+    "pid": 885287,
+    "code_commit": "afd3e9f4d456e4fca3bbab48d821fac86bbd4a41",
+    "directory": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/online-reward-check-v2/judging",
+    "health": {
+      "ready": true,
+      "protocol_version": 2,
+      "question_key": "2b4d7aa2e4ce63c5624e04e8987713682493db9dae8a35f54c168efe9fb652ae",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium"
+    }
+  },
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/fc93787c86a2bc0338f27ec644488a8663bf2e05/miles/online-reward-check-v2"
+}
