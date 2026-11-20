@@ -40,7 +40,19 @@ def resolved_args(config, training, *, work_dir, run_dir, run_id):
     model = training["model"]
     model_name = model["repo_id"].split("/")[-1] + "-" + model["revision"]
     hf = work_dir / "models" / model_name
-    conversion_name = model_name + "_mtp1_tp2"
+    conversion_name = (
+        model_name
+        + "_"
+        + "_".join(
+            f"{short}{args[key]}"
+            for short, key in (
+                ("mtp", "mtp_num_layers"),
+                ("tp", "tensor_model_parallel_size"),
+                ("pp", "pipeline_model_parallel_size"),
+                ("cp", "context_parallel_size"),
+            )
+        )
+    )
     args.update(
         hf_checkpoint=str(hf),
         ref_load=str(work_dir / "models" / (conversion_name + "_torch_dist")),
@@ -70,7 +82,7 @@ def native_argv(args):
     return argv
 
 
-def wait_for_judge(url, expected_key, *, seconds=600):
+def wait_for_judge(url, expected_key, *, judge, seconds=600):
     health = url.rsplit("/", 1)[0] + "/health"
     deadline = time.monotonic() + seconds
     while time.monotonic() < deadline:
@@ -79,6 +91,11 @@ def wait_for_judge(url, expected_key, *, seconds=600):
                 status = json.load(response)
             if status.get("question_key") != expected_key or status.get("ready") is not True:
                 raise ValueError("Reward service does not match the approved question")
+            if (
+                status.get("model") != judge["primary_model"]
+                or status.get("reasoning_effort") != judge["reasoning_effort"]
+            ):
+                raise ValueError("Reward service changed the approved judge or effort")
             print("VM reward tunnel ready", flush=True)
             return
         except (urllib.error.URLError, TimeoutError):
@@ -113,7 +130,10 @@ def main():
     input_config, _ = load_configs(cli.config.parent / config["input_config"])
     row = load_input(input_config, training)
     gate_file = Path(config["gate_file"])
-    validate_group_gate(json.loads(gate_file.read_text()), training["miles_args"]["n_samples_per_prompt"])
+    grades = json.loads(gate_file.read_text())
+    if grades.get("input_sha256") != input_config["input_sha256"]:
+        raise ValueError("Group gate is not tied to the approved private input hash")
+    validate_group_gate(grades, training["miles_args"]["n_samples_per_prompt"])
     run_id = U.create_run_id()
     args, conversion_name = resolved_args(config, training, work_dir=cli.work_dir, run_dir=cli.run_dir, run_id=run_id)
     tokenizer = AutoTokenizer.from_pretrained(args["hf_checkpoint"], local_files_only=True)
@@ -140,7 +160,7 @@ def main():
         )
         + "\n"
     )
-    wait_for_judge(args["rm_url"], question_key(row))
+    wait_for_judge(args["rm_url"], question_key(row), judge=training["judge"])
     os.environ.update(
         NCCL_NVLS_ENABLE="0",
         RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES="1",
