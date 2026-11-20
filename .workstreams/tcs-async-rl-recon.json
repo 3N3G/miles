@@ -371,6 +371,11 @@
   ],
   "jobs": [
     {
+      "id": "534296",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "534174",
       "cluster": "hpcfund",
       "status": "RUNNING"
@@ -459,6 +464,11 @@
       "id": "534191",
       "cluster": "hpcfund",
       "status": "COMPLETED"
+    },
+    {
+      "id": "534297",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -1013,15 +1023,29 @@
       "actor": "codex",
       "summary": "Repaired the actual MI350 warmup cache failure and recorded eight real zero grades",
       "revision": 77
+    },
+    {
+      "id": "4e63cfd4-576f-45ac-b0aa-a42adf51f5ca",
+      "at": "2026-11-20T13:22:56.384896Z",
+      "actor": "codex",
+      "summary": "Submitted authorized runtime diagnostic 534296",
+      "revision": 78
+    },
+    {
+      "id": "ef0bdf4e-b13d-4fc5-ae8c-ef19c192893b",
+      "at": "2026-11-20T13:23:47.075978Z",
+      "actor": "codex",
+      "summary": "Recorded successfully submitted numerical check 534297 after separating filter output from job ID",
+      "revision": 79
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Eight vLLM answers have complete final text and provisional zero grades in both orders. MI350 534034 passed BF16 matrix operations but failed on a read-only FlyDSL cache during warmup. Repaired both FlyDSL cache paths. Prepared same-input HF/vLLM numerical check.",
+  "summary": "Submitted native MI350 FlyDSL-cache repair and same-input policy reference checks. Eight completed vLLM answers have real zero grades in both orders. The full group continues; RL gate remains closed.",
   "nextAction": "Rerun native warmup with writable FlyDSL caches and finish the 32-answer group. Require reward variation before RL.",
   "owner": "Codex",
-  "revision": 77,
-  "updatedAt": "2026-11-20T13:19:28.510338Z"
+  "revision": 79,
+  "updatedAt": "2026-11-20T13:23:47.075978Z"
 }
