@@ -1,0 +1,34 @@
+{
+  "status": "PROPOSAL_NOT_APPROVED_OR_SUBMITTED",
+  "dataset_revision": "8e486f2d980d926fa5543efe7f1f2adf475ce3ea",
+  "selection_method": "For each declared difficulty, choose one row uniformly with random.Random(20261118) from eligible rows sorted by cohort then original row. Do not choose by generated quality.",
+  "heldout_reads": 0,
+  "candidates": [
+    {
+      "cohort": "SODA_2025",
+      "row": 25,
+      "paper_id": "Approximating_Traveling_Salesman_Problems_Using_a_Bridge_Lemma",
+      "node_id": "node_08",
+      "difficulty": "easy",
+      "prompt_type": "proof_writing",
+      "eligible_pool_size": 20,
+      "input_sha256": "a8d04b9664a76d1e41218122b7947c5953f2415c0ff12df7f36a4dc0d37554ea",
+      "prompt_tokens": 195
+    },
+    {
+      "cohort": "STOC_2023",
+      "row": 89,
+      "paper_id": "Faster_Walsh-Hadamard_and_Discrete_Fourier_Transforms_From_Matrix_Non-Rigidity",
+      "node_id": "node_28",
+      "difficulty": "medium",
+      "prompt_type": "proof_writing",
+      "eligible_pool_size": 216,
+      "input_sha256": "205bddcca16bfbb58ff979e34a4c255ea9cdc091a49b4fcedec415c5ba0314bf",
+      "prompt_tokens": 426
+    }
+  ],
+  "proposal_sha256": "291ec943ca519f16aea41e7189c8659efb4d89f89bc434c214a3bcc9220deeb2",
+  "generation_requests": 0,
+  "rl_updates": 0,
+  "private_proposal_directory": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/question-screen-proposal-v1"
+}

@@ -455,6 +455,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/native_group_v12_generation_20261120.json",
       "label": "Target-only bounded sampling still repeats: exact 32-response generation outcome"
+    },
+    {
+      "path": "experiments/tcs_async_rl/QUESTION_SCREEN_PROPOSAL_20261120.md",
+      "label": "Unapproved concrete two-question feasibility proposal"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/alternative_question_proposal_20261120.json",
+      "label": "Preselected eligible input identities, pool sizes and exact hashes"
     }
   ],
   "jobs": [
@@ -1349,6 +1357,13 @@
       "actor": "codex",
       "summary": "Recorded complete repaired native generation failure and renewed the data-scope decision",
       "revision": 106
+    },
+    {
+      "id": "ed4abc7a-8225-460d-9936-a022585bc566",
+      "at": "2026-11-20T16:15:17.636564Z",
+      "actor": "codex",
+      "summary": "Prepared a concrete alternative-question proposal without submitting or generating",
+      "revision": 107
     }
   ],
   "projectId": "understanding",
@@ -1358,6 +1373,6 @@
   "summary": "Native repaired group returned 32 responses: 28 final answers and five repetition caps. First nine scores are zero. MI300 group is active.",
   "nextAction": "Finish native grading and the active MI300 group. A different training question needs the pending user decision.",
   "owner": "Codex",
-  "revision": 106,
-  "updatedAt": "2026-11-20T16:11:41.785661Z"
+  "revision": 107,
+  "updatedAt": "2026-11-20T16:15:17.636564Z"
 }
