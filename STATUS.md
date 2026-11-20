@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native v9: 31 zero grades and one repetition failure. Bounded MI210 replacement is generating. Stopped the owned old unfiltered job; native repair queued. Jobs: hpcfund/534174 CANCEL_REQUESTED; hpcfund/534420 SUBMITTED
-  Next: Validate the failed seed and repaired group. Preserve the old partial results and check native support metadata when allocated.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534174 ended CANCELLED. 22 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/534174 CANCELLED; hpcfund/534420 SUBMITTED
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 
