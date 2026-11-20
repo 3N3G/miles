@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Both repaired groups are active. Native support capture and exact training CLI passed. First repaired native answer scored zero. RL gate remains closed. Jobs: hpcfund/534575 RUNNING; hpcfund/534576 RUNNING
-  Next: Grade both active groups. Submit the bounded RL check only after a complete group has genuine reward variation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native repaired group returned 32 responses: 28 final answers and five repetition caps. First nine scores are zero. MI300 group is active. Jobs: hpcfund/534576 RUNNING; hpcfund/534575 COMPLETED
+  Next: Finish native grading and the active MI300 group. A different training question needs the pending user decision.
 
 ## Next / blocked
 

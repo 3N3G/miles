@@ -451,18 +451,22 @@
     {
       "path": "experiments/tcs_async_rl/evidence/native_arguments_v7_20261120.json",
       "label": "Repaired Torch replay / target-only RL CLI passed inside the primary image"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/native_group_v12_generation_20261120.json",
+      "label": "Target-only bounded sampling still repeats: exact 32-response generation outcome"
     }
   ],
   "jobs": [
     {
-      "id": "534575",
+      "id": "534576",
       "cluster": "hpcfund",
       "status": "RUNNING"
     },
     {
-      "id": "534576",
+      "id": "534575",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "534425",
@@ -1338,15 +1342,22 @@
       "actor": "codex",
       "summary": "Validated the repaired native RL CLI without a new GPU allocation",
       "revision": 105
+    },
+    {
+      "id": "261a7a92-92d9-4744-aba4-852c66fc181e",
+      "at": "2026-11-20T16:11:41.785661Z",
+      "actor": "codex",
+      "summary": "Recorded complete repaired native generation failure and renewed the data-scope decision",
+      "revision": 106
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Both repaired groups are active. Native support capture and exact training CLI passed. First repaired native answer scored zero. RL gate remains closed.",
-  "nextAction": "Grade both active groups. Submit the bounded RL check only after a complete group has genuine reward variation.",
+  "summary": "Native repaired group returned 32 responses: 28 final answers and five repetition caps. First nine scores are zero. MI300 group is active.",
+  "nextAction": "Finish native grading and the active MI300 group. A different training question needs the pending user decision.",
   "owner": "Codex",
-  "revision": 105,
-  "updatedAt": "2026-11-20T16:02:20.228923Z"
+  "revision": 106,
+  "updatedAt": "2026-11-20T16:11:41.785661Z"
 }
