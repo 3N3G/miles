@@ -141,6 +141,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/3349f13d3c95c3ffc3285b472b415b20dbe6dfd6/miles/policy-reference-v1",
       "label": "Numerical check failure before comparisons: MIOpen database lock path"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v8-mi350",
+      "label": "Private results for AMD inference job 534296"
     }
   ],
   "evidence": [
@@ -377,7 +381,7 @@
     {
       "id": "534296",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "FAILED"
     },
     {
       "id": "534174",
@@ -1048,15 +1052,22 @@
       "actor": "codex",
       "summary": "Recorded fourteen actual zero grades and repaired the numerical reference MIOpen cache",
       "revision": 80
+    },
+    {
+      "id": "a9dc6f65-2fd5-45be-be72-2fbfcb8846ba",
+      "at": "2026-11-20T13:38:58.464208Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 534296",
+      "revision": 81
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Fourteen complete vLLM answers scored 0/7 in both orders. Native FlyDSL-repaired group 534296 is queued. Same-input numerical check 534297 stopped before comparisons on MIOpen read-only-home locks; redirected its DB/kernel caches for a preserved v2 retry.",
-  "nextAction": "Rerun native warmup with writable FlyDSL caches and finish the 32-answer group. Require reward variation before RL.",
+  "summary": "AMD job 534296 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
+  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 80,
-  "updatedAt": "2026-11-20T13:36:56.623728Z"
+  "revision": 81,
+  "updatedAt": "2026-11-20T13:38:58.464208Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fourteen complete vLLM answers scored 0/7 in both orders. Native FlyDSL-repaired group 534296 is queued. Same-input numerical check 534297 stopped before comparisons on MIOpen read-only-home locks; re Jobs: hpcfund/534296 SUBMITTED; hpcfund/534174 RUNNING
-  Next: Rerun native warmup with writable FlyDSL caches and finish the 32-answer group. Require reward variation before RL.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534296 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/534296 FAILED; hpcfund/534174 RUNNING
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 
