@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted ten-minute MI210 runtime control 534065. It compares the primary image in two library modes with the verified existing vLLM image. Repaired MI350 534034 remains queued. No Qwen answers or gr Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Inspect all runtime-control cases and select a repair from actual kernel and loaded-library evidence.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534065 ended COMPLETED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 
