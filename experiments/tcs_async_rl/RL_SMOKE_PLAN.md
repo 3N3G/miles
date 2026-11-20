@@ -20,6 +20,8 @@ The private input SHA-256 is identical for both groups. No RL allocation has bee
 After the native repetition failure, `rl_smoke_v5.json` binds the replacement v10 group and its new sampling profile.
 The exact failure, validation order and memory implications are in [the sampling repair](REPETITION_REPAIR_20261120.md).
 The replacement uses the existing Torch log-probability backend because bounded sampling requires support replay.
+The native backend then rejected support capture with EAGLE. `rl_smoke_v6.json` supersedes v5 with target-only decoding.
+Actor MTP training and all scientific settings remain unchanged. Its gate points to native group v12.
 Old-profile grades cannot open its gate. No reward definition, question or judge changes.
 
 ## Background / motivation

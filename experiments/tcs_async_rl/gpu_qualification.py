@@ -78,10 +78,12 @@ def check_collective():
 
 def engine_arguments(model_dir, qualification, training):
     args = training["miles_args"]
-    names = (
+    required = (
         "context_length",
         "mem_fraction_static",
         "max_running_requests",
+    )
+    optional = (
         "speculative_algorithm",
         "speculative_num_steps",
         "speculative_eagle_topk",
@@ -93,7 +95,8 @@ def engine_arguments(model_dir, qualification, training):
         "random_seed": qualification["inference"]["seed"],
         "dtype": "bfloat16",
         "allow_auto_truncate": False,
-        **{name: args[f"sglang_{name}"] for name in names},
+        **{name: args[f"sglang_{name}"] for name in required},
+        **{name: args[f"sglang_{name}"] for name in optional if f"sglang_{name}" in args},
     }
 
 

@@ -141,6 +141,9 @@ async def run(*, config_path, model_dir, run_dir):
         str(config["inference"]["seed"]),
     ]
     properties = torch.cuda.get_device_properties(0)
+    if "min_gpu_memory_bytes" in config["inference"]:
+        if properties.total_memory < config["inference"]["min_gpu_memory_bytes"]:
+            raise RuntimeError("GPU has less memory than the configured concurrency requires")
     environment = {
         "backend": "vllm",
         "vllm": importlib.metadata.version("vllm"),

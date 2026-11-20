@@ -150,6 +150,17 @@ class TestAMDPreflight(unittest.TestCase):
                 generated_tokens=32,
             )
 
+    def test_target_only_profile_omits_speculation_without_relaxing_required_capacity_fields(self):
+        qualification, training = load_configs()
+        for key in list(training["miles_args"]):
+            if key.startswith("sglang_speculative_"):
+                del training["miles_args"][key]
+        arguments = engine_arguments(Path("/work/model"), qualification, training)
+        self.assertFalse(any(key.startswith("speculative_") for key in arguments))
+        del training["miles_args"]["sglang_mem_fraction_static"]
+        with self.assertRaises(KeyError):
+            engine_arguments(Path("/work/model"), qualification, training)
+
     def test_detects_short_decode(self):
         with self.assertRaisesRegex(RuntimeError, "decode length"):
             validate_lengths(

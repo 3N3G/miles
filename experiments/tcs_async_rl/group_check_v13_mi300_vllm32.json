@@ -1,0 +1,49 @@
+{
+  "status": "authorized_larger_memory_same_profile_capacity_repair_20261120",
+  "mode": "group_inference_vllm",
+  "job_name": "tcs-group-v13-vllm32",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.sampling_repair_v2.json",
+  "container_config": "qualification.proposed.json",
+  "allocation": {
+    "partition": "mi3001x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 1,
+    "cpus_per_task": 16,
+    "walltime": "04:00:00"
+  },
+  "input_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/group-check-v1-input.json",
+  "input_sha256": "ae2f8bd7f8cf699a6ce3cac9c460e15fa4de9e5f3c5a737bdea8610fd7113fe0",
+  "selection": {
+    "seed": 20261118,
+    "cohort": "SODA_2023",
+    "row": 81,
+    "paper_id": "Online_Sorting_and_Translational_Packing_of_Convex_Polygons",
+    "node_id": "node_25"
+  },
+  "inference": {
+    "seed": 20261118,
+    "tensor_parallel_size": 1,
+    "max_running_requests": 32,
+    "backend": "vllm",
+    "speculative_decoding": false,
+    "enforce_eager": true,
+    "min_gpu_memory_bytes": 171798691840
+  },
+  "scope": {
+    "prompt_count": 1,
+    "optimizer_updates": 0,
+    "heldout_reads": 0,
+    "judge_location": "VM after generation; credentials never transferred",
+    "maximum_gpu_hours": 4
+  },
+  "repair_of": "group_check_v11_mi210_vllm8.json",
+  "repair": "Use available MI300-class memory for 32 concurrent target-model requests in the same verified compatible image and bounded profile. The failed seed already completed in v11. Generate a fresh full group, with no stitching. Validate kernel execution, GPU memory and actual model capacity before stopping the slower owned attempt.",
+  "control_image": {
+    "path": "/work1/aviralkumar/geney/containers/vllm-rocm-v0.29.0.sif",
+    "sha256": "546dafa14c2afdb0a87a89bc892faa1a8238c3f9e25bd860e6715aa1fad2cbcd",
+    "source": "guessing-equational-theories/scripts/serve_acquisition.py IMAGE_SHA256"
+  }
+}

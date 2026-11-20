@@ -191,6 +191,13 @@ async def run_group(*, config_path, model_dir, run_dir):
     (run_dir / "environment.json").write_text(json.dumps(environment, indent=2) + "\n")
     print(json.dumps(environment), flush=True)
     engine = sglang.Engine(**arguments)
+    resolved_speculation = engine.server_args.speculative_algorithm
+    (run_dir / "resolved-inference-mode.json").write_text(
+        json.dumps({"speculative_algorithm": resolved_speculation}, indent=2) + "\n"
+    )
+    if "speculative_algorithm" not in arguments and resolved_speculation is not None:
+        engine.shutdown()
+        raise RuntimeError("Native engine enabled speculative decoding despite the target-only configuration")
     started = time.monotonic()
     monitor = asyncio.create_task(progress_monitor(run_dir, started, training["miles_args"]["n_samples_per_prompt"]))
     try:

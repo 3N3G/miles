@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534420 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/534174 CANCELLED; hpcfund/534420 FAILED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Bounded seed 25 completed at 40,004 tokens but scored zero. Native support capture rejects EAGLE. Prepared target-only and larger-memory repairs. Jobs: hpcfund/534174 CANCELLED; hpcfund/534420 FAILED
+  Next: Submit the documented target-only native check and compatible MI300 replacement. Preserve the active MI210 trial until validation.
 
 ## Next / blocked
 

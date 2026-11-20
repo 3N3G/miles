@@ -73,3 +73,35 @@ This fallback does not validate SGLang support metadata. Keep the native diagnos
 Once the bounded fallback passes model startup and starts real generation, stop the owned unbounded v7 job.
 Preserve and grade its partial answers. Old-profile answers cannot open the repaired profile's gate.
 One MI210, four-hour maximum. Do not claim success from submission or a startup log.
+
+## Observed native feature incompatibility and target-only replacement
+
+Job 534420 started earlier than its forecast and failed after 138 seconds.
+The model warmed up. The 16-token native support control then raised:
+`return_sampling_mask is not supported with speculative decoding.`
+No study answer or reward was produced. The old startup and failure files remain preserved.
+Immutable evidence: https://huggingface.co/datasets/3N3G/internalization-runs/tree/ace4bc6adc70b30ae4f57aaee4113c2323fd0c89/miles/group-check-v10-mi350
+
+Fresh `config.sampling_repair_v2.json` removes only the four inference speculation fields from v1.
+Target-model decoding leaves the intended target policy unchanged. Actor MTP training remains enabled.
+The native engine helper still requires its capacity fields. It omits only absent optional speculation fields.
+The replacement records the resolved engine mode and fails if speculation unexpectedly remains enabled.
+Use `group_check_v12_mi350.json` for the same support control, failed-seed-first validation and complete group.
+Use `rl_smoke_v6.json` after a qualifying gate. V5 is superseded because this image rejects its feature combination.
+All model, question, rubric, cap, sampling-filter and optimizer fields remain unchanged.
+Actual support capture and trainer memory remain unqualified until their checks run.
+
+## Larger-memory compatible fallback
+
+The compatible MI210 trial completed the original failed seed at 40,004 tokens with a natural stop.
+Luna scored that answer zero in both orders. The remaining requests continue. This is not a varied group.
+A read-only scheduler check then found five of eight MI300 single-GPU slots idle.
+Slurm's empty GRES field does not identify those partitions as CPU-only.
+
+Use fresh `group_check_v13_mi300_vllm32.json` with the same verified SIF, model, prompt, profile and 32 indexed seeds.
+Require one visible GPU, successful FP32/BF16 kernel controls, and at least 160 GiB of measured GPU memory.
+Allow 32 running requests. Their actual prompt plus 90k output cap needs 2,891,968 KV-token positions.
+Check the measured model cache before retiring the slower owned trial.
+The failed seed has already passed in this compatible backend. Generate a fresh full group concurrently, including that seed.
+Do not stitch in its old answer. This fallback does not qualify SGLang metadata or trainer backward computation.
+The one-GPU/four-hour cap remains. Record every result and preserve each old attempt.

@@ -1259,15 +1259,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534420",
       "revision": 98
+    },
+    {
+      "id": "74ea909f-6cd1-47b6-b2a0-d02b22e93951",
+      "at": "2026-11-20T15:46:05.288988Z",
+      "actor": "codex",
+      "summary": "Diagnosed native support/EAGLE incompatibility and prepared measured-capacity replacements",
+      "revision": 99
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534420 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "Bounded seed 25 completed at 40,004 tokens but scored zero. Native support capture rejects EAGLE. Prepared target-only and larger-memory repairs.",
+  "nextAction": "Submit the documented target-only native check and compatible MI300 replacement. Preserve the active MI210 trial until validation.",
   "owner": "Codex",
-  "revision": 98,
-  "updatedAt": "2026-11-20T15:35:25.033150Z"
+  "revision": 99,
+  "updatedAt": "2026-11-20T15:46:05.288988Z"
 }
