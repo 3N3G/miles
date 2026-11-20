@@ -109,6 +109,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/73af4fb245492611cc03d32d197fe64557415e52/miles/group-check-v6-mi210-vllm",
       "label": "Private first completed Qwen answer and Luna per-item receipts"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1c7477f54075c579f43b57c13f824194d09c1838/miles/native-imports-v3",
+      "label": "Native argument check: process isolation passed, alias conflict failed"
     }
   ],
   "evidence": [
@@ -390,7 +394,7 @@
     {
       "id": "534162",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "FAILED"
     }
   ],
   "sessions": [
@@ -847,15 +851,22 @@
       "actor": "codex",
       "summary": "Submitted exact native argument/process diagnostic 534162",
       "revision": 63
+    },
+    {
+      "id": "e62d56cc-1477-4f5f-b864-10e3f743173c",
+      "at": "2026-11-20T11:48:00.682066Z",
+      "actor": "codex",
+      "summary": "Repaired native Transformers alias handling after exact argument diagnostic failure",
+      "revision": 64
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Two Qwen answers completed at 28,515 and 32,406 tokens. First scored 0/7 in both Luna orders; second is being graded. Submitted exact native argument/PID check 534162. MI350 SGLang 534034 remains queued.",
+  "summary": "Three real Qwen answers completed and scored 0/7 in both Luna orders. Group 534098 continues. Exact native argument check passed process isolation but failed on unrelated native Qwen4 registration. Repaired native preference and passed its focused regression.",
   "nextAction": "Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufacture variance.",
   "owner": "Codex",
-  "revision": 63,
-  "updatedAt": "2026-11-20T11:43:43.177571Z"
+  "revision": 64,
+  "updatedAt": "2026-11-20T11:48:00.682066Z"
 }

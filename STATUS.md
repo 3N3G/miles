@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Two Qwen answers completed at 28,515 and 32,406 tokens. First scored 0/7 in both Luna orders; second is being graded. Submitted exact native argument/PID check 534162. MI350 SGLang 534034 remains queu Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Three real Qwen answers completed and scored 0/7 in both Luna orders. Group 534098 continues. Exact native argument check passed process isolation but failed on unrelated native Qwen4 registration. Re Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
   Next: Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufact
 
 ## Next / blocked

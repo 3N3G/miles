@@ -60,8 +60,8 @@ class TestLoadHfConfig:
             load_hf_config(str(tmp_path))
             load_hf_config(str(tmp_path))
 
-    def test_native_support_raises_without_override(self, tmp_path):
-        """If transformers ships native support for an alias, registration must fail loud."""
+    def test_native_support_preserved_without_override(self, tmp_path):
+        """An unrelated native alias must neither block loading nor replace HF support."""
         from miles.utils.hf_utils import config as hf_config_module
 
         alias = hf_config_module._HFConfigAlias(
@@ -70,13 +70,19 @@ class TestLoadHfConfig:
             base_class="DeepseekV3Config",
             compat_class_name="FakeNativeConfig",
         )
+        expected = SimpleNamespace(model_type="qwen3_5")
         with (
             patch.object(hf_config_module, "_CONFIG_ALIASES", (alias,)),
             patch.object(hf_config_module, "_REGISTERED_ALIASES", set()),
             patch.object(hf_config_module, "CONFIG_MAPPING_NAMES", {"fake_native_type": "FakeConfig"}),
-            pytest.raises(RuntimeError, match="natively supports"),
+            patch.object(hf_config_module, "importlib") as importer,
+            patch("transformers.AutoConfig.register") as register,
+            patch("transformers.AutoConfig.from_pretrained", return_value=expected),
         ):
-            hf_config_module.load_hf_config(str(tmp_path))
+            assert hf_config_module.load_hf_config(str(tmp_path)) is expected
+            assert hf_config_module.load_hf_config(str(tmp_path)) is expected
+        register.assert_not_called()
+        importer.import_module.assert_not_called()
 
     def test_native_support_overridden_when_flag_set(self, tmp_path):
         """override_hf_native=True must allow registration to win over native support."""

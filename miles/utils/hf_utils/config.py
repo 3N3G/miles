@@ -26,7 +26,7 @@ class _HFConfigAlias:
     base_class: str
     compat_class_name: str
     auto_model_classes: tuple = (AutoModelForCausalLM,)
-    # Set True to override transformers' native config.
+    # Prefer native support when available. Set True to override it explicitly.
     override_hf_native: bool = False
     # Name of a module-level function applied to the config kwargs before the base __init__.
     normalize_kwargs: str | None = None
@@ -100,10 +100,9 @@ def register_hf_config_aliases() -> None:
         if alias.model_type in _REGISTERED_ALIASES:
             continue
         if alias.model_type in CONFIG_MAPPING_NAMES and not alias.override_hf_native:
-            raise RuntimeError(
-                f"transformers now natively supports model_type={alias.model_type!r}; "
-                f"set override_hf_native=True to override."
-            )
+            # A compatibility alias must not replace native support or block other models.
+            _REGISTERED_ALIASES.add(alias.model_type)
+            continue
         module = importlib.import_module(alias.base_module)
         base_config = getattr(module, alias.base_class)
         attrs = {"model_type": alias.model_type, "__module__": __name__}

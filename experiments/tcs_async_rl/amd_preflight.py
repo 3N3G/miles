@@ -363,6 +363,24 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
         return
     if qualification.get("mode") == "training_arguments":
         _run(
+            "native-config-regression",
+            prefix
+            + [
+                "python3",
+                "-m",
+                "pytest",
+                "-q",
+                "tests/fast/utils/hf_utils/test_config.py",
+                "--confcutdir=tests/fast/utils/hf_utils",
+                "-k",
+                "native_support",
+                "-p",
+                "no:cacheprovider",
+            ],
+            run_dir=run_dir,
+            env=env,
+        )
+        _run(
             "training-arguments",
             prefix
             + [

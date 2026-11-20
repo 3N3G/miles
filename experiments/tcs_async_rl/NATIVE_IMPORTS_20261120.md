@@ -52,3 +52,17 @@ It verifies a different PID namespace from the host before parsing. It reads pub
 If native validation requires the not-yet-converted checkpoint or a GPU kernel, record that boundary as unqualified.
 Do not fabricate a checkpoint or bypass a native validation requirement to claim success.
 The regular RL path retains its full group gate, private namespace guard and eight-GPU count check.
+
+## Native-registration failure and repair
+
+Job 534162 reached the full parser after its private PID namespace guard passed.
+It failed in 67 seconds because the alias loader raises whenever Transformers gains native support
+for an unrelated alias. Transformers 5.19.0 now supports `qwen4_exp_text`.
+The requested model is Qwen3.5, so this conflict should not prevent its startup.
+Preserve native Transformers support unless the alias explicitly sets `override_hf_native=True`.
+Existing explicit DeepSeek overrides retain their prior behavior. Do not replace native Qwen4 configuration.
+The focused regression verifies unrelated model loading, repeated calls and no alias replacement.
+It passed on the VM with Transformers 5.19.0. Broader fixture loading needs Torch, absent on the VM.
+The next job runs both native-preservation and explicit-override tests in the real image,
+then repeats the exact argument/PID check from `native_imports_v4.json`. No training is launched.
+Private failed-attempt results: https://huggingface.co/datasets/3N3G/internalization-runs/tree/1c7477f54075c579f43b57c13f824194d09c1838/miles/native-imports-v3
