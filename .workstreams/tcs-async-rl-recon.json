@@ -527,13 +527,17 @@
     {
       "path": "experiments/tcs_async_rl/evidence/easy_v14_judge_controls_20261120.json",
       "label": "Easy-question reference and negative controls passed, with all paired references full-credit"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/medium_v15_scheduler_budget_20261120.json",
+      "label": "Owned pending medium job reservation reduced within the approved ceiling, with sampling unchanged"
     }
   ],
   "jobs": [
     {
       "id": "535170",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "PENDING"
     },
     {
       "id": "535067",
@@ -1550,6 +1554,13 @@
       "actor": "codex",
       "summary": "Advanced the approved difficulty progression and submitted medium job 535170",
       "revision": 123
+    },
+    {
+      "id": "406d7da4-915b-4b17-bb04-94d9dffd9453",
+      "at": "2026-11-20T19:44:46.952183Z",
+      "actor": "codex",
+      "summary": "Recorded the owned medium job scheduling-budget adjustment without changing sampling",
+      "revision": 124
     }
   ],
   "projectId": "understanding",
@@ -1559,6 +1570,6 @@
   "summary": "Easy had 15 positive and 13 zero graded finals, plus four capped missing finals. Medium job 535170 submitted after passing its controls.",
   "nextAction": "Monitor and grade medium, inspect the real reward differences, then update the RL plan with both distributions.",
   "owner": "Codex",
-  "revision": 123,
-  "updatedAt": "2026-11-20T19:41:39.268795Z"
+  "revision": 124,
+  "updatedAt": "2026-11-20T19:44:46.952183Z"
 }

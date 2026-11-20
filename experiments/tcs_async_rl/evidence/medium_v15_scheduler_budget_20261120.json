@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-11-20T19:44:45.121166+00:00",
+  "job_id": "535170",
+  "expected_identity": "geney|tcs-medium-v15|PENDING",
+  "observed_identity": "geney|tcs-medium-v15|PENDING",
+  "scope": "Scheduler reservation only. Preserve the submitted source/config/input and the 90000-token generation ceiling.",
+  "old_scheduler_limit": "04:00:00",
+  "requested_scheduler_limit": "01:00:00",
+  "reason": "The same native model and 90k ceiling completed the easy group in 21m17s and the hard repaired group in 17m44s. A one-hour reservation allows margin and may fit an earlier backfill window. The priority forecast was about four hours away.",
+  "result": {
+    "JobState": "PENDING",
+    "TimeLimit": "01:00:00",
+    "StartTime": "2026-11-20T17:38:14"
+  },
+  "changed": true
+}
