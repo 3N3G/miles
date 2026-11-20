@@ -1,0 +1,42 @@
+{
+  "status": "authorized_same_input_implementation_check_20261120",
+  "mode": "policy_reference",
+  "job_name": "tcs-policy-reference-v3",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.proposed.json",
+  "container_config": "qualification.proposed.json",
+  "group_config": "group_check_v7_mi210_vllm8.json",
+  "fixture_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/v7-sample-02-policy-reference.json",
+  "fixture_sha256": "b5e2f347b097d375e8468104a56927198d8eba09b3372cb25e6ae977b93f8cd8",
+  "allocation": {
+    "partition": "mi2101x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 1,
+    "cpus_per_task": 16,
+    "walltime": "00:15:00"
+  },
+  "technical_controls": {
+    "prefix_lengths": [
+      0,
+      128,
+      2048
+    ],
+    "tolerance_nats": 0.2,
+    "gpu_memory_utilization": 0.35,
+    "diagnose_precision": true
+  },
+  "scope": {
+    "purpose": "Compare serving log probabilities with standard HF model on the same approved input and completed thinking prefixes",
+    "private_question_count": 1,
+    "new_scientific_questions": 0,
+    "heldout_reads": 0,
+    "judge_calls": 0,
+    "optimizer_updates": 0,
+    "maximum_gpu_hours": 0.25,
+    "limit": "Not 90k decode, Megatron conversion, or proof-quality qualification"
+  },
+  "repair_of": "policy_reference_v2.json",
+  "repair": "Diagnose the saved short-prefix discrepancy with a same-hidden-state FP32 output-head calculation and a widened FP32 reference model. Preserve original BF16 acceptance and production precision."
+}

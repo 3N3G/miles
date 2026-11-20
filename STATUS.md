@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 14/32 fixed-question grades remain zero. Submitted native JIT cache repair 534333. Short-prefix numerical discrepancy saved. Jobs: hpcfund/534174 RUNNING; hpcfund/534333 SUBMITTED
-  Next: Monitor both group jobs and diagnose the saved numerical discrepancy before RL.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native MI350 model warmup passed and 32 requests started after cache repair. Preparing precision diagnosis. 14/32 vLLM grades are zero. Jobs: hpcfund/534174 RUNNING; hpcfund/534333 RUNNING
+  Next: Monitor native decoding, finish the fixed-question grades, and measure the precision discrepancy.
 
 ## Next / blocked
 

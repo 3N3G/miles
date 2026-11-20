@@ -390,7 +390,7 @@
     {
       "id": "534333",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "RUNNING"
     },
     {
       "id": "534317",
@@ -1094,15 +1094,22 @@
       "actor": "codex",
       "summary": "Submitted native JIT-cache replacement 534333",
       "revision": 84
+    },
+    {
+      "id": "af815836-c56b-4c00-b4b0-5024b335f294",
+      "at": "2026-11-20T13:48:28.147652Z",
+      "actor": "codex",
+      "summary": "Native MI350 passed model warmup; prepared reference precision diagnosis",
+      "revision": 85
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "14/32 fixed-question grades remain zero. Submitted native JIT cache repair 534333. Short-prefix numerical discrepancy saved.",
-  "nextAction": "Monitor both group jobs and diagnose the saved numerical discrepancy before RL.",
+  "summary": "Native MI350 model warmup passed and 32 requests started after cache repair. Preparing precision diagnosis. 14/32 vLLM grades are zero.",
+  "nextAction": "Monitor native decoding, finish the fixed-question grades, and measure the precision discrepancy.",
   "owner": "Codex",
-  "revision": 84,
-  "updatedAt": "2026-11-20T13:46:20.877876Z"
+  "revision": 85,
+  "updatedAt": "2026-11-20T13:48:28.147652Z"
 }

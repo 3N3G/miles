@@ -82,3 +82,15 @@ Sources:
 Private first-attempt evidence: https://huggingface.co/datasets/3N3G/internalization-runs/tree/3349f13d3c95c3ffc3285b472b415b20dbe6dfd6/miles/policy-reference-v1
 Loading metadata used empty sets, serialized as strings in v1. V2 writes those sets as JSON arrays.
 The live missing-parameter guard used the original empty set and did pass.
+
+## Precision diagnosis after the numerical failure
+
+Keep the original BF16 test and its 0.2-nat criterion. Preserve the failed result.
+In fresh v3, run the same three prefixes and add two reference-only calculations.
+First, capture the final-token input to the HF output head. Recalculate that linear map in FP32 with identical BF16 hidden states.
+Second, widen the same loaded checkpoint parameters to FP32 and repeat the reference forward passes.
+This does not recover precision absent from the checkpoint. It changes no active rollout or training configuration.
+Report each reference's maximum returned-top-20 discrepancy against vLLM and its greedy token.
+The original BF16 check still determines the original acceptance field. Do not raise its tolerance after seeing the results.
+These calculations can localize rounding effects. They do not establish 90k parity, learning, or a need to change the production head.
+Reuse the one-MI210, 15-minute bound with no new question, judge calls or optimizer steps.

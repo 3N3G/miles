@@ -34,6 +34,22 @@ def compare_logprobs(served, reference, *, chosen, reference_best, tolerance):
     }
 
 
+def summarize_logits(logits, output, tokenizer, *, tolerance):
+    # Torch is deferred because comparison controls run on the CPU-only VM.
+    import torch
+
+    logprobs = torch.log_softmax(logits.float(), dim=-1)
+    best = int(logprobs.argmax())
+    reference = {token: float(logprobs[token]) for token in {*output["logprobs"], best}}
+    return {
+        "hf_greedy_token_id": best,
+        "hf_greedy_text": tokenizer.decode([best], skip_special_tokens=False),
+        **compare_logprobs(
+            output["logprobs"], reference, chosen=output["chosen"], reference_best=best, tolerance=tolerance
+        ),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
@@ -127,32 +143,59 @@ def main():
         raise ValueError("Transformers initialized missing checkpoint parameters")
     model.eval().to("cuda")
     results = []
+    precision_results = []
+    captured = []
+    precision_diagnostic = controls.get("diagnose_precision", False)
+    head = model.get_output_embeddings()
+    hook = (
+        head.register_forward_pre_hook(lambda module, inputs: captured.append(inputs[0]))
+        if precision_diagnostic
+        else None
+    )
     with torch.inference_mode():
         for tokens, output in zip(cases, served, strict=True):
+            captured.clear()
             logits = model(input_ids=torch.tensor([tokens], device="cuda"), use_cache=False, logits_to_keep=1).logits[
                 0, -1
             ]
-            reference_logprobs = torch.log_softmax(logits.float(), dim=-1)
-            best = int(reference_logprobs.argmax())
-            reference = {token: float(reference_logprobs[token]) for token in {*output["logprobs"], best}}
-            comparison = compare_logprobs(
-                output["logprobs"],
-                reference,
-                chosen=output["chosen"],
-                reference_best=best,
-                tolerance=controls["tolerance_nats"],
-            )
             results.append(
                 {
                     "prompt_tokens": len(tokens),
                     "served_greedy_token_id": output["chosen"],
-                    "hf_greedy_token_id": best,
                     "served_greedy_text": tokenizer.decode([output["chosen"]], skip_special_tokens=False),
-                    "hf_greedy_text": tokenizer.decode([best], skip_special_tokens=False),
-                    **comparison,
+                    **summarize_logits(logits, output, tokenizer, tolerance=controls["tolerance_nats"]),
                 }
             )
             print(json.dumps({key: value for key, value in results[-1].items() if key != "errors_nats"}), flush=True)
+            if precision_diagnostic:
+                if len(captured) != 1 or captured[0].shape[-2] != 1:
+                    raise ValueError("Precision diagnostic requires one captured final-token head input")
+                # Reuse identical BF16 hidden states. Only this diagnostic head calculation changes precision.
+                precise_logits = torch.nn.functional.linear(
+                    captured[0].float(), head.weight.float(), None if head.bias is None else head.bias.float()
+                )[0, -1]
+                precision_results.append(
+                    {
+                        "prompt_tokens": len(tokens),
+                        "hf_bf16_hidden_fp32_head": summarize_logits(
+                            precise_logits, output, tokenizer, tolerance=controls["tolerance_nats"]
+                        ),
+                    }
+                )
+    if hook is not None:
+        hook.remove()
+        captured.clear()
+        # Widen the same loaded checkpoint values. This does not restore precision absent in the checkpoint.
+        model.float()
+        with torch.inference_mode():
+            for tokens, output, result in zip(cases, served, precision_results, strict=True):
+                logits = model(
+                    input_ids=torch.tensor([tokens], device="cuda"), use_cache=False, logits_to_keep=1
+                ).logits[0, -1]
+                result["hf_fp32_model"] = summarize_logits(
+                    logits, output, tokenizer, tolerance=controls["tolerance_nats"]
+                )
+        (cli.run_dir / "precision-diagnostic.json").write_text(json.dumps(precision_results, indent=2) + "\n")
     summary = {
         "passed": all(case["passed"] for case in results),
         "cases": results,
