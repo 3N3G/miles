@@ -447,6 +447,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/native_support_replay_control_20261120.json",
       "label": "Actual native bounded sampling support capture passed without EAGLE"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/native_arguments_v7_20261120.json",
+      "label": "Repaired Torch replay / target-only RL CLI passed inside the primary image"
     }
   ],
   "jobs": [
@@ -1327,15 +1331,22 @@
       "actor": "codex",
       "summary": "Verified native support metadata and recorded live protocol-2 service controls",
       "revision": 104
+    },
+    {
+      "id": "15fc146f-c90c-4440-a992-3fd2dec86731",
+      "at": "2026-11-20T16:02:20.228923Z",
+      "actor": "codex",
+      "summary": "Validated the repaired native RL CLI without a new GPU allocation",
+      "revision": 105
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Native MI350 and compatible MI300 repaired groups are active. Native support replay passed. The failed seed now finishes naturally. No nonconstant group yet.",
+  "summary": "Both repaired groups are active. Native support capture and exact training CLI passed. First repaired native answer scored zero. RL gate remains closed.",
   "nextAction": "Grade both active groups. Submit the bounded RL check only after a complete group has genuine reward variation.",
   "owner": "Codex",
-  "revision": 104,
-  "updatedAt": "2026-11-20T15:59:24.767293Z"
+  "revision": 105,
+  "updatedAt": "2026-11-20T16:02:20.228923Z"
 }

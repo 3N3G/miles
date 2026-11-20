@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native MI350 and compatible MI300 repaired groups are active. Native support replay passed. The failed seed now finishes naturally. No nonconstant group yet. Jobs: hpcfund/534575 RUNNING; hpcfund/534576 RUNNING
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Both repaired groups are active. Native support capture and exact training CLI passed. First repaired native answer scored zero. RL gate remains closed. Jobs: hpcfund/534575 RUNNING; hpcfund/534576 RUNNING
   Next: Grade both active groups. Submit the bounded RL check only after a complete group has genuine reward variation.
 
 ## Next / blocked

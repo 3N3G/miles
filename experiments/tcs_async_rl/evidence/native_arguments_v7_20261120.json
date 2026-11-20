@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "parent_job_id": "534575",
+  "step_id": "0",
+  "code_commit": "d22f801493fa8987169868c6d331a6d59c98dd35",
+  "rl_config": "experiments/tcs_async_rl/rl_smoke_v6.json",
+  "validated": {
+    "log_probs_backend": "torch",
+    "use_sampling_support_replay": true,
+    "rollout_top_p": 0.95,
+    "rollout_top_k": 20,
+    "rollout_max_response_len": 90000,
+    "seq_length": 98304,
+    "sglang_speculative_algorithm": null,
+    "enable_mtp_training": true,
+    "mtp_num_layers": 1,
+    "mtp_loss_scaling_factor": 0.2,
+    "num_rollout": 2,
+    "global_batch_size": 32,
+    "wandb_mode": "offline"
+  },
+  "optimizer_updates": 0,
+  "scope": "Exact native CLI parsing and private PID namespace. No model conversion, Ray, forward/backward or optimizer.",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/8a791d7f302eded7dcbab6802244feaa6f6c8233/miles/native-arguments-v7"
+}
