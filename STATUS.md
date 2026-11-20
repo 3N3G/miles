@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy-question AMD job 535067 submitted. Its judge controls and paired references passed. Medium is conditional on the easy reward distribution. Jobs: hpcfund/535067 SUBMITTED; hpcfund/534576 COMPLETED
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy-question job 535067 is queued on AMD. Reference, empty and irrelevant controls passed in both orders. Medium remains conditional. Jobs: hpcfund/535067 PENDING; hpcfund/534576 COMPLETED
   Next: Monitor and grade the easy group. Inspect real awarded points before advancing to the medium question.
 
 ## Next / blocked

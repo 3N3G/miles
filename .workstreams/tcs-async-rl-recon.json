@@ -519,13 +519,17 @@
     {
       "path": "experiments/tcs_async_rl/EASY_MEDIUM_CHECK_PLAN_20261120.md",
       "label": "User-approved easy-first then conditional-medium diagnostic sequence"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/easy_v14_judge_controls_20261120.json",
+      "label": "Easy-question reference and negative controls passed, with all paired references full-credit"
     }
   ],
   "jobs": [
     {
       "id": "535067",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "PENDING"
     },
     {
       "id": "534576",
@@ -1509,15 +1513,22 @@
       "actor": "codex",
       "summary": "Submitted the approved easy-question diagnostic 535067 after passing controls",
       "revision": 119
+    },
+    {
+      "id": "fd7c439c-d6ba-42ba-bd17-cdc21531c607",
+      "at": "2026-11-20T19:13:05.831143Z",
+      "actor": "codex",
+      "summary": "Recorded queued easy check and verified its question-specific judge controls",
+      "revision": 120
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Easy-question AMD job 535067 submitted. Its judge controls and paired references passed. Medium is conditional on the easy reward distribution.",
+  "summary": "Easy-question job 535067 is queued on AMD. Reference, empty and irrelevant controls passed in both orders. Medium remains conditional.",
   "nextAction": "Monitor and grade the easy group. Inspect real awarded points before advancing to the medium question.",
   "owner": "Codex",
-  "revision": 119,
-  "updatedAt": "2026-11-20T19:09:27.158434Z"
+  "revision": 120,
+  "updatedAt": "2026-11-20T19:13:05.831143Z"
 }

@@ -1,0 +1,23 @@
+{
+  "job_id": "535067",
+  "status": "PASSED",
+  "judge": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "candidate_controls": {
+    "control-reference": 7.0,
+    "control-empty": 0.0,
+    "control-irrelevant": 0.0
+  },
+  "paired_reference_scores": [
+    7.0,
+    7.0,
+    7.0,
+    7.0,
+    7.0,
+    7.0
+  ],
+  "input_sha256": "a8d04b9664a76d1e41218122b7947c5953f2415c0ff12df7f36a4dc0d37554ea",
+  "grader_source": "3f6d46993c15e3584ec2f286e21869b327ce84ae",
+  "private_run_dir": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-check-v14-mi350",
+  "scope": "Pre-generation controls on the approved easy question. No model answer has been graded yet."
+}
