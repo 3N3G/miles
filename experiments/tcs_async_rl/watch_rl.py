@@ -259,7 +259,11 @@ def watch(*, job_id, config_path, directory, remote_directory, checkout, state_r
             if children[0].poll() is not None:
                 try:
                     children[0], _ = start_service(
-                        input_file=directory / "input.json", directory=directory, port=port, training=training
+                        input_file=directory / "input.json",
+                        directory=directory,
+                        port=port,
+                        training=training,
+                        python=children[0].args[0],
                     )
                 except Exception as error:
                     save(directory / "reward-service-restart-error.json", {"error_type": type(error).__name__})

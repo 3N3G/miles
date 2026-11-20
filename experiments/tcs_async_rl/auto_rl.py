@@ -138,13 +138,13 @@ def wait_for_group(*, directory, job_id, remote_directory, state_repo, output):
         time.sleep(60)
 
 
-def start_service(*, input_file, directory, port, training):
+def start_service(*, input_file, directory, port, training, python):
     with socket.socket() as probe:
         probe.bind(("127.0.0.1", port))
     log = (directory / "reward-service.log").open("a")
     child = subprocess.Popen(
         [
-            sys.executable,
+            str(python),
             "-m",
             "experiments.tcs_async_rl.reward_service",
             "--input-file",
@@ -273,7 +273,11 @@ def run(cli):
     if address.hostname != "127.0.0.1" or address.scheme != "http" or not address.port:
         raise ValueError("Only a loopback reward service is allowed")
     service, health = start_service(
-        input_file=cli.diagnostic_dir / "input.json", directory=cli.run_dir, port=address.port, training=training
+        input_file=cli.diagnostic_dir / "input.json",
+        directory=cli.run_dir,
+        port=address.port,
+        training=training,
+        python=cli.service_python,
     )
     children = [service]
     try:
@@ -360,7 +364,16 @@ def run(cli):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    for name in ("config", "diagnostic-dir", "run-dir", "state-repo", "work-dir", "remote-checkout", "remote-run-dir"):
+    for name in (
+        "config",
+        "diagnostic-dir",
+        "run-dir",
+        "state-repo",
+        "work-dir",
+        "remote-checkout",
+        "remote-run-dir",
+        "service-python",
+    ):
         parser.add_argument("--" + name, type=Path, required=True)
     for name in ("group-job-id", "remote-diagnostic-dir", "expected-commit", "session-uuid"):
         parser.add_argument("--" + name, required=True)

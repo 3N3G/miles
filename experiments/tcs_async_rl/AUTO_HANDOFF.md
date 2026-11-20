@@ -12,6 +12,8 @@ Only run identity, diagnostic provenance, the dedicated VM reward port and the s
 Old snapshots remain unchanged. Audit events now live outside excluded checkpoint directories.
 
 `auto_rl.py` runs on the VM from a frozen Git checkout.
+Its explicit service interpreter uses the already qualified judge-service virtual environment.
+The VM base Python lacks `aiohttp`. The actual service startup and health check passed with that environment.
 It waits for the existing medium watcher to finish grading and archiving job 535170.
 It can restart a stopped diagnostic watcher after acquiring that watcher's lock.
 It never replaces a live grader or touches another Slurm job.
