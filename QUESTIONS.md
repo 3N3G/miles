@@ -36,7 +36,8 @@
   or leave the saved entry unchanged while using AMD.
 - Recommendation: verify the fingerprint before updating the saved host key. Keep strict host checking enabled.
 - Blocks: reading current Flame GPU inventory and using its login host. AMD preparation continues.
-- Status: asked in chat. No saved host key was changed.
+- Status: rechecked on 2026-11-20. The same ED25519 fingerprint still fails verification.
+  No saved host key was changed. Evidence: `experiments/tcs_async_rl/evidence/flame_access_20261120.json`.
 
 ## 2026-11-18: Gemini backup access
 

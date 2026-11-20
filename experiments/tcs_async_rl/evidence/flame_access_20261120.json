@@ -1,0 +1,9 @@
+{
+  "observed_at_utc": "2026-11-20T09:31:22.176598+00:00",
+  "ssh_alias": "flame",
+  "result": "host_key_verification_failed",
+  "ed25519_public_fingerprint": "SHA256:A7VaRWl2lzXVUdArY/+N+Ob9K+Q0hzomXTFlyqC7x8A",
+  "saved_host_keys_changed": false,
+  "fallback_compute_available": false,
+  "scope": "SSH access only. No Flame Slurm or GPU job submitted."
+}
