@@ -86,8 +86,8 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
 - Plots: provisional reward distribution and response-length distribution for each consumed group.
   Show one seed-selected raw response with its per-item judge decisions next to the aggregates.
 - Logging: durable stage logs, native rollout metrics, raw rollout snapshots, private judge receipts,
-  TensorBoard, and W&B offline files. No W&B credential was found on either machine.
-  Sync to the user's account from the VM if an authenticated loader becomes available.
+  TensorBoard, and W&B offline files. The user has now authenticated W&B on the VM.
+  Use the verified destination and explicit upload procedure in [WANDB.md](WANDB.md).
   The reward hook saves each completed model response before calling the service, then records its judgment or failure separately.
   Portable artifacts retain exact token IDs, behavior log probabilities and sparse sampling support.
   This matters because `push-run` excludes PyTorch snapshot files. Consumed groups are also exported with their rollout IDs.

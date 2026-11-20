@@ -205,6 +205,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ff81a3d2b6e0f3b34a01bcc01cfa2258c90ed34c/miles/easy-check-v14-mi350",
       "label": "Immutable easy-group outputs, paired judgments, plots and mathematical audit"
+    },
+    {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/workspace",
+      "label": "TCS W&B project in the user-selected organization"
     }
   ],
   "evidence": [
@@ -543,6 +547,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/easy_group_v14_outcome_20261120.json",
       "label": "Exact easy-group counts and immutable result archive"
+    },
+    {
+      "path": "experiments/tcs_async_rl/WANDB.md",
+      "label": "Verified W&B team, project and explicit VM upload procedure"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/wandb_destination_20261120.json",
+      "label": "Authenticated W&B destination checks without credential values"
     }
   ],
   "jobs": [
@@ -1580,15 +1592,22 @@
       "actor": "codex",
       "summary": "Published the easy distribution and recorded the pending cap qualification decision",
       "revision": 125
+    },
+    {
+      "id": "d13ba744-6164-43c5-8241-5a56ab25e6f6",
+      "at": "2026-11-20T21:37:45.024588Z",
+      "actor": "codex",
+      "summary": "Verified VM W&B login and configured the requested organization destination",
+      "revision": 126
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Easy completed: 15 positive grades, 13 zeros, four capped missing finals. Medium job 535170 is pending. No RL update yet.",
+  "summary": "Easy: 15 positive grades, 13 zeros, four capped missing finals. Medium 535170 is pending. VM W&B login and the selected organization destination are verified.",
   "nextAction": "Monitor and grade medium, compare both distributions, and resolve recorded-cap qualification before any affected RL submission.",
   "owner": "Codex",
-  "revision": 125,
-  "updatedAt": "2026-11-20T20:03:56.673824Z"
+  "revision": 126,
+  "updatedAt": "2026-11-20T21:37:45.024588Z"
 }

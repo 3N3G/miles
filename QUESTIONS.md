@@ -49,19 +49,6 @@
   No alternate `GOOGLE_API_KEY` assignment exists. No Gemini generation request was sent.
   Evidence: `experiments/tcs_async_rl/evidence/gemini_backup_diagnostic_20261120.json`.
 
-## 2026-11-20: W&B authentication for runtime logs
-
-- Question: where is the user's existing W&B credential loader or login?
-- Evidence: no W&B environment assignment or default login was found on the VM or AMD.
-  The user-specified provider file has no W&B assignment name. No credential values were inspected.
-- Options: preserve native offline W&B files, or sync from the VM through an existing authenticated loader.
-- Recommendation: keep offline W&B and TensorBoard now. Sync later if a permitted loader is available.
-- Blocks: an online W&B URL, not the authorized rollout or RL runtime checks.
-- Status: asked in chat on 2026-11-20. No key value was requested.
-  Rechecked for the user's login question: neither machine has a W&B environment key or default netrc file.
-  Prepared the VM CLI with `uvx --from wandb==0.31.0 wandb login --help` and verified the `--verify` option.
-  User can run `uvx --from wandb==0.31.0 wandb login --verify` on the VM for later offline-run uploads.
-
 ## 2026-11-20: Judge calibration evidence
 
 - Question: what human scores should be assigned to the saved calibration examples before interpreting learning results?
@@ -108,6 +95,13 @@
 - Status: asked in chat on 2026-11-20. No response yet. No scores or qualification rules were changed.
 
 # Answered questions
+
+- 2026-11-20: user logged into W&B on the VM and selected organization `geney-org`.
+  Normal SDK authentication succeeded. Its team `geney` resolves to that organization.
+  Project creation under the organization entity failed. Creation and metadata lookup under team `geney` succeeded.
+  This repo's W&B defaults now select the verified destination in `experiments/tcs_async_rl/WANDB.md`.
+  Keep AMD logging offline and upload from the VM. No old runs were moved or provider credentials copied.
+  Evidence: `experiments/tcs_async_rl/evidence/wandb_destination_20261120.json`.
 
 - 2026-11-18: user approved a quick AMD inference check of one group.
   Job and immutable input/config/source provenance are recorded in `experiments/tcs_async_rl/jobs.jsonl`.

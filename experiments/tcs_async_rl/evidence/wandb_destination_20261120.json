@@ -1,0 +1,26 @@
+{
+  "observed_at_utc": "2026-11-20T21:36:56.959711+00:00",
+  "requested_organization": "geney-org",
+  "entity": "geney",
+  "project": "tcs-async-rl",
+  "workspace_settings": {
+    "entity": "geney",
+    "project": "tcs-async-rl"
+  },
+  "attempts": [
+    {
+      "observed_at_utc": "2026-11-20T21:36:24.091452+00:00",
+      "entity": "geney-org",
+      "project": "tcs-async-rl",
+      "project_creation_succeeded": false,
+      "error_type": "WandbApiFailedError"
+    }
+  ],
+  "resolved_organization": "geney-org",
+  "authenticated": true,
+  "project_exists": true,
+  "project_url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/workspace",
+  "project_creation_succeeded": true,
+  "experiment_runs_created": 0,
+  "method": "Normal W&B SDK auth, team-to-organization resolution and project metadata. No credential values printed, copied or stored."
+}
