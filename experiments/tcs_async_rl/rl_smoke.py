@@ -17,6 +17,7 @@ from pathlib import Path
 from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.group_inference import load_input
 from experiments.tcs_async_rl.reward_hook import prepare_smoke_row, question_key
+from experiments.tcs_async_rl.rl_artifacts import export_rollouts
 
 
 def validate_group_gate(grades, expected_samples):
@@ -191,14 +192,17 @@ def main():
             "WANDB_DATA_DIR",
         )
     }
-    backend.execute_train(
-        train_args=shlex.join(native_argv(args)),
-        num_gpus_per_node=args["num_gpus_per_node"],
-        megatron_model_type="qwen3.5-4B",
-        train_script="train_async.py",
-        extra_env_vars=caches,
-        job_lifetime="launcher",
-    )
+    try:
+        backend.execute_train(
+            train_args=shlex.join(native_argv(args)),
+            num_gpus_per_node=args["num_gpus_per_node"],
+            megatron_model_type="qwen3.5-4B",
+            train_script="train_async.py",
+            extra_env_vars=caches,
+            job_lifetime="launcher",
+        )
+    finally:
+        export_rollouts(cli.run_dir)
     (cli.run_dir / "training-finished.json").write_text(
         json.dumps({"launcher_completed": True, "run_id": run_id}) + "\n"
     )
