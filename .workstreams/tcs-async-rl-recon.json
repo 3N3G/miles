@@ -475,6 +475,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/native_group_v12_outcome_20261120.json",
       "label": "Complete native reward outcome and immutable private archive"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/mi300_group_v13_partial_20261120.json",
+      "label": "Live MI300 partial group: 22 actual zero grades and raw-answer spot-check limitation"
     }
   ],
   "jobs": [
@@ -1397,15 +1401,22 @@
       "actor": "codex",
       "summary": "Made the pending data-scope decision explicit while continuing the active group",
       "revision": 110
+    },
+    {
+      "id": "84eb7b4e-e31d-4270-927c-702aa9e230ce",
+      "at": "2026-11-20T16:47:35.022579Z",
+      "actor": "codex",
+      "summary": "Recorded continuing MI300 generation, 22 zero grades and the raw-judge spot-check limitation",
+      "revision": 111
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "needs-you",
-  "summary": "MI300 group remains active. Native repaired group has 28 zero grades and four missing finals. Alternative-question proposal needs a data-scope decision.",
+  "summary": "MI300 is active: 23 responses returned and 22 graded zero. Native group failed with 28 zero grades and four missing finals. Question-scope decision pending.",
   "nextAction": "Choose whether to check the two proposed eligible questions. Monitoring and grading of the current MI300 group continue.",
   "owner": "Codex",
-  "revision": 110,
-  "updatedAt": "2026-11-20T16:22:10.998740Z"
+  "revision": 111,
+  "updatedAt": "2026-11-20T16:47:35.022579Z"
 }

@@ -1,0 +1,27 @@
+{
+  "observed_at_utc": "2026-11-20T16:47:34.913331+00:00",
+  "job_id": "534576",
+  "status": "RUNNING",
+  "returned_responses": 23,
+  "scored_responses": 22,
+  "all_scored_zero": true,
+  "scored_in_both_orders": true,
+  "controls": [
+    7,
+    0,
+    0
+  ],
+  "generation_sampling": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "max_new_tokens": 90000,
+    "skip_special_tokens": false
+  },
+  "scope": "Partial group on one fixed question. No nonconstant complete diagnostic and no RL update.",
+  "raw_example": {
+    "index": 13,
+    "independent_check": "The proposed unit-bin step for arbitrary polygons fails on an allowed 2x2 square.",
+    "judge_limit": "One order overstates an area-comparison claim. The verdict has a separate concrete feasibility flaw. Calibration remains pending."
+  }
+}
