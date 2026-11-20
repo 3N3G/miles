@@ -1,0 +1,47 @@
+{
+  "observed_at_utc": "2026-11-20T11:19:27.988403+00:00",
+  "source": "Anonymous Docker Registry V2 metadata for rocm/sgl-dev",
+  "images": [
+    {
+      "queried_reference": "rocm/sgl-dev:miles-rocm724-mi35x",
+      "digest": "sha256:50baafd59e43ebc9542ece8088c94d187cf428c8395d07553b363baf0a31a9e1",
+      "created": "2026-10-28T12:46:27.419134535Z",
+      "architecture": "amd64",
+      "compressed_bytes": 30987369553,
+      "labels": {
+        "miles.image-inputs": "c70eb6a6fbcf5c139ced17e04f2578418050278126361af9ef0a16632de4837c",
+        "org.opencontainers.image.ref.name": "rocm/pytorch:rocm7.2.4_ubuntu24.04_py3.12_pytorch_release_2.10.0+rocm7.2.4.lw.git3d3aa833",
+        "org.opencontainers.image.version": "24.04"
+      },
+      "runtime_paths": [
+        "PATH=/root/.cargo/bin:/opt/venv/bin:/opt/rocm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin",
+        "LD_LIBRARY_PATH=/opt/rocm/lib",
+        "GPU_ARCH=gfx950",
+        "PYTORCH_ROCM_ARCH=gfx950",
+        "NVTE_ROCM_ARCH=gfx950"
+      ]
+    },
+    {
+      "queried_reference": "rocm/sgl-dev@sha256:25597c01ab3fc8e77bfeb48434262c535080dc6857c8d591165b4b9304425019",
+      "digest": "sha256:25597c01ab3fc8e77bfeb48434262c535080dc6857c8d591165b4b9304425019",
+      "created": "2026-11-18T13:22:23.113797536Z",
+      "architecture": "amd64",
+      "compressed_bytes": 19387976373,
+      "labels": {
+        "miles.image-inputs": "041b827d6cde7b3ea6ef641ef86ce3c586b3349841675e7d947b3d1c13272ddf",
+        "org.opencontainers.image.version": "24.04"
+      },
+      "runtime_paths": [
+        "PATH=/root/.cargo/bin:/opt/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin",
+        "ROCM_PATH=/opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel",
+        "LD_LIBRARY_PATH=/opt/venv/lib/python3.12/site-packages/_rocm_sdk_devel/lib",
+        "GPU_ARCH=gfx950",
+        "PYTORCH_ROCM_ARCH=gfx950",
+        "NVTE_ROCM_ARCH=gfx950"
+      ]
+    }
+  ],
+  "fallback_gpu_tested": false,
+  "fallback_pulled": false,
+  "note": "Repository CI default uses miles-rocm724-mi35x. Keep as untested fallback. Work filesystem had 209 GiB free. No additional image pull or GPU submission."
+}

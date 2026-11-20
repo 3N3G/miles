@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted compatible-image frozen-policy group 534098: 32 candidates, four concurrent, unchanged thinking prompt, seeds, 90k cap and rubric. Native SGLang 534034 remains queued. No Qwen grades yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Inspect actual Qwen model load and per-response outputs, then grade the group with the existing private VM client. Submit/debug the bounded Miles RL run after complete varied real 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 534098 loaded pinned Qwen3.5-4B and is generating four concurrent requests in the verified ROCm 7.2.3 image. Full 98,304 context accepted. No complete Qwen answer or grade yet. Native SGLang MI350 Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Inspect completed raw answers and actual rubric variation. Qualify the native Miles runtime, then submit and debug the authorized two-update RL check. W&B is prepared offline.
 
 ## Next / blocked
 

@@ -295,6 +295,10 @@
     {
       "path": "experiments/tcs_async_rl/group_check_v6_mi210_vllm.json",
       "label": "Compatible-image 32-response diagnostic with unchanged data/reward/token controls"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/runtime_image_candidates_20261120.json",
+      "label": "Pinned ROCm 7.2.4 training-image fallback metadata, not GPU-qualified"
     }
   ],
   "jobs": [
@@ -759,15 +763,22 @@
       "actor": "codex",
       "summary": "Submitted compatible-image frozen-policy group 534098",
       "revision": 56
+    },
+    {
+      "id": "5d83bc3e-ef89-483f-a607-7f3b6f83f876",
+      "at": "2026-11-20T11:19:28.094335Z",
+      "actor": "codex",
+      "summary": "Verified actual model load and active generation; recorded untested stable training-image fallback",
+      "revision": 57
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Submitted compatible-image frozen-policy group 534098: 32 candidates, four concurrent, unchanged thinking prompt, seeds, 90k cap and rubric. Native SGLang 534034 remains queued. No Qwen grades yet.",
-  "nextAction": "Inspect actual Qwen model load and per-response outputs, then grade the group with the existing private VM client. Submit/debug the bounded Miles RL run after complete varied real rewards.",
+  "summary": "AMD 534098 loaded pinned Qwen3.5-4B and is generating four concurrent requests in the verified ROCm 7.2.3 image. Full 98,304 context accepted. No complete Qwen answer or grade yet. Native SGLang MI350 534034 remains queued.",
+  "nextAction": "Inspect completed raw answers and actual rubric variation. Qualify the native Miles runtime, then submit and debug the authorized two-update RL check. W&B is prepared offline.",
   "owner": "Codex",
-  "revision": 56,
-  "updatedAt": "2026-11-20T11:04:15.419361Z"
+  "revision": 57,
+  "updatedAt": "2026-11-20T11:19:28.094335Z"
 }
