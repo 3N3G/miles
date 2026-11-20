@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted eight-request capacity repair for the same fixed 32-candidate group. Four original answers scored 0/7 in both orders. Original job stays active until replacement memory/profile/decode valida Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufact
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534098 ended CANCELLED. 4 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 

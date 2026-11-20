@@ -117,6 +117,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/4c31ef170a421284e78c967c6ed04806bf4e847a/miles/native-imports-v4",
       "label": "Native regression failure and passing explicit override test"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v6-mi210-vllm",
+      "label": "Private results for AMD inference job 534098"
     }
   ],
   "evidence": [
@@ -383,7 +387,7 @@
     {
       "id": "534098",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "CANCELLED"
     },
     {
       "id": "534132",
@@ -905,15 +909,22 @@
       "actor": "codex",
       "summary": "Submitted approved runtime job 534174",
       "revision": 68
+    },
+    {
+      "id": "9e94fa86-2976-4f7d-8ce3-a5411294a62c",
+      "at": "2026-11-20T12:00:47.157582Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 534098",
+      "revision": 69
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Submitted eight-request capacity repair for the same fixed 32-candidate group. Four original answers scored 0/7 in both orders. Original job stays active until replacement memory/profile/decode validation. Native MI350 remains queued.",
-  "nextAction": "Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufacture variance.",
+  "summary": "AMD job 534098 ended CANCELLED. 4 provisional group grades saved. Human calibration remains pending.",
+  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 68,
-  "updatedAt": "2026-11-20T11:56:31.837301Z"
+  "revision": 69,
+  "updatedAt": "2026-11-20T12:00:47.157582Z"
 }
