@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First Qwen answer completed at 28,515 tokens and scored 0/7 in both Luna orders. Controls remain 7/0/0. Group 534098 continues with 31 candidates outstanding. Native launcher imports passed; MI350 SGL Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Two Qwen answers completed at 28,515 and 32,406 tokens. First scored 0/7 in both Luna orders; second is being graded. Submitted exact native argument/PID check 534162. MI350 SGLang 534034 remains queu Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
   Next: Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufact
 
 ## Next / blocked

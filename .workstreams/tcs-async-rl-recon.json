@@ -355,7 +355,7 @@
     {
       "id": "534034",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "PENDING"
     },
     {
       "id": "534037",
@@ -375,7 +375,7 @@
     {
       "id": "534098",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "RUNNING"
     },
     {
       "id": "534132",
@@ -386,6 +386,11 @@
       "id": "534140",
       "cluster": "hpcfund",
       "status": "COMPLETED"
+    },
+    {
+      "id": "534162",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -835,15 +840,22 @@
       "actor": "codex",
       "summary": "Measured and inspected first real Qwen answer and both-order zero grade; group remains active",
       "revision": 62
+    },
+    {
+      "id": "62f4b3d6-0a44-4f72-a438-45e61595cad9",
+      "at": "2026-11-20T11:43:43.177571Z",
+      "actor": "codex",
+      "summary": "Submitted exact native argument/process diagnostic 534162",
+      "revision": 63
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "First Qwen answer completed at 28,515 tokens and scored 0/7 in both Luna orders. Controls remain 7/0/0. Group 534098 continues with 31 candidates outstanding. Native launcher imports passed; MI350 SGLang 534034 remains queued.",
+  "summary": "Two Qwen answers completed at 28,515 and 32,406 tokens. First scored 0/7 in both Luna orders; second is being graded. Submitted exact native argument/PID check 534162. MI350 SGLang 534034 remains queued.",
   "nextAction": "Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufacture variance.",
   "owner": "Codex",
-  "revision": 62,
-  "updatedAt": "2026-11-20T11:41:14.494930Z"
+  "revision": 63,
+  "updatedAt": "2026-11-20T11:43:43.177571Z"
 }
