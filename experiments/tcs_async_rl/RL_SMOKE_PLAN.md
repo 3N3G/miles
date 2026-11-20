@@ -63,7 +63,7 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
   A recorded model token limit can leave an empty final answer. The same judge grades that empty answer in both orders.
   Both empty verdicts must be zero. Unexpected incomplete outputs, provider failures and parser failures stop the run.
   Record model truncation separately. The diagnostic gate still requires 32 nonempty final answers.
-  No old diagnostic response is rescored. See [the finish-handling repair](REWARD_FINISH_HANDLING_REPAIR_20261120.md).
+  No old diagnostic grade changes. See [the finish-handling repair](REWARD_FINISH_HANDLING_REPAIR_20261120.md).
 - Controls: reuse the passing diagnostic controls. Submission requires all 32 diagnostic final answers graded,
   at least two measured reward values, and reference/empty/irrelevant scores 7/0/0.
   Human calibration and an independent-provider audit remain pending. All rewards are provisional.
@@ -77,6 +77,10 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
 - Logging: durable stage logs, native rollout metrics, raw rollout snapshots, private judge receipts,
   TensorBoard, and W&B offline files. No W&B credential was found on either machine.
   Sync to the user's account from the VM if an authenticated loader becomes available.
+  The reward hook saves each completed model response before calling the service, then records its judgment or failure separately.
+  Portable artifacts retain exact token IDs, behavior log probabilities and sparse sampling support.
+  This matters because `push-run` excludes PyTorch snapshot files. Consumed groups are also exported with their rollout IDs.
+  Unused producer samples remain distinguishable from trainer-consumed groups.
 - Resource cap: four hours on eight GPUs, at most 32 GPU-hours for one attempt. Judge spending cap $5.
   Cache the recipe-specific initial conversion under the model directory. Preserve failed runs and checkpoints.
 

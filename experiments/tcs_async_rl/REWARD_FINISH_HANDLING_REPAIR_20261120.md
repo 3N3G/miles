@@ -16,7 +16,7 @@ Do not change any rubric item, weight, prompt, judge, effort, input, token budge
 The raw model response remains available in the rollout artifact, including the original unfinished thinking.
 
 The diagnostic gate remains unchanged: 32 nonempty final answers, passing controls and nonconstant real scores.
-No old diagnostic response is rescored, relabeled or merged into a replacement group.
+No old diagnostic grade or qualification result changes. No old response is merged into a replacement group.
 This repair prevents a future training crash after that gate. It does not make the original group qualify.
 
 Protocol version 2 exposes this capability in the local service health response.
@@ -28,4 +28,8 @@ Preserve the old service and receipts. After validation, replace only the servic
 No new GPU job is needed. Provider credentials stay in the authorized VM client.
 
 CPU controls verify both finish paths, per-request metadata, concurrent scoring, failed empty controls and provider-error propagation.
-The live service repair remains unverified until its new control receipts are saved.
+The live service repair passed its separate controls using the preserved failure text.
+Reference scores were 7/7 in both orders. The recorded length-limit case scored 0/7 in both orders.
+An unclassified unfinished response returned HTTP 422 without a judge call.
+The new owned service now listens on the original loopback port and reports protocol version 2.
+Its actual process and private receipt paths are in the operational records.

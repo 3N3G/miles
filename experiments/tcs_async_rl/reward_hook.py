@@ -5,6 +5,7 @@ import json
 import math
 
 from experiments.tcs_async_rl.group_inference import final_answer
+from experiments.tcs_async_rl.rl_artifacts import save_generated_sample, save_judge_outcome
 
 REWARD_PROTOCOL_VERSION = 2
 
@@ -64,11 +65,20 @@ async def reward(args, sample, **kwargs):
     # aiohttp is a runtime dependency of Miles; keep the pure data helpers usable on the VM.
     import aiohttp
 
-    if not args.rm_url:
-        raise ValueError("TCS reward requires --rm-url")
-    payload = scoring_request(sample)
-    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=1800)) as session:
-        async with session.post(args.rm_url, json=payload) as response:
-            if response.status != 200:
-                raise RuntimeError(f"TCS rubric service HTTP {response.status}; no zero reward substituted")
-            return validate_reward(await response.json())
+    generated_path = (
+        save_generated_sample(args.save_debug_rollout_data, sample.to_dict()) if args.save_debug_rollout_data else None
+    )
+    try:
+        if not args.rm_url:
+            raise ValueError("TCS reward requires --rm-url")
+        payload = scoring_request(sample)
+        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=1800)) as session:
+            async with session.post(args.rm_url, json=payload) as response:
+                if response.status != 200:
+                    raise RuntimeError(f"TCS rubric service HTTP {response.status}; no zero reward substituted")
+                result = validate_reward(await response.json())
+    except Exception as error:
+        save_judge_outcome(generated_path, error_type=type(error).__name__)
+        raise
+    save_judge_outcome(generated_path, result=result)
+    return result
