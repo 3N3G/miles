@@ -1,0 +1,67 @@
+{
+  "eos_token_id": 248046,
+  "marker_ids": {
+    "<|im_end|>": 248046,
+    "<|endoftext|>": 248044
+  },
+  "capped_samples": [
+    {
+      "sample_index": 3,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      },
+      "marker_id_counts": {
+        "<|im_end|>": 0,
+        "<|endoftext|>": 0
+      }
+    },
+    {
+      "sample_index": 8,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      },
+      "marker_id_counts": {
+        "<|im_end|>": 0,
+        "<|endoftext|>": 0
+      }
+    },
+    {
+      "sample_index": 10,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      },
+      "marker_id_counts": {
+        "<|im_end|>": 0,
+        "<|endoftext|>": 0
+      }
+    },
+    {
+      "sample_index": 16,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      },
+      "marker_id_counts": {
+        "<|im_end|>": 0,
+        "<|endoftext|>": 0
+      }
+    },
+    {
+      "sample_index": 20,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      },
+      "marker_id_counts": {
+        "<|im_end|>": 0,
+        "<|endoftext|>": 0
+      }
+    }
+  ],
+  "result": "None of the five native capped outputs contains either end marker token. These cases are not caused by ignoring an emitted end marker.",
+  "source_job_id": "534575",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/0b138853ee04c65868674a6daab2b2dd144fde86/miles/group-check-v12-mi350"
+}

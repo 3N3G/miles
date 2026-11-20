@@ -37,6 +37,8 @@ Reference, empty-answer and irrelevant-answer controls received 7, 0 and 0 point
 The previously unfinished seed now stopped naturally at 47,474 tokens. Other seeds still repeated until the cap.
 The actual 16-token control also passed sampling-support capture and normalized behavior-log-probability checks.
 Those successes qualify specific generation plumbing. They do not qualify trainer backward computation or produce a usable reward group.
+The exact token arrays contain neither end-of-answer token in any of the five capped outputs.
+These cases did not ignore an emitted end marker. See `evidence/native_finish_token_audit_20261120.json`.
 
 One example was selected with reporting seed 20261118, giving response index 13.
 Its final answer asserts that polygons fitting in a container implies their axis-aligned bounding boxes also fit.

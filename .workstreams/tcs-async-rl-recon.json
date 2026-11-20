@@ -479,6 +479,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/mi300_group_v13_partial_20261120.json",
       "label": "Live MI300 partial group: 22 actual zero grades and raw-answer spot-check limitation"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/native_finish_token_audit_20261120.json",
+      "label": "Exact capped token arrays contain neither known end marker"
     }
   ],
   "jobs": [
@@ -1408,6 +1412,13 @@
       "actor": "codex",
       "summary": "Recorded continuing MI300 generation, 22 zero grades and the raw-judge spot-check limitation",
       "revision": 111
+    },
+    {
+      "id": "cd5081fa-50a0-47a1-a467-e9c275a5ca8f",
+      "at": "2026-11-20T16:51:56.901933Z",
+      "actor": "codex",
+      "summary": "Ruled out ignoring emitted EOS markers in all five native capped trajectories",
+      "revision": 112
     }
   ],
   "projectId": "understanding",
@@ -1417,6 +1428,6 @@
   "summary": "MI300 is active: 23 responses returned and 22 graded zero. Native group failed with 28 zero grades and four missing finals. Question-scope decision pending.",
   "nextAction": "Choose whether to check the two proposed eligible questions. Monitoring and grading of the current MI300 group continue.",
   "owner": "Codex",
-  "revision": 111,
-  "updatedAt": "2026-11-20T16:47:35.022579Z"
+  "revision": 112,
+  "updatedAt": "2026-11-20T16:51:56.901933Z"
 }
