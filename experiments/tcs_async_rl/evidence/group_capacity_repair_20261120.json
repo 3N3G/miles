@@ -1,0 +1,34 @@
+{
+  "observed_at_utc": "2026-11-20T11:54:56.857788+00:00",
+  "source_job_id": "534098",
+  "first_wave_indices": [
+    0,
+    3,
+    2,
+    1
+  ],
+  "first_wave_tokens": [
+    28515,
+    32406,
+    34253,
+    39958
+  ],
+  "mean_generated_tokens": 33783,
+  "provisional_both_order_candidate_scores": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "forecast_aggregate_tokens_per_second": 65,
+  "projected_decode_hours_for_32": 4.619897435897436,
+  "forecast_assumption": "Remaining candidates have the initial four answers average length and aggregate decoding remains 65 tokens/s. This is not measured full-group duration.",
+  "job_walltime_hours": 4,
+  "observed_kv_capacity_tokens": 1177061,
+  "observed_kv_gib": 36.66,
+  "replacement_max_running_requests": 8,
+  "replacement_max_output_plus_prompt_tokens_each": 90374,
+  "eight_fixed_prompt_max_trajectory_tokens": 722992,
+  "replacement_profile_verified": false,
+  "config_change_check": "Every scientific/config field is identical after removing changed operational metadata and restoring max_running_requests=4."
+}
