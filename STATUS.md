@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy-question job 535067 is queued on AMD. Reference, empty and irrelevant controls passed in both orders. Medium remains conditional. Jobs: hpcfund/535067 PENDING; hpcfund/534576 COMPLETED
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy-question job 535067 is running on one AMD MI350. Its judge controls passed. Medium remains conditional on review of the easy distribution. Jobs: hpcfund/535067 RUNNING; hpcfund/534576 COMPLETED
   Next: Monitor and grade the easy group. Inspect real awarded points before advancing to the medium question.
 
 ## Next / blocked

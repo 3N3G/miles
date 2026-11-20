@@ -529,7 +529,7 @@
     {
       "id": "535067",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "534576",
@@ -1520,15 +1520,22 @@
       "actor": "codex",
       "summary": "Recorded queued easy check and verified its question-specific judge controls",
       "revision": 120
+    },
+    {
+      "id": "2da5afb9-5e7d-4334-b767-920169f0dff9",
+      "at": "2026-11-20T19:13:35.108434Z",
+      "actor": "codex",
+      "summary": "Observed the easy GPU allocation start earlier than its forecast",
+      "revision": 121
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Easy-question job 535067 is queued on AMD. Reference, empty and irrelevant controls passed in both orders. Medium remains conditional.",
+  "summary": "Easy-question job 535067 is running on one AMD MI350. Its judge controls passed. Medium remains conditional on review of the easy distribution.",
   "nextAction": "Monitor and grade the easy group. Inspect real awarded points before advancing to the medium question.",
   "owner": "Codex",
-  "revision": 120,
-  "updatedAt": "2026-11-20T19:13:05.831143Z"
+  "revision": 121,
+  "updatedAt": "2026-11-20T19:13:35.108434Z"
 }
