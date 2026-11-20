@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI210 534033 passed repaired cache imports, then failed on the first GPU tensor operation with hipErrorInvalidImage. No Qwen responses exist. Preparing a five-minute Torch-only versus engine-import di Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Run the pinned five-minute MI210 compatibility probe, then choose a repair from measured architecture/kernel evidence. Keep the valid MI350 fallback and do not change the TCS model
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted five-minute MI210 compatibility diagnostic 534037. The valid MI350 group 534034 remains queued. No Qwen responses or real rubric grades yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Read the saved Torch/GPU architecture metadata and first failed operation, then repair the evidenced runtime component or retain MI350.
 
 ## Next / blocked
 

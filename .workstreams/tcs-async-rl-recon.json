@@ -304,6 +304,11 @@
       "id": "534034",
       "cluster": "hpcfund",
       "status": "SUBMITTED"
+    },
+    {
+      "id": "534037",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -641,15 +646,22 @@
       "actor": "codex",
       "summary": "Isolated a new GPU-kernel failure after the cache imports passed",
       "revision": 46
+    },
+    {
+      "id": "460f4fa5-6646-40a7-992c-2bd8a2c5341e",
+      "at": "2026-11-20T10:34:50.038732Z",
+      "actor": "codex",
+      "summary": "Submitted bounded kernel compatibility diagnostic 534037",
+      "revision": 47
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "MI210 534033 passed repaired cache imports, then failed on the first GPU tensor operation with hipErrorInvalidImage. No Qwen responses exist. Preparing a five-minute Torch-only versus engine-import diagnostic. Repaired MI350 534034 stays queued.",
-  "nextAction": "Run the pinned five-minute MI210 compatibility probe, then choose a repair from measured architecture/kernel evidence. Keep the valid MI350 fallback and do not change the TCS model, prompts or rubric.",
+  "summary": "Submitted five-minute MI210 compatibility diagnostic 534037. The valid MI350 group 534034 remains queued. No Qwen responses or real rubric grades yet.",
+  "nextAction": "Read the saved Torch/GPU architecture metadata and first failed operation, then repair the evidenced runtime component or retain MI350.",
   "owner": "Codex",
-  "revision": 46,
-  "updatedAt": "2026-11-20T10:34:21.543406Z"
+  "revision": 47,
+  "updatedAt": "2026-11-20T10:34:50.038732Z"
 }
