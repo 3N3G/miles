@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Replacement 534174 has two completed/graded answers, both 0/7 in both Luna orders. Four preserved original answers also scored zero. Current group continues. Exact native arguments passed. Asked wheth Jobs: hpcfund/534174 RUNNING; hpcfund/534034 PENDING
-  Next: Finish the current group. Resolve fallback question scope if rewards stay constant. Submit RL only after genuine reward variation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534034 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/534174 RUNNING; hpcfund/534034 FAILED
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 
