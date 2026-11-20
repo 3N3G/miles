@@ -1599,15 +1599,22 @@
       "actor": "codex",
       "summary": "Verified VM W&B login and configured the requested organization destination",
       "revision": 126
+    },
+    {
+      "id": "890f167a-f824-4f7b-be4e-6ba6db25303f",
+      "at": "2026-11-20T23:15:26.454938Z",
+      "actor": "codex",
+      "summary": "Started the requested durable medium-to-RL handoff",
+      "revision": 127
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Easy: 15 positive grades, 13 zeros, four capped missing finals. Medium 535170 is pending. VM W&B login and the selected organization destination are verified.",
-  "nextAction": "Monitor and grade medium, compare both distributions, and resolve recorded-cap qualification before any affected RL submission.",
+  "summary": "Medium 535170 is pending. The user requested automatic RL submission and monitoring after its diagnostic. Existing watcher only grades and archives.",
+  "nextAction": "Implement, validate and arm a durable medium-to-RL handoff under the existing reward gate and two-update authorization.",
   "owner": "Codex",
-  "revision": 126,
-  "updatedAt": "2026-11-20T21:37:45.024588Z"
+  "revision": 127,
+  "updatedAt": "2026-11-20T23:15:26.454938Z"
 }

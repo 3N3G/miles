@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy: 15 positive grades, 13 zeros, four capped missing finals. Medium 535170 is pending. VM W&B login and the selected organization destination are verified. Jobs: hpcfund/535170 PENDING; hpcfund/535067 COMPLETED
-  Next: Monitor and grade medium, compare both distributions, and resolve recorded-cap qualification before any affected RL submission.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Medium 535170 is pending. The user requested automatic RL submission and monitoring after its diagnostic. Existing watcher only grades and archives. Jobs: hpcfund/535170 PENDING; hpcfund/535067 COMPLETED
+  Next: Implement, validate and arm a durable medium-to-RL handoff under the existing reward gate and two-update authorization.
 
 ## Next / blocked
 
