@@ -1479,15 +1479,22 @@
       "actor": "codex",
       "summary": "Recorded the user efficiency concern and separated pipeline qualification from corpus feasibility",
       "revision": 116
+    },
+    {
+      "id": "4476ab73-f86b-449e-901b-b01bde83f733",
+      "at": "2026-11-20T19:03:30.608743Z",
+      "actor": "codex",
+      "summary": "Claimed the user-approved easy-then-medium diagnostic sequence",
+      "revision": 117
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "needs-you",
-  "summary": "Only one unique question has been tested, with zero reward variation. Dataset-wide feasibility is unmeasured. The user raised corpus RL efficiency.",
-  "nextAction": "Decide whether to propose a representative reward-coverage screen before choosing the corpus RL initialization.",
+  "state": "running",
+  "summary": "User approved an easy-question group first, then medium if the easy rewards are useful. Keep the model, judge, 90k cap and held-out split.",
+  "nextAction": "Validate the selected easy input, pin its config, and submit one AMD MI350 job. Review its rewards before the medium check.",
   "owner": "Codex",
-  "revision": 116,
-  "updatedAt": "2026-11-20T18:05:34.600948Z"
+  "revision": 117,
+  "updatedAt": "2026-11-20T19:03:30.608743Z"
 }

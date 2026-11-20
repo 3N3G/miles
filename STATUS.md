@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved an easy-question group first, then medium if the easy rewards are useful. Keep the model, judge, 90k cap and held-out split. Jobs: hpcfund/534576 COMPLETED; hpcfund/534575 COMPLETED
+  Next: Validate the selected easy input, pin its config, and submit one AMD MI350 job. Review its rewards before the medium check.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Only one unique question has been tested, with zero reward variation. Dataset-wide feasibility is unmeasured. The user raised corpus RL efficiency. Jobs: hpcfund/534576 COMPLETED; hpcfund/534575 COMPLETED
-  Next: Decide whether to propose a representative reward-coverage screen before choosing the corpus RL initialization.
+- Nothing recorded.
 
 ## Finished
 
