@@ -356,6 +356,10 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
                 env=env,
             )
         return
+    if qualification.get("mode") == "training_imports":
+        # Parse help only. This starts no Ray cluster and performs no training.
+        _run("training-help", prefix + ["python3", "train_async.py", "--help"], run_dir=run_dir, env=env)
+        return
     if qualification.get("mode") == "group_inference":
         _run_group_check(
             prefix=prefix, work_dir=work_dir, run_dir=run_dir, config_path=config_path, training=training, env=env
