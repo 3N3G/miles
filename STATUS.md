@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted five-minute MI210 compatibility diagnostic 534037. The valid MI350 group 534034 remains queued. No Qwen responses or real rubric grades yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Read the saved Torch/GPU architecture metadata and first failed operation, then repair the evidenced runtime component or retain MI350.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534037 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
 
 ## Next / blocked
 
