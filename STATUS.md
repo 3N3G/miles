@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native v9: 31 complete finals, one 90k repetition loop. Submitted bounded-sampling repair 534420. Original grading continues. Jobs: hpcfund/534174 RUNNING; hpcfund/534420 SUBMITTED
-  Next: Check the native sampling-support control, then failed seed 25 and the full replacement group.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534333 ended COMPLETED. 31 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/534174 RUNNING; hpcfund/534420 SUBMITTED
+  Next: Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.
 
 ## Next / blocked
 
