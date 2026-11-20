@@ -56,7 +56,7 @@ Human calibration and an independent-provider audit remain pending. All judge sc
 | Generated tokens, minimum / median / maximum | 24,388 / 36,754 / 90,000 |
 | Total generated tokens, including the unfinished response | 1,216,469 |
 | Allocation elapsed time, including startup | 28 minutes 50 seconds |
-| Judge usage, including controls | $0.1742 |
+| Estimated judge cost at the configured rates, including controls | $0.1742 |
 
 The reporting rule uniformly selects one response by sample index, using seed 20261118. It selects sample 13.
 Both judge orders awarded it zero on every criterion.
