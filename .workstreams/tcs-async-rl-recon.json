@@ -317,6 +317,11 @@
       "id": "534037",
       "cluster": "hpcfund",
       "status": "FAILED"
+    },
+    {
+      "id": "534048",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -675,15 +680,22 @@
       "actor": "codex",
       "summary": "Localized failure before engine import and prepared a bundled-runtime diagnostic",
       "revision": 49
+    },
+    {
+      "id": "ff79c557-394a-4e3b-946d-7b0ae1e41f4d",
+      "at": "2026-11-20T10:39:47.768768Z",
+      "actor": "codex",
+      "summary": "Submitted bundled ROCm compatibility diagnostic 534048",
+      "revision": 50
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Torch-only MI210 probe 534037 failed creating FP32 ones before engine import. The build includes gfx90a. Preparing a five-minute bundled-ROCm/device-only probe to test host-library mixing. MI350 534034 stays queued; no Qwen responses yet.",
-  "nextAction": "Run the bundled-userspace probe and inspect loaded-library paths and first GPU operation. Keep the model/data/reward unchanged and retain valid MI350 fallback.",
+  "summary": "Submitted bundled-runtime MI210 diagnostic 534048, capped at five GPU-minutes. MI350 group 534034 remains queued. No Qwen group or actual reward variance yet.",
+  "nextAction": "Compare Torch-only and post-engine-import kernels using bundled runtime libraries. Inspect actual mappings and preserve all artifacts.",
   "owner": "Codex",
-  "revision": 49,
-  "updatedAt": "2026-11-20T10:39:14.586337Z"
+  "revision": 50,
+  "updatedAt": "2026-11-20T10:39:47.768768Z"
 }

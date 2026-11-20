@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Torch-only MI210 probe 534037 failed creating FP32 ones before engine import. The build includes gfx90a. Preparing a five-minute bundled-ROCm/device-only probe to test host-library mixing. MI350 53403 Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Run the bundled-userspace probe and inspect loaded-library paths and first GPU operation. Keep the model/data/reward unchanged and retain valid MI350 fallback.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted bundled-runtime MI210 diagnostic 534048, capped at five GPU-minutes. MI350 group 534034 remains queued. No Qwen group or actual reward variance yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Compare Torch-only and post-engine-import kernels using bundled runtime libraries. Inspect actual mappings and preserve all artifacts.
 
 ## Next / blocked
 
