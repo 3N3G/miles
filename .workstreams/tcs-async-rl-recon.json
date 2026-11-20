@@ -89,6 +89,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/mi210-compatibility-v1",
       "label": "Private results for AMD inference job 534037"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/mi210-compatibility-v2",
+      "label": "Private results for AMD inference job 534048"
     }
   ],
   "evidence": [
@@ -321,7 +325,7 @@
     {
       "id": "534048",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "FAILED"
     }
   ],
   "sessions": [
@@ -687,15 +691,22 @@
       "actor": "codex",
       "summary": "Submitted bundled ROCm compatibility diagnostic 534048",
       "revision": 50
+    },
+    {
+      "id": "7a186856-3fd8-4639-84e3-fc0222573a1c",
+      "at": "2026-11-20T10:40:38.011967Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 534048",
+      "revision": 51
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Submitted bundled-runtime MI210 diagnostic 534048, capped at five GPU-minutes. MI350 group 534034 remains queued. No Qwen group or actual reward variance yet.",
-  "nextAction": "Compare Torch-only and post-engine-import kernels using bundled runtime libraries. Inspect actual mappings and preserve all artifacts.",
+  "summary": "AMD job 534048 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
+  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
   "owner": "Codex",
-  "revision": 50,
-  "updatedAt": "2026-11-20T10:39:47.768768Z"
+  "revision": 51,
+  "updatedAt": "2026-11-20T10:40:38.011967Z"
 }
