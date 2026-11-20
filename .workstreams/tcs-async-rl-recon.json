@@ -391,6 +391,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/training_rubric_audit_20261120.json",
       "label": "All eligible training rubrics parsed without held-out reads"
+    },
+    {
+      "path": "experiments/tcs_async_rl/REPETITION_REPAIR_20261120.md",
+      "label": "Observed endless-repetition failure and prospective supported sampling repair"
     }
   ],
   "jobs": [
@@ -1139,15 +1143,22 @@
       "actor": "codex",
       "summary": "Verified native MI350 completions and clarified asynchronous version evidence",
       "revision": 88
+    },
+    {
+      "id": "b72c9258-f876-4fbc-9c11-d903def468dc",
+      "at": "2026-11-20T14:25:34.633559Z",
+      "actor": "codex",
+      "summary": "Prepared an authorized sampling repair for the real 90k repetition failure",
+      "revision": 89
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Native MI350: 31/32 completed, natural stops and nonempty finals. Awaiting full grading. vLLM: first 16 scores zero.",
-  "nextAction": "Finish and grade the native group. Submit bounded RL only if real rewards vary.",
+  "summary": "Native completed 32 requests, with 31 final answers and one 90k repetition loop. Bounded sampling repair prepared; native grades pending.",
+  "nextAction": "Submit the documented sampling repair. Validate support metadata and the failed seed before its remaining group.",
   "owner": "Codex",
-  "revision": 88,
-  "updatedAt": "2026-11-20T14:02:51.179961Z"
+  "revision": 89,
+  "updatedAt": "2026-11-20T14:25:34.633559Z"
 }

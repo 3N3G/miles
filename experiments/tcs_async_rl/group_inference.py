@@ -6,6 +6,7 @@ import datetime
 import hashlib
 import importlib.metadata
 import json
+import math
 import os
 import time
 from pathlib import Path
@@ -43,9 +44,9 @@ def _append_json(path, row):
         os.fsync(output.fileno())
 
 
-async def generate_group(engine, *, token_ids, training, seed, run_dir):
+def sampling_parameters(training):
     args = training["miles_args"]
-    sampling = {
+    return {
         "temperature": args["rollout_temperature"],
         "top_p": args["rollout_top_p"],
         "top_k": args["rollout_top_k"],
@@ -54,6 +55,45 @@ async def generate_group(engine, *, token_ids, training, seed, run_dir):
         # The extracted final answer omits the terminal marker.
         "skip_special_tokens": False,
     }
+
+
+def validate_sampling_support_control(output, *, expected_tokens, top_k):
+    token_ids = output["output_ids"]
+    supports = output["meta_info"]["output_token_sampling_mask"]
+    logprobs = output["meta_info"]["output_token_sampling_logprobs"]
+    if len(token_ids) != expected_tokens or len(supports) != expected_tokens or len(logprobs) != expected_tokens:
+        raise ValueError("Sampling support control has incomplete token metadata")
+    for token, support, probabilities in zip(token_ids, supports, logprobs, strict=True):
+        if not 0 < len(support) <= top_k or len(set(support)) != len(support) or token not in support:
+            raise ValueError("Sampling support does not contain the sampled token within its declared bound")
+        if len(probabilities) != len(support) or not all(math.isfinite(p) for p in probabilities):
+            raise ValueError("Sampling support control has invalid log probabilities")
+        if abs(sum(math.exp(p) for p in probabilities) - 1) > 1e-4:
+            raise ValueError("Sampling support log probabilities are not normalized")
+
+
+async def check_sampling_support(engine, *, token_ids, training, seed, run_dir):
+    # The Engine convenience method omits these native request fields in this image.
+    # Use the same request schema and tokenizer-manager owner as its HTTP endpoint.
+    from sglang.srt.managers.io_struct import GenerateReqInput
+
+    params = {**sampling_parameters(training), "max_new_tokens": 16, "sampling_seed": seed}
+    request = GenerateReqInput(
+        input_ids=token_ids,
+        sampling_params=params,
+        return_logprob=True,
+        return_sampling_mask=True,
+        sampling_logprobs_mode="support",
+    )
+    output = await engine.tokenizer_manager.generate_request(request, None).__anext__()
+    (run_dir / "sampling-support-control.json").write_text(json.dumps(output, indent=2) + "\n")
+    validate_sampling_support_control(output, expected_tokens=16, top_k=params["top_k"])
+    print("Native bounded-sampling support and normalized behavior log probabilities passed", flush=True)
+
+
+async def generate_group(engine, *, token_ids, training, seed, run_dir, validate_first_sample=None):
+    args = training["miles_args"]
+    sampling = sampling_parameters(training)
 
     async def one(index):
         started = time.monotonic()
@@ -81,7 +121,18 @@ async def generate_group(engine, *, token_ids, training, seed, run_dir):
             )
             raise
 
-    return await asyncio.gather(*(one(i) for i in range(args["n_samples_per_prompt"])))
+    indices = list(range(args["n_samples_per_prompt"]))
+    validated = []
+    if validate_first_sample is not None:
+        if type(validate_first_sample) is not int or validate_first_sample not in indices:
+            raise ValueError("First validation sample must belong to the declared group")
+        record = await one(validate_first_sample)
+        if not record["final_answer"] or record["output"]["meta_info"]["finish_reason"]["type"] != "stop":
+            raise RuntimeError("Previously failed seed did not complete under the proposed sampling repair")
+        validated.append(record)
+        indices.remove(validate_first_sample)
+        print("Previously failed seed completed. Starting the remaining group.", flush=True)
+    return validated + await asyncio.gather(*(one(i) for i in indices))
 
 
 async def progress_monitor(run_dir, started, count):
@@ -124,6 +175,7 @@ async def run_group(*, config_path, model_dir, run_dir):
         skip_server_warmup=True,
     )
     (run_dir / "engine-arguments.json").write_text(json.dumps(arguments, indent=2) + "\n")
+    (run_dir / "sampling-parameters.json").write_text(json.dumps(sampling_parameters(training), indent=2) + "\n")
     (run_dir / "input.json").write_text(json.dumps(row, ensure_ascii=False, indent=2) + "\n")
     (run_dir / "formatted-prompt.txt").write_text(formatted)
     properties = torch.cuda.get_device_properties(0)
@@ -142,8 +194,17 @@ async def run_group(*, config_path, model_dir, run_dir):
     started = time.monotonic()
     monitor = asyncio.create_task(progress_monitor(run_dir, started, training["miles_args"]["n_samples_per_prompt"]))
     try:
+        if config["inference"].get("validate_sampling_support", False):
+            await check_sampling_support(
+                engine, token_ids=token_ids, training=training, seed=config["inference"]["seed"], run_dir=run_dir
+            )
         responses = await generate_group(
-            engine, token_ids=token_ids, training=training, seed=config["inference"]["seed"], run_dir=run_dir
+            engine,
+            token_ids=token_ids,
+            training=training,
+            seed=config["inference"]["seed"],
+            run_dir=run_dir,
+            validate_first_sample=config["inference"].get("validate_first_sample"),
         )
         summary = {
             "completed": len(responses),

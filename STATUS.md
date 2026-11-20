@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native MI350: 31/32 completed, natural stops and nonempty finals. Awaiting full grading. vLLM: first 16 scores zero. Jobs: hpcfund/534174 RUNNING; hpcfund/534333 RUNNING
-  Next: Finish and grade the native group. Submit bounded RL only if real rewards vary.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native completed 32 requests, with 31 final answers and one 90k repetition loop. Bounded sampling repair prepared; native grades pending. Jobs: hpcfund/534174 RUNNING; hpcfund/534333 RUNNING
+  Next: Submit the documented sampling repair. Validate support metadata and the failed seed before its remaining group.
 
 ## Next / blocked
 

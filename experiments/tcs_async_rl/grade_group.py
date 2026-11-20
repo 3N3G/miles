@@ -187,6 +187,9 @@ async def grade_group(*, run_dir, input_file, config_path, key_file, controls_on
         "human_calibration": "pending",
         "grades": results,
     }
+    sampling_file = run_dir / "sampling-parameters.json"
+    if sampling_file.exists():
+        summary["generation_sampling"] = json.loads(sampling_file.read_text())
     target = run_dir / ("control-grades.json" if controls_only else "group-grades.json")
     target.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps({key: value for key, value in summary.items() if key != "grades"}, indent=2))

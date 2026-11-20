@@ -17,12 +17,14 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
-from experiments.tcs_async_rl.group_inference import load_input
+from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
 from experiments.tcs_async_rl.reward_hook import prepare_smoke_row, question_key
 from experiments.tcs_async_rl.rl_artifacts import export_rollouts
 
 
-def validate_group_gate(grades, expected_samples):
+def validate_group_gate(grades, expected_samples, *, expected_sampling=None):
+    if expected_sampling is not None and grades.get("generation_sampling") != expected_sampling:
+        raise ValueError("Diagnostic gate does not match the training sampling parameters")
     scores = grades["scores_by_case"]
     candidates = [scores[key] for key in sorted(scores) if key.startswith("sample-")]
     if grades["scored_responses"] != expected_samples or len(candidates) != expected_samples:
@@ -158,7 +160,12 @@ def main():
     grades = json.loads(gate_file.read_text())
     if grades.get("input_sha256") != input_config["input_sha256"]:
         raise ValueError("Group gate is not tied to the approved private input hash")
-    validate_group_gate(grades, training["miles_args"]["n_samples_per_prompt"])
+    sampling_args = {**training["miles_args"], **config["overrides"]}
+    expected_sampling = {
+        **sampling_parameters({"miles_args": sampling_args}),
+        "skip_special_tokens": sampling_args["rollout_skip_special_tokens"],
+    }
+    validate_group_gate(grades, training["miles_args"]["n_samples_per_prompt"], expected_sampling=expected_sampling)
     run_id = U.create_run_id()
     args, conversion_name = resolved_args(config, training, work_dir=cli.work_dir, run_dir=cli.run_dir, run_id=run_id)
     tokenizer = AutoTokenizer.from_pretrained(args["hf_checkpoint"], local_files_only=True)

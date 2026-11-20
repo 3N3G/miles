@@ -17,6 +17,11 @@ These snapshots differ only in run identity and diagnostic gate provenance. Thei
 Choose a snapshot only after its own complete group meets the same measured reward gate.
 The private input SHA-256 is identical for both groups. No RL allocation has been submitted.
 
+After the native repetition failure, `rl_smoke_v5.json` binds the replacement v10 group and its new sampling profile.
+The exact failure, validation order and memory implications are in [the sampling repair](REPETITION_REPAIR_20261120.md).
+The replacement uses the existing Torch log-probability backend because bounded sampling requires support replay.
+Old-profile grades cannot open its gate. No reward definition, question or judge changes.
+
 ## Background / motivation
 
 Generation alone does not validate backward computation, optimizer state, weight publication, or resumable saving.
@@ -46,7 +51,7 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
 - Generator: Qwen3.5-4B with thinking enabled, 90,000 output-token ceiling and 98,304 total context.
   Temperature one, top-p one, no top-k cutoff. Keep terminal/thinking markers so extraction matches the diagnostic.
 - Runtime: one eight-GPU MI350 node, two trainer GPUs and six rollout GPUs in three engines.
-  Tensor parallelism two, full activation recomputation, tiled language-model head, BF16 parameters,
+  Tensor parallelism two, full activation recomputation, the snapshot's head backend, BF16 parameters,
   FP32 accumulated gradients, and the existing MTP/speculative settings from the proposal.
 - Algorithm: inherit CISPO/GRPO settings and Adam learning rate from the proposal.
   Bound this runtime check to one prompt per rollout, 32 samples per prompt, global batch 32,

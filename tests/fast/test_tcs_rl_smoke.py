@@ -52,6 +52,13 @@ class RLSmokeTests(unittest.TestCase):
         self.assertIn(name, args["ref_load"])
         self.assertEqual(training, original)
 
+    def test_varied_grades_from_another_sampling_profile_cannot_open_the_gate(self):
+        grades = self.gate()
+        grades["generation_sampling"] = {"temperature": 1, "top_p": 1, "top_k": -1}
+        validate_group_gate(grades, 2, expected_sampling=grades["generation_sampling"])
+        with self.assertRaisesRegex(ValueError, "sampling parameters"):
+            validate_group_gate(grades, 2, expected_sampling={"temperature": 1, "top_p": 0.95, "top_k": 20})
+
     def test_private_pid_namespace_is_mandatory_for_rl_container(self):
         common = dict(image=Path("/work/image"), repo=Path("/repo"), work_dir=Path("/work"))
         ordinary = container_prefix(**common)
