@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fourteen of 32 vLLM answers graded, all zero in both orders. Native 534296 cleared FlyDSL but failed later on a separate SGLang JIT cache under home. Submitted repaired numerical reference check 53431 Jobs: hpcfund/534174 RUNNING; hpcfund/534317 SUBMITTED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 14/32 Qwen answers graded, all zero. Native cache repair ready. HF/vLLM matched three greedy tokens but failed one numerical tolerance. Jobs: hpcfund/534174 RUNNING; hpcfund/534317 FAILED
+  Next: Submit the native cache repair, diagnose the short-prefix discrepancy, and finish grading the fixed group.
 
 ## Next / blocked
 

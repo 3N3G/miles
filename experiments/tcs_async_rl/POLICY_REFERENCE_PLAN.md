@@ -52,7 +52,15 @@ The RL gate still requires 32 genuine, complete, nonconstant rubric grades.
 
 ## Results
 
-Not submitted yet.
+Job 534317 completed the comparisons but failed the predeclared numerical criterion.
+All three greedy tokens matched. Maximum top-20 log-probability errors were 0.1840, 0.4406 and 0.1267 nats.
+The 502-token prefix exceeds the unchanged 0.2-nat bound. No checkpoint parameters were missing.
+The chosen-token log-probability differences were 0.00350, 0.00313 and 0.00173 nats.
+This is limited evidence against a gross loading failure. It is not a numerical pass.
+The short-prefix discrepancy needs diagnosis before interpreting serving fidelity.
+No production precision or tolerance has been changed.
+
+Private numerical evidence: https://huggingface.co/datasets/3N3G/internalization-runs/tree/13614a7db204a6bedbb87f96232938a57408e27d/miles/policy-reference-v2
 
 ## First attempt and exact runtime repair
 

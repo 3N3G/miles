@@ -87,6 +87,7 @@ class TestAMDPreflight(unittest.TestCase):
         self.assertIn("AITER_JIT_DIR=/work/tcs/cache/aiter/sandbox", argv)
         self.assertIn("AITER_ROOT_DIR=/work/tcs/cache/aiter_cpp/sandbox", argv)
         self.assertIn("SGLANG_CACHE_DIR=/work/tcs/cache/sglang/sandbox", argv)
+        self.assertIn("SGLANG_JIT_CACHE_DIR=/work/tcs/cache/sglang_jit/sandbox", argv)
         self.assertIn("FLYDSL_RUNTIME_CACHE_DIR=/work/tcs/cache/flydsl/sandbox", argv)
         self.assertIn("FLYDSL_AUTOTUNE_CACHE_DIR=/work/tcs/cache/flydsl_autotune/sandbox", argv)
         self.assertIn("MIOPEN_USER_DB_PATH=/work/tcs/cache/miopen_db/sandbox", argv)
@@ -113,6 +114,7 @@ class TestAMDPreflight(unittest.TestCase):
             "AITER_JIT_DIR",
             "AITER_ROOT_DIR",
             "SGLANG_CACHE_DIR",
+            "SGLANG_JIT_CACHE_DIR",
             "TRITON_CACHE_DIR",
             "TORCH_EXTENSIONS_DIR",
             "TORCHINDUCTOR_CACHE_DIR",

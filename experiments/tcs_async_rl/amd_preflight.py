@@ -96,6 +96,7 @@ def container_prefix(
         "AITER_JIT_DIR": str(cache / "aiter" / gpu_cache),
         "AITER_ROOT_DIR": str(cache / "aiter_cpp" / gpu_cache),
         "SGLANG_CACHE_DIR": str(cache / "sglang" / gpu_cache),
+        "SGLANG_JIT_CACHE_DIR": str(cache / "sglang_jit" / gpu_cache),
         "FLYDSL_RUNTIME_CACHE_DIR": str(cache / "flydsl" / gpu_cache),
         "FLYDSL_AUTOTUNE_CACHE_DIR": str(cache / "flydsl_autotune" / gpu_cache),
         "MIOPEN_USER_DB_PATH": str(cache / "miopen_db" / gpu_cache),

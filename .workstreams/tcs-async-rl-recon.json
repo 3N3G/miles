@@ -145,6 +145,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v8-mi350",
       "label": "Private results for AMD inference job 534296"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/13614a7db204a6bedbb87f96232938a57408e27d/miles/policy-reference-v2",
+      "label": "Three short-prefix numerical comparisons and exact loading metadata"
     }
   ],
   "evidence": [
@@ -386,7 +390,7 @@
     {
       "id": "534317",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "FAILED"
     },
     {
       "id": "534296",
@@ -1071,15 +1075,22 @@
       "actor": "codex",
       "summary": "Submitted MIOpen-repaired reference comparison 534317",
       "revision": 82
+    },
+    {
+      "id": "ca97a577-7df4-4ecd-941a-04c9fbeff524",
+      "at": "2026-11-20T13:45:47.560975Z",
+      "actor": "codex",
+      "summary": "Repaired native JIT cache and recorded the failed numerical criterion",
+      "revision": 83
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Fourteen of 32 vLLM answers graded, all zero in both orders. Native 534296 cleared FlyDSL but failed later on a separate SGLang JIT cache under home. Submitted repaired numerical reference check 534317.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "14/32 Qwen answers graded, all zero. Native cache repair ready. HF/vLLM matched three greedy tokens but failed one numerical tolerance.",
+  "nextAction": "Submit the native cache repair, diagnose the short-prefix discrepancy, and finish grading the fixed group.",
   "owner": "Codex",
-  "revision": 82,
-  "updatedAt": "2026-11-20T13:40:40.967244Z"
+  "revision": 83,
+  "updatedAt": "2026-11-20T13:45:47.560975Z"
 }

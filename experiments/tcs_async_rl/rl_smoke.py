@@ -225,6 +225,7 @@ def main():
             "AITER_JIT_DIR",
             "AITER_ROOT_DIR",
             "SGLANG_CACHE_DIR",
+            "SGLANG_JIT_CACHE_DIR",
             "FLYDSL_RUNTIME_CACHE_DIR",
             "FLYDSL_AUTOTUNE_CACHE_DIR",
             "MIOPEN_USER_DB_PATH",
