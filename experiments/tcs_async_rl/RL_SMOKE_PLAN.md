@@ -11,6 +11,12 @@ Each update consumes one group of 32 responses. Keep the approved model, prompt,
 Use fully asynchronous generation and CISPO, the clipped importance-sampling policy optimizer from Ian's example.
 Require actual varied rubric grades before submission. Preserve every failed attempt and its configuration.
 
+`rl_smoke_v3.json` binds the vLLM group to its grade file.
+The prepared `rl_smoke_v4.json` instead binds native MI350 group v9 to its grade file.
+These snapshots differ only in run identity and diagnostic gate provenance. Their training settings are identical.
+Choose a snapshot only after its own complete group meets the same measured reward gate.
+The private input SHA-256 is identical for both groups. No RL allocation has been submitted.
+
 ## Background / motivation
 
 Generation alone does not validate backward computation, optimizer state, weight publication, or resumable saving.
