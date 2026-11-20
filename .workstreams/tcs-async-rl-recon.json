@@ -197,6 +197,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/c8377cac7ad4a3ccf7e9e8426ed1d4ee6e90964a/miles/judge-reference-audit-v1",
       "label": "Immutable read-only reference-verdict audit"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/easy-check-v14-mi350",
+      "label": "Private results for AMD inference job 535067"
     }
   ],
   "evidence": [
@@ -529,7 +533,7 @@
     {
       "id": "535067",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "534576",
@@ -1527,15 +1531,22 @@
       "actor": "codex",
       "summary": "Observed the easy GPU allocation start earlier than its forecast",
       "revision": 121
+    },
+    {
+      "id": "a73407fb-8987-4668-a63a-9ad0e7ceb28e",
+      "at": "2026-11-20T19:38:40.724307Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 535067",
+      "revision": 122
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Easy-question job 535067 is running on one AMD MI350. Its judge controls passed. Medium remains conditional on review of the easy distribution.",
-  "nextAction": "Monitor and grade the easy group. Inspect real awarded points before advancing to the medium question.",
+  "summary": "AMD job 535067 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending.",
+  "nextAction": "Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.",
   "owner": "Codex",
-  "revision": 121,
-  "updatedAt": "2026-11-20T19:13:35.108434Z"
+  "revision": 122,
+  "updatedAt": "2026-11-20T19:38:40.724307Z"
 }
