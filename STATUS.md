@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted MI210 fallback 533964: identical 32 candidates and 90k cap, four concurrent requests, four-hour bound. MI350 job 533702 remains queued. Startup compatibility and real rewards are not yet ver Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Inspect 533964 startup directly, start its durable grader/monitor, and preserve the MI350 fallback until the available hardware is qualified.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI210 fallback 533964 is RUNNING on k006-004-v4 and compiling AITER in the writable work cache. The image pull was skipped. MI350 533702 remains queued. No Qwen responses or real reward variance yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Inspect compiler/import completion, BF16 kernel validation, model startup, and incremental Qwen outputs. Keep the queued MI350 fallback.
 
 ## Next / blocked
 

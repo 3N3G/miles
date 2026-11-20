@@ -243,7 +243,7 @@
     {
       "id": "533964",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "RUNNING"
     }
   ],
   "sessions": [
@@ -490,15 +490,22 @@
       "actor": "codex",
       "summary": "Submitted approved same-group MI210 fallback 533964",
       "revision": 33
+    },
+    {
+      "id": "30318ff9-249b-4603-9d39-6a117a2de205",
+      "at": "2026-11-20T10:15:59.142998Z",
+      "actor": "codex",
+      "summary": "Observed active MI210 kernel compilation in the repaired work cache",
+      "revision": 34
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Submitted MI210 fallback 533964: identical 32 candidates and 90k cap, four concurrent requests, four-hour bound. MI350 job 533702 remains queued. Startup compatibility and real rewards are not yet verified.",
-  "nextAction": "Inspect 533964 startup directly, start its durable grader/monitor, and preserve the MI350 fallback until the available hardware is qualified.",
+  "summary": "MI210 fallback 533964 is RUNNING on k006-004-v4 and compiling AITER in the writable work cache. The image pull was skipped. MI350 533702 remains queued. No Qwen responses or real reward variance yet.",
+  "nextAction": "Inspect compiler/import completion, BF16 kernel validation, model startup, and incremental Qwen outputs. Keep the queued MI350 fallback.",
   "owner": "Codex",
-  "revision": 33,
-  "updatedAt": "2026-11-20T10:14:11.811602Z"
+  "revision": 34,
+  "updatedAt": "2026-11-20T10:15:59.142998Z"
 }
