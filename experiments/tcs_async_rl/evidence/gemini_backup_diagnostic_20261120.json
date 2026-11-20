@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-11-20T12:11:20.993490+00:00",
+  "host": "VM",
+  "scope": "Metadata only. No generation, private question, key value, raw error message or credential transfer.",
+  "model": "gemini-4-argon",
+  "probes": [
+    {
+      "assignment": "GEMINI_API_KEY",
+      "present": true,
+      "http_status": 401,
+      "api_status": "UNAUTHENTICATED",
+      "reason_codes": []
+    },
+    {
+      "assignment": "GOOGLE_API_KEY",
+      "present": false
+    }
+  ]
+}

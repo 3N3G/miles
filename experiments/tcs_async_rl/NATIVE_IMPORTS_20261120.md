@@ -86,3 +86,18 @@ Call that existing helper before conversion and diagnostic validation. Do not du
 or change communication/model parallelism. Repeat exact validation from `native_imports_v6.json`.
 The helper receives the Megatron request fields it reads and the same ExecuteTrainConfig type as training.
 Private attempt results: https://huggingface.co/datasets/3N3G/internalization-runs/tree/4098ab12f2d0269267332f69a3ad595f76277bd6/miles/native-imports-v5
+
+## Successful native argument qualification
+
+Job 534191 completed in 91 seconds. Both alias regression tests passed.
+The exact native model/run arguments and private PID namespace passed validation.
+The parsed values preserve fully async CISPO/GRPO, 32 responses, global batch 32, two rollouts,
+90,000 generated / 98,304 context tokens, TP2/PP1/CP1, MTP1, and two actor/six rollout GPUs.
+The parser maps the negative W&B suffix flag to `wandb_random_suffix=False`.
+It resolves a missing run checkpoint to the planned reference-conversion path as intended.
+The reference conversion has not run or been fabricated. No model loading, Ray cluster or optimizer ran.
+Private evidence: https://huggingface.co/datasets/3N3G/internalization-runs/tree/203dd98c8a6bd85fe51f3c1885257629f1c04d01/miles/native-imports-v6
+
+The ready runtime snapshot is now `rl_smoke_v3.json`. It differs from the validated v2 snapshot
+only in job name and diagnostic input/gate paths, which now refer to the eight-request group.
+A whole-config comparison verified that all other fields match. Its RL gate is still closed.

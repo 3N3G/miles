@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eight-request replacement 534174 loaded and is decoding at ~113–121 tokens/s; profiled 1182234 KV token positions. Four original candidates scored 0/7 in both orders and are archived. Original 534098  Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Exact native run arguments, private PID namespace and both alias regressions passed in job 534191. Replacement 534174 is generating eight concurrent requests at full token caps. Four original candidat Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Complete the 32-answer group and verify reward variation. Then submit rl_smoke_v3 and debug through two optimizer updates.
 
 ## Next / blocked
 

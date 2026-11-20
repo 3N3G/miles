@@ -45,7 +45,9 @@
 - Options: repair direct Google access, or provide the intended endpoint configuration without credential values.
 - Recommendation: validate the intended route before relying on Gemini as an independent judge.
 - Blocks: backup/independent-provider validation, not the approved GPU generation or provisional Luna grading.
-- Status: authorized VM metadata GET returned HTTP 401. No Gemini generation request was sent.
+- Status: rechecked on 2026-11-20. Google returns HTTP 401 `UNAUTHENTICATED` using the file's Gemini assignment.
+  No alternate `GOOGLE_API_KEY` assignment exists. No Gemini generation request was sent.
+  Evidence: `experiments/tcs_async_rl/evidence/gemini_backup_diagnostic_20261120.json`.
 
 ## 2026-11-20: W&B authentication for runtime logs
 

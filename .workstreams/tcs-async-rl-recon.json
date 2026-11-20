@@ -125,6 +125,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/4098ab12f2d0269267332f69a3ad595f76277bd6/miles/native-imports-v5",
       "label": "Passing alias tests and missing pre-conversion communication environment"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/203dd98c8a6bd85fe51f3c1885257629f1c04d01/miles/native-imports-v6",
+      "label": "Passing full native arguments and process-isolation diagnostic"
     }
   ],
   "evidence": [
@@ -339,6 +343,10 @@
     {
       "path": "experiments/tcs_async_rl/VLLM_CAPACITY_REPAIR_20261120.md",
       "label": "Measured lengths motivated eight-request capacity repair"
+    },
+    {
+      "path": "experiments/tcs_async_rl/rl_smoke_v3.json",
+      "label": "Ready bounded RL snapshot targeting the complete replacement group gate"
     }
   ],
   "jobs": [
@@ -430,7 +438,7 @@
     {
       "id": "534191",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "COMPLETED"
     }
   ],
   "sessions": [
@@ -943,15 +951,29 @@
       "actor": "codex",
       "summary": "Submitted native argument diagnostic 534191 with framework environment",
       "revision": 71
+    },
+    {
+      "id": "0f6a938f-a5f0-4728-9201-0ee3856756e1",
+      "at": "2026-11-20T12:13:07.925596Z",
+      "actor": "codex",
+      "summary": "Validated complete native arguments and prepared the gate-matched RL snapshot",
+      "revision": 72
+    },
+    {
+      "id": "125786c8-39b8-4edf-a2af-739e235f07aa",
+      "at": "2026-11-20T12:13:23.106437Z",
+      "actor": "codex",
+      "summary": "Kept the generated next action concise after native validation",
+      "revision": 73
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Eight-request replacement 534174 loaded and is decoding at ~113–121 tokens/s; profiled 1182234 KV token positions. Four original candidates scored 0/7 in both orders and are archived. Original 534098 cancelled. Native alias tests passed; applied framework environment before conversion/validation.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "Exact native run arguments, private PID namespace and both alias regressions passed in job 534191. Replacement 534174 is generating eight concurrent requests at full token caps. Four original candidates scored 0/7. No complete 32-grade gate or RL submission yet.",
+  "nextAction": "Complete the 32-answer group and verify reward variation. Then submit rl_smoke_v3 and debug through two optimizer updates.",
   "owner": "Codex",
-  "revision": 71,
-  "updatedAt": "2026-11-20T12:05:02.101263Z"
+  "revision": 73,
+  "updatedAt": "2026-11-20T12:13:23.106437Z"
 }

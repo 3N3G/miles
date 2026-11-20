@@ -1,5 +1,12 @@
 # Reward signal, output precision, and recovery audit
 
+Current qualification is recorded in [the native runtime diagnostic](NATIVE_IMPORTS_20261120.md)
+and [the fixed-group capacity repair](VLLM_CAPACITY_REPAIR_20261120.md).
+Four real frozen-model answers received provisional zero grades in both anonymous orders.
+A complete 32-answer reward distribution and GPU training remain unqualified.
+The exact native arguments and private process namespace now pass. W&B is prepared offline.
+The audit below records the earlier support assessment, rather than live job state.
+
 At the original audit, no TCS model rollout, judge call, or learning update had run. Code support is not measured readiness.
 The later approved group diagnostic is now submitted. Luna's basic controls passed, without expert calibration.
 See the job registry and private run artifacts for current execution evidence.
