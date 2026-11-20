@@ -14,7 +14,9 @@ Require actual varied rubric grades before submission. Preserve every failed att
 ## Background / motivation
 
 Generation alone does not validate backward computation, optimizer state, weight publication, or resumable saving.
-The smallest useful runtime check exercises those paths twice, including generation after a weight update.
+Two updates exercise repeated training, saving and weight publication.
+The asynchronous producer can finish samples before publication or continue them across versions.
+Report the versions actually observed in both consumed groups. Two updates do not guarantee fresh-weight samples.
 It reduces deployment uncertainty. It cannot estimate learning quality or generalization.
 
 ## Concrete question we are answering
@@ -70,6 +72,8 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
 2. Two rollout groups reach the trainer with real rubric grades and finite statistics.
 3. The optimizer completes two updates without a skipped/non-finite step.
 4. Initial and subsequent weight publications succeed. The initial equality check passes.
+   Report consumed per-token weight versions and any observed generation under updated weights.
+   Do not infer fresh-weight generation solely from the update count.
 5. The final checkpoint and rollout state are durable, and the launcher exits successfully.
 6. Logs and descriptive results are uploaded to the private results dataset. W&B sync status is explicit.
 

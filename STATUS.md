@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 16/32 vLLM grades are zero. Native MI350 is decoding. FP32 head did not repair the short-prefix discrepancy. All 2,519 eligible rubrics parse. Jobs: hpcfund/534174 RUNNING; hpcfund/534333 RUNNING
-  Next: Finish both fixed-question groups, inspect their real grades, and submit RL only after the nonconstant reward gate.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native MI350: 31/32 completed, natural stops and nonempty finals. Awaiting full grading. vLLM: first 16 scores zero. Jobs: hpcfund/534174 RUNNING; hpcfund/534333 RUNNING
+  Next: Finish and grade the native group. Submit bounded RL only if real rewards vary.
 
 ## Next / blocked
 
