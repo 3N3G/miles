@@ -1644,15 +1644,22 @@
       "actor": "codex",
       "summary": "Armed the durable VM medium-to-RL controller",
       "revision": 129
+    },
+    {
+      "id": "2fffc020-1893-44e1-9cf3-299b47da75de",
+      "at": "2026-11-20T23:40:07.130638Z",
+      "actor": "codex",
+      "summary": "VM handoff is armed; medium remains pending and both live preflight controls passed",
+      "revision": 130
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "VM controller is armed for automatic medium-to-RL handoff. Medium 535170 remains pending. W&B sync and the real reward-service bootstrap passed.",
-  "nextAction": "Controller waits for complete medium grading, then submits and monitors the approved two-update run only if the original strict reward gate passes.",
+  "summary": "VM handoff is armed; medium remains pending and both live preflight controls passed",
+  "nextAction": "Controller waits for complete medium grading, then submits and watches the approved two-update run only if the strict reward gate passes.",
   "owner": "Codex",
-  "revision": 129,
-  "updatedAt": "2026-11-20T23:39:54.651893Z"
+  "revision": 130,
+  "updatedAt": "2026-11-20T23:40:07.130638Z"
 }
