@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native MI350 model warmup passed and 32 requests started after cache repair. Preparing precision diagnosis. 14/32 vLLM grades are zero. Jobs: hpcfund/534174 RUNNING; hpcfund/534333 RUNNING
-  Next: Monitor native decoding, finish the fixed-question grades, and measure the precision discrepancy.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 16/32 vLLM grades are zero. Native MI350 is decoding. FP32 head did not repair the short-prefix discrepancy. All 2,519 eligible rubrics parse. Jobs: hpcfund/534174 RUNNING; hpcfund/534333 RUNNING
+  Next: Finish both fixed-question groups, inspect their real grades, and submit RL only after the nonconstant reward gate.
 
 ## Next / blocked
 

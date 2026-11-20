@@ -94,3 +94,24 @@ Report each reference's maximum returned-top-20 discrepancy against vLLM and its
 The original BF16 check still determines the original acceptance field. Do not raise its tolerance after seeing the results.
 These calculations can localize rounding effects. They do not establish 90k parity, learning, or a need to change the production head.
 Reuse the one-MI210, 15-minute bound with no new question, judge calls or optimizer steps.
+
+### Precision results
+
+Job 534352 saved every diagnostic calculation and repeated the original BF16 failure.
+All reference modes chose the same next tokens: `Here`, `1`, and `.`.
+For the failing 502-token prefix, maximum errors were 0.4406 nats for HF BF16,
+0.4710 for identical BF16 hidden states with an FP32 head, and 0.4352 for the FP32 model.
+Thus, the output-head calculation alone does not explain or repair this discrepancy.
+No production precision or scientific setting changed.
+
+The largest original discrepancy was on `exact`, with served probability 0.0000002508.
+Its absolute probability difference was 0.0000000894. The greedy-token difference was 0.00309.
+Post-hoc bounds on full-vocabulary total variation were at most 0.00344, 0.00310 and 0.00908.
+Total variation is half the sum of absolute probability differences.
+The bounds use exact returned-token masses and bound unknown tails by their remaining mass.
+These descriptive bounds suggest small short-prefix distribution differences. They do not replace the failed declared criterion.
+They also do not validate long decoding, Megatron parity, or mathematical competence.
+The source of the remaining backend/body discrepancy is unresolved.
+
+The private archive contains exact prefixes, every top-token log probability, loading diagnostics and reference-mode comparisons.
+Immutable evidence: https://huggingface.co/datasets/3N3G/internalization-runs/tree/4c3fd1318bc3e951097c78555bf3b668287f9fa4/miles/policy-reference-v3

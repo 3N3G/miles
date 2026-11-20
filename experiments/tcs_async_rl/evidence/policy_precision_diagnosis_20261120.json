@@ -1,0 +1,72 @@
+{
+  "job_id": "534352",
+  "original_bf16_criterion_passed": false,
+  "missing_checkpoint_parameters": 0,
+  "greedy_tokens_equal_across_all_reference_modes": true,
+  "prefixes": [
+    {
+      "tokens": 374,
+      "vllm_hf_bf16_max_error": 0.18400001525878906,
+      "vllm_greedy_text": "Here",
+      "bf16_hf_greedy": "Here",
+      "hf_bf16_hidden_fp32_head_vs_vllm_max_error": 0.15036773681640625,
+      "hf_bf16_hidden_fp32_head_greedy": "Here",
+      "hf_bf16_hidden_fp32_head_vs_hf_bf16_max_error": 0.048850059509277344,
+      "hf_fp32_model_vs_vllm_max_error": 0.08057785034179688,
+      "hf_fp32_model_greedy": "Here",
+      "hf_fp32_model_vs_hf_bf16_max_error": 0.19319534301757812
+    },
+    {
+      "tokens": 502,
+      "vllm_hf_bf16_max_error": 0.4406251907348633,
+      "vllm_greedy_text": "1",
+      "bf16_hf_greedy": "1",
+      "hf_bf16_hidden_fp32_head_vs_vllm_max_error": 0.47100257873535156,
+      "hf_bf16_hidden_fp32_head_greedy": "1",
+      "hf_bf16_hidden_fp32_head_vs_hf_bf16_max_error": 0.059897422790527344,
+      "hf_fp32_model_vs_vllm_max_error": 0.4351949691772461,
+      "hf_fp32_model_greedy": "1",
+      "hf_fp32_model_vs_hf_bf16_max_error": 0.1807880401611328
+    },
+    {
+      "tokens": 2422,
+      "vllm_hf_bf16_max_error": 0.12672805786132812,
+      "vllm_greedy_text": ".",
+      "bf16_hf_greedy": ".",
+      "hf_bf16_hidden_fp32_head_vs_vllm_max_error": 0.12073945999145508,
+      "hf_bf16_hidden_fp32_head_greedy": ".",
+      "hf_bf16_hidden_fp32_head_vs_hf_bf16_max_error": 0.06393289566040039,
+      "hf_fp32_model_vs_vllm_max_error": 0.09288597106933594,
+      "hf_fp32_model_greedy": ".",
+      "hf_fp32_model_vs_hf_bf16_max_error": 0.090118408203125
+    }
+  ],
+  "distribution_mass_bounds": {
+    "note": "Post-hoc descriptive bounds. Does not replace the predeclared log-probability criterion. Total variation is half the full-vocabulary absolute probability difference. Unknown tails bounded by their remaining masses.",
+    "prefixes": [
+      {
+        "tokens": 374,
+        "served_returned_probability_mass": 0.9999656768678201,
+        "hf_same_tokens_probability_mass": 0.999960693119631,
+        "total_variation_lower_bound": 0.003401642290232865,
+        "total_variation_upper_bound": 0.003435965422412746
+      },
+      {
+        "tokens": 502,
+        "served_returned_probability_mass": 0.9999954259836001,
+        "hf_same_tokens_probability_mass": 0.9999935984339039,
+        "total_variation_lower_bound": 0.003086383753828356,
+        "total_variation_upper_bound": 0.003090957770228217
+      },
+      {
+        "tokens": 2422,
+        "served_returned_probability_mass": 0.9937339675235151,
+        "hf_same_tokens_probability_mass": 0.9937901091240262,
+        "total_variation_lower_bound": 0.0028632446848189945,
+        "total_variation_upper_bound": 0.009073135560792783
+      }
+    ]
+  },
+  "interpretation_limit": "Three short teacher-forced prefixes only. FP32 head does not fix the declared discrepancy. No production precision or tolerance changed.",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/4c3fd1318bc3e951097c78555bf3b668287f9fa4/miles/policy-reference-v3"
+}

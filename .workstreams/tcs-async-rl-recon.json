@@ -149,6 +149,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/13614a7db204a6bedbb87f96232938a57408e27d/miles/policy-reference-v2",
       "label": "Three short-prefix numerical comparisons and exact loading metadata"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/4c3fd1318bc3e951097c78555bf3b668287f9fa4/miles/policy-reference-v3",
+      "label": "Same-prefix precision diagnosis and distribution-mass bounds"
     }
   ],
   "evidence": [
@@ -379,6 +383,14 @@
     {
       "path": "experiments/tcs_async_rl/POLICY_REFERENCE_PLAN.md",
       "label": "Same-input serving/reference implementation check"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/policy_precision_diagnosis_20261120.json",
+      "label": "Measured numerical and precision limits"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/training_rubric_audit_20261120.json",
+      "label": "All eligible training rubrics parsed without held-out reads"
     }
   ],
   "jobs": [
@@ -395,7 +407,7 @@
     {
       "id": "534352",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "FAILED"
     },
     {
       "id": "534317",
@@ -1113,15 +1125,22 @@
       "actor": "codex",
       "summary": "Submitted precision diagnosis 534352",
       "revision": 86
+    },
+    {
+      "id": "d574e96a-e1eb-445e-82cc-d4c5694299c1",
+      "at": "2026-11-20T13:54:43.794143Z",
+      "actor": "codex",
+      "summary": "Recorded FP32 reference limits and validated all eligible rubric syntax",
+      "revision": 87
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Native MI350 model warmup passed and 32 requests started after cache repair. Preparing precision diagnosis. 14/32 vLLM grades are zero.",
-  "nextAction": "Monitor native decoding, finish the fixed-question grades, and measure the precision discrepancy.",
+  "summary": "16/32 vLLM grades are zero. Native MI350 is decoding. FP32 head did not repair the short-prefix discrepancy. All 2,519 eligible rubrics parse.",
+  "nextAction": "Finish both fixed-question groups, inspect their real grades, and submit RL only after the nonconstant reward gate.",
   "owner": "Codex",
-  "revision": 86,
-  "updatedAt": "2026-11-20T13:49:03.009018Z"
+  "revision": 87,
+  "updatedAt": "2026-11-20T13:54:43.794143Z"
 }

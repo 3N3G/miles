@@ -1,0 +1,56 @@
+{
+  "dataset_revision": "8e486f2d980d926fa5543efe7f1f2adf475ce3ea",
+  "eligible_only": true,
+  "heldout_reads": 0,
+  "passed": 2519,
+  "failed": 0,
+  "item_count_distribution": {
+    "item_count_6": 1068,
+    "item_count_5": 1248,
+    "item_count_4": 134,
+    "item_count_7": 65,
+    "item_count_3": 4
+  },
+  "sources": [
+    {
+      "cohort": "FOCS_2023",
+      "sha256": "3ea73844e80188b2c4f396914592d559f467f8d36d37395b794f62e5fd31e68d"
+    },
+    {
+      "cohort": "FOCS_2024",
+      "sha256": "90010a2bf10197873d860d4ad872f97bef3d0c01d908cfdb1e7913d22f4d75b0"
+    },
+    {
+      "cohort": "FOCS_2025",
+      "sha256": "41c18e4dc5e62db89997184ee53a0ab7b23474910473ed95bb356317280aafb3"
+    },
+    {
+      "cohort": "STOC_2023",
+      "sha256": "db8c9808b8dcf640701be33a6d9b50e024f23a5b496a77f182b90a82875f56a1"
+    },
+    {
+      "cohort": "STOC_2024",
+      "sha256": "81574f84fbaf69933d2aa9c2676fdd03bde5fe3d0b037c2582305741f1ba0254"
+    },
+    {
+      "cohort": "STOC_2025",
+      "sha256": "79ee45b19a7f64b3de73f638e8273cdf916aed7a0ece6e6b72f53a574803b035"
+    },
+    {
+      "cohort": "SODA_2023",
+      "sha256": "92733f15321d997ce9d39f9797bce19a8da558159685aabd7b2e0aad59257d2e"
+    },
+    {
+      "cohort": "SODA_2024",
+      "sha256": "f22c96d021b240049a03d97cda967534529f267c4e8c90e4c7dec7a6c4dd83c0"
+    },
+    {
+      "cohort": "SODA_2025",
+      "sha256": "ed8fa226c144a4b1101e06ee3c293e71be2715112d98df342fc89de58ca11893"
+    },
+    {
+      "cohort": "SODA_2026",
+      "sha256": "fdd182c52f43a61d2817eedf15d319b12bc8c50cc9dbab71e11c112ef3c4affd"
+    }
+  ]
+}
