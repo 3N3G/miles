@@ -129,6 +129,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/203dd98c8a6bd85fe51f3c1885257629f1c04d01/miles/native-imports-v6",
       "label": "Passing full native arguments and process-isolation diagnostic"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/432b9c034b505bf4be4db67f8300ca5880b0a87e/miles/group-check-v6-mi210-vllm",
+      "label": "Four original zero grades and an independent analytic spot-check of one false claim"
     }
   ],
   "evidence": [
@@ -347,9 +351,23 @@
     {
       "path": "experiments/tcs_async_rl/rl_smoke_v3.json",
       "label": "Ready bounded RL snapshot targeting the complete replacement group gate"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/rl_scheduling_check_20261120.json",
+      "label": "Read-only eight-GPU scheduling estimates; no RL job submitted"
     }
   ],
   "jobs": [
+    {
+      "id": "534174",
+      "cluster": "hpcfund",
+      "status": "RUNNING"
+    },
+    {
+      "id": "534034",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
     {
       "id": "530287",
       "cluster": "hpcfund",
@@ -379,11 +397,6 @@
       "id": "534033",
       "cluster": "hpcfund",
       "status": "FAILED"
-    },
-    {
-      "id": "534034",
-      "cluster": "hpcfund",
-      "status": "PENDING"
     },
     {
       "id": "534037",
@@ -429,11 +442,6 @@
       "id": "534173",
       "cluster": "hpcfund",
       "status": "FAILED"
-    },
-    {
-      "id": "534174",
-      "cluster": "hpcfund",
-      "status": "RUNNING"
     },
     {
       "id": "534191",
@@ -965,6 +973,13 @@
       "actor": "codex",
       "summary": "Kept the generated next action concise after native validation",
       "revision": 73
+    },
+    {
+      "id": "414f68b5-d6e0-4d95-adab-551a04f64c9b",
+      "at": "2026-11-20T12:20:14.874978Z",
+      "actor": "codex",
+      "summary": "Recorded resource forecasts and an exact claim check; put active jobs first in generated status",
+      "revision": 74
     }
   ],
   "projectId": "understanding",
@@ -974,6 +989,6 @@
   "summary": "Exact native run arguments, private PID namespace and both alias regressions passed in job 534191. Replacement 534174 is generating eight concurrent requests at full token caps. Four original candidates scored 0/7. No complete 32-grade gate or RL submission yet.",
   "nextAction": "Complete the 32-answer group and verify reward variation. Then submit rl_smoke_v3 and debug through two optimizer updates.",
   "owner": "Codex",
-  "revision": 73,
-  "updatedAt": "2026-11-20T12:13:23.106437Z"
+  "revision": 74,
+  "updatedAt": "2026-11-20T12:20:14.874978Z"
 }

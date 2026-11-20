@@ -1,0 +1,65 @@
+{
+  "checked_at_utc": "2026-11-20T12:16:22.496146+00:00",
+  "config": "experiments/tcs_async_rl/rl_smoke_v3.json",
+  "test_only": true,
+  "actual_gpu_job_submitted": false,
+  "allocation": {
+    "partition": "mi3508x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 8,
+    "cpus_per_task": 64,
+    "walltime": "04:00:00"
+  },
+  "remote_argv": [
+    "sbatch",
+    "--test-only",
+    "--nodes=1",
+    "--partition=mi3508x",
+    "--account=aviralkumar",
+    "--qos=alloc_aviralkumar_09082026_09302027",
+    "--cpus-per-task=64",
+    "--time=04:00:00",
+    "--exclusive",
+    "--job-name=tcs-rl-schedule-check",
+    "--wrap=true"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "sbatch: ---------------------------------------------------------------\nsbatch: AMD AI & HPC Fund Job Submission Filter\nsbatch: ---------------------------------------------------------------\nsbatch: --> ok: runtime limit specified\nsbatch:    --> ok: partition provided mi3508x\nsbatch: --> ok: Billing account-> aviralkumar/geney\nsbatch: --> checking single partition...\nsbatch:     --> ok: mi3508x\nsbatch: --> checking job limits...\nsbatch:     --> requested runlimit = 4.0 hours (ok)\nsbatch: --> checking partition access restrictions...\nsbatch:     --> ok: group-based access granted to restricted partition = mi3508x\nsbatch: --> checking job size restrictions...\nsbatch:     --> requested nodes = 1 (ok)\nsbatch: --> checking for active accounting allocation(s)...\nsbatch:     --> alloc_aviralkumar_09082026_09302027 - ACTIVE: expires on Thursday, September 30 2027\nsbatch: --> checking allocation balance...\nsbatch:     --> Used 1288.98 of 4000 (ok)\nsbatch: --> checking max job limit...\nsbatch:     --> ok: number of jobs in queue  = 2\nsbatch: Job 534205 to start at 2026-11-20T19:52:24 using 256 processors on nodes k007-002 in partition mi3508x\n",
+  "note": "Scheduler estimates can change and are not reservations. RL submission still requires nonconstant real group grades.",
+  "alternatives": [
+    {
+      "checked_at_utc": "2026-11-20T12:18:06.062326+00:00",
+      "partition": "mi3508x",
+      "walltime": "02:00:00",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "sbatch: ---------------------------------------------------------------\nsbatch: AMD AI & HPC Fund Job Submission Filter\nsbatch: ---------------------------------------------------------------\nsbatch: --> ok: runtime limit specified\nsbatch:    --> ok: partition provided mi3508x\nsbatch: --> ok: Billing account-> aviralkumar/geney\nsbatch: --> checking single partition...\nsbatch:     --> ok: mi3508x\nsbatch: --> checking job limits...\nsbatch:     --> requested runlimit = 2.0 hours (ok)\nsbatch: --> checking partition access restrictions...\nsbatch:     --> ok: group-based access granted to restricted partition = mi3508x\nsbatch: --> checking job size restrictions...\nsbatch:     --> requested nodes = 1 (ok)\nsbatch: --> checking for active accounting allocation(s)...\nsbatch:     --> alloc_aviralkumar_09082026_09302027 - ACTIVE: expires on Thursday, September 30 2027\nsbatch: --> checking allocation balance...\nsbatch:     --> Used 1288.98 of 4000 (ok)\nsbatch: --> checking max job limit...\nsbatch:     --> ok: number of jobs in queue  = 2\nsbatch: Job 534206 to start at 2026-11-20T19:52:24 using 256 processors on nodes k007-002 in partition mi3508x\n",
+      "actual_gpu_job_submitted": false,
+      "note": "Scheduling comparison only. Existing runtime/model qualification still applies; alternative hardware images are not prepared or tested."
+    },
+    {
+      "checked_at_utc": "2026-11-20T12:18:07.367739+00:00",
+      "partition": "mi3008x",
+      "walltime": "04:00:00",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "sbatch: ---------------------------------------------------------------\nsbatch: AMD AI & HPC Fund Job Submission Filter\nsbatch: ---------------------------------------------------------------\nsbatch: --> ok: runtime limit specified\nsbatch:    --> ok: partition provided mi3008x\nsbatch: --> ok: Billing account-> aviralkumar/geney\nsbatch: --> checking single partition...\nsbatch:     --> ok: mi3008x\nsbatch: --> checking job limits...\nsbatch:     --> requested runlimit = 4.0 hours (ok)\nsbatch: --> checking partition access restrictions...\nsbatch:     --> ok: partition = mi3008x\nsbatch: --> checking job size restrictions...\nsbatch:     --> requested nodes = 1 (ok)\nsbatch: --> checking for active accounting allocation(s)...\nsbatch:     --> alloc_aviralkumar_09082026_09302027 - ACTIVE: expires on Thursday, September 30 2027\nsbatch: --> checking allocation balance...\nsbatch:     --> Used 1288.98 of 4000 (ok)\nsbatch: --> checking max job limit...\nsbatch:     --> ok: number of jobs in queue  = 2\nsbatch: Job 534207 to start at 2026-11-21T03:34:35 using 192 processors on nodes k002-002 in partition mi3008x\n",
+      "actual_gpu_job_submitted": false,
+      "note": "Scheduling comparison only. Existing runtime/model qualification still applies; alternative hardware images are not prepared or tested."
+    },
+    {
+      "checked_at_utc": "2026-11-20T12:18:08.706129+00:00",
+      "partition": "mi3258x",
+      "walltime": "04:00:00",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "sbatch: ---------------------------------------------------------------\nsbatch: AMD AI & HPC Fund Job Submission Filter\nsbatch: ---------------------------------------------------------------\nsbatch: --> ok: runtime limit specified\nsbatch:    --> ok: partition provided mi3258x\nsbatch: --> ok: Billing account-> aviralkumar/geney\nsbatch: --> checking single partition...\nsbatch:     --> ok: mi3258x\nsbatch: --> checking job limits...\nsbatch:     --> requested runlimit = 4.0 hours (ok)\nsbatch: --> checking partition access restrictions...\nsbatch:     --> ok: partition = mi3258x\nsbatch: --> checking job size restrictions...\nsbatch: --> checking for active accounting allocation(s)...\nsbatch:     --> alloc_aviralkumar_09082026_09302027 - ACTIVE: expires on Thursday, September 30 2027\nsbatch: --> checking allocation balance...\nsbatch:     --> Used 1288.98 of 4000 (ok)\nsbatch: --> checking max job limit...\nsbatch:     --> ok: number of jobs in queue  = 2\nsbatch: Job 534208 to start at 2026-11-20T15:02:21 using 256 processors on nodes k002-001 in partition mi3258x\n",
+      "actual_gpu_job_submitted": false,
+      "note": "Scheduling comparison only. Existing runtime/model qualification still applies; alternative hardware images are not prepared or tested."
+    }
+  ],
+  "cluster_timezone_observation": "CST-0600"
+}
