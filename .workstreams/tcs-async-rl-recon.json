@@ -97,6 +97,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/mi210-runtime-comparison-v1",
       "label": "Private results for AMD inference job 534065"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/b5396bea8f0b28c332cbe1c5a927e7b7a6012686/miles/native-imports-v1",
+      "label": "Private native launcher import failure 534132"
     }
   ],
   "evidence": [
@@ -364,7 +368,7 @@
     {
       "id": "534132",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "FAILED"
     }
   ],
   "sessions": [
@@ -786,15 +790,22 @@
       "actor": "codex",
       "summary": "Submitted native training import diagnostic 534132",
       "revision": 58
+    },
+    {
+      "id": "1056435a-3f9a-441c-b40f-a0dee558aa5d",
+      "at": "2026-11-20T11:24:47.368950Z",
+      "actor": "codex",
+      "summary": "Fixed unused optional encoder import after native help failure; preserved and uploaded first attempt",
+      "revision": 59
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Qwen group 534098 is generating on MI210. Submitted native launcher import/help diagnostic 534132 before eight-GPU training. Native MI350 group 534034 remains queued. No Qwen grade yet.",
+  "summary": "Qwen group 534098 still generates without completed answers. Native help 534132 failed on an unused missing DeepSeek encoder. Fixed optional family loading and validated its regression check. Native MI350 534034 remains queued.",
   "nextAction": "Inspect completed raw answers and actual rubric variation. Qualify the native Miles runtime, then submit and debug the authorized two-update RL check. W&B is prepared offline.",
   "owner": "Codex",
-  "revision": 58,
-  "updatedAt": "2026-11-20T11:22:25.734773Z"
+  "revision": 59,
+  "updatedAt": "2026-11-20T11:24:47.368950Z"
 }

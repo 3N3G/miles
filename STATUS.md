@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Qwen group 534098 is generating on MI210. Submitted native launcher import/help diagnostic 534132 before eight-GPU training. Native MI350 group 534034 remains queued. No Qwen grade yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Qwen group 534098 still generates without completed answers. Native help 534132 failed on an unused missing DeepSeek encoder. Fixed optional family loading and validated its regression check. Native M Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
   Next: Inspect completed raw answers and actual rubric variation. Qualify the native Miles runtime, then submit and debug the authorized two-update RL check. W&B is prepared offline.
 
 ## Next / blocked

@@ -15,3 +15,19 @@ It does not qualify GPU kernels, model loading, backward computation, or MI350 c
 
 This is an authorized deployment diagnostic under the user's instruction to debug the approved RL run.
 The RL submission gate still requires a complete group with nonconstant real rubric rewards.
+
+## First result and exact repair
+
+Job 534132 failed after 54 seconds. It reached no argument parser or GPU training.
+`deepseek.py` eagerly imported SGLang `encoding_dsv4`, absent from the pinned image.
+Qwen uses its Hugging Face template and needs neither DeepSeek V4 nor V4.1 encoders.
+Load those optional encoder modules only when their family is selected.
+Keep the same encoders and all existing DeepSeek rendering logic when available.
+An unavailable selected family still raises an error. There is no replacement template.
+The regression test imports the bridge with the optional encoders blocked, detects Qwen,
+and verifies both unsupported selected families fail. CPU tests and style checks pass.
+Repeat the same bounded native help check from `native_imports_v2.json` and a fresh checkout.
+Do not change either active generation job. Full native GPU/runtime compatibility remains unqualified.
+
+Private first-attempt results:
+https://huggingface.co/datasets/3N3G/internalization-runs/tree/b5396bea8f0b28c332cbe1c5a927e7b7a6012686/miles/native-imports-v1

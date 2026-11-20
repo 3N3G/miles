@@ -17,7 +17,6 @@ import os
 from collections.abc import Callable
 from typing import Any
 
-from sglang.srt.entrypoints.openai import chat_encoding, encoding_dsv4, encoding_dsv41
 from sglang.srt.entrypoints.openai.protocol import Tool
 
 from miles.utils.chat_template_utils.templates import encoding_dsv32
@@ -134,7 +133,12 @@ class DeepSeekV32Family(DeepSeekFamily):
 
 
 class DeepSeekV4Family(DeepSeekFamily):
-    template = encoding_dsv4
+    @property
+    def template(self) -> Any:
+        # Optional family encoders must not prevent unrelated models from starting.
+        from sglang.srt.entrypoints.openai import encoding_dsv4
+
+        return encoding_dsv4
 
     def _generation_prompt_suffix(self, tail_role: str | None, thinking_token: str) -> str | None:
         if tail_role in {"user", "developer", "tool"}:
@@ -148,9 +152,15 @@ class DeepSeekV41Family(DeepSeekV4Family):
     server default comes from ``SGLANG_DSV41_REASONING_EFFORT``), and a
     mid-conversation system message also opens an assistant turn."""
 
-    template = encoding_dsv41
+    @property
+    def template(self) -> Any:
+        from sglang.srt.entrypoints.openai import encoding_dsv41
+
+        return encoding_dsv41
 
     def _build_encode_config(self, kwargs: dict) -> dict:
+        from sglang.srt.entrypoints.openai import chat_encoding
+
         kwargs = super()._build_encode_config(kwargs)
         default = chat_encoding.default_dsv41_reasoning_effort_from_env(
             os.environ.get("SGLANG_DSV41_REASONING_EFFORT", "high")
@@ -160,6 +170,8 @@ class DeepSeekV41Family(DeepSeekV4Family):
         return kwargs
 
     def _inject_tools(self, messages: list[dict[str, Any]], tools: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        from sglang.srt.entrypoints.openai import chat_encoding
+
         return _inject_tools_into_system(messages, tools, chat_encoding.dsv41_tool_payload)
 
     def _generation_prompt_suffix(self, tail_role: str | None, thinking_token: str) -> str | None:
