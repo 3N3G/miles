@@ -94,6 +94,14 @@ class TestAMDPreflight(unittest.TestCase):
             second = next(value for value in newer if value.startswith(name + "="))
             self.assertNotEqual(first, second)
 
+    def test_container_rocm_variant_binds_devices_without_host_libraries(self):
+        argv = container_prefix(
+            image=Path("/work/sandbox"), repo=ROOT, work_dir=Path("/work/tcs"), rocm_library_mode="container"
+        )
+        self.assertNotIn("--rocm", argv)
+        self.assertIn("/dev/kfd:/dev/kfd", argv)
+        self.assertIn("/dev/dri:/dev/dri", argv)
+
     def test_long_case_reaches_exact_context_boundary(self):
         qualification, training = load_configs()
         self.assertLess(

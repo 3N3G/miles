@@ -80,7 +80,11 @@ def render_job(*, repo, work_dir, run_dir, expected_commit, config_path=CONFIG):
     )
 
 
-def container_prefix(*, image, repo, work_dir, isolate_processes=False, runtime_dir=None, cache_namespace=None):
+def container_prefix(
+    *, image, repo, work_dir, isolate_processes=False, runtime_dir=None, cache_namespace=None, rocm_library_mode="host"
+):
+    if rocm_library_mode not in ("host", "container"):
+        raise ValueError("Unknown ROCm library mode")
     cache = work_dir / "cache"
     gpu_cache = Path(image.name) / cache_namespace if cache_namespace else Path(image.name)
     environment = {
@@ -112,7 +116,6 @@ def container_prefix(*, image, repo, work_dir, isolate_processes=False, runtime_
     argv = [
         "apptainer",
         "exec",
-        "--rocm",
         "--cleanenv",
         "--no-home",
         "--bind",
@@ -122,6 +125,11 @@ def container_prefix(*, image, repo, work_dir, isolate_processes=False, runtime_
         "--pwd",
         str(repo),
     ]
+    if rocm_library_mode == "host":
+        argv.insert(2, "--rocm")
+    else:
+        # Expose the allocated devices without injecting another ROCm userspace.
+        argv += ["--bind", "/dev/kfd:/dev/kfd", "--bind", "/dev/dri:/dev/dri"]
     if isolate_processes:
         if runtime_dir is None:
             raise ValueError("Isolated RL requires a run-owned Ray runtime directory")
@@ -273,13 +281,16 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
     if qualification.get("mode") == "rl_smoke":
         runtime_dir = run_dir / "ray"
         runtime_dir.mkdir(exist_ok=True)
+    library_mode = qualification.get("rocm_library_mode", "host")
+    cache_namespace = qualification["allocation"]["partition"] + ("-container" if library_mode == "container" else "")
     prefix = container_prefix(
         image=sandbox,
         repo=ROOT,
         work_dir=work_dir,
         isolate_processes=qualification.get("mode") == "rl_smoke",
         runtime_dir=runtime_dir,
-        cache_namespace=qualification["allocation"]["partition"],
+        cache_namespace=cache_namespace,
+        rocm_library_mode=library_mode,
     )
     if qualification.get("mode") == "compatibility":
         for phase in ("torch-only", "after-engine-import"):

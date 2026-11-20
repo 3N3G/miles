@@ -18,6 +18,13 @@ def main():
     parser.add_argument("--run-dir", type=Path, required=True)
     args = parser.parse_args()
     properties = torch.cuda.get_device_properties(0)
+    libraries = sorted(
+        {
+            line.split()[-1]
+            for line in Path("/proc/self/maps").read_text().splitlines()
+            if any(name in line for name in ("libhsa-runtime64", "libamdhip64", "libamd_comgr", "libdrm_amdgpu"))
+        }
+    )
     record = {
         "phase": args.phase,
         "torch": torch.__version__,
@@ -26,6 +33,9 @@ def main():
         "architecture": properties.gcnArchName,
         "bytes": properties.total_memory,
         "torch_arch_list": torch.cuda.get_arch_list(),
+        "mapped_gpu_libraries": libraries,
+        "kernel_release": os.uname().release,
+        "ld_library_path": os.environ.get("LD_LIBRARY_PATH"),
         "step": "metadata",
     }
     output = args.run_dir / (args.phase + ".json")

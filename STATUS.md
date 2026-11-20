@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534037 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Torch-only MI210 probe 534037 failed creating FP32 ones before engine import. The build includes gfx90a. Preparing a five-minute bundled-ROCm/device-only probe to test host-library mixing. MI350 53403 Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Run the bundled-userspace probe and inspect loaded-library paths and first GPU operation. Keep the model/data/reward unchanged and retain valid MI350 fallback.
 
 ## Next / blocked
 
