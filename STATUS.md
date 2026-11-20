@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI350 group 533702 is still queued. Found 11 idle MI210 GPUs and prepared the identical 32-candidate diagnostic at concurrency four. Estimated weights/cache/state plus 20 GiB reserve: 42.37 GiB. Forty Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
-  Next: Submit the pinned MI210 resource fallback, record it immediately, and inspect actual imports, BF16 kernels, model initialization and generation. Keep the MI350 request until compat
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted MI210 fallback 533964: identical 32 candidates and 90k cap, four concurrent requests, four-hour bound. MI350 job 533702 remains queued. Startup compatibility and real rewards are not yet ver Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+  Next: Inspect 533964 startup directly, start its durable grader/monitor, and preserve the MI350 fallback until the available hardware is qualified.
 
 ## Next / blocked
 

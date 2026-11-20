@@ -239,6 +239,11 @@
       "id": "533702",
       "cluster": "hpcfund",
       "status": "PENDING"
+    },
+    {
+      "id": "533964",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -478,15 +483,22 @@
       "actor": "codex",
       "summary": "Prepared an available MI210 inference fallback with unchanged scientific settings",
       "revision": 32
+    },
+    {
+      "id": "ef81836a-db95-4729-864f-12188c3d6eed",
+      "at": "2026-11-20T10:14:11.811602Z",
+      "actor": "codex",
+      "summary": "Submitted approved same-group MI210 fallback 533964",
+      "revision": 33
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "MI350 group 533702 is still queued. Found 11 idle MI210 GPUs and prepared the identical 32-candidate diagnostic at concurrency four. Estimated weights/cache/state plus 20 GiB reserve: 42.37 GiB. Forty-two CPU checks pass. Preparing a bounded fallback without cancelling MI350.",
-  "nextAction": "Submit the pinned MI210 resource fallback, record it immediately, and inspect actual imports, BF16 kernels, model initialization and generation. Keep the MI350 request until compatibility or a usable group is confirmed.",
+  "summary": "Submitted MI210 fallback 533964: identical 32 candidates and 90k cap, four concurrent requests, four-hour bound. MI350 job 533702 remains queued. Startup compatibility and real rewards are not yet verified.",
+  "nextAction": "Inspect 533964 startup directly, start its durable grader/monitor, and preserve the MI350 fallback until the available hardware is qualified.",
   "owner": "Codex",
-  "revision": 32,
-  "updatedAt": "2026-11-20T10:13:04.272170Z"
+  "revision": 33,
+  "updatedAt": "2026-11-20T10:14:11.811602Z"
 }
