@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted native MI350 FlyDSL-cache repair and same-input policy reference checks. Eight completed vLLM answers have real zero grades in both orders. The full group continues; RL gate remains closed. Jobs: hpcfund/534296 SUBMITTED; hpcfund/534174 RUNNING
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fourteen complete vLLM answers scored 0/7 in both orders. Native FlyDSL-repaired group 534296 is queued. Same-input numerical check 534297 stopped before comparisons on MIOpen read-only-home locks; re Jobs: hpcfund/534296 SUBMITTED; hpcfund/534174 RUNNING
   Next: Rerun native warmup with writable FlyDSL caches and finish the 32-answer group. Require reward variation before RL.
 
 ## Next / blocked

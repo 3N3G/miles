@@ -89,6 +89,8 @@ class TestAMDPreflight(unittest.TestCase):
         self.assertIn("SGLANG_CACHE_DIR=/work/tcs/cache/sglang/sandbox", argv)
         self.assertIn("FLYDSL_RUNTIME_CACHE_DIR=/work/tcs/cache/flydsl/sandbox", argv)
         self.assertIn("FLYDSL_AUTOTUNE_CACHE_DIR=/work/tcs/cache/flydsl_autotune/sandbox", argv)
+        self.assertIn("MIOPEN_USER_DB_PATH=/work/tcs/cache/miopen_db/sandbox", argv)
+        self.assertIn("MIOPEN_CUSTOM_CACHE_DIR=/work/tcs/cache/miopen_kernels/sandbox", argv)
 
     def test_clean_container_receives_only_explicit_job_and_device_metadata(self):
         fake = {

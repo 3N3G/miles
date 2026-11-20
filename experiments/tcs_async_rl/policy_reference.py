@@ -119,7 +119,10 @@ def main():
         attn_implementation="eager",
         output_loading_info=True,
     )
-    (cli.run_dir / "hf-loading.json").write_text(json.dumps(loading, indent=2, default=str) + "\n")
+    (cli.run_dir / "hf-loading.json").write_text(
+        json.dumps(loading, indent=2, default=lambda value: sorted(value) if isinstance(value, set) else str(value))
+        + "\n"
+    )
     if loading.get("missing_keys"):
         raise ValueError("Transformers initialized missing checkpoint parameters")
     model.eval().to("cuda")

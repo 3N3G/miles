@@ -137,6 +137,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v5-mi350",
       "label": "Private results for AMD inference job 534034"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/3349f13d3c95c3ffc3285b472b415b20dbe6dfd6/miles/policy-reference-v1",
+      "label": "Numerical check failure before comparisons: MIOpen database lock path"
     }
   ],
   "evidence": [
@@ -468,7 +472,7 @@
     {
       "id": "534297",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "FAILED"
     }
   ],
   "sessions": [
@@ -1037,15 +1041,22 @@
       "actor": "codex",
       "summary": "Recorded successfully submitted numerical check 534297 after separating filter output from job ID",
       "revision": 79
+    },
+    {
+      "id": "3700ef07-db26-45e0-9913-c03ebb301b7e",
+      "at": "2026-11-20T13:36:56.623728Z",
+      "actor": "codex",
+      "summary": "Recorded fourteen actual zero grades and repaired the numerical reference MIOpen cache",
+      "revision": 80
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Submitted native MI350 FlyDSL-cache repair and same-input policy reference checks. Eight completed vLLM answers have real zero grades in both orders. The full group continues; RL gate remains closed.",
+  "summary": "Fourteen complete vLLM answers scored 0/7 in both orders. Native FlyDSL-repaired group 534296 is queued. Same-input numerical check 534297 stopped before comparisons on MIOpen read-only-home locks; redirected its DB/kernel caches for a preserved v2 retry.",
   "nextAction": "Rerun native warmup with writable FlyDSL caches and finish the 32-answer group. Require reward variation before RL.",
   "owner": "Codex",
-  "revision": 79,
-  "updatedAt": "2026-11-20T13:23:47.075978Z"
+  "revision": 80,
+  "updatedAt": "2026-11-20T13:36:56.623728Z"
 }

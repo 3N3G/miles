@@ -53,3 +53,24 @@ The RL gate still requires 32 genuine, complete, nonconstant rubric grades.
 ## Results
 
 Not submitted yet.
+
+## First attempt and exact runtime repair
+
+Job 534297 ran for 168 seconds. vLLM produced all three raw top-token log-probability records.
+Its owned engine shut down before the HF model loaded. HF reported no missing parameters.
+The first HF convolution then failed while MIOpen created a lock directory under read-only home.
+No numerical comparison completed, so this attempt establishes neither parity nor a discrepancy.
+
+Set the documented `MIOPEN_USER_DB_PATH` and `MIOPEN_CUSTOM_CACHE_DIR` under the image/partition work cache.
+The ROCm 7.2.3 lock-file source places locks beside the chosen database file.
+Forward both variables to future Ray workers. Leave the system DB, solver selection and tuning modes unchanged.
+Repeat from immutable `policy_reference_v2.json` with the same fixture, prefixes and 0.2-nat tolerance.
+CPU path checks pass. Actual convolution and numerical parity still require the replacement job.
+
+Sources:
+- https://rocm.docs.amd.com/projects/MIOpen/en/docs-7.2.3/conceptual/tuningdb.html
+- https://raw.githubusercontent.com/ROCm/MIOpen/rocm-7.2.3/src/lock_file.cpp
+
+Private first-attempt evidence: https://huggingface.co/datasets/3N3G/internalization-runs/tree/3349f13d3c95c3ffc3285b472b415b20dbe6dfd6/miles/policy-reference-v1
+Loading metadata used empty sets, serialized as strings in v1. V2 writes those sets as JSON arrays.
+The live missing-parameter guard used the original empty set and did pass.

@@ -227,6 +227,8 @@ def main():
             "SGLANG_CACHE_DIR",
             "FLYDSL_RUNTIME_CACHE_DIR",
             "FLYDSL_AUTOTUNE_CACHE_DIR",
+            "MIOPEN_USER_DB_PATH",
+            "MIOPEN_CUSTOM_CACHE_DIR",
             "XDG_CACHE_HOME",
             "TRITON_CACHE_DIR",
             "TORCH_EXTENSIONS_DIR",
