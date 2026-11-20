@@ -286,6 +286,11 @@
       "id": "534013",
       "cluster": "hpcfund",
       "status": "CANCELLED"
+    },
+    {
+      "id": "534033",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -595,15 +600,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534013",
       "revision": 42
+    },
+    {
+      "id": "b816e138-06ed-42db-95ec-b4d2b45a8bae",
+      "at": "2026-11-20T10:29:36.919086Z",
+      "actor": "codex",
+      "summary": "Submitted SGLang-cache repair job 534033",
+      "revision": 43
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534013 ended CANCELLED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "Submitted v5 mi2101x group 534033 with central SGLang cache and both AITER overrides. All 42 CPU checks pass. No real Qwen grades yet.",
+  "nextAction": "Inspect repaired imports and BF16 kernels, then model startup and incremental outputs. Grade the complete group and cancel its unused own fallback.",
   "owner": "Codex",
-  "revision": 42,
-  "updatedAt": "2026-11-20T10:29:16.824205Z"
+  "revision": 43,
+  "updatedAt": "2026-11-20T10:29:36.919086Z"
 }

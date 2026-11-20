@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534013 ended CANCELLED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted v5 mi2101x group 534033 with central SGLang cache and both AITER overrides. All 42 CPU checks pass. No real Qwen grades yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Inspect repaired imports and BF16 kernels, then model startup and incremental outputs. Grade the complete group and cancel its unused own fallback.
 
 ## Next / blocked
 
