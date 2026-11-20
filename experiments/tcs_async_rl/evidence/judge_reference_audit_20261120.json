@@ -1,0 +1,84 @@
+{
+  "observed_at_utc": "2026-11-20T17:31:55.328410+00:00",
+  "scope": "Read-only audit of saved verdicts on the same fixed question. No model generation, new judge calls or changed grades.",
+  "exact_check": {
+    "strip_K_a_plus_b": "218560/9163"
+  },
+  "finding": "Three saved calls give the same supplied reference less than seven. Their stated objections fail the local checks recorded here. This does not certify the entire reference or calibrate the complete judge.",
+  "limits": "These repeated contexts are not independent benchmark examples. Do not report a population error rate. Candidate rewards and the failed qualification results remain unchanged.",
+  "per_run": [
+    {
+      "run": "group-check-v6-mi210-vllm",
+      "reference_score_distribution": {
+        "7.0": 14
+      },
+      "anomalies": []
+    },
+    {
+      "run": "group-check-v7-mi210-vllm8",
+      "reference_score_distribution": {
+        "7.0": 50
+      },
+      "anomalies": []
+    },
+    {
+      "run": "group-check-v9-mi350",
+      "reference_score_distribution": {
+        "7.0": 67,
+        "5.0": 1
+      },
+      "anomalies": [
+        {
+          "identity": "sample-27",
+          "swapped": false,
+          "score": 5.0,
+          "finding": "The disputed extreme-point criticism ignores that both defining endpoints lie in the polygon and shear to the same x coordinate x0. Thus the sheared extrema satisfy ell <= x0 <= r. They cannot both lie strictly on the same side of the base line. Degenerate triangles contribute zero area.",
+          "scope": "Checks this specific objection under the reference band construction's positive-height assumption.",
+          "receipt_sha256": "6397404a5438a8792901ab54c8511c70cdca007512d984bb0766618a061125d5"
+        }
+      ]
+    },
+    {
+      "run": "group-check-v11-mi210-vllm8",
+      "reference_score_distribution": {
+        "7.0": 9,
+        "6.0": 1
+      },
+      "anomalies": [
+        {
+          "identity": "control-irrelevant",
+          "swapped": true,
+          "score": 6.0,
+          "finding": "Write equation (3) as C <= a*A+b*h*w, with positive a,b and K=a+b. The two bounds A <= p^2/16 and h*w <= p^2/16 yield C <= (a+b)*p^2/16 = K*p^2/16. They do not introduce a factor two.",
+          "scope": "Checks the stated substitution into the container-area bound, not the whole perimeter proof.",
+          "receipt_sha256": "2fb9ab4b01f8ba601e62de29c88bb7d01e49a6c350e1ab7939c3d5f5a40b50cc"
+        }
+      ]
+    },
+    {
+      "run": "group-check-v12-mi350",
+      "reference_score_distribution": {
+        "7.0": 62
+      },
+      "anomalies": []
+    },
+    {
+      "run": "group-check-v13-mi300-vllm32",
+      "reference_score_distribution": {
+        "7.0": 61,
+        "2.0": 1
+      },
+      "anomalies": [
+        {
+          "identity": "control-empty",
+          "swapped": true,
+          "score": 2.0,
+          "finding": "(c+1)*w*H*(L/(c*w)+1) = (1+1/c)*(L*H+c*w*H). Substituting L*H <= (2/alpha)*(A+w*H) gives inner coefficient c+2/alpha. The claimed extra +1 is incorrect.",
+          "scope": "Checks the disputed factorization, not every step of the complete proof.",
+          "receipt_sha256": "4aec2a473513144a9944d30bb1079a07dd4e25be748ae727c27fb6f95c442745"
+        }
+      ]
+    }
+  ],
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/c8377cac7ad4a3ccf7e9e8426ed1d4ee6e90964a/miles/judge-reference-audit-v1"
+}

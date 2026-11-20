@@ -1,0 +1,103 @@
+{
+  "observed_at_utc": "2026-11-20T17:26:33.713437+00:00",
+  "job_id": "534576",
+  "status": "COMPLETED",
+  "source_commit": "d22f801493fa8987169868c6d331a6d59c98dd35",
+  "config": "experiments/tcs_async_rl/group_check_v13_mi300_vllm32.json",
+  "responses": 32,
+  "natural_stops": 23,
+  "nonempty_final_answers": 28,
+  "missing_finals": 4,
+  "length_limits": [
+    {
+      "sample_index": 5,
+      "nonempty_final": false,
+      "raw_text_sha256": "9cc67ed5f9f9480088db2fcc84fc92cb7ed93b531a26dfd83da93385ecfa10e4",
+      "ending_repeats": true
+    },
+    {
+      "sample_index": 6,
+      "nonempty_final": true,
+      "raw_text_sha256": "8cbf29de2ef1e3f4e9e4e21cd978d94fe88ea125d0a5714519fc2fa1cf607935",
+      "ending_repeats": true
+    },
+    {
+      "sample_index": 7,
+      "nonempty_final": true,
+      "raw_text_sha256": "7c1a07327bdbbe97a7275549817bc3182259aea72de58d0963a8314cc38c4a64",
+      "ending_repeats": true
+    },
+    {
+      "sample_index": 14,
+      "nonempty_final": false,
+      "raw_text_sha256": "84fdebb545d70763c5715b053b0cd1057de26ab841793543252ed83735b49a5d",
+      "ending_repeats": true
+    },
+    {
+      "sample_index": 9,
+      "nonempty_final": false,
+      "raw_text_sha256": "15ae286e66f9aea5b55e687849f5bda532f620480a6df8b492bfeb156a0b1ae7",
+      "ending_repeats": true
+    },
+    {
+      "sample_index": 12,
+      "nonempty_final": true,
+      "raw_text_sha256": "25c3990cf301995ca666823fb980b1e7f387beb1da6b01d01a12c7cb25b4e7af",
+      "ending_repeats": true
+    },
+    {
+      "sample_index": 17,
+      "nonempty_final": false,
+      "raw_text_sha256": "833886da32a6e56afa1b8404344dab7dd04bc9c3d3c45621db100e3766461781",
+      "ending_repeats": true
+    },
+    {
+      "sample_index": 25,
+      "nonempty_final": true,
+      "raw_text_sha256": "74544779723bd79933f88a2c2be0f086cc901744e343ba3f69c149d34893b141",
+      "ending_repeats": true
+    },
+    {
+      "sample_index": 29,
+      "nonempty_final": true,
+      "raw_text_sha256": "c9cf34f6e61e013db9ca355d44fddccb3364f6dca1e740bbae943adfd6672626",
+      "ending_repeats": true
+    }
+  ],
+  "generated_tokens": {
+    "min": 28548,
+    "median": 47443.0,
+    "max": 90000,
+    "total": 1763680
+  },
+  "gpu_elapsed": "01:37:00",
+  "gate_passed": false,
+  "grading_status": "COMPLETE",
+  "complete_grading": {
+    "scored_responses": 28,
+    "all_zero": true,
+    "uniform_scores": true,
+    "incomplete_or_empty_final_answers": 4,
+    "population_score_variance": 0.0,
+    "usd_spent_or_reserved": 0.19806010000000002,
+    "generation_sampling": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 20,
+      "max_new_tokens": 90000,
+      "skip_special_tokens": false
+    }
+  },
+  "candidate_controls": [
+    7,
+    0,
+    0
+  ],
+  "paired_reference_score_distribution": {
+    "7": 61,
+    "2": 1
+  },
+  "judge_limitation": "One paired-reference verdict gives an algebraically incorrect missing-term criticism. Preserve its real verdict. Human calibration remains pending.",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7316dbeab2f14afbc00912c6efa0832fde73f6a9/miles/group-check-v13-mi300-vllm32",
+  "rl_submitted": false
+}

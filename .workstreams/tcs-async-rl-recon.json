@@ -189,6 +189,14 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/group-check-v13-mi300-vllm32",
       "label": "Private results for AMD inference job 534576"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7316dbeab2f14afbc00912c6efa0832fde73f6a9/miles/group-check-v13-mi300-vllm32",
+      "label": "Immutable complete MI300 group and raw spot-checks"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/c8377cac7ad4a3ccf7e9e8426ed1d4ee6e90964a/miles/judge-reference-audit-v1",
+      "label": "Immutable read-only reference-verdict audit"
     }
   ],
   "evidence": [
@@ -491,6 +499,18 @@
     {
       "path": "experiments/tcs_async_rl/evidence/mi300_group_v13_generation_20261120.json",
       "label": "Full MI300 generation: nine repetition caps and four missing finals"
+    },
+    {
+      "path": "experiments/tcs_async_rl/VLLM_GROUP_FINDINGS_20261120.md",
+      "label": "Complete compatible-backend group findings and judge limitations"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/mi300_group_v13_outcome_20261120.json",
+      "label": "Full MI300 zero-reward result and immutable private archive"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/judge_reference_audit_20261120.json",
+      "label": "Three saved inconsistent reference verdicts and independent local checks"
     }
   ],
   "jobs": [
@@ -1441,15 +1461,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534576",
       "revision": 114
+    },
+    {
+      "id": "3acc7c46-fbf9-41b1-a502-5ebfba7d6cfe",
+      "at": "2026-11-20T17:33:59.993332Z",
+      "actor": "codex",
+      "summary": "Recorded both failed reward gates, completed archives and the required question-scope decision",
+      "revision": 115
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "running",
-  "summary": "AMD job 534576 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending.",
-  "nextAction": "Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.",
+  "state": "needs-you",
+  "summary": "Both repaired groups failed: 28/28 nonempty finals scored zero in each, with four missing finals each. No RL job submitted. Question choice pending.",
+  "nextAction": "Approve or reject the proposed two eligible training questions. Preserve the judge limitations and the closed RL gate.",
   "owner": "Codex",
-  "revision": 114,
-  "updatedAt": "2026-11-20T17:27:04.076577Z"
+  "revision": 115,
+  "updatedAt": "2026-11-20T17:33:59.993332Z"
 }

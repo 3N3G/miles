@@ -73,7 +73,22 @@
 - Status: asked asynchronously on 2026-11-20. No answer or expanded data authorization is assumed.
   Updated after the bounded-sampling native group completed: 28/32 nonempty final answers, five model length limits,
   and all 28 graded final answers zero in both orders. All five capped tails repeat. Full grading is complete.
-  The alternate MI300 group on the same question continues. Asked again with this measured outcome.
+  The alternate MI300 group also finished with 28/28 nonempty finals scored zero in both orders,
+  four missing finals and nine repetition caps. No RL job was submitted.
+  A concrete two-question proposal is ready in `experiments/tcs_async_rl/QUESTION_SCREEN_PROPOSAL_20261120.md`.
+  The scope decision remains unanswered.
+
+## 2026-11-20: Judge calibration evidence
+
+- Question: what human scores should be assigned to the saved calibration examples before interpreting learning results?
+- Evidence: three saved calls gave the same supplied reference scores below seven. Independent local checks
+  reject their stated geometric or algebraic objections. Original candidate scores remain unchanged.
+- Options: human-label the saved packet and audit independent-provider agreement, or retain provisional runtime-only grading.
+- Recommendation: complete calibration before drawing learning conclusions. Inspect paired-reference verdicts and awarded candidate criteria.
+- Blocks: interpreting rewards as proof correctness and making learning claims. This does not add a new approval requirement
+  to the already authorized provisional two-update runtime check.
+- Status: the read-only receipt audit is in `experiments/tcs_async_rl/evidence/judge_reference_audit_20261120.json`.
+  No new judge calls or score corrections were made. Gemini access remains unverified.
 
 # Answered questions
 

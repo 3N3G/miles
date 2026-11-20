@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534576 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/534576 COMPLETED; hpcfund/534575 COMPLETED
-  Next: Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Both repaired groups failed: 28/28 nonempty finals scored zero in each, with four missing finals each. No RL job submitted. Question choice pending. Jobs: hpcfund/534576 COMPLETED; hpcfund/534575 COMPLETED
+  Next: Approve or reject the proposed two eligible training questions. Preserve the judge limitations and the closed RL gate.
 
 ## Finished
 

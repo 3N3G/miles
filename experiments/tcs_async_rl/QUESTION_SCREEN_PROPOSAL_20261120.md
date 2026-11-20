@@ -14,10 +14,12 @@ This selection cannot support a claim about representative TCS performance or le
 ## Background / motivation
 
 The original fixed hard question produced 31 completed answers with zero rewards.
-Its repaired native group returned 28 nonempty finals and five repetition caps.
-The first nine repaired answers scored zero in both judge orders.
-Complete grades and a second compatible-backend group remain in progress.
-The source-backed outcome is in `evidence/native_group_v12_generation_20261120.json`.
+Both repaired groups then returned 28 nonempty finals, all scored zero in both judge orders.
+Each group also had four missing finals. The native group had five repetition caps, and the vLLM group had nine.
+See [native findings](REPAIRED_GROUP_FINDINGS_20261120.md) and [vLLM findings](VLLM_GROUP_FINDINGS_20261120.md).
+The saved reference-verdict audit also documents three incorrect local criticisms of the supplied reference.
+Preserve all verdicts and inspect paired-reference scores when reviewing any proposed qualification.
+These judge limitations reinforce the need for human calibration before interpreting learning results.
 
 Changing the selected question needs the user's decision. Sampling and backend repairs alone have not opened the gate.
 

@@ -45,16 +45,17 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
 
 ## Methodology
 
-- Model and data revisions: inherit `config.proposed.json` through the frozen `rl_smoke_v1.json` run snapshot.
+- Model and data revisions: the current candidate `rl_smoke_v6.json` inherits `config.sampling_repair_v2.json`.
+  Earlier snapshots remain preserved. Every current diagnostic gate is closed.
 - Data: the same single SODA 2023 polygon-packing question from `GROUP_CHECK_PLAN.md`.
   For example, it asks for constructive strip packing with approximation bound 51 and related guarantees.
   Its six rubric items have weights 2, 1, 1, 1, 1, 1. Private artifacts contain the complete input and reference.
   FOCS 2026 and STOC 2026 remain sealed. No new questions are selected for this check.
 - Generator: Qwen3.5-4B with thinking enabled, 90,000 output-token ceiling and 98,304 total context.
-  Temperature one, top-p one, no top-k cutoff. Keep terminal/thinking markers so extraction matches the diagnostic.
+  Temperature one, top-p 0.95, top-k 20. Keep terminal/thinking markers so extraction matches the diagnostic.
 - Runtime: one eight-GPU MI350 node, two trainer GPUs and six rollout GPUs in three engines.
-  Tensor parallelism two, full activation recomputation, the snapshot's head backend, BF16 parameters,
-  FP32 accumulated gradients, and the existing MTP/speculative settings from the proposal.
+  Tensor parallelism two, full activation recomputation, the Torch log-probability backend, BF16 parameters,
+  and FP32 accumulated gradients. Keep one actor MTP layer with loss factor 0.2. Inference speculation is disabled.
 - Algorithm: inherit CISPO/GRPO settings and Adam learning rate from the proposal.
   Bound this runtime check to one prompt per rollout, 32 samples per prompt, global batch 32,
   and two rollouts. These batch limits replace the unqualified corpus-scale 64/2,048 proposal for this check.
@@ -99,7 +100,14 @@ The existing frozen-model group and passing reference/empty/irrelevant judge con
 
 ## Results
 
-Not submitted. The frozen-model diagnostic gate has not passed yet.
+Not submitted. Both repaired frozen-model groups failed the gate.
+Each returned 32 generations with 28 nonempty finals. All 28 scored zero in both orders, on the same fixed question.
+The native group had five repetition caps. The compatible vLLM group had nine. Each had four missing finals.
+See [native findings](REPAIRED_GROUP_FINDINGS_20261120.md) and [vLLM findings](VLLM_GROUP_FINDINGS_20261120.md).
+The supplied reference also received inconsistent verdicts in several saved calls. Their disputed reasons fail local checks.
+Preserve these verdicts, inspect paired-reference scores alongside candidate rewards, and retain the provisional-grade limitation.
+No diagnostic reward, prompt, model or rubric was changed to open the gate.
+The [alternative-question proposal](QUESTION_SCREEN_PROPOSAL_20261120.md) needs the user's data-scope decision.
 
 ## Global takeaways
 

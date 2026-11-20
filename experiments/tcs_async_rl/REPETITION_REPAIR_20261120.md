@@ -113,4 +113,6 @@ The full group still had five repetition caps, including four outputs without a 
 All 28 nonempty finals scored zero in both judge orders. The runtime gate remains closed.
 See [the standalone findings](REPAIRED_GROUP_FINDINGS_20261120.md) for the setup, counts, raw example and independent claim check.
 The bounded filters did not eliminate repetition in this deployment. This result does not isolate their causal effect.
-The compatible MI300 full group continues on the same question. No new question is approved yet.
+The compatible MI300 group also finished, with nine repetition caps and four missing finals.
+All 28 nonempty finals scored zero in both orders. See [its standalone findings](VLLM_GROUP_FINDINGS_20261120.md).
+No new question is approved yet. No RL job has been submitted.
