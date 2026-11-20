@@ -395,6 +395,11 @@
       "id": "534162",
       "cluster": "hpcfund",
       "status": "FAILED"
+    },
+    {
+      "id": "534165",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -858,15 +863,22 @@
       "actor": "codex",
       "summary": "Repaired native Transformers alias handling after exact argument diagnostic failure",
       "revision": 64
+    },
+    {
+      "id": "6ce05a89-8cd8-429a-90b5-63b57909f37b",
+      "at": "2026-11-20T11:49:35.458504Z",
+      "actor": "codex",
+      "summary": "Submitted repaired full native argument/PID diagnostic 534165",
+      "revision": 65
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Three real Qwen answers completed and scored 0/7 in both Luna orders. Group 534098 continues. Exact native argument check passed process isolation but failed on unrelated native Qwen4 registration. Repaired native preference and passed its focused regression.",
+  "summary": "Three completed Qwen answers have provisional 0/7 rewards in both orders; group continues. Submitted 534165 to verify the native alias repair, exact run arguments and process isolation. SGLang MI350 534034 remains queued.",
   "nextAction": "Keep collecting and grading actual completions. Require all 32 real grades and nonconstant scores before the bounded RL submission. Do not change the question or rubric to manufacture variance.",
   "owner": "Codex",
-  "revision": 64,
-  "updatedAt": "2026-11-20T11:48:00.682066Z"
+  "revision": 65,
+  "updatedAt": "2026-11-20T11:49:35.458504Z"
 }
