@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI300 is active: 23 responses returned and 22 graded zero. Native group failed with 28 zero grades and four missing finals. Question-scope decision pending. Jobs: hpcfund/534576 RUNNING; hpcfund/534575 COMPLETED
-  Next: Choose whether to check the two proposed eligible questions. Monitoring and grading of the current MI300 group continue.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Both repaired GPU groups finished and failed completion: each has four missing finals. All 28 native grades and the first 23 MI300 grades are zero. Jobs: hpcfund/534576 COMPLETED; hpcfund/534575 COMPLETED
+  Next: Finish the last five MI300 grades and archival. The proposed alternative-question check needs the pending user decision.
 
 ## Finished
 

@@ -483,13 +483,17 @@
     {
       "path": "experiments/tcs_async_rl/evidence/native_finish_token_audit_20261120.json",
       "label": "Exact capped token arrays contain neither known end marker"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/mi300_group_v13_generation_20261120.json",
+      "label": "Full MI300 generation: nine repetition caps and four missing finals"
     }
   ],
   "jobs": [
     {
       "id": "534576",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "534575",
@@ -1419,15 +1423,22 @@
       "actor": "codex",
       "summary": "Ruled out ignoring emitted EOS markers in all five native capped trajectories",
       "revision": 112
+    },
+    {
+      "id": "14f8ab6e-2879-4a26-a71b-410f4a23c2ed",
+      "at": "2026-11-20T17:26:33.818646Z",
+      "actor": "codex",
+      "summary": "Recorded terminal MI300 generation and continued final grading",
+      "revision": 113
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "needs-you",
-  "summary": "MI300 is active: 23 responses returned and 22 graded zero. Native group failed with 28 zero grades and four missing finals. Question-scope decision pending.",
-  "nextAction": "Choose whether to check the two proposed eligible questions. Monitoring and grading of the current MI300 group continue.",
+  "summary": "Both repaired GPU groups finished and failed completion: each has four missing finals. All 28 native grades and the first 23 MI300 grades are zero.",
+  "nextAction": "Finish the last five MI300 grades and archival. The proposed alternative-question check needs the pending user decision.",
   "owner": "Codex",
-  "revision": 112,
-  "updatedAt": "2026-11-20T16:51:56.901933Z"
+  "revision": 113,
+  "updatedAt": "2026-11-20T17:26:33.818646Z"
 }
