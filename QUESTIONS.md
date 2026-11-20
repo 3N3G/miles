@@ -96,6 +96,11 @@
 
 # Answered questions
 
+- 2026-11-20: user requested automatic RL submission and monitoring after the medium diagnostic.
+  The durable VM controller is armed from frozen source. It retains the original strict reward gate and bounded two-update plan.
+  It does not select a corpus mixture or change the unresolved recorded-cap policy.
+  Procedure and evidence are in `experiments/tcs_async_rl/AUTO_HANDOFF.md`.
+
 - 2026-11-20: user logged into W&B on the VM and selected organization `geney-org`.
   Normal SDK authentication succeeded. Its team `geney` resolves to that organization.
   Project creation under the organization entity failed. Creation and metadata lookup under team `geney` succeeded.

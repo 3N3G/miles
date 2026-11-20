@@ -1,0 +1,13 @@
+{
+  "observed_at_utc": "2026-11-20T23:38:19.235495+00:00",
+  "pid": 935098,
+  "source_commit": "3dd8414fddfcd7bbea9248d991b7aa495e5ab343",
+  "phase": "waiting_for_medium",
+  "medium_job_id": "535170",
+  "scheduler_state": "PENDING",
+  "config": "experiments/tcs_async_rl/rl_smoke_v7_medium.json",
+  "process_manifest": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/rl-medium-v7/handoff-process.json",
+  "new_rl_job_submitted": false,
+  "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "machine": "home"
+}

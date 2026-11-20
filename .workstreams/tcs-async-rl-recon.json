@@ -209,6 +209,10 @@
     {
       "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/workspace",
       "label": "TCS W&B project in the user-selected organization"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/95435405463027e51d8e882d91e3bba933dde068/miles/rl-handoff-service-control-v1",
+      "label": "Actual medium reward-service bootstrap and health control, no judge calls or GPU jobs"
     }
   ],
   "evidence": [
@@ -571,6 +575,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/wandb_sync_control_20261120.json",
       "label": "Successful upload and readback of the native offline W&B control"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/automatic_handoff_armed_20261120.json",
+      "label": "Observed live VM controller, frozen source and waiting state"
     }
   ],
   "jobs": [
@@ -1629,15 +1637,22 @@
       "actor": "codex",
       "summary": "Validated the conditional RL handoff and real W&B upload path",
       "revision": 128
+    },
+    {
+      "id": "36904354-c85d-432f-ac69-cddef2d4c818",
+      "at": "2026-11-20T23:39:54.651893Z",
+      "actor": "codex",
+      "summary": "Armed the durable VM medium-to-RL controller",
+      "revision": 129
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Automatic medium-to-RL controller implemented and validated with 65 CPU tests. W&B offline upload and API readback passed. No RL job submitted.",
-  "nextAction": "Commit and freeze the controller, then arm its VM process to wait for medium and enforce the original reward gate.",
+  "summary": "VM controller is armed for automatic medium-to-RL handoff. Medium 535170 remains pending. W&B sync and the real reward-service bootstrap passed.",
+  "nextAction": "Controller waits for complete medium grading, then submits and monitors the approved two-update run only if the original strict reward gate passes.",
   "owner": "Codex",
-  "revision": 128,
-  "updatedAt": "2026-11-20T23:31:51.024862Z"
+  "revision": 129,
+  "updatedAt": "2026-11-20T23:39:54.651893Z"
 }

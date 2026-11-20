@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatic medium-to-RL controller implemented and validated with 65 CPU tests. W&B offline upload and API readback passed. No RL job submitted. Jobs: hpcfund/535170 PENDING; hpcfund/535067 COMPLETED
-  Next: Commit and freeze the controller, then arm its VM process to wait for medium and enforce the original reward gate.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): VM controller is armed for automatic medium-to-RL handoff. Medium 535170 remains pending. W&B sync and the real reward-service bootstrap passed. Jobs: hpcfund/535170 PENDING; hpcfund/535067 COMPLETED
+  Next: Controller waits for complete medium grading, then submits and monitors the approved two-update run only if the original strict reward gate passes.
 
 ## Next / blocked
 
