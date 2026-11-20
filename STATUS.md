@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534034 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/534174 RUNNING; hpcfund/534034 FAILED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eight vLLM answers have complete final text and provisional zero grades in both orders. MI350 534034 passed BF16 matrix operations but failed on a read-only FlyDSL cache during warmup. Repaired both F Jobs: hpcfund/534174 RUNNING; hpcfund/534034 FAILED
+  Next: Rerun native warmup with writable FlyDSL caches and finish the 32-answer group. Require reward variation before RL.
 
 ## Next / blocked
 

@@ -96,6 +96,8 @@ def container_prefix(
         "AITER_JIT_DIR": str(cache / "aiter" / gpu_cache),
         "AITER_ROOT_DIR": str(cache / "aiter_cpp" / gpu_cache),
         "SGLANG_CACHE_DIR": str(cache / "sglang" / gpu_cache),
+        "FLYDSL_RUNTIME_CACHE_DIR": str(cache / "flydsl" / gpu_cache),
+        "FLYDSL_AUTOTUNE_CACHE_DIR": str(cache / "flydsl_autotune" / gpu_cache),
         "TORCH_EXTENSIONS_DIR": str(cache / "torch_extensions" / gpu_cache),
         "TORCHINDUCTOR_CACHE_DIR": str(cache / "torch_inductor" / gpu_cache),
         "PYTHONUNBUFFERED": "1",

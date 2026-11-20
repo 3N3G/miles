@@ -359,6 +359,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/rl_scheduling_check_20261120.json",
       "label": "Read-only eight-GPU scheduling estimates; no RL job submitted"
+    },
+    {
+      "path": "experiments/tcs_async_rl/FLYDSL_CACHE_REPAIR_20261120.md",
+      "label": "MI350 kernel success and precise FlyDSL cache repair"
+    },
+    {
+      "path": "experiments/tcs_async_rl/POLICY_REFERENCE_PLAN.md",
+      "label": "Same-input serving/reference implementation check"
     }
   ],
   "jobs": [
@@ -998,15 +1006,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 534034",
       "revision": 76
+    },
+    {
+      "id": "b344df5f-0abe-4d49-8b96-0db710ed9b21",
+      "at": "2026-11-20T13:19:28.510338Z",
+      "actor": "codex",
+      "summary": "Repaired the actual MI350 warmup cache failure and recorded eight real zero grades",
+      "revision": 77
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 534034 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending.",
-  "nextAction": "Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.",
+  "summary": "Eight vLLM answers have complete final text and provisional zero grades in both orders. MI350 534034 passed BF16 matrix operations but failed on a read-only FlyDSL cache during warmup. Repaired both FlyDSL cache paths. Prepared same-input HF/vLLM numerical check.",
+  "nextAction": "Rerun native warmup with writable FlyDSL caches and finish the 32-answer group. Require reward variation before RL.",
   "owner": "Codex",
-  "revision": 76,
-  "updatedAt": "2026-11-20T13:02:24.128566Z"
+  "revision": 77,
+  "updatedAt": "2026-11-20T13:19:28.510338Z"
 }

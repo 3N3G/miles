@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-11-20T13:19:28.396026+00:00",
+  "job_id": "534034",
+  "gpu": "AMD Instinct MI350X",
+  "gpu_memory_bytes": 309220868096,
+  "gpu_memory_gib": 287.984375,
+  "native_sglang_import_and_bf16_matmul_passed": true,
+  "failed_component": "AITER FlyDSL GEMM JIT cache lock",
+  "failed_cache_path": "/sgl-workspace/aiter/aiter/jit/flydsl_cache",
+  "repair_environment_variables": [
+    "FLYDSL_RUNTIME_CACHE_DIR",
+    "FLYDSL_AUTOTUNE_CACHE_DIR"
+  ],
+  "cpu_path_validation_passed": true,
+  "actual_repaired_compilation_verified": false,
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/3fea142be65322087281db759783f8890f161d51/miles/group-check-v5-mi350"
+}
