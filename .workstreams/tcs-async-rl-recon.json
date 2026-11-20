@@ -261,6 +261,11 @@
       "id": "534010",
       "cluster": "hpcfund",
       "status": "SUBMITTED"
+    },
+    {
+      "id": "534013",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -535,15 +540,22 @@
       "actor": "codex",
       "summary": "Submitted repaired mi2101x diagnostic 534010",
       "revision": 37
+    },
+    {
+      "id": "0becfe1c-2d3f-49ea-8530-bfc42928a6d3",
+      "at": "2026-11-20T10:22:33.998785Z",
+      "actor": "codex",
+      "summary": "Submitted repaired mi3501x diagnostic 534013",
+      "revision": 38
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Submitted repaired mi2101x group 534010. Both AITER caches now point to work storage. Forty-two CPU checks pass. No actual Qwen group grades yet.",
+  "summary": "Submitted repaired mi3501x group 534013. Both AITER caches now point to work storage. Forty-two CPU checks pass. No actual Qwen group grades yet.",
   "nextAction": "Monitor repaired startup, BF16 kernel check, model initialization and incremental responses. Cancel the unused own fallback after a complete group has varied real grades.",
   "owner": "Codex",
-  "revision": 37,
-  "updatedAt": "2026-11-20T10:22:28.854075Z"
+  "revision": 38,
+  "updatedAt": "2026-11-20T10:22:33.998785Z"
 }

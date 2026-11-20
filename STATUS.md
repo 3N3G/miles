@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted repaired mi2101x group 534010. Both AITER caches now point to work storage. Forty-two CPU checks pass. No actual Qwen group grades yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted repaired mi3501x group 534013. Both AITER caches now point to work storage. Forty-two CPU checks pass. No actual Qwen group grades yet. Jobs: hpcfund/530287 FAILED; hpcfund/533702 PENDING
   Next: Monitor repaired startup, BF16 kernel check, model initialization and incremental responses. Cancel the unused own fallback after a complete group has varied real grades.
 
 ## Next / blocked
