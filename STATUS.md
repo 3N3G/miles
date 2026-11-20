@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 534033 ended FAILED. No group grades exist; inspect generation and stage logs. Human calibration remains pending. Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
-  Next: Diagnose the recorded inference, grading, or upload failure under the approved repair scope. Preserve all old inputs and results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): MI210 534033 passed repaired cache imports, then failed on the first GPU tensor operation with hipErrorInvalidImage. No Qwen responses exist. Preparing a five-minute Torch-only versus engine-import di Jobs: hpcfund/530287 FAILED; hpcfund/533702 CANCELLED
+  Next: Run the pinned five-minute MI210 compatibility probe, then choose a repair from measured architecture/kernel evidence. Keep the valid MI350 fallback and do not change the TCS model
 
 ## Next / blocked
 

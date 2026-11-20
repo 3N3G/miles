@@ -281,6 +281,24 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
         runtime_dir=runtime_dir,
         cache_namespace=qualification["allocation"]["partition"],
     )
+    if qualification.get("mode") == "compatibility":
+        for phase in ("torch-only", "after-engine-import"):
+            _run(
+                phase,
+                prefix
+                + [
+                    "python3",
+                    "-m",
+                    "experiments.tcs_async_rl.compatibility_probe",
+                    "--phase",
+                    phase,
+                    "--run-dir",
+                    str(run_dir),
+                ],
+                run_dir=run_dir,
+                env=env,
+            )
+        return
     if qualification.get("mode") == "group_inference":
         _run_group_check(
             prefix=prefix, work_dir=work_dir, run_dir=run_dir, config_path=config_path, training=training, env=env
