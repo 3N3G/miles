@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User prioritizes VM space and reports that W&B displays one step. VM root is 99% full with about 1.1 GiB free. Auditing storage ownership before safe cache cleanup. Previous API verification found nat Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
+  Next: Free reproducible caches and verified duplicate artifacts, measure recovered space, prevent avoidable growth, then reconcile W&B dashboard history. No new GPU job.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Recovery complete. The four-hour pilot ended at 27/40 finite updates, with no skipped step, 864 consumed answers across all 20 easy questions, and a checkpoint covering 25 updates. All 27 W&B steps an Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Review the recovered report and choose any further training budget. Future runs must stay under foreground supervision through terminal state, checkpoint checks and verified upload
+- Nothing recorded.
 
 ## Finished
 

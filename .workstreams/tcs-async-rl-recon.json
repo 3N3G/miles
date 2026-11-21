@@ -1937,15 +1937,22 @@
       "actor": "codex",
       "summary": "Recovery complete: final report, immutable private upload, checkpoint and all 27 W&B steps verified",
       "revision": 162
+    },
+    {
+      "id": "1f38a1b0-27e9-4bbe-8fb5-7400418979b5",
+      "at": "2026-11-21T15:56:56.030447Z",
+      "actor": "codex",
+      "summary": "Prioritize the user-requested VM storage audit and record the W&B display discrepancy",
+      "revision": 163
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "needs-you",
-  "summary": "Recovery complete. The four-hour pilot ended at 27/40 finite updates, with no skipped step, 864 consumed answers across all 20 easy questions, and a checkpoint covering 25 updates. All 27 W&B steps and the downloaded private report are verified. Monitor/finalizer fixes pass 80 tests. No new GPU job was submitted.",
-  "nextAction": "Review the recovered report and choose any further training budget. Future runs must stay under foreground supervision through terminal state, checkpoint checks and verified uploads.",
+  "state": "running",
+  "summary": "User prioritizes VM space and reports that W&B displays one step. VM root is 99% full with about 1.1 GiB free. Auditing storage ownership before safe cache cleanup. Previous API verification found native steps 0–26, but dashboard presentation still needs checking.",
+  "nextAction": "Free reproducible caches and verified duplicate artifacts, measure recovered space, prevent avoidable growth, then reconcile W&B dashboard history. No new GPU job.",
   "owner": "Codex",
-  "revision": 162,
-  "updatedAt": "2026-11-21T15:55:36.356391Z"
+  "revision": 163,
+  "updatedAt": "2026-11-21T15:56:56.030447Z"
 }
