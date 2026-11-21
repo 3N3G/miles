@@ -1,0 +1,124 @@
+{
+  "source_country": "Germany",
+  "target_country": "China",
+  "purpose": "Frozen transfer check of normalized exact Jacobian rows. No country-pair task outputs observed before freezing.",
+  "cases": [
+    {
+      "name": "germany-explicit-capital",
+      "prompt": "Fact: The capital of Germany is",
+      "counterfactual_prompt": "Fact: The capital of China is",
+      "original": "Berlin",
+      "counterfactual": "Beijing",
+      "kind": "explicit"
+    },
+    {
+      "name": "germany-explicit-language",
+      "prompt": "Fact: The main language spoken in Germany is",
+      "counterfactual_prompt": "Fact: The main language spoken in China is",
+      "original": "German",
+      "counterfactual": "Chinese",
+      "kind": "explicit"
+    },
+    {
+      "name": "germany-explicit-continent",
+      "prompt": "Fact: The continent containing Germany is",
+      "counterfactual_prompt": "Fact: The continent containing China is",
+      "original": "Europe",
+      "counterfactual": "Asia",
+      "kind": "explicit"
+    },
+    {
+      "name": "germany-unspoken-capital",
+      "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+      "counterfactual_prompt": "Fact: The capital of the country containing the Great Wall is",
+      "original": "Berlin",
+      "counterfactual": "Beijing",
+      "kind": "unspoken"
+    },
+    {
+      "name": "germany-unspoken-language",
+      "prompt": "Fact: The main language spoken in the country containing the Brandenburg Gate is",
+      "counterfactual_prompt": "Fact: The main language spoken in the country containing the Great Wall is",
+      "original": "German",
+      "counterfactual": "Chinese",
+      "kind": "unspoken"
+    },
+    {
+      "name": "germany-unspoken-continent",
+      "prompt": "Fact: The continent containing the country containing the Brandenburg Gate is",
+      "counterfactual_prompt": "Fact: The continent containing the country containing the Great Wall is",
+      "original": "Europe",
+      "counterfactual": "Asia",
+      "kind": "unspoken"
+    },
+    {
+      "name": "china-explicit-capital",
+      "prompt": "Fact: The capital of China is",
+      "counterfactual_prompt": "Fact: The capital of Germany is",
+      "original": "Beijing",
+      "counterfactual": "Berlin",
+      "kind": "explicit"
+    },
+    {
+      "name": "china-explicit-language",
+      "prompt": "Fact: The main language spoken in China is",
+      "counterfactual_prompt": "Fact: The main language spoken in Germany is",
+      "original": "Chinese",
+      "counterfactual": "German",
+      "kind": "explicit"
+    },
+    {
+      "name": "china-explicit-continent",
+      "prompt": "Fact: The continent containing China is",
+      "counterfactual_prompt": "Fact: The continent containing Germany is",
+      "original": "Asia",
+      "counterfactual": "Europe",
+      "kind": "explicit"
+    },
+    {
+      "name": "china-unspoken-capital",
+      "prompt": "Fact: The capital of the country containing the Great Wall is",
+      "counterfactual_prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+      "original": "Beijing",
+      "counterfactual": "Berlin",
+      "kind": "unspoken"
+    },
+    {
+      "name": "china-unspoken-language",
+      "prompt": "Fact: The main language spoken in the country containing the Great Wall is",
+      "counterfactual_prompt": "Fact: The main language spoken in the country containing the Brandenburg Gate is",
+      "original": "Chinese",
+      "counterfactual": "German",
+      "kind": "unspoken"
+    },
+    {
+      "name": "china-unspoken-continent",
+      "prompt": "Fact: The continent containing the country containing the Great Wall is",
+      "counterfactual_prompt": "Fact: The continent containing the country containing the Brandenburg Gate is",
+      "original": "Asia",
+      "counterfactual": "Europe",
+      "kind": "unspoken"
+    },
+    {
+      "name": "unrelated-square",
+      "prompt": "The square of three is",
+      "original": "nine",
+      "counterfactual": "nine",
+      "kind": "unrelated"
+    },
+    {
+      "name": "unrelated-addition",
+      "prompt": "The result of 2 + 2 is",
+      "original": "4",
+      "counterfactual": "4",
+      "kind": "unrelated"
+    },
+    {
+      "name": "unrelated-week",
+      "prompt": "The number of days in a week is",
+      "original": "seven",
+      "counterfactual": "seven",
+      "kind": "unrelated"
+    }
+  ]
+}

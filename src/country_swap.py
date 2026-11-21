@@ -13,21 +13,21 @@ from fit_transport import VISITS
 from pilot import MODEL, REVISION, token_list
 
 
-def features(model, tokenizer, fits, method, seed, jacobian=None):
-    source = tokenizer.encode(" France", add_special_tokens=False)
-    target = tokenizer.encode(" Japan", add_special_tokens=False)
+def features(model, tokenizer, fits, method, seed, jacobian=None, source_country="France", target_country="Japan", visits=VISITS):
+    source = tokenizer.encode(" " + source_country, add_special_tokens=False)
+    target = tokenizer.encode(" " + target_country, add_special_tokens=False)
     assert len(source) == len(target) == 1
     contrast = (model.lm_head.weight[source[0]].float() - model.lm_head.weight[target[0]].float()) * model.model.language_model.norm.weight.float()
     maps = np.load(fits / f"maps_active_seed_{seed}.npz")
     result = {}
-    for visit in VISITS:
+    for visit in visits:
         prefix = f"active_v{visit}_ridge_"
         stats = {k: torch.tensor(maps[prefix + k], device="cuda", dtype=torch.float32) for k in ["mx", "sx", "my", "sy"]}
         if method.startswith("j_"):
             assert jacobian is not None
             site = 41 if visit == 41 else 35
-            source_row = torch.tensor(jacobian[f"seed_{seed}_v{site}_France"], device="cuda")
-            target_row = torch.tensor(jacobian[f"seed_{seed}_v{site}_Japan"], device="cuda")
+            source_row = torch.tensor(jacobian[f"seed_{seed}_v{site}_{source_country}"], device="cuda")
+            target_row = torch.tensor(jacobian[f"seed_{seed}_v{site}_{target_country}"], device="cuda")
             if method != "j_raw":
                 source_row = source_row / source_row.norm()
                 target_row = target_row / target_row.norm()
@@ -90,6 +90,8 @@ def main():
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--methods", nargs="+", default=["mean_scale", "raw", "ridge"])
     parser.add_argument("--jacobian", type=Path)
+    parser.add_argument("--random-doses", nargs="+", type=float, default=[1])
+    parser.add_argument("--visits", nargs="+", type=int, default=VISITS)
     args = parser.parse_args()
     jacobian = np.load(args.jacobian) if args.jacobian else None
     args.out.mkdir(parents=True, exist_ok=False)
@@ -99,7 +101,8 @@ def main():
     model, loading = AutoModelForImageTextToText.from_pretrained(MODEL, revision=REVISION, dtype=torch.bfloat16, device_map={"": "cuda:0"}, output_loading_info=True)
     model.eval().requires_grad_(False)
     assert not any(loading[k] for k in ["missing_keys", "mismatched_keys", "error_msgs"])
-    cases = json.loads(args.cases.read_text())["cases"]
+    case_file = json.loads(args.cases.read_text())
+    cases = case_file["cases"]
     token_map = {}
     for i in range(model.lm_head.weight.shape[0]):
         token_map.setdefault(tokenizer.decode([i]).strip().casefold(), []).append(i)
@@ -117,7 +120,7 @@ def main():
         (args.out / "native_controls.json").write_text(json.dumps(controls, indent=2) + "\n")
         for method in args.methods:
             for seed in [0, 1, 2]:
-                read_features = features(model, tokenizer, args.fits, method, seed, jacobian)
+                read_features = features(model, tokenizer, args.fits, method, seed, jacobian, case_file["source_country"], case_file["target_country"], args.visits)
                 for case in cases:
                     ids = tokenizer(case["prompt"], return_tensors="pt", add_special_tokens=False).input_ids.to("cuda")
                     base = native[case["prompt"]]
@@ -125,7 +128,7 @@ def main():
                     target_ids = token_map[case["counterfactual"].casefold()]
                     baseline_valid = int(base.argmax()) in source_ids
                     input_control_valid = int(native[case["counterfactual_prompt"]].argmax()) in target_ids if case.get("counterfactual_prompt") else None
-                    conditions = [(0, None), (0.5, None), (1, None), (2, None)] + [(1, r) for r in [0, 1, 2]]
+                    conditions = [(0, None), (0.5, None), (1, None), (2, None)] + [(d, r) for d in args.random_doses for r in [0, 1, 2]]
                     for dose, random_seed in conditions:
                         logits, changes = forward_with_swap(model, ids, read_features, dose, random_seed)
                         if dose == 0:
@@ -138,7 +141,7 @@ def main():
                         print(json.dumps({k: v for k, v in row.items() if k not in ["changes", "prompt"]}), flush=True)
                     (args.out / "interventions.json").write_text(json.dumps(rows, indent=2) + "\n")
                 print(json.dumps({"event": "fit_seed_complete", "method": method, "seed": seed, "elapsed_seconds": time.monotonic() - start}), flush=True)
-    (args.out / "manifest.json").write_text(json.dumps({"model": MODEL, "revision": REVISION, "visits": VISITS, "methods": args.methods, "fit_seeds": [0, 1, 2], "random_control_seeds": [0, 1, 2], "cases": len(cases), "elapsed_seconds": time.monotonic() - start}, indent=2) + "\n")
+    (args.out / "manifest.json").write_text(json.dumps({"model": MODEL, "revision": REVISION, "visits": args.visits, "methods": args.methods, "fit_seeds": [0, 1, 2], "random_control_seeds": [0, 1, 2], "random_control_doses": args.random_doses, "cases": len(cases), "elapsed_seconds": time.monotonic() - start}, indent=2) + "\n")
     print(json.dumps({"event": "complete", "elapsed_seconds": time.monotonic() - start}), flush=True)
 
 
