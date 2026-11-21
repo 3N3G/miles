@@ -105,7 +105,9 @@ def native_argv(args):
         if value is False:
             continue
         argv.append("--" + key.replace("_", "-"))
-        if value is not True:
+        if isinstance(value, list):
+            argv.extend(str(item) for item in value)
+        elif value is not True:
             argv.append(json.dumps(value, separators=(",", ":")) if isinstance(value, dict) else str(value))
     return argv
 

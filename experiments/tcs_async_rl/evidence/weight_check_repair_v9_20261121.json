@@ -1,0 +1,19 @@
+{
+  "observed_at_utc": "2026-11-21T08:01:21.436839+00:00",
+  "source_job_id": "536321",
+  "terminal_state": "FAILED",
+  "elapsed": "00:08:02",
+  "generated_training_answers": 0,
+  "optimizer_updates": 0,
+  "native_arguments": "passed",
+  "checkpoint_conversion": "passed",
+  "text_parameters_equal": 331,
+  "derived_norm_buffers_equal": 81,
+  "mismatch_scope": "Only visual.* tensors. These frozen image-encoder weights are absent from the text-only trainer publication.",
+  "cause": "The weight check randomized all SGLang state before publication, including the unused frozen vision branch. Publication restored all text parameters and normalization buffers, but did not republish image-encoder weights.",
+  "repair": "Keep check_weight_update_equal enabled. Pass the existing check_weight_update_skip_list=[visual.] flag so reset/compare skip only frozen unused vision tensors. Keep all text parameters and derived normalization buffers checked.",
+  "new_snapshot": "rl_easy_overfit_v9.json",
+  "scientific_changes": [],
+  "additional_attempt_limit": "Same 40 updates, 4 hours, eight GPUs. Existing initial conversion is reused.",
+  "authorization": "User explicitly requested RL submission and debugging until it runs. This is a software-check repair within the approved experiment."
+}

@@ -15,6 +15,7 @@ from experiments.tcs_async_rl.reward_service import MultiScorer
 from experiments.tcs_async_rl.rl_archive import archive_chunks, copy_trace_batch, read_index
 from experiments.tcs_async_rl.rl_artifacts import file_sha256, retain_latest_checkpoint, save_generated_sample
 from experiments.tcs_async_rl.rl_inputs import question_set_key, read_bundle
+from experiments.tcs_async_rl.rl_smoke import native_argv
 from experiments.tcs_async_rl.watch_rl import consumed_rollouts
 
 BASE = Path(__file__).resolve().parents[2] / "experiments/tcs_async_rl"
@@ -33,6 +34,16 @@ def question(index):
 
 
 class EasyDataTests(unittest.TestCase):
+    def test_weight_check_excludes_only_frozen_vision_tensors(self):
+        config = json.loads((BASE / "rl_easy_overfit_v9.json").read_text())
+        values = config["overrides"]
+        self.assertTrue(values["check_weight_update_equal"])
+        self.assertEqual(values["check_weight_update_skip_list"], ["visual."])
+        self.assertEqual(
+            native_argv({"check_weight_update_skip_list": values["check_weight_update_skip_list"]}),
+            ["--check-weight-update-skip-list", "visual."],
+        )
+
     def test_only_the_pinned_twenty_easy_eligible_questions_are_accepted(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

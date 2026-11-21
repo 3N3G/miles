@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536321 ended FAILED; acceptance False Jobs: hpcfund/536321 FAILED; hpcfund/535170 COMPLETED
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Job 536321 failed before generation: all logged text parameters and derived norm buffers matched, but the checker randomized unused vision weights that the text trainer does not republish. The replace Jobs: hpcfund/536321 FAILED; hpcfund/535170 COMPLETED
+  Next: Push and submit v9 with the same 20 questions, 40 updates and four-hour eight-GPU limit. Reuse the completed conversion and cached real reward controls.
 
 ## Next / blocked
 

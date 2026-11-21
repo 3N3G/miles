@@ -615,6 +615,10 @@
     {
       "path": "experiments/tcs_async_rl/jobs.jsonl",
       "label": "Job and artifact registry"
+    },
+    {
+      "path": "experiments/tcs_async_rl/EASY_OVERFIT_REPAIR_V9.md",
+      "label": "Recorded unused-vision check repair and replacement plan"
     }
   ],
   "jobs": [
@@ -1825,15 +1829,22 @@
       "actor": "codex",
       "summary": "RL job 536321 ended FAILED; acceptance False",
       "revision": 149
+    },
+    {
+      "id": "54526ced-20d6-4d8b-ad0e-19cd81c0e921",
+      "at": "2026-11-21T08:01:50.167849Z",
+      "actor": "codex",
+      "summary": "Prepare the approved replacement after an unused-vision equality-check failure",
+      "revision": 150
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "RL job 536321 ended FAILED; acceptance False",
-  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
+  "summary": "Job 536321 failed before generation: all logged text parameters and derived norm buffers matched, but the checker randomized unused vision weights that the text trainer does not republish. The replacement keeps strict text checks and excludes only frozen visual.* tensors. All 75 CPU checks pass.",
+  "nextAction": "Push and submit v9 with the same 20 questions, 40 updates and four-hour eight-GPU limit. Reuse the completed conversion and cached real reward controls.",
   "owner": "Codex",
-  "revision": 149,
-  "updatedAt": "2026-11-21T07:59:19.110917Z"
+  "revision": 150,
+  "updatedAt": "2026-11-21T08:01:50.167849Z"
 }
