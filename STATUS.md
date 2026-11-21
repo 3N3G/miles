@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Verified 27 finite updates, no skipped step, and an intact 60.6 GB checkpoint at iteration 24. Training reached the approved four-hour limit. Fixed uncaught storage failure, abnormal-exit recovery and Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Run the repaired finalizer to completion, verify the private archive and W&B readback, then report the exact run outcome.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536360 ended TIMEOUT; acceptance False Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
+  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
 
 ## Next / blocked
 
