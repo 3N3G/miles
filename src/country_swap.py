@@ -13,7 +13,7 @@ from fit_transport import VISITS
 from pilot import MODEL, REVISION, token_list
 
 
-def features(model, tokenizer, fits, method, seed):
+def features(model, tokenizer, fits, method, seed, jacobian=None):
     source = tokenizer.encode(" France", add_special_tokens=False)
     target = tokenizer.encode(" Japan", add_special_tokens=False)
     assert len(source) == len(target) == 1
@@ -23,7 +23,17 @@ def features(model, tokenizer, fits, method, seed):
     for visit in VISITS:
         prefix = f"active_v{visit}_ridge_"
         stats = {k: torch.tensor(maps[prefix + k], device="cuda", dtype=torch.float32) for k in ["mx", "sx", "my", "sy"]}
-        if method == "raw":
+        if method.startswith("j_"):
+            assert jacobian is not None
+            site = 41 if visit == 41 else 35
+            source_row = torch.tensor(jacobian[f"seed_{seed}_v{site}_France"], device="cuda")
+            target_row = torch.tensor(jacobian[f"seed_{seed}_v{site}_Japan"], device="cuda")
+            if method != "j_raw":
+                source_row = source_row / source_row.norm()
+                target_row = target_row / target_row.norm()
+            vector = source_row - target_row
+            bias = -stats["mx"] @ vector if method == "j_centered" else vector.new_tensor(0)
+        elif method == "raw":
             vector, bias = contrast, contrast.new_tensor(0)
         elif method == "mean_scale":
             vector = contrast * stats["sy"] / stats["sx"]
@@ -78,7 +88,10 @@ def main():
     parser.add_argument("--cases", type=Path, required=True)
     parser.add_argument("--fits", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--methods", nargs="+", default=["mean_scale", "raw", "ridge"])
+    parser.add_argument("--jacobian", type=Path)
     args = parser.parse_args()
+    jacobian = np.load(args.jacobian) if args.jacobian else None
     args.out.mkdir(parents=True, exist_ok=False)
     start = time.monotonic()
     torch.set_num_threads(4)
@@ -102,9 +115,9 @@ def main():
                 native[prompt] = logits
             controls.append({"case": case, "original_top10": token_list(native[case["prompt"]], tokenizer), "counterfactual_input_top10": token_list(native[case["counterfactual_prompt"]], tokenizer) if case.get("counterfactual_prompt") else None})
         (args.out / "native_controls.json").write_text(json.dumps(controls, indent=2) + "\n")
-        for method in ["mean_scale", "raw", "ridge"]:
+        for method in args.methods:
             for seed in [0, 1, 2]:
-                read_features = features(model, tokenizer, args.fits, method, seed)
+                read_features = features(model, tokenizer, args.fits, method, seed, jacobian)
                 for case in cases:
                     ids = tokenizer(case["prompt"], return_tensors="pt", add_special_tokens=False).input_ids.to("cuda")
                     base = native[case["prompt"]]
@@ -125,7 +138,7 @@ def main():
                         print(json.dumps({k: v for k, v in row.items() if k not in ["changes", "prompt"]}), flush=True)
                     (args.out / "interventions.json").write_text(json.dumps(rows, indent=2) + "\n")
                 print(json.dumps({"event": "fit_seed_complete", "method": method, "seed": seed, "elapsed_seconds": time.monotonic() - start}), flush=True)
-    (args.out / "manifest.json").write_text(json.dumps({"model": MODEL, "revision": REVISION, "visits": VISITS, "methods": ["mean_scale", "raw", "ridge"], "fit_seeds": [0, 1, 2], "random_control_seeds": [0, 1, 2], "cases": len(cases), "elapsed_seconds": time.monotonic() - start}, indent=2) + "\n")
+    (args.out / "manifest.json").write_text(json.dumps({"model": MODEL, "revision": REVISION, "visits": VISITS, "methods": args.methods, "fit_seeds": [0, 1, 2], "random_control_seeds": [0, 1, 2], "cases": len(cases), "elapsed_seconds": time.monotonic() - start}, indent=2) + "\n")
     print(json.dumps({"event": "complete", "elapsed_seconds": time.monotonic() - start}), flush=True)
 
 
