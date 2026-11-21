@@ -17,15 +17,22 @@
       "actor": "codex",
       "summary": "Started requested literature and model inspection",
       "revision": 1
+    },
+    {
+      "id": "f95dc4d4-86f6-45ec-b864-a341ded43d70",
+      "at": "2026-11-21T07:32:41.901903Z",
+      "actor": "codex",
+      "summary": "Moved requested investigation out of Miles",
+      "revision": 2
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Deliver a standalone evidence report, a justified lens proposal, and a reviewable experiment plan.",
-  "state": "running",
-  "summary": "Reviewing the challenge, lens literature, and official model implementation. GPU experiments await an explicit plan approval.",
-  "nextAction": "Inspect official implementation and identify a test that distinguishes prediction fidelity from causal interpretability.",
+  "state": "finished",
+  "summary": "Moved the Inkling investigation to the separate local repository /home/ubuntu/inkling-interp at the user's request.",
+  "nextAction": "Continue in /home/ubuntu/inkling-interp. This Miles record tracks relocation only.",
   "owner": "Codex",
-  "revision": 1,
-  "updatedAt": "2026-11-21T07:31:00.351619Z"
+  "revision": 2,
+  "updatedAt": "2026-11-21T07:32:41.901903Z"
 }
