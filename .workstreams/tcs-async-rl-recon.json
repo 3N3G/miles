@@ -1757,15 +1757,22 @@
       "actor": "codex",
       "summary": "All 60 real controls passed; arming the approved AMD run",
       "revision": 140
+    },
+    {
+      "id": "eb357f97-96f0-4098-98d2-8698f102c608",
+      "at": "2026-11-21T07:49:21.717639Z",
+      "actor": "codex",
+      "summary": "Automatic RL handoff stopped before acceptance",
+      "revision": 141
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "All 60 per-question reward controls passed in both orders, with no paired-reference anomalies. Frozen source eabd8c02 is ready to submit 40 updates on all 20 easy questions within four hours on eight MI350 GPUs.",
-  "nextAction": "Obtain the real Slurm receipt, then monitor conversion, rollout, native optimizer steps, weight publication and saving.",
+  "summary": "Automatic RL handoff stopped before acceptance",
+  "nextAction": "Inspect handoff-state.json and preserve the strict reward gate. Resolve any required research decision.",
   "owner": "Codex",
-  "revision": 140,
-  "updatedAt": "2026-11-21T07:49:12.630337Z"
+  "revision": 141,
+  "updatedAt": "2026-11-21T07:49:21.717639Z"
 }

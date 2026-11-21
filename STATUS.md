@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): All 60 per-question reward controls passed in both orders, with no paired-reference anomalies. Frozen source eabd8c02 is ready to submit 40 updates on all 20 easy questions within four hours on eight  Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: Obtain the real Slurm receipt, then monitor conversion, rollout, native optimizer steps, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatic RL handoff stopped before acceptance Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: Inspect handoff-state.json and preserve the strict reward gate. Resolve any required research decision.
 
 ## Next / blocked
 
