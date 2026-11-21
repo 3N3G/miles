@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536321 is running on k007-001. Native argument checks and checkpoint conversion passed. All 20 questions loaded; the allocated node verifies the Luna service through the repaired foreground tu Jobs: hpcfund/536321 RUNNING; hpcfund/535170 COMPLETED
-  Next: Monitor rollout readiness, real reward groups, native backward computation and weight publication.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536321 is FAILED Jobs: hpcfund/536321 FAILED; hpcfund/535170 COMPLETED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 

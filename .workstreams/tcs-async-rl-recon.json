@@ -621,7 +621,7 @@
     {
       "id": "536321",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "FAILED"
     },
     {
       "id": "535170",
@@ -1811,15 +1811,22 @@
       "actor": "codex",
       "summary": "The allocated node verifies the grading tunnel; native conversion is complete",
       "revision": 147
+    },
+    {
+      "id": "e1cd6434-37e4-437a-9292-09324a59a291",
+      "at": "2026-11-21T07:58:48.917599Z",
+      "actor": "codex",
+      "summary": "RL job 536321 is FAILED",
+      "revision": 148
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 536321 is running on k007-001. Native argument checks and checkpoint conversion passed. All 20 questions loaded; the allocated node verifies the Luna service through the repaired foreground tunnel. Offline W&B/TensorBoard active. Rollout kernel startup is in progress, with no optimizer update yet.",
-  "nextAction": "Monitor rollout readiness, real reward groups, native backward computation and weight publication.",
+  "summary": "RL job 536321 is FAILED",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 147,
-  "updatedAt": "2026-11-21T07:58:10.396336Z"
+  "revision": 148,
+  "updatedAt": "2026-11-21T07:58:48.917599Z"
 }

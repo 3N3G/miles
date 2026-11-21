@@ -97,3 +97,4 @@
 {"recorded_at_utc": "2026-11-21T07:50:22.437080+00:00", "job_id": "536321", "status": "PENDING", "phase": "monitoring"}
 {"recorded_at_utc": "2026-11-21T07:51:26.370814+00:00", "job_id": "536321", "status": "RUNNING", "phase": "monitoring"}
 {"recorded_at_utc": "2026-11-21T07:58:10.346639+00:00", "phase": "running_training_preflight_archive", "cluster": "hpcfund", "job_id": "536321", "status": "RUNNING", "reward_control_cases_passed": 60, "completed_verdicts": 120, "paired_reference_anomalies": 0, "optimizer_updates_at_preflight": 0, "question_count": 20, "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/58eb55b881880eb86d1caaff35cd94c173caf32b/miles/easy-overfit-v8"}
+{"recorded_at_utc": "2026-11-21T07:58:48.797997+00:00", "job_id": "536321", "status": "FAILED", "phase": "monitoring"}
