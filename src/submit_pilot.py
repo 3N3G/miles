@@ -21,7 +21,8 @@ def main():
     python = ["python", "-u", "src/pilot.py", "--items", "evidence/pilot_items.json", "--out", str(out)]
     command = ["apptainer", "exec", "--cleanenv", "--rocm", "--bind", "/work1:/work1", "--env", f"PYTHONPATH={data / 'runtime'},HF_HOME={data / 'hf'},OMP_NUM_THREADS=4,OPENBLAS_NUM_THREADS=4,TOKENIZERS_PARALLELISM=false", args.image, *python]
     script = "#!/bin/bash\nset -euo pipefail\ncd " + shlex.quote(args.remote_repo) + "\n" + shlex.join(command) + "\n"
-    sbatch = ["sbatch", "--parsable", "--nodes=1", "--gpus=1", "--cpus-per-task=8", "--partition=mi3501x", "--account=aviralkumar", "--qos=alloc_aviralkumar_09082026_09302027", "--time=01:00:00", "--job-name=inkling-state-pilot", "--output", str(out) + "-%j.log"]
+    # mi3501x allocates a whole one-GPU node and does not advertise a Slurm GRES.
+    sbatch = ["sbatch", "--parsable", "--nodes=1", "--cpus-per-task=8", "--partition=mi3501x", "--account=aviralkumar", "--qos=alloc_aviralkumar_09082026_09302027", "--time=01:00:00", "--job-name=inkling-state-pilot", "--output", str(out) + "-%j.log"]
     remote = "mkdir -p " + shlex.quote(str(out)) + " && cd " + shlex.quote(args.remote_repo) + " && git pull --rebase && " + shlex.join(sbatch)
     result = subprocess.run(["ssh", "-o", "BatchMode=yes", args.host, remote], input=script, capture_output=True, text=True)
     print(result.stdout, end="")
