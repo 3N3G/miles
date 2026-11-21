@@ -4,6 +4,8 @@
 
 ## Running
 
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Reviewing the challenge, lens literature, and official model implementation. GPU experiments await an explicit plan approval.
+  Next: Inspect official implementation and identify a test that distinguishes prediction fidelity from causal interpretability.
 - [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved recorded caps and the easy-only overfit attempt: 40 updates, four-hour limit on eight GPUs. Preparing 20-question data and multi-question grading. Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
   Next: Validate the real capped-answer grades, freeze the 20-question plan and data, then submit and monitor the approved run.
 
