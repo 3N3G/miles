@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536360 completed native optimizer update 0 with finite metrics and no skipped step. Policy loss 0.094616, gradient norm 0.180582; updated weights reached all three engines as version 1. First  Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
-  Next: Arm corrected native-log reporting and continue monitoring the approved run through saving and completion. Four-hour cap may stop before 40 updates.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536360 is running. First native optimizer update and publication of weight version 1 succeeded. First group: 28 positive and four zero rewards, mean 4.46875/7. Real loss/reward/gradient metric Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
+  Next: Continue the approved attempt to 40 updates or four hours. Monitor native updates, exact question coverage, checkpoints and terminal state. Corrected final reporting and W&B/privat
 
 ## Next / blocked
 

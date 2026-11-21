@@ -1,0 +1,29 @@
+{
+  "observed_at_utc": "2026-11-21T08:36:13.655368+00:00",
+  "job_id": "536360",
+  "run_id": "261121-080327-108",
+  "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261121-080327-108",
+  "partial_upload": true,
+  "verified_summary": {
+    "rollout/episode_raw_reward": 4.46875,
+    "rollout/episode_response_length/max": 90000,
+    "rollout/episode_response_length/mean": 36905.15625,
+    "rollout/episode_response_length/median": 29043.5,
+    "rollout/episode_response_length/min": 19522,
+    "rollout/episode_total_response_length/mean": 36905.15625,
+    "rollout/raw_reward": 4.46875,
+    "rollout/raw_reward_unfiltered": 4.46875,
+    "rollout/response_lengths": 36905.15625,
+    "train/grad_norm": 0.1805822253227234,
+    "train/pg_loss": 0.09461601823568344
+  },
+  "verified_history_rows": 2,
+  "status_repair": {
+    "before": "failed",
+    "after": "running",
+    "scheduler_state": "RUNNING",
+    "only_status_changed": true
+  },
+  "finalizer_source": "e499b77b",
+  "final_sync_includes_already_synced_streams": true
+}
