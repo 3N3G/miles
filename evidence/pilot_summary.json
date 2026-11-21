@@ -64,6 +64,17 @@
     "gain_median": 0.9670211139748313,
     "keep_median": 1.1985712644072666
   },
+  "loop_geometry": {
+    "known_coordinate": 2027,
+    "status": "Post hoc replication of Goodfire's previously reported loop-bookkeeping coordinate, not a novelty claim.",
+    "prompts": 16,
+    "coordinate_share_of_final_bank_transition_squared_norm_mean": 0.290610671043396,
+    "coordinate_share_range": [
+      0.1653146892786026,
+      0.3892633020877838
+    ],
+    "limitation": "Two transitions do not establish an asymptotic convergence trend. Normalization alone does not remove loop bookkeeping."
+  },
   "readouts": [
     {
       "method": "raw",
@@ -104,5 +115,48 @@
         "bf-sphinx-river"
       ]
     }
-  ]
+  ],
+  "behavior": {
+    "development_prompts": 12,
+    "leading_frozen_target_matches": 7,
+    "posthoc_correct_and_unspoken_subset": [
+      {
+        "method": "raw",
+        "eligible": 5,
+        "hits": 3,
+        "hit_names": [
+          "bf-relativity-firstname",
+          "bf-sphinx-river",
+          "chem-photosynthesis-Z"
+        ]
+      },
+      {
+        "method": "centered",
+        "eligible": 5,
+        "hits": 3,
+        "hit_names": [
+          "bf-relativity-firstname",
+          "bf-sphinx-river",
+          "chem-photosynthesis-Z"
+        ]
+      },
+      {
+        "method": "delta",
+        "eligible": 5,
+        "hits": 1,
+        "hit_names": [
+          "bf-sphinx-river"
+        ]
+      },
+      {
+        "method": "centered_delta",
+        "eligible": 5,
+        "hits": 1,
+        "hit_names": [
+          "bf-sphinx-river"
+        ]
+      }
+    ],
+    "limitation": "Post hoc diagnostic subset, not a preregistered or held-out score. Unspoken means absent from the first 12 generated tokens."
+  }
 }

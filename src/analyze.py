@@ -92,13 +92,14 @@ def main():
     parser.add_argument("--figures", type=Path, default=Path("figures"))
     args = parser.parse_args()
     args.figures.mkdir(parents=True, exist_ok=True)
-    items = [json.loads(p.read_text()) for p in sorted(args.run.glob("*.json")) if p.name not in ["loading_info.json", "readout_comparison.json"]]
+    documents = [json.loads(p.read_text()) for p in sorted(args.run.glob("*.json"))]
+    items = [r for r in documents if "item" in r]
     assert len(items) == 16
     gate, rows, gains, keeps = gate_analysis(args.run, items)
     intervention = intervention_analysis(items, args.figures)
     fig, axes = plt.subplots(1, 2, figsize=(8, 3.5))
     for values, ax, label, limits in [(gains, axes[0], "Message multiplier", (-1, 1)), (keeps, axes[1], "Current-input multiplier", (0, 2))]:
-        for offset, color in [(0, "#0072B2"), (1, "#D55E00")]:
+        for offset, color in [(0, "#CC79A7"), (1, "#009E73")]:
             v = np.sort(values[offset::2].ravel())
             ax.plot(v, np.arange(1, len(v) + 1) / len(v), color=color, label=f"Pass {offset + 2}")
         ax.set(xlabel=label, ylabel="Fraction of coordinates", xlim=limits, ylim=(0, 1))
@@ -117,7 +118,21 @@ def main():
         names = sorted({r["name"] for r in selected if r["target_ids"]})
         hits = [name for name in names if any(r["hit"] for r in selected if r["name"] == name)]
         comparison.append({"method": method, "eligible": len(names), "hits": len(hits), "hit_names": hits})
-    summary = {"native_logit_max_error": max(r["native_logit_error"] for r in items), "validated_prompts": len(items), "intervention": intervention, "gate": gate, "readouts": comparison}
+    behavior = json.loads((args.run / "completions.json").read_text())["rows"]
+    solved = {r["name"] for r in behavior if r["leading_target_match"] and not r["name"].startswith("control-")}
+    unspoken = {r["name"] for r in behavior if r["name"] in solved and not r["bridge_mentioned_in_12_tokens"]}
+    capability_subset = []
+    for method in ["raw", "centered", "delta", "centered_delta"]:
+        selected = [r for r in readouts["rows"] if r["method"] == method and not r["filtered"] and r["loop"] >= 2 and r["name"] in unspoken and r["target_ids"]]
+        names = sorted({r["name"] for r in selected})
+        hits = [name for name in names if any(r["hit"] for r in selected if r["name"] == name)]
+        capability_subset.append({"method": method, "eligible": len(names), "hits": len(hits), "hit_names": hits})
+    bank_states = np.array([np.load(args.run / f"{r['item']['name']}.npz")["banks"] for r in items])
+    normalized = bank_states / np.sqrt(np.mean(bank_states**2, axis=-1, keepdims=True) + 1e-6)
+    end_difference = normalized[:, 2, 1] - normalized[:, 1, 1]
+    coordinate_share = end_difference[:, 2027] ** 2 / np.sum(end_difference**2, axis=-1)
+    loop_geometry = {"known_coordinate": 2027, "status": "Post hoc replication of Goodfire's previously reported loop-bookkeeping coordinate, not a novelty claim.", "prompts": len(items), "coordinate_share_of_final_bank_transition_squared_norm_mean": float(coordinate_share.mean()), "coordinate_share_range": [float(coordinate_share.min()), float(coordinate_share.max())], "limitation": "Two transitions do not establish an asymptotic convergence trend. Normalization alone does not remove loop bookkeeping."}
+    summary = {"native_logit_max_error": max(r["native_logit_error"] for r in items), "validated_prompts": len(items), "intervention": intervention, "gate": gate, "loop_geometry": loop_geometry, "readouts": comparison, "behavior": {"development_prompts": 12, "leading_frozen_target_matches": len(solved), "posthoc_correct_and_unspoken_subset": capability_subset, "limitation": "Post hoc diagnostic subset, not a preregistered or held-out score. Unspoken means absent from the first 12 generated tokens."}}
     (args.evidence / "pilot_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     (args.evidence / "gate_nullspace_checks.json").write_text(json.dumps(rows, indent=2) + "\n")
     print(json.dumps(summary, indent=2))

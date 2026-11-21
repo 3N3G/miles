@@ -1,0 +1,9 @@
+{
+  "source": "Public released safetensors byte ranges",
+  "compared_to": "Tensors captured after the official Transformers model load",
+  "exact_float32_array_equality": {
+    "down": true,
+    "gain": true,
+    "forget": true
+  }
+}

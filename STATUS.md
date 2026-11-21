@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The repaired pilot completed 16 prompts and 44 interventions. Every native-logit check was exact. Independent bank rescaling preserved all tested top predictions, while directional changes were larger Jobs: hpcfund/536316 FAILED; hpcfund/536317 COMPLETED
-  Next: Finish the matched readout comparison, calculate the gate nullspace control, and write a standalone report with limits.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,4 +16,4 @@
 
 ## Finished
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed 16 validated forwards, 44 interventions, saved-bank readout comparisons, and completion/format checks. Scale and direction had different causal effects. A rank-64 controller did not impose a Jobs: hpcfund/536316 FAILED; hpcfund/536317 COMPLETED

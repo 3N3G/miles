@@ -60,12 +60,26 @@ For Inkling's actual finite execution, use the product of derivatives along the 
 An infinite-horizon inverse needs additional stability and stationarity evidence.
 See [Deep Equilibrium Models](https://arxiv.org/abs/1909.01377) for implicit differentiation through a solved equilibrium.
 
+For example, if G_X is the final decoder, the effect of a pass-one perturbation on the actual output is:
+
+```math
+DG_X(S_3)\,DF_X(S_2)\,DF_X(S_1)\,\delta S_1.
+```
+
+Finite-time amplification can occur even around an asymptotically stable system.
+Neither one gate's gain nor three observed passes determines the stability of the whole recurrence.
+
+Thinking Machines also released a [separate variable-loop research checkpoint](https://thinkingmachines.ai/news/inkling-2-mini/).
+Its behavior would require a separate experiment. This pilot used the fixed-three-pass production checkpoint throughout.
+
 ## A concrete lens proposal
 
 Start with the separately normalized bank pair at a loop boundary.
 Fit a separate averaged Jacobian for each remaining loop horizon.
 Keep source-token and target-token averaging explicit.
 Compare this with maps that freeze routing coefficients during the backward pass.
+Every receiving layer reads the bank again, so a fitting implementation must include every such use.
+Hooking one receiving layer's message alone would omit other paths from the same persistent state.
 
 For a message m and current input x, Inkling's gate is:
 

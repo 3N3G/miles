@@ -28,3 +28,28 @@ Cause: the pilot softcapped BF16 head outputs. Native inference casts head outpu
 Repair: use the same FP32 softcap and recompute the final reader with the original full-sequence shape.
 The model, prompts, weights, and interventions are unchanged. Preserve `state-scale-v1` and run the repair in `state-scale-v2`.
 This is a measurement-code repair, not evidence about Inkling's behavior.
+
+## Completed stages
+
+| Job | Stage | Scheduler result | Elapsed |
+|---|---|---|---|
+| 536316 | First native-readout check | FAILED, 1:0 | 64 s |
+| 536317 | Repaired forward and intervention pilot | COMPLETED, 0:0 | 39 s |
+| 536326 | Matched saved-bank readouts | COMPLETED, 0:0 | 12 s |
+| 536342 | Plain-completion capability checks | COMPLETED, 0:0 | 62 s |
+| 536354 | Official-chat formatting diagnostic | COMPLETED, 0:0 | 79 s |
+
+Total accepted allocation time was 256 seconds, with at most one owned GPU job running at once.
+These terminal states were read with `sacct`; they are not claims about any other session's jobs.
+
+The chat diagnostic initially used ID 200003 as an extra stop token. The checkpoint defines it as the tool-message header.
+The actual text-message boundary is ID 200010. Saved raw streams remain unchanged.
+The France stream includes a later channel after its completed text answer. Interpret only the first text block.
+`src/chat_check.py` now derives both stop IDs from the tokenizer. No main pilot result depends on this correction.
+
+All five run stages were uploaded using `push-run inkling-interp` to the configured private dataset.
+The immutable archive revision and verified file inventories are in `evidence/artifact_archives.json`.
+Model weights and the small gate-weight extract were omitted. Recorded inputs, logits, readouts, completions, and runtime logs were retained.
+
+The human-facing `REPORT.md` and `DETAILS.md` are local drafts for user review.
+The user requires results review before external reporting. Do not publish those drafts without that review.

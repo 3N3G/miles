@@ -4,20 +4,32 @@
   "sources": [],
   "evidence": [
     {
-      "path": "PLAN.md",
-      "label": "Bounded diagnostic plan"
+      "path": "evidence/pilot_summary.json",
+      "label": "Measured results and qualifications"
     },
     {
-      "path": "src/pilot.py",
-      "label": "Forward and cross-loop intervention code"
+      "path": "LENS_CRITERIA.md",
+      "label": "Primary literature and lens criteria"
     },
     {
-      "path": "evidence/pilot_items.json",
-      "label": "Frozen development selection"
+      "path": "FIXED_POINTS.md",
+      "label": "Full-state recurrence and local gate derivation"
+    },
+    {
+      "path": "figures/scale_vs_direction.png",
+      "label": "All causal scale and direction controls"
+    },
+    {
+      "path": "evidence/artifact_archives.json",
+      "label": "Verified immutable private archives"
     },
     {
       "path": "OPERATIONS.md",
-      "label": "Session and runtime record"
+      "label": "Session, run receipts, failures, and draft-report status"
+    },
+    {
+      "path": "QUESTIONS.md",
+      "label": "Remaining competition contract and next-stage decisions"
     }
   ],
   "jobs": [
@@ -34,7 +46,17 @@
     {
       "id": "536326",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "COMPLETED"
+    },
+    {
+      "id": "536342",
+      "cluster": "hpcfund",
+      "status": "COMPLETED"
+    },
+    {
+      "id": "536354",
+      "cluster": "hpcfund",
+      "status": "COMPLETED"
     }
   ],
   "sessions": [
@@ -78,15 +100,22 @@
       "actor": "codex",
       "summary": "Completed 16 validated forwards and 44 interventions; started saved-bank readout comparison",
       "revision": 4
+    },
+    {
+      "id": "284a83da-efa3-4538-812f-40ceb8bb69a3",
+      "at": "2026-11-21T08:14:35.678717Z",
+      "actor": "codex",
+      "summary": "Completed exploratory research, verified all GPU terminal states and private archives, and prepared standalone reports for user review",
+      "revision": 5
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Find and explain an evidence-backed property of Inkling 2 Mini relevant to building a causally useful lens.",
-  "state": "running",
-  "summary": "The repaired pilot completed 16 prompts and 44 interventions. Every native-logit check was exact. Independent bank rescaling preserved all tested top predictions, while directional changes were larger. Analyzed the direct message path through a rank-64 gate.",
-  "nextAction": "Finish the matched readout comparison, calculate the gate nullspace control, and write a standalone report with limits.",
+  "state": "finished",
+  "summary": "Completed 16 validated forwards, 44 interventions, saved-bank readout comparisons, and completion/format checks. Scale and direction had different causal effects. A rank-64 controller did not impose a rank-64 message path. Simple readout changes showed no improvement on the capability-checked subset. Standalone reports are local review drafts.",
+  "nextAction": "Review local REPORT.md and DETAILS.md. The next lens-fitting experiment needs the user's research decision and a new approved plan.",
   "owner": "Codex",
-  "revision": 4,
-  "updatedAt": "2026-11-21T07:52:07.579291Z"
+  "revision": 5,
+  "updatedAt": "2026-11-21T08:14:35.678717Z"
 }

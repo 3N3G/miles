@@ -1,0 +1,10 @@
+{
+  "item": "firstletter-populous-country",
+  "frozen_prompt": "Fact: The first letter of the name of the world's most populous country is ",
+  "frozen_bridge": "China",
+  "frozen_target": "C",
+  "current_answer": "India, I",
+  "source": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf",
+  "action": "Preserve the frozen item. Flag factual staleness. Do not treat its China recovery as evidence of correct reasoning. Any exclusion is a post hoc sensitivity analysis.",
+  "scope": "This is a public source-bank item used in our pilot. The unreleased official challenge evaluation was not inspected."
+}

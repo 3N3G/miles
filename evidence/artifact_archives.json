@@ -1,0 +1,42 @@
+[
+  {
+    "stage": "state-scale-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f/inkling-interp/state-scale-v1"
+  },
+  {
+    "stage": "state-scale-v2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f",
+    "private": true,
+    "files": 35,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f/inkling-interp/state-scale-v2"
+  },
+  {
+    "stage": "read-banks",
+    "repo": "3N3G/internalization-runs",
+    "revision": "a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f/inkling-interp/read-banks"
+  },
+  {
+    "stage": "behavior-check",
+    "repo": "3N3G/internalization-runs",
+    "revision": "a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f/inkling-interp/behavior-check"
+  },
+  {
+    "stage": "chat-format-check",
+    "repo": "3N3G/internalization-runs",
+    "revision": "a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f/inkling-interp/chat-format-check"
+  }
+]

@@ -7,7 +7,7 @@ from pathlib import Path
 import torch
 from transformers import AutoModelForImageTextToText, AutoTokenizer
 
-from pilot import MODEL, REVISION, baseline, token_list
+from pilot import MODEL, REVISION, baseline
 
 
 def main():
@@ -16,6 +16,7 @@ def main():
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     tokenizer = AutoTokenizer.from_pretrained(MODEL, revision=REVISION)
+    stop_ids = {tokenizer.convert_tokens_to_ids(t) for t in ["<|content_model_end_sampling|>", "<|end_message|>"]}
     model = AutoModelForImageTextToText.from_pretrained(MODEL, revision=REVISION, dtype=torch.bfloat16, device_map={"": "cuda:0"}).eval()
     selected = {"control-france", "control-spider", "chem-photosynthesis-Z", "dbl-armistice-antonym", "firstletter-populous-country", "firstletter-greatwall-country"}
     rows = []
@@ -33,7 +34,7 @@ def main():
                     logits = model(input_ids=ids, use_cache=False).logits[0, -1].float()
                 token = int(logits.argmax())
                 generated.append(token)
-                if token in [200006, 200003]:
+                if token in stop_ids:
                     break
                 ids = torch.cat([ids, ids.new_tensor([[token]])], dim=-1)
             row = {"name": item["name"], "prompt": item["prompt"], "rendered_prompt": rendered, "format": "official chat template, default effort 0.9, then explicit assistant text-channel prefix", "generated_ids": generated, "generated_text": tokenizer.decode(generated), "readouts": read}

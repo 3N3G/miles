@@ -1,0 +1,35 @@
+{
+  "method": "Trim the saved stream at the checkpoint-defined text-message boundary, ID 200010. No model was rerun.",
+  "rows": [
+    {
+      "name": "control-france",
+      "first_text_block": "The capital of France is Paris.",
+      "extra_channel_present": true
+    },
+    {
+      "name": "control-spider",
+      "first_text_block": "The number of legs on the animal that spins webs is **8**.\n\nThe animal that spins webs is a spider, and ",
+      "extra_channel_present": false
+    },
+    {
+      "name": "chem-photosynthesis-Z",
+      "first_text_block": "The atomic number of the gas that plants release during photosynthesis is **8**.\n\nPlants release **oxygen (O\u2082)** during photosynthesis,",
+      "extra_channel_present": false
+    },
+    {
+      "name": "firstletter-populous-country",
+      "first_text_block": "The first letter of the name of the world's most populous country is **I**.\n\nThe world's most populous country is India,",
+      "extra_channel_present": false
+    },
+    {
+      "name": "firstletter-greatwall-country",
+      "first_text_block": "The first letter of the name of the country that built the Great Wall is **C**.\n\nThe Great Wall was built primarily in **China**, and",
+      "extra_channel_present": false
+    },
+    {
+      "name": "dbl-armistice-antonym",
+      "first_text_block": "The antonym of what an armistice ends is \"war\" or \"hostilities.\" An armistice is a temporary cessation of fighting,",
+      "extra_channel_present": false
+    }
+  ]
+}
