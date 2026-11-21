@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Medium finished: 28 graded finals all zero, four missing finals. Automatic RL submission stopped. Easy remains a varied-reward candidate. Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: User decision: qualify easy with actual Luna empty-answer grades for recorded caps, or retain the strict 32-nonempty-finals requirement. No RL job is queued.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Medium finished with 28 zero grades and four missing finals; no RL job is queued Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: User decision: qualify easy using actual Luna empty-answer grades for recorded caps, or retain the strict 32-nonempty-finals requirement.
 
 ## Finished
 

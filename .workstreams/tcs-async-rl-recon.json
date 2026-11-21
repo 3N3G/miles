@@ -1688,15 +1688,22 @@
       "actor": "codex",
       "summary": "Reviewed the constant-zero medium group and identified the remaining easy qualification decision",
       "revision": 133
+    },
+    {
+      "id": "494579d8-ea37-4338-b95d-6c7ced9705e7",
+      "at": "2026-11-21T06:35:08.517957Z",
+      "actor": "codex",
+      "summary": "Medium finished with 28 zero grades and four missing finals; no RL job is queued",
+      "revision": 134
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "needs-you",
-  "summary": "Medium finished: 28 graded finals all zero, four missing finals. Automatic RL submission stopped. Easy remains a varied-reward candidate.",
-  "nextAction": "User decision: qualify easy with actual Luna empty-answer grades for recorded caps, or retain the strict 32-nonempty-finals requirement. No RL job is queued.",
+  "summary": "Medium finished with 28 zero grades and four missing finals; no RL job is queued",
+  "nextAction": "User decision: qualify easy using actual Luna empty-answer grades for recorded caps, or retain the strict 32-nonempty-finals requirement.",
   "owner": "Codex",
-  "revision": 133,
-  "updatedAt": "2026-11-21T06:34:28.424090Z"
+  "revision": 134,
+  "updatedAt": "2026-11-21T06:35:08.517957Z"
 }
