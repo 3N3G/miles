@@ -25,7 +25,7 @@ def features(model, tokenizer, fits, method, seed, jacobian=None, source_country
         stats = {k: torch.tensor(maps[prefix + k], device="cuda", dtype=torch.float32) for k in ["mx", "sx", "my", "sy"]}
         if method.startswith("j_"):
             assert jacobian is not None
-            site = 41 if visit == 41 else 35
+            site = visit if method == "j_native" else 41 if visit == 41 else 35
             source_row = torch.tensor(jacobian[f"seed_{seed}_v{site}_{source_country}"], device="cuda")
             target_row = torch.tensor(jacobian[f"seed_{seed}_v{site}_{target_country}"], device="cuda")
             if method != "j_raw":
