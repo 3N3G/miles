@@ -1,0 +1,2783 @@
+{
+  "scope": "Strict validity requires both original and direct counterfactual native inputs to answer as expected. Fit seeds and random seeds are not additional independent cases.",
+  "results": [
+    {
+      "run": "country-transfer-all-v1",
+      "method": "j_unit",
+      "fit_seed": 0,
+      "dose": 0.5,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 0,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": null,
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.667043685913086
+            },
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 24.19219207763672
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 23.924570083618164
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 23.74012565612793
+            }
+          ],
+          "source_probability": 0.5939244031906128,
+          "target_probability": 0.049990009516477585
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.968189239501953
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.448509216308594
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            }
+          ],
+          "source_probability": 0.3477638363838196,
+          "target_probability": 0.030439790338277817
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.93285369873047
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.27903175354004
+            }
+          ],
+          "source_probability": 0.5698396563529968,
+          "target_probability": 0.0022339799907058477
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.91985321044922
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.37790870666504
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.009639739990234
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.85499382019043
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 24.77605438232422
+            }
+          ],
+          "source_probability": 0.3852955400943756,
+          "target_probability": 0.0019034546567127109
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-all-v1",
+      "method": "j_unit",
+      "fit_seed": 0,
+      "dose": 1,
+      "valid_cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital"
+      ],
+      "wilson_95_descriptive": [
+        0.1500389891521544,
+        0.8499610108478456
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        0.0,
+        1.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.50611114501953
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 23.83296012878418
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 23.64606285095215
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 23.40543556213379
+            },
+            {
+              "id": 150218,
+              "text": " Be",
+              "logit": 23.25725555419922
+            }
+          ],
+          "source_probability": 0.021978111937642097,
+          "target_probability": 0.5954045057296753
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.667043685913086
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.51811981201172
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.93285369873047
+            }
+          ],
+          "source_probability": 0.021066032350063324,
+          "target_probability": 0.29895147681236267
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.19219207763672
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            }
+          ],
+          "source_probability": 0.5452284812927246,
+          "target_probability": 0.01788775809109211
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.870786666870117
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.009639739990234
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.93285369873047
+            }
+          ],
+          "source_probability": 0.3528120815753937,
+          "target_probability": 0.0029278984293341637
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-all-v1",
+      "method": "j_unit",
+      "fit_seed": 0,
+      "dose": 2,
+      "valid_cases": 4,
+      "swaps": 4,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital",
+        "china-explicit-capital",
+        "china-unspoken-capital"
+      ],
+      "wilson_95_descriptive": [
+        0.5101091635454165,
+        1.0
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        1.0,
+        1.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.337909698486328
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 23.64606285095215
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 23.40543556213379
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 23.356361389160156
+            }
+          ],
+          "source_probability": 0.00013508093252312392,
+          "target_probability": 0.5809720754623413
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.7191219329834
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.85499382019043
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 24.696022033691406
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 1.187003272207221e-05,
+          "target_probability": 0.36837756633758545
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.015810012817383
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.27903175354004
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.27903175354004
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.19219207763672
+            }
+          ],
+          "source_probability": 0.006154851522296667,
+          "target_probability": 0.5191133618354797
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.7191219329834
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.93285369873047
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.016978781670331955,
+          "target_probability": 0.36693668365478516
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-all-v1",
+      "method": "j_unit",
+      "fit_seed": 1,
+      "dose": 0.5,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 0,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": null,
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.667043685913086
+            },
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 24.19219207763672
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 23.74012565612793
+            }
+          ],
+          "source_probability": 0.5825146436691284,
+          "target_probability": 0.049028877168893814
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.015810012817383
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.721115112304688
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.347457617521286,
+          "target_probability": 0.026678454130887985
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.009639739990234
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.532623291015625
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.449237823486328
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.449237823486328
+            }
+          ],
+          "source_probability": 0.5525144338607788,
+          "target_probability": 0.0022972584702074528
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.870786666870117
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.51811981201172
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.85499382019043
+            }
+          ],
+          "source_probability": 0.34941938519477844,
+          "target_probability": 0.0019251445773988962
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-all-v1",
+      "method": "j_unit",
+      "fit_seed": 1,
+      "dose": 1,
+      "valid_cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital"
+      ],
+      "wilson_95_descriptive": [
+        0.1500389891521544,
+        0.8499610108478456
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        0.0,
+        1.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.50611114501953
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 23.83296012878418
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 23.64606285095215
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 23.40543556213379
+            },
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 23.30696678161621
+            }
+          ],
+          "source_probability": 0.024304131045937538,
+          "target_probability": 0.5959112048149109
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.667043685913086
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.019129792228341103,
+          "target_probability": 0.2971857488155365
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.154447555541992
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            }
+          ],
+          "source_probability": 0.5698707699775696,
+          "target_probability": 0.014777927659451962
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.870786666870117
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.306304931640625
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.93285369873047
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            }
+          ],
+          "source_probability": 0.3677677512168884,
+          "target_probability": 0.002150474116206169
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-all-v1",
+      "method": "j_unit",
+      "fit_seed": 1,
+      "dose": 2,
+      "valid_cases": 4,
+      "swaps": 4,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital",
+        "china-explicit-capital",
+        "china-unspoken-capital"
+      ],
+      "wilson_95_descriptive": [
+        0.5101091635454165,
+        1.0
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        1.0,
+        1.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.39480209350586
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.19219207763672
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 23.64606285095215
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 23.55075454711914
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 23.40543556213379
+            }
+          ],
+          "source_probability": 0.00013681483687832952,
+          "target_probability": 0.575033962726593
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.820981979370117
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.85499382019043
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 24.696022033691406
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.696022033691406
+            }
+          ],
+          "source_probability": 2.068358844553586e-05,
+          "target_probability": 0.38836339116096497
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.91985321044922
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.009639739990234
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            }
+          ],
+          "source_probability": 0.006487781647592783,
+          "target_probability": 0.5248966217041016
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.61419105529785
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.93285369873047
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.696022033691406
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.532623291015625
+            }
+          ],
+          "source_probability": 0.021495981141924858,
+          "target_probability": 0.34697821736335754
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-all-v1",
+      "method": "j_unit",
+      "fit_seed": 2,
+      "dose": 0.5,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 0,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": null,
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.61419105529785
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 23.924570083618164
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 23.64606285095215
+            }
+          ],
+          "source_probability": 0.5929333567619324,
+          "target_probability": 0.04406927898526192
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.968189239501953
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.448509216308594
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.35240280628204346,
+          "target_probability": 0.02837844379246235
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.371999740600586
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.009639739990234
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.449237823486328
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.36471176147461
+            }
+          ],
+          "source_probability": 0.5686222910881042,
+          "target_probability": 0.0022665972355753183
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.91985321044922
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.37790870666504
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.93285369873047
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.85499382019043
+            }
+          ],
+          "source_probability": 0.3806644678115845,
+          "target_probability": 0.0017704414203763008
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-all-v1",
+      "method": "j_unit",
+      "fit_seed": 2,
+      "dose": 1,
+      "valid_cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital"
+      ],
+      "wilson_95_descriptive": [
+        0.1500389891521544,
+        0.8499610108478456
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        0.0,
+        1.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.50611114501953
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 23.83296012878418
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 23.64606285095215
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 23.40543556213379
+            },
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 23.25725555419922
+            }
+          ],
+          "source_probability": 0.02330460585653782,
+          "target_probability": 0.6005263328552246
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.667043685913086
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.37790870666504
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.93285369873047
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.93285369873047
+            }
+          ],
+          "source_probability": 0.022318601608276367,
+          "target_probability": 0.3167271316051483
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.85499382019043
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.19219207763672
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.19219207763672
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            }
+          ],
+          "source_probability": 0.5389754176139832,
+          "target_probability": 0.01768314465880394
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.870786666870117
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.306304931640625
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.009639739990234
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.93285369873047
+            }
+          ],
+          "source_probability": 0.34871599078178406,
+          "target_probability": 0.00243296567350626
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-all-v1",
+      "method": "j_unit",
+      "fit_seed": 2,
+      "dose": 2,
+      "valid_cases": 4,
+      "swaps": 4,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital",
+        "china-explicit-capital",
+        "china-unspoken-capital"
+      ],
+      "wilson_95_descriptive": [
+        0.5101091635454165,
+        1.0
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        1.0,
+        1.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.337909698486328
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 23.59856414794922
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 23.454193115234375
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 23.30696678161621
+            }
+          ],
+          "source_probability": 0.00014678342267870903,
+          "target_probability": 0.582798957824707
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 26.7191219329834
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.85499382019043
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 24.696022033691406
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.532623291015625
+            }
+          ],
+          "source_probability": 1.3429244972940069e-05,
+          "target_probability": 0.38183924555778503
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.968189239501953
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.27903175354004
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.27903175354004
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.19219207763672
+            }
+          ],
+          "source_probability": 0.006035664584487677,
+          "target_probability": 0.5124874711036682
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 26.7191219329834
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.009639739990234
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.85499382019043
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.01482950709760189,
+          "target_probability": 0.3525294065475464
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-late-v1",
+      "method": "j_unit",
+      "fit_seed": 0,
+      "dose": 0.5,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 0,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": null,
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 151107,
+              "text": " ____",
+              "logit": 23.454193115234375
+            }
+          ],
+          "source_probability": 0.7183522582054138,
+          "target_probability": 0.0004665904270950705
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.61213493347168
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.78687286376953
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.009639739990234
+            }
+          ],
+          "source_probability": 0.4962661862373352,
+          "target_probability": 0.00026043789694085717
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.696022033691406
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.532623291015625
+            }
+          ],
+          "source_probability": 0.5148819088935852,
+          "target_probability": 0.0003118698368780315
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.3519108295440674,
+          "target_probability": 0.00022536097094416618
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-late-v1",
+      "method": "j_unit",
+      "fit_seed": 0,
+      "dose": 1,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 151107,
+              "text": " ____",
+              "logit": 23.50263023376465
+            }
+          ],
+          "source_probability": 0.7153695821762085,
+          "target_probability": 0.0009133415296673775
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.53452491760254
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.851696014404297
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.009639739990234
+            }
+          ],
+          "source_probability": 0.4670664072036743,
+          "target_probability": 0.0006715551717206836
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.5111050009727478,
+          "target_probability": 0.0002689927350729704
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.160045623779297
+            }
+          ],
+          "source_probability": 0.3401191234588623,
+          "target_probability": 0.0001312052772846073
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-late-v1",
+      "method": "j_unit",
+      "fit_seed": 0,
+      "dose": 2,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.19928550720215
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 151107,
+              "text": " ____",
+              "logit": 23.50263023376465
+            }
+          ],
+          "source_probability": 0.6839529275894165,
+          "target_probability": 0.004087837412953377
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.243450164794922
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.915592193603516
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.3874639868736267,
+          "target_probability": 0.004531692247837782
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.5076140761375427,
+          "target_probability": 0.00020076159853488207
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.306304931640625
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.160045623779297
+            }
+          ],
+          "source_probability": 0.3378656506538391,
+          "target_probability": 3.5109354939777404e-05
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-late-v1",
+      "method": "j_unit",
+      "fit_seed": 1,
+      "dose": 0.5,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 0,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": null,
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 151107,
+              "text": " ____",
+              "logit": 23.454193115234375
+            }
+          ],
+          "source_probability": 0.720619797706604,
+          "target_probability": 0.0004680631682276726
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.61213493347168
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.78687286376953
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.009639739990234
+            }
+          ],
+          "source_probability": 0.4945499300956726,
+          "target_probability": 0.0002595371042843908
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.696022033691406
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.5142320990562439,
+          "target_probability": 0.0003114757128059864
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.35215556621551514,
+          "target_probability": 0.00024207534443121403
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-late-v1",
+      "method": "j_unit",
+      "fit_seed": 1,
+      "dose": 1,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 151107,
+              "text": " ____",
+              "logit": 23.50263023376465
+            }
+          ],
+          "source_probability": 0.7152600288391113,
+          "target_probability": 0.0008549892227165401
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.53452491760254
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.851696014404297
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.009639739990234
+            }
+          ],
+          "source_probability": 0.4669683277606964,
+          "target_probability": 0.0006714139599353075
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.5130831599235535,
+          "target_probability": 0.00027004117146134377
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.160045623779297
+            }
+          ],
+          "source_probability": 0.3401292860507965,
+          "target_probability": 0.00013120929361321032
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-late-v1",
+      "method": "j_unit",
+      "fit_seed": 1,
+      "dose": 2,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.243450164794922
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 151107,
+              "text": " ____",
+              "logit": 23.50263023376465
+            }
+          ],
+          "source_probability": 0.6915515065193176,
+          "target_probability": 0.0035240924917161465
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.243450164794922
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.915592193603516
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.3853774070739746,
+          "target_probability": 0.004052545875310898
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.5069000720977783,
+          "target_probability": 0.00020047920406796038
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.3411346673965454,
+          "target_probability": 3.841458965325728e-05
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-late-v1",
+      "method": "j_unit",
+      "fit_seed": 2,
+      "dose": 0.5,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 0,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": null,
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 151107,
+              "text": " ____",
+              "logit": 23.454193115234375
+            }
+          ],
+          "source_probability": 0.7174004912376404,
+          "target_probability": 0.0004659720871131867
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.61213493347168
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.78687286376953
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.009639739990234
+            }
+          ],
+          "source_probability": 0.49412742257118225,
+          "target_probability": 0.00025931542040780187
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.696022033691406
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.5137217044830322,
+          "target_probability": 0.0003111672413069755
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.35131338238716125,
+          "target_probability": 0.0002249851677333936
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-late-v1",
+      "method": "j_unit",
+      "fit_seed": 2,
+      "dose": 1,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.014970779418945
+            },
+            {
+              "id": 151107,
+              "text": " ____",
+              "logit": 23.50263023376465
+            }
+          ],
+          "source_probability": 0.7153884172439575,
+          "target_probability": 0.0008551425416953862
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.53452491760254
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.851696014404297
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.009639739990234
+            }
+          ],
+          "source_probability": 0.4650668799877167,
+          "target_probability": 0.0006686605047434568
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.5108243227005005,
+          "target_probability": 0.00026884503313340247
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.108928680419922
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.65441131591797
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.160045623779297
+            }
+          ],
+          "source_probability": 0.350477397441864,
+          "target_probability": 0.00012909440556541085
+        }
+      ]
+    },
+    {
+      "run": "country-transfer-late-v1",
+      "method": "j_unit",
+      "fit_seed": 2,
+      "dose": 2,
+      "valid_cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "wilson_95_descriptive": [
+        0.0,
+        0.48989083645458353
+      ],
+      "matched_random_trials": 12,
+      "matched_random_swaps": 0,
+      "paired_case_bootstrap_difference_95": [
+        0.0,
+        0.0
+      ],
+      "bootstrap_warning": "All-success small samples produce degenerate bootstrap intervals. Four templates are related, not four independent semantic discoveries.",
+      "examples": [
+        {
+          "name": "germany-explicit-capital",
+          "prompt": "Fact: The capital of Germany is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.243450164794922
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 24.36471176147461
+            },
+            {
+              "id": 167815,
+              "text": " ________",
+              "logit": 24.19219207763672
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 24.10417366027832
+            },
+            {
+              "id": 151107,
+              "text": " ____",
+              "logit": 23.55075454711914
+            }
+          ],
+          "source_probability": 0.6875829696655273,
+          "target_probability": 0.0037124326918274164
+        },
+        {
+          "name": "germany-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Brandenburg Gate is",
+          "top5": [
+            {
+              "id": 154328,
+              "text": " Berlin",
+              "logit": 27.28695297241211
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.915592193603516
+            },
+            {
+              "id": 149876,
+              "text": " the",
+              "logit": 25.721115112304688
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 25.160045623779297
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.085365295410156
+            }
+          ],
+          "source_probability": 0.39234739542007446,
+          "target_probability": 0.004393424838781357
+        },
+        {
+          "name": "china-explicit-capital",
+          "prompt": "Fact: The capital of China is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.32979965209961
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.085365295410156
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 151015,
+              "text": " called",
+              "logit": 24.77605438232422
+            },
+            {
+              "id": 154706,
+              "text": " located",
+              "logit": 24.61488151550293
+            }
+          ],
+          "source_probability": 0.5075201392173767,
+          "target_probability": 0.00020072444749530405
+        },
+        {
+          "name": "china-unspoken-capital",
+          "prompt": "Fact: The capital of the country containing the Great Wall is",
+          "top5": [
+            {
+              "id": 187742,
+              "text": " Beijing",
+              "logit": 27.062719345092773
+            },
+            {
+              "id": 149935,
+              "text": " not",
+              "logit": 25.586750030517578
+            },
+            {
+              "id": 149881,
+              "text": " in",
+              "logit": 25.306304931640625
+            },
+            {
+              "id": 220,
+              "text": " ",
+              "logit": 25.233688354492188
+            },
+            {
+              "id": 150056,
+              "text": " also",
+              "logit": 25.160045623779297
+            }
+          ],
+          "source_probability": 0.33721086382865906,
+          "target_probability": 3.504128471831791e-05
+        }
+      ]
+    }
+  ]
+}
