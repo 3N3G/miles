@@ -128,5 +128,32 @@
     "files": 3,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/3c577f8ca522aba4f833a9bde38f25553faedd8b/inkling-interp/country-transfer-loop-v1",
     "verified_at": "2026-11-21T16:52:53.319745+00:00"
+  },
+  {
+    "stage": "transport-final-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "89c1f8b19d8f832718de53a6472760f3ca7e16e9",
+    "private": true,
+    "files": 6,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/89c1f8b19d8f832718de53a6472760f3ca7e16e9/inkling-interp/transport-final-v1",
+    "verified_at": "2026-11-21T17:05:56.159922+00:00"
+  },
+  {
+    "stage": "long-loop-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "e51f9c687babacbc0718ec1e46eefdb32e36d013",
+    "private": true,
+    "files": 14,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/e51f9c687babacbc0718ec1e46eefdb32e36d013/inkling-interp/long-loop-v1",
+    "verified_at": "2026-11-21T17:06:08.061395+00:00"
+  },
+  {
+    "stage": "mixture-transport-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "8d1cc81608c2b912b68b318451f8abd051c87dd2",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/8d1cc81608c2b912b68b318451f8abd051c87dd2/inkling-interp/mixture-transport-v1",
+    "verified_at": "2026-11-21T17:06:17.266556+00:00"
   }
 ]
