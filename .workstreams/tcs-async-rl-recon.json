@@ -1706,15 +1706,22 @@
       "actor": "codex",
       "summary": "Recorded the user-selected easy subset and verified its exact size",
       "revision": 135
+    },
+    {
+      "id": "c446dccc-918b-4c82-b33f-e47bfc25e458",
+      "at": "2026-11-21T07:01:36.881294Z",
+      "actor": "codex",
+      "summary": "Easy-only metadata verified: 20 questions across 17 papers; cap handling remains open",
+      "revision": 136
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "needs-you",
-  "summary": "User selected easy-only RL: 20 questions across 17 papers, including 12 proof-writing and eight proof-strategy questions. Cap handling remains undecided.",
-  "nextAction": "Resolve how to handle recorded 90k caps, then prepare the easy-only training plan and complete the bounded runtime check. No RL job is queued.",
+  "summary": "Easy-only metadata verified: 20 questions across 17 papers; cap handling remains open",
+  "nextAction": "Resolve the recorded-cap choice, then prepare easy-only RL under the existing bounded runtime authorization. Full-subset duration is still unspecified.",
   "owner": "Codex",
-  "revision": 135,
-  "updatedAt": "2026-11-21T07:00:13.904700Z"
+  "revision": 136,
+  "updatedAt": "2026-11-21T07:01:36.881294Z"
 }

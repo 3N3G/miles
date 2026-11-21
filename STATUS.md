@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User selected easy-only RL: 20 questions across 17 papers, including 12 proof-writing and eight proof-strategy questions. Cap handling remains undecided. Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: Resolve how to handle recorded 90k caps, then prepare the easy-only training plan and complete the bounded runtime check. No RL job is queued.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy-only metadata verified: 20 questions across 17 papers; cap handling remains open Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: Resolve the recorded-cap choice, then prepare easy-only RL under the existing bounded runtime authorization. Full-subset duration is still unspecified.
 
 ## Finished
 
