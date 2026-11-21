@@ -1,0 +1,589 @@
+{
+  "scope": "Existing 16 pilot prompts. Passes 1 and 2 used as input, pass 3 used only as evaluation target. No labels used.",
+  "rows": [
+    {
+      "name": "b3-mh-cuckoo-mountains",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.7929627072503861
+    },
+    {
+      "name": "b3-mh-cuckoo-mountains",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.7123772239427527
+    },
+    {
+      "name": "b3-mh-cuckoo-mountains",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.6407600345379973
+    },
+    {
+      "name": "b3-mh-cuckoo-mountains",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.23041844889294272
+    },
+    {
+      "name": "b3-mh-cuckoo-mountains",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.3064890203760642
+    },
+    {
+      "name": "b3-mh-cuckoo-mountains",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.31536189857135805
+    },
+    {
+      "name": "b3-mh-longestriver-sea",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.6395891861742309
+    },
+    {
+      "name": "b3-mh-longestriver-sea",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.3792952748508648
+    },
+    {
+      "name": "b3-mh-longestriver-sea",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.2441180541058109
+    },
+    {
+      "name": "b3-mh-longestriver-sea",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.3259327406745262
+    },
+    {
+      "name": "b3-mh-longestriver-sea",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.3700846041663108
+    },
+    {
+      "name": "b3-mh-longestriver-sea",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.3730712977459746
+    },
+    {
+      "name": "basketball-players",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.9027798689100958
+    },
+    {
+      "name": "basketball-players",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.8075071407554426
+    },
+    {
+      "name": "basketball-players",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.76539112583752
+    },
+    {
+      "name": "basketball-players",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.19853248628093587
+    },
+    {
+      "name": "basketball-players",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.22133970979997303
+    },
+    {
+      "name": "basketball-players",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.22263346009382526
+    },
+    {
+      "name": "bf-relativity-firstname",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.6183117236925194
+    },
+    {
+      "name": "bf-relativity-firstname",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.43113637451912595
+    },
+    {
+      "name": "bf-relativity-firstname",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.33318574233934595
+    },
+    {
+      "name": "bf-relativity-firstname",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.26833559046902544
+    },
+    {
+      "name": "bf-relativity-firstname",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.3056900394245128
+    },
+    {
+      "name": "bf-relativity-firstname",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.3082617076039474
+    },
+    {
+      "name": "bf-sphinx-river",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.6747404326309756
+    },
+    {
+      "name": "bf-sphinx-river",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.5275628172405646
+    },
+    {
+      "name": "bf-sphinx-river",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.46709434751375284
+    },
+    {
+      "name": "bf-sphinx-river",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.3093516974418354
+    },
+    {
+      "name": "bf-sphinx-river",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.3480493061003298
+    },
+    {
+      "name": "bf-sphinx-river",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.3504131846034915
+    },
+    {
+      "name": "chem-photosynthesis-Z",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.683086449142623
+    },
+    {
+      "name": "chem-photosynthesis-Z",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.4127746805851553
+    },
+    {
+      "name": "chem-photosynthesis-Z",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.17450276098966838
+    },
+    {
+      "name": "chem-photosynthesis-Z",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.0824722064422386
+    },
+    {
+      "name": "chem-photosynthesis-Z",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.12907051815860124
+    },
+    {
+      "name": "chem-photosynthesis-Z",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.1349514042719203
+    },
+    {
+      "name": "control-france",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.9058147723613452
+    },
+    {
+      "name": "control-france",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.7637211785227305
+    },
+    {
+      "name": "control-france",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.6904899969624694
+    },
+    {
+      "name": "control-france",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.2655238467542853
+    },
+    {
+      "name": "control-france",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.31943042499428786
+    },
+    {
+      "name": "control-france",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.3247464111658569
+    },
+    {
+      "name": "control-germany",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.879094818859931
+    },
+    {
+      "name": "control-germany",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.7293588252402068
+    },
+    {
+      "name": "control-germany",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.6614534916018742
+    },
+    {
+      "name": "control-germany",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.25234199291075543
+    },
+    {
+      "name": "control-germany",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.2920598930994404
+    },
+    {
+      "name": "control-germany",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.29515031079166826
+    },
+    {
+      "name": "control-spider",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.77520060881322
+    },
+    {
+      "name": "control-spider",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.6340832307299443
+    },
+    {
+      "name": "control-spider",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.48649305356614486
+    },
+    {
+      "name": "control-spider",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.28329616215455244
+    },
+    {
+      "name": "control-spider",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.3451715430689777
+    },
+    {
+      "name": "control-spider",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.35105266186373607
+    },
+    {
+      "name": "control-square",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.7948547964663298
+    },
+    {
+      "name": "control-square",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.6294017445906088
+    },
+    {
+      "name": "control-square",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.5661231851676685
+    },
+    {
+      "name": "control-square",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.253200268547188
+    },
+    {
+      "name": "control-square",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.3087688694956704
+    },
+    {
+      "name": "control-square",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.31422065885006917
+    },
+    {
+      "name": "dbl-armistice-antonym",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.7579203814737876
+    },
+    {
+      "name": "dbl-armistice-antonym",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.7119436260332883
+    },
+    {
+      "name": "dbl-armistice-antonym",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.6528289978107766
+    },
+    {
+      "name": "dbl-armistice-antonym",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.38949546589183537
+    },
+    {
+      "name": "dbl-armistice-antonym",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.41926285996188506
+    },
+    {
+      "name": "dbl-armistice-antonym",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.4192442841215125
+    },
+    {
+      "name": "firstletter-greatwall-country",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.6405810335044918
+    },
+    {
+      "name": "firstletter-greatwall-country",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.6029226378490886
+    },
+    {
+      "name": "firstletter-greatwall-country",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.5834162063358235
+    },
+    {
+      "name": "firstletter-greatwall-country",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.22436970670362333
+    },
+    {
+      "name": "firstletter-greatwall-country",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.25382780387284487
+    },
+    {
+      "name": "firstletter-greatwall-country",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.2557505622722605
+    },
+    {
+      "name": "firstletter-populous-country",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.6344336825842993
+    },
+    {
+      "name": "firstletter-populous-country",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.5169910943380855
+    },
+    {
+      "name": "firstletter-populous-country",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.4530823516156463
+    },
+    {
+      "name": "firstletter-populous-country",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.2705277593785596
+    },
+    {
+      "name": "firstletter-populous-country",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.2662369644424678
+    },
+    {
+      "name": "firstletter-populous-country",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.26366575058736885
+    },
+    {
+      "name": "mh-w1-ice-hockey-puck",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.8599743239575897
+    },
+    {
+      "name": "mh-w1-ice-hockey-puck",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.7466243045180188
+    },
+    {
+      "name": "mh-w1-ice-hockey-puck",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.6062018631150493
+    },
+    {
+      "name": "mh-w1-ice-hockey-puck",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.2684729407238189
+    },
+    {
+      "name": "mh-w1-ice-hockey-puck",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.3307028277034407
+    },
+    {
+      "name": "mh-w1-ice-hockey-puck",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.3374698446551088
+    },
+    {
+      "name": "mh-w1-shere-khan-tiger",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.8462984588869912
+    },
+    {
+      "name": "mh-w1-shere-khan-tiger",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.7827710290855685
+    },
+    {
+      "name": "mh-w1-shere-khan-tiger",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.7240856232002437
+    },
+    {
+      "name": "mh-w1-shere-khan-tiger",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.308823358495019
+    },
+    {
+      "name": "mh-w1-shere-khan-tiger",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.3669313746052235
+    },
+    {
+      "name": "mh-w1-shere-khan-tiger",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.37215467430134497
+    },
+    {
+      "name": "nhop-soccer-element",
+      "bank": 0,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.8916408068997146
+    },
+    {
+      "name": "nhop-soccer-element",
+      "bank": 0,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.7482154931140517
+    },
+    {
+      "name": "nhop-soccer-element",
+      "bank": 0,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.6305301193787602
+    },
+    {
+      "name": "nhop-soccer-element",
+      "bank": 1,
+      "method": "hold",
+      "cosine_to_actual_pass3": 0.2318041196945553
+    },
+    {
+      "name": "nhop-soccer-element",
+      "bank": 1,
+      "method": "linear_momentum",
+      "cosine_to_actual_pass3": 0.25146315054608087
+    },
+    {
+      "name": "nhop-soccer-element",
+      "bank": 1,
+      "method": "latest_rotation",
+      "cosine_to_actual_pass3": 0.25197093348583455
+    }
+  ],
+  "means": {
+    "0:hold": 0.7685802532255332,
+    "0:linear_momentum": 0.6335429172447186,
+    "0:latest_rotation": 0.5424848096299095,
+    "1:hold": 0.26018117446598105,
+    "1:linear_momentum": 0.30216118186350693,
+    "1:latest_rotation": 0.3056324403115799
+  }
+}
