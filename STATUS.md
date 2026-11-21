@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Pinned model imports pass in the isolated ROCm runtime. AMD accepted diagnostic job 536316 after removing an unsupported Slurm GPU-resource flag. The job has a one-hour limit. Jobs: hpcfund/536316 SUBMITTED
-  Next: Monitor model conversion and native-logit controls, then analyze the actual forward and intervention outputs.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The repaired pilot completed 16 prompts and 44 interventions. Every native-logit check was exact. Independent bank rescaling preserved all tested top predictions, while directional changes were larger Jobs: hpcfund/536316 FAILED; hpcfund/536317 COMPLETED
+  Next: Finish the matched readout comparison, calculate the gate nullspace control, and write a standalone report with limits.
 
 ## Next / blocked
 

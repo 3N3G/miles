@@ -24,6 +24,16 @@
     {
       "id": "536316",
       "cluster": "hpcfund",
+      "status": "FAILED"
+    },
+    {
+      "id": "536317",
+      "cluster": "hpcfund",
+      "status": "COMPLETED"
+    },
+    {
+      "id": "536326",
+      "cluster": "hpcfund",
       "status": "SUBMITTED"
     }
   ],
@@ -61,15 +71,22 @@
       "actor": "codex",
       "summary": "Submitted authorized bounded AMD diagnostic 536316 after scheduler repair",
       "revision": 3
+    },
+    {
+      "id": "19cc546e-8ea8-4565-a913-f49d464376d3",
+      "at": "2026-11-21T07:52:07.579291Z",
+      "actor": "codex",
+      "summary": "Completed 16 validated forwards and 44 interventions; started saved-bank readout comparison",
+      "revision": 4
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Find and explain an evidence-backed property of Inkling 2 Mini relevant to building a causally useful lens.",
   "state": "running",
-  "summary": "Pinned model imports pass in the isolated ROCm runtime. AMD accepted diagnostic job 536316 after removing an unsupported Slurm GPU-resource flag. The job has a one-hour limit.",
-  "nextAction": "Monitor model conversion and native-logit controls, then analyze the actual forward and intervention outputs.",
+  "summary": "The repaired pilot completed 16 prompts and 44 interventions. Every native-logit check was exact. Independent bank rescaling preserved all tested top predictions, while directional changes were larger. Analyzed the direct message path through a rank-64 gate.",
+  "nextAction": "Finish the matched readout comparison, calculate the gate nullspace control, and write a standalone report with limits.",
   "owner": "Codex",
-  "revision": 3,
-  "updatedAt": "2026-11-21T07:45:14.719291Z"
+  "revision": 4,
+  "updatedAt": "2026-11-21T07:52:07.579291Z"
 }
