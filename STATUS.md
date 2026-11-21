@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): VM handoff is armed; medium remains pending and both live preflight controls passed Jobs: hpcfund/535170 PENDING; hpcfund/535067 COMPLETED
-  Next: Controller waits for complete medium grading, then submits and watches the approved two-update run only if the strict reward gate passes.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 535170 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.
 
 ## Next / blocked
 

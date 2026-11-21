@@ -213,6 +213,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/95435405463027e51d8e882d91e3bba933dde068/miles/rl-handoff-service-control-v1",
       "label": "Actual medium reward-service bootstrap and health control, no judge calls or GPU jobs"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/medium-check-v15-mi350",
+      "label": "Private results for AMD inference job 535170"
     }
   ],
   "evidence": [
@@ -585,7 +589,7 @@
     {
       "id": "535170",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "COMPLETED"
     },
     {
       "id": "535067",
@@ -1651,15 +1655,22 @@
       "actor": "codex",
       "summary": "VM handoff is armed; medium remains pending and both live preflight controls passed",
       "revision": 130
+    },
+    {
+      "id": "3d75c395-ba9e-49e5-ba6e-e97de85fd4aa",
+      "at": "2026-11-21T00:48:03.843648Z",
+      "actor": "codex",
+      "summary": "Imported terminal state and results for approved AMD job 535170",
+      "revision": 131
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "VM handoff is armed; medium remains pending and both live preflight controls passed",
-  "nextAction": "Controller waits for complete medium grading, then submits and watches the approved two-update run only if the strict reward gate passes.",
+  "summary": "AMD job 535170 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending.",
+  "nextAction": "Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.",
   "owner": "Codex",
-  "revision": 130,
-  "updatedAt": "2026-11-20T23:40:07.130638Z"
+  "revision": 131,
+  "updatedAt": "2026-11-21T00:48:03.843648Z"
 }
