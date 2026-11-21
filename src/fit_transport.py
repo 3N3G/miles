@@ -33,7 +33,9 @@ def score_predictions(prediction, native, items, tokens, semantic_mask, head, no
         scored = logits.masked_fill(~semantic_mask, -float("inf")) if filtered else logits
         top_ids = scored.topk(10, dim=-1).indices.tolist()
         for i, item in enumerate(items):
-            rows.append({**metadata, "name": item["item"]["name"], "filtered": filtered, "top10": [{"id": j, "text": tokens[j]} for j in top_ids[i]], "target_ids": item["target_ids"], "hit": bool(set(top_ids[i]) & set(item["target_ids"])), "capable_unspoken": item["capable_unspoken"], "eligible": bool(item["target_ids"]), "native_top1_agrees": bool(logits[i].argmax() == native[i].argmax()), "output_kl": kl[i].item()})
+            hit = bool(set(top_ids[i]) & set(item["target_ids"]))
+            distractors = [name for name, ids in item["distractor_ids"].items() if set(top_ids[i]) & set(ids)]
+            rows.append({**metadata, "name": item["item"]["name"], "filtered": filtered, "top10": [{"id": j, "text": tokens[j]} for j in top_ids[i]], "target_ids": item["target_ids"], "hit": hit, "distractors_read": distractors, "selective_hit": hit and not distractors, "has_single_token_distractors": bool(item["distractor_ids"]), "capable_unspoken": item["capable_unspoken"], "eligible": bool(item["target_ids"]), "native_top1_agrees": bool(logits[i].argmax() == native[i].argmax()), "output_kl": kl[i].item()})
     return rows
 
 
@@ -44,6 +46,7 @@ def prepare_items(outputs, tokens):
     for row in outputs:
         item = row["item"]
         row["target_ids"] = sorted({i for c in item["intermediates"] for i in token_map.get(c.casefold(), [])})
+        row["distractor_ids"] = {c: token_map[c.casefold()] for c in item.get("mc", {}).get("distractors", []) if c.casefold() in token_map}
         correct = bool(re.match(r"^[\s\"']*" + re.escape(item["target"]) + r"(?!\w)", row["generated_text"], flags=re.IGNORECASE))
         absent = all(not re.search(r"(?<!\w)" + re.escape(c) + r"(?!\w)", row["generated_text"], flags=re.IGNORECASE) for c in item["intermediates"])
         not_echo = all(not re.search(r"(?<!\w)" + re.escape(c) + r"(?!\w)", item["prompt"], flags=re.IGNORECASE) for c in item["intermediates"])
@@ -56,6 +59,7 @@ def main():
     parser.add_argument("--capture", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
+    assert (args.capture / "capture_manifest.json").exists(), "Capture has not completed"
     args.out.mkdir(parents=True, exist_ok=False)
     start = time.monotonic()
     torch.set_num_threads(4)
