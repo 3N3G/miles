@@ -4,7 +4,7 @@
   "gpu_source_commit": "8657ed5667548f649814c4ff1f1734707833ed9f",
   "approved_config": "experiments/tcs_async_rl/rl_easy_overfit_v9.json",
   "local_audit_directory": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-overfit-v9-diagnostic-20261121",
-  "private_archive_status": "pending_upload",
+  "private_archive_status": "immutable_upload_and_downloads_verified",
   "private_archive_planned_path": "miles/easy-overfit-v9-diagnostic-20261121",
   "measured": {
     "updates": 27,
@@ -57,11 +57,28 @@
     "verified_steps": 27,
     "verified_scalar_values": 1977,
     "state": "failed",
-    "original_training_run_changed": false,
-    "new_gpu_jobs": 0
+    "new_gpu_jobs": 0,
+    "gpu_experiment_configuration_changed": false
   },
   "cpu_tests_passed": 86,
   "new_gpu_jobs": 0,
   "new_judge_calls": 0,
-  "experiment_changes": []
+  "experiment_changes": [],
+  "analysis_source_commit": "10046c4ddcf194208a33a167eb580d0c1a626acc",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/4d75c0b6f168d76693f7e6680e1f3929ac199a26/miles/easy-overfit-v9-diagnostic-20261121",
+  "report_url": "https://huggingface.co/datasets/3N3G/internalization-runs/blob/4d75c0b6f168d76693f7e6680e1f3929ac199a26/miles/easy-overfit-v9-diagnostic-20261121/REPORT.md",
+  "download_verification": {
+    "immutable_commit": "4d75c0b6f168d76693f7e6680e1f3929ac199a26",
+    "sha256_verified": {
+      "REPORT.md": "d1936a449e6b8edbc150c6ba0990a650e428a11f7a1209adeb34e20719bba0eb",
+      "DETAILS.md": "327ae54a4cdfcd8aa8bcc4ac497ca7647701058cf749f821c39e662f43c64220",
+      "evidence-manifest.json": "8011d3216b7df7bd6adfb417faa057210ff285ef98b58bce92eba771ef298684",
+      "summary.json": "5f2571d9696372055a55bb7321092cd378865addb0cae8a22ae6de0436a1845f",
+      "native-metrics.json": "7f65eda731cf3920b2d8326262e88eceac82bc31c4eb011495266feb85a31743",
+      "wandb-corrected-all-metrics-readback.json": "96ba6a9fd16fb9925b5ab928082736ee63fdc166710c09642be962cfefe5984e",
+      "example-step-15.json": "70c521376499c00a82f9a8acace7d76b39c2794e9432416f6ee82c5dc8a9fd61",
+      "same-question-rewards.png": "d476807a28f7875184e748ce4bbd8d0764332c73b4a7f8051d00697398566efd"
+    }
+  },
+  "temporary_duplicate_source_bytes_evicted": 444237116
 }

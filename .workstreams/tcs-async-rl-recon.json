@@ -635,6 +635,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/vm_storage_recovery_20261121.json",
       "label": "VM cleanup, verified AMD restoration source, private audit and W&B history"
+    },
+    {
+      "path": "experiments/tcs_async_rl/RL_NOISE_AUDIT_20261121.md",
+      "label": "Reward, optimizer, async and judge diagnostic findings"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/easy_overfit_noise_audit_20261121.json",
+      "label": "Immutable full diagnostic, all metrics, examples and verified W&B repair"
     }
   ],
   "jobs": [
@@ -1976,15 +1984,22 @@
       "actor": "codex",
       "summary": "Validated every consumed answer and training token; repaired the W&B reward axis with verified readback",
       "revision": 167
+    },
+    {
+      "id": "3fbecb06-70dc-4596-b073-95052acde148",
+      "at": "2026-11-21T17:44:43.747563Z",
+      "actor": "codex",
+      "summary": "Finished and privately archived the full-metric RL diagnostic; corrected W&B data verified",
+      "revision": 168
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "running",
-  "summary": "Full diagnostic validated 864 consumed answers and 29.87M tokens against both judge orders, log-probs, loss masks, sampled support and policy spans. Seven repeated questions changed by +0.071/7 on average (4 up, 3 down). Found W&B offline-writer step collisions; all 27 corrected audit points now pass API readback.",
-  "nextAction": "Finish descriptive report, all-metric catalog, reproducible plots and private artifact archive. Keep all experiment settings unchanged. No GPU job or judge call.",
+  "state": "finished",
+  "summary": "Completed the full RL-noise audit: all 864 answers and 29.87M training tokens validate. Corrected W&B offline-writer step collisions and read back 27 rows / 1,977 scalar values. Seven repeated questions change by +0.071/7 (4 up, 3 down). Finite gradients and low local lag show no observed optimizer instability; judge calibration and frozen-policy progress remain unmeasured.",
+  "nextAction": "Review the report and choose any follow-up research plan. Current experiment settings remain unchanged. No new GPU job or judge request was made.",
   "owner": "Codex",
-  "revision": 167,
-  "updatedAt": "2026-11-21T17:32:06.262901Z"
+  "revision": 168,
+  "updatedAt": "2026-11-21T17:44:43.747563Z"
 }

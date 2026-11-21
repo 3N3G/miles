@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Full diagnostic validated 864 consumed answers and 29.87M tokens against both judge orders, log-probs, loss masks, sampled support and policy spans. Seven repeated questions changed by +0.071/7 on ave Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Finish descriptive report, all-metric catalog, reproducible plots and private artifact archive. Keep all experiment settings unchanged. No GPU job or judge call.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,5 +16,6 @@
 
 ## Finished
 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Completed the full RL-noise audit: all 864 answers and 29.87M training tokens validate. Corrected W&B offline-writer step collisions and read back 27 rows / 1,977 scalar values. Seven repeated questio Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
 - [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Moved the Inkling investigation to the separate local repository /home/ubuntu/inkling-interp at the user's request.
-- [Compare Ian's Miles fork with RadixArk](.workstreams/ian-radixark-comparison.json): Compared Ian’s fork with the pinned RadixArk snapshot. Ian added five code commits across 43 files. Findings and workstream records are now published in 3N3G/miles.
+- 1 more records in `.workstreams/`.
