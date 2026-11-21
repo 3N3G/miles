@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 536360 Jobs: hpcfund/536360 SUBMITTED; hpcfund/536321 FAILED
-  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536360 is RUNNING Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
