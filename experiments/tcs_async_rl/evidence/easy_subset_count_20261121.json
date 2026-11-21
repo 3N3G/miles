@@ -39,5 +39,6 @@
   "total_eligible_questions": 2519,
   "selection_rule": "All and only difficulty == easy in the ten eligible cohorts. No selection by observed reward.",
   "note": "Metadata-only recount from checksum-verified cached eligible Parquet shards. One of these questions has a model-generation diagnostic.",
-  "prior_easy_draw_reproduced": true
+  "prior_easy_draw_reproduced": true,
+  "private_manifest_url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/fc330069720e1136fb8f0bb11cd2460d0e38d6c8/miles/easy-subset-plan-v1"
 }
