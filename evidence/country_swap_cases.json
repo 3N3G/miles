@@ -1,0 +1,19 @@
+{
+  "source_country": "France",
+  "target_country": "Japan",
+  "purpose": "Predeclared causal validation after development-method selection. These are not official challenge test items.",
+  "cases": [
+    {"name": "eiffel-continent", "prompt": "Fact: The continent home to the country of the Eiffel Tower is", "original": "Europe", "counterfactual": "Asia", "counterfactual_prompt": "Fact: The continent home to the country of Mount Fuji is", "kind": "unspoken"},
+    {"name": "eiffel-capital", "prompt": "The capital of the country containing the Eiffel Tower is", "original": "Paris", "counterfactual": "Tokyo", "counterfactual_prompt": "The capital of the country containing Mount Fuji is", "kind": "unspoken"},
+    {"name": "eiffel-language", "prompt": "The main language spoken in the country containing the Eiffel Tower is", "original": "French", "counterfactual": "Japanese", "counterfactual_prompt": "The main language spoken in the country containing Mount Fuji is", "kind": "unspoken"},
+    {"name": "france-capital", "prompt": "The capital of France is", "original": "Paris", "counterfactual": "Tokyo", "counterfactual_prompt": "The capital of Japan is", "kind": "explicit"},
+    {"name": "france-language", "prompt": "The main language spoken in France is", "original": "French", "counterfactual": "Japanese", "counterfactual_prompt": "The main language spoken in Japan is", "kind": "explicit"},
+    {"name": "france-continent", "prompt": "The continent containing France is", "original": "Europe", "counterfactual": "Asia", "counterfactual_prompt": "The continent containing Japan is", "kind": "explicit"},
+    {"name": "japan-capital", "prompt": "The capital of Japan is", "original": "Tokyo", "counterfactual": "Paris", "counterfactual_prompt": "The capital of France is", "kind": "reverse"},
+    {"name": "japan-language", "prompt": "The main language spoken in Japan is", "original": "Japanese", "counterfactual": "French", "counterfactual_prompt": "The main language spoken in France is", "kind": "reverse"},
+    {"name": "japan-continent", "prompt": "The continent containing Japan is", "original": "Asia", "counterfactual": "Europe", "counterfactual_prompt": "The continent containing France is", "kind": "reverse"},
+    {"name": "unrelated-square", "prompt": "The square of three is", "original": "nine", "counterfactual": "nine", "kind": "unrelated"},
+    {"name": "unrelated-addition", "prompt": "The result of 2 + 2 is", "original": "4", "counterfactual": "4", "kind": "unrelated"},
+    {"name": "unrelated-week", "prompt": "The number of days in a week is", "original": "seven", "counterfactual": "seven", "kind": "unrelated"}
+  ]
+}
