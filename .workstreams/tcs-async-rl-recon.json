@@ -1991,15 +1991,22 @@
       "actor": "codex",
       "summary": "Finished and privately archived the full-metric RL diagnostic; corrected W&B data verified",
       "revision": 168
+    },
+    {
+      "id": "6d32ffbd-8770-411c-b6ed-fbdb43a04e4f",
+      "at": "2026-11-21T22:50:28.890779Z",
+      "actor": "codex",
+      "summary": "Resume the user-requested effort toward increasing RL rewards and add omitted standard diagnostics",
+      "revision": 169
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
-  "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "finished",
-  "summary": "Completed the full RL-noise audit: all 864 answers and 29.87M training tokens validate. Corrected W&B offline-writer step collisions and read back 27 rows / 1,977 scalar values. Seven repeated questions change by +0.071/7 (4 up, 3 down). Finite gradients and low local lag show no observed optimizer instability; judge calibration and frozen-policy progress remain unmeasured.",
-  "nextAction": "Review the report and choose any follow-up research plan. Current experiment settings remain unchanged. No new GPU job or judge request was made.",
+  "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
+  "state": "running",
+  "summary": "User explicitly requested continued work toward rising rewards after the full-metric audit. Repair missing entropy and initial-policy divergence instrumentation, inspect sampled failures, and prepare a monitored continuation on AMD.",
+  "nextAction": "Validate metrics and reward-gradient behavior, preserve prior checkpoints/configs, then record and execute a bounded continuation under the user’s latest instruction.",
   "owner": "Codex",
-  "revision": 168,
-  "updatedAt": "2026-11-21T17:44:43.747563Z"
+  "revision": 169,
+  "updatedAt": "2026-11-21T22:50:28.890779Z"
 }
