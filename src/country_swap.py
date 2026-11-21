@@ -33,6 +33,15 @@ def features(model, tokenizer, fits, method, seed, jacobian=None, source_country
                 target_row = target_row / target_row.norm()
             vector = source_row - target_row
             bias = -stats["mx"] @ vector if method == "j_centered" else vector.new_tensor(0)
+        elif method in ["raw_unit", "ridge_unit"]:
+            source_row = model.lm_head.weight[source[0]].float() * model.model.language_model.norm.weight.float()
+            target_row = model.lm_head.weight[target[0]].float() * model.model.language_model.norm.weight.float()
+            if method == "ridge_unit":
+                matrix = torch.tensor(maps[prefix + "matrix"], device="cuda", dtype=torch.float32)
+                source_row = matrix @ source_row
+                target_row = matrix @ target_row
+            vector = source_row / source_row.norm() - target_row / target_row.norm()
+            bias = vector.new_tensor(0)
         elif method == "raw":
             vector, bias = contrast, contrast.new_tensor(0)
         elif method == "mean_scale":
