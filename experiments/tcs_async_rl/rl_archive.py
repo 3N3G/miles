@@ -16,6 +16,18 @@ from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes, file_sha256
 
 TRACE_BATCH_BYTES = 64 * 2**20
 VM_RESERVE_BYTES = 2**30
+VM_STARTUP_RESERVE_BYTES = 5 * 2**30
+
+
+def require_vm_startup_space(directory):
+    """Reject a new GPU submission before the VM lacks room for monitoring."""
+    free = shutil.disk_usage(directory).free
+    if free < VM_STARTUP_RESERVE_BYTES:
+        raise RuntimeError(
+            f"VM monitoring needs at least {VM_STARTUP_RESERVE_BYTES} free bytes before submission; "
+            f"found {free}. Free verified cache space before allocating GPUs."
+        )
+    return free
 
 
 def read_index(directory):

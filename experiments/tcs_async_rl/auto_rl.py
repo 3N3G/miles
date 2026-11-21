@@ -21,6 +21,7 @@ from urllib.parse import urlsplit
 from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.group_inference import sampling_parameters, validate_sampling_support_control
 from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, question_key
+from experiments.tcs_async_rl.rl_archive import VM_STARTUP_RESERVE_BYTES, require_vm_startup_space
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
 from experiments.tcs_async_rl.rl_inputs import read_bundle, service_identity
 from experiments.tcs_async_rl.rl_job_state import record
@@ -244,6 +245,8 @@ def service_controls(*, directory, input_file, port, key):
 def stage_and_submit(
     *, config_path, source_commit, grades, directory, work_dir, checkout, remote_run, training_data=None
 ):
+    free = require_vm_startup_space(directory)
+    save(directory / "vm-storage-preflight.json", {"free_bytes": free, "minimum_free_bytes": VM_STARTUP_RESERVE_BYTES})
     config = json.loads(config_path.read_text())
     local_gate = directory / "qualified-medium-grades.json"
     save(local_gate, grades)

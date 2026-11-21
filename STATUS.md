@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User prioritizes VM space and reports that W&B displays one step. VM root is 99% full with about 1.1 GiB free. Auditing storage ownership before safe cache cleanup. Previous API verification found nat Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Free reproducible caches and verified duplicate artifacts, measure recovered space, prevent avoidable growth, then reconcile W&B dashboard history. No new GPU job.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,5 +16,6 @@
 
 ## Finished
 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): VM storage repaired: about 23 GiB free after checksum-verified removal of 48 duplicate adapter weight files and unused caches. All 27 native training points (steps 0–26) are present in W&B API history Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
 - [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Moved the Inkling investigation to the separate local repository /home/ubuntu/inkling-interp at the user's request.
-- [Compare Ian's Miles fork with RadixArk](.workstreams/ian-radixark-comparison.json): Compared Ian’s fork with the pinned RadixArk snapshot. Ian added five code commits across 43 files. Findings and workstream records are now published in 3N3G/miles.
+- 1 more records in `.workstreams/`.

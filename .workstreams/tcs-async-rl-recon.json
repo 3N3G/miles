@@ -631,6 +631,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/easy_overfit_v9_recovered_outcome_20261121.json",
       "label": "Verified final outcome and recovered report"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/vm_storage_recovery_20261121.json",
+      "label": "VM cleanup, verified AMD restoration source, private audit and W&B history"
     }
   ],
   "jobs": [
@@ -1944,15 +1948,29 @@
       "actor": "codex",
       "summary": "Prioritize the user-requested VM storage audit and record the W&B display discrepancy",
       "revision": 163
+    },
+    {
+      "id": "a7a6f507-c86d-4556-af65-b05174c05063",
+      "at": "2026-11-21T16:17:27.827408Z",
+      "actor": "codex",
+      "summary": "Recovered VM space after fresh cross-machine checks; W&B API confirms 27 training points",
+      "revision": 164
+    },
+    {
+      "id": "901a0e04-f5ed-446d-ae5d-a734eff8189b",
+      "at": "2026-11-21T16:19:53.328003Z",
+      "actor": "codex",
+      "summary": "Verified private storage audit and completed the VM-space repair; all 27 W&B points confirmed",
+      "revision": 165
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "running",
-  "summary": "User prioritizes VM space and reports that W&B displays one step. VM root is 99% full with about 1.1 GiB free. Auditing storage ownership before safe cache cleanup. Previous API verification found native steps 0–26, but dashboard presentation still needs checking.",
-  "nextAction": "Free reproducible caches and verified duplicate artifacts, measure recovered space, prevent avoidable growth, then reconcile W&B dashboard history. No new GPU job.",
+  "state": "finished",
+  "summary": "VM storage repaired: about 23 GiB free after checksum-verified removal of 48 duplicate adapter weight files and unused caches. All 27 native training points (steps 0–26) are present in W&B API history after final sync. The earlier one-step upload was incomplete. The approved RL run stopped at its four-hour limit after 27/40 updates.",
+  "nextAction": "No new GPU job is queued by this workstream. Future submissions require at least 5 GiB VM free space. Supervise future approved runs through terminal state, verified results and W&B sync.",
   "owner": "Codex",
-  "revision": 163,
-  "updatedAt": "2026-11-21T15:56:56.030447Z"
+  "revision": 165,
+  "updatedAt": "2026-11-21T16:19:53.328003Z"
 }

@@ -252,6 +252,26 @@ class MultiQuestionTests(unittest.IsolatedAsyncioTestCase):
 
 
 class ArchiveTests(unittest.TestCase):
+    def test_low_vm_space_blocks_submission_before_any_cluster_action(self):
+        from experiments.tcs_async_rl.auto_rl import stage_and_submit
+
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            with patch(
+                "experiments.tcs_async_rl.rl_archive.shutil.disk_usage", return_value=SimpleNamespace(free=4 * 2**30)
+            ), patch("experiments.tcs_async_rl.auto_rl.remote") as remote:
+                with self.assertRaisesRegex(RuntimeError, "VM monitoring needs"):
+                    stage_and_submit(
+                        config_path=root / "missing.json",
+                        source_commit="unused",
+                        grades={},
+                        directory=root,
+                        work_dir=Path("/remote"),
+                        checkout=Path("/checkout"),
+                        remote_run=Path("/run"),
+                    )
+            remote.assert_not_called()
+
     def test_trace_transfer_stays_under_the_vm_batch_budget(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
