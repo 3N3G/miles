@@ -20,7 +20,7 @@
   "new_judge_calls": 0,
   "heldout_reads": 0,
   "local_results": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-overfit-v9-sampled-entropy-20261121",
-  "archive_status": "prepared_for_private_upload",
+  "archive_status": "immutable_upload_and_downloads_verified",
   "limits": [
     "Sampled surprisal estimates filtered behavior uncertainty on generated prefixes, not full-policy entropy or initial-policy divergence.",
     "Single seed and seven repeat visits. No inferential error bars or generalization claim.",
@@ -38,6 +38,20 @@
       "change_nats": -0.014493431245426236,
       "first_reward": 5.90625,
       "last_reward": 6.25
+    }
+  },
+  "analysis_code_commit": "8ef47e455ed4f073d560fc12fcc9b745a72b5626",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/218aeda94982b27e7f88d38043854820c2e7980e/miles/easy-overfit-v9-sampled-entropy-20261121",
+  "report_url": "https://huggingface.co/datasets/3N3G/internalization-runs/blob/218aeda94982b27e7f88d38043854820c2e7980e/miles/easy-overfit-v9-sampled-entropy-20261121/REPORT.md",
+  "download_verification": {
+    "revision": "218aeda94982b27e7f88d38043854820c2e7980e",
+    "sha256": {
+      "REPORT.md": "86978c9da8f9e2774a99557a9382e15e196c46ed643ea3449e7b1cec59217b21",
+      "sampled-entropy.json": "243727b2772a0498fabdeebff8a8cd291c9e66a4bbbe1cf047ab9fd895588063",
+      "matched-sampled-surprisal.png": "b6c030700880ecdc9ccd2d1a01d3fa51781ba2ec0b04b8ee63959f481fd52ec5",
+      "example-step-17.json": "f759ceb2512b08fd815d242e82973ba01608f776952727110aead3425d194f31",
+      "example-step-20.json": "fac7a1903687240cc43e50e87ef862baec6d88136de595bb7999d8a39927786d",
+      "provenance.json": "ef49347f1984f8f91ca3d7c42db62e115e4635dd4fb50d0bb8ca4b75534e1dea"
     }
   }
 }
