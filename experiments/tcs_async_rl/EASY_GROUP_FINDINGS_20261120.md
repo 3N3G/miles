@@ -9,7 +9,7 @@ No optimizer update ran.
 The question concerns a minimum-cost spanning forest with one specified root per tree.
 It asks for an expected-cost bound after adding a correlated random set of roots.
 It comes from SODA 2025 in `ian-and-friends/tcs_v3`, revision `8e486f2d980d926fa5543efe7f1f2adf475ce3ea`.
-It was selected uniformly within the easy proof-writing pool before generating any answers.
+It was selected uniformly within the eligible easy pool before generating any answers.
 FOCS 2026 and STOC 2026 remained sealed.
 
 The model revision was `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a`, with thinking enabled.

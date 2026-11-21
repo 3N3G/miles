@@ -81,6 +81,9 @@
   No easy/medium corpus mixture or adaptive sampling rule has been selected.
   A proposed broader screen would measure real within-question reward variation, completion, judge reliability and token cost
   on preselected questions across difficulties and papers before choosing weights. That screen is not yet approved.
+  On 2026-11-21 the user chose easy-only RL. A checksum-verified recount found 20 easy questions across 17 papers,
+  comprising 12 proof-writing and eight proof-strategy questions. This selects the difficulty subset.
+  Training duration and any separate development split remain unspecified. No broader screening job was submitted.
 
 ## 2026-11-20: Recorded output limits in the RL qualification group
 
@@ -97,7 +100,23 @@
   Recommended the easy question with actual empty-answer judgments for recorded caps.
   No response yet. No scores or qualification rules were changed.
 
+## 2026-11-21: Easy-only training duration
+
+- Question: how many optimizer updates or passes should the full easy-only run use after runtime qualification?
+- Options: one initial pass, or several passes through the selected subset.
+- Recommendation: qualify the existing two-update runtime first, then review a bounded initial pass.
+  With 20 questions and 32 answers per question, a nominal pass contains 640 responses.
+  Log actual consumed question coverage under asynchronous sampling before claiming a complete pass.
+- Blocks: the full-subset update limit and compute budget. It does not block the metadata manifest or existing runtime preparation.
+- Status: the user approved the easy subset but has not specified training duration. No full-subset GPU job was submitted.
+
 # Answered questions
+
+- 2026-11-21: user selected easy-only RL and asked for the subset size.
+  Include all 20 eligible easy questions, across 17 papers. They contain 12 proof-writing and eight proof-strategy tasks.
+  FOCS 2026 and STOC 2026 remain excluded. Only the previously tested question has measured generation rewards.
+  Evidence: `experiments/tcs_async_rl/evidence/easy_subset_count_20261121.json`.
+  Cap handling is still the separate open question above. No implied answer to it was recorded.
 
 - 2026-11-20: user requested automatic RL submission and monitoring after the medium diagnostic.
   The durable VM controller is armed from frozen source. It retains the original strict reward gate and bounded two-update plan.

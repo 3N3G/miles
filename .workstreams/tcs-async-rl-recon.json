@@ -595,6 +595,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/medium_group_v15_outcome_20261121.json",
       "label": "Medium counts, stopped handoff and immutable result archive"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/easy_subset_count_20261121.json",
+      "label": "Checksum-verified easy subset size and task-type counts"
     }
   ],
   "jobs": [
@@ -1695,15 +1699,22 @@
       "actor": "codex",
       "summary": "Medium finished with 28 zero grades and four missing finals; no RL job is queued",
       "revision": 134
+    },
+    {
+      "id": "beaf5b72-7148-44b4-92e6-c60ba7d0c0ae",
+      "at": "2026-11-21T07:00:13.904700Z",
+      "actor": "codex",
+      "summary": "Recorded the user-selected easy subset and verified its exact size",
+      "revision": 135
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "needs-you",
-  "summary": "Medium finished with 28 zero grades and four missing finals; no RL job is queued",
-  "nextAction": "User decision: qualify easy using actual Luna empty-answer grades for recorded caps, or retain the strict 32-nonempty-finals requirement.",
+  "summary": "User selected easy-only RL: 20 questions across 17 papers, including 12 proof-writing and eight proof-strategy questions. Cap handling remains undecided.",
+  "nextAction": "Resolve how to handle recorded 90k caps, then prepare the easy-only training plan and complete the bounded runtime check. No RL job is queued.",
   "owner": "Codex",
-  "revision": 134,
-  "updatedAt": "2026-11-21T06:35:08.517957Z"
+  "revision": 135,
+  "updatedAt": "2026-11-21T07:00:13.904700Z"
 }

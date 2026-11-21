@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Medium finished with 28 zero grades and four missing finals; no RL job is queued Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: User decision: qualify easy using actual Luna empty-answer grades for recorded caps, or retain the strict 32-nonempty-finals requirement.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User selected easy-only RL: 20 questions across 17 papers, including 12 proof-writing and eight proof-strategy questions. Cap handling remains undecided. Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: Resolve how to handle recorded 90k caps, then prepare the easy-only training plan and complete the bounded runtime check. No RL job is queued.
 
 ## Finished
 

@@ -1,0 +1,43 @@
+{
+  "observed_at_utc": "2026-11-21T06:58:01.436679+00:00",
+  "dataset": "ian-and-friends/tcs_v3",
+  "dataset_revision": "8e486f2d980d926fa5543efe7f1f2adf475ce3ea",
+  "eligible_cohorts": [
+    "FOCS_2023",
+    "FOCS_2024",
+    "FOCS_2025",
+    "STOC_2023",
+    "STOC_2024",
+    "STOC_2025",
+    "SODA_2023",
+    "SODA_2024",
+    "SODA_2025",
+    "SODA_2026"
+  ],
+  "excluded_heldout_cohorts": [
+    "FOCS_2026",
+    "STOC_2026"
+  ],
+  "heldout_content_reads": 0,
+  "easy_questions": 20,
+  "unique_cohort_papers": 17,
+  "prompt_types": {
+    "proof_writing": 12,
+    "proof_strategy": 8
+  },
+  "by_cohort": {
+    "FOCS_2023": 1,
+    "FOCS_2025": 1,
+    "SODA_2023": 2,
+    "SODA_2024": 2,
+    "SODA_2025": 1,
+    "SODA_2026": 3,
+    "STOC_2023": 2,
+    "STOC_2024": 1,
+    "STOC_2025": 7
+  },
+  "total_eligible_questions": 2519,
+  "selection_rule": "All and only difficulty == easy in the ten eligible cohorts. No selection by observed reward.",
+  "note": "Metadata-only recount from checksum-verified cached eligible Parquet shards. One of these questions has a model-generation diagnostic.",
+  "prior_easy_draw_reproduced": true
+}
