@@ -1962,15 +1962,22 @@
       "actor": "codex",
       "summary": "Verified private storage audit and completed the VM-space repair; all 27 W&B points confirmed",
       "revision": 165
+    },
+    {
+      "id": "64925980-b6d2-4163-b9d2-61111347a0a4",
+      "at": "2026-11-21T17:14:38.134976Z",
+      "actor": "codex",
+      "summary": "Claimed the user-requested full-metric investigation of noisy RL rewards",
+      "revision": 166
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "finished",
-  "summary": "VM storage repaired: about 23 GiB free after checksum-verified removal of 48 duplicate adapter weight files and unused caches. All 27 native training points (steps 0–26) are present in W&B API history after final sync. The earlier one-step upload was incomplete. The approved RL run stopped at its four-hour limit after 27/40 updates.",
-  "nextAction": "No new GPU job is queued by this workstream. Future submissions require at least 5 GiB VM free space. Supervise future approved runs through terminal state, verified results and W&B sync.",
+  "state": "running",
+  "summary": "Auditing why the completed 27-update easy-only RL run has noisy rewards without a clear increase. Inspect question mix, full native optimizer and rollout metrics, policy lag, lengths, reward judgments, checkpoint progress and W&B presentation.",
+  "nextAction": "Build a reproducible diagnostic from existing run data and source. Report supported faults and uncertainty before proposing research changes. No new GPU job.",
   "owner": "Codex",
-  "revision": 165,
-  "updatedAt": "2026-11-21T16:19:53.328003Z"
+  "revision": 166,
+  "updatedAt": "2026-11-21T17:14:38.134976Z"
 }
