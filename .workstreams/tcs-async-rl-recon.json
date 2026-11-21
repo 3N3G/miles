@@ -621,7 +621,7 @@
     {
       "id": "536321",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "535170",
@@ -1790,15 +1790,22 @@
       "actor": "codex",
       "summary": "RL job 536321 is PENDING",
       "revision": 144
+    },
+    {
+      "id": "2194a029-c911-440c-9884-a5087c393094",
+      "at": "2026-11-21T07:51:26.484205Z",
+      "actor": "codex",
+      "summary": "RL job 536321 is RUNNING",
+      "revision": 145
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "RL job 536321 is PENDING",
+  "summary": "RL job 536321 is RUNNING",
   "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 144,
-  "updatedAt": "2026-11-21T07:50:22.546816Z"
+  "revision": 145,
+  "updatedAt": "2026-11-21T07:51:26.484205Z"
 }

@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536321 is PENDING Jobs: hpcfund/536321 PENDING; hpcfund/535170 COMPLETED
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536321 is RUNNING Jobs: hpcfund/536321 RUNNING; hpcfund/535170 COMPLETED
   Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
