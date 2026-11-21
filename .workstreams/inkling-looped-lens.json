@@ -4,32 +4,20 @@
   "sources": [],
   "evidence": [
     {
-      "path": "evidence/pilot_summary.json",
-      "label": "Measured results and qualifications"
+      "path": "plans/rotation_transport.md",
+      "label": "Frozen transport protocol"
     },
     {
-      "path": "LENS_CRITERIA.md",
-      "label": "Primary literature and lens criteria"
+      "path": "evidence/transport_fit_development.json",
+      "label": "Three-seed development comparison"
     },
     {
-      "path": "FIXED_POINTS.md",
-      "label": "Full-state recurrence and local gate derivation"
+      "path": "plans/country_swap.md",
+      "label": "Semantic causal validation"
     },
     {
-      "path": "figures/scale_vs_direction.png",
-      "label": "All causal scale and direction controls"
-    },
-    {
-      "path": "evidence/artifact_archives.json",
-      "label": "Verified immutable private archives"
-    },
-    {
-      "path": "OPERATIONS.md",
-      "label": "Session, run receipts, failures, and draft-report status"
-    },
-    {
-      "path": "QUESTIONS.md",
-      "label": "Remaining competition contract and next-stage decisions"
+      "path": "evidence/transport_holdout_ids.json",
+      "label": "Reserved test identities"
     }
   ],
   "jobs": [
@@ -41,7 +29,22 @@
     {
       "id": "536947",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "COMPLETED"
+    },
+    {
+      "id": "536965",
+      "cluster": "hpcfund",
+      "status": "COMPLETED"
+    },
+    {
+      "id": "536973",
+      "cluster": "hpcfund",
+      "status": "COMPLETED"
+    },
+    {
+      "id": "536987",
+      "cluster": "hpcfund",
+      "status": "RUNNING"
     }
   ],
   "sessions": [
@@ -106,15 +109,22 @@
       "actor": "codex",
       "summary": "Froze transport fits and reserved a final test split; replaced a queued large-GPU job with an idle MI210 allocation",
       "revision": 7
+    },
+    {
+      "id": "5e8c26bb-d934-4b12-b45c-2eb58337135e",
+      "at": "2026-11-21T16:22:40.393142Z",
+      "actor": "codex",
+      "summary": "Completed transport fits and late decoder reuse; found a development gain from mean/scale calibration and started causal validation",
+      "revision": 8
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Discover and validate a useful Inkling interpretability lens, beginning with transport by recent rotations and testing semantic causal effects.",
   "state": "running",
-  "summary": "Frozen 144 unlabeled calibration paragraphs, 55 development items, and 43 reserved test identities. Implemented local angular extrapolation, powers of learned recent rotations, direct rotations, and affine controls. Existing traces show local extrapolation behaves differently in the two banks. Capturing new trajectories on AMD MI210 after a large-GPU queue delay.",
-  "nextAction": "Validate capture, fit on unlabeled text, then inspect geometric prediction and unspoken-concept recovery separately.",
+  "summary": "Captured 144 calibration paragraphs and 55 development prompts. Three-seed rotation powers did not recover bridges. Mean/scale calibration recovered 12–13 of 24 solved unspoken bridges versus 10 for raw readout, or 14 versus 10 with the same vocabulary filter. Better final-state predictors recovered fewer intermediates. Country-swap causal validation is running; 43 test items remain reserved.",
+  "nextAction": "Finish causal swaps, test a true Jacobian direction if raw readout axes fail, and evaluate the frozen candidate on the reserved split only after selection.",
   "owner": "Codex",
-  "revision": 7,
-  "updatedAt": "2026-11-21T15:53:21.129161Z"
+  "revision": 8,
+  "updatedAt": "2026-11-21T16:22:40.393142Z"
 }

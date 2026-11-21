@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Frozen 144 unlabeled calibration paragraphs, 55 development items, and 43 reserved test identities. Implemented local angular extrapolation, powers of learned recent rotations, direct rotations, and a Jobs: hpcfund/536932 CANCELLED; hpcfund/536947 SUBMITTED
-  Next: Validate capture, fit on unlabeled text, then inspect geometric prediction and unspoken-concept recovery separately.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Captured 144 calibration paragraphs and 55 development prompts. Three-seed rotation powers did not recover bridges. Mean/scale calibration recovered 12–13 of 24 solved unspoken bridges versus 10 for r Jobs: hpcfund/536932 CANCELLED; hpcfund/536947 COMPLETED
+  Next: Finish causal swaps, test a true Jacobian direction if raw readout axes fail, and evaluate the frozen candidate on the reserved split only after selection.
 
 ## Next / blocked
 
