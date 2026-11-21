@@ -1,0 +1,849 @@
+{
+  "scope": "Development only. Four fixed visits, one token position, K=10. No reserved test items evaluated.",
+  "averages": [
+    {
+      "mode": "active",
+      "method": "centered_raw",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        10,
+        9,
+        9
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        9,
+        9,
+        9
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": null,
+      "mean_validation_normalized_mse": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        10,
+        9,
+        9
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        9,
+        9,
+        9
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": null,
+      "mean_validation_normalized_mse": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw_cosine",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        9,
+        9,
+        9
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        9,
+        9,
+        9
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": null,
+      "mean_validation_normalized_mse": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw_cosine",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        9,
+        9,
+        9
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        9,
+        9,
+        9
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": null,
+      "mean_validation_normalized_mse": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        5,
+        7
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": null,
+      "mean_validation_normalized_mse": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        5,
+        7
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": null,
+      "mean_validation_normalized_mse": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge_cosine",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": null,
+      "mean_validation_normalized_mse": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge_cosine",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": null,
+      "mean_validation_normalized_mse": null
+    }
+  ],
+  "per_seed": [
+    {
+      "mode": "active",
+      "method": "centered_raw",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 10,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 10,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw_cosine",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw_cosine",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-valentines-month",
+        "half-clock-hours",
+        "pred-valentines-prevmonth"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "chem-photosynthesis-Z",
+        "firstletter-valentines-month",
+        "half-clock-hours",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-valentines-month",
+        "half-clock-hours",
+        "pred-valentines-prevmonth"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "chem-photosynthesis-Z",
+        "firstletter-valentines-month",
+        "half-clock-hours",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge_cosine",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge_cosine",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw_cosine",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw_cosine",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "bf-relativity-firstname",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-valentines-month",
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "bf-relativity-firstname",
+        "chem-photosynthesis-Z",
+        "firstletter-valentines-month",
+        "half-clock-hours"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "bf-relativity-firstname",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-valentines-month",
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "bf-relativity-firstname",
+        "chem-photosynthesis-Z",
+        "firstletter-valentines-month",
+        "half-clock-hours"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge_cosine",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge_cosine",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw_cosine",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_raw_cosine",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 7,
+      "hit_names": [
+        "bf-tajmahal-continent",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-valentines-month",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "chem-photosynthesis-Z",
+        "firstletter-valentines-month",
+        "half-clock-hours",
+        "holiday-christmas-monthnum"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 7,
+      "hit_names": [
+        "bf-tajmahal-continent",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-valentines-month",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "chem-photosynthesis-Z",
+        "firstletter-valentines-month",
+        "half-clock-hours",
+        "holiday-christmas-monthnum"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge_cosine",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": null
+    },
+    {
+      "mode": "active",
+      "method": "centered_ridge_cosine",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": null
+    }
+  ]
+}
