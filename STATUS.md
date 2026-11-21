@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536321 is running. Native argument checks and TP2 checkpoint conversion passed. Ray training is starting. Repairing VM tunnel routing without changing the submitted training source or configur Jobs: hpcfund/536321 RUNNING; hpcfund/535170 COMPLETED
-  Next: Verify the judge health endpoint from the allocated node, then monitor actor/rollout startup and the first optimizer update.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536321 is running on k007-001. Native argument checks and checkpoint conversion passed. All 20 questions loaded; the allocated node verifies the Luna service through the repaired foreground tu Jobs: hpcfund/536321 RUNNING; hpcfund/535170 COMPLETED
+  Next: Monitor rollout readiness, real reward groups, native backward computation and weight publication.
 
 ## Next / blocked
 
