@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): User requested exploratory interpretability research and authorized CPU, AMD, or Babel use. Reviewing official model code, lens papers, and challenge rules.
-  Next: Freeze a bounded diagnostic plan, inspect model weights, and run controls before interpreting activations.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Source inspection identifies a two-block cross-loop state, normalized message reads, and signed rank-64 gates. The pilot and frozen development prompts are committed. Preparing an isolated ROCm runtim
+  Next: Verify imports, submit the bounded AMD diagnostic, and compare scale versus direction interventions.
 
 ## Next / blocked
 

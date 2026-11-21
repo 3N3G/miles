@@ -2,7 +2,24 @@
   "schemaVersion": 1,
   "id": "inkling-looped-lens",
   "sources": [],
-  "evidence": [],
+  "evidence": [
+    {
+      "path": "PLAN.md",
+      "label": "Bounded diagnostic plan"
+    },
+    {
+      "path": "src/pilot.py",
+      "label": "Forward and cross-loop intervention code"
+    },
+    {
+      "path": "evidence/pilot_items.json",
+      "label": "Frozen development selection"
+    },
+    {
+      "path": "OPERATIONS.md",
+      "label": "Session and runtime record"
+    }
+  ],
   "jobs": [],
   "sessions": [
     {
@@ -24,15 +41,22 @@
       "actor": "codex",
       "summary": "Claimed standalone Inkling investigation after relocation from Miles",
       "revision": 1
+    },
+    {
+      "id": "3b82acbe-efaa-4012-b8d4-d3b392ca2684",
+      "at": "2026-11-21T07:42:50.696745Z",
+      "actor": "codex",
+      "summary": "Pinned the literature, model, diagnostic protocol, and correct persistent state",
+      "revision": 2
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Find and explain an evidence-backed property of Inkling 2 Mini relevant to building a causally useful lens.",
   "state": "running",
-  "summary": "User requested exploratory interpretability research and authorized CPU, AMD, or Babel use. Reviewing official model code, lens papers, and challenge rules.",
-  "nextAction": "Freeze a bounded diagnostic plan, inspect model weights, and run controls before interpreting activations.",
+  "summary": "Source inspection identifies a two-block cross-loop state, normalized message reads, and signed rank-64 gates. The pilot and frozen development prompts are committed. Preparing an isolated ROCm runtime.",
+  "nextAction": "Verify imports, submit the bounded AMD diagnostic, and compare scale versus direction interventions.",
   "owner": "Codex",
-  "revision": 1,
-  "updatedAt": "2026-11-21T07:32:43.635159Z"
+  "revision": 2,
+  "updatedAt": "2026-11-21T07:42:50.696745Z"
 }
