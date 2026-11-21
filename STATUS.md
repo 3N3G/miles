@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536360 ended TIMEOUT; acceptance False Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Recovery complete. The four-hour pilot ended at 27/40 finite updates, with no skipped step, 864 consumed answers across all 20 easy questions, and a checkpoint covering 25 updates. All 27 W&B steps an Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
+  Next: Review the recovered report and choose any further training budget. Future runs must stay under foreground supervision through terminal state, checkpoint checks and verified upload
 
 ## Finished
 

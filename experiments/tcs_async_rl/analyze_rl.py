@@ -45,12 +45,20 @@ def analyze(directory):
         "The setup uses Qwen3.5-4B with thinking enabled and a 90,000-token output limit.",
         "CISPO trains on groups of 32 answers. Two MI350 GPUs train while six generate answers.",
         "GPT-6 Luna at medium effort grades final answers against the supplied seven-point rubric in both anonymous orders.\n",
+        (
+            f"The run reached its approved time limit after {len(trained_ids)} of {expected} target updates."
+            if result.get("stop_reason") == "walltime_limit"
+            else f"Recorded stop reason: {result.get('stop_reason', 'not recorded')}."
+        ),
         f"Automated runtime acceptance passed: **{result['runtime_acceptance_passed']}**.",
         f"The saved evidence contains {len(result.get('training', {}).get('valid_updates', []))} valid optimizer-step records",
         f"and {len(groups)} exported trainer-consumed groups. See [all checks](runtime-acceptance.json).\n",
         f"Observed updates cover {len(trajectories)} distinct question identities. Prepared inputs alone do not imply training coverage.",
         "[Per-question visits and model versions](question-trajectories.json) distinguish early and later training observations.\n",
     ]
+    tracker = result.get("checkpoints", {}).get("tracker")
+    if str(tracker).isdigit():
+        paragraphs.insert(7, f"The latest completed checkpoint retains {int(tracker) + 1} optimizer updates.\n")
     observed = [(group["rollout_ids"][0], group) for group in groups if group["optimizer_update_observed"]]
     if observed:
         observed.sort(key=lambda x: x[0])
