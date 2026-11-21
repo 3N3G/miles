@@ -107,15 +107,22 @@
       "actor": "codex",
       "summary": "Completed exploratory research, verified all GPU terminal states and private archives, and prepared standalone reports for user review",
       "revision": 5
+    },
+    {
+      "id": "c00c3cf0-fcb1-4b04-8c9b-39a382393253",
+      "at": "2026-11-21T15:36:16.337503Z",
+      "actor": "codex",
+      "summary": "Resumed at the user request to discover a useful transport lens, including powers of a recent rotation",
+      "revision": 6
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
-  "endpoint": "Find and explain an evidence-backed property of Inkling 2 Mini relevant to building a causally useful lens.",
-  "state": "finished",
-  "summary": "Completed 16 validated forwards, 44 interventions, saved-bank readout comparisons, and completion/format checks. Scale and direction had different causal effects. A rank-64 controller did not impose a rank-64 message path. Simple readout changes showed no improvement on the capability-checked subset. Standalone reports are local review drafts.",
-  "nextAction": "Review local REPORT.md and DETAILS.md. The next lens-fitting experiment needs the user's research decision and a new approved plan.",
+  "endpoint": "Discover and validate a useful Inkling interpretability lens, beginning with transport by recent rotations and testing semantic causal effects.",
+  "state": "running",
+  "summary": "User explicitly requested continued creative experimentation and suggested applying a recent rotation for the remaining depth. Beginning a bounded transport-lens experiment under the existing compute authorization.",
+  "nextAction": "Freeze the rotation/transport protocol, fit on unlabeled calibration text, and evaluate prediction and intermediate-concept controls separately.",
   "owner": "Codex",
-  "revision": 5,
-  "updatedAt": "2026-11-21T08:14:35.678717Z"
+  "revision": 6,
+  "updatedAt": "2026-11-21T15:36:16.337503Z"
 }

@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): User explicitly requested continued creative experimentation and suggested applying a recent rotation for the remaining depth. Beginning a bounded transport-lens experiment under the existing compute  Jobs: hpcfund/536316 FAILED; hpcfund/536317 COMPLETED
+  Next: Freeze the rotation/transport protocol, fit on unlabeled calibration text, and evaluate prediction and intermediate-concept controls separately.
 
 ## Next / blocked
 
@@ -16,4 +17,4 @@
 
 ## Finished
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed 16 validated forwards, 44 interventions, saved-bank readout comparisons, and completion/format checks. Scale and direction had different causal effects. A rank-64 controller did not impose a Jobs: hpcfund/536316 FAILED; hpcfund/536317 COMPLETED
+- Nothing recorded.
