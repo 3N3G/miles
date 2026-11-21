@@ -9,15 +9,23 @@ import datetime
 import gzip
 import json
 import math
+import os
 import random
 import re
+import shutil
 import subprocess
 import time
 from collections import Counter
 from urllib.parse import urlsplit
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
-from experiments.tcs_async_rl.rl_archive import archive_chunks, copy_trace_batch, exclusion_file, read_index
+from experiments.tcs_async_rl.rl_archive import (
+    archive_chunks,
+    copy_trace_batch,
+    exclusion_file,
+    read_index,
+    upload_run,
+)
 from experiments.tcs_async_rl.rl_artifacts import file_sha256
 from experiments.tcs_async_rl.rl_job_state import record
 from experiments.tcs_async_rl.watch_group import ACTIVE, remote_state
@@ -159,17 +167,21 @@ def acceptance(directory, scheduler, expected_updates, *, minimum_varied_groups=
         "launcher_completed": (directory / "training-finished.json").exists(),
         "optimizer_updates_recorded": len(evidence["valid_updates"]) == expected_updates,
         "no_skipped_updates": not evidence["skipped_or_discarded_updates"],
-        "finite_step_metrics": len(evidence["metrics"]) == expected_updates
+        "finite_step_metrics": bool(evidence["valid_updates"])
+        and {x[0] for x in evidence["valid_updates"]} <= set(evidence["metrics"])
         and all(item["finite"] for item in evidence["metrics"].values()),
         "consumed_groups_exported": len(groups) == expected_updates and all(g["samples"] == 32 for g in groups),
         "real_reward_variation_in_consumed_groups": sum(g["varied_rewards"] for g in groups)
         >= (expected_updates if minimum_varied_groups is None else minimum_varied_groups),
-        "both_checkpoints_exist": len([x for x in checkpoints["iterations"] if x["files"] and x["bytes"]])
+        "retained_checkpoints_exist": len([x for x in checkpoints["iterations"] if x["files"] and x["bytes"]])
         >= (expected_updates if retained_checkpoints is None else retained_checkpoints),
         "final_checkpoint_tracker": str(checkpoints["tracker"]) == str(expected_updates - 1),
     }
     return {
         "runtime_acceptance_passed": all(checks.values()),
+        "stop_reason": "walltime_limit" if scheduler["state"] == "TIMEOUT" else scheduler["state"].lower(),
+        "target_updates": expected_updates,
+        "completed_updates": len(evidence["valid_updates"]),
         "checks": checks,
         "training": evidence,
         "consumed_groups": groups,
@@ -186,6 +198,9 @@ def sync_outputs(remote_directory, directory, *, bounded=False):
             "rsync",
             "-a",
             "--exclude=checkpoints/",
+            "--exclude=ray/",
+            "--exclude=dashboard_columns/",
+            "--exclude=.cache/",
             "--exclude=*.pt",
             "--exclude=*.partial",
             "--exclude=*.tmp",
@@ -281,11 +296,8 @@ def finish(*, job_id, config_path, directory, remote_directory, checkout, schedu
         except subprocess.SubprocessError as error:
             uploads.append({"run_directory": str(data.parent), "error_type": type(error).__name__})
     save(directory / "wandb-sync.json", uploads)
-    upload = subprocess.run(["push-run", "miles", str(directory)], capture_output=True, text=True, timeout=1800)
-    (directory / "upload.log").write_text(upload.stdout + upload.stderr)
-    upload.check_returncode()
-    urls = [line for line in upload.stdout.splitlines() if line.startswith("https://huggingface.co/datasets/")]
-    hf_url = urls[-1] if upload.returncode == 0 and urls else None
+    receipt = upload_run(directory)
+    hf_url = receipt.replace("/commit/", "/tree/") + "/miles/" + directory.name
     terminal = {
         "phase": "finished",
         "job_id": job_id,
@@ -340,12 +352,20 @@ def watch(*, job_id, config_path, directory, remote_directory, checkout, state_r
                         children[1].args, cwd=ROOT, stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT
                     )
         status = {
-            "phase": "watching_rl",
+            "phase": "watching_rl" if state["state"] in ACTIVE | {"UNKNOWN"} else "finalizing",
             "job_id": job_id,
             "scheduler": state,
             "observed_at_utc": datetime.datetime.now(datetime.UTC).isoformat(),
             "reward_service_alive": children[0].poll() is None,
             "reward_tunnel_alive": children[1].poll() is None,
+            "monitor_pid": os.getpid(),
+            "vm_free_bytes": shutil.disk_usage(directory).free,
+        }
+        progress = run_training_evidence(directory)
+        status["training"] = {
+            "valid_updates": len(progress["valid_updates"]),
+            "skipped_updates": len(progress["skipped_or_discarded_updates"]),
+            "nonfinite_steps": [step for step, row in progress["metrics"].items() if not row["finite"]],
         }
         save(directory / "handoff-state.json", status)
         if state["state"] != previous:
@@ -378,6 +398,16 @@ def watch(*, job_id, config_path, directory, remote_directory, checkout, state_r
                     state_repo=state_repo,
                 )
                 return
-            except (OSError, subprocess.SubprocessError) as error:
-                save(directory / "archive-retry.json", {"error_type": type(error).__name__})
+            except (OSError, subprocess.SubprocessError, RuntimeError, ValueError) as error:
+                save(
+                    directory / "archive-retry.json",
+                    {
+                        "phase": "finalization_pending",
+                        "job_id": job_id,
+                        "scheduler": state,
+                        "error_type": type(error).__name__,
+                        "reason": str(error),
+                        "observed_at_utc": datetime.datetime.now(datetime.UTC).isoformat(),
+                    },
+                )
         time.sleep(60)

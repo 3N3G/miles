@@ -14,6 +14,8 @@ from pathlib import Path
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.auto_rl import save
+from experiments.tcs_async_rl.rl_archive import upload_run
+from experiments.tcs_async_rl.watch_group import ACTIVE, remote_state
 from experiments.tcs_async_rl.watch_rl import finish, run_training_evidence
 
 
@@ -39,12 +41,21 @@ def finalize(cli):
             terminal = json.loads((cli.run_dir / "handoff-state.json").read_text())
         except (FileNotFoundError, json.JSONDecodeError):
             terminal = {}
-        if (
-            terminal.get("phase") == "finished"
-            and terminal.get("job_id") == cli.job_id
-            and not controller_alive(cli.run_dir)
-        ):
-            break
+        if not controller_alive(cli.run_dir):
+            # The original monitor may stop before producing a finished marker.
+            # Reconcile the existing receipt with Slurm. Never submit a replacement.
+            scheduler = remote_state(cli.job_id)
+            if scheduler["state"] not in ACTIVE | {"UNKNOWN"}:
+                terminal = {"scheduler": scheduler, "job_id": cli.job_id}
+                break
+            save(
+                cli.run_dir / "monitor-supervision-required.json",
+                {
+                    "job_id": cli.job_id,
+                    "scheduler": scheduler,
+                    "reason": "Primary monitor exited while the GPU job remains active. Foreground recovery is required.",
+                },
+            )
         time.sleep(30)
     backup = cli.run_dir / "analysis-before-log-reader-repair"
     backup.mkdir(exist_ok=True)
@@ -62,14 +73,17 @@ def finalize(cli):
         state_repo=cli.state_repo,
     )
     evidence = run_training_evidence(cli.run_dir)
+    receipt = upload_run(cli.run_dir, log_name="corrected-upload.log")
     save(
         cli.run_dir / "native-log-finalizer-complete.json",
-        {"job_id": cli.job_id, "training": evidence, "gpu_submissions": 0, "old_analysis": str(backup)},
+        {
+            "job_id": cli.job_id,
+            "training": evidence,
+            "gpu_submissions": 0,
+            "old_analysis": str(backup),
+            "hf_commit_url": receipt,
+        },
     )
-    uploaded = subprocess.run(
-        ["push-run", "miles", str(cli.run_dir)], capture_output=True, text=True, timeout=1800, check=True
-    )
-    (cli.run_dir / "corrected-upload.log").write_text(uploaded.stdout + uploaded.stderr)
 
 
 def main():
@@ -81,7 +95,16 @@ def main():
     with (cli.run_dir / "native-log-finalizer.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         if not (cli.run_dir / "native-log-finalizer-complete.json").exists():
-            finalize(cli)
+            while True:
+                try:
+                    finalize(cli)
+                    return
+                except (OSError, subprocess.SubprocessError, RuntimeError) as error:
+                    save(
+                        cli.run_dir / "finalizer-retry.json",
+                        {"job_id": cli.job_id, "error_type": type(error).__name__, "reason": str(error)},
+                    )
+                    time.sleep(60)
 
 
 if __name__ == "__main__":

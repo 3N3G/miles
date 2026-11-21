@@ -1,0 +1,25 @@
+{
+  "observed_at_utc": "2026-11-21T15:46:25.802750+00:00",
+  "job_id": "536360",
+  "scheduler_state": "TIMEOUT",
+  "recorded_valid_updates": 27,
+  "skipped_updates": 0,
+  "nonfinite_metrics": 0,
+  "checkpoint_tracker": "24",
+  "checkpoint_bytes": 60577362474,
+  "monitor_failure": "After scheduler timeout, finalization raised an uncaught RuntimeError because VM free space was below the trace-transfer reserve.",
+  "secondary_failure": "The backup finalizer waited only for phase finished. The original monitor wrote phase stopped, so it waited indefinitely after the monitor died.",
+  "repair": [
+    "Catch and retry terminal archive/storage failures while retaining scheduler state and job identity.",
+    "Recover terminal jobs from their existing receipts and fresh Slurm state even when the primary monitor exits abnormally.",
+    "Read native optimizer metrics and distinguish finite observed steps from reaching the target update count.",
+    "Exclude transient Ray/dashboard caches from future metadata copies; transfer traces in smaller batches.",
+    "Require verified immutable private-upload receipts before result-cache eviction or completion markers.",
+    "Keep foreground supervision through final reporting and uploads, as recorded in the project rule."
+  ],
+  "recovered_vm_cache_bytes": 349360488,
+  "cache_backup_receipt": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5983224144accb34b4bd23afefa480b4629c4147",
+  "gpu_submissions": 0,
+  "experiment_changes": [],
+  "validation": "80 CPU tests passed, including monitor retries after disk pressure, recovery after phase stopped, and finite metrics on a budget timeout."
+}

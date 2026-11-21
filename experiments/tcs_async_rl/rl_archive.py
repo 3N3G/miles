@@ -14,6 +14,9 @@ from pathlib import Path
 
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes, file_sha256
 
+TRACE_BATCH_BYTES = 64 * 2**20
+VM_RESERVE_BYTES = 2**30
+
 
 def read_index(directory):
     path = directory / "archive-index.json"
@@ -28,13 +31,10 @@ def trace_paths(directory):
     ]
 
 
-def archive_chunks(directory, *, invoke=subprocess.run):
-    paths = trace_paths(directory)
-    if not paths:
-        return None
-    entries = {str(p.relative_to(directory)): {"sha256": file_sha256(p), "bytes": p.stat().st_size} for p in paths}
+def upload_run(directory, *, log_name="upload.log", invoke=subprocess.run):
+    """Upload without deleting files, requiring an immutable private receipt."""
     upload_cache = directory / ".cache/xet-upload"
-    if upload_cache.is_symlink():
+    if upload_cache.is_symlink() or directory.resolve() not in upload_cache.resolve().parents:
         raise ValueError("Upload cache must belong to this run")
     try:
         result = invoke(
@@ -47,19 +47,28 @@ def archive_chunks(directory, *, invoke=subprocess.run):
     finally:
         if upload_cache.is_dir() and not upload_cache.is_symlink():
             shutil.rmtree(upload_cache)
-    (directory / "incremental-upload.log").write_text(result.stdout + result.stderr)
+    (directory / log_name).write_text(result.stdout + result.stderr)
     result.check_returncode()
     urls = re.findall(r"https://huggingface\.co/datasets/[^\s]+/commit/[0-9a-f]{40}", result.stdout + result.stderr)
     if not urls:
         raise RuntimeError("Upload has no immutable receipt; retain every local trace")
+    return urls[-1]
+
+
+def archive_chunks(directory, *, invoke=subprocess.run):
+    paths = trace_paths(directory)
+    if not paths:
+        return None
+    entries = {str(p.relative_to(directory)): {"sha256": file_sha256(p), "bytes": p.stat().st_size} for p in paths}
+    receipt = upload_run(directory, log_name="incremental-upload.log", invoke=invoke)
     index = read_index(directory)
     for name, entry in entries.items():
-        index[name] = {**entry, "hf_commit_url": urls[-1]}
+        index[name] = {**entry, "hf_commit_url": receipt}
     _atomic_bytes(directory / "archive-index.json", (json.dumps(index, indent=2) + "\n").encode())
     for path in paths:
         if file_sha256(path) == entries[str(path.relative_to(directory))]["sha256"]:
             path.unlink()
-    return urls[-1]
+    return receipt
 
 
 def exclusion_file(directory):
@@ -76,7 +85,7 @@ def exclusion_file(directory):
 
 
 def copy_trace_batch(remote_directory, directory):
-    """Copy at most 512 MiB of new immutable traces, retaining one GiB VM margin."""
+    """Copy at most 64 MiB of new immutable traces, retaining one GiB VM margin."""
     code = (
         "import json; from pathlib import Path; "
         f"root=Path({str(remote_directory)!r}); "
@@ -89,7 +98,8 @@ def copy_trace_batch(remote_directory, directory):
     archived = read_index(directory)
     local = {str(p.relative_to(directory)): p.stat().st_size for p in trace_paths(directory)}
     pending = [(name, size) for name, size in json.loads(result.stdout) if name not in archived and name not in local]
-    allowance = max(0, min(512 * 2**20 - sum(local.values()), shutil.disk_usage(directory).free - 2**30))
+    free = shutil.disk_usage(directory).free
+    allowance = max(0, min(TRACE_BATCH_BYTES - sum(local.values()), free - VM_RESERVE_BYTES))
     selected, total = [], 0
     for name, size in sorted(pending, key=lambda x: (not x[0].endswith(".jsonl.gz"), x[0])):
         path = Path(name)
@@ -99,7 +109,10 @@ def copy_trace_batch(remote_directory, directory):
             selected.append(name)
             total += size
     if pending and not selected and not local:
-        raise RuntimeError("No VM space for the next trace batch; no unarchived file was deleted")
+        raise RuntimeError(
+            f"Trace transfer deferred: free_bytes={free}, reserve_bytes={VM_RESERVE_BYTES}, "
+            f"pending_files={len(pending)}. AMD originals and unarchived VM files remain intact."
+        )
     listing = directory / "trace-transfer.list"
     listing.write_text("\n".join(selected) + "\n")
     if selected:

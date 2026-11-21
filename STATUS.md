@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Investigating the reported failure. Slurm confirms job 536360 hit its four-hour limit. Cached native logs contain 27 valid updates and no skipped step. The monitor then stopped on VM disk pressure, le Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Verify final native logs and checkpoint state, recover private artifacts safely, fix disk/error handling and the stalled finalizer, and complete the run report before considering a
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Verified 27 finite updates, no skipped step, and an intact 60.6 GB checkpoint at iteration 24. Training reached the approved four-hour limit. Fixed uncaught storage failure, abnormal-exit recovery and Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
+  Next: Run the repaired finalizer to completion, verify the private archive and W&B readback, then report the exact run outcome.
 
 ## Next / blocked
 

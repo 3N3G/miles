@@ -619,6 +619,14 @@
     {
       "path": "experiments/tcs_async_rl/EASY_OVERFIT_REPAIR_V9.md",
       "label": "Recorded unused-vision check repair and replacement plan"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/monitor_recovery_20261121.json",
+      "label": "Timeout, monitor failure and verified repair"
+    },
+    {
+      "path": ".claude/rules/tcs-experiment-monitoring.md",
+      "label": "Future-run supervision requirement"
     }
   ],
   "jobs": [
@@ -1904,15 +1912,22 @@
       "actor": "codex",
       "summary": "Take ownership of timeout recovery and failed finalization after the user reported failure",
       "revision": 159
+    },
+    {
+      "id": "c6ac08c3-269d-44df-b27d-ed75314eb37a",
+      "at": "2026-11-21T15:46:25.854383Z",
+      "actor": "codex",
+      "summary": "Monitor storage/dead-finalizer regressions fixed and tested; recover actual results without another GPU job",
+      "revision": 160
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Investigating the reported failure. Slurm confirms job 536360 hit its four-hour limit. Cached native logs contain 27 valid updates and no skipped step. The monitor then stopped on VM disk pressure, leaving reporting incomplete. Same Codex session is repairing monitoring and recovering results.",
-  "nextAction": "Verify final native logs and checkpoint state, recover private artifacts safely, fix disk/error handling and the stalled finalizer, and complete the run report before considering any additional GPU budget.",
+  "summary": "Verified 27 finite updates, no skipped step, and an intact 60.6 GB checkpoint at iteration 24. Training reached the approved four-hour limit. Fixed uncaught storage failure, abnormal-exit recovery and misleading metric checks. Archived and checksum-verified duplicate logs before freeing VM cache. All 80 CPU tests pass. No new GPU job.",
+  "nextAction": "Run the repaired finalizer to completion, verify the private archive and W&B readback, then report the exact run outcome.",
   "owner": "Codex",
-  "revision": 159,
-  "updatedAt": "2026-11-21T15:35:45.611115Z"
+  "revision": 160,
+  "updatedAt": "2026-11-21T15:46:25.854383Z"
 }

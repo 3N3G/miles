@@ -16,7 +16,7 @@ from experiments.tcs_async_rl.rl_archive import archive_chunks, copy_trace_batch
 from experiments.tcs_async_rl.rl_artifacts import file_sha256, retain_latest_checkpoint, save_generated_sample
 from experiments.tcs_async_rl.rl_inputs import question_set_key, read_bundle
 from experiments.tcs_async_rl.rl_smoke import native_argv
-from experiments.tcs_async_rl.watch_rl import consumed_rollouts, run_training_evidence
+from experiments.tcs_async_rl.watch_rl import acceptance, consumed_rollouts, run_training_evidence, watch
 
 BASE = Path(__file__).resolve().parents[2] / "experiments/tcs_async_rl"
 
@@ -34,6 +34,91 @@ def question(index):
 
 
 class EasyDataTests(unittest.TestCase):
+    def test_budget_timeout_does_not_mean_nonfinite_training(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "rl-smoke.log").write_text(
+                "train op=train_step rollout=0 step=0 attempt=0 outcome=NORMAL valid_step=true\n"
+                "step 0: {'train/pg_loss': 0.1, 'train/grad_norm': 0.18}\n"
+            )
+            (root / "checkpoint-inventory.json").write_text(
+                json.dumps({"tracker": "0", "iterations": [{"files": 4, "bytes": 100}]})
+            )
+            with patch(
+                "experiments.tcs_async_rl.watch_rl.consumed_rollouts",
+                return_value=[{"samples": 32, "varied_rewards": True}],
+            ):
+                result = acceptance(
+                    root, {"state": "TIMEOUT", "exit_code": "0:0"}, 40, minimum_varied_groups=1, retained_checkpoints=1
+                )
+            self.assertEqual(result["stop_reason"], "walltime_limit")
+            self.assertEqual(result["completed_updates"], 1)
+            self.assertTrue(result["checks"]["finite_step_metrics"])
+            self.assertFalse(result["checks"]["optimizer_updates_recorded"])
+            self.assertFalse(result["runtime_acceptance_passed"])
+
+    def test_monitor_retries_terminal_archive_backpressure(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            config = {"overrides": {"rm_url": "http://127.0.0.1:18495/score"}}
+            with patch("experiments.tcs_async_rl.watch_rl.load_configs", return_value=(config, {})), patch(
+                "experiments.tcs_async_rl.watch_rl.remote_state", return_value={"state": "TIMEOUT"}
+            ), patch("experiments.tcs_async_rl.watch_rl.record"), patch(
+                "experiments.tcs_async_rl.watch_rl.sync_outputs", return_value=0
+            ), patch(
+                "experiments.tcs_async_rl.watch_rl.finish", side_effect=[RuntimeError("disk pressure"), None]
+            ) as finish, patch(
+                "experiments.tcs_async_rl.watch_rl.time.sleep"
+            ):
+                watch(
+                    job_id="123",
+                    config_path=root / "config.json",
+                    directory=root,
+                    remote_directory=Path("/remote"),
+                    checkout=Path("/checkout"),
+                    state_repo=root,
+                    children=[Mock(), Mock()],
+                )
+            self.assertEqual(finish.call_count, 2)
+            retry = json.loads((root / "archive-retry.json").read_text())
+            self.assertEqual(retry["job_id"], "123")
+            self.assertEqual(retry["scheduler"]["state"], "TIMEOUT")
+            self.assertEqual(retry["phase"], "finalization_pending")
+
+    def test_finalizer_recovers_after_monitor_error_without_finished_marker(self):
+        from experiments.tcs_async_rl.finalize_rl_logs import finalize
+
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "submission.json").write_text('{"job_id":"123"}')
+            (root / "approved-config.json").write_text("{}")
+            original = '{"phase":"stopped","error_type":"RuntimeError"}\n'
+            (root / "handoff-state.json").write_text(original)
+            cli = SimpleNamespace(
+                run_dir=root,
+                job_id="123",
+                config=root / "config.json",
+                remote_run_dir=Path("/remote"),
+                remote_checkout=Path("/checkout"),
+                state_repo=root,
+            )
+            with patch("experiments.tcs_async_rl.finalize_rl_logs.load_configs", return_value=({}, {})), patch(
+                "experiments.tcs_async_rl.finalize_rl_logs.controller_alive", return_value=False
+            ), patch(
+                "experiments.tcs_async_rl.finalize_rl_logs.remote_state", return_value={"state": "TIMEOUT"}
+            ), patch(
+                "experiments.tcs_async_rl.finalize_rl_logs.finish"
+            ) as finish, patch(
+                "experiments.tcs_async_rl.finalize_rl_logs.upload_run",
+                return_value="https://huggingface.co/datasets/owner/data/commit/" + "a" * 40,
+            ), patch(
+                "experiments.tcs_async_rl.finalize_rl_logs.time.sleep", side_effect=AssertionError("Unexpected wait")
+            ):
+                finalize(cli)
+            self.assertEqual(finish.call_args.kwargs["scheduler"]["state"], "TIMEOUT")
+            self.assertEqual((root / "analysis-before-log-reader-repair/handoff-state.json").read_text(), original)
+            self.assertTrue((root / "native-log-finalizer-complete.json").exists())
+
     def test_optimizer_metrics_are_read_from_the_native_subprocess_log(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
@@ -172,8 +257,8 @@ class ArchiveTests(unittest.TestCase):
             root = Path(name)
             (root / "rollout_data").mkdir()
             files = [
-                ("rollout_data/rollout-0.jsonl.gz", 300 * 2**20),
-                ("rollout_data/completed_samples/a.generated.json.gz", 300 * 2**20),
+                ("rollout_data/rollout-0.jsonl.gz", 50 * 2**20),
+                ("rollout_data/completed_samples/a.generated.json.gz", 50 * 2**20),
             ]
             answers = [
                 subprocess.CompletedProcess([], 0, json.dumps(files), ""),
@@ -185,6 +270,19 @@ class ArchiveTests(unittest.TestCase):
                 remaining = copy_trace_batch(Path("/remote"), root)
             self.assertEqual(remaining, 1)
             self.assertEqual((root / "trace-transfer.list").read_text().strip(), "rollout_data/rollout-0.jsonl.gz")
+
+    def test_low_space_defers_transfer_without_deleting_or_copying(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            result = subprocess.CompletedProcess(
+                [], 0, json.dumps([("rollout_data/rollout-0.jsonl.gz", 20 * 2**20)]), ""
+            )
+            with patch("experiments.tcs_async_rl.rl_archive.subprocess.run", return_value=result) as invoke, patch(
+                "experiments.tcs_async_rl.rl_archive.shutil.disk_usage", return_value=SimpleNamespace(free=512 * 2**20)
+            ):
+                with self.assertRaisesRegex(RuntimeError, "Trace transfer deferred"):
+                    copy_trace_batch(Path("/remote"), root)
+            self.assertEqual(invoke.call_count, 1)
 
     def test_checkpoint_retention_never_leaves_this_runs_directory(self):
         with tempfile.TemporaryDirectory() as name:
