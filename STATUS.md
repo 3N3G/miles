@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved recorded caps and the easy-only overfit attempt: 40 updates, four-hour limit on eight GPUs. Preparing 20-question data and multi-question grading. Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: Validate the real capped-answer grades, freeze the 20-question plan and data, then submit and monitor the approved run.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Easy-only metadata verified: 20 questions across 17 papers; cap handling remains open Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: Resolve the recorded-cap choice, then prepare easy-only RL under the existing bounded runtime authorization. Full-subset duration is still unspecified.
+- Nothing recorded.
 
 ## Finished
 

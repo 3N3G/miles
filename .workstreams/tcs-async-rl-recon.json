@@ -1713,15 +1713,22 @@
       "actor": "codex",
       "summary": "Easy-only metadata verified: 20 questions across 17 papers; cap handling remains open",
       "revision": 136
+    },
+    {
+      "id": "12bb82e5-2ee5-4f4c-8f79-c9ffc002c733",
+      "at": "2026-11-21T07:17:06.166022Z",
+      "actor": "codex",
+      "summary": "Started the approved 40-update easy-only overfit attempt",
+      "revision": 137
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "needs-you",
-  "summary": "Easy-only metadata verified: 20 questions across 17 papers; cap handling remains open",
-  "nextAction": "Resolve the recorded-cap choice, then prepare easy-only RL under the existing bounded runtime authorization. Full-subset duration is still unspecified.",
+  "state": "running",
+  "summary": "User approved recorded caps and the easy-only overfit attempt: 40 updates, four-hour limit on eight GPUs. Preparing 20-question data and multi-question grading.",
+  "nextAction": "Validate the real capped-answer grades, freeze the 20-question plan and data, then submit and monitor the approved run.",
   "owner": "Codex",
-  "revision": 136,
-  "updatedAt": "2026-11-21T07:01:36.881294Z"
+  "revision": 137,
+  "updatedAt": "2026-11-21T07:17:06.166022Z"
 }
