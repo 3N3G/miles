@@ -1,0 +1,5945 @@
+{
+  "scope": "Development only. Four fixed visits, one token position, K=10. No reserved test items evaluated.",
+  "averages": [
+    {
+      "mode": "active",
+      "method": "cycle_change",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        5,
+        5
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 8.46942765604366,
+      "mean_validation_normalized_mse": 1.4993016719818115
+    },
+    {
+      "mode": "active",
+      "method": "cycle_change",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        6,
+        6,
+        7
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        4,
+        4,
+        5
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 8.46942765604366,
+      "mean_validation_normalized_mse": 1.4993016719818115
+    },
+    {
+      "mode": "active",
+      "method": "cycle_removed",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 10.595201533490963,
+      "mean_validation_normalized_mse": 1.6396206219991047
+    },
+    {
+      "mode": "active",
+      "method": "cycle_removed",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 10.595201533490963,
+      "mean_validation_normalized_mse": 1.6396206219991047
+    },
+    {
+      "mode": "active",
+      "method": "cycle_ridge",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        12,
+        12,
+        12
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        10,
+        10,
+        10
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 7.158395807490204,
+      "mean_validation_normalized_mse": 1.3225624561309814
+    },
+    {
+      "mode": "active",
+      "method": "cycle_ridge",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        17,
+        17,
+        17
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        12,
+        12,
+        12
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 7.158395807490204,
+      "mean_validation_normalized_mse": 1.3225624561309814
+    },
+    {
+      "mode": "active",
+      "method": "cycle_rotation",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        13,
+        12,
+        14
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        11,
+        10,
+        12
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.933147830312902,
+      "mean_validation_normalized_mse": 1.6364354193210602
+    },
+    {
+      "mode": "active",
+      "method": "cycle_rotation",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        18,
+        18,
+        18
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        13,
+        13,
+        13
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.933147830312902,
+      "mean_validation_normalized_mse": 1.6364354193210602
+    },
+    {
+      "mode": "active",
+      "method": "direct_rotation",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        9,
+        8,
+        8
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        7,
+        5,
+        6
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.359575324437834,
+      "mean_validation_normalized_mse": 1.3174907664457958
+    },
+    {
+      "mode": "active",
+      "method": "direct_rotation",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        13,
+        12,
+        12
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        9,
+        8,
+        10
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.359575324437834,
+      "mean_validation_normalized_mse": 1.3174907664457958
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        11,
+        10,
+        9
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        9,
+        7,
+        7
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 5.954147077238921,
+      "mean_validation_normalized_mse": 1.3947058121363323
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        14,
+        13,
+        13
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        10,
+        9,
+        9
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 5.954147077238921,
+      "mean_validation_normalized_mse": 1.3947058121363323
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation_recentered",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        10,
+        10,
+        9
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        8,
+        7,
+        7
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.383571479176029,
+      "mean_validation_normalized_mse": 1.335862010717392
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation_recentered",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        14,
+        12,
+        13
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        10,
+        8,
+        11
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.383571479176029,
+      "mean_validation_normalized_mse": 1.335862010717392
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        3,
+        3
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 5.988372658847859,
+      "mean_validation_normalized_mse": 0.7670975128809611
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 5.988372658847859,
+      "mean_validation_normalized_mse": 0.7670975128809611
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge_recentered",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        3,
+        3
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.530482984198765,
+      "mean_validation_normalized_mse": 0.7521633903185526
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge_recentered",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        4,
+        3
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.530482984198765,
+      "mean_validation_normalized_mse": 0.7521633903185526
+    },
+    {
+      "mode": "active",
+      "method": "mean",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 8.840000365719652,
+      "mean_validation_normalized_mse": 1.011805534362793
+    },
+    {
+      "mode": "active",
+      "method": "mean",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 8.840000365719652,
+      "mean_validation_normalized_mse": 1.011805534362793
+    },
+    {
+      "mode": "active",
+      "method": "mean_scale",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        15,
+        14,
+        15
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        13,
+        12,
+        13
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.936593296852979,
+      "mean_validation_normalized_mse": 1.6147174735864003
+    },
+    {
+      "mode": "active",
+      "method": "mean_scale",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        19,
+        19,
+        19
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        14,
+        14,
+        14
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.936593296852979,
+      "mean_validation_normalized_mse": 1.6147174735864003
+    },
+    {
+      "mode": "active",
+      "method": "projected_fixed_point",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        11,
+        11,
+        11
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        10,
+        9,
+        10
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.938306792215868,
+      "mean_validation_normalized_mse": 1.5679040749867756
+    },
+    {
+      "mode": "active",
+      "method": "projected_fixed_point",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        18,
+        18,
+        18
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        15,
+        15,
+        15
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.938306792215868,
+      "mean_validation_normalized_mse": 1.5679040749867756
+    },
+    {
+      "mode": "active",
+      "method": "raw",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        13,
+        13,
+        13
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        10,
+        10,
+        10
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 9.181629167090763,
+      "mean_validation_normalized_mse": 56.30305194854736
+    },
+    {
+      "mode": "active",
+      "method": "raw",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        16,
+        16,
+        16
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        10,
+        10,
+        10
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 9.181629167090763,
+      "mean_validation_normalized_mse": 56.30305194854736
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_centered",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        15,
+        14,
+        15
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        13,
+        12,
+        13
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.93659364400488,
+      "mean_validation_normalized_mse": 1.6147174437840779
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_centered",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        19,
+        19,
+        19
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        14,
+        14,
+        14
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.93659364400488,
+      "mean_validation_normalized_mse": 1.6147174437840779
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_raw",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        3,
+        3,
+        3
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        3,
+        3,
+        3
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 19.44943590976975,
+      "mean_validation_normalized_mse": 61.4630823135376
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_raw",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 19.44943590976975,
+      "mean_validation_normalized_mse": 61.4630823135376
+    },
+    {
+      "mode": "active",
+      "method": "recent_rotation_power",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 9.192097073070931,
+      "mean_validation_normalized_mse": 1.9390401244163513
+    },
+    {
+      "mode": "active",
+      "method": "recent_rotation_power",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 9.192097073070931,
+      "mean_validation_normalized_mse": 1.9390401244163513
+    },
+    {
+      "mode": "active",
+      "method": "ridge",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        3,
+        3
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.379338502229164,
+      "mean_validation_normalized_mse": 0.7202191154162089
+    },
+    {
+      "mode": "active",
+      "method": "ridge",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.379338502229164,
+      "mean_validation_normalized_mse": 0.7202191154162089
+    },
+    {
+      "mode": "active",
+      "method": "shuffled_ridge",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 9.08196092175715,
+      "mean_validation_normalized_mse": 1.0784148474534352
+    },
+    {
+      "mode": "active",
+      "method": "shuffled_ridge",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 9.08196092175715,
+      "mean_validation_normalized_mse": 1.0784148474534352
+    },
+    {
+      "mode": "mixed",
+      "method": "direct_rotation",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.8383302683180025,
+      "mean_validation_normalized_mse": 1.1797745029131572
+    },
+    {
+      "mode": "mixed",
+      "method": "direct_rotation",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.8383302683180025,
+      "mean_validation_normalized_mse": 1.1797745029131572
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.853119556650971,
+      "mean_validation_normalized_mse": 1.1930810113747914
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.853119556650971,
+      "mean_validation_normalized_mse": 1.1930810113747914
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation_recentered",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.830933872497443,
+      "mean_validation_normalized_mse": 1.1797396341959636
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation_recentered",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.830933872497443,
+      "mean_validation_normalized_mse": 1.1797396341959636
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.330155360743855,
+      "mean_validation_normalized_mse": 0.6653080582618713
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.330155360743855,
+      "mean_validation_normalized_mse": 0.6653080582618713
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge_recentered",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.339563081255465,
+      "mean_validation_normalized_mse": 0.6646010975042979
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge_recentered",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.339563081255465,
+      "mean_validation_normalized_mse": 0.6646010975042979
+    },
+    {
+      "mode": "mixed",
+      "method": "mean",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 8.840000365719652,
+      "mean_validation_normalized_mse": 1.011805534362793
+    },
+    {
+      "mode": "mixed",
+      "method": "mean",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 8.840000365719652,
+      "mean_validation_normalized_mse": 1.011805534362793
+    },
+    {
+      "mode": "mixed",
+      "method": "mean_scale",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 5.824820829702145,
+      "mean_validation_normalized_mse": 1.5870753924051921
+    },
+    {
+      "mode": "mixed",
+      "method": "mean_scale",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 5.824820829702145,
+      "mean_validation_normalized_mse": 1.5870753924051921
+    },
+    {
+      "mode": "mixed",
+      "method": "raw",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        2,
+        2
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 8.103769814426249,
+      "mean_validation_normalized_mse": 3.3238760828971863
+    },
+    {
+      "mode": "mixed",
+      "method": "raw",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 8.103769814426249,
+      "mean_validation_normalized_mse": 3.3238760828971863
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_centered",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 5.731533781326179,
+      "mean_validation_normalized_mse": 1.584545761346817
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_centered",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        2,
+        2
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 5.731533781326179,
+      "mean_validation_normalized_mse": 1.584545761346817
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_raw",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        5,
+        5
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        5,
+        5,
+        5
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 21.720317822152918,
+      "mean_validation_normalized_mse": 4.324321985244751
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_raw",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        5,
+        5,
+        5
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        5,
+        5,
+        5
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 21.720317822152918,
+      "mean_validation_normalized_mse": 4.324321985244751
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_rotation_power",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.320467417800065,
+      "mean_validation_normalized_mse": 1.8227768540382385
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_rotation_power",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        2,
+        3,
+        1
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 6.320467417800065,
+      "mean_validation_normalized_mse": 1.8227768540382385
+    },
+    {
+      "mode": "mixed",
+      "method": "ridge",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.349321123280308,
+      "mean_validation_normalized_mse": 0.6627592841784159
+    },
+    {
+      "mode": "mixed",
+      "method": "ridge",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 4.349321123280308,
+      "mean_validation_normalized_mse": 0.6627592841784159
+    },
+    {
+      "mode": "mixed",
+      "method": "shuffled_ridge",
+      "filtered": false,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 9.185464448820461,
+      "mean_validation_normalized_mse": 1.0651016235351562
+    },
+    {
+      "mode": "mixed",
+      "method": "shuffled_ridge",
+      "filtered": true,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "eligible": 38,
+      "capable_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "capable_eligible": 24,
+      "mean_output_kl": 9.185464448820461,
+      "mean_validation_normalized_mse": 1.0651016235351562
+    }
+  ],
+  "per_seed": [
+    {
+      "mode": "active",
+      "method": "raw",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 13,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 9.181629167090763
+    },
+    {
+      "mode": "active",
+      "method": "raw",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 16,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 9.181629167090763
+    },
+    {
+      "mode": "active",
+      "method": "mean",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.835827597704801
+    },
+    {
+      "mode": "active",
+      "method": "mean",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.835827597704801
+    },
+    {
+      "mode": "active",
+      "method": "mean_scale",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 15,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 13,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.945184593579986
+    },
+    {
+      "mode": "active",
+      "method": "mean_scale",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 19,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 14,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.945184593579986
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_raw",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "bf-sphinx-river",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 3,
+      "capable_hit_names": [
+        "bf-sphinx-river",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 19.44943590976975
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_raw",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 19.44943590976975
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_centered",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 15,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 13,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.945185204798525
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_centered",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 19,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 14,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.945185204798525
+    },
+    {
+      "mode": "active",
+      "method": "direct_rotation",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "half-clock-hours",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 7,
+      "capable_hit_names": [
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "half-clock-hours",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.263370769945058
+    },
+    {
+      "mode": "active",
+      "method": "direct_rotation",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 13,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-giza-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.263370769945058
+    },
+    {
+      "mode": "active",
+      "method": "recent_rotation_power",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.23890007951043
+    },
+    {
+      "mode": "active",
+      "method": "recent_rotation_power",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.23890007951043
+    },
+    {
+      "mode": "active",
+      "method": "ridge",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.398849442736669
+    },
+    {
+      "mode": "active",
+      "method": "ridge",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.398849442736669
+    },
+    {
+      "mode": "active",
+      "method": "shuffled_ridge",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.045433991063724
+    },
+    {
+      "mode": "active",
+      "method": "shuffled_ridge",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.045433991063724
+    },
+    {
+      "mode": "active",
+      "method": "raw",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 13,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 9.181629167090763
+    },
+    {
+      "mode": "active",
+      "method": "raw",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 16,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 9.181629167090763
+    },
+    {
+      "mode": "active",
+      "method": "mean",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.841360239549116
+    },
+    {
+      "mode": "active",
+      "method": "mean",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.841360239549116
+    },
+    {
+      "mode": "active",
+      "method": "mean_scale",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 14,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 12,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.939176732572642
+    },
+    {
+      "mode": "active",
+      "method": "mean_scale",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 19,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 14,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.939176732572642
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_raw",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "bf-sphinx-river",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 3,
+      "capable_hit_names": [
+        "bf-sphinx-river",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 19.44943590976975
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_raw",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 19.44943590976975
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_centered",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 14,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 12,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.939177236502821
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_centered",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 19,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 14,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.939177236502821
+    },
+    {
+      "mode": "active",
+      "method": "direct_rotation",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 8,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "half-clock-hours",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 5,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.423904110626741
+    },
+    {
+      "mode": "active",
+      "method": "direct_rotation",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 12,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-giza-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 8,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum"
+      ],
+      "mean_output_kl": 6.423904110626741
+    },
+    {
+      "mode": "active",
+      "method": "recent_rotation_power",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.197373247688466
+    },
+    {
+      "mode": "active",
+      "method": "recent_rotation_power",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.197373247688466
+    },
+    {
+      "mode": "active",
+      "method": "ridge",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.390771406888962
+    },
+    {
+      "mode": "active",
+      "method": "ridge",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.390771406888962
+    },
+    {
+      "mode": "active",
+      "method": "shuffled_ridge",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.06503146128221
+    },
+    {
+      "mode": "active",
+      "method": "shuffled_ridge",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.06503146128221
+    },
+    {
+      "mode": "active",
+      "method": "raw",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 13,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 9.181629167090763
+    },
+    {
+      "mode": "active",
+      "method": "raw",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 16,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 9.181629167090763
+    },
+    {
+      "mode": "active",
+      "method": "mean",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.842813259905034
+    },
+    {
+      "mode": "active",
+      "method": "mean",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.842813259905034
+    },
+    {
+      "mode": "active",
+      "method": "mean_scale",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 15,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 13,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.925418564406308
+    },
+    {
+      "mode": "active",
+      "method": "mean_scale",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 19,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 14,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.925418564406308
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_raw",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "bf-sphinx-river",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 3,
+      "capable_hit_names": [
+        "bf-sphinx-river",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 19.44943590976975
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_raw",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 19.44943590976975
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_centered",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 15,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 13,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.925418490713293
+    },
+    {
+      "mode": "active",
+      "method": "recent_plane_centered",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 19,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 14,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.925418490713293
+    },
+    {
+      "mode": "active",
+      "method": "direct_rotation",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 8,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 6,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum"
+      ],
+      "mean_output_kl": 6.391451092741706
+    },
+    {
+      "mode": "active",
+      "method": "direct_rotation",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 12,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.391451092741706
+    },
+    {
+      "mode": "active",
+      "method": "recent_rotation_power",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.140017892013896
+    },
+    {
+      "mode": "active",
+      "method": "recent_rotation_power",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.140017892013896
+    },
+    {
+      "mode": "active",
+      "method": "ridge",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.348394657061859
+    },
+    {
+      "mode": "active",
+      "method": "ridge",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.348394657061859
+    },
+    {
+      "mode": "active",
+      "method": "shuffled_ridge",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.135417312925512
+    },
+    {
+      "mode": "active",
+      "method": "shuffled_ridge",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.135417312925512
+    },
+    {
+      "mode": "mixed",
+      "method": "raw",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.103769814426249
+    },
+    {
+      "mode": "mixed",
+      "method": "raw",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.103769814426249
+    },
+    {
+      "mode": "mixed",
+      "method": "mean",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.835827597704801
+    },
+    {
+      "mode": "mixed",
+      "method": "mean",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.835827597704801
+    },
+    {
+      "mode": "mixed",
+      "method": "mean_scale",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 5.8267550774595955
+    },
+    {
+      "mode": "mixed",
+      "method": "mean_scale",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "dbl-armistice-antonym"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 5.8267550774595955
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_raw",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 5,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 21.720317822152918
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_raw",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 5,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 21.720317822152918
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_centered",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "bf-sphinx-river",
+        "dbl-armistice-antonym"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "bf-sphinx-river"
+      ],
+      "mean_output_kl": 5.731436318971894
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_centered",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "bf-sphinx-river",
+        "dbl-armistice-antonym"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "bf-sphinx-river"
+      ],
+      "mean_output_kl": 5.731436318971894
+    },
+    {
+      "mode": "mixed",
+      "method": "direct_rotation",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "half-clock-hours",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.83975975906307
+    },
+    {
+      "mode": "mixed",
+      "method": "direct_rotation",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "half-clock-hours",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.83975975906307
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_rotation_power",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 6.2918130739168685
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_rotation_power",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 6.2918130739168685
+    },
+    {
+      "mode": "mixed",
+      "method": "ridge",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.339322599768638
+    },
+    {
+      "mode": "mixed",
+      "method": "ridge",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.339322599768638
+    },
+    {
+      "mode": "mixed",
+      "method": "shuffled_ridge",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.153419528224251
+    },
+    {
+      "mode": "mixed",
+      "method": "shuffled_ridge",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.153419528224251
+    },
+    {
+      "mode": "mixed",
+      "method": "raw",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.103769814426249
+    },
+    {
+      "mode": "mixed",
+      "method": "raw",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.103769814426249
+    },
+    {
+      "mode": "mixed",
+      "method": "mean",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.841360239549116
+    },
+    {
+      "mode": "mixed",
+      "method": "mean",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.841360239549116
+    },
+    {
+      "mode": "mixed",
+      "method": "mean_scale",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 5.838581554998051
+    },
+    {
+      "mode": "mixed",
+      "method": "mean_scale",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "dbl-armistice-antonym"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 5.838581554998051
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_raw",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 5,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 21.720317822152918
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_raw",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 5,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 21.720317822152918
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_centered",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "dbl-armistice-antonym"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 5.743632420626554
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_centered",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "bf-sphinx-river",
+        "dbl-armistice-antonym"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "bf-sphinx-river"
+      ],
+      "mean_output_kl": 5.743632420626554
+    },
+    {
+      "mode": "mixed",
+      "method": "direct_rotation",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.809271572936665
+    },
+    {
+      "mode": "mixed",
+      "method": "direct_rotation",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.809271572936665
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_rotation_power",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 6.371654426238754
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_rotation_power",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 6.371654426238754
+    },
+    {
+      "mode": "mixed",
+      "method": "ridge",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.33030111965808
+    },
+    {
+      "mode": "mixed",
+      "method": "ridge",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.33030111965808
+    },
+    {
+      "mode": "mixed",
+      "method": "shuffled_ridge",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.330767654288898
+    },
+    {
+      "mode": "mixed",
+      "method": "shuffled_ridge",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.330767654288898
+    },
+    {
+      "mode": "mixed",
+      "method": "raw",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.103769814426249
+    },
+    {
+      "mode": "mixed",
+      "method": "raw",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.103769814426249
+    },
+    {
+      "mode": "mixed",
+      "method": "mean",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.842813259905034
+    },
+    {
+      "mode": "mixed",
+      "method": "mean",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 8.842813259905034
+    },
+    {
+      "mode": "mixed",
+      "method": "mean_scale",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 5.809125856648792
+    },
+    {
+      "mode": "mixed",
+      "method": "mean_scale",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "dbl-armistice-antonym"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 5.809125856648792
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_raw",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 5,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 21.720317822152918
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_raw",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 5,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "func-filters-count",
+        "func-pumps-chambers"
+      ],
+      "mean_output_kl": 21.720317822152918
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_centered",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "dbl-armistice-antonym"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 5.719532604380087
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_plane_centered",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "bf-sphinx-river",
+        "dbl-armistice-antonym"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "bf-sphinx-river"
+      ],
+      "mean_output_kl": 5.719532604380087
+    },
+    {
+      "mode": "mixed",
+      "method": "direct_rotation",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.865959472954273
+    },
+    {
+      "mode": "mixed",
+      "method": "direct_rotation",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.865959472954273
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_rotation_power",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 6.297934753244573
+    },
+    {
+      "mode": "mixed",
+      "method": "recent_rotation_power",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "nhop-rainbow-element"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 6.297934753244573
+    },
+    {
+      "mode": "mixed",
+      "method": "ridge",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.3783396504142065
+    },
+    {
+      "mode": "mixed",
+      "method": "ridge",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.3783396504142065
+    },
+    {
+      "mode": "mixed",
+      "method": "shuffled_ridge",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.072206163948232
+    },
+    {
+      "mode": "mixed",
+      "method": "shuffled_ridge",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 9.072206163948232
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 11,
+      "hit_names": [
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-pumps-chambers",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-pumps-chambers",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 5.867568627812646
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 14,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-giza-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-pumps-chambers",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-pumps-chambers",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 5.867568627812646
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 10,
+      "hit_names": [
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 8,
+      "capable_hit_names": [
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.293167913772843
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 14,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-giza-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-pumps-chambers",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-pumps-chambers",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.293167913772843
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.000736513327468
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.000736513327468
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.561267822845416
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "dbl-armistice-antonym",
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.561267822845416
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 10,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 7,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum"
+      ],
+      "mean_output_kl": 6.0146504854614085
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 13,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-giza-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum"
+      ],
+      "mean_output_kl": 6.0146504854614085
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 10,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 7,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum"
+      ],
+      "mean_output_kl": 6.441077882864258
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 12,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-giza-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 8,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum"
+      ],
+      "mean_output_kl": 6.441077882864258
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.006443903933872
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.006443903933872
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.528592259504578
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.528592259504578
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 7,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum"
+      ],
+      "mean_output_kl": 5.9802221184427085
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 13,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "pred-valentines-prevmonth"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 5.9802221184427085
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 9,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 7,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum"
+      ],
+      "mean_output_kl": 6.416468640890988
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 13,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-halloween-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 11,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-sphinx-river",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "half-clock-hours",
+        "holiday-christmas-monthnum",
+        "holiday-halloween-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.416468640890988
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 5.957937559282238
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 5.957937559282238
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.501588870246302
+    },
+    {
+      "mode": "active",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 3,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 6.501588870246302
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "half-clock-hours",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.855263706906276
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "half-clock-hours",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.855263706906276
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "half-clock-hours",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.835298832573674
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 2,
+      "hit_names": [
+        "half-clock-hours",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.835298832573674
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.319324886527928
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.319324886527928
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.332669374617663
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.332669374617663
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.823301525549455
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.823301525549455
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.805896166779778
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.805896166779778
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.3086037783460185
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.3086037783460185
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.320194199274887
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.320194199274887
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.880793437497182
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.880793437497182
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.851606618138876
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_direct_rotation_recentered",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 1,
+      "hit_names": [
+        "half-clock-hours"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.851606618138876
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.362537417357618
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.362537417357618
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.3658256698738445
+    },
+    {
+      "mode": "mixed",
+      "method": "late_reuse_ridge_recentered",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 4,
+      "hit_names": [
+        "half-clock-hours",
+        "nhop-cube-element",
+        "nhop-rainbow-element",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 1,
+      "capable_hit_names": [
+        "half-clock-hours"
+      ],
+      "mean_output_kl": 4.3658256698738445
+    },
+    {
+      "mode": "active",
+      "method": "cycle_rotation",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 13,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 11,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.942296596819705
+    },
+    {
+      "mode": "active",
+      "method": "cycle_rotation",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 18,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 13,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.942296596819705
+    },
+    {
+      "mode": "active",
+      "method": "cycle_ridge",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 12,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 7.136718901991844
+    },
+    {
+      "mode": "active",
+      "method": "cycle_ridge",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 17,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 12,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 7.136718901991844
+    },
+    {
+      "mode": "active",
+      "method": "cycle_change",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "func-filters-count"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "func-filters-count"
+      ],
+      "mean_output_kl": 8.470346626368435
+    },
+    {
+      "mode": "active",
+      "method": "cycle_change",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 6,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "func-filters-count"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "func-filters-count"
+      ],
+      "mean_output_kl": 8.470346626368435
+    },
+    {
+      "mode": "active",
+      "method": "cycle_removed",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 10.602811269868504
+    },
+    {
+      "mode": "active",
+      "method": "cycle_removed",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 10.602811269868504
+    },
+    {
+      "mode": "active",
+      "method": "projected_fixed_point",
+      "seed": 0,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 11,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 6.945598324591463
+    },
+    {
+      "mode": "active",
+      "method": "projected_fixed_point",
+      "seed": 0,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 18,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 15,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.945598324591463
+    },
+    {
+      "mode": "active",
+      "method": "cycle_rotation",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 12,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.935154262726957
+    },
+    {
+      "mode": "active",
+      "method": "cycle_rotation",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 18,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 13,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.935154262726957
+    },
+    {
+      "mode": "active",
+      "method": "cycle_ridge",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 12,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 7.1606329091570595
+    },
+    {
+      "mode": "active",
+      "method": "cycle_ridge",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 17,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 12,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 7.1606329091570595
+    },
+    {
+      "mode": "active",
+      "method": "cycle_change",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "func-filters-count"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "func-filters-count"
+      ],
+      "mean_output_kl": 8.472148674726487
+    },
+    {
+      "mode": "active",
+      "method": "cycle_change",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 6,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "func-filters-count"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "func-filters-count"
+      ],
+      "mean_output_kl": 8.472148674726487
+    },
+    {
+      "mode": "active",
+      "method": "cycle_removed",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 10.592340877381238
+    },
+    {
+      "mode": "active",
+      "method": "cycle_removed",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 10.592340877381238
+    },
+    {
+      "mode": "active",
+      "method": "projected_fixed_point",
+      "seed": 1,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 11,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 9,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 6.939804097603668
+    },
+    {
+      "mode": "active",
+      "method": "projected_fixed_point",
+      "seed": 1,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 18,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 15,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.939804097603668
+    },
+    {
+      "mode": "active",
+      "method": "cycle_rotation",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 14,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 12,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.921992631392046
+    },
+    {
+      "mode": "active",
+      "method": "cycle_rotation",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 18,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 13,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.921992631392046
+    },
+    {
+      "mode": "active",
+      "method": "cycle_ridge",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 12,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 7.17783561132171
+    },
+    {
+      "mode": "active",
+      "method": "cycle_ridge",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 17,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-populous-country",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 12,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 7.17783561132171
+    },
+    {
+      "mode": "active",
+      "method": "cycle_change",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 5,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "func-filters-count"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 4,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "func-filters-count"
+      ],
+      "mean_output_kl": 8.465787667036057
+    },
+    {
+      "mode": "active",
+      "method": "cycle_change",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 7,
+      "hit_names": [
+        "b3-mh-samba-river",
+        "b3-mh-tajmahal-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 5,
+      "capable_hit_names": [
+        "b3-mh-samba-river",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "func-filters-count",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 8.465787667036057
+    },
+    {
+      "mode": "active",
+      "method": "cycle_removed",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 10.590452453223142
+    },
+    {
+      "mode": "active",
+      "method": "cycle_removed",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 0,
+      "hit_names": [],
+      "capable_eligible": 24,
+      "capable_hits": 0,
+      "capable_hit_names": [],
+      "mean_output_kl": 10.590452453223142
+    },
+    {
+      "mode": "active",
+      "method": "projected_fixed_point",
+      "seed": 2,
+      "filtered": false,
+      "eligible": 38,
+      "hits": 11,
+      "hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 10,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter"
+      ],
+      "mean_output_kl": 6.929517954452471
+    },
+    {
+      "mode": "active",
+      "method": "projected_fixed_point",
+      "seed": 2,
+      "filtered": true,
+      "eligible": 38,
+      "hits": 18,
+      "hit_names": [
+        "b3-mh-kangaroo-ocean",
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth",
+        "roman-rings-olympic"
+      ],
+      "capable_eligible": 24,
+      "capable_hits": 15,
+      "capable_hit_names": [
+        "b3-mh-redplanet-moons",
+        "b3-mh-samba-river",
+        "bf-eiffel-continent",
+        "bf-fuji-ocean",
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-organic-Z",
+        "chem-photosynthesis-Z",
+        "firstletter-valentines-month",
+        "func-filters-count",
+        "func-pumps-chambers",
+        "holiday-christmas-monthnum",
+        "holiday-valentines-monthnum",
+        "month-7-namedafter",
+        "pred-valentines-prevmonth"
+      ],
+      "mean_output_kl": 6.929517954452471
+    }
+  ]
+}
