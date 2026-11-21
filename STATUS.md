@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Auditing why the completed 27-update easy-only RL run has noisy rewards without a clear increase. Inspect question mix, full native optimizer and rollout metrics, policy lag, lengths, reward judgments Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Build a reproducible diagnostic from existing run data and source. Report supported faults and uncertainty before proposing research changes. No new GPU job.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Full diagnostic validated 864 consumed answers and 29.87M tokens against both judge orders, log-probs, loss masks, sampled support and policy spans. Seven repeated questions changed by +0.071/7 on ave Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
+  Next: Finish descriptive report, all-metric catalog, reproducible plots and private artifact archive. Keep all experiment settings unchanged. No GPU job or judge call.
 
 ## Next / blocked
 

@@ -60,6 +60,9 @@
   to the already authorized provisional two-update runtime check.
 - Status: the read-only receipt audit is in `experiments/tcs_async_rl/evidence/judge_reference_audit_20261120.json`.
   No new judge calls or score corrections were made. Gemini access remains unverified.
+  The 2026-11-21 easy-run audit found different candidate scores between swapped calls for 215/864 consumed answers.
+  Two pairs give the supplied reference six instead of seven points. These are not human agreement estimates.
+  See `experiments/tcs_async_rl/RL_NOISE_AUDIT_20261121.md`. Original grades remain unchanged.
 
 ## 2026-11-20: Dataset-wide RL feasibility versus software qualification
 
@@ -97,6 +100,8 @@
   Keep the optimizer batch, data, reward, model and token limits fixed. Measure memory and actual sample use.
 - Blocks: a later throughput change. The current approved pilot continues with its existing 32-sample setting.
 - Status: observed during job 536360. No concurrency change or additional throughput job submitted.
+  The complete run has 76% actor waiting time and visible decode logs from one engine actor.
+  Only seven questions receive a second visit before the time limit. The throughput repair remains a user decision.
 
 # Answered questions
 

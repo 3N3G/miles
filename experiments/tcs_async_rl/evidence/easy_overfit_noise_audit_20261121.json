@@ -1,0 +1,67 @@
+{
+  "observed_at_utc": "2026-11-21T17:41:12.358088+00:00",
+  "source_run": "easy-overfit-v9",
+  "gpu_source_commit": "8657ed5667548f649814c4ff1f1734707833ed9f",
+  "approved_config": "experiments/tcs_async_rl/rl_easy_overfit_v9.json",
+  "local_audit_directory": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-overfit-v9-diagnostic-20261121",
+  "private_archive_status": "pending_upload",
+  "private_archive_planned_path": "miles/easy-overfit-v9-diagnostic-20261121",
+  "measured": {
+    "updates": 27,
+    "answers": 864,
+    "questions": 20,
+    "question_visit_counts": {
+      "1": 13,
+      "2": 7
+    },
+    "first_pass_mean_reward": 4.86328125,
+    "later_visits_mean_reward": 4.535714285714286,
+    "matched_first_mean_reward": 4.464285714285714,
+    "matched_last_mean_reward": 4.535714285714286,
+    "same_question_mean_change": 0.07142857142857117,
+    "questions_increased": 4,
+    "questions_decreased": 3,
+    "reward_group_range": [
+      0.0,
+      6.875
+    ],
+    "varied_groups": 26,
+    "answer_sampling_se_range": [
+      0.0,
+      0.5219175542820359
+    ],
+    "zero_answers": 128,
+    "full_credit_answers": 280,
+    "judge_order_disagreements": 215,
+    "mean_judge_order_gap": 0.39467592592592593,
+    "maximum_judge_order_gap": 4.0,
+    "reference_below_full_credit": 2,
+    "generated_tokens": 29871030,
+    "mean_tokens_per_answer": 34572.95138888889,
+    "capped_answers": 23,
+    "capped_token_fraction": 0.06929791172249501,
+    "final_response_character_fraction": 0.05915371673701267,
+    "tokens_with_support_size_one_fraction": 0.5336239493582913,
+    "active_loss_tokens": 29871030
+  },
+  "limits": [
+    "One training seed and only seven repeated questions. No frozen before/after evaluation.",
+    "Judge answer-order gap is not a human agreement estimate. Human calibration remains absent.",
+    "Logged entropy is disabled, not measured zero entropy. Reference-policy KL was not measured.",
+    "Per-token KL/ESS cannot certify full-trajectory importance weights at these lengths.",
+    "No per-parameter update norms or backbone/MTP gradient decomposition were logged."
+  ],
+  "wandb_corrected_history": {
+    "at_utc": "2026-11-21T17:37:42.013116+00:00",
+    "run_url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261121-080327-108",
+    "verified_steps": 27,
+    "verified_scalar_values": 1977,
+    "state": "failed",
+    "original_training_run_changed": false,
+    "new_gpu_jobs": 0
+  },
+  "cpu_tests_passed": 86,
+  "new_gpu_jobs": 0,
+  "new_judge_calls": 0,
+  "experiment_changes": []
+}

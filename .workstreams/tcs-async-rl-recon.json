@@ -1969,15 +1969,22 @@
       "actor": "codex",
       "summary": "Claimed the user-requested full-metric investigation of noisy RL rewards",
       "revision": 166
+    },
+    {
+      "id": "d111c689-b9b9-4b06-a3d7-5af223024ef1",
+      "at": "2026-11-21T17:32:06.262901Z",
+      "actor": "codex",
+      "summary": "Validated every consumed answer and training token; repaired the W&B reward axis with verified readback",
+      "revision": 167
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Auditing why the completed 27-update easy-only RL run has noisy rewards without a clear increase. Inspect question mix, full native optimizer and rollout metrics, policy lag, lengths, reward judgments, checkpoint progress and W&B presentation.",
-  "nextAction": "Build a reproducible diagnostic from existing run data and source. Report supported faults and uncertainty before proposing research changes. No new GPU job.",
+  "summary": "Full diagnostic validated 864 consumed answers and 29.87M tokens against both judge orders, log-probs, loss masks, sampled support and policy spans. Seven repeated questions changed by +0.071/7 on average (4 up, 3 down). Found W&B offline-writer step collisions; all 27 corrected audit points now pass API readback.",
+  "nextAction": "Finish descriptive report, all-metric catalog, reproducible plots and private artifact archive. Keep all experiment settings unchanged. No GPU job or judge call.",
   "owner": "Codex",
-  "revision": 166,
-  "updatedAt": "2026-11-21T17:14:38.134976Z"
+  "revision": 167,
+  "updatedAt": "2026-11-21T17:32:06.262901Z"
 }

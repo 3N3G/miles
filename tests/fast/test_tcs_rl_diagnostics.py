@@ -1,0 +1,126 @@
+import hashlib
+import json
+import tempfile
+import unittest
+from pathlib import Path
+from unittest.mock import Mock, patch
+
+from experiments.tcs_async_rl.diagnose_rl import question_comparisons, trace_summary
+from experiments.tcs_async_rl.native_metrics import (
+    compare_wandb,
+    publish_audit,
+    read_native_metrics,
+    sync_terminal_audit,
+)
+
+
+class DiagnosticTests(unittest.TestCase):
+    def test_native_events_recover_reward_axis_after_offline_writer_collision(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "events").mkdir()
+            actor, rollout = [], []
+            for step, reward in enumerate([1.0, 6.0]):
+                actor.extend(
+                    [
+                        {"type": "metric", "rollout_id": step, "metrics": {"train/step": step, "train/pg_loss": 0.1}},
+                        {
+                            "type": "metric",
+                            "rollout_id": step,
+                            "metrics": {"rollout/step": step, "rollout/raw_reward": reward},
+                        },
+                    ]
+                )
+                rollout.append(
+                    {
+                        "type": "metric",
+                        "rollout_id": step,
+                        "metrics": {"rollout/step": step, "rollout/episode_raw_reward": reward},
+                    }
+                )
+            (root / "events/actor_cell00000_rank00000.jsonl").write_text("\n".join(map(json.dumps, actor)))
+            path = root / "events/rollout_executor.jsonl"
+            path.write_text("\n".join(map(json.dumps, rollout)))
+            native = read_native_metrics(root)
+            # A colliding W&B writer supplied the second reward with step zero.
+            history = [
+                {"rollout/step": 0, "rollout/episode_raw_reward": 1.0},
+                {"rollout/step": 0, "rollout/episode_raw_reward": 6.0},
+            ]
+            audit = compare_wandb(native, history, metric="rollout/episode_raw_reward", step_key="rollout/step")
+            self.assertEqual(audit["missing_or_misassigned_native_steps"], [1])
+            self.assertEqual(native[1]["rollout/episode_raw_reward"], 6.0)
+            rollout[1]["metrics"]["rollout/step"] = 0
+            path.write_text("\n".join(map(json.dumps, rollout)))
+            with self.assertRaisesRegex(ValueError, "axis disagrees"):
+                read_native_metrics(root)
+
+    def test_question_matching_does_not_confuse_a_harder_second_pass_with_regression(self):
+        def group(step, key, reward):
+            return {
+                "optimizer_step": step,
+                "question_key": key,
+                "paper_id": key,
+                "mean_reward": reward,
+                "cap_rate": 0,
+                "mean_tokens": 100,
+            }
+
+        groups = [group(0, "easy", 7), group(1, "hard", 1), group(2, "hard", 2)]
+        pairs = question_comparisons(groups)
+        self.assertEqual(len(pairs), 1)
+        self.assertEqual(pairs[0]["difference"], 1)
+        self.assertEqual(pairs[0]["first_step"], 1)
+
+    def test_trace_validation_rejects_selected_tokens_outside_the_replayed_support(self):
+        sample = {
+            "response_length": 2,
+            "tokens": [99, 3, 4],
+            "rollout_log_probs": [0.0, -0.5],
+            "loss_mask": None,
+            "rollout_sampling_mask": {"encoding": "csr", "ids": [3, 4, 5], "offsets": [0, 1, 3]},
+            "weight_versions": [{"spans": [{"version": "0", "abs_start": 1, "abs_end": 3}]}],
+            "status": "completed",
+            "response": "thinking</think>answer",
+            "final_answer": "answer",
+        }
+        result = trace_summary(sample)
+        self.assertEqual(result["active_loss_tokens"], 2)
+        self.assertEqual(result["tokens_with_support_size_one"], 1)
+        sample["rollout_sampling_mask"]["ids"][1] = 8
+        with self.assertRaises(AssertionError):
+            trace_summary(sample)
+
+    def test_corrected_metrics_use_one_writer_and_a_separate_explicit_axis(self):
+        run = Mock()
+        publish_audit([{"optimizer_step": 3, "rollout/episode_raw_reward": 2.0}], run)
+        run.define_metric.assert_any_call("audit/*", step_metric="audit/optimizer_step")
+        run.log.assert_called_once_with({"audit/optimizer_step": 3, "audit/rollout/episode_raw_reward": 2.0})
+
+    def test_wandb_readback_retries_indexing_without_republishing_or_changing_terminal_state(self):
+        native = [{"optimizer_step": 0, "rollout/episode_raw_reward": 2.0}]
+        digest = hashlib.sha256(json.dumps(native, sort_keys=True).encode()).hexdigest()
+        before = Mock(state="failed", summary={"audit/native_metrics_sha256": digest})
+        delayed = Mock(state="failed")
+        delayed.scan_history.return_value = [{"audit/optimizer_step": None}]
+        indexed = Mock(state="failed", url="https://wandb.example/run")
+        indexed.scan_history.return_value = [{"audit/optimizer_step": 0, "audit/rollout/episode_raw_reward": 2.0}]
+        sdk = Mock()
+        sdk.Api.return_value.run.side_effect = [before, delayed, indexed]
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "resolved-config.json").write_text(
+                json.dumps({"args": {"wandb_team": "team", "wandb_project": "project"}, "run_id": "id"})
+            )
+            with patch.dict("sys.modules", {"wandb": sdk}), patch(
+                "experiments.tcs_async_rl.native_metrics.read_native_metrics", return_value=native
+            ), patch("experiments.tcs_async_rl.native_metrics.time.sleep") as sleep:
+                receipt = sync_terminal_audit(root, root)
+            sdk.init.assert_not_called()
+            sleep.assert_called_once_with(2)
+            self.assertEqual(receipt["verified_points"], 1)
+            self.assertEqual(receipt["state_after"], "failed")
+
+
+if __name__ == "__main__":
+    unittest.main()
