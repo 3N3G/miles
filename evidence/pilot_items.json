@@ -1,0 +1,786 @@
+{
+  "source_revision": "abd152e20aa2fa5d7df7f01ade6759ebe0f858fb",
+  "source_file": "evals/basic/multihop_st/items_v5.json",
+  "source_sha256": "59d1d1cd9b50d0b683a0964ce1069f31282b9bdbcc42ee00de3a847bfdce709f",
+  "split": "exploratory development only",
+  "selection": "Python random.Random(0).sample(items,12), preserving sampled order",
+  "items": [
+    {
+      "name": "control-france",
+      "prompt": "The capital of France is",
+      "target": "Paris",
+      "intermediates": []
+    },
+    {
+      "name": "control-spider",
+      "prompt": "The number of legs on the animal that spins webs is",
+      "target": "eight",
+      "intermediates": [
+        "spider"
+      ]
+    },
+    {
+      "name": "control-germany",
+      "prompt": "The capital of Germany is",
+      "target": "Berlin",
+      "intermediates": []
+    },
+    {
+      "name": "control-square",
+      "prompt": "The square of three is",
+      "target": "nine",
+      "intermediates": []
+    },
+    {
+      "name": "basketball-players",
+      "prompt": "Fact: The number of players per side in the sport invented in Springfield, Massachusetts is ",
+      "target": "5",
+      "intermediates": [
+        "basketball"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "sport",
+        "gold": "basketball",
+        "aliases": [
+          "\u7bee\u7403"
+        ],
+        "distractors": [
+          "baseball",
+          "cricket",
+          "golf",
+          "rugby"
+        ],
+        "distractor_aliases": {
+          "baseball": [
+            "\u68d2\u7403"
+          ],
+          "cricket": [
+            "\u677f\u7403"
+          ],
+          "golf": [
+            "\u9ad8\u5c14\u592b"
+          ],
+          "rugby": [
+            "\u6a44\u6984\u7403"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "baseball",
+          "cricket",
+          "golf",
+          "rugby"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "mh-w1-ice-hockey-puck",
+      "prompt": "Fact: The object players strike in the sport whose professional championship trophy is the Stanley Cup is the",
+      "target": "puck",
+      "intermediates": [
+        "ice hockey"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "sport",
+        "gold": "ice hockey",
+        "aliases": [
+          "hockey",
+          "\u51b0\u7403"
+        ],
+        "distractors": [
+          "soccer",
+          "baseball",
+          "basketball",
+          "cricket"
+        ],
+        "distractor_aliases": {
+          "soccer": [
+            "association football",
+            "\u8db3\u7403"
+          ],
+          "baseball": [
+            "\u68d2\u7403"
+          ],
+          "basketball": [
+            "\u7bee\u7403"
+          ],
+          "cricket": [
+            "\u677f\u7403"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "basketball",
+          "soccer",
+          "baseball",
+          "tennis"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The object players strike in a sport is the",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The object players strike in the sport of the Stanley Cup is the",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The object players strike in the sport whose trophy is the Stanley Cup is the",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The object associated with the Stanley Cup is the",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 10
+    },
+    {
+      "name": "nhop-soccer-element",
+      "prompt": "Count the items in a dozen. The element at that position on the periodic table is magnesium. Count the players on a soccer team on the field. The element at that position on the periodic table is ",
+      "target": "sodium",
+      "intermediates": [
+        "11"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.9,
+      "gate_variant": "plain_stripped",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "number",
+        "gold": "11",
+        "aliases": [
+          "eleven",
+          "\u5341\u4e00",
+          "eleventh",
+          "11th",
+          "\u7b2c\u5341\u4e00"
+        ],
+        "distractors": [
+          "20",
+          "16",
+          "1",
+          "4"
+        ],
+        "distractor_aliases": {},
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "20",
+          "16",
+          "1",
+          "4"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "chem-photosynthesis-Z",
+      "prompt": "Fact: The atomic number of the gas that plants release during photosynthesis is ",
+      "target": "8",
+      "intermediates": [
+        "oxygen"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "element",
+        "gold": "oxygen",
+        "aliases": [
+          "\u6c27",
+          "\u6c27\u6c14"
+        ],
+        "distractors": [
+          "iron",
+          "nitrogen",
+          "helium",
+          "silver"
+        ],
+        "distractor_aliases": {
+          "iron": [
+            "\u94c1"
+          ],
+          "nitrogen": [
+            "\u6c2e"
+          ],
+          "helium": [
+            "\u6c26"
+          ],
+          "silver": [
+            "\u94f6"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "nitrogen",
+          "helium",
+          "magnesium",
+          "iron"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "bf-sphinx-river",
+      "prompt": "Fact: The river flowing through the country of the Great Sphinx is the",
+      "target": "Nile",
+      "intermediates": [
+        "Egypt"
+      ],
+      "source": "staging",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "Egypt",
+        "aliases": [
+          "\u57c3\u53ca"
+        ],
+        "distractors": [
+          "Germany",
+          "Russia",
+          "China",
+          "United Kingdom"
+        ],
+        "distractor_aliases": {
+          "Germany": [
+            "Federal Republic of Germany",
+            "\u5fb7\u56fd"
+          ],
+          "Russia": [
+            "Russian Federation",
+            "\u4fc4\u7f57\u65af"
+          ],
+          "China": [
+            "People's Republic of China",
+            "PRC",
+            "\u4e2d\u56fd"
+          ],
+          "United Kingdom": [
+            "Britain",
+            "Great Britain",
+            "\u82f1\u56fd"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Finland",
+          "Japan",
+          "Norway",
+          "Argentina"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "bf-relativity-firstname",
+      "prompt": "Fact: The first name of the scientist who developed the theory of general relativity is",
+      "target": "Albert",
+      "intermediates": [
+        "Einstein"
+      ],
+      "source": "staging",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "person",
+        "gold": "Einstein",
+        "aliases": [
+          "Albert Einstein",
+          "\u7231\u56e0\u65af\u5766"
+        ],
+        "distractors": [
+          "Shakespeare",
+          "Aristotle",
+          "Newton",
+          "Plato"
+        ],
+        "distractor_aliases": {
+          "Shakespeare": [
+            "William Shakespeare",
+            "\u838e\u58eb\u6bd4\u4e9a"
+          ],
+          "Aristotle": [
+            "\u4e9a\u91cc\u58eb\u591a\u5fb7"
+          ],
+          "Newton": [
+            "Isaac Newton",
+            "\u725b\u987f"
+          ],
+          "Plato": [
+            "\u67cf\u62c9\u56fe"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Beethoven",
+          "Darwin",
+          "Mozart",
+          "Homer"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "firstletter-populous-country",
+      "prompt": "Fact: The first letter of the name of the world's most populous country is ",
+      "target": "C",
+      "intermediates": [
+        "China"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.8,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "China",
+        "aliases": [
+          "\u4e2d\u56fd"
+        ],
+        "distractors": [
+          "Italy",
+          "Sweden",
+          "Greece",
+          "Egypt"
+        ],
+        "distractor_aliases": {
+          "Italy": [
+            "\u610f\u5927\u5229"
+          ],
+          "Sweden": [
+            "\u745e\u5178"
+          ],
+          "Greece": [
+            "\u5e0c\u814a"
+          ],
+          "Egypt": [
+            "\u57c3\u53ca"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Italy",
+          "Sweden",
+          "Greece",
+          "Egypt"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "firstletter-greatwall-country",
+      "prompt": "Fact: The first letter of the name of the country that built the Great Wall is ",
+      "target": "C",
+      "intermediates": [
+        "China"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.9,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "China",
+        "aliases": [
+          "\u4e2d\u56fd"
+        ],
+        "distractors": [
+          "Japan",
+          "France",
+          "Italy",
+          "Germany"
+        ],
+        "distractor_aliases": {
+          "Japan": [
+            "\u65e5\u672c"
+          ],
+          "France": [
+            "\u6cd5\u56fd"
+          ],
+          "Italy": [
+            "\u610f\u5927\u5229"
+          ],
+          "Germany": [
+            "\u5fb7\u56fd"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Mexico",
+          "Scotland",
+          "Sweden",
+          "Netherlands"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "b3-mh-cuckoo-mountains",
+      "prompt": "Fact: The mountain range of the country famous for cuckoo clocks and neutrality is the",
+      "target": "Alps",
+      "intermediates": [
+        "Switzerland"
+      ],
+      "source": "staging_b3",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "Switzerland",
+        "aliases": [
+          "\u745e\u58eb"
+        ],
+        "distractors": [
+          "United States",
+          "China",
+          "Japan",
+          "United Kingdom"
+        ],
+        "distractor_aliases": {
+          "United States": [
+            "USA",
+            "United States of America",
+            "America",
+            "\u7f8e\u56fd"
+          ],
+          "China": [
+            "\u4e2d\u56fd",
+            "\u4e2d\u534e\u4eba\u6c11\u5171\u548c\u56fd"
+          ],
+          "Japan": [
+            "\u65e5\u672c"
+          ],
+          "United Kingdom": [
+            "Britain",
+            "Great Britain",
+            "\u82f1\u56fd"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "India",
+          "Japan",
+          "Russia",
+          "Greece"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "dbl-armistice-antonym",
+      "prompt": "Fact: The antonym of what an armistice ends is \"",
+      "target": "peace",
+      "intermediates": [
+        "war"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "state of conflict",
+        "gold": "war",
+        "aliases": [
+          "wars",
+          "\u6218\u4e89"
+        ],
+        "distractors": [
+          "rebellion",
+          "feud",
+          "rivalry",
+          "vendetta"
+        ],
+        "distractor_aliases": {
+          "rebellion": [
+            "rebellions",
+            "\u53db\u4e71"
+          ],
+          "feud": [
+            "feuds",
+            "\u4e16\u4ec7"
+          ],
+          "rivalry": [
+            "rivalries",
+            "\u5bbf\u6028"
+          ],
+          "vendetta": [
+            "vendettas",
+            "\u8840\u4ec7"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "poor",
+          "full",
+          "high",
+          "early"
+        ],
+        "list_source": "v3+relabel",
+        "bridge_type_v2": "antonym word",
+        "distractors_pre_relabel": [
+          "life",
+          "love",
+          "death",
+          "truth"
+        ]
+      }
+    },
+    {
+      "name": "b3-mh-longestriver-sea",
+      "prompt": "Fact: The sea into which the world's longest river empties is the",
+      "target": "Mediterranean",
+      "intermediates": [
+        "Nile"
+      ],
+      "source": "staging_b3",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "river",
+        "gold": "Nile",
+        "aliases": [
+          "\u5c3c\u7f57\u6cb3"
+        ],
+        "distractors": [
+          "Danube",
+          "Seine",
+          "Amazon",
+          "Mississippi"
+        ],
+        "distractor_aliases": {
+          "Danube": [
+            "Danube River",
+            "\u591a\u7459\u6cb3"
+          ],
+          "Seine": [
+            "Seine River",
+            "\u585e\u7eb3\u6cb3"
+          ],
+          "Amazon": [
+            "Amazon River",
+            "\u4e9a\u9a6c\u900a\u6cb3",
+            "\u4e9a\u9a6c\u5b59\u6cb3"
+          ],
+          "Mississippi": [
+            "\u5bc6\u897f\u897f\u6bd4"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Mississippi",
+          "Thames",
+          "Yangtze",
+          "Ganges"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "mh-w1-shere-khan-tiger",
+      "prompt": "Fact: The animal species of the villain who hunts the man-cub Mowgli in Kipling's The Jungle Book is the",
+      "target": "tiger",
+      "intermediates": [
+        "Shere Khan"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "fictional character",
+        "gold": "Shere Khan",
+        "aliases": [
+          "Shere-Khan",
+          "Sher Khan",
+          "\u8c22\u5c14\u6c57",
+          "\u5e0c\u5c14\u6c57"
+        ],
+        "distractors": [
+          "Bagheera",
+          "Baloo",
+          "Kaa",
+          "Akela"
+        ],
+        "distractor_aliases": {
+          "Bagheera": [
+            "\u5df4\u5e0c\u62c9"
+          ],
+          "Baloo": [
+            "\u5df4\u9c81"
+          ],
+          "Kaa": [
+            "\u5361\u5965",
+            "\u5361\u963f"
+          ],
+          "Akela": [
+            "\u963f\u514b\u62c9"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Baloo",
+          "Bagheera",
+          "Kaa",
+          "Akela"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The animal species of a fictional villain is the",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The animal species of the villain in Kipling's The Jungle Book is the",
+          "greedy_hit": true,
+          "hits": 14,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The animal species of the creature who hunts the man-cub Mowgli is the",
+          "greedy_hit": true,
+          "hits": 15,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The animal species of the villain who hunts the man-cub is the",
+          "greedy_hit": true,
+          "hits": 17,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 17,
+      "gate_g1": 10
+    }
+  ]
+}
