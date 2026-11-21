@@ -102,3 +102,14 @@ This is a local algebraic bound, not a measured semantic memory capacity.
 
 Both proposed maps need held-out concept readouts and causal swaps.
 Clearer words alone would not establish that either map explains the model's reasoning.
+
+## Measured extension beyond the production passes
+
+A later diagnostic extended the same fixed-three-pass checkpoint to 32 passes on twelve development prompts.
+A separate frozen check used eight 64-token WikiText paragraphs and 64 passes.
+The first three states matched native execution exactly.
+During passes 49–64, lag-one and lag-three normalized full-state RMS distances averaged 0.669 and 0.191.
+The mean paragraph-level ratio was 0.293, with a bootstrap 95% interval of 0.241–0.349.
+This supports approximate three-pass recurrence on these extended runs, not a proven stable limit cycle.
+It does not establish the behavior of the variable-loop checkpoint.
+See the [frozen confirmation](plans/period_three_confirmation.md), [raw-derived statistics](evidence/period_confirmation_summary.json), and [lag plot](figures/period_confirm_lags.png).

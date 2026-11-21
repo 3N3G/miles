@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Confirmed an approximate three-pass recurrent orbit on eight separate WikiText paragraphs through 64 passes. Country Jacobian directions cause all four valid capital swaps inside the repeated block; n Jobs: hpcfund/537071 COMPLETED; hpcfund/537086 COMPLETED
-  Next: Finish causal recovery diagnostics, archive all terminal runs, and prepare concise standalone user-review reports with raw examples and limitations.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,4 +16,4 @@
 
 ## Finished
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed 76 GPU minutes of bounded follow-up. Found controlled country exchanges with late Jacobian rows, horizon-dependent write effects, and early probe recovery. Confirmed approximate three-pass r Jobs: hpcfund/537071 COMPLETED; hpcfund/537088 COMPLETED

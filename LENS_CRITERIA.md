@@ -38,6 +38,8 @@ Loop depth and future token position should therefore remain distinct axes in an
 6. **Limit decoder inference.** A powerful decoder may solve a problem that its source state had not solved.
 7. **Control evaluation opportunities.** Fix N, K, token position, and vocabulary filtering. Selecting the best layer after inspecting test labels inflates recall.
 8. **Keep claims reproducible.** Pin model, tokenizer, code, data, and fitting split. Show raw token lists beside aggregates.
+9. **Track persistence and horizon.** A readable concept and a lasting edit are different claims. Observe later states after an intervention. A restored original answer can reflect recovery from unchanged input. Test whether a shared decoder transfers across loop passes.
+10. **Match actual edits.** Equal coordinate-exchange strength need not give equal perturbation norms. Hold token positions, intervention site, signed coefficients, and edit size fixed when comparing directions.
 
 These criteria are a proposed evaluation rubric, not a claim that the current pilot has satisfied them.
 

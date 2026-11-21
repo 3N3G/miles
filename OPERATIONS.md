@@ -53,3 +53,43 @@ Model weights and the small gate-weight extract were omitted. Recorded inputs, l
 
 The human-facing `REPORT.md` and `DETAILS.md` are local drafts for user review.
 The user requires results review before external reporting. Do not publish those drafts without that review.
+
+## Continued research requested on 2026-11-21
+
+The user requested further creative work, including repeated recent rotations.
+The continuation kept the same pinned checkpoint and used sequential MI210 jobs.
+It captured 144 calibration paragraphs and 55 development items, then fit transport maps.
+The reserved 43-item comparison was frozen before its outputs were opened.
+It did not confirm a mean/scale reader improvement.
+
+Subsequent stages fit four country Jacobian rows, validated country exchanges,
+compared intervention sites and matched edit sizes, and traced recovery after early edits.
+Long-loop diagnostics included twelve development inputs through 32 passes and
+an independent eight-paragraph confirmation through 64 passes.
+Original model weights and all completed plans/configs were preserved.
+
+Exact submissions, code commits, commands, terminal states, and exits are in `jobs.jsonl`.
+The final scheduler snapshot is `evidence/scheduler_observation.json`.
+Accepted continuation allocation time was 4562 seconds (76.03 GPU minutes), including failed and replacement stages.
+At most one owned GPU job ran at once. No owned research job remains active.
+No other session's jobs were stopped or changed.
+
+The matched-size comparison initially failed because an equivalent unit-vector
+formula changed BF16 rounding. The replacement reused the original calculation
+and passed all twelve bitwise reference-logit checks. The failed partial directory
+and its worker log were archived alongside the replacement.
+See `plans/matched_country_direction_repair.md`.
+
+All executed stages, including failures, have verified private immutable archives
+in `evidence/artifact_archives.json`. A pending capture cancelled before allocation
+had no model outputs; its scheduler receipt remains in the registry.
+
+Later submissions run from detached worktrees at the exact source commit.
+The earlier shared-checkout limitation is documented in `plans/source_provenance_note.md`.
+The code backup remains `origin/inkling-interp`; never merge this independent history into Miles main.
+
+The short overview is local `REPORT.md`, with three standalone experiment reports
+under `reports/` and full methods in local `DETAILS.md`.
+These drafts are stored on local branch `review/continued-research` and are not pushed.
+The initial report remains on `review/initial-report`.
+Keep human-facing drafts local until the user reviews them.

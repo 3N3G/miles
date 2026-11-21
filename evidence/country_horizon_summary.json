@@ -1,0 +1,615 @@
+{
+  "scope": "Four related native-valid capital prompts, not a broad intervention success-rate estimate. Fit subsets overlap.",
+  "single_site_results": [
+    {
+      "row_source": "third_pass_row",
+      "site": 11,
+      "fit_seed": 0,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 11,
+      "fit_seed": 0,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 11,
+      "fit_seed": 1,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 11,
+      "fit_seed": 1,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 11,
+      "fit_seed": 2,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 11,
+      "fit_seed": 2,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 23,
+      "fit_seed": 0,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 23,
+      "fit_seed": 0,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "china-unspoken-capital"
+      ],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 23,
+      "fit_seed": 1,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 23,
+      "fit_seed": 1,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "china-unspoken-capital"
+      ],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 23,
+      "fit_seed": 2,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 23,
+      "fit_seed": 2,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "china-unspoken-capital"
+      ],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 35,
+      "fit_seed": 0,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital"
+      ],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 35,
+      "fit_seed": 0,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 4,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital",
+        "china-explicit-capital",
+        "china-unspoken-capital"
+      ],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 35,
+      "fit_seed": 1,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital"
+      ],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 35,
+      "fit_seed": 1,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 4,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital",
+        "china-explicit-capital",
+        "china-unspoken-capital"
+      ],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 35,
+      "fit_seed": 2,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital"
+      ],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "third_pass_row",
+      "site": 35,
+      "fit_seed": 2,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 4,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital",
+        "china-explicit-capital",
+        "china-unspoken-capital"
+      ],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 11,
+      "fit_seed": 0,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 11,
+      "fit_seed": 0,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 11,
+      "fit_seed": 1,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 11,
+      "fit_seed": 1,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 11,
+      "fit_seed": 2,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 11,
+      "fit_seed": 2,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 23,
+      "fit_seed": 0,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 23,
+      "fit_seed": 0,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 23,
+      "fit_seed": 1,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 23,
+      "fit_seed": 1,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 23,
+      "fit_seed": 2,
+      "dose": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    },
+    {
+      "row_source": "own_horizon_row",
+      "site": 23,
+      "fit_seed": 2,
+      "dose": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": [],
+      "random_swaps": 0,
+      "random_trials": 12
+    }
+  ],
+  "early_swap_recovery": [
+    {
+      "name": "germany-explicit-capital",
+      "original_probe_cosines": [
+        0.0794568583369255,
+        0.05647656321525574,
+        0.12239664793014526
+      ],
+      "edited_probe_cosines": [
+        -0.23252110183238983,
+        -0.023673608899116516,
+        0.13053372502326965
+      ],
+      "distance_to_clean": [
+        0.3367970585823059,
+        0.1909506916999817,
+        0.11908206343650818
+      ],
+      "original_sign_recovered_by_pass3": true,
+      "native_top1": " Berlin",
+      "edited_top1": " Berlin",
+      "target_probability": 0.00033089134376496077
+    },
+    {
+      "name": "germany-unspoken-capital",
+      "original_probe_cosines": [
+        0.0780748650431633,
+        0.06765346229076385,
+        0.10933228582143784
+      ],
+      "edited_probe_cosines": [
+        -0.22866365313529968,
+        -0.008766980841755867,
+        0.12137892842292786
+      ],
+      "distance_to_clean": [
+        0.2436608523130417,
+        0.15629450976848602,
+        0.09448067843914032
+      ],
+      "original_sign_recovered_by_pass3": true,
+      "native_top1": " Berlin",
+      "edited_top1": " Berlin",
+      "target_probability": 0.00013730251521337777
+    },
+    {
+      "name": "china-explicit-capital",
+      "original_probe_cosines": [
+        -0.06355055421590805,
+        -0.08516945689916611,
+        -0.11147002130746841
+      ],
+      "edited_probe_cosines": [
+        0.18768125772476196,
+        0.03609485179185867,
+        -0.08854303508996964
+      ],
+      "distance_to_clean": [
+        0.21719574928283691,
+        0.17335696518421173,
+        0.14922116696834564
+      ],
+      "original_sign_recovered_by_pass3": true,
+      "native_top1": " Beijing",
+      "edited_top1": " Beijing",
+      "target_probability": 0.0004578217340167612
+    },
+    {
+      "name": "china-unspoken-capital",
+      "original_probe_cosines": [
+        -0.06638115644454956,
+        -0.11462853848934174,
+        -0.05219167843461037
+      ],
+      "edited_probe_cosines": [
+        0.19574816524982452,
+        0.11916710436344147,
+        0.03184061497449875
+      ],
+      "distance_to_clean": [
+        0.16196848452091217,
+        0.1934528946876526,
+        0.10274579375982285
+      ],
+      "original_sign_recovered_by_pass3": false,
+      "native_top1": " Beijing",
+      "edited_top1": " Beijing",
+      "target_probability": 0.003822950180619955
+    }
+  ],
+  "matched_size_directions": [
+    {
+      "method": "j_unit",
+      "fit_seed": 0,
+      "cases": 4,
+      "swaps": 4,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital",
+        "china-explicit-capital",
+        "china-unspoken-capital"
+      ]
+    },
+    {
+      "method": "j_unit",
+      "fit_seed": 1,
+      "cases": 4,
+      "swaps": 4,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital",
+        "china-explicit-capital",
+        "china-unspoken-capital"
+      ]
+    },
+    {
+      "method": "j_unit",
+      "fit_seed": 2,
+      "cases": 4,
+      "swaps": 4,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital",
+        "china-explicit-capital",
+        "china-unspoken-capital"
+      ]
+    },
+    {
+      "method": "random_0",
+      "fit_seed": 0,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "random_0",
+      "fit_seed": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "random_0",
+      "fit_seed": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "random_1",
+      "fit_seed": 0,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "random_1",
+      "fit_seed": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "random_1",
+      "fit_seed": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "random_2",
+      "fit_seed": 0,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "random_2",
+      "fit_seed": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "random_2",
+      "fit_seed": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "raw_unit",
+      "fit_seed": 0,
+      "cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital"
+      ]
+    },
+    {
+      "method": "raw_unit",
+      "fit_seed": 1,
+      "cases": 4,
+      "swaps": 1,
+      "swap_names": [
+        "germany-explicit-capital"
+      ]
+    },
+    {
+      "method": "raw_unit",
+      "fit_seed": 2,
+      "cases": 4,
+      "swaps": 2,
+      "swap_names": [
+        "germany-explicit-capital",
+        "germany-unspoken-capital"
+      ]
+    },
+    {
+      "method": "ridge_unit",
+      "fit_seed": 0,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "ridge_unit",
+      "fit_seed": 1,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    },
+    {
+      "method": "ridge_unit",
+      "fit_seed": 2,
+      "cases": 4,
+      "swaps": 0,
+      "swap_names": []
+    }
+  ],
+  "rounding_controls": {
+    "maximum_precast_norm_match_error": 1.4314022678263427e-07,
+    "maximum_jacobian_reference_logit_discrepancy": 0,
+    "median_actual_BF16_norm_relative_error": 0.000242435495094211,
+    "maximum_actual_BF16_norm_relative_error": 0.008869379704667616
+  }
+}

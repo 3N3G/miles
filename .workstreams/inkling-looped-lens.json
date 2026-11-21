@@ -4,30 +4,29 @@
   "sources": [],
   "evidence": [
     {
-      "path": "evidence/period_confirmation_summary.json",
-      "label": "Independent recurrent-orbit confirmation"
+      "path": "evidence/country_horizon_summary.json",
+      "label": "Matched direction controls and recovery traces"
     },
     {
-      "path": "evidence/country_transfer_complete_summary.json",
-      "label": "Semantic swap controls and matched baselines"
+      "path": "evidence/period_confirmation_summary.json",
+      "label": "Independent confirmation of recurrent three-pass structure"
     },
     {
       "path": "evidence/transport_final_summary.json",
       "label": "Frozen final reader comparison"
     },
     {
-      "path": "plans/country_recovery_trace.md",
-      "label": "Early-swap recovery diagnostic"
+      "path": "evidence/final_validation.json",
+      "label": "Split, numerical, archive, and terminal-state checks"
+    },
+    {
+      "path": "evidence/artifact_archives.json",
+      "label": "Private immutable raw results"
     }
   ],
   "jobs": [
     {
       "id": "537071",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "537086",
       "cluster": "hpcfund",
       "status": "COMPLETED"
     },
@@ -39,7 +38,17 @@
     {
       "id": "537093",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
+    },
+    {
+      "id": "537100",
+      "cluster": "hpcfund",
+      "status": "FAILED"
+    },
+    {
+      "id": "537103",
+      "cluster": "hpcfund",
+      "status": "COMPLETED"
     }
   ],
   "sessions": [
@@ -132,15 +141,22 @@
       "actor": "codex",
       "summary": "Confirmed three-pass recurrence and horizon-dependent semantic interventions; rejected the selected reader gain on final data",
       "revision": 11
+    },
+    {
+      "id": "52724492-94a5-468d-8dc5-2ce314c1266b",
+      "at": "2026-11-21T17:48:20.112219Z",
+      "actor": "codex",
+      "summary": "Completed bounded follow-up, verified all results and archives, and prepared standalone reports for user review",
+      "revision": 12
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Discover and validate a useful Inkling interpretability lens, beginning with transport by recent rotations and testing semantic causal effects.",
-  "state": "running",
-  "summary": "Confirmed an approximate three-pass recurrent orbit on eight separate WikiText paragraphs through 64 passes. Country Jacobian directions cause all four valid capital swaps inside the repeated block; normalized raw and state-prediction directions cause none. Reusing the late direction gives 0/4, 2/4, and 4/4 swaps at successive passes. The final readout test did not confirm calibration improvement. Own-horizon early directions and recovery traces are finishing.",
-  "nextAction": "Finish causal recovery diagnostics, archive all terminal runs, and prepare concise standalone user-review reports with raw examples and limitations.",
+  "state": "finished",
+  "summary": "Completed 76 GPU minutes of bounded follow-up. Found controlled country exchanges with late Jacobian rows, horizon-dependent write effects, and early probe recovery. Confirmed approximate three-pass recurrence on eight separate WikiText paragraphs through 64 passes. The generic readout gain did not survive the reserved test. All owned jobs are terminal and all executed stages have private immutable archives. Standalone user-review reports are saved locally.",
+  "nextAction": "Review REPORT.md and the local review/continued-research branch. A future broader lens fit needs fresh held-out tasks; compare modified-backward concept rows before a full vocabulary fit.",
   "owner": "Codex",
-  "revision": 11,
-  "updatedAt": "2026-11-21T17:26:34.206408Z"
+  "revision": 12,
+  "updatedAt": "2026-11-21T17:48:20.112219Z"
 }

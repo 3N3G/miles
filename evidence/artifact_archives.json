@@ -200,5 +200,41 @@
     "files": 4,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/d69d42302de74190b52ffcadae852675869f25c7/inkling-interp/early-country-jacobian-v1",
     "verified_at": "2026-11-21T17:24:45.336085+00:00"
+  },
+  {
+    "stage": "early-phase-transfer-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "1d1620793e748fd1f739487cef0cd2976aa20cf9",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1d1620793e748fd1f739487cef0cd2976aa20cf9/inkling-interp/early-phase-transfer-v1",
+    "verified_at": "2026-11-21T17:40:17.407720+00:00"
+  },
+  {
+    "stage": "country-recovery-trace-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "fb50f5444c1be5cc422c44f9416937131741d01e",
+    "private": true,
+    "files": 4,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/fb50f5444c1be5cc422c44f9416937131741d01e/inkling-interp/country-recovery-trace-v1",
+    "verified_at": "2026-11-21T17:40:57.671275+00:00"
+  },
+  {
+    "stage": "matched-country-directions-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "914b67df73d2b6ff5c015aa6caff6518813f41bf",
+    "private": true,
+    "files": 4,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/914b67df73d2b6ff5c015aa6caff6518813f41bf/inkling-interp/matched-country-directions-v1",
+    "verified_at": "2026-11-21T17:41:35.687164+00:00"
+  },
+  {
+    "stage": "matched-country-directions-v2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "4005fa6225f7c6776caf1c710a698f12a4657fb6",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/4005fa6225f7c6776caf1c710a698f12a4657fb6/inkling-interp/matched-country-directions-v2",
+    "verified_at": "2026-11-21T17:41:43.646237+00:00"
   }
 ]

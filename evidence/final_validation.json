@@ -1,0 +1,23 @@
+{
+  "verified_at": "2026-11-21T17:46:36.957668+00:00",
+  "development_items": 55,
+  "reserved_items": 43,
+  "split_disjoint": true,
+  "calibration_train_validation_exact_text_overlap": 0,
+  "reserved_native_head_checks": 43,
+  "all_reserved_head_errors_zero": true,
+  "later_reader_diagnostics_used_development_only": true,
+  "period_confirmation_controls_exact": true,
+  "matched_direction_reference_logits_exact": true,
+  "all_executed_stages_archived_privately": true,
+  "reports_local_links_valid": true,
+  "all_owned_jobs_terminal": true,
+  "continuation_allocated_gpu_seconds": 4562,
+  "continuation_allocated_gpu_minutes": 76.03333333333333,
+  "rounding_controls": {
+    "maximum_precast_norm_match_error": 1.4314022678263427e-07,
+    "maximum_jacobian_reference_logit_discrepancy": 0,
+    "median_actual_BF16_norm_relative_error": 0.000242435495094211,
+    "maximum_actual_BF16_norm_relative_error": 0.008869379704667616
+  }
+}
