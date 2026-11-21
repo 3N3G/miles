@@ -1,0 +1,47 @@
+{
+  "observed_at_utc": "2026-11-21T08:27:50.539171+00:00",
+  "job_id": "536360",
+  "native_evidence": {
+    "valid_updates": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "skipped_or_discarded_updates": [],
+    "metrics": {
+      "0": {
+        "finite": true,
+        "values": {
+          "train/loss": 0.09461601823568344,
+          "train/pg_loss": 0.09461601823568344,
+          "train/entropy_loss": 0.0,
+          "train/pg_clipfrac": 0.0,
+          "train/ppo_kl": 0.00032839152845554054,
+          "train/ess_ratio": 0.9993455410003662,
+          "train/train_rollout_logprob_abs_diff": 0.009477760642766953,
+          "train/train_rollout_kl": 0.0003274389891885221,
+          "train/grad_norm": 0.1805822253227234,
+          "train/mtp_loss": 0.574290931224823,
+          "train/lr-pg_0": 1e-06,
+          "train/lr-pg_1": 1e-06,
+          "train/step": 0
+        }
+      }
+    }
+  },
+  "weight_publication": {
+    "rollout_id": 0,
+    "new_weight_version": 1,
+    "engines": 3,
+    "actor_publish_elapsed_seconds": 0.4
+  },
+  "first_actor_train_seconds": 340.5,
+  "first_generation_seconds_approx": 612,
+  "gpu_submissions_for_log_reader_repair": 0,
+  "reader_repair": "Use rl-smoke.log for native step metrics. The frozen original VM monitor read only Slurm launch output. A separate VM finalizer preserves its original report and corrects the analysis after that monitor exits.",
+  "raw_group_hf_commit": "3da9c84ceff33e3358be7b8f25d986f3b772a8b2",
+  "raw_example": "miles/easy-overfit-v9/raw-example-rollout-0.jsonl.json",
+  "interpretation": "One successful native update and real behavior-policy publication. This does not establish overfitting or generalization."
+}

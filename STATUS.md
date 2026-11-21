@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536360 delivered its first group: 28 positive and four zero rewards, mean 4.46875/7. All 32 answers carry exact behavior-policy version 0. Native training is computing the first backward pass  Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
-  Next: Confirm the first finite optimizer update and publication of updated weights. Continue monitoring the approved run and retain exact traces.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536360 completed native optimizer update 0 with finite metrics and no skipped step. Policy loss 0.094616, gradient norm 0.180582; updated weights reached all three engines as version 1. First  Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
+  Next: Arm corrected native-log reporting and continue monitoring the approved run through saving and completion. Four-hour cap may stop before 40 updates.
 
 ## Next / blocked
 

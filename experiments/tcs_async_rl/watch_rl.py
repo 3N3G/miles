@@ -54,6 +54,13 @@ def training_evidence(text):
     }
 
 
+def run_training_evidence(directory):
+    # amd_preflight._run owns the native subprocess log. Slurm contains its
+    # launch commands and failures, while optimizer metrics are in this file.
+    paths = [directory / "rl-smoke.log", *directory.glob("slurm-*.log")]
+    return training_evidence("\n".join(p.read_text(errors="replace") for p in paths if p.exists()))
+
+
 def consumed_rollouts(directory, *, allow_pending=False):
     manifest = directory / "rollout-export.json"
     if not manifest.exists():
@@ -143,8 +150,7 @@ def consumed_rollouts(directory, *, allow_pending=False):
 
 
 def acceptance(directory, scheduler, expected_updates, *, minimum_varied_groups=None, retained_checkpoints=None):
-    text = "\n".join(p.read_text(errors="replace") for p in directory.glob("slurm-*.log"))
-    evidence = training_evidence(text)
+    evidence = run_training_evidence(directory)
     groups = consumed_rollouts(directory)
     inventory = directory / "checkpoint-inventory.json"
     checkpoints = json.loads(inventory.read_text()) if inventory.exists() else {"tracker": None, "iterations": []}
@@ -259,6 +265,7 @@ def finish(*, job_id, config_path, directory, remote_directory, checkout, schedu
                     "wandb==0.31.0",
                     "wandb",
                     "sync",
+                    "--include-synced",
                     "--entity",
                     config["overrides"]["wandb_team"],
                     "--project",

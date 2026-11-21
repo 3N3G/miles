@@ -16,7 +16,7 @@ from experiments.tcs_async_rl.rl_archive import archive_chunks, copy_trace_batch
 from experiments.tcs_async_rl.rl_artifacts import file_sha256, retain_latest_checkpoint, save_generated_sample
 from experiments.tcs_async_rl.rl_inputs import question_set_key, read_bundle
 from experiments.tcs_async_rl.rl_smoke import native_argv
-from experiments.tcs_async_rl.watch_rl import consumed_rollouts
+from experiments.tcs_async_rl.watch_rl import consumed_rollouts, run_training_evidence
 
 BASE = Path(__file__).resolve().parents[2] / "experiments/tcs_async_rl"
 
@@ -34,6 +34,18 @@ def question(index):
 
 
 class EasyDataTests(unittest.TestCase):
+    def test_optimizer_metrics_are_read_from_the_native_subprocess_log(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "slurm-123.log").write_text("[rl-smoke] apptainer exec ...\n")
+            (root / "rl-smoke.log").write_text(
+                "train op=train_step rollout=0 step=0 attempt=0 outcome=NORMAL valid_step=true\n"
+                "step 0: {'train/pg_loss': 0.1, 'train/grad_norm': 0.18}\n"
+            )
+            evidence = run_training_evidence(root)
+            self.assertEqual(evidence["valid_updates"], [[0, 0, 0]])
+            self.assertTrue(evidence["metrics"][0]["finite"])
+
     def test_weight_check_excludes_only_frozen_vision_tensors(self):
         config = json.loads((BASE / "rl_easy_overfit_v9.json").read_text())
         values = config["overrides"]

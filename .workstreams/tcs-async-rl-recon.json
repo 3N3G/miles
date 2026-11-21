@@ -1869,15 +1869,22 @@
       "actor": "codex",
       "summary": "First real 32-answer training group delivered non-constant rewards",
       "revision": 154
+    },
+    {
+      "id": "9227b03a-18cb-4597-a0bd-d821e3cd8680",
+      "at": "2026-11-21T08:27:50.590376Z",
+      "actor": "codex",
+      "summary": "First native optimizer update and updated-weight publication verified",
+      "revision": 155
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 536360 delivered its first group: 28 positive and four zero rewards, mean 4.46875/7. All 32 answers carry exact behavior-policy version 0. Native training is computing the first backward pass while the next group generates.",
-  "nextAction": "Confirm the first finite optimizer update and publication of updated weights. Continue monitoring the approved run and retain exact traces.",
+  "summary": "AMD job 536360 completed native optimizer update 0 with finite metrics and no skipped step. Policy loss 0.094616, gradient norm 0.180582; updated weights reached all three engines as version 1. First group: 28 positive and four zero rewards, mean 4.46875/7. Repairing a VM report-reader bug without touching the GPU run.",
+  "nextAction": "Arm corrected native-log reporting and continue monitoring the approved run through saving and completion. Four-hour cap may stop before 40 updates.",
   "owner": "Codex",
-  "revision": 154,
-  "updatedAt": "2026-11-21T08:20:16.746324Z"
+  "revision": 155,
+  "updatedAt": "2026-11-21T08:27:50.590376Z"
 }
