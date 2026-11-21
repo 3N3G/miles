@@ -80,6 +80,7 @@ def main():
             cache = torch.from_numpy(np.load(args.capture / f"calibration_{mode}.npy")).to("cuda")
             development = torch.tensor(dev[mode], device="cuda")
             for seed in [0, 1, 2]:
+                maps = {}
                 paragraphs = np.random.default_rng(seed).choice(128, size=96, replace=False)
                 flat = (paragraphs[:, None] * 48 + np.arange(48)[None, :]).reshape(-1)
                 index = torch.tensor(flat, device="cuda")
@@ -132,19 +133,18 @@ def main():
                         cosine = torch.nn.functional.cosine_similarity(validation[method] - my, yv - my, dim=-1).reshape(16, 48).mean(-1)
                         diagnostic = {**meta, "validation_normalized_mse": prediction_error(validation[method], yv), "validation_normalized_mse_per_paragraph": per_paragraph.cpu().tolist(), "validation_centered_cosine_per_paragraph": cosine.cpu().tolist(), "damping": damping if method == "recent_plane_centered" else None, "ridge": ridge if method in ["ridge", "shuffled_ridge"] else None}
                         diagnostics.append(diagnostic)
-                    if seed == 0:
-                        for label, fit in [("direct_rotation", direct), ("ridge", ridge_fit)]:
-                            prefix = f"{mode}_v{visit}_{label}_"
-                            for key, value in fit.items():
-                                maps[prefix + key] = value.cpu().numpy().astype(np.float32)
-                        prefix = f"{mode}_v{visit}_recent_rotation_power_"
-                        for key, value in {"mx": mx, "my": my, "sx": sx, "sy": sy, "matrix": power}.items():
+                    for label, fit in [("direct_rotation", direct), ("ridge", ridge_fit)]:
+                        prefix = f"{mode}_v{visit}_{label}_"
+                        for key, value in fit.items():
                             maps[prefix + key] = value.cpu().numpy().astype(np.float32)
+                    prefix = f"{mode}_v{visit}_recent_rotation_power_"
+                    for key, value in {"mx": mx, "my": my, "sx": sx, "sy": sy, "matrix": power}.items():
+                        maps[prefix + key] = value.cpu().numpy().astype(np.float32)
                     (args.out / "diagnostics.json").write_text(json.dumps(diagnostics, indent=2) + "\n")
                     (args.out / "readouts.json").write_text(json.dumps(rows, indent=2) + "\n")
                     print(json.dumps({"event": "fit_site", "mode": mode, "seed": seed, "visit": visit, "damping": damping, "ridge": ridge, "ridge_validation_error": ridge_error, "site_seconds": time.monotonic() - step_start, "total_seconds": time.monotonic() - start}), flush=True)
+                np.savez_compressed(args.out / f"maps_{mode}_seed_{seed}.npz", **maps)
             del cache
-        np.savez_compressed(args.out / "maps_seed_0.npz", **maps)
     (args.out / "fit_manifest.json").write_text(json.dumps({"model": MODEL, "revision": REVISION, "visits": VISITS, "fit_seeds": [0, 1, 2], "fit_paragraphs_per_seed": 96, "validation_paragraphs": 16, "parameters_selected_using": "unlabeled text geometric error only", "development_prompts": len(items), "algebra_checks": checks, "elapsed_seconds": time.monotonic() - start}, indent=2) + "\n")
     print(json.dumps({"event": "complete", "elapsed_seconds": time.monotonic() - start}), flush=True)
 

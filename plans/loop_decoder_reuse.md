@@ -10,7 +10,7 @@ Do not assume that they guarantee one.
 
 Use the same frozen WikiText calibration rows, paragraph split, seeds, development prompts, and read budget.
 No additional model forward passes are needed for this comparison.
-Use the existing seed-zero fitted rotation and affine map at visit 35 for physical layer 11 in passes one and two.
+Use each of the three fitted seeds' rotation and affine maps at visit 35 for physical layer 11 in passes one and two.
 Use the visit-41 map for its own final-core read. This preserves the fixed four sites: 11, 23, 35, and 41.
 
 Compare two versions:
