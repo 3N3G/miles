@@ -103,3 +103,4 @@
 {"recorded_at_utc": "2026-11-21T08:02:28.745752+00:00", "job_id": "536360", "status": "RUNNING", "phase": "monitoring"}
 {"recorded_at_utc": "2026-11-21T08:02:58.160987+00:00", "phase": "reviewed_failed_training_archive", "cluster": "hpcfund", "job_id": "536321", "status": "FAILED", "elapsed": "00:08:02", "optimizer_updates": 0, "training_generations": 0, "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/f4fe6a7eae2243a51a6beb60f958d05c076f6cc8/miles/easy-overfit-v8", "repair_plan": "experiments/tcs_async_rl/EASY_OVERFIT_REPAIR_V9.md", "wandb_sync_succeeded": true}
 {"recorded_at_utc": "2026-11-21T12:03:03.812369+00:00", "job_id": "536360", "status": "TIMEOUT", "phase": "monitoring"}
+{"recorded_at_utc": "2026-11-21T12:03:22.326668+00:00", "phase": "stopped", "status": "NEEDS_REVIEW", "error_type": "RuntimeError", "reason": "No VM space for the next trace batch; no unarchived file was deleted", "at": "2026-11-21T12:03:22.323446+00:00"}

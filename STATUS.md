@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536360 is TIMEOUT Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatic RL handoff stopped before acceptance Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
+  Next: Inspect handoff-state.json and preserve the strict reward gate. Resolve any required research decision.
 
 ## Next / blocked
 

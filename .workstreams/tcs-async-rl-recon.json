@@ -1890,15 +1890,22 @@
       "actor": "codex",
       "summary": "RL job 536360 is TIMEOUT",
       "revision": 157
+    },
+    {
+      "id": "08febb7c-1a52-46f0-88b3-ece9a2166547",
+      "at": "2026-11-21T12:03:22.443678Z",
+      "actor": "codex",
+      "summary": "Automatic RL handoff stopped before acceptance",
+      "revision": 158
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "RL job 536360 is TIMEOUT",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "Automatic RL handoff stopped before acceptance",
+  "nextAction": "Inspect handoff-state.json and preserve the strict reward gate. Resolve any required research decision.",
   "owner": "Codex",
-  "revision": 157,
-  "updatedAt": "2026-11-21T12:03:03.920639Z"
+  "revision": 158,
+  "updatedAt": "2026-11-21T12:03:22.443678Z"
 }
