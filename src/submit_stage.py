@@ -25,12 +25,14 @@ def main():
     if not args.command or not 1 <= args.minutes <= 60:
         raise ValueError("Provide a command and a runtime of 1..60 minutes")
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+    checkout = args.data + "/code/" + commit
     command = ["apptainer", "exec", "--cleanenv", "--rocm", "--bind", "/work1:/work1", "--env", f"PYTHONPATH={args.data}/runtime,HF_HOME={args.data}/hf,OMP_NUM_THREADS=4,OPENBLAS_NUM_THREADS=4,TOKENIZERS_PARALLELISM=false", args.image, *args.command]
-    script = "#!/bin/bash\nset -euo pipefail\ncd " + shlex.quote(args.root) + "\n" + shlex.join(command) + "\n"
+    script = "#!/bin/bash\nset -euo pipefail\ncd " + shlex.quote(checkout) + "\n" + shlex.join(command) + "\n"
     sbatch = ["sbatch", "--parsable", "--nodes=1", f"--cpus-per-task={args.cpus}", f"--partition={args.partition}", "--account=aviralkumar", "--qos=alloc_aviralkumar_09082026_09302027", f"--time=00:{args.minutes:02}:00" if args.minutes < 60 else "--time=01:00:00", f"--job-name=inkling-{args.name}", f"--output={args.data}/runs/{args.name}-%j.log"]
     if args.after:
         sbatch.append(f"--dependency=afterok:{args.after}")
-    remote = "cd " + shlex.quote(args.root) + " && git pull --rebase && test \"$(git rev-parse HEAD)\" = " + shlex.quote(commit) + " && " + shlex.join(sbatch)
+    prepare = "mkdir -p " + shlex.quote(args.data + "/code") + " && if test -d " + shlex.quote(checkout) + "; then test \"$(git -C " + shlex.quote(checkout) + " rev-parse HEAD)\" = " + shlex.quote(commit) + "; else git worktree add --detach " + shlex.quote(checkout) + " " + shlex.quote(commit) + "; fi"
+    remote = "cd " + shlex.quote(args.root) + " && git pull --rebase && test \"$(git rev-parse HEAD)\" = " + shlex.quote(commit) + " && " + prepare + " && " + shlex.join(sbatch)
     result = subprocess.run(["ssh", "-o", "BatchMode=yes", args.host, remote], input=script, text=True, capture_output=True)
     job = result.stdout.strip().splitlines()[-1].split(";")[0] if result.returncode == 0 else None
     if job is not None and not job.isdigit():

@@ -38,5 +38,77 @@
     "private": true,
     "files": 3,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a9ed4cf1ea07856a7e7ce5942b07d5a1d636ee3f/inkling-interp/chat-format-check"
+  },
+  {
+    "stage": "jacobian-swap-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "14af85ae42b9865cf4966d9442ae0526776f1481",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/14af85ae42b9865cf4966d9442ae0526776f1481/inkling-interp/jacobian-swap-v1",
+    "verified_at": "2026-11-21T16:44:41.112355+00:00"
+  },
+  {
+    "stage": "cycle-transport-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "8f47b6915f62f1fc5b0462ddace483a4d35aed10",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/8f47b6915f62f1fc5b0462ddace483a4d35aed10/inkling-interp/cycle-transport-v1",
+    "verified_at": "2026-11-21T16:44:50.680247+00:00"
+  },
+  {
+    "stage": "country-transfer-all-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "1f39e6d0c11d334ecf7aa88acc95f0d08483d921",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1f39e6d0c11d334ecf7aa88acc95f0d08483d921/inkling-interp/country-transfer-all-v1",
+    "verified_at": "2026-11-21T16:44:59.368309+00:00"
+  },
+  {
+    "stage": "transport-capture-v2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "1f39e6d0c11d334ecf7aa88acc95f0d08483d921",
+    "private": true,
+    "files": 7,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1f39e6d0c11d334ecf7aa88acc95f0d08483d921/inkling-interp/transport-capture-v2",
+    "verified_at": "2026-11-21T16:45:01.033849+00:00"
+  },
+  {
+    "stage": "transport-fit-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "1f39e6d0c11d334ecf7aa88acc95f0d08483d921",
+    "private": true,
+    "files": 9,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1f39e6d0c11d334ecf7aa88acc95f0d08483d921/inkling-interp/transport-fit-v1",
+    "verified_at": "2026-11-21T16:45:02.597034+00:00"
+  },
+  {
+    "stage": "transport-reuse-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "1f39e6d0c11d334ecf7aa88acc95f0d08483d921",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1f39e6d0c11d334ecf7aa88acc95f0d08483d921/inkling-interp/transport-reuse-v1",
+    "verified_at": "2026-11-21T16:45:04.135635+00:00"
+  },
+  {
+    "stage": "country-swap-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "1f39e6d0c11d334ecf7aa88acc95f0d08483d921",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1f39e6d0c11d334ecf7aa88acc95f0d08483d921/inkling-interp/country-swap-v1",
+    "verified_at": "2026-11-21T16:45:05.644611+00:00"
+  },
+  {
+    "stage": "country-jacobian-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "1f39e6d0c11d334ecf7aa88acc95f0d08483d921",
+    "private": true,
+    "files": 4,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1f39e6d0c11d334ecf7aa88acc95f0d08483d921/inkling-interp/country-jacobian-v1",
+    "verified_at": "2026-11-21T16:45:07.140776+00:00"
   }
 ]
