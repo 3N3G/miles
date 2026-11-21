@@ -1,5 +1,9 @@
 # Automatic medium-to-RL handoff
 
+Historical v7 procedure: medium failed its qualification gate and no RL job was submitted.
+The user later approved easy-only training and recorded-cap judging.
+The current plan is [EASY_OVERFIT_PLAN_20261121.md](EASY_OVERFIT_PLAN_20261121.md).
+
 The user requested automatic submission and monitoring after the approved medium diagnostic.
 This implements the existing two-update authorization in `RL_SMOKE_PLAN.md`.
 It does not select a corpus training mixture or change any rubric, model, prompt or sampling setting.
