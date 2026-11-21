@@ -221,6 +221,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/df899421fac85aa59009542bd86109eeee83a11e/miles/medium-check-v15-mi350",
       "label": "Immutable medium outputs, both-order grades, plots and exact mathematical audit"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/e4841f05cc68d27d4546660927db163ea8be1927/miles/diagnostics-repair-20261121",
+      "label": "Immutable CPU diagnostics and live W&B control evidence"
     }
   ],
   "evidence": [
@@ -659,6 +663,14 @@
     {
       "path": "experiments/tcs_async_rl/rl_easy_overfit_v10.draft.json",
       "label": "Draft continuation configuration awaiting allocation/concurrency approval"
+    },
+    {
+      "path": "experiments/tcs_async_rl/SAMPLED_ENTROPY_20261121.md",
+      "label": "Retrospective sampler entropy estimate across seven repeated questions"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/sampled_entropy_20261121.json",
+      "label": "Sampler entropy reproduction and source checksums"
     }
   ],
   "jobs": [
@@ -2021,15 +2033,22 @@
       "actor": "codex",
       "summary": "Validated omitted RL observations and live logging; prepared bounded continuation for researcher review",
       "revision": 170
+    },
+    {
+      "id": "d72c045c-a28f-472f-81ae-9954f0b069ce",
+      "at": "2026-11-21T23:35:36.847368Z",
+      "actor": "codex",
+      "summary": "Recovered retrospective sampler entropy and verified private software-control archive",
+      "revision": 171
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "needs-you",
-  "summary": "Implemented full/sampling entropy, zero-coefficient initial-reference divergence and fixed-batch update-direction observations. Ninety TCS and 19 CPU loss tests pass. Live W&B coordinates and running/terminal states verified. No GPU submission.",
+  "summary": "Full/sampling entropy, zero-coefficient reference drift and fixed-batch update-direction repairs pass CPU/live logging controls. Retrospective sampler estimate is 0.43747→0.44422 nats across seven repeated questions, without full-policy entropy. No GPU submission. Continuation allocation/concurrency decision pending.",
   "nextAction": "Approve the prepared 40-new-update, four-hour/eight-MI350 continuation with a $5 judge cap, choosing concurrency 96 or the existing 32. Then freeze, submit, qualify the real ROCm passes and supervise through completion.",
   "owner": "Codex",
-  "revision": 170,
-  "updatedAt": "2026-11-21T23:29:49.164818Z"
+  "revision": 171,
+  "updatedAt": "2026-11-21T23:35:36.847368Z"
 }

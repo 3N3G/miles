@@ -13,9 +13,29 @@ from experiments.tcs_async_rl.native_metrics import (
     sync_live_audit,
     sync_terminal_audit,
 )
+from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_sampled_entropy
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_sampled_surprisal_keeps_answer_and_token_weighting_separate_and_matches_questions(self):
+        rows = [
+            dict(
+                optimizer_step=step,
+                question_key=question,
+                paper_id=question,
+                mean_sampled_log_probability=-surprisal,
+                response_tokens=tokens,
+                tokens_with_support_size_one=0,
+                reward=1,
+            )
+            for step, question, surprisal, tokens in [(0, "a", 1, 1), (0, "a", 3, 3), (1, "b", 8, 1), (2, "a", 2.5, 1)]
+        ]
+        result = summarize_sampled_entropy(rows)
+        self.assertEqual(result["groups"][0]["answer_mean_sampled_surprisal_nats"], 2)
+        self.assertEqual(result["groups"][0]["token_weighted_sampled_surprisal_nats"], 2.5)
+        self.assertEqual(len(result["repeated_questions"]), 1)
+        self.assertEqual(result["repeated_questions"][0]["change_nats"], 0.5)
+
     def test_live_reader_waits_for_weight_publication_and_handles_a_nonzero_resume_step(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

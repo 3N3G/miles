@@ -61,5 +61,15 @@
   "planned_config": "experiments/tcs_async_rl/rl_easy_overfit_v10.draft.json",
   "plan": "experiments/tcs_async_rl/EASY_CONTINUATION_PLAN_20261121.md",
   "decision_status": "awaiting_user_allocation_and_concurrency_choice",
-  "local_control_directory": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/live-metrics-control-20261121"
+  "local_control_directory": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/live-metrics-control-20261121",
+  "code_commit": "59a546bb75d8f0976a0967cc5d133cd1c56284d5",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/e4841f05cc68d27d4546660927db163ea8be1927/miles/diagnostics-repair-20261121",
+  "immutable_download_verification": {
+    "revision": "e4841f05cc68d27d4546660927db163ea8be1927",
+    "sha256": {
+      "miles/diagnostics-repair-20261121/provenance.json": "3947c0c758a0326afbc38341ea02fee75ef18f96b589bf1c6564a9fec4777da2",
+      "miles/diagnostics-repair-20261121/fresh-native-control-v2/wandb-live-metrics.json": "442568804c1a72c462b6f0f99ac62286a722440c40a42827cfdbeba61adc4c02",
+      "miles/easy-overfit-v9-diagnostic-20261121/samples.json": "af40d27807d34c6475aa4f0be270ee24683d3d20187ca2be1ad568e2a9bcac0e"
+    }
+  }
 }

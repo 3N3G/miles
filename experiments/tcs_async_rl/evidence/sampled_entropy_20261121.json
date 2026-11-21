@@ -1,0 +1,43 @@
+{
+  "observed_at_utc": "2026-11-21T23:35:35.813153+00:00",
+  "source_run": "easy-overfit-v9",
+  "source_audit_revision": "4d75c0b6f168d76693f7e6680e1f3929ac199a26",
+  "source_audited_samples_sha256": "af40d27807d34c6475aa4f0be270ee24683d3d20187ca2be1ad568e2a9bcac0e",
+  "source_samples_immutable_download_sha256_verified_at_revision": "e4841f05cc68d27d4546660927db163ea8be1927",
+  "analysis_script": "experiments/tcs_async_rl/sampled_entropy.py",
+  "analysis_script_sha256": "7ec63f784733f7b384786d3a22099b62f028fa2d19ee425100d70fc724d6d8b1",
+  "command": "uv run --no-project --with matplotlib python -m experiments.tcs_async_rl.sampled_entropy --audited-samples <verified-audit>/samples.json --output <separate-output>",
+  "results": {
+    "answers": 864,
+    "matched_first_nats": 0.4374694957246675,
+    "matched_last_nats": 0.4442196991939974,
+    "questions_increased": 3,
+    "questions_decreased": 4
+  },
+  "repeated_question_count": 7,
+  "unit_tests_passed": 91,
+  "new_gpu_jobs": 0,
+  "new_judge_calls": 0,
+  "heldout_reads": 0,
+  "local_results": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-overfit-v9-sampled-entropy-20261121",
+  "archive_status": "prepared_for_private_upload",
+  "limits": [
+    "Sampled surprisal estimates filtered behavior uncertainty on generated prefixes, not full-policy entropy or initial-policy divergence.",
+    "Single seed and seven repeat visits. No inferential error bars or generalization claim.",
+    "Answer length, prefixes and mixed weight versions can affect comparisons."
+  ],
+  "raw_example_selection": {
+    "method": "Random(20261118).randrange(7), with the existing preselected member of each group",
+    "pair": {
+      "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+      "paper_id": "Deterministic_and_Exact_Fully-dynamic_Minimum_Cut_of_Superpolylogarithmic_Size_in_Subpolynomial_Time",
+      "first_step": 17,
+      "last_step": 20,
+      "first_nats": 0.46937323709299367,
+      "last_nats": 0.45487980584756743,
+      "change_nats": -0.014493431245426236,
+      "first_reward": 5.90625,
+      "last_reward": 6.25
+    }
+  }
+}
