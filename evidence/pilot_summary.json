@@ -1,0 +1,108 @@
+{
+  "native_logit_max_error": 0.0,
+  "validated_prompts": 16,
+  "intervention": {
+    "bank_0": {
+      "scale_2": {
+        "mean": 0.0016801535821286961,
+        "bootstrap_95": [
+          0.0004623152926797047,
+          0.003645590622909367
+        ],
+        "n_prompts": 4
+      },
+      "rotation_60_degrees": {
+        "mean": 0.040938105123738446,
+        "bootstrap_95": [
+          0.02087185811251402,
+          0.06100435213496288
+        ],
+        "n_prompts": 4
+      },
+      "rotation_to_scale_mean_ratio": 24.36569225527067
+    },
+    "bank_1": {
+      "scale_2": {
+        "mean": 0.001465759807615541,
+        "bootstrap_95": [
+          0.000978155090706423,
+          0.002043334301561117
+        ],
+        "n_prompts": 4
+      },
+      "rotation_60_degrees": {
+        "mean": 1.0574482753872871,
+        "bootstrap_95": [
+          0.9324947521090508,
+          1.1570527652899425
+        ],
+        "n_prompts": 4
+      },
+      "rotation_to_scale_mean_ratio": 721.4335322152924
+    },
+    "rescaling_top1_agreement": {
+      "same": 16,
+      "total": 16
+    },
+    "sham_max_logit_change": 0.0
+  },
+  "gate": {
+    "site": "stored layer 6, feed-forward message gate, final prompt token",
+    "prompts": 16,
+    "pass_inputs": 32,
+    "nullspace_directions": 96,
+    "calculation": "FP64 smooth re-evaluation using released gate weights and recorded forward inputs. This checks real-valued gate algebra, not BF16 rounding or semantic capacity.",
+    "min_rank_lower_bound": 2240,
+    "min_control_rank": 64,
+    "max_control_slope_per_unit": 5.6878430705608505e-16,
+    "transmission_ratio_median": 0.9356562997642253,
+    "transmission_ratio_range": [
+      0.8870634555122207,
+      0.9535905301333012
+    ],
+    "max_finite_difference_relative_error": 4.8239056140323356e-11,
+    "gain_median": 0.9670211139748313,
+    "keep_median": 1.1985712644072666
+  },
+  "readouts": [
+    {
+      "method": "raw",
+      "eligible": 9,
+      "hits": 5,
+      "hit_names": [
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z",
+        "dbl-armistice-antonym",
+        "firstletter-greatwall-country"
+      ]
+    },
+    {
+      "method": "centered",
+      "eligible": 9,
+      "hits": 3,
+      "hit_names": [
+        "bf-relativity-firstname",
+        "bf-sphinx-river",
+        "chem-photosynthesis-Z"
+      ]
+    },
+    {
+      "method": "delta",
+      "eligible": 9,
+      "hits": 2,
+      "hit_names": [
+        "bf-sphinx-river",
+        "firstletter-populous-country"
+      ]
+    },
+    {
+      "method": "centered_delta",
+      "eligible": 9,
+      "hits": 1,
+      "hit_names": [
+        "bf-sphinx-river"
+      ]
+    }
+  ]
+}
