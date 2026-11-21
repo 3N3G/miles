@@ -61,6 +61,10 @@ def validate_group_gate(grades, expected_samples, *, expected_sampling=None, pol
         raise ValueError("Diagnostic grades are outside the supplied rubric")
 
 
+def initial_optimizer_updates(config):
+    return config["resume"]["iteration"] + 1 if config.get("resume") else 0
+
+
 def resolved_args(config, training, *, work_dir, run_dir, run_id):
     args = {**training["miles_args"], **config["overrides"]}
     model = training["model"]
@@ -94,6 +98,11 @@ def resolved_args(config, training, *, work_dir, run_dir, run_id):
         save_debug_event_data=str(run_dir / "events"),
         save_debug_rollout_data=str(run_dir / "rollout_data" / "rollout-{rollout_id}.pt"),
     )
+    if config.get("resume"):
+        # The used checkpoint remains read-only. New checkpoints belong to this
+        # attempt, and scope.optimizer_updates counts only new optimizer steps.
+        args["load"] = config["resume"]["checkpoint_root"]
+        args["num_rollout"] = initial_optimizer_updates(config) + config["scope"]["optimizer_updates"]
     if any(value is None for value in args.values()):
         raise ValueError("Every Miles argument must be resolved before submission")
     return args, conversion_name

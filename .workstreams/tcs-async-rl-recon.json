@@ -643,6 +643,22 @@
     {
       "path": "experiments/tcs_async_rl/evidence/easy_overfit_noise_audit_20261121.json",
       "label": "Immutable full diagnostic, all metrics, examples and verified W&B repair"
+    },
+    {
+      "path": "experiments/tcs_async_rl/DIAGNOSTICS_REPAIR_20261121.md",
+      "label": "CPU and live logging qualification for missing RL observations"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/diagnostics_repair_20261121.json",
+      "label": "Repair controls and remaining GPU qualification"
+    },
+    {
+      "path": "experiments/tcs_async_rl/EASY_CONTINUATION_PLAN_20261121.md",
+      "label": "Reviewable bounded continuation from 25 saved updates"
+    },
+    {
+      "path": "experiments/tcs_async_rl/rl_easy_overfit_v10.draft.json",
+      "label": "Draft continuation configuration awaiting allocation/concurrency approval"
     }
   ],
   "jobs": [
@@ -1998,15 +2014,22 @@
       "actor": "codex",
       "summary": "Resume the user-requested effort toward increasing RL rewards and add omitted standard diagnostics",
       "revision": 169
+    },
+    {
+      "id": "18d7aba2-65e0-467d-94a1-8d59e78c00dc",
+      "at": "2026-11-21T23:29:49.164818Z",
+      "actor": "codex",
+      "summary": "Validated omitted RL observations and live logging; prepared bounded continuation for researcher review",
+      "revision": 170
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "User explicitly requested continued work toward rising rewards after the full-metric audit. Repair missing entropy and initial-policy divergence instrumentation, inspect sampled failures, and prepare a monitored continuation on AMD.",
-  "nextAction": "Validate metrics and reward-gradient behavior, preserve prior checkpoints/configs, then record and execute a bounded continuation under the user’s latest instruction.",
+  "state": "needs-you",
+  "summary": "Implemented full/sampling entropy, zero-coefficient initial-reference divergence and fixed-batch update-direction observations. Ninety TCS and 19 CPU loss tests pass. Live W&B coordinates and running/terminal states verified. No GPU submission.",
+  "nextAction": "Approve the prepared 40-new-update, four-hour/eight-MI350 continuation with a $5 judge cap, choosing concurrency 96 or the existing 32. Then freeze, submit, qualify the real ROCm passes and supervise through completion.",
   "owner": "Codex",
-  "revision": 169,
-  "updatedAt": "2026-11-21T22:50:28.890779Z"
+  "revision": 170,
+  "updatedAt": "2026-11-21T23:29:49.164818Z"
 }

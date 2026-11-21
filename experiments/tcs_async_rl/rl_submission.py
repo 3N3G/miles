@@ -18,7 +18,7 @@ from experiments.tcs_async_rl.amd_preflight import load_configs, render_job
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
 from experiments.tcs_async_rl.resource_estimate import GIB, model_inputs
 from experiments.tcs_async_rl.rl_inputs import read_bundle
-from experiments.tcs_async_rl.rl_smoke import validate_group_gate
+from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates, validate_group_gate
 
 
 def submit_once(run_dir, job_file, *, invoke=subprocess.run):
@@ -73,6 +73,13 @@ def prepare(*, config_path, run_dir, work_dir, expected_commit):
     )
     if config.get("dataset_file"):
         read_bundle(Path(config["dataset_file"]), expected_sha256=config["dataset_sha256"], training=training)
+    if config.get("resume"):
+        source = Path(config["resume"]["checkpoint_root"]).resolve()
+        if source.name != "checkpoints" or not source.is_relative_to((work_dir / "runs").resolve()):
+            raise ValueError("Resume source must be an existing run checkpoint under the approved work directory")
+        tracker = source / "latest_checkpointed_iteration.txt"
+        if tracker.read_text().strip() != str(initial_optimizer_updates(config) - 1):
+            raise ValueError("Resume checkpoint no longer matches the reviewed iteration")
     if run_dir.resolve().parent != (work_dir / "runs").resolve():
         raise ValueError("RL output must be an immediate child of the approved work directory")
     run_dir.mkdir(exist_ok=True)

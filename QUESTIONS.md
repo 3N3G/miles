@@ -102,6 +102,12 @@
 - Status: observed during job 536360. No concurrency change or additional throughput job submitted.
   The complete run has 76% actor waiting time and visible decode logs from one engine actor.
   Only seven questions receive a second visit before the time limit. The throughput repair remains a user decision.
+  The user requested continued work toward rising rewards. A concrete continuation is ready in
+  `experiments/tcs_async_rl/EASY_CONTINUATION_PLAN_20261121.md` and `rl_easy_overfit_v10.draft.json`.
+  It resumes the saved 25-update checkpoint for 40 additional updates within four hours on eight MI350 GPUs.
+  It preserves the scientific setup and adds observations, with a separate $5 judge cap.
+  Approval was requested for that bounded allocation with concurrency 96, or with the existing 32.
+  New GPU submission and the concurrency choice are blocked pending that answer. CPU repairs and logging checks continue.
 
 # Answered questions
 

@@ -1822,6 +1822,13 @@ def get_miles_extra_args_provider(add_custom_arguments=None):
                 ),
             )
             parser.add_argument(
+                "--observe-update-direction-steps",
+                type=int,
+                nargs="+",
+                default=[],
+                help="Optimizer rollout IDs to score before and after updating on the same batch. Adds two forward passes.",
+            )
+            parser.add_argument(
                 "--get-mismatch-metrics",
                 action="store_true",
                 default=False,
@@ -3588,13 +3595,13 @@ def miles_validate_args(args):
                 "sampling-support replay cannot be combined with --recompute-logprobs-via-prefill; "
                 "prefill scoring does not preserve the rollout sampling support"
             )
-        if args.kl_coef != 0 or args.use_kl_loss or args.use_opd:
-            # The actor still produces full-vocabulary logits, but replay currently exposes only the
-            # support-normalized actor score to the loss. These objectives can be enabled once the loss
-            # path also preserves an unmasked actor score from the same forward pass.
+        if args.kl_coef != 0 or (args.use_kl_loss and args.kl_loss_coef != 0) or args.use_opd:
+            # Observation-only reference KL preserves a detached full-policy
+            # actor score. Reward shaping and gradient-bearing reference losses
+            # still require a separately validated full-policy gradient path.
             raise ValueError(
                 "sampling-support replay cannot currently be combined with reference KL or teacher distillation; "
-                "those objectives require a separate full-policy actor score"
+                "only reference KL observation with --use-kl-loss --kl-loss-coef 0 is supported"
             )
     validate_rollout_topk_logprobs_args(args)
 
@@ -4261,6 +4268,21 @@ def miles_validate_args(args):
 
     if args.skip_actor_forward_only:
         validate_skip_actor_forward_only(args)
+
+    if args.observe_update_direction_steps:
+        if any(step < 0 for step in args.observe_update_direction_steps):
+            raise ValueError("--observe-update-direction-steps requires nonnegative rollout IDs")
+        if (
+            args.train_backend != "megatron"
+            or args.loss_type != "policy_loss"
+            or not args.use_rollout_logprobs
+            or args.context_parallel_size != 1
+            or args.pipeline_model_parallel_size != 1
+            or args.actor_num_nodes * args.actor_num_gpus_per_node != args.tensor_model_parallel_size
+        ):
+            raise ValueError(
+                "Update-direction observation requires one Megatron TP cell, CP1/PP1 and rollout log-probs"
+            )
 
     validate_score_centering_args(args)
 

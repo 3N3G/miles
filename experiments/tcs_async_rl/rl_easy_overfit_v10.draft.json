@@ -1,0 +1,80 @@
+{
+  "status": "draft_continuation_awaiting_review_20261121",
+  "mode": "rl_smoke",
+  "job_name": "tcs-easy-overfit-v10",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.sampling_repair_v2.json",
+  "container_config": "qualification.proposed.json",
+  "input_config": "group_check_v14_easy_mi350.json",
+  "gate_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/easy-qualified-v10.json",
+  "allocation": {
+    "partition": "mi3508x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 8,
+    "cpus_per_task": 64,
+    "walltime": "04:00:00"
+  },
+  "overrides": {
+    "rollout_batch_size": 1,
+    "global_batch_size": 32,
+    "async_max_concurrent_samples": 96,
+    "rollout_skip_special_tokens": false,
+    "save_interval": 5,
+    "seed": 20261118,
+    "max_position_embeddings": 98304,
+    "custom_rm_path": "experiments.tcs_async_rl.reward_hook.reward",
+    "rm_url": "http://127.0.0.1:18496/score",
+    "use_wandb": true,
+    "wandb_mode": "offline",
+    "wandb_project": "tcs-async-rl",
+    "disable_wandb_random_suffix": true,
+    "wandb_always_use_train_step": true,
+    "use_tensorboard": true,
+    "check_weight_update_equal": true,
+    "wandb_team": "geney",
+    "custom_rollout_log_function_path": "experiments.tcs_async_rl.rl_artifacts.log_rollout",
+    "custom_megatron_post_save_hook_path": "experiments.tcs_async_rl.rl_artifacts.retain_latest_checkpoint",
+    "check_weight_update_skip_list": [
+      "visual."
+    ],
+    "observe_training_entropy": true,
+    "use_kl_loss": true,
+    "kl_loss_coef": 0.0,
+    "kl_loss_type": "low_var_kl",
+    "observe_update_direction_steps": [
+      25,
+      26,
+      30,
+      40,
+      50,
+      60
+    ]
+  },
+  "scope": {
+    "purpose": "Continue easy-only fitting with initial-policy divergence, full/sampling entropy and before-after optimizer checks",
+    "prompt_count": 20,
+    "optimizer_updates": 40,
+    "heldout_reads": 0,
+    "maximum_gpu_hours": 32,
+    "judge_usd_cap": 5,
+    "judge_location": "VM loopback service through SSH; provider credentials remain on VM",
+    "interpretation": "Forty new updates from the retained 25-update checkpoint. Compare complete matched question passes and raw proofs, not successive mixed-question means. No generalization claim.",
+    "minimum_varied_groups": 1,
+    "retained_checkpoints": 1
+  },
+  "local_gate_file": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-qualification-v1/qualified-group-grades.json",
+  "diagnostic_gate_policy": "recorded_caps_judged_v1",
+  "dataset_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/easy-20-bundle-v10.json",
+  "dataset_sha256": "18ed636017d16c3af5c1448ee4967b4aa6b996037c73f5304bf4ce95469e5929",
+  "artifact_compression": "gzip",
+  "incremental_archive": true,
+  "judge_config": "judge_group_v2_inference_repair.json",
+  "resume": {
+    "checkpoint_root": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v9/checkpoints",
+    "iteration": 24,
+    "source_run": "easy-overfit-v9"
+  },
+  "wandb_metrics_source": "native_vm"
+}

@@ -5,6 +5,8 @@ import json
 import statistics
 from pathlib import Path
 
+from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates
+
 
 def analyze(directory):
     import matplotlib
@@ -21,6 +23,7 @@ def analyze(directory):
         else {"scope": {"optimizer_updates": 2, "prompt_count": 1}}
     )
     expected = config["scope"]["optimizer_updates"]
+    initial_updates = initial_optimizer_updates(config)
     trained_ids = {row[0] for row in result.get("training", {}).get("valid_updates", [])}
     trajectories = {}
     for group in groups:
@@ -42,6 +45,7 @@ def analyze(directory):
     paragraphs = [
         "# Initial easy-only training attempt\n" if expected > 2 else "# Asynchronous RL runtime check\n",
         f"The approved limit is {expected} optimizer updates, with {config['scope']['prompt_count']} planned training questions.",
+        f"This attempt starts from a checkpoint retaining {initial_updates} earlier optimizer updates.",
         "The setup uses Qwen3.5-4B with thinking enabled and a 90,000-token output limit.",
         "CISPO trains on groups of 32 answers. Two MI350 GPUs train while six generate answers.",
         "GPT-6 Luna at medium effort grades final answers against the supplied seven-point rubric in both anonymous orders.\n",

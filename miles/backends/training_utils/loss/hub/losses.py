@@ -65,6 +65,28 @@ class LossFunction(Protocol):
         ...
 
 
+def _observe_full_policy(args, batch, logits):
+    """Keep unfiltered diagnostics separate from support-conditioned gradients.
+
+    The extra score is detached and computed before the training scorer can
+    consume its logits. It changes neither the sampled-policy loss nor reward.
+    """
+    if not args.use_sampling_support_replay or not (args.use_kl_loss and args.kl_loss_coef == 0):
+        return None
+    with torch.no_grad():
+        return get_log_probs_and_entropy(
+            logits,
+            args=args,
+            unconcat_tokens=batch["unconcat_tokens"],
+            total_lengths=batch["total_lengths"],
+            response_lengths=batch["response_lengths"],
+            with_entropy=False,
+            entropy_requires_grad=False,
+            max_seq_lens=batch.get("max_seq_lens"),
+            rollout_sampling_mask=None,
+        )
+
+
 def policy_loss_function(
     args: Namespace,
     batch: RolloutBatch,
@@ -118,6 +140,7 @@ def policy_loss_function(
     max_seq_lens = batch.get("max_seq_lens", None)
     calculate_entropy = args.entropy_coef != 0 or args.observe_training_entropy
     rollout_sampling_mask = get_rollout_sampling_masks(batch) if args.use_sampling_support_replay else None
+    full_policy_observation = _observe_full_policy(args, batch, logits)
 
     log_probs_and_entropy = get_log_probs_and_entropy(
         logits,
@@ -333,8 +356,16 @@ def policy_loss_function(
         importance_ratio = None
         if args.use_unbiased_kl:
             importance_ratio = torch.exp(log_probs - old_log_probs)
+        # A diagnostic with coefficient zero compares like distributions:
+        # full actor scores against full reference scores. Support-normalized
+        # actor scores include the sampling filter and would misstate drift.
+        reference_actor_log_probs = (
+            torch.cat(full_policy_observation["log_probs"], dim=0)
+            if full_policy_observation is not None
+            else log_probs
+        )
         kl = compute_approx_kl(
-            log_probs,
+            reference_actor_log_probs,
             ref_log_probs,
             kl_loss_type=args.kl_loss_type,
             importance_ratio=importance_ratio,
@@ -395,6 +426,17 @@ def policy_loss_function(
 
     if args.use_kl_loss:
         reported_loss["kl_loss"] = kl_loss.clone().detach()
+    if full_policy_observation is not None:
+        reference_log_ratio = reference_actor_log_probs.detach() - ref_log_probs
+        reference_log_ratio = torch.where(active_tokens, reference_log_ratio, reference_log_ratio.new_zeros(()))
+        reported_loss["reference_sampled_log_ratio"] = sum_of_sample_mean(reference_log_ratio).detach()
+
+    if args.observe_training_entropy:
+        reported_loss["full_policy_entropy"] = entropy_loss.detach()
+        if "sampling_entropy" in log_probs_and_entropy:
+            sampling_entropy = torch.cat(log_probs_and_entropy["sampling_entropy"], dim=0)
+            sampling_entropy = torch.where(active_tokens, sampling_entropy, sampling_entropy.new_zeros(()))
+            reported_loss["sampling_entropy"] = sum_of_sample_mean(sampling_entropy).detach()
 
     if args.get_mismatch_metrics or args.use_tis:
         # Aggregate mismatch/TIS/RS related metrics with the *pre-RS* masks.

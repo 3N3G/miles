@@ -59,6 +59,18 @@ class RLSmokeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "sampling parameters"):
             validate_group_gate(grades, 2, expected_sampling={"temperature": 1, "top_p": 0.95, "top_k": 20})
 
+    def test_continuation_loads_the_frozen_checkpoint_and_saves_only_to_its_new_run(self):
+        config, training = load_configs(Path("experiments/tcs_async_rl/rl_easy_overfit_v10.draft.json"))
+        args, _ = resolved_args(
+            config, training, work_dir=Path("/work"), run_dir=Path("/work/new-run"), run_id="continuation"
+        )
+        self.assertEqual(args["load"], config["resume"]["checkpoint_root"])
+        self.assertEqual(args["save"], "/work/new-run/checkpoints")
+        self.assertEqual(args["num_rollout"], 25 + config["scope"]["optimizer_updates"])
+        self.assertIn(25, args["observe_update_direction_steps"])
+        self.assertEqual(args["kl_loss_coef"], 0)
+        self.assertTrue(args["observe_training_entropy"])
+
     def test_only_explicit_actual_cap_judgments_relax_the_complete_final_gate(self):
         grades = self.gate()
         grades.update(

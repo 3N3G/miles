@@ -6,19 +6,31 @@ events carry the optimizer rollout ID independently of those history counters.
 """
 
 import argparse
+import fcntl
 import hashlib
 import json
 import math
 import time
 from pathlib import Path
 
+from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
 
-def read_native_metrics(directory):
+
+def read_native_metrics(directory, *, allow_pending=False, require_publication=False):
     rows = {}
     sources = ["actor_cell00000_rank00000.jsonl", "rollout_executor.jsonl"]
     for name in sources:
-        for line in (directory / "events" / name).read_text().splitlines():
-            event = json.loads(line)
+        path = directory / "events" / name
+        if allow_pending and not path.exists():
+            continue
+        lines = path.read_text().splitlines()
+        for position, line in enumerate(lines):
+            try:
+                event = json.loads(line)
+            except json.JSONDecodeError:
+                if allow_pending and position == len(lines) - 1:
+                    continue
+                raise
             if event["type"] != "metric":
                 continue
             step = event["rollout_id"]
@@ -35,7 +47,19 @@ def read_native_metrics(directory):
                     raise ValueError(f"Conflicting native metric at step {step}: {key}")
                 row[key] = value
     observed = sorted(rows)
-    if not observed or observed != list(range(len(observed))):
+    if allow_pending:
+        complete = []
+        required = {"train/pg_loss", "rollout/episode_raw_reward"}
+        if require_publication:
+            required.add("perf/update_weights_time")
+        for step in observed:
+            if not required <= rows[step].keys():
+                break
+            complete.append(step)
+        observed = complete
+        if not observed:
+            return []
+    if not observed or observed != list(range(observed[0], observed[-1] + 1)):
         raise ValueError("Native optimizer steps are missing or noncontiguous")
     for step in observed:
         if "train/pg_loss" not in rows[step] or "rollout/episode_raw_reward" not in rows[step]:
@@ -85,7 +109,7 @@ def sync_terminal_audit(directory, output):
     native = read_native_metrics(directory)
     digest = hashlib.sha256(json.dumps(native, sort_keys=True).encode()).hexdigest()
     if before.summary.get("audit/native_metrics_sha256") != digest:
-        client_directory = output / ".cache/wandb-client"
+        client_directory = output.parent / ".wandb-clients" / output.name
         client_directory.mkdir(parents=True, exist_ok=True)
         run = wandb.init(
             entity=args["wandb_team"],
@@ -108,7 +132,9 @@ def sync_terminal_audit(directory, output):
         # History indexing can lag a successful finish. Retry fresh reads,
         # without resending points or declaring an unverified upload successful.
         after = wandb.Api().run(run_path)
-        observed = list(after.scan_history(keys=["audit/optimizer_step", "audit/rollout/episode_raw_reward"]))
+        observed = list(
+            after.scan_history(keys=["audit/optimizer_step", "audit/rollout/episode_raw_reward"], use_cache=False)
+        )
         actual = [
             (row["audit/optimizer_step"], row["audit/rollout/episode_raw_reward"])
             for row in observed
@@ -133,13 +159,122 @@ def sync_terminal_audit(directory, output):
     return receipt
 
 
+def sync_live_audit(directory, output, scheduler_state):
+    """Publish only complete native steps, preserving live W&B run state.
+
+    The VM is the sole online writer. AMD's independent offline streams stay
+    archived without being merged into this history. A local lock serializes
+    monitor retries. API readback owns the publication cursor.
+    """
+    import wandb
+
+    config_path = directory / "resolved-config.json"
+    terminal = scheduler_state not in ("RUNNING", "PENDING", "CONFIGURING", "COMPLETING", "UNKNOWN")
+    native = read_native_metrics(directory, allow_pending=True, require_publication=not terminal)
+    if not config_path.exists() or not native:
+        return {"phase": "waiting_for_first_complete_update", "verified_points": 0}
+    config = json.loads(config_path.read_text())
+    args = config["args"]
+    path = f"{args['wandb_team']}/{args['wandb_project']}/{config['run_id']}"
+    receipt_path = output / "wandb-live-metrics.json"
+    submitted_path = output / "wandb-submitted-metrics.json"
+    with (output / "wandb-live-metrics.lock").open("a") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        previous = json.loads(receipt_path.read_text()) if receipt_path.exists() else {}
+        submitted = json.loads(submitted_path.read_text()) if submitted_path.exists() else {}
+        last_verified = previous.get("last_verified_optimizer_step", native[0]["optimizer_step"] - 1)
+        last = max(last_verified, submitted.get("last_submitted_optimizer_step", last_verified))
+        pending = [row for row in native if row["optimizer_step"] > last]
+        if not pending and not terminal and last_verified == last:
+            return previous
+        if pending or terminal:
+            client_directory = output.parent / ".wandb-clients" / output.name
+            client_directory.mkdir(parents=True, exist_ok=True)
+            run = wandb.init(
+                entity=args["wandb_team"],
+                project=args["wandb_project"],
+                id=config["run_id"],
+                resume="allow",
+                dir=str(client_directory),
+                config={
+                    "native_metrics_source": "VM single writer",
+                    "approved_config": str(directory / "approved-config.json"),
+                },
+                settings=wandb.Settings(mode="online", x_update_finish_state=terminal),
+            )
+            if (previous or submitted) and not run.resumed:
+                run.finish(exit_code=1)
+                raise RuntimeError("Live metric publication did not resume its existing run")
+            try:
+                publish_audit(pending, run)
+                run.summary["monitor/slurm_state"] = scheduler_state
+                run.summary["monitor/completed_updates"] = len(native)
+            finally:
+                run.finish(exit_code=0 if not terminal or scheduler_state == "COMPLETED" else 1)
+            # SDK success and API verification are separate acknowledgements.
+            # Persist delivery before waiting for indexing, so monitor retries
+            # do not resend a successful upload whose readback was delayed.
+            _atomic_bytes(
+                submitted_path,
+                (json.dumps({"last_submitted_optimizer_step": native[-1]["optimizer_step"]}) + "\n").encode(),
+            )
+        expected = [(row["optimizer_step"], row["rollout/episode_raw_reward"]) for row in native]
+        expected_state = ("finished" if scheduler_state == "COMPLETED" else "failed") if terminal else "running"
+        # The server's history index can lag SDK upload by tens of seconds.
+        # Keep one upload and retry reads instead of republishing its points.
+        for attempt in range(12):
+            remote = wandb.Api().run(path)
+            observed = list(
+                remote.scan_history(keys=["audit/optimizer_step", "audit/rollout/episode_raw_reward"], use_cache=False)
+            )
+            actual = [
+                (row["audit/optimizer_step"], row["audit/rollout/episode_raw_reward"])
+                for row in observed
+                if row.get("audit/optimizer_step") is not None
+                and row.get("audit/rollout/episode_raw_reward") is not None
+            ]
+            # A retry after a lost acknowledgement may repeat an identical
+            # point. Verify unique coordinates and reject conflicting values.
+            observed_values = {}
+            for step, value in actual:
+                if step in observed_values and observed_values[step] != value:
+                    raise RuntimeError("Conflicting W&B values at one optimizer step")
+                observed_values[step] = value
+            if sorted(observed_values.items()) == expected and remote.state == expected_state:
+                break
+            if attempt < 11:
+                time.sleep(3)
+        else:
+            raise RuntimeError(
+                f"Live W&B readback failed: {len(observed_values)}/{len(expected)} steps, "
+                f"state {remote.state!r}, expected {expected_state!r}"
+            )
+        receipt = {
+            "url": remote.url,
+            "verified_points": len(observed_values),
+            "history_rows": len(actual),
+            "last_verified_optimizer_step": native[-1]["optimizer_step"],
+            "scheduler_state": scheduler_state,
+            "wandb_state": remote.state,
+            "native_metrics_sha256": hashlib.sha256(json.dumps(native, sort_keys=True).encode()).hexdigest(),
+        }
+        _atomic_bytes(receipt_path, (json.dumps(receipt, indent=2) + "\n").encode())
+        return receipt
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run-directory", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--scheduler-state")
     cli = parser.parse_args()
     cli.output.mkdir(parents=True, exist_ok=True)
-    print(json.dumps(sync_terminal_audit(cli.run_directory, cli.output), indent=2))
+    result = (
+        sync_live_audit(cli.run_directory, cli.output, cli.scheduler_state)
+        if cli.scheduler_state
+        else sync_terminal_audit(cli.run_directory, cli.output)
+    )
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":

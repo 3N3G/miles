@@ -28,6 +28,7 @@ from experiments.tcs_async_rl.rl_archive import (
 )
 from experiments.tcs_async_rl.rl_artifacts import file_sha256
 from experiments.tcs_async_rl.rl_job_state import record
+from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates
 from experiments.tcs_async_rl.watch_group import ACTIVE, remote_state
 
 ANSI = re.compile(r"\x1b\[[0-9;]*m")
@@ -157,7 +158,9 @@ def consumed_rollouts(directory, *, allow_pending=False):
     return groups
 
 
-def acceptance(directory, scheduler, expected_updates, *, minimum_varied_groups=None, retained_checkpoints=None):
+def acceptance(
+    directory, scheduler, expected_updates, *, minimum_varied_groups=None, retained_checkpoints=None, initial_updates=0
+):
     evidence = run_training_evidence(directory)
     groups = consumed_rollouts(directory)
     inventory = directory / "checkpoint-inventory.json"
@@ -175,12 +178,13 @@ def acceptance(directory, scheduler, expected_updates, *, minimum_varied_groups=
         >= (expected_updates if minimum_varied_groups is None else minimum_varied_groups),
         "retained_checkpoints_exist": len([x for x in checkpoints["iterations"] if x["files"] and x["bytes"]])
         >= (expected_updates if retained_checkpoints is None else retained_checkpoints),
-        "final_checkpoint_tracker": str(checkpoints["tracker"]) == str(expected_updates - 1),
+        "final_checkpoint_tracker": str(checkpoints["tracker"]) == str(initial_updates + expected_updates - 1),
     }
     return {
         "runtime_acceptance_passed": all(checks.values()),
         "stop_reason": "walltime_limit" if scheduler["state"] == "TIMEOUT" else scheduler["state"].lower(),
         "target_updates": expected_updates,
+        "initial_optimizer_updates": initial_updates,
         "completed_updates": len(evidence["valid_updates"]),
         "checks": checks,
         "training": evidence,
@@ -216,6 +220,34 @@ def sync_outputs(remote_directory, directory, *, bounded=False):
     return copy_trace_batch(remote_directory, directory) if bounded else 0
 
 
+def sync_native_wandb(directory, scheduler_state):
+    result = subprocess.run(
+        [
+            "uv",
+            "run",
+            "--no-project",
+            "--with",
+            "wandb==0.31.0",
+            "python",
+            "-m",
+            "experiments.tcs_async_rl.native_metrics",
+            "--run-directory",
+            str(directory),
+            "--output",
+            str(directory),
+            "--scheduler-state",
+            scheduler_state,
+        ],
+        capture_output=True,
+        text=True,
+        timeout=90,
+    )
+    (directory / "wandb-native-sync.log").write_text(result.stdout + result.stderr)
+    result.check_returncode()
+    path = directory / "wandb-live-metrics.json"
+    return json.loads(path.read_text()) if path.exists() else {"verified_points": 0}
+
+
 def finish(*, job_id, config_path, directory, remote_directory, checkout, scheduler, state_repo):
     from experiments.tcs_async_rl.auto_rl import remote, save
 
@@ -249,6 +281,7 @@ def finish(*, job_id, config_path, directory, remote_directory, checkout, schedu
             config["scope"]["optimizer_updates"],
             minimum_varied_groups=config["scope"].get("minimum_varied_groups"),
             retained_checkpoints=config["scope"].get("retained_checkpoints"),
+            initial_updates=initial_optimizer_updates(config),
         )
     except (OSError, ValueError, KeyError, TypeError) as error:
         result = {"runtime_acceptance_passed": False, "evidence_error_type": type(error).__name__}
@@ -271,7 +304,13 @@ def finish(*, job_id, config_path, directory, remote_directory, checkout, schedu
     )
     (directory / "analysis.log").write_text(plots.stdout + plots.stderr)
     uploads = []
-    for data in sorted((directory / "wandb").rglob("*.wandb")):
+    native_vm_metrics = config.get("wandb_metrics_source") == "native_vm"
+    if native_vm_metrics:
+        uploads.append({"source": "native_vm", **sync_native_wandb(directory, scheduler["state"])})
+    # VM-native runs already have one authoritative online history. Retain
+    # independent offline streams in the private archive without merging them.
+    offline_streams = [] if native_vm_metrics else sorted((directory / "wandb").rglob("*.wandb"))
+    for data in offline_streams:
         try:
             output = subprocess.run(
                 [
@@ -384,6 +423,8 @@ def watch(*, job_id, config_path, directory, remote_directory, checkout, state_r
             if config.get("incremental_archive"):
                 consumed_rollouts(directory, allow_pending=True)
                 archive_chunks(directory)
+            if config.get("wandb_metrics_source") == "native_vm" and state["state"] in ACTIVE:
+                sync_native_wandb(directory, state["state"])
         except (OSError, subprocess.SubprocessError, ValueError, RuntimeError) as error:
             save(directory / "sync-error.json", {"error_type": type(error).__name__})
         if state["state"] not in ACTIVE | {"UNKNOWN"}:

@@ -1091,6 +1091,8 @@ def test_recompute_logprobs_via_prefill_flag_is_parsed():
                 "--rollout-top-k",
                 "32",
                 "--use-kl-loss",
+                "--kl-loss-coef",
+                "0.1",
             ],
             "cannot currently be combined with reference KL or teacher distillation",
         ),
@@ -1113,6 +1115,19 @@ def test_sampling_support_arguments_fail_closed(extra, message):
 
     with pytest.raises(ValueError, match=message):
         miles_validate_args(args)
+
+
+def test_sampling_support_allows_observation_only_reference_kl(tmp_path):
+    (tmp_path / "latest_checkpointed_iteration.txt").write_text("0\n")
+    parser = argparse.ArgumentParser()
+    get_miles_extra_args_provider()(parser)
+    args = parser.parse_args(
+        ["--num-rollout", "1", "--rollout-top-k", "20", "--use-kl-loss", "--kl-loss-coef", "0"]
+        + ["--ref-load", str(tmp_path)]
+        + REQUIRED_ARGS
+    )
+    miles_validate_args(args)
+    assert args.use_sampling_support_replay and args.use_kl_loss and args.kl_loss_coef == 0
 
 
 @pytest.mark.parametrize(

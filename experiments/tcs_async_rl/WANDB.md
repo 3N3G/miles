@@ -11,8 +11,8 @@ The VM login is authenticated. This checkout's local W&B defaults now select tha
 The account's global default may still name `iris-sobolmark`. It does not choose this repo's upload destination.
 No old runs were moved. No experiment run or GPU job was created during this setup.
 
-The current AMD runtime plan saves offline W&B files.
-Credentials stay on the VM. Upload each completed run explicitly from the VM:
+AMD saves offline W&B files. Credentials stay on the VM.
+Historical configurations upload each completed run explicitly from the VM:
 
 ```bash
 uvx --from wandb==0.31.0 wandb sync --entity geney --project tcs-async-rl <offline-run-directory>
@@ -44,3 +44,20 @@ It preserves original metrics and the terminal state. It verifies corrected rewa
 The verified series is `audit/rollout/episode_raw_reward` against `audit/optimizer_step`.
 Other corrected native metrics use the same `audit/` prefix and explicit axis.
 See [the full reward and optimizer audit](RL_NOISE_AUDIT_20261121.md).
+
+## Publish new runs from one live writer
+
+New configurations can set `wandb_metrics_source` to `native_vm`.
+The monitor publishes complete native optimizer rows from one VM client during training.
+It waits for the optimizer, reward and weight-publication metrics before publishing an active step.
+It uses the same `audit/` series and explicit optimizer-step axis described above.
+
+The client preserves the running state between monitor polls. It closes the run only after Slurm ends.
+It verifies reward coordinates and run state through fresh API reads before advancing its local cursor.
+History indexing can lag a successful SDK upload. Reads bypass the SDK history cache.
+The client records upload acknowledgement separately from verified history. Monitor retries do not resend acknowledged points.
+After a lost acknowledgement, an identical repeated point is accepted. Conflicting values at one step are errors.
+
+For these configurations, do not also sync the independent AMD offline histories into the online run.
+Keep those files in the private result archive. The monitor handles active and terminal publication automatically.
+The observer adds no provider credentials to AMD. Transient W&B client files stay outside each result directory.

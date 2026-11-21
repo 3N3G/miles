@@ -10,7 +10,10 @@ from miles.backends.training_utils.data.context_parallel import (
 )
 from miles.backends.training_utils.data.sampling_mask import build_local_sampling_mask
 from miles.backends.training_utils.loss.hub.lm_head import LMHeadInputs
-from miles.backends.training_utils.loss.hub.math_utils import calculate_log_probs_and_entropy
+from miles.backends.training_utils.loss.hub.math_utils import (
+    calculate_log_probs_and_entropy,
+    compute_entropy_from_logits,
+)
 from miles.backends.training_utils.loss.hub.score_centering import selected_log_probs_and_entropy
 from miles.backends.training_utils.parallel import get_parallel_state
 from miles.utils.sampling_mask import RolloutSamplingMask
@@ -236,6 +239,25 @@ def get_log_probs_and_entropy(
     return res
 
 
+@torch.no_grad()
+def _observed_sampling_entropy(logits, sampling_mask, *, group, chunk_size, temperature):
+    """Entropy of the actual allowed choices, without changing full-policy entropy."""
+    size = chunk_size if chunk_size > 0 else max(1, logits.size(0))
+    values = []
+    for scores, mask in zip(logits.split(size), sampling_mask.split(size), strict=True):
+        scores = scores.detach().to(dtype=torch.float32, copy=True)
+        if temperature > 0 and temperature != 1:
+            scores.div_(temperature)
+        # Finite masked entries avoid 0 * -inf inside distributed entropy.
+        scores.masked_fill_(~mask, torch.finfo(scores.dtype).min)
+        if group is None or group.size() == 1:
+            log_probs = scores.log_softmax(-1)
+            values.append(-(log_probs.exp() * log_probs).sum(-1))
+        else:
+            values.append(compute_entropy_from_logits(scores, group))
+    return torch.cat(values) if values else logits.new_empty((0,), dtype=torch.float32)
+
+
 def _torch_log_probs_and_entropy(
     logits: torch.Tensor,
     *,
@@ -252,6 +274,7 @@ def _torch_log_probs_and_entropy(
     parallel_state = get_parallel_state()
     log_probs_list = []
     entropy_list = []
+    sampling_entropy_list = []
     response_chunks = _iter_response_chunks(
         logits,
         args=args,
@@ -302,12 +325,24 @@ def _torch_log_probs_and_entropy(
         log_probs_list.append(log_prob.squeeze(-1))
         if with_entropy:
             entropy_list.append(entropy)
+            if sampling_mask is not None:
+                sampling_entropy_list.append(
+                    _observed_sampling_entropy(
+                        logits_chunk,
+                        sampling_mask,
+                        group=parallel_state.tp.group,
+                        chunk_size=args.log_probs_chunk_size,
+                        temperature=1.0 if args.true_on_policy_mode else args.rollout_temperature,
+                    )
+                )
 
     res = {
         "log_probs": log_probs_list,
     }
     if with_entropy:
         res["entropy"] = entropy_list
+        if sampling_entropy_list:
+            res["sampling_entropy"] = sampling_entropy_list
     return res
 
 

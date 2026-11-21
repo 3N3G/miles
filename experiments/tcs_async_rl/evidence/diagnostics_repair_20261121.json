@@ -1,0 +1,65 @@
+{
+  "observed_at_utc": "2026-11-21T23:29:20.909010+00:00",
+  "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "machine": "home",
+  "directory": "/home/ubuntu/miles",
+  "implementation_status": "tested_on_cpu_and_live_wandb_not_qualified_on_rocm",
+  "tcs_unittest_count": 90,
+  "cpu_loss_and_diagnostic_test_count": 19,
+  "cpu_torch": "2.11.0+cpu",
+  "torch_compile_disabled_for_cpu_controls": true,
+  "commands": [
+    "python3 -m unittest discover -s tests/fast -p 'test_tcs*.py'",
+    "TORCHDYNAMO_DISABLE=1 uv run --no-project --index https://download.pytorch.org/whl/cpu --with torch==2.11.0+cpu --with pytest --with einops --with numpy --with psutil --with pydantic --with ray python -m pytest --noconftest tests/fast/backends/training_utils/loss/test_cispo.py tests/fast/backends/training_utils/test_true_on_policy_loss_metrics.py -q --tb=short"
+  ],
+  "not_qualified": [
+    "Native ROCm reference/observer forward passes and memory",
+    "Full optimizer/RNG/rollout checkpoint resume",
+    "Full argument test module requires SGLang/Megatron not installed on VM"
+  ],
+  "unavailable_checks": {
+    "training_logprob_reuse": "Eight failures came from unavailable megatron on the CPU VM. No GPU installation was attempted."
+  },
+  "controls": {
+    "fresh-native-control": {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/native-live-control-20261121",
+      "verified_points": 2,
+      "history_rows": 3,
+      "last_verified_optimizer_step": 26,
+      "scheduler_state": "COMPLETED",
+      "wandb_state": "finished",
+      "native_metrics_sha256": "506abf44457c17bf98270251318e33f13867bc5f338db4355da624bbc411df32"
+    },
+    "fresh-native-control-v2": {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/native-live-control-v2-20261121",
+      "verified_points": 2,
+      "history_rows": 2,
+      "last_verified_optimizer_step": 26,
+      "scheduler_state": "COMPLETED",
+      "wandb_state": "finished",
+      "native_metrics_sha256": "92fbafe507f671c96b05eed065f8c154914aee8172975495f95ca8bdb57c7edb"
+    },
+    "fresh-native-control-v3": {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/native-live-control-v3-20261121",
+      "verified_points": 1,
+      "history_rows": 1,
+      "last_verified_optimizer_step": 25,
+      "scheduler_state": "COMPLETED",
+      "wandb_state": "finished",
+      "native_metrics_sha256": "8d287d6314ea190b560c76a8cbb86b1e461bdd2d86bc08726c0211c2e99984b4"
+    }
+  },
+  "control_notes": [
+    "Technical metrics are synthetic fixtures and do not show RL improvement.",
+    "First control recovered a lost readback acknowledgement, retaining three identical-coordinate history rows for two unique points.",
+    "Second control has two physical rows and two verified optimizer coordinates.",
+    "Third control has one physical row and one verified coordinate. Its pre-repair SDK delivery was recovered without resending.",
+    "Initial polling windows expired before fresh-run history became available. Reads now bypass the SDK cache, and successful delivery is recorded separately from API verification."
+  ],
+  "new_gpu_jobs": 0,
+  "new_judge_calls": 0,
+  "planned_config": "experiments/tcs_async_rl/rl_easy_overfit_v10.draft.json",
+  "plan": "experiments/tcs_async_rl/EASY_CONTINUATION_PLAN_20261121.md",
+  "decision_status": "awaiting_user_allocation_and_concurrency_choice",
+  "local_control_directory": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/live-metrics-control-20261121"
+}

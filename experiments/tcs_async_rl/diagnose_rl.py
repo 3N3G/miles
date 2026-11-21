@@ -193,11 +193,11 @@ def trace_summary(sample):
     }
 
 
-def read_samples(directory, traces, output, *, updates):
+def read_samples(directory, traces, output, *, optimizer_steps):
     questions = {question_key(q): q for q in json.loads((directory / "input.json").read_text())["questions"]}
     archive = json.loads((directory / "archive-index.json").read_text())
     rows, groups, judge_cache, examples = [], [], {}, []
-    for step in range(updates):
+    for step in optimizer_steps:
         name = f"rollout_data/rollout-{step}.jsonl.gz"
         path = traces / name
         assert file_sha256(path) == archive[name]["sha256"], name
@@ -278,7 +278,7 @@ def analyze(directory, traces, output):
     output.mkdir(parents=True, exist_ok=True)
     native = read_native_metrics(directory)
     save(output / "native-metrics.json", native)
-    rows, groups = read_samples(directory, traces, output, updates=len(native))
+    rows, groups = read_samples(directory, traces, output, optimizer_steps=[row["optimizer_step"] for row in native])
     save(output / "samples.json", rows)
     save(output / "groups.json", groups)
     save(output / "source-checks.json", publication_checks(directory, rows, native))

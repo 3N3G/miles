@@ -10,11 +10,98 @@ from experiments.tcs_async_rl.native_metrics import (
     compare_wandb,
     publish_audit,
     read_native_metrics,
+    sync_live_audit,
     sync_terminal_audit,
 )
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_live_reader_waits_for_weight_publication_and_handles_a_nonzero_resume_step(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "events").mkdir()
+            actor = root / "events/actor_cell00000_rank00000.jsonl"
+            rollout = root / "events/rollout_executor.jsonl"
+            actor.write_text(
+                json.dumps({"type": "metric", "rollout_id": 25, "metrics": {"train/step": 25, "train/pg_loss": 0.1}})
+                + "\n"
+            )
+            rollout.write_text(
+                json.dumps(
+                    {
+                        "type": "metric",
+                        "rollout_id": 25,
+                        "metrics": {"rollout/step": 25, "rollout/episode_raw_reward": 3},
+                    }
+                )
+                + "\n"
+            )
+            self.assertEqual(read_native_metrics(root, allow_pending=True, require_publication=True), [])
+            with actor.open("a") as stream:
+                stream.write(
+                    json.dumps({"type": "metric", "rollout_id": 25, "metrics": {"perf/update_weights_time": 0.1}})
+                    + "\n"
+                )
+                stream.write('{"incomplete":')
+            rows = read_native_metrics(root, allow_pending=True, require_publication=True)
+            self.assertEqual([row["optimizer_step"] for row in rows], [25])
+
+    def test_live_publisher_keeps_running_then_closes_failed_and_does_not_resend_verified_steps(self):
+        native = [{"optimizer_step": 25, "rollout/episode_raw_reward": 3.0, "train/pg_loss": 0.1}]
+        remote = Mock(state="running", url="https://wandb.example/run")
+        remote.scan_history.return_value = [{"audit/optimizer_step": 25, "audit/rollout/episode_raw_reward": 3.0}]
+        sdk = Mock()
+        sdk.Api.return_value.run.return_value = remote
+        sdk.init.return_value.resumed = True
+        sdk.init.return_value.summary = {}
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name) / "run"
+            root.mkdir()
+            (root / "resolved-config.json").write_text(
+                json.dumps({"args": {"wandb_team": "team", "wandb_project": "project"}, "run_id": "id"})
+            )
+            with patch.dict("sys.modules", {"wandb": sdk}), patch(
+                "experiments.tcs_async_rl.native_metrics.read_native_metrics", return_value=native
+            ):
+                receipt = sync_live_audit(root, root, "RUNNING")
+                self.assertEqual(receipt["verified_points"], 1)
+                self.assertFalse(sdk.Settings.call_args.kwargs["x_update_finish_state"])
+                remote.scan_history.assert_called_with(
+                    keys=["audit/optimizer_step", "audit/rollout/episode_raw_reward"], use_cache=False
+                )
+                sync_live_audit(root, root, "RUNNING")
+                self.assertEqual(sdk.init.call_count, 1)
+                remote.state = "failed"
+                sync_live_audit(root, root, "TIMEOUT")
+                self.assertTrue(sdk.Settings.call_args.kwargs["x_update_finish_state"])
+                sdk.init.return_value.finish.assert_called_with(exit_code=1)
+
+    def test_live_publisher_does_not_resend_an_upload_when_history_indexing_exceeds_its_readback_window(self):
+        native = [{"optimizer_step": 25, "rollout/episode_raw_reward": 3.0, "train/pg_loss": 0.1}]
+        remote = Mock(state="running", url="https://wandb.example/run")
+        sdk = Mock()
+        sdk.Api.return_value.run.return_value = remote
+        sdk.init.return_value.summary = {}
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name) / "run"
+            root.mkdir()
+            (root / "resolved-config.json").write_text(
+                json.dumps({"args": {"wandb_team": "team", "wandb_project": "project"}, "run_id": "id"})
+            )
+            with patch.dict("sys.modules", {"wandb": sdk}), patch(
+                "experiments.tcs_async_rl.native_metrics.read_native_metrics", return_value=native
+            ), patch("experiments.tcs_async_rl.native_metrics.time.sleep"):
+                remote.scan_history.return_value = []
+                with self.assertRaisesRegex(RuntimeError, "0/1 steps"):
+                    sync_live_audit(root, root, "RUNNING")
+                remote.scan_history.return_value = [
+                    {"audit/optimizer_step": 25, "audit/rollout/episode_raw_reward": 3.0}
+                ]
+                receipt = sync_live_audit(root, root, "RUNNING")
+                self.assertEqual(receipt["verified_points"], 1)
+                self.assertEqual(sdk.init.call_count, 1)
+                sdk.init.return_value.log.assert_called_once()
+
     def test_native_events_recover_reward_axis_after_offline_writer_collision(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

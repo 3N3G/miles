@@ -30,6 +30,7 @@ from miles.backends.training_utils.loss.objective import (
 )
 from miles.backends.training_utils.metrics import train_dump
 from miles.backends.training_utils.metrics.log_utils import log_cpu_memory, log_perf_data, log_rollout_data
+from miles.backends.training_utils.metrics.update_direction import compute_update_direction
 from miles.backends.training_utils.model_companion import (
     ModelCompanionInstallationUtils,
     ModelCompanionWeightVersionUtils,
@@ -58,6 +59,7 @@ from miles.utils.reloadable_process_group import destroy_process_groups, monkey_
 from miles.utils.replay_base import all_replay_managers, routing_replay_manager
 from miles.utils.test_utils.ft_test_actions import FTTestActionActorExecutor
 from miles.utils.timer import Timer, inverse_timer, timer
+from miles.utils.tracking_utils import tracking
 from miles.utils.tracking_utils.structured_log import with_logs
 from miles.utils.tracking_utils.tracking import init_tracking
 from miles.utils.types import RolloutBatch
@@ -766,6 +768,14 @@ class MegatronTrainRayActor(TrainRayActor):
             if self.rollout_data_postprocess is not None:
                 self.rollout_data_postprocess(self.args)
 
+            observe_direction = rollout_id in getattr(self.args, "observe_update_direction_steps", [])
+            before_update_log_probs = None
+            if observe_direction:
+                self._set_replay_stage("replay_forward")
+                before_update_log_probs = self._compute_log_prob(
+                    data_iterator, num_microbatches, rollout_id=rollout_id
+                )["log_probs"]
+
             log_rollout_data(rollout_id, self.args, rollout_data)
 
             # Train
@@ -784,6 +794,28 @@ class MegatronTrainRayActor(TrainRayActor):
                     attempt=attempt,
                     ft_test_action_executor=self._ft_test_action_executor,
                 )
+
+            if observe_direction and train_step_outcome == TrainStepOutcome.NORMAL:
+                self._set_replay_stage("replay_forward")
+                after_update_log_probs = self._compute_log_prob(
+                    data_iterator, num_microbatches, rollout_id=rollout_id
+                )["log_probs"]
+                if is_first_replica_megatron_main_rank():
+                    direction = compute_update_direction(
+                        before_update_log_probs,
+                        after_update_log_probs,
+                        advantages=rollout_data["advantages"],
+                        behavior=rollout_data["rollout_log_probs"],
+                        loss_masks=rollout_data["loss_masks"],
+                        eps_clip=self.args.eps_clip,
+                        eps_clip_high=self.args.eps_clip_high,
+                    )
+                    tracking.log(
+                        self.args,
+                        {"train/step": rollout_id, **{f"train/update_direction/{k}": v for k, v in direction.items()}},
+                        step_key="train/step",
+                    )
+                    logger.info("Update direction rollout=%s stats=%s", rollout_id, direction)
 
             self.prof.step(rollout_id=rollout_id)
 
