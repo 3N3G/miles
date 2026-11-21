@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "inkling-looped-lens",
+  "sources": [],
+  "evidence": [],
+  "jobs": [],
+  "sessions": [
+    {
+      "agent": "codex",
+      "sessionId": "01a1fd03-2b6c-7151-9835-2cb592949d73",
+      "machine": "home",
+      "directory": "/home/ubuntu/miles"
+    }
+  ],
+  "workspace": {
+    "machine": "home",
+    "directory": "/home/ubuntu/inkling-interp"
+  },
+  "createdAt": "2026-11-21T07:32:43.635159Z",
+  "changes": [
+    {
+      "id": "427971fe-200b-4235-89a6-364e03486f4c",
+      "at": "2026-11-21T07:32:43.635159Z",
+      "actor": "codex",
+      "summary": "Claimed standalone Inkling investigation after relocation from Miles",
+      "revision": 1
+    }
+  ],
+  "projectId": "interpretability",
+  "title": "Investigate lenses for Inkling 2 Mini",
+  "endpoint": "Find and explain an evidence-backed property of Inkling 2 Mini relevant to building a causally useful lens.",
+  "state": "running",
+  "summary": "User requested exploratory interpretability research and authorized CPU, AMD, or Babel use. Reviewing official model code, lens papers, and challenge rules.",
+  "nextAction": "Freeze a bounded diagnostic plan, inspect model weights, and run controls before interpreting activations.",
+  "owner": "Codex",
+  "revision": 1,
+  "updatedAt": "2026-11-21T07:32:43.635159Z"
+}
