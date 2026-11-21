@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536360 is running. First native optimizer update and publication of weight version 1 succeeded. First group: 28 positive and four zero rewards, mean 4.46875/7. Real loss/reward/gradient metric Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
-  Next: Continue the approved attempt to 40 updates or four hours. Monitor native updates, exact question coverage, checkpoints and terminal state. Corrected final reporting and W&B/privat
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536360 is TIMEOUT Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 

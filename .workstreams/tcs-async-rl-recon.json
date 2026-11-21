@@ -625,7 +625,7 @@
     {
       "id": "536360",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "TIMEOUT"
     },
     {
       "id": "536321",
@@ -1883,15 +1883,22 @@
       "actor": "codex",
       "summary": "Verify real optimizer metrics on W&B and arm corrected final analysis",
       "revision": 156
+    },
+    {
+      "id": "b6c4f88e-76e0-4648-9f5a-b7b36096e010",
+      "at": "2026-11-21T12:03:03.920639Z",
+      "actor": "codex",
+      "summary": "RL job 536360 is TIMEOUT",
+      "revision": 157
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "AMD job 536360 is running. First native optimizer update and publication of weight version 1 succeeded. First group: 28 positive and four zero rewards, mean 4.46875/7. Real loss/reward/gradient metrics are verified on geney/tcs-async-rl. Corrected final reporting is armed from frozen VM source.",
-  "nextAction": "Continue the approved attempt to 40 updates or four hours. Monitor native updates, exact question coverage, checkpoints and terminal state. Corrected final reporting and W&B/private uploads run after the original monitor exits.",
+  "summary": "RL job 536360 is TIMEOUT",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 156,
-  "updatedAt": "2026-11-21T08:36:13.707953Z"
+  "revision": 157,
+  "updatedAt": "2026-11-21T12:03:03.920639Z"
 }
