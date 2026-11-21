@@ -1818,15 +1818,22 @@
       "actor": "codex",
       "summary": "RL job 536321 is FAILED",
       "revision": 148
+    },
+    {
+      "id": "695d9e79-b7ba-42ac-87d9-87de268226c3",
+      "at": "2026-11-21T07:59:19.110917Z",
+      "actor": "codex",
+      "summary": "RL job 536321 ended FAILED; acceptance False",
+      "revision": 149
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "RL job 536321 is FAILED",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "RL job 536321 ended FAILED; acceptance False",
+  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
   "owner": "Codex",
-  "revision": 148,
-  "updatedAt": "2026-11-21T07:58:48.917599Z"
+  "revision": 149,
+  "updatedAt": "2026-11-21T07:59:19.110917Z"
 }
