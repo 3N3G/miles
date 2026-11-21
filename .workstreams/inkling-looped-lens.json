@@ -22,11 +22,6 @@
   ],
   "jobs": [
     {
-      "id": "536932",
-      "cluster": "hpcfund",
-      "status": "CANCELLED"
-    },
-    {
       "id": "536947",
       "cluster": "hpcfund",
       "status": "COMPLETED"
@@ -44,7 +39,42 @@
     {
       "id": "536987",
       "cluster": "hpcfund",
+      "status": "COMPLETED"
+    },
+    {
+      "id": "536999",
+      "cluster": "hpcfund",
+      "status": "COMPLETED"
+    },
+    {
+      "id": "537008",
+      "cluster": "hpcfund",
       "status": "RUNNING"
+    },
+    {
+      "id": "537014",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
+      "id": "537018",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
+      "id": "537019",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
+      "id": "537020",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
+      "id": "537024",
+      "cluster": "hpcfund",
+      "status": "PENDING"
     }
   ],
   "sessions": [
@@ -116,15 +146,22 @@
       "actor": "codex",
       "summary": "Completed transport fits and late decoder reuse; found a development gain from mean/scale calibration and started causal validation",
       "revision": 8
+    },
+    {
+      "id": "976f554a-3ca8-4628-94d4-b372d3e9981b",
+      "at": "2026-11-21T16:36:45.176486Z",
+      "actor": "codex",
+      "summary": "Found development semantic effects from exact Jacobian rows; froze transfer and held-out evaluation",
+      "revision": 9
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Discover and validate a useful Inkling interpretability lens, beginning with transport by recent rotations and testing semantic causal effects.",
   "state": "running",
-  "summary": "Captured 144 calibration paragraphs and 55 development prompts. Three-seed rotation powers did not recover bridges. Mean/scale calibration recovered 12–13 of 24 solved unspoken bridges versus 10 for raw readout, or 14 versus 10 with the same vocabulary filter. Better final-state predictors recovered fewer intermediates. Country-swap causal validation is running; 43 test items remain reserved.",
-  "nextAction": "Finish causal swaps, test a true Jacobian direction if raw readout axes fail, and evaluate the frozen candidate on the reserved split only after selection.",
+  "summary": "Completed exact country Jacobian rows and observed task-specific country swaps on development prompts. Orthogonal rotation powers and learned final-state predictors do not yet give a better bridge reader. Independent Germany/China transfer, same-phase cycle diagnostics, and the frozen 43-item final mean/scale comparison are queued sequentially.",
+  "nextAction": "Complete the frozen transfer and final-test jobs, inspect paired cases and matched-norm controls, archive all results, and prepare a standalone user-review report.",
   "owner": "Codex",
-  "revision": 8,
-  "updatedAt": "2026-11-21T16:22:40.393142Z"
+  "revision": 9,
+  "updatedAt": "2026-11-21T16:36:45.176486Z"
 }

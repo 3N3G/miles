@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Captured 144 calibration paragraphs and 55 development prompts. Three-seed rotation powers did not recover bridges. Mean/scale calibration recovered 12–13 of 24 solved unspoken bridges versus 10 for r Jobs: hpcfund/536932 CANCELLED; hpcfund/536947 COMPLETED
-  Next: Finish causal swaps, test a true Jacobian direction if raw readout axes fail, and evaluate the frozen candidate on the reserved split only after selection.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed exact country Jacobian rows and observed task-specific country swaps on development prompts. Orthogonal rotation powers and learned final-state predictors do not yet give a better bridge rea Jobs: hpcfund/536947 COMPLETED; hpcfund/536965 COMPLETED
+  Next: Complete the frozen transfer and final-test jobs, inspect paired cases and matched-norm controls, archive all results, and prepare a standalone user-review report.
 
 ## Next / blocked
 
