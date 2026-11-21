@@ -1797,15 +1797,22 @@
       "actor": "codex",
       "summary": "RL job 536321 is RUNNING",
       "revision": 145
+    },
+    {
+      "id": "7810b22b-bdd1-4728-9825-e6a90df4cf7e",
+      "at": "2026-11-21T07:53:42.270961Z",
+      "actor": "codex",
+      "summary": "AMD conversion passed; repair isolated compute-node SSH routing",
+      "revision": 146
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "RL job 536321 is RUNNING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "AMD job 536321 is running. Native argument checks and TP2 checkpoint conversion passed. Ray training is starting. Repairing VM tunnel routing without changing the submitted training source or configuration.",
+  "nextAction": "Verify the judge health endpoint from the allocated node, then monitor actor/rollout startup and the first optimizer update.",
   "owner": "Codex",
-  "revision": 145,
-  "updatedAt": "2026-11-21T07:51:26.484205Z"
+  "revision": 146,
+  "updatedAt": "2026-11-21T07:53:42.270961Z"
 }

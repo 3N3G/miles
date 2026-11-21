@@ -30,6 +30,8 @@ class RewardTunnelTests(unittest.TestCase):
         argv = ssh_command(("geney", "k007-003"), forward_port=18491)
         self.assertIn("127.0.0.1:18491:127.0.0.1:18491", argv)
         self.assertIn("HostName=k007-003", argv)
+        self.assertIn("ControlMaster=no", argv)
+        self.assertIn("ControlPath=none", argv)
         self.assertIn("StrictHostKeyChecking=accept-new", argv)
         self.assertNotIn("StrictHostKeyChecking=no", argv)
         self.assertNotIn("-A", argv)

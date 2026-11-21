@@ -57,6 +57,12 @@ def ssh_command(target, *, forward_port=None):
         f"User={target[0]}",
         "-o",
         "BatchMode=yes",
+        # The AMD alias has a literal login-host ControlPath. A node override
+        # must open its own connection, rather than reuse the login socket.
+        "-o",
+        "ControlMaster=no",
+        "-o",
+        "ControlPath=none",
         "-o",
         "StrictHostKeyChecking=accept-new",
         "-o",

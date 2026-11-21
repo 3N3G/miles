@@ -1,0 +1,9 @@
+{
+  "at_utc": "2026-11-21T07:53:42.220320+00:00",
+  "job_id": "536321",
+  "failure": "Compute-node SSH reused the AMD alias literal login-host ControlPath; the tunnel client exited before verification.",
+  "repair": "Disable multiplexing only for allocated-node SSH connections; keep the known AMD jump alias, identity and host-key checking.",
+  "validation": "Owned running job maps to k007-001; repaired read-only connection returned k007-001.hpcfund.",
+  "gpu_source_unchanged": "6f93d44138da06051f87adbdf2cc9539402bb850",
+  "scope": "VM tunnel child only; no new Slurm submission or experiment change."
+}
