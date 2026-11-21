@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536360 passed initial weight equality on all three rollout engines and started real async generation. The first 32-answer group runs near 4,800 tokens/s on one TP2 engine. The approved concurr Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
-  Next: Measure the first real group and validate native backward/weight publication. Preserve the current concurrency and record the optional throughput decision in QUESTIONS.md.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536360 delivered its first group: 28 positive and four zero rewards, mean 4.46875/7. All 32 answers carry exact behavior-policy version 0. Native training is computing the first backward pass  Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
+  Next: Confirm the first finite optimizer update and publication of updated weights. Continue monitoring the approved run and retain exact traces.
 
 ## Next / blocked
 

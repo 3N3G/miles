@@ -1,0 +1,27 @@
+{
+  "observed_at_utc": "2026-11-21T08:20:16.694848+00:00",
+  "job_id": "536360",
+  "phase": "first_delivered_group_before_optimizer_completion",
+  "optimizer_rollout_id": 0,
+  "samples": 32,
+  "reward_histogram": {
+    "4.0": 7,
+    "5.0": 6,
+    "6.0": 13,
+    "0.0": 4,
+    "3.5": 2
+  },
+  "mean_reward": 4.46875,
+  "positive_rewards": 28,
+  "zero_rewards": 4,
+  "question_keys": [
+    "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e"
+  ],
+  "generated_tokens": 1180965,
+  "cap_count": 4,
+  "decode_tokens_by_weight_version": {
+    "0": 1180965
+  },
+  "example_file": "raw-example-rollout-0.jsonl.json",
+  "interpretation": "Uncalibrated train-time observation before the first optimizer step. No learning claim."
+}
