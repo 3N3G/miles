@@ -1,0 +1,805 @@
+{
+  "selection": "Python random.Random(1729).shuffle of frozen 55 development items, first twelve. No output-based selection.",
+  "items": [
+    {
+      "name": "b3-mh-cuckoo-mountains",
+      "prompt": "Fact: The mountain range of the country famous for cuckoo clocks and neutrality is the",
+      "target": "Alps",
+      "intermediates": [
+        "Switzerland"
+      ],
+      "source": "staging_b3",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "Switzerland",
+        "aliases": [
+          "\u745e\u58eb"
+        ],
+        "distractors": [
+          "United States",
+          "China",
+          "Japan",
+          "United Kingdom"
+        ],
+        "distractor_aliases": {
+          "United States": [
+            "USA",
+            "United States of America",
+            "America",
+            "\u7f8e\u56fd"
+          ],
+          "China": [
+            "\u4e2d\u56fd",
+            "\u4e2d\u534e\u4eba\u6c11\u5171\u548c\u56fd"
+          ],
+          "Japan": [
+            "\u65e5\u672c"
+          ],
+          "United Kingdom": [
+            "Britain",
+            "Great Britain",
+            "\u82f1\u56fd"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "India",
+          "Japan",
+          "Russia",
+          "Greece"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "nhop-rainbow-element",
+      "prompt": "Count the items in a dozen. The element at that position on the periodic table is magnesium. Count the colors in a rainbow. The element at that position on the periodic table is ",
+      "target": "nitrogen",
+      "intermediates": [
+        "7"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain_stripped",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "number",
+        "gold": "7",
+        "aliases": [
+          "seven",
+          "\u4e03",
+          "seventh",
+          "7th",
+          "\u7b2c\u4e03"
+        ],
+        "distractors": [
+          "3",
+          "14",
+          "5",
+          "2"
+        ],
+        "distractor_aliases": {},
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "14",
+          "17",
+          "2",
+          "5"
+        ],
+        "list_source": "v3+observed"
+      }
+    },
+    {
+      "name": "bf-relativity-firstname",
+      "prompt": "Fact: The first name of the scientist who developed the theory of general relativity is",
+      "target": "Albert",
+      "intermediates": [
+        "Einstein"
+      ],
+      "source": "staging",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "person",
+        "gold": "Einstein",
+        "aliases": [
+          "Albert Einstein",
+          "\u7231\u56e0\u65af\u5766"
+        ],
+        "distractors": [
+          "Shakespeare",
+          "Aristotle",
+          "Newton",
+          "Plato"
+        ],
+        "distractor_aliases": {
+          "Shakespeare": [
+            "William Shakespeare",
+            "\u838e\u58eb\u6bd4\u4e9a"
+          ],
+          "Aristotle": [
+            "\u4e9a\u91cc\u58eb\u591a\u5fb7"
+          ],
+          "Newton": [
+            "Isaac Newton",
+            "\u725b\u987f"
+          ],
+          "Plato": [
+            "\u67cf\u62c9\u56fe"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Beethoven",
+          "Darwin",
+          "Mozart",
+          "Homer"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "b3-mh-tajmahal-river",
+      "prompt": "Fact: The sacred river of the country of the Taj Mahal is the",
+      "target": "Ganges",
+      "intermediates": [
+        "India"
+      ],
+      "source": "staging_b3",
+      "consistency": 1.0,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "India",
+        "aliases": [
+          "\u5370\u5ea6"
+        ],
+        "distractors": [
+          "Japan",
+          "China",
+          "France",
+          "Italy"
+        ],
+        "distractor_aliases": {
+          "Japan": [
+            "\u65e5\u672c"
+          ],
+          "China": [
+            "\u4e2d\u56fd",
+            "People's Republic of China"
+          ],
+          "France": [
+            "\u6cd5\u56fd"
+          ],
+          "Italy": [
+            "\u610f\u5927\u5229"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Scotland",
+          "Australia",
+          "Mexico",
+          "New Zealand"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "bf-southpole-bird",
+      "prompt": "Fact: The flightless bird living on the continent surrounding the South Pole is the",
+      "target": "penguin",
+      "intermediates": [
+        "Antarctica"
+      ],
+      "source": "staging",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "continent",
+        "gold": "Antarctica",
+        "aliases": [
+          "\u5357\u6781\u6d32"
+        ],
+        "distractors": [
+          "North America",
+          "Asia",
+          "Europe",
+          "Greenland"
+        ],
+        "distractor_aliases": {
+          "North America": [
+            "\u5317\u7f8e",
+            "\u5317\u7f8e\u6d32"
+          ],
+          "Asia": [
+            "\u4e9a\u6d32"
+          ],
+          "Europe": [
+            "\u6b27\u6d32"
+          ],
+          "Greenland": [
+            "\u683c\u9675\u5170",
+            "\u683c\u9675\u5170\u5c9b"
+          ]
+        },
+        "topic_confusers": 3,
+        "distractors_v2": [
+          "North America",
+          "Oceania",
+          "Asia",
+          "Europe"
+        ],
+        "list_source": "v2+repaired"
+      }
+    },
+    {
+      "name": "atomic-79-symbol",
+      "prompt": "Fact: The chemical symbol for the element with atomic number 79 is ",
+      "target": "Au",
+      "intermediates": [
+        "gold"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "element",
+        "gold": "gold",
+        "aliases": [
+          "\u91d1",
+          "\u9ec4\u91d1"
+        ],
+        "distractors": [
+          "platinum",
+          "iron",
+          "nitrogen",
+          "magnesium"
+        ],
+        "distractor_aliases": {
+          "platinum": [
+            "\u94c2",
+            "\u767d\u91d1"
+          ],
+          "iron": [
+            "\u94c1"
+          ],
+          "nitrogen": [
+            "\u6c2e"
+          ],
+          "magnesium": [
+            "\u9541"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "platinum",
+          "iron",
+          "nitrogen",
+          "magnesium"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "mh-w1-mount-elbrus-caucasus",
+      "prompt": "Fact: The highest peak in Russia, also usually counted as Europe's tallest, belongs to the mountain range called the",
+      "target": "Caucasus",
+      "intermediates": [
+        "Mount Elbrus"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "mountain",
+        "gold": "Mount Elbrus",
+        "aliases": [
+          "Elbrus",
+          "\u5384\u5c14\u5e03\u9c81\u58eb\u5c71",
+          "Mt. Elbrus",
+          "Mt Elbrus"
+        ],
+        "distractors": [
+          "Mount Everest",
+          "Mount Fuji",
+          "Mount Kilimanjaro",
+          "Mont Blanc"
+        ],
+        "distractor_aliases": {
+          "Mount Everest": [
+            "Everest",
+            "Mt. Everest",
+            "\u73e0\u7a46\u6717\u739b\u5cf0"
+          ],
+          "Mount Fuji": [
+            "Fuji",
+            "Mt. Fuji",
+            "Mt Fuji",
+            "Fujisan",
+            "\u5bcc\u58eb\u5c71"
+          ],
+          "Mount Kilimanjaro": [
+            "Kilimanjaro",
+            "\u4e5e\u529b\u9a6c\u624e\u7f57\u5c71"
+          ],
+          "Mont Blanc": [
+            "Monte Bianco",
+            "\u52c3\u6717\u5cf0"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Mont Blanc",
+          "Mount Everest",
+          "Matterhorn",
+          "Mount Kilimanjaro"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: A mountain belongs to the mountain range called the",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: Europe's tallest peak belongs to the mountain range called the",
+          "greedy_hit": false,
+          "hits": 2,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The highest peak in Russia belongs to the mountain range called the",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 7
+    },
+    {
+      "name": "mh-w1-carmen-seville",
+      "prompt": "Fact: The city in which Bizet's opera about a fiery Gypsy woman who works in a cigarette factory is set is",
+      "target": "Seville",
+      "target_alts": [
+        "Sevilla"
+      ],
+      "intermediates": [
+        "Carmen"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "opera",
+        "gold": "Carmen",
+        "aliases": [
+          "\u5361\u95e8"
+        ],
+        "distractors": [
+          "Aida",
+          "La Traviata",
+          "La Boh\u00e8me",
+          "Madama Butterfly"
+        ],
+        "distractor_aliases": {
+          "Aida": [
+            "\u963f\u4f9d\u8fbe"
+          ],
+          "La Traviata": [
+            "Traviata",
+            "\u8336\u82b1\u5973"
+          ],
+          "La Boh\u00e8me": [
+            "Boh\u00e8me",
+            "\u827a\u672f\u5bb6\u7684\u751f\u6daf",
+            "\u6ce2\u5e0c\u7c73\u4e9a\u4eba",
+            "\u7ee3\u82b1\u5973"
+          ],
+          "Madama Butterfly": [
+            "Madame Butterfly",
+            "\u8774\u8776\u592b\u4eba"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "La Traviata",
+          "Aida",
+          "Tosca",
+          "The Magic Flute"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 0.9,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The city in which an opera is set is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The city in which an opera about a woman who works in a cigarette factory is set is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The city in which Bizet's opera is set is",
+          "greedy_hit": true,
+          "hits": 7,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The city famous for its cigarette factory and Gypsy women is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 7,
+      "gate_g1": 10
+    },
+    {
+      "name": "firstletter-populous-country",
+      "prompt": "Fact: The first letter of the name of the world's most populous country is ",
+      "target": "C",
+      "intermediates": [
+        "China"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.8,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "China",
+        "aliases": [
+          "\u4e2d\u56fd"
+        ],
+        "distractors": [
+          "Italy",
+          "Sweden",
+          "Greece",
+          "Egypt"
+        ],
+        "distractor_aliases": {
+          "Italy": [
+            "\u610f\u5927\u5229"
+          ],
+          "Sweden": [
+            "\u745e\u5178"
+          ],
+          "Greece": [
+            "\u5e0c\u814a"
+          ],
+          "Egypt": [
+            "\u57c3\u53ca"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Italy",
+          "Sweden",
+          "Greece",
+          "Egypt"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "holiday-christmas-monthnum",
+      "prompt": "Fact: Christmas Day is celebrated in month number ",
+      "target": "12",
+      "intermediates": [
+        "December"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "month",
+        "gold": "December",
+        "aliases": [
+          "Dec",
+          "\u5341\u4e8c\u6708"
+        ],
+        "distractors": [
+          "April",
+          "July",
+          "March",
+          "October"
+        ],
+        "distractor_aliases": {
+          "April": [
+            "Apr",
+            "\u56db\u6708"
+          ],
+          "July": [
+            "Jul",
+            "\u4e03\u6708"
+          ],
+          "March": [
+            "Mar",
+            "\u4e09\u6708"
+          ],
+          "October": [
+            "Oct",
+            "\u5341\u6708"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "June",
+          "September",
+          "November",
+          "October"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "mh-w1-chewbacca-wookiee",
+      "prompt": "Fact: The species of Han Solo's tall, furry co-pilot aboard the Millennium Falcon is the",
+      "target": "Wookiee",
+      "target_alts": [
+        "Wookie"
+      ],
+      "intermediates": [
+        "Chewbacca"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "fictional character",
+        "gold": "Chewbacca",
+        "aliases": [
+          "Chewie",
+          "\u4e18\u5df4\u5361"
+        ],
+        "distractors": [
+          "Darth Vader",
+          "Luke Skywalker",
+          "Yoda",
+          "R2-D2"
+        ],
+        "distractor_aliases": {
+          "Darth Vader": [
+            "Vader",
+            "\u8fbe\u65af\u00b7\u7ef4\u8fbe"
+          ],
+          "Luke Skywalker": [
+            "Luke",
+            "\u5362\u514b\u00b7\u5929\u884c\u8005",
+            "\u5362\u514b"
+          ],
+          "Yoda": [
+            "Master Yoda",
+            "\u5c24\u8fbe"
+          ],
+          "R2-D2": [
+            "Artoo",
+            "R2D2",
+            "R2-D2\u673a\u5668\u4eba"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Yoda",
+          "R2-D2",
+          "C-3PO",
+          "Darth Vader"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The species of a fictional character is the",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The species of Han Solo's co-pilot is the",
+          "greedy_hit": true,
+          "hits": 19,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The species of the tall, furry co-pilot aboard the Millennium Falcon is the",
+          "greedy_hit": true,
+          "hits": 18,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The species of the tall, furry creature in the galaxy far away is the",
+          "greedy_hit": true,
+          "hits": 15,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 19,
+      "gate_g1": 10
+    },
+    {
+      "name": "bf-stopsign-sides",
+      "prompt": "Fact: The number of sides on the shape of a standard stop sign is",
+      "target": "8",
+      "intermediates": [
+        "octagon"
+      ],
+      "source": "staging",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "shape",
+        "gold": "octagon",
+        "aliases": [
+          "octagons",
+          "\u516b\u8fb9\u5f62",
+          "\u516b\u89d2\u5f62"
+        ],
+        "distractors": [
+          "hexagon",
+          "pentagon",
+          "triangle",
+          "square"
+        ],
+        "distractor_aliases": {
+          "hexagon": [
+            "hexagons",
+            "\u516d\u8fb9\u5f62",
+            "\u516d\u89d2\u5f62"
+          ],
+          "pentagon": [
+            "\u4e94\u8fb9\u5f62"
+          ],
+          "triangle": [
+            "triangles",
+            "\u4e09\u89d2\u5f62"
+          ],
+          "square": [
+            "\u6b63\u65b9\u5f62"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "rectangle",
+          "pentagon",
+          "oval",
+          "square"
+        ],
+        "list_source": "v3"
+      }
+    }
+  ]
+}
