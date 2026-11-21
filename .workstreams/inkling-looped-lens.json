@@ -4,77 +4,42 @@
   "sources": [],
   "evidence": [
     {
-      "path": "plans/rotation_transport.md",
-      "label": "Frozen transport protocol"
+      "path": "evidence/period_confirmation_summary.json",
+      "label": "Independent recurrent-orbit confirmation"
     },
     {
-      "path": "evidence/transport_fit_development.json",
-      "label": "Three-seed development comparison"
+      "path": "evidence/country_transfer_complete_summary.json",
+      "label": "Semantic swap controls and matched baselines"
     },
     {
-      "path": "plans/country_swap.md",
-      "label": "Semantic causal validation"
+      "path": "evidence/transport_final_summary.json",
+      "label": "Frozen final reader comparison"
     },
     {
-      "path": "evidence/transport_holdout_ids.json",
-      "label": "Reserved test identities"
+      "path": "plans/country_recovery_trace.md",
+      "label": "Early-swap recovery diagnostic"
     }
   ],
   "jobs": [
     {
-      "id": "536947",
+      "id": "537071",
       "cluster": "hpcfund",
       "status": "COMPLETED"
     },
     {
-      "id": "536965",
+      "id": "537086",
       "cluster": "hpcfund",
       "status": "COMPLETED"
     },
     {
-      "id": "536973",
+      "id": "537088",
       "cluster": "hpcfund",
       "status": "COMPLETED"
     },
     {
-      "id": "536987",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "536999",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "537008",
+      "id": "537093",
       "cluster": "hpcfund",
       "status": "RUNNING"
-    },
-    {
-      "id": "537014",
-      "cluster": "hpcfund",
-      "status": "PENDING"
-    },
-    {
-      "id": "537018",
-      "cluster": "hpcfund",
-      "status": "PENDING"
-    },
-    {
-      "id": "537019",
-      "cluster": "hpcfund",
-      "status": "PENDING"
-    },
-    {
-      "id": "537020",
-      "cluster": "hpcfund",
-      "status": "PENDING"
-    },
-    {
-      "id": "537024",
-      "cluster": "hpcfund",
-      "status": "PENDING"
     }
   ],
   "sessions": [
@@ -160,15 +125,22 @@
       "actor": "codex",
       "summary": "Confirmed semantic country swaps inside the repeated block with independent-pair and matched-dose controls",
       "revision": 10
+    },
+    {
+      "id": "1eef72b6-843d-4d1e-abb0-d14edd23a90d",
+      "at": "2026-11-21T17:26:34.206408Z",
+      "actor": "codex",
+      "summary": "Confirmed three-pass recurrence and horizon-dependent semantic interventions; rejected the selected reader gain on final data",
+      "revision": 11
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Discover and validate a useful Inkling interpretability lens, beginning with transport by recent rotations and testing semantic causal effects.",
   "state": "running",
-  "summary": "Exact corpus-fitted country directions swapped all four valid Germany/China capital cases in each fit. Changes confined to the repeated block retained all swaps; the final-bank-only intervention had none. Matched-dose random directions had no swaps. Final bridge evaluation, long-loop convergence, normalized baselines, and single-pass decoder transfer remain in progress.",
-  "nextAction": "Complete the frozen checks, report paired final-test uncertainty and recurrent-state convergence, archive terminal runs, and save standalone user-review reports.",
+  "summary": "Confirmed an approximate three-pass recurrent orbit on eight separate WikiText paragraphs through 64 passes. Country Jacobian directions cause all four valid capital swaps inside the repeated block; normalized raw and state-prediction directions cause none. Reusing the late direction gives 0/4, 2/4, and 4/4 swaps at successive passes. The final readout test did not confirm calibration improvement. Own-horizon early directions and recovery traces are finishing.",
+  "nextAction": "Finish causal recovery diagnostics, archive all terminal runs, and prepare concise standalone user-review reports with raw examples and limitations.",
   "owner": "Codex",
-  "revision": 10,
-  "updatedAt": "2026-11-21T16:52:53.464112Z"
+  "revision": 11,
+  "updatedAt": "2026-11-21T17:26:34.206408Z"
 }

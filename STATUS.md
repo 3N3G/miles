@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Exact corpus-fitted country directions swapped all four valid Germany/China capital cases in each fit. Changes confined to the repeated block retained all swaps; the final-bank-only intervention had n Jobs: hpcfund/536947 COMPLETED; hpcfund/536965 COMPLETED
-  Next: Complete the frozen checks, report paired final-test uncertainty and recurrent-state convergence, archive terminal runs, and save standalone user-review reports.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Confirmed an approximate three-pass recurrent orbit on eight separate WikiText paragraphs through 64 passes. Country Jacobian directions cause all four valid capital swaps inside the repeated block; n Jobs: hpcfund/537071 COMPLETED; hpcfund/537086 COMPLETED
+  Next: Finish causal recovery diagnostics, archive all terminal runs, and prepare concise standalone user-review reports with raw examples and limitations.
 
 ## Next / blocked
 

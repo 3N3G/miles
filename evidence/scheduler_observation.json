@@ -1,0 +1,187 @@
+{
+  "observed_at": "2026-11-21T17:26:34.068265+00:00",
+  "jobs": [
+    {
+      "id": "536316",
+      "cluster": "hpcfund",
+      "status": "FAILED",
+      "elapsed": "00:01:04",
+      "exit_code": "1:0"
+    },
+    {
+      "id": "536317",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:00:39",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "536326",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:00:12",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "536342",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:01:02",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "536354",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:01:19",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "536932",
+      "cluster": "hpcfund",
+      "status": "CANCELLED",
+      "elapsed": "00:00:00",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "536947",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:07:15",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "536965",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:03:19",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "536973",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:00:32",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "536987",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:06:35",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "536999",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:03:33",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537008",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:06:45",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537014",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:00:29",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537018",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:04:18",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537019",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:04:23",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537020",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:04:33",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537024",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:05:18",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537031",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:02:49",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537035",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:00:18",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537041",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:08:06",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537054",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:03:23",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537056",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:00:21",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537071",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:02:44",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537086",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:04:33",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537088",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:02:34",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "537093",
+      "cluster": "hpcfund",
+      "status": "RUNNING",
+      "elapsed": "00:00:36",
+      "exit_code": "0:0"
+    }
+  ]
+}
