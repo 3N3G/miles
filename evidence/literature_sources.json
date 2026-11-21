@@ -1,0 +1,58 @@
+[
+  {
+    "id": "logit",
+    "url": "https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens",
+    "sha256_html": "5500927f9f2a48af01a7fc7704fec2fa028a52708833944aa77f5257719b2a91",
+    "bytes": 935936,
+    "status": "retrieved"
+  },
+  {
+    "id": "tuned",
+    "url": "https://arxiv.org/html/2303.08112v4",
+    "sha256_html": "aea70b39c589fd4eb7a8192a60f4a21d883d2e1f7c846a0c4c7df7fd3e35a561",
+    "bytes": 340306,
+    "status": "retrieved"
+  },
+  {
+    "id": "jacobian",
+    "url": "https://transformer-circuits.pub/2026/workspace/index.html",
+    "sha256_html": "339843f5e8d29cb5276c6d57cce64cc005523261d98b9d0b01393876e77d8599",
+    "bytes": 417920,
+    "status": "retrieved"
+  },
+  {
+    "id": "jpp",
+    "url": "https://www.lesswrong.com/posts/nc9dHfcB22JdMzGbr/j-lens-jacobian-filtering-enables-more-faithful-workspace-lenses",
+    "sha256_html": "a0d052cf56fdf02bf3138b13ffd2269a06caecfcbc89b66072ee50a93cf69010",
+    "bytes": 1598456,
+    "status": "retrieved"
+  },
+  {
+    "id": "jtheory",
+    "url": "https://arxiv.org/html/2610.31955v1",
+    "sha256_html": "5fae1f03cc0d8fd63bea958f66f76e00294802266e456a0b43c755f5bf232f62",
+    "bytes": 503093,
+    "status": "retrieved"
+  },
+  {
+    "id": "shorthorizon",
+    "url": "https://arxiv.org/html/2608.25347v1",
+    "sha256_html": "df6fb5100eecc5ab43ae7ff66ac4e9a2541034abd007873f66ffae5d2e08f1cc",
+    "bytes": 176651,
+    "status": "retrieved"
+  },
+  {
+    "id": "patchscopes",
+    "url": "https://arxiv.org/html/2401.06102v4",
+    "sha256_html": "02f6b56e92d289451637e2fdfa3e5436a6c79cd63a66e158341ffbc588d0d44c",
+    "bytes": 582300,
+    "status": "retrieved"
+  },
+  {
+    "id": "deq",
+    "url": "https://arxiv.org/html/1909.01377v2",
+    "sha256_html": "f7c3e27b66d021d231e55773e599ef19f759d71fa0fd1b6b7e74644bffd09fcb",
+    "bytes": 346381,
+    "status": "retrieved"
+  }
+]

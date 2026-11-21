@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Source inspection identifies a two-block cross-loop state, normalized message reads, and signed rank-64 gates. The pilot and frozen development prompts are committed. Preparing an isolated ROCm runtim
-  Next: Verify imports, submit the bounded AMD diagnostic, and compare scale versus direction interventions.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Pinned model imports pass in the isolated ROCm runtime. AMD accepted diagnostic job 536316 after removing an unsupported Slurm GPU-resource flag. The job has a one-hour limit. Jobs: hpcfund/536316 SUBMITTED
+  Next: Monitor model conversion and native-logit controls, then analyze the actual forward and intervention outputs.
 
 ## Next / blocked
 

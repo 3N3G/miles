@@ -20,7 +20,13 @@
       "label": "Session and runtime record"
     }
   ],
-  "jobs": [],
+  "jobs": [
+    {
+      "id": "536316",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    }
+  ],
   "sessions": [
     {
       "agent": "codex",
@@ -48,15 +54,22 @@
       "actor": "codex",
       "summary": "Pinned the literature, model, diagnostic protocol, and correct persistent state",
       "revision": 2
+    },
+    {
+      "id": "016c1a9a-3829-41cd-9f62-a42f61cf77f3",
+      "at": "2026-11-21T07:45:14.719291Z",
+      "actor": "codex",
+      "summary": "Submitted authorized bounded AMD diagnostic 536316 after scheduler repair",
+      "revision": 3
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Find and explain an evidence-backed property of Inkling 2 Mini relevant to building a causally useful lens.",
   "state": "running",
-  "summary": "Source inspection identifies a two-block cross-loop state, normalized message reads, and signed rank-64 gates. The pilot and frozen development prompts are committed. Preparing an isolated ROCm runtime.",
-  "nextAction": "Verify imports, submit the bounded AMD diagnostic, and compare scale versus direction interventions.",
+  "summary": "Pinned model imports pass in the isolated ROCm runtime. AMD accepted diagnostic job 536316 after removing an unsupported Slurm GPU-resource flag. The job has a one-hour limit.",
+  "nextAction": "Monitor model conversion and native-logit controls, then analyze the actual forward and intervention outputs.",
   "owner": "Codex",
-  "revision": 2,
-  "updatedAt": "2026-11-21T07:42:50.696745Z"
+  "revision": 3,
+  "updatedAt": "2026-11-21T07:45:14.719291Z"
 }
