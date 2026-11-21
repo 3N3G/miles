@@ -599,6 +599,22 @@
     {
       "path": "experiments/tcs_async_rl/evidence/easy_subset_count_20261121.json",
       "label": "Checksum-verified easy subset size and task-type counts"
+    },
+    {
+      "path": "experiments/tcs_async_rl/EASY_OVERFIT_PLAN_20261121.md",
+      "label": "Approved easy-only run plan"
+    },
+    {
+      "path": "experiments/tcs_async_rl/rl_easy_overfit_v8.json",
+      "label": "40-update run snapshot"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/judge_length_repair_20261121.json",
+      "label": "Preserved judge inference failure and bounded repair"
+    },
+    {
+      "path": "experiments/tcs_async_rl/jobs.jsonl",
+      "label": "Job and artifact registry"
     }
   ],
   "jobs": [
@@ -1720,15 +1736,29 @@
       "actor": "codex",
       "summary": "Started the approved 40-update easy-only overfit attempt",
       "revision": 137
+    },
+    {
+      "id": "2d50df82-9eb4-43a7-9e96-c819326b2346",
+      "at": "2026-11-21T07:45:57.244492Z",
+      "actor": "codex",
+      "summary": "Prepared the approved 20-question run and validated bounded artifact handling; repairing an unfinished judge verdict before submission",
+      "revision": 138
+    },
+    {
+      "id": "188f164b-3196-4c3f-ac25-99b5c4b7887b",
+      "at": "2026-11-21T07:46:34.866775Z",
+      "actor": "codex",
+      "summary": "Retain prior linked evidence alongside the new approved plan",
+      "revision": 139
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "User approved recorded caps and the easy-only overfit attempt: 40 updates, four-hour limit on eight GPUs. Preparing 20-question data and multi-question grading.",
-  "nextAction": "Validate the real capped-answer grades, freeze the 20-question plan and data, then submit and monitor the approved run.",
+  "summary": "Approved easy-only plan is ready: 20 questions, 40 updates, eight MI350 GPUs, four hours. Actual cap grades qualify 15 positive and 17 zero rewards. All 74 CPU checks pass; question-specific grading controls are in progress after a bounded judge-token repair. No new GPU job submitted.",
+  "nextAction": "Complete all 60 reward controls, freeze and push the source, then automatically submit and monitor the approved AMD run.",
   "owner": "Codex",
-  "revision": 137,
-  "updatedAt": "2026-11-21T07:17:06.166022Z"
+  "revision": 139,
+  "updatedAt": "2026-11-21T07:46:34.866775Z"
 }

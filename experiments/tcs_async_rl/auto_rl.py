@@ -1,7 +1,7 @@
-"""Durable VM handoff from the approved medium diagnostic to one bounded RL job.
+"""Durable VM handoff from a qualifying diagnostic to one approved bounded RL job.
 
 Run from a frozen checkout. This submits only after the original strict group
-gate passes. It never relaxes missing-final handling or selects corpus weights.
+gate passes. Recorded-cap qualification requires the explicitly selected policy.
 """
 
 import argparse
@@ -158,7 +158,7 @@ def wait_for_group(*, directory, job_id, remote_directory, state_repo, output):
         time.sleep(60)
 
 
-def start_service(*, input_file, directory, port, training, python):
+def start_service(*, input_file, directory, port, training, python, judge_config=None):
     with socket.socket() as probe:
         probe.bind(("127.0.0.1", port))
     log = (directory / "reward-service.log").open("a")
@@ -173,7 +173,8 @@ def start_service(*, input_file, directory, port, training, python):
             str(directory / "judging"),
             "--port",
             str(port),
-        ],
+        ]
+        + (["--config", str(judge_config)] if judge_config is not None else []),
         cwd=ROOT,
         stdin=subprocess.DEVNULL,
         stdout=log,
@@ -289,6 +290,7 @@ def run(cli):
     source = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
     if source != cli.expected_commit:
         raise ValueError("Handoff must use its frozen committed source")
+    save(cli.run_dir / "approved-config.json", config)
     wait_for_group(
         directory=cli.diagnostic_dir,
         job_id=cli.group_job_id,
@@ -312,6 +314,7 @@ def run(cli):
         port=address.port,
         training=training,
         python=cli.service_python,
+        judge_config=cli.config.parent / config["judge_config"] if config.get("judge_config") else None,
     )
     children = [service]
     try:

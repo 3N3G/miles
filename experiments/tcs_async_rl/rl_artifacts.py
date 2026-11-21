@@ -1,8 +1,11 @@
 """Preserve completed outputs and export trusted snapshots with exact policy replay inputs."""
 
+import gzip
 import hashlib
 import json
 import os
+import re
+import shutil
 import time
 from pathlib import Path
 
@@ -24,6 +27,11 @@ SAMPLE_FIELDS = (
     "loss_mask",
     "rollout_sampling_mask",
 )
+
+
+def file_sha256(path):
+    with path.open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
 def portable_sample(sample):
@@ -53,16 +61,16 @@ def _atomic_bytes(path, data):
     temporary.replace(path)
 
 
-def save_generated_sample(output_pattern, sample):
+def save_generated_sample(output_pattern, sample, *, compress=False):
     if not output_pattern:
         return None
     data = json.dumps(portable_sample(sample), ensure_ascii=False, allow_nan=False, sort_keys=True).encode()
     identity = hashlib.sha256(data).hexdigest()
     directory = Path(output_pattern).parent / "completed_samples"
     directory.mkdir(parents=True, exist_ok=True)
-    path = directory / f"{identity}.generated.json"
+    path = directory / (f"{identity}.generated.json.gz" if compress else f"{identity}.generated.json")
     if not path.exists():
-        _atomic_bytes(path, data + b"\n")
+        _atomic_bytes(path, gzip.compress(data + b"\n", compresslevel=1, mtime=0) if compress else data + b"\n")
     return path
 
 
@@ -75,6 +83,9 @@ def save_judge_outcome(generated_path, *, result=None, error_type=None):
 
 
 def export_rollouts(run_dir):
+    if os.environ.get("TCS_COMPRESS_ARTIFACTS") == "gzip":
+        manifest = Path(run_dir) / "rollout-export.json"
+        return json.loads(manifest.read_text()) if manifest.exists() else []
     # Only the allocation runtime reads its own torch.save snapshots. No model
     # weights are loaded, and no PyTorch dependency is needed for VM grading.
     import torch
@@ -96,3 +107,40 @@ def export_rollouts(run_dir):
         )
     (Path(run_dir) / "rollout-export.json").write_text(json.dumps(exported, indent=2) + "\n")
     return exported
+
+
+def log_rollout(rollout_id, args, samples, rollout_extra_metrics, rollout_time):
+    """Export the exact delivered group after the native snapshot, before training."""
+    directory = Path(args.save_debug_rollout_data).parent
+    target = directory / f"rollout-{rollout_id}.jsonl.gz"
+    temporary = target.with_suffix(target.suffix + ".partial")
+    with gzip.open(temporary, "wt", encoding="utf-8", compresslevel=1) as stream:
+        for sample in samples:
+            row = portable_sample(sample.to_dict())
+            row["optimizer_rollout_id"] = rollout_id
+            stream.write(json.dumps(row, ensure_ascii=False, allow_nan=False) + "\n")
+    temporary.replace(target)
+    manifest = directory.parent / "rollout-export.json"
+    entries = json.loads(manifest.read_text()) if manifest.exists() else []
+    entry = {"path": str(target), "samples": len(samples), "sha256": file_sha256(target)}
+    entries = [x for x in entries if x["path"] != str(target)] + [entry]
+    _atomic_bytes(manifest, (json.dumps(entries, indent=2) + "\n").encode())
+    return False  # Preserve the framework's regular rollout metrics.
+
+
+def retain_latest_checkpoint(args, rollout_id, checkpoint_dir, hf_checkpoint_dir):
+    """Keep one completed checkpoint in this submitted run, with at most two during a save."""
+    root = Path(args.save).resolve()
+    current = Path(checkpoint_dir).resolve()
+    receipt = root.parent / "submission.json"
+    if current.parent != root or not current.is_dir() or not receipt.is_file() or root.name != "checkpoints":
+        raise ValueError("Refuse checkpoint retention outside this submitted run")
+    removed = []
+    for path in root.iterdir():
+        if path.is_symlink() or not path.is_dir() or not re.fullmatch(r"iter_[0-9]{7}", path.name):
+            continue
+        if path.resolve() != current and int(path.name.split("_")[1]) < rollout_id:
+            shutil.rmtree(path)
+            removed.append(path.name)
+    with (root.parent / "checkpoint-retention.jsonl").open("a") as stream:
+        stream.write(json.dumps({"rollout_id": rollout_id, "kept": current.name, "removed": removed}) + "\n")

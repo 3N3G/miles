@@ -1,0 +1,19 @@
+{
+  "observed_at_utc": "2026-11-21T07:44:49.498132+00:00",
+  "phase": "pre_submission_inference_repair",
+  "controls_completed": 26,
+  "failure": {
+    "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+    "case": "irrelevant",
+    "order": 1,
+    "http_status": 200,
+    "finish_reason": "length",
+    "completion_tokens": 8192,
+    "reasoning_tokens": 8192,
+    "verdict_empty": true
+  },
+  "repair": "Retry only unfinished judge verdicts with 16384 then 32768 completion tokens. Same model, medium effort, prompts, rubric and scores. Preserve receipts and shared USD5 cap. No retry of completed scores.",
+  "authorization": "Standing permission for inference budget repairs within the approved experiment.",
+  "validation": "Pending full controls and mocked retry tests.",
+  "new_gpu_jobs": 0
+}

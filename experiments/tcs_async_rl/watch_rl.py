@@ -6,7 +6,7 @@ It separates a completed scheduler job from verified optimizer updates.
 
 import ast
 import datetime
-import hashlib
+import gzip
 import json
 import math
 import random
@@ -17,6 +17,8 @@ from collections import Counter
 from urllib.parse import urlsplit
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
+from experiments.tcs_async_rl.rl_archive import archive_chunks, copy_trace_batch, exclusion_file, read_index
+from experiments.tcs_async_rl.rl_artifacts import file_sha256
 from experiments.tcs_async_rl.rl_job_state import record
 from experiments.tcs_async_rl.watch_group import ACTIVE, remote_state
 
@@ -52,19 +54,36 @@ def training_evidence(text):
     }
 
 
-def consumed_rollouts(directory):
+def consumed_rollouts(directory, *, allow_pending=False):
     manifest = directory / "rollout-export.json"
     if not manifest.exists():
         return []
     groups = []
+    cache_path = directory / "consumed-summary-cache.json"
+    cache = json.loads(cache_path.read_text()) if cache_path.exists() else {}
+    archived = read_index(directory)
     for entry in json.loads(manifest.read_text()):
         path = directory / "rollout_data" / entry["path"].rsplit("/", 1)[-1]
-        digest = hashlib.sha256()
+        relative = str(path.relative_to(directory))
+        if not path.exists():
+            if (
+                relative in archived
+                and archived[relative]["sha256"] == entry["sha256"]
+                and path.name in cache
+                and cache[path.name]["sha256"] == entry["sha256"]
+            ):
+                groups.append(cache[path.name]["summary"])
+                continue
+            if allow_pending:
+                continue
+            raise ValueError("Missing trace has no verified archive and summary")
+        digest = file_sha256(path)
         rewards, versions, indices, lengths = [], Counter(), [], []
+        questions = {}
         selected = random.Random(20261118).randrange(entry["samples"])
-        with path.open("rb") as stream:
+        opener = gzip.open if path.suffix == ".gz" else open
+        with opener(path, "rb") as stream:
             for line in stream:
-                digest.update(line)
                 row = json.loads(line)
                 value = row["reward"]
                 score = value["reward"] if isinstance(value, dict) else value
@@ -72,6 +91,11 @@ def consumed_rollouts(directory):
                     raise ValueError("Consumed rollout contains an invalid real reward")
                 rewards.append(score)
                 lengths.append(row["response_length"])
+                question = (row.get("metadata") or {}).get("question_key", "unknown")
+                question_data = questions.setdefault(question, {"scores": [], "lengths": [], "capped": 0})
+                question_data["scores"].append(score)
+                question_data["lengths"].append(row["response_length"])
+                question_data["capped"] += row.get("status") == "truncated"
                 for call in row["weight_versions"] or []:
                     for span in call["spans"]:
                         versions[span["version"]] += span["abs_end"] - span["abs_start"]
@@ -90,29 +114,35 @@ def consumed_rollouts(directory):
                             "weight_versions",
                             "judge_identity",
                             "optimizer_rollout_id",
+                            "metadata",
                         )
                     }
                     (directory / f"raw-example-{path.stem}.json").write_text(
                         json.dumps(example, ensure_ascii=False, indent=2) + "\n"
                     )
-        if digest.hexdigest() != entry["sha256"] or len(rewards) != entry["samples"]:
+        if digest != entry["sha256"] or len(rewards) != entry["samples"]:
             raise ValueError("Portable rollout differs from its allocation export")
         groups.append(
             {
                 "file": path.name,
                 "rollout_ids": sorted(set(indices)),
                 "samples": len(rewards),
-                "reward_histogram": dict(Counter(rewards)),
+                "reward_histogram": {str(k): v for k, v in Counter(rewards).items()},
                 "varied_rewards": len(set(rewards)) > 1,
                 "response_lengths": lengths,
                 "example_file": f"raw-example-{path.stem}.json",
                 "decode_tokens_by_weight_version": dict(versions),
+                "by_question": questions,
             }
         )
+        cache[path.name] = {"sha256": entry["sha256"], "summary": groups[-1]}
+    from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
+
+    _atomic_bytes(cache_path, (json.dumps(cache, indent=2) + "\n").encode())
     return groups
 
 
-def acceptance(directory, scheduler, expected_updates):
+def acceptance(directory, scheduler, expected_updates, *, minimum_varied_groups=None, retained_checkpoints=None):
     text = "\n".join(p.read_text(errors="replace") for p in directory.glob("slurm-*.log"))
     evidence = training_evidence(text)
     groups = consumed_rollouts(directory)
@@ -126,10 +156,10 @@ def acceptance(directory, scheduler, expected_updates):
         "finite_step_metrics": len(evidence["metrics"]) == expected_updates
         and all(item["finite"] for item in evidence["metrics"].values()),
         "consumed_groups_exported": len(groups) == expected_updates and all(g["samples"] == 32 for g in groups),
-        "real_reward_variation_in_consumed_groups": len(groups) == expected_updates
-        and all(g["varied_rewards"] for g in groups),
+        "real_reward_variation_in_consumed_groups": sum(g["varied_rewards"] for g in groups)
+        >= (expected_updates if minimum_varied_groups is None else minimum_varied_groups),
         "both_checkpoints_exist": len([x for x in checkpoints["iterations"] if x["files"] and x["bytes"]])
-        >= expected_updates,
+        >= (expected_updates if retained_checkpoints is None else retained_checkpoints),
         "final_checkpoint_tracker": str(checkpoints["tracker"]) == str(expected_updates - 1),
     }
     return {
@@ -142,12 +172,27 @@ def acceptance(directory, scheduler, expected_updates):
     }
 
 
-def sync_outputs(remote_directory, directory):
+def sync_outputs(remote_directory, directory, *, bounded=False):
+    exclude = exclusion_file(directory)
+    extra = ["--exclude=*.gz"] if bounded else []
     subprocess.run(
-        ["rsync", "-a", "--exclude=checkpoints/", "--exclude=*.pt", f"amd:{remote_directory}/", f"{directory}/"],
+        [
+            "rsync",
+            "-a",
+            "--exclude=checkpoints/",
+            "--exclude=*.pt",
+            "--exclude=*.partial",
+            "--exclude=*.tmp",
+            "--exclude-from",
+            str(exclude),
+            *extra,
+            f"amd:{remote_directory}/",
+            f"{directory}/",
+        ],
         check=True,
         timeout=180,
     )
+    return copy_trace_batch(remote_directory, directory) if bounded else 0
 
 
 def finish(*, job_id, config_path, directory, remote_directory, checkout, scheduler, state_repo):
@@ -169,9 +214,21 @@ def finish(*, job_id, config_path, directory, remote_directory, checkout, schedu
         )
     except subprocess.SubprocessError as error:
         save(directory / "checkpoint-audit-error.json", {"error_type": type(error).__name__})
-    sync_outputs(remote_directory, directory)
+    while True:
+        remaining = sync_outputs(remote_directory, directory, bounded=config.get("incremental_archive", False))
+        if config.get("incremental_archive"):
+            consumed_rollouts(directory, allow_pending=True)
+            archive_chunks(directory)
+        if not remaining:
+            break
     try:
-        result = acceptance(directory, scheduler, config["scope"]["optimizer_updates"])
+        result = acceptance(
+            directory,
+            scheduler,
+            config["scope"]["optimizer_updates"],
+            minimum_varied_groups=config["scope"].get("minimum_varied_groups"),
+            retained_checkpoints=config["scope"].get("retained_checkpoints"),
+        )
     except (OSError, ValueError, KeyError, TypeError) as error:
         result = {"runtime_acceptance_passed": False, "evidence_error_type": type(error).__name__}
     save(directory / "runtime-acceptance.json", result)
@@ -264,6 +321,9 @@ def watch(*, job_id, config_path, directory, remote_directory, checkout, state_r
                         port=port,
                         training=training,
                         python=children[0].args[0],
+                        judge_config=(
+                            config_path.parent / config["judge_config"] if config.get("judge_config") else None
+                        ),
                     )
                 except Exception as error:
                     save(directory / "reward-service-restart-error.json", {"error_type": type(error).__name__})
@@ -293,8 +353,11 @@ def watch(*, job_id, config_path, directory, remote_directory, checkout, state_r
                 save(directory / "registry-error.json", {"error_type": type(error).__name__, "job_id": job_id})
             previous = state["state"]
         try:
-            sync_outputs(remote_directory, directory)
-        except subprocess.SubprocessError as error:
+            sync_outputs(remote_directory, directory, bounded=config.get("incremental_archive", False))
+            if config.get("incremental_archive"):
+                consumed_rollouts(directory, allow_pending=True)
+                archive_chunks(directory)
+        except (OSError, subprocess.SubprocessError, ValueError, RuntimeError) as error:
             save(directory / "sync-error.json", {"error_type": type(error).__name__})
         if state["state"] not in ACTIVE | {"UNKNOWN"}:
             try:

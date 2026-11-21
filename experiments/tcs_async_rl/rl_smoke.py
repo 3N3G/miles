@@ -1,4 +1,4 @@
-"""Run the approved two-update runtime check inside an isolated AMD allocation.
+"""Run an approved bounded TCS training snapshot inside an isolated AMD allocation.
 
 The host preflight owns Slurm/container preparation. Existing command_utils owns
 checkpoint conversion and Ray. This module never transfers API credentials.

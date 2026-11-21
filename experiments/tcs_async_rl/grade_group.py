@@ -86,7 +86,7 @@ async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt,
     else:
         async with semaphore:
             for attempt in range(config["max_attempts"]):
-                call_id = f"{identity}-{int(swapped)}-{attempt}"
+                call_id = f"{identity}-{int(swapped)}-{fingerprint[:12]}-{attempt}"
                 reservation = reserve_cost(payload, config)
                 budget.reserve(reservation, call_id)
                 receipt = await asyncio.to_thread(
@@ -98,9 +98,8 @@ async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt,
                 usage = receipt.get("body", {}).get("usage")
                 if usage is not None:
                     budget.settle(reservation, usage_cost(usage, config), call_id)
-                (directory / f"{identity}-order{int(swapped)}-attempt{attempt}.json").write_text(
-                    json.dumps(receipt, ensure_ascii=False, indent=2) + "\n"
-                )
+                attempt_name = f"{identity}-order{int(swapped)}-{fingerprint[:12]}-attempt{attempt}.json"
+                (directory / attempt_name).write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
                 if receipt.get("http_status") == 200:
                     output.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
                     break
@@ -111,6 +110,28 @@ async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt,
                     raise RuntimeError("Judge retries exhausted; no zero score substituted")
                 await asyncio.sleep(min(2**attempt, 30))
     choice = receipt["body"]["choices"][0]
+    retry_limit = config.get("length_retry_max_completion_tokens", judge["max_completion_tokens"])
+    if choice.get("finish_reason") == "length" and judge["max_completion_tokens"] < retry_limit:
+        # Only an unfinished verdict gets more inference tokens. Keep every
+        # receipt, use the same rubric/model/effort, and never retry a valid score.
+        expanded = min(2 * judge["max_completion_tokens"], retry_limit)
+        _append_json(
+            directory / "length-retries.jsonl",
+            {"receipt": str(output), "from_tokens": judge["max_completion_tokens"], "to_tokens": expanded},
+        )
+        return await grade_one(
+            identity=identity,
+            candidate=candidate,
+            row=row,
+            swapped=swapped,
+            judge={**judge, "max_completion_tokens": expanded},
+            config=config,
+            prompt=prompt,
+            key=key,
+            budget=budget,
+            semaphore=semaphore,
+            directory=directory,
+        )
     if choice.get("finish_reason") != "stop":
         raise ValueError("Judge did not finish its verdict; not a zero score")
     grade = parse_grade(choice["message"]["content"], rubric_items(row["rubric"]))

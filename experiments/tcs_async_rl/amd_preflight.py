@@ -417,23 +417,19 @@ def _run_gpu_checks(*, sandbox, work_dir, run_dir, config_path, qualification, t
         return
     if qualification.get("mode") == "rl_smoke":
         _run("training-help", prefix + ["python3", "train_async.py", "--help"], run_dir=run_dir, env=env)
-        _run(
-            "rl-smoke",
-            prefix
-            + [
-                "python3",
-                "-m",
-                "experiments.tcs_async_rl.rl_smoke",
-                "--config",
-                str(config_path),
-                "--work-dir",
-                str(work_dir),
-                "--run-dir",
-                str(run_dir),
-            ],
-            run_dir=run_dir,
-            env=env,
-        )
+        command = prefix + [
+            "python3",
+            "-m",
+            "experiments.tcs_async_rl.rl_smoke",
+            "--config",
+            str(config_path),
+            "--work-dir",
+            str(work_dir),
+            "--run-dir",
+            str(run_dir),
+        ]
+        _run("training-arguments", command + ["--validate-arguments-only"], run_dir=run_dir, env=env)
+        _run("rl-smoke", command, run_dir=run_dir, env=env)
         return
     module = ["python3", "-m", "experiments.tcs_async_rl.gpu_qualification"]
     _run(

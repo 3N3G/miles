@@ -3,6 +3,7 @@
 import hashlib
 import json
 import math
+import os
 
 from experiments.tcs_async_rl.group_inference import final_answer
 from experiments.tcs_async_rl.rl_artifacts import save_generated_sample, save_judge_outcome
@@ -66,7 +67,11 @@ async def reward(args, sample, **kwargs):
     import aiohttp
 
     generated_path = (
-        save_generated_sample(args.save_debug_rollout_data, sample.to_dict()) if args.save_debug_rollout_data else None
+        save_generated_sample(
+            args.save_debug_rollout_data, sample.to_dict(), compress=os.environ.get("TCS_COMPRESS_ARTIFACTS") == "gzip"
+        )
+        if args.save_debug_rollout_data
+        else None
     )
     try:
         if not args.rm_url:

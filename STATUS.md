@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved recorded caps and the easy-only overfit attempt: 40 updates, four-hour limit on eight GPUs. Preparing 20-question data and multi-question grading. Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: Validate the real capped-answer grades, freeze the 20-question plan and data, then submit and monitor the approved run.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Approved easy-only plan is ready: 20 questions, 40 updates, eight MI350 GPUs, four hours. Actual cap grades qualify 15 positive and 17 zero rewards. All 74 CPU checks pass; question-specific grading c Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: Complete all 60 reward controls, freeze and push the source, then automatically submit and monitor the approved AMD run.
 
 ## Next / blocked
 
