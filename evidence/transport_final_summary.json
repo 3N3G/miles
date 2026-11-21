@@ -1,0 +1,2900 @@
+{
+  "scope": "Frozen held-out 43-item test. One primary comparison: seed0, filtered, capable_unspoken. Other views descriptive. Bootstrap resamples cases.",
+  "results": [
+    {
+      "seed": 0,
+      "filtered": true,
+      "subset": "capable_unspoken",
+      "n": 23,
+      "raw_hits": 9,
+      "corrected_hits": 10,
+      "wins": 3,
+      "losses": 2,
+      "difference": 0.043478260869565216,
+      "paired_bootstrap_95": [
+        -0.13043478260869565,
+        0.21739130434782608
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "dbl-altitude-antonym",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 0,
+      "filtered": true,
+      "subset": "all_eligible",
+      "n": 35,
+      "raw_hits": 13,
+      "corrected_hits": 13,
+      "wins": 3,
+      "losses": 3,
+      "difference": 0.0,
+      "paired_bootstrap_95": [
+        -0.14285714285714285,
+        0.14285714285714285
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "dbl-altitude-antonym",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "colosseum-currency",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 0,
+      "filtered": false,
+      "subset": "capable_unspoken",
+      "n": 23,
+      "raw_hits": 9,
+      "corrected_hits": 8,
+      "wins": 2,
+      "losses": 3,
+      "difference": -0.043478260869565216,
+      "paired_bootstrap_95": [
+        -0.21739130434782608,
+        0.13043478260869565
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "chem-bones-Z",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 0,
+      "filtered": false,
+      "subset": "all_eligible",
+      "n": 35,
+      "raw_hits": 12,
+      "corrected_hits": 11,
+      "wins": 2,
+      "losses": 3,
+      "difference": -0.02857142857142857,
+      "paired_bootstrap_95": [
+        -0.17142857142857143,
+        0.08571428571428572
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "chem-bones-Z",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 1,
+      "filtered": true,
+      "subset": "capable_unspoken",
+      "n": 23,
+      "raw_hits": 9,
+      "corrected_hits": 10,
+      "wins": 3,
+      "losses": 2,
+      "difference": 0.043478260869565216,
+      "paired_bootstrap_95": [
+        -0.13043478260869565,
+        0.21739130434782608
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "dbl-altitude-antonym",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 1,
+      "filtered": true,
+      "subset": "all_eligible",
+      "n": 35,
+      "raw_hits": 13,
+      "corrected_hits": 13,
+      "wins": 3,
+      "losses": 3,
+      "difference": 0.0,
+      "paired_bootstrap_95": [
+        -0.14285714285714285,
+        0.14285714285714285
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "dbl-altitude-antonym",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "colosseum-currency",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 1,
+      "filtered": false,
+      "subset": "capable_unspoken",
+      "n": 23,
+      "raw_hits": 9,
+      "corrected_hits": 8,
+      "wins": 2,
+      "losses": 3,
+      "difference": -0.043478260869565216,
+      "paired_bootstrap_95": [
+        -0.21739130434782608,
+        0.13043478260869565
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "chem-bones-Z",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 1,
+      "filtered": false,
+      "subset": "all_eligible",
+      "n": 35,
+      "raw_hits": 12,
+      "corrected_hits": 11,
+      "wins": 2,
+      "losses": 3,
+      "difference": -0.02857142857142857,
+      "paired_bootstrap_95": [
+        -0.17142857142857143,
+        0.08571428571428572
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "chem-bones-Z",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 2,
+      "filtered": true,
+      "subset": "capable_unspoken",
+      "n": 23,
+      "raw_hits": 9,
+      "corrected_hits": 10,
+      "wins": 3,
+      "losses": 2,
+      "difference": 0.043478260869565216,
+      "paired_bootstrap_95": [
+        -0.13043478260869565,
+        0.21739130434782608
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "dbl-altitude-antonym",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 2,
+      "filtered": true,
+      "subset": "all_eligible",
+      "n": 35,
+      "raw_hits": 13,
+      "corrected_hits": 13,
+      "wins": 3,
+      "losses": 3,
+      "difference": 0.0,
+      "paired_bootstrap_95": [
+        -0.14285714285714285,
+        0.14285714285714285
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "dbl-altitude-antonym",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "colosseum-currency",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 2,
+      "filtered": false,
+      "subset": "capable_unspoken",
+      "n": 23,
+      "raw_hits": 9,
+      "corrected_hits": 8,
+      "wins": 2,
+      "losses": 3,
+      "difference": -0.043478260869565216,
+      "paired_bootstrap_95": [
+        -0.21739130434782608,
+        0.13043478260869565
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "chem-bones-Z",
+        "spider-legs"
+      ]
+    },
+    {
+      "seed": 2,
+      "filtered": false,
+      "subset": "all_eligible",
+      "n": 35,
+      "raw_hits": 12,
+      "corrected_hits": 11,
+      "wins": 2,
+      "losses": 3,
+      "difference": -0.02857142857142857,
+      "paired_bootstrap_95": [
+        -0.17142857142857143,
+        0.08571428571428572
+      ],
+      "exact_mcnemar_two_sided": 1.0,
+      "win_names": [
+        "b3-mh-greatwall-river",
+        "holiday-independence-monthnum"
+      ],
+      "loss_names": [
+        "b3-mh-blindpoet-epic",
+        "chem-bones-Z",
+        "spider-legs"
+      ]
+    }
+  ],
+  "paired_examples": [
+    {
+      "name": "b3-mh-blindpoet-epic",
+      "role": "loss",
+      "prompt": "Fact: The blind poet of the Odyssey also composed the",
+      "intermediates": [
+        "Homer"
+      ],
+      "target": "Iliad",
+      "model_continuation": " Iliad.\n\nFact: The blind poet of the",
+      "raw_hit": true,
+      "corrected_hit": false,
+      "readouts": [
+        {
+          "method": "raw",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 149931,
+              "text": " \u0438"
+            },
+            {
+              "id": 149918,
+              "text": " or"
+            },
+            {
+              "id": 7428,
+              "text": "\u548c"
+            },
+            {
+              "id": 149907,
+              "text": " et"
+            },
+            {
+              "id": 180225,
+              "text": " alleged"
+            },
+            {
+              "id": 171558,
+              "text": " poet"
+            },
+            {
+              "id": 150089,
+              "text": " og"
+            },
+            {
+              "id": 150015,
+              "text": " po"
+            },
+            {
+              "id": 150341,
+              "text": " \u00e9s"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 150056,
+              "text": " also"
+            },
+            {
+              "id": 150136,
+              "text": " some"
+            },
+            {
+              "id": 149878,
+              "text": " a"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 180225,
+              "text": " alleged"
+            },
+            {
+              "id": 150332,
+              "text": " many"
+            },
+            {
+              "id": 171558,
+              "text": " poet"
+            },
+            {
+              "id": 152482,
+              "text": " likely"
+            },
+            {
+              "id": 152979,
+              "text": " writing"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 41781,
+              "text": "Homer"
+            },
+            {
+              "id": 187649,
+              "text": " epic"
+            },
+            {
+              "id": 171558,
+              "text": " poet"
+            },
+            {
+              "id": 167724,
+              "text": " Greek"
+            },
+            {
+              "id": 153006,
+              "text": " wrote"
+            },
+            {
+              "id": 183019,
+              "text": " poetry"
+            },
+            {
+              "id": 171664,
+              "text": " myth"
+            },
+            {
+              "id": 159702,
+              "text": " narrat"
+            },
+            {
+              "id": 15790,
+              "text": "\u71a2"
+            },
+            {
+              "id": 46681,
+              "text": "Heli"
+            }
+          ],
+          "hit": true
+        },
+        {
+          "method": "mean_scale",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 167724,
+              "text": " Greek"
+            },
+            {
+              "id": 149878,
+              "text": " a"
+            },
+            {
+              "id": 153006,
+              "text": " wrote"
+            },
+            {
+              "id": 171558,
+              "text": " poet"
+            },
+            {
+              "id": 152265,
+              "text": " written"
+            },
+            {
+              "id": 151830,
+              "text": " according"
+            },
+            {
+              "id": 152979,
+              "text": " writing"
+            },
+            {
+              "id": 159702,
+              "text": " narrat"
+            },
+            {
+              "id": 149890,
+              "text": " that"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 167724,
+              "text": " Greek"
+            },
+            {
+              "id": 187649,
+              "text": " epic"
+            },
+            {
+              "id": 171558,
+              "text": " poet"
+            },
+            {
+              "id": 187960,
+              "text": " divine"
+            },
+            {
+              "id": 41781,
+              "text": "Homer"
+            },
+            {
+              "id": 163185,
+              "text": " tales"
+            },
+            {
+              "id": 151544,
+              "text": " great"
+            },
+            {
+              "id": 150908,
+              "text": " length"
+            },
+            {
+              "id": 184862,
+              "text": " Kron"
+            },
+            {
+              "id": 171664,
+              "text": " myth"
+            }
+          ],
+          "hit": true
+        },
+        {
+          "method": "mean_scale",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 167724,
+              "text": " Greek"
+            },
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 149878,
+              "text": " a"
+            },
+            {
+              "id": 171558,
+              "text": " poet"
+            },
+            {
+              "id": 150183,
+              "text": " like"
+            },
+            {
+              "id": 187960,
+              "text": " divine"
+            },
+            {
+              "id": 151544,
+              "text": " great"
+            },
+            {
+              "id": 150908,
+              "text": " length"
+            },
+            {
+              "id": 152265,
+              "text": " written"
+            },
+            {
+              "id": 150135,
+              "text": " first"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 170261,
+              "text": " famous"
+            },
+            {
+              "id": 154658,
+              "text": " highly"
+            },
+            {
+              "id": 93241,
+              "text": "\u0631\u0627\u0626\u0639"
+            },
+            {
+              "id": 152824,
+              "text": " popular"
+            },
+            {
+              "id": 159230,
+              "text": " powerful"
+            },
+            {
+              "id": 173819,
+              "text": " ethical"
+            },
+            {
+              "id": 140751,
+              "text": "\uc4d2"
+            },
+            {
+              "id": 165204,
+              "text": " \u092a\u094d\u0930\u0938\u093f\u0926\u094d\u0927"
+            },
+            {
+              "id": 9415,
+              "text": "\u8464"
+            },
+            {
+              "id": 174627,
+              "text": " \u0baa\u0bbf\u0bb0\u0baa\u0bb2\u0bae\u0bbe\u0ba9"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 170261,
+              "text": " famous"
+            },
+            {
+              "id": 154658,
+              "text": " highly"
+            },
+            {
+              "id": 159230,
+              "text": " powerful"
+            },
+            {
+              "id": 150900,
+              "text": " original"
+            },
+            {
+              "id": 150103,
+              "text": " two"
+            },
+            {
+              "id": 150064,
+              "text": " other"
+            },
+            {
+              "id": 152824,
+              "text": " popular"
+            },
+            {
+              "id": 150548,
+              "text": " much"
+            },
+            {
+              "id": 150135,
+              "text": " first"
+            },
+            {
+              "id": 149892,
+              "text": " un"
+            }
+          ],
+          "hit": false
+        }
+      ]
+    },
+    {
+      "name": "b3-mh-greatwall-river",
+      "role": "win",
+      "prompt": "Fact: The longest river of the country that built the Great Wall is the",
+      "intermediates": [
+        "China"
+      ],
+      "target": "Yangtze",
+      "model_continuation": " Yangtze River.\n\nFact: The longest river of the",
+      "raw_hit": false,
+      "corrected_hit": true,
+      "readouts": [
+        {
+          "method": "raw",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 188709,
+              "text": " longest"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 163970,
+              "text": " leng"
+            },
+            {
+              "id": 23984,
+              "text": "\u757a"
+            },
+            {
+              "id": 149918,
+              "text": " or"
+            },
+            {
+              "id": 162839,
+              "text": " Grande"
+            },
+            {
+              "id": 25878,
+              "text": "\uc7b4"
+            },
+            {
+              "id": 17074,
+              "text": "\u4fb9"
+            },
+            {
+              "id": 192512,
+              "text": " hangisi"
+            },
+            {
+              "id": 196613,
+              "text": " shortest"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 188709,
+              "text": " longest"
+            },
+            {
+              "id": 163970,
+              "text": " leng"
+            },
+            {
+              "id": 151109,
+              "text": " among"
+            },
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 159266,
+              "text": " Great"
+            },
+            {
+              "id": 157504,
+              "text": " Africa"
+            },
+            {
+              "id": 182861,
+              "text": " Lon"
+            },
+            {
+              "id": 149879,
+              "text": " of"
+            },
+            {
+              "id": 153236,
+              "text": " ever"
+            },
+            {
+              "id": 149917,
+              "text": " The"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 2913,
+              "text": "reach"
+            },
+            {
+              "id": 155939,
+              "text": " reach"
+            },
+            {
+              "id": 158897,
+              "text": " river"
+            },
+            {
+              "id": 11564,
+              "text": "\u911e"
+            },
+            {
+              "id": 150702,
+              "text": " And"
+            },
+            {
+              "id": 149888,
+              "text": " e"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 149975,
+              "text": " V"
+            },
+            {
+              "id": 152562,
+              "text": " civil"
+            },
+            {
+              "id": 178046,
+              "text": " Chin"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 158897,
+              "text": " river"
+            },
+            {
+              "id": 155939,
+              "text": " reach"
+            },
+            {
+              "id": 149984,
+              "text": " which"
+            },
+            {
+              "id": 150135,
+              "text": " first"
+            },
+            {
+              "id": 149879,
+              "text": " of"
+            },
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 149917,
+              "text": " The"
+            },
+            {
+              "id": 149890,
+              "text": " that"
+            },
+            {
+              "id": 159266,
+              "text": " Great"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 158897,
+              "text": " river"
+            },
+            {
+              "id": 168867,
+              "text": " \u0928\u0926\u0940"
+            },
+            {
+              "id": 8780,
+              "text": "\u6cb3"
+            },
+            {
+              "id": 186041,
+              "text": " rivers"
+            },
+            {
+              "id": 157923,
+              "text": " River"
+            },
+            {
+              "id": 54653,
+              "text": "Yangtze"
+            },
+            {
+              "id": 165575,
+              "text": " r\u00edo"
+            },
+            {
+              "id": 150382,
+              "text": " water"
+            },
+            {
+              "id": 108347,
+              "text": "\u0631\u0648\u062f\u062e\u0627\u0646\u0647"
+            },
+            {
+              "id": 10406,
+              "text": "\u6e2d"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 158897,
+              "text": " river"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 150382,
+              "text": " water"
+            },
+            {
+              "id": 157923,
+              "text": " River"
+            },
+            {
+              "id": 151462,
+              "text": " China"
+            },
+            {
+              "id": 186041,
+              "text": " rivers"
+            },
+            {
+              "id": 159266,
+              "text": " Great"
+            },
+            {
+              "id": 149888,
+              "text": " e"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 149975,
+              "text": " V"
+            }
+          ],
+          "hit": true
+        },
+        {
+          "method": "raw",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 157687,
+              "text": " largest"
+            },
+            {
+              "id": 152529,
+              "text": " Ti"
+            },
+            {
+              "id": 150502,
+              "text": " Ar"
+            },
+            {
+              "id": 179233,
+              "text": " fifth"
+            },
+            {
+              "id": 165185,
+              "text": " \u0441\u0430\u043c\u044b\u0439"
+            },
+            {
+              "id": 165883,
+              "text": " Chu"
+            },
+            {
+              "id": 11682,
+              "text": "\u0e2d"
+            },
+            {
+              "id": 150503,
+              "text": " ol"
+            },
+            {
+              "id": 150230,
+              "text": " most"
+            },
+            {
+              "id": 123036,
+              "text": "\uac76"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 157687,
+              "text": " largest"
+            },
+            {
+              "id": 150230,
+              "text": " most"
+            },
+            {
+              "id": 149897,
+              "text": " A"
+            },
+            {
+              "id": 150011,
+              "text": " one"
+            },
+            {
+              "id": 171233,
+              "text": " biggest"
+            },
+            {
+              "id": 152371,
+              "text": " third"
+            },
+            {
+              "id": 150502,
+              "text": " Ar"
+            },
+            {
+              "id": 150455,
+              "text": " New"
+            },
+            {
+              "id": 150130,
+              "text": " only"
+            },
+            {
+              "id": 150161,
+              "text": " what"
+            }
+          ],
+          "hit": false
+        }
+      ]
+    },
+    {
+      "name": "dbl-altitude-antonym",
+      "role": "win",
+      "prompt": "Fact: The antonym of how you would describe an airplane's cruising altitude is \"",
+      "intermediates": [
+        "high"
+      ],
+      "target": "low",
+      "model_continuation": "low.\"\n\nFact: The antonym of how you",
+      "raw_hit": false,
+      "corrected_hit": true,
+      "readouts": [
+        {
+          "method": "raw",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 149918,
+              "text": " or"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 149931,
+              "text": " \u0438"
+            },
+            {
+              "id": 158963,
+              "text": " opposite"
+            },
+            {
+              "id": 156831,
+              "text": " Gegen"
+            },
+            {
+              "id": 170007,
+              "text": " \u043f\u0440\u043e\u0442\u0438\u0432\u043e"
+            },
+            {
+              "id": 153052,
+              "text": " counter"
+            },
+            {
+              "id": 193621,
+              "text": " contradic"
+            },
+            {
+              "id": 149985,
+              "text": " F"
+            },
+            {
+              "id": 31891,
+              "text": "contra"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 158963,
+              "text": " opposite"
+            },
+            {
+              "id": 153052,
+              "text": " counter"
+            },
+            {
+              "id": 179636,
+              "text": " contradict"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 155035,
+              "text": " contrast"
+            },
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 149939,
+              "text": " B"
+            },
+            {
+              "id": 262,
+              "text": "en"
+            },
+            {
+              "id": 149890,
+              "text": " that"
+            },
+            {
+              "id": 149882,
+              "text": " to"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 149918,
+              "text": " or"
+            },
+            {
+              "id": 149934,
+              "text": " n"
+            },
+            {
+              "id": 199999,
+              "text": "<|endoftext|>"
+            },
+            {
+              "id": 149963,
+              "text": " b"
+            },
+            {
+              "id": 157581,
+              "text": " inferior"
+            },
+            {
+              "id": 150999,
+              "text": " low"
+            },
+            {
+              "id": 194917,
+              "text": " Wunsch"
+            },
+            {
+              "id": 179803,
+              "text": " \u043d\u0438\u0441"
+            },
+            {
+              "id": 11721,
+              "text": "\u4f4e"
+            },
+            {
+              "id": 154218,
+              "text": " bottom"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 149934,
+              "text": " n"
+            },
+            {
+              "id": 150999,
+              "text": " low"
+            },
+            {
+              "id": 149918,
+              "text": " or"
+            },
+            {
+              "id": 149882,
+              "text": " to"
+            },
+            {
+              "id": 149939,
+              "text": " B"
+            },
+            {
+              "id": 151167,
+              "text": " below"
+            },
+            {
+              "id": 149963,
+              "text": " b"
+            },
+            {
+              "id": 150166,
+              "text": " No"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 161940,
+              "text": " flight"
+            },
+            {
+              "id": 151167,
+              "text": " below"
+            },
+            {
+              "id": 150999,
+              "text": " low"
+            },
+            {
+              "id": 178091,
+              "text": " altitude"
+            },
+            {
+              "id": 166600,
+              "text": " aero"
+            },
+            {
+              "id": 150924,
+              "text": " air"
+            },
+            {
+              "id": 152836,
+              "text": " near"
+            },
+            {
+              "id": 152609,
+              "text": " plane"
+            },
+            {
+              "id": 151214,
+              "text": " lower"
+            },
+            {
+              "id": 131047,
+              "text": "\ube44\ud589"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 151167,
+              "text": " below"
+            },
+            {
+              "id": 161940,
+              "text": " flight"
+            },
+            {
+              "id": 150999,
+              "text": " low"
+            },
+            {
+              "id": 150924,
+              "text": " air"
+            },
+            {
+              "id": 152836,
+              "text": " near"
+            },
+            {
+              "id": 151214,
+              "text": " lower"
+            },
+            {
+              "id": 166600,
+              "text": " aero"
+            },
+            {
+              "id": 178091,
+              "text": " altitude"
+            },
+            {
+              "id": 188005,
+              "text": " beneath"
+            },
+            {
+              "id": 149876,
+              "text": " the"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 150999,
+              "text": " low"
+            },
+            {
+              "id": 125121,
+              "text": "\u0bb4\u0bcd\u0bae\u0bc8\u0baf\u0bbe\u0ba9"
+            },
+            {
+              "id": 154393,
+              "text": " dead"
+            },
+            {
+              "id": 122969,
+              "text": "\ud730"
+            },
+            {
+              "id": 144835,
+              "text": "\u0441\u0438\u044e"
+            },
+            {
+              "id": 161940,
+              "text": " flight"
+            },
+            {
+              "id": 152983,
+              "text": " ped"
+            },
+            {
+              "id": 154155,
+              "text": " horse"
+            },
+            {
+              "id": 123176,
+              "text": "\u0c17\u0c38\u0c4d\u0c1f\u0c41"
+            },
+            {
+              "id": 95774,
+              "text": "itty"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 150999,
+              "text": " low"
+            },
+            {
+              "id": 149897,
+              "text": " A"
+            },
+            {
+              "id": 149878,
+              "text": " a"
+            },
+            {
+              "id": 150202,
+              "text": " how"
+            },
+            {
+              "id": 150378,
+              "text": " high"
+            },
+            {
+              "id": 150161,
+              "text": " what"
+            },
+            {
+              "id": 152836,
+              "text": " near"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 151712,
+              "text": " zero"
+            }
+          ],
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "holiday-independence-monthnum",
+      "role": "win",
+      "prompt": "Fact: The US Independence Day holiday is celebrated in month number ",
+      "intermediates": [
+        "July"
+      ],
+      "target": "7",
+      "model_continuation": "7.\n\nFact: The US Independence Day holiday is",
+      "raw_hit": false,
+      "corrected_hit": true,
+      "readouts": [
+        {
+          "method": "raw",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 149931,
+              "text": " \u0438"
+            },
+            {
+              "id": 171023,
+              "text": " calendar"
+            },
+            {
+              "id": 198345,
+              "text": " USA"
+            },
+            {
+              "id": 149918,
+              "text": " or"
+            },
+            {
+              "id": 150451,
+              "text": " \u03ba\u03b1\u03b9"
+            },
+            {
+              "id": 170566,
+              "text": " Americans"
+            },
+            {
+              "id": 150091,
+              "text": " v\u00e0"
+            },
+            {
+              "id": 149889,
+              "text": " y"
+            },
+            {
+              "id": 184966,
+              "text": " \u0430\u043c\u0435\u0440\u0438\u043a\u0430\u043d"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 151753,
+              "text": " American"
+            },
+            {
+              "id": 150154,
+              "text": " each"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 150230,
+              "text": " most"
+            },
+            {
+              "id": 149879,
+              "text": " of"
+            },
+            {
+              "id": 150038,
+              "text": " time"
+            },
+            {
+              "id": 198345,
+              "text": " USA"
+            },
+            {
+              "id": 150273,
+              "text": " after"
+            },
+            {
+              "id": 171023,
+              "text": " calendar"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 171023,
+              "text": " calendar"
+            },
+            {
+              "id": 152666,
+              "text": " month"
+            },
+            {
+              "id": 6775,
+              "text": "\u8bde"
+            },
+            {
+              "id": 174864,
+              "text": " \u0938\u0923"
+            },
+            {
+              "id": 12357,
+              "text": "\u72d8"
+            },
+            {
+              "id": 60304,
+              "text": "Macy"
+            },
+            {
+              "id": 154400,
+              "text": " th\u00e1ng"
+            },
+            {
+              "id": 152099,
+              "text": " months"
+            },
+            {
+              "id": 163138,
+              "text": " \u091c\u0942\u0928"
+            },
+            {
+              "id": 22906,
+              "text": "\u8a95"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 171023,
+              "text": " calendar"
+            },
+            {
+              "id": 152666,
+              "text": " month"
+            },
+            {
+              "id": 152099,
+              "text": " months"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 151422,
+              "text": " September"
+            },
+            {
+              "id": 160494,
+              "text": " summer"
+            },
+            {
+              "id": 151616,
+              "text": " April"
+            },
+            {
+              "id": 151911,
+              "text": " July"
+            },
+            {
+              "id": 157129,
+              "text": " birth"
+            },
+            {
+              "id": 152081,
+              "text": " June"
+            }
+          ],
+          "hit": true
+        },
+        {
+          "method": "raw",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 157330,
+              "text": " celebr"
+            },
+            {
+              "id": 152666,
+              "text": " month"
+            },
+            {
+              "id": 160494,
+              "text": " summer"
+            },
+            {
+              "id": 174864,
+              "text": " \u0938\u0923"
+            },
+            {
+              "id": 43089,
+              "text": "Celebr"
+            },
+            {
+              "id": 177173,
+              "text": " \u043f\u0440\u0430\u0437\u0434\u043d\u0438\u043a"
+            },
+            {
+              "id": 190503,
+              "text": " birthday"
+            },
+            {
+              "id": 171023,
+              "text": " calendar"
+            },
+            {
+              "id": 174113,
+              "text": " Six"
+            },
+            {
+              "id": 166731,
+              "text": " \u092e\u0928\u093e"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 157330,
+              "text": " celebr"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 152666,
+              "text": " month"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 151911,
+              "text": " July"
+            },
+            {
+              "id": 152081,
+              "text": " June"
+            },
+            {
+              "id": 160494,
+              "text": " summer"
+            },
+            {
+              "id": 149950,
+              "text": " D"
+            },
+            {
+              "id": 190503,
+              "text": " birthday"
+            }
+          ],
+          "hit": true
+        },
+        {
+          "method": "raw",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 184479,
+              "text": " \u0645\u06cc\u0644\u0627\u062f\u06cc"
+            },
+            {
+              "id": 6428,
+              "text": "\u303b"
+            },
+            {
+              "id": 146796,
+              "text": "WU"
+            },
+            {
+              "id": 146498,
+              "text": "BI"
+            },
+            {
+              "id": 39872,
+              "text": "Cartes"
+            },
+            {
+              "id": 9163,
+              "text": "\u8d55"
+            },
+            {
+              "id": 146989,
+              "text": "GIS"
+            },
+            {
+              "id": 145884,
+              "text": "EN"
+            },
+            {
+              "id": 146973,
+              "text": "NUMBER"
+            },
+            {
+              "id": 45110,
+              "text": "Antoni"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 150107,
+              "text": " number"
+            },
+            {
+              "id": 150066,
+              "text": " X"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 149950,
+              "text": " D"
+            },
+            {
+              "id": 149897,
+              "text": " A"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 151010,
+              "text": " demand"
+            },
+            {
+              "id": 152099,
+              "text": " months"
+            },
+            {
+              "id": 149879,
+              "text": " of"
+            },
+            {
+              "id": 150524,
+              "text": " last"
+            }
+          ],
+          "hit": false
+        }
+      ]
+    },
+    {
+      "name": "mh-w1-copper-29",
+      "role": "unchanged control",
+      "prompt": "Fact: The atomic number of the metal forming the green-patinated skin of the Statue of Liberty is",
+      "intermediates": [
+        "copper"
+      ],
+      "target": "29",
+      "model_continuation": " 29.\n\nQuestion: What is the atomic number of",
+      "raw_hit": false,
+      "corrected_hit": false,
+      "readouts": [
+        {
+          "method": "raw",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 149931,
+              "text": " \u0438"
+            },
+            {
+              "id": 164919,
+              "text": " metall"
+            },
+            {
+              "id": 149918,
+              "text": " or"
+            },
+            {
+              "id": 149978,
+              "text": " H"
+            },
+            {
+              "id": 69032,
+              "text": "77"
+            },
+            {
+              "id": 149879,
+              "text": " of"
+            },
+            {
+              "id": 12862,
+              "text": "\u938f"
+            },
+            {
+              "id": 149888,
+              "text": " e"
+            },
+            {
+              "id": 197576,
+              "text": " Hulk"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 149879,
+              "text": " of"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 164919,
+              "text": " metall"
+            },
+            {
+              "id": 150145,
+              "text": " used"
+            },
+            {
+              "id": 149878,
+              "text": " a"
+            },
+            {
+              "id": 150058,
+              "text": " U"
+            },
+            {
+              "id": 149890,
+              "text": " that"
+            },
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 149978,
+              "text": " H"
+            },
+            {
+              "id": 149997,
+              "text": " w"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 172094,
+              "text": " chemistry"
+            },
+            {
+              "id": 156821,
+              "text": " Zahl"
+            },
+            {
+              "id": 149978,
+              "text": " H"
+            },
+            {
+              "id": 165125,
+              "text": " atomic"
+            },
+            {
+              "id": 167831,
+              "text": " Chemistry"
+            },
+            {
+              "id": 136446,
+              "text": "\ud654\ud559"
+            },
+            {
+              "id": 150037,
+              "text": " Z"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 150611,
+              "text": " n\u00famero"
+            },
+            {
+              "id": 181931,
+              "text": " \u0430\u0442\u043e\u043c"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 150107,
+              "text": " number"
+            },
+            {
+              "id": 165125,
+              "text": " atomic"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 149879,
+              "text": " of"
+            },
+            {
+              "id": 172094,
+              "text": " chemistry"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 155425,
+              "text": " Earth"
+            },
+            {
+              "id": 149890,
+              "text": " that"
+            },
+            {
+              "id": 154819,
+              "text": " chemical"
+            },
+            {
+              "id": 149978,
+              "text": " H"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 150107,
+              "text": " number"
+            },
+            {
+              "id": 89956,
+              "text": "N\u00famero"
+            },
+            {
+              "id": 156821,
+              "text": " Zahl"
+            },
+            {
+              "id": 150611,
+              "text": " n\u00famero"
+            },
+            {
+              "id": 165125,
+              "text": " atomic"
+            },
+            {
+              "id": 185094,
+              "text": " kemi"
+            },
+            {
+              "id": 116032,
+              "text": "\ubc88\ud638"
+            },
+            {
+              "id": 136446,
+              "text": "\ud654\ud559"
+            },
+            {
+              "id": 44641,
+              "text": "Compton"
+            },
+            {
+              "id": 150920,
+              "text": " numbers"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 150107,
+              "text": " number"
+            },
+            {
+              "id": 150920,
+              "text": " numbers"
+            },
+            {
+              "id": 165125,
+              "text": " atomic"
+            },
+            {
+              "id": 154819,
+              "text": " chemical"
+            },
+            {
+              "id": 150410,
+              "text": " order"
+            },
+            {
+              "id": 152062,
+              "text": " metal"
+            },
+            {
+              "id": 152228,
+              "text": " Number"
+            },
+            {
+              "id": 182326,
+              "text": " Atomic"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 156821,
+              "text": " Zahl"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 152260,
+              "text": " greater"
+            },
+            {
+              "id": 162882,
+              "text": " twice"
+            },
+            {
+              "id": 152703,
+              "text": " exactly"
+            },
+            {
+              "id": 153037,
+              "text": " numer"
+            },
+            {
+              "id": 193845,
+              "text": " congruent"
+            },
+            {
+              "id": 150787,
+              "text": " less"
+            },
+            {
+              "id": 151432,
+              "text": " equal"
+            },
+            {
+              "id": 129100,
+              "text": "achte"
+            },
+            {
+              "id": 170359,
+              "text": " \u043c\u0435\u043d\u044c\u0448\u0435"
+            },
+            {
+              "id": 116050,
+              "text": "nomor"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 149935,
+              "text": " not"
+            },
+            {
+              "id": 162882,
+              "text": " twice"
+            },
+            {
+              "id": 152260,
+              "text": " greater"
+            },
+            {
+              "id": 150011,
+              "text": " one"
+            },
+            {
+              "id": 149878,
+              "text": " a"
+            },
+            {
+              "id": 152703,
+              "text": " exactly"
+            },
+            {
+              "id": 150787,
+              "text": " less"
+            },
+            {
+              "id": 150107,
+              "text": " number"
+            },
+            {
+              "id": 150056,
+              "text": " also"
+            }
+          ],
+          "hit": false
+        }
+      ]
+    },
+    {
+      "name": "spider-legs",
+      "role": "loss",
+      "prompt": "Fact: The number of legs on the animal that spins webs is ",
+      "intermediates": [
+        "spider"
+      ],
+      "target": "8",
+      "model_continuation": "8.\n\nFact: The number of legs on the animal",
+      "raw_hit": true,
+      "corrected_hit": false,
+      "readouts": [
+        {
+          "method": "raw",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 149918,
+              "text": " or"
+            },
+            {
+              "id": 149931,
+              "text": " \u0438"
+            },
+            {
+              "id": 66286,
+              "text": "Sylix"
+            },
+            {
+              "id": 149889,
+              "text": " y"
+            },
+            {
+              "id": 179376,
+              "text": " say\u0131s\u0131"
+            },
+            {
+              "id": 149888,
+              "text": " e"
+            },
+            {
+              "id": 17856,
+              "text": "\u645a"
+            },
+            {
+              "id": 22,
+              "text": "7"
+            },
+            {
+              "id": 21,
+              "text": "6"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 11,
+          "top10": [
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 150107,
+              "text": " number"
+            },
+            {
+              "id": 150269,
+              "text": " total"
+            },
+            {
+              "id": 151457,
+              "text": " count"
+            },
+            {
+              "id": 169857,
+              "text": " legs"
+            },
+            {
+              "id": 151894,
+              "text": " six"
+            },
+            {
+              "id": 149918,
+              "text": " or"
+            },
+            {
+              "id": 150792,
+              "text": " four"
+            },
+            {
+              "id": 149879,
+              "text": " of"
+            },
+            {
+              "id": 149971,
+              "text": " all"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 169169,
+              "text": " insect"
+            },
+            {
+              "id": 151894,
+              "text": " six"
+            },
+            {
+              "id": 151517,
+              "text": " multi"
+            },
+            {
+              "id": 59380,
+              "text": "arachn"
+            },
+            {
+              "id": 24632,
+              "text": "\u591a"
+            },
+            {
+              "id": 169857,
+              "text": " legs"
+            },
+            {
+              "id": 16516,
+              "text": "\u86b1"
+            },
+            {
+              "id": 18497,
+              "text": "\u870e"
+            },
+            {
+              "id": 167683,
+              "text": " pest"
+            },
+            {
+              "id": 16563,
+              "text": "\u86e8"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 23,
+          "top10": [
+            {
+              "id": 151894,
+              "text": " six"
+            },
+            {
+              "id": 169169,
+              "text": " insect"
+            },
+            {
+              "id": 151517,
+              "text": " multi"
+            },
+            {
+              "id": 150792,
+              "text": " four"
+            },
+            {
+              "id": 169857,
+              "text": " legs"
+            },
+            {
+              "id": 153022,
+              "text": " tor"
+            },
+            {
+              "id": 152977,
+              "text": " seven"
+            },
+            {
+              "id": 150269,
+              "text": " total"
+            },
+            {
+              "id": 150396,
+              "text": " three"
+            },
+            {
+              "id": 150630,
+              "text": " web"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 59380,
+              "text": "arachn"
+            },
+            {
+              "id": 169169,
+              "text": " insect"
+            },
+            {
+              "id": 169857,
+              "text": " legs"
+            },
+            {
+              "id": 167683,
+              "text": " pest"
+            },
+            {
+              "id": 177040,
+              "text": " mite"
+            },
+            {
+              "id": 32754,
+              "text": "spider"
+            },
+            {
+              "id": 75544,
+              "text": "\u043d\u043e\u0433"
+            },
+            {
+              "id": 172843,
+              "text": " tick"
+            },
+            {
+              "id": 15655,
+              "text": "\u6606"
+            },
+            {
+              "id": 154539,
+              "text": " eyes"
+            }
+          ],
+          "hit": true
+        },
+        {
+          "method": "mean_scale",
+          "visit": 35,
+          "top10": [
+            {
+              "id": 169169,
+              "text": " insect"
+            },
+            {
+              "id": 169857,
+              "text": " legs"
+            },
+            {
+              "id": 151894,
+              "text": " six"
+            },
+            {
+              "id": 59380,
+              "text": "arachn"
+            },
+            {
+              "id": 167683,
+              "text": " pest"
+            },
+            {
+              "id": 150792,
+              "text": " four"
+            },
+            {
+              "id": 154539,
+              "text": " eyes"
+            },
+            {
+              "id": 183952,
+              "text": " mammal"
+            },
+            {
+              "id": 150630,
+              "text": " web"
+            },
+            {
+              "id": 150103,
+              "text": " two"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "raw",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 162882,
+              "text": " twice"
+            },
+            {
+              "id": 87,
+              "text": "x"
+            },
+            {
+              "id": 17,
+              "text": "2"
+            },
+            {
+              "id": 15165,
+              "text": "\u500d"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 156732,
+              "text": " pint"
+            },
+            {
+              "id": 157094,
+              "text": " gender"
+            },
+            {
+              "id": 326,
+              "text": "ne"
+            },
+            {
+              "id": 33432,
+              "text": "cone"
+            },
+            {
+              "id": 7237,
+              "text": "\u9c81"
+            }
+          ],
+          "hit": false
+        },
+        {
+          "method": "mean_scale",
+          "visit": 41,
+          "top10": [
+            {
+              "id": 149876,
+              "text": " the"
+            },
+            {
+              "id": 162882,
+              "text": " twice"
+            },
+            {
+              "id": 149880,
+              "text": " and"
+            },
+            {
+              "id": 149882,
+              "text": " to"
+            },
+            {
+              "id": 149881,
+              "text": " in"
+            },
+            {
+              "id": 151894,
+              "text": " six"
+            },
+            {
+              "id": 150033,
+              "text": " more"
+            },
+            {
+              "id": 149897,
+              "text": " A"
+            },
+            {
+              "id": 149878,
+              "text": " a"
+            },
+            {
+              "id": 150103,
+              "text": " two"
+            }
+          ],
+          "hit": false
+        }
+      ]
+    }
+  ],
+  "primary_exclusions": [
+    {
+      "name": "mh-w1-nintendo-kyoto",
+      "reasons": [
+        "intermediate appears in continuation"
+      ],
+      "prompt": "Fact: The company that created Super Mario and the Switch console is headquartered in the city of",
+      "source_target": "Kyoto",
+      "intermediates": [
+        "Nintendo"
+      ],
+      "continuation": " Kyoto.\n\nFact: Nintendo is a Japanese company"
+    },
+    {
+      "name": "spaceneedle-border",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The US state where the Space Needle is located shares its northern border with ",
+      "source_target": "Canada",
+      "intermediates": [
+        "Washington"
+      ],
+      "continuation": "Vancouver, Canada.\n\nQuestion: What is the name of"
+    },
+    {
+      "name": "mh-w1-io-jupiter",
+      "reasons": [
+        "intermediate appears in continuation"
+      ],
+      "prompt": "Fact: The planet orbited by the moon with the most volcanic activity in the Solar System is",
+      "source_target": "Jupiter",
+      "intermediates": [
+        "Io"
+      ],
+      "continuation": " Jupiter's moon Io.\n\nFact: The planet with"
+    },
+    {
+      "name": "b3-mh-bakerstreet-city",
+      "reasons": [
+        "no complete single-token intermediate"
+      ],
+      "prompt": "Fact: The home city of the detective of 221B Baker Street is",
+      "source_target": "London",
+      "intermediates": [
+        "Sherlock Holmes"
+      ],
+      "continuation": " London.\n\nFact: The home city of the detective"
+    },
+    {
+      "name": "double-dice-faces",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: Double the number of faces on a standard die is ",
+      "source_target": "12",
+      "intermediates": [
+        "6",
+        "six"
+      ],
+      "continuation": "14.\n\nQuestion:\n\nFact: Double the number of"
+    },
+    {
+      "name": "colosseum-currency",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The currency used in the country where the Colosseum stands is the ",
+      "source_target": "Euro",
+      "intermediates": [
+        "Italy"
+      ],
+      "continuation": "Lira.\n\nFact: The currency used in the country where"
+    },
+    {
+      "name": "mh-w1-the-last-supper-milan",
+      "reasons": [
+        "no complete single-token intermediate",
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The city that houses Leonardo da Vinci's mural of Jesus sharing a final meal with his apostles is",
+      "source_target": "Milan",
+      "intermediates": [
+        "The Last Supper"
+      ],
+      "continuation": " also home to the world's largest collection of dinosaur"
+    },
+    {
+      "name": "mh-w1-k2-karakoram",
+      "reasons": [
+        "no complete single-token intermediate",
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The mountain range that contains the world's second-highest mountain is the",
+      "source_target": "Karakoram",
+      "intermediates": [
+        "K2"
+      ],
+      "continuation": " Himalayas.\n\nFact: The world's highest"
+    },
+    {
+      "name": "mh-w1-peregrine-falcon-birds",
+      "reasons": [
+        "no complete single-token intermediate",
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The fastest creature on Earth, diving at over 300 kilometres per hour, belongs to the animal class of",
+      "source_target": "birds",
+      "intermediates": [
+        "peregrine falcon"
+      ],
+      "continuation": " reptiles.\n\nQuestion: What is the name of"
+    },
+    {
+      "name": "carnival-ocean",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The ocean on the coast of the country where Carnival is most famously celebrated is the ",
+      "source_target": "Atlantic",
+      "intermediates": [
+        "Brazil"
+      ],
+      "continuation": "Caribbean Sea.\n\nQuestion: What is the name of the"
+    },
+    {
+      "name": "b3-mh-pizza-continent",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The continent of the country where pizza originated is",
+      "source_target": "Europe",
+      "intermediates": [
+        "Italy"
+      ],
+      "continuation": " called Europe.\n\nFact: The continent of the country where"
+    },
+    {
+      "name": "super-smallest-continent",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The smallest country in the world is located on the continent of ",
+      "source_target": "Europe",
+      "intermediates": [
+        "Vatican"
+      ],
+      "continuation": "africa.\n\nFact: The smallest country in the world is"
+    },
+    {
+      "name": "mh-w1-taj-mahal-yamuna",
+      "reasons": [
+        "no complete single-token intermediate",
+        "intermediate appears in continuation"
+      ],
+      "prompt": "Fact: The river that flows beside the white marble mausoleum Shah Jahan built for his wife is the",
+      "source_target": "Yamuna",
+      "intermediates": [
+        "Taj Mahal"
+      ],
+      "continuation": " Yamuna.\n\nFact: The Taj Mahal"
+    },
+    {
+      "name": "atomic-26-symbol",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The chemical symbol for the element with atomic number 26 is ",
+      "source_target": "Fe",
+      "intermediates": [
+        "iron"
+      ],
+      "continuation": "26Fe.\n\nQuestion\n\nFact: The chemical symbol for"
+    },
+    {
+      "name": "mh-w1-danube-black",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The sea into which the river celebrated in Johann Strauss II's most famous waltz empties is the",
+      "source_target": "Black",
+      "intermediates": [
+        "Danube"
+      ],
+      "continuation": " Mediterranean.\n\nFact: The sea into which the river celebr"
+    },
+    {
+      "name": "nhop-spider-element",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Count the items in a dozen. The element at that position on the periodic table is magnesium. Count the legs on a spider. The element at that position on the periodic table is ",
+      "source_target": "oxygen",
+      "intermediates": [
+        "8"
+      ],
+      "continuation": "argon. Count the number of sides on a hexagon. The"
+    },
+    {
+      "name": "b3-mh-goldengate-ocean",
+      "reasons": [
+        "no complete single-token intermediate"
+      ],
+      "prompt": "Fact: The ocean beside the city of the Golden Gate Bridge is the",
+      "source_target": "Pacific",
+      "intermediates": [
+        "San Francisco"
+      ],
+      "continuation": " Pacific Ocean.\n\nFact: The ocean beside the city of"
+    },
+    {
+      "name": "mh-w1-blue-whale-mammals",
+      "reasons": [
+        "no complete single-token intermediate",
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The largest animal that has ever lived on Earth belongs to the animal class of",
+      "source_target": "mammals",
+      "intermediates": [
+        "blue whale"
+      ],
+      "continuation": " reptiles.\n\nFact: The largest animal that has"
+    },
+    {
+      "name": "mh-w1-achilles-thetis",
+      "reasons": [
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The mother of the hero whose only weak spot was his heel is",
+      "source_target": "Thetis",
+      "intermediates": [
+        "Achilles"
+      ],
+      "continuation": " a goddess.\n\nFact: The hero whose only weak"
+    },
+    {
+      "name": "mh-w1-charles-dickens-portsmouth",
+      "reasons": [
+        "no complete single-token intermediate",
+        "greedy continuation does not start with source target"
+      ],
+      "prompt": "Fact: The novelist who wrote Oliver Twist was born in the English city of",
+      "source_target": "Portsmouth",
+      "intermediates": [
+        "Charles Dickens"
+      ],
+      "continuation": "?\n\nQuestion\n\nHere is the question : FACT: THE"
+    }
+  ],
+  "all_native_head_checks_exact": true
+}
