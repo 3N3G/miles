@@ -8,13 +8,17 @@ from pilot import MODEL,REVISION,token_list
 from country_swap import features,forward_with_swap
 
 
-def forward(model,ids,reference,direction):
+def forward(model,ids,reference,direction,is_reference=False):
  counter=[0];details=[]
  def hook(module,args,output):
   visit=counter[0];counter[0]+=1
   if visit!=35:return None
-  h=output.float();coefficient=-4*(h@reference).unsqueeze(-1);delta=coefficient*direction
-  expected=coefficient.abs().squeeze(-1);error=((delta.norm(dim=-1)-expected).abs()/(expected+1e-6)).max().item();assert error<1e-5,error
+  h=output.float();score=h@reference+reference.new_tensor(0)
+  original_delta=-2*score.unsqueeze(-1)*reference/reference.square().sum()
+  original_delta*=2
+  expected=original_delta.norm(dim=-1)
+  delta=original_delta if is_reference else -score.sign().unsqueeze(-1)*expected.unsqueeze(-1)*direction
+  error=((delta.norm(dim=-1)-expected).abs()/(expected+1e-6)).max().item();assert error<1e-5,error
   changed=(h+delta).to(output.dtype);actual=(changed.float()-h).norm(dim=-1)
   details.append({'max_precast_relative_norm_error':error,'actual_norms':actual[0].tolist(),'expected_norms':expected[0].tolist(),'last_relative_edit_norm':(delta[0,-1].norm()/h[0,-1].norm()).item()})
   return changed
@@ -49,11 +53,10 @@ def main():
    for case in valid:
     ids=tok(case['prompt'],return_tensors='pt',add_special_tokens=False).input_ids.to('cuda')
     for method,direction in axes.items():
-     logits,detail=forward(model,ids,axes['j_unit'],direction)
+     logits,detail=forward(model,ids,fs['j_unit'][35]['vector'],direction,method=='j_unit')
      if method=='j_unit':
       old=forward_with_swap(model,ids,fs['j_unit'],2)[0]
-      # Equivalent formulas can differ at BF16 rounding boundaries. Require identical top one and tiny logits.
-      discrepancy=(old-logits).abs().max().item();assert discrepancy<.15,discrepancy;assert int(old.argmax())==int(logits.argmax())
+      discrepancy=(old-logits).abs().max().item();assert discrepancy==0,discrepancy;assert torch.equal(old,logits)
      else:discrepancy=None
      lp=logits.log_softmax(-1);row={'method':method,'fit_seed':seed,'name':case['name'],'prompt':case['prompt'],'counterfactual_top1':int(logits.argmax()) in vocab[case['counterfactual'].casefold()],'target_probability':torch.logsumexp(lp[vocab[case['counterfactual'].casefold()]],0).exp().item(),'top10':token_list(logits,tok),'jacobian_formula_max_logit_discrepancy':discrepancy,'perturbation':detail};rows.append(row);print(json.dumps({k:v for k,v in row.items() if k not in ['perturbation','prompt']}),flush=True)
     (a.out/'interventions.json').write_text(json.dumps(rows,indent=2)+'\n')
