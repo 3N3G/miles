@@ -29,7 +29,7 @@ def token_list(logits, tokenizer, k=10):
 
 def decode(model, llm, tokenizer, h):
     h = llm.norm(h).to(model.lm_head.weight.dtype)
-    logits = model.logit_softcap(model.lm_head(h)).float()
+    logits = model.logit_softcap(model.lm_head(h).float())
     return token_list(logits, tokenizer)
 
 
@@ -84,7 +84,7 @@ def baseline(model, llm, tokenizer, ids):
         banks.append(torch.stack([completed[0, -1, -1], active[0, -1]]).float().cpu())
 
     def read_final(module, args, output):
-        final_mixed.append(output[0][0, -1].clone())
+        final_mixed.append(output[0].clone())
 
     def read_gate(module, args):
         gate_inputs.append(torch.stack([x[0, -1].float().cpu() for x in args]))
@@ -102,7 +102,7 @@ def baseline(model, llm, tokenizer, ids):
             handle.remove()
     assert len(readouts) == 48, len(readouts)
     assert len(banks) == 3, [x.shape for x in banks]
-    expected = model.logit_softcap(model.lm_head(llm.norm(final_mixed[0]).to(model.lm_head.weight.dtype))).float()
+    expected = model.logit_softcap(model.lm_head(llm.norm(final_mixed[0]).to(model.lm_head.weight.dtype)).float())[0, -1]
     error = (expected - output).abs().max().item()
     if error > 1e-4 or not torch.isfinite(output).all():
         raise RuntimeError(f"Native-logit control failed: max error {error}")
