@@ -59,7 +59,6 @@ Do not choose either using bridge labels.
 - Primary diagnostic: future-state centered squared error and cosine on calibration-validation text.
 - Secondary diagnostic: final-token agreement and output KL, on separately observed development prompts.
 - Interpretability: complete single-token bridge recovery at the fixed read budget, false-positive inspection, and behavior-correct/unspoken subsets reported separately.
-- Selectivity diagnostic: count a hit at a read only if none of its source bank's representable same-type distractors is also read. Report this separately, since considering alternatives can be a real computation.
 - Must-work controls: final-reader equality, fitting a known synthetic rotation, and correct horizon-zero behavior.
 - Must-not-work controls: shuffled state pairs and prompt-independent mean readouts.
 - Statistics: paired bootstrap 95% intervals over documents or prompts, not over token rows. Three fit seeds are shown separately and averaged only explicitly.
