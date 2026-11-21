@@ -63,7 +63,7 @@ def intervention_hook(kind, bank, value, seed):
 
 def baseline(model, llm, tokenizer, ids):
     handles, readouts, banks, visits = [], [], [], {}
-    final_mixed = []
+    final_mixed, gate_inputs = [], []
 
     def read_layer(layer_idx):
         def hook(module, args, output):
@@ -86,11 +86,15 @@ def baseline(model, llm, tokenizer, ids):
     def read_final(module, args, output):
         final_mixed.append(output[0][0, -1].clone())
 
+    def read_gate(module, args):
+        gate_inputs.append(torch.stack([x[0, -1].float().cpu() for x in args]))
+
     for i, layer in enumerate(llm.layers):
         handles.append(layer.register_forward_hook(read_layer(i)))
     handles.append(llm.message_input.register_forward_pre_hook(read_bank))
     handles.append(llm.layers[18].register_forward_pre_hook(read_coda))
     handles.append(llm.final_input.register_forward_hook(read_final))
+    handles.append(llm.layers[6].mlp_message_gate.register_forward_pre_hook(read_gate))
     try:
         output = model(input_ids=ids, use_cache=False).logits[0, -1].float()
     finally:
@@ -111,7 +115,7 @@ def baseline(model, llm, tokenizer, ids):
             delta_readouts.append({"loop": loop + 1, "bank": bank_idx, "tokens": decode(model, llm, tokenizer, delta)})
     raw_distance = (bank_array[1:] - bank_array[:-1]).norm(dim=-1).tolist()
     normalized_distance = (normalized[1:] - normalized[:-1]).norm(dim=-1).tolist()
-    return output, bank_array.numpy(), {"readouts": readouts, "delta_readouts": delta_readouts, "raw_distance": raw_distance, "normalized_distance": normalized_distance, "native_logit_error": error}
+    return output, bank_array.numpy(), torch.stack(gate_inputs).numpy(), {"readouts": readouts, "delta_readouts": delta_readouts, "raw_distance": raw_distance, "normalized_distance": normalized_distance, "native_logit_error": error}
 
 
 def compare(base, changed):
@@ -130,7 +134,7 @@ def run_prompt(model, llm, tokenizer, item, out, do_interventions):
         raise ValueError("Prompt exceeds the pilot's 256-token bound")
     start = time.monotonic()
     print(json.dumps({"event": "input", "name": item["name"], "render": "plain, verbatim, no chat template", "prompt": prompt, "token_ids": ids[0].tolist()}), flush=True)
-    base, bank_array, result = baseline(model, llm, tokenizer, ids)
+    base, bank_array, gate_inputs, result = baseline(model, llm, tokenizer, ids)
     result.update({"item": item, "token_ids": ids[0].tolist(), "final_tokens": token_list(base, tokenizer), "interventions": []})
     print(json.dumps({"event": "baseline", "name": item["name"], "seconds": time.monotonic() - start, "top_tokens": result["final_tokens"]}), flush=True)
     if do_interventions:
@@ -146,7 +150,7 @@ def run_prompt(model, llm, tokenizer, item, out, do_interventions):
             row = {"kind": kind, "bank": bank, "value": value, "seed": seed, **compare(base, changed), "top_tokens": token_list(changed, tokenizer, k=3)}
             result["interventions"].append(row)
             print(json.dumps({"event": "intervention", "name": item["name"], **row}), flush=True)
-    np.savez_compressed(out / f"{item['name']}.npz", banks=bank_array, logits=base.cpu().numpy())
+    np.savez_compressed(out / f"{item['name']}.npz", banks=bank_array, gate_inputs=gate_inputs, logits=base.cpu().numpy())
     result["elapsed_seconds"] = time.monotonic() - start
     (out / f"{item['name']}.json").write_text(json.dumps(result, indent=2) + "\n")
 
@@ -174,6 +178,8 @@ def main():
     if errors:
         raise RuntimeError(f"Incomplete model load: {errors}")
     llm = model.model.language_model
+    gate = llm.layers[6].mlp_message_gate
+    np.savez_compressed(args.out / "gate_weights.npz", down=gate.down_proj.weight.float().cpu().numpy(), gain=gate.message_gate_proj.weight.float().cpu().numpy(), forget=gate.forget_gate_proj.weight.float().cpu().numpy())
     print(json.dumps({"event": "loaded", "seconds": time.monotonic() - start, "parameters": sum(p.numel() for p in model.parameters())}), flush=True)
     items = json.loads(args.items.read_text())["items"][: args.max_prompts]
     with torch.inference_mode():
