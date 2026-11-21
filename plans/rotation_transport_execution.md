@@ -9,3 +9,8 @@ The model's roughly 53 GB BF16 weights and bounded capture batches should fit wi
 Keep the exact script, checkpoint, source revision, prompts, selected positions, and one-hour limit.
 This changes the execution host only. Preserve the original submission receipt and record the scheduler update.
 No other session's jobs may be changed.
+
+The scheduler rejected the in-place partition change with an accounting/QOS size-policy error.
+The job therefore remained pending on mi3501x. The first update record describes an attempted command, not a successful change.
+Cancel this session's pending 536932 and submit the same capture command afresh on mi2101x with four CPUs.
+Use a new `transport-capture-v2` output directory. Preserve all receipts and any old output.

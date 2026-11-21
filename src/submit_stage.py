@@ -14,6 +14,8 @@ def main():
     parser.add_argument("--plan", required=True)
     parser.add_argument("--minutes", type=int, required=True)
     parser.add_argument("--host", default="amd")
+    parser.add_argument("--partition", default="mi3501x")
+    parser.add_argument("--cpus", type=int, default=4)
     parser.add_argument("--root", default="/work1/aviralkumar/geney/inkling-interp")
     parser.add_argument("--data", default="/work1/aviralkumar/geney/inkling-interp-data")
     parser.add_argument("--image", default="/work1/aviralkumar/geney/containers/vllm-rocm-v0.29.0.sif")
@@ -24,7 +26,7 @@ def main():
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
     command = ["apptainer", "exec", "--cleanenv", "--rocm", "--bind", "/work1:/work1", "--env", f"PYTHONPATH={args.data}/runtime,HF_HOME={args.data}/hf,OMP_NUM_THREADS=4,OPENBLAS_NUM_THREADS=4,TOKENIZERS_PARALLELISM=false", args.image, *args.command]
     script = "#!/bin/bash\nset -euo pipefail\ncd " + shlex.quote(args.root) + "\n" + shlex.join(command) + "\n"
-    sbatch = ["sbatch", "--parsable", "--nodes=1", "--cpus-per-task=8", "--partition=mi3501x", "--account=aviralkumar", "--qos=alloc_aviralkumar_09082026_09302027", f"--time=00:{args.minutes:02}:00" if args.minutes < 60 else "--time=01:00:00", f"--job-name=inkling-{args.name}", f"--output={args.data}/runs/{args.name}-%j.log"]
+    sbatch = ["sbatch", "--parsable", "--nodes=1", f"--cpus-per-task={args.cpus}", f"--partition={args.partition}", "--account=aviralkumar", "--qos=alloc_aviralkumar_09082026_09302027", f"--time=00:{args.minutes:02}:00" if args.minutes < 60 else "--time=01:00:00", f"--job-name=inkling-{args.name}", f"--output={args.data}/runs/{args.name}-%j.log"]
     remote = "cd " + shlex.quote(args.root) + " && git pull --rebase && test \"$(git rev-parse HEAD)\" = " + shlex.quote(commit) + " && " + shlex.join(sbatch)
     result = subprocess.run(["ssh", "-o", "BatchMode=yes", args.host, remote], input=script, text=True, capture_output=True)
     job = result.stdout.strip().splitlines()[-1].split(";")[0] if result.returncode == 0 else None
