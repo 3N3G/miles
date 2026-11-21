@@ -623,6 +623,11 @@
   ],
   "jobs": [
     {
+      "id": "536360",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "536321",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -1836,15 +1841,22 @@
       "actor": "codex",
       "summary": "Prepare the approved replacement after an unused-vision equality-check failure",
       "revision": 150
+    },
+    {
+      "id": "9b525c6f-616e-46d6-8544-8e5b4336c575",
+      "at": "2026-11-21T08:02:26.646878Z",
+      "actor": "codex",
+      "summary": "Automatically submitted approved RL job 536360",
+      "revision": 151
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Job 536321 failed before generation: all logged text parameters and derived norm buffers matched, but the checker randomized unused vision weights that the text trainer does not republish. The replacement keeps strict text checks and excludes only frozen visual.* tensors. All 75 CPU checks pass.",
-  "nextAction": "Push and submit v9 with the same 20 questions, 40 updates and four-hour eight-GPU limit. Reuse the completed conversion and cached real reward controls.",
+  "summary": "Automatically submitted approved RL job 536360",
+  "nextAction": "Monitor the owned RL job, reward tunnel, optimizer updates and saving.",
   "owner": "Codex",
-  "revision": 150,
-  "updatedAt": "2026-11-21T08:01:50.167849Z"
+  "revision": 151,
+  "updatedAt": "2026-11-21T08:02:26.646878Z"
 }
