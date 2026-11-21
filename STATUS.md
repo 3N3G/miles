@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Approved easy-only plan is ready: 20 questions, 40 updates, eight MI350 GPUs, four hours. Actual cap grades qualify 15 positive and 17 zero rewards. All 74 CPU checks pass; question-specific grading c Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: Complete all 60 reward controls, freeze and push the source, then automatically submit and monitor the approved AMD run.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): All 60 per-question reward controls passed in both orders, with no paired-reference anomalies. Frozen source eabd8c02 is ready to submit 40 updates on all 20 easy questions within four hours on eight  Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: Obtain the real Slurm receipt, then monitor conversion, rollout, native optimizer steps, weight publication and saving.
 
 ## Next / blocked
 

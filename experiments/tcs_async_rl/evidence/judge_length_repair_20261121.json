@@ -14,6 +14,25 @@
   },
   "repair": "Retry only unfinished judge verdicts with 16384 then 32768 completion tokens. Same model, medium effort, prompts, rubric and scores. Preserve receipts and shared USD5 cap. No retry of completed scores.",
   "authorization": "Standing permission for inference budget repairs within the approved experiment.",
-  "validation": "Pending full controls and mocked retry tests.",
+  "validation": {
+    "cpu_tests_passed": 74,
+    "live_controls_passed": 60,
+    "completed_verdicts": 120,
+    "reference_control_scores": [
+      7,
+      7
+    ],
+    "empty_control_scores": [
+      0,
+      0
+    ],
+    "irrelevant_control_scores": [
+      0,
+      0
+    ],
+    "paired_reference_anomalies": 0,
+    "preserved_unfinished_verdicts": 1,
+    "retry_budget_that_completed": 16384
+  },
   "new_gpu_jobs": 0
 }

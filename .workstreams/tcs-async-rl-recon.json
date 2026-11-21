@@ -1750,15 +1750,22 @@
       "actor": "codex",
       "summary": "Retain prior linked evidence alongside the new approved plan",
       "revision": 139
+    },
+    {
+      "id": "c1b15a49-4962-443d-b709-bb4ab8c12f65",
+      "at": "2026-11-21T07:49:12.630337Z",
+      "actor": "codex",
+      "summary": "All 60 real controls passed; arming the approved AMD run",
+      "revision": 140
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Approved easy-only plan is ready: 20 questions, 40 updates, eight MI350 GPUs, four hours. Actual cap grades qualify 15 positive and 17 zero rewards. All 74 CPU checks pass; question-specific grading controls are in progress after a bounded judge-token repair. No new GPU job submitted.",
-  "nextAction": "Complete all 60 reward controls, freeze and push the source, then automatically submit and monitor the approved AMD run.",
+  "summary": "All 60 per-question reward controls passed in both orders, with no paired-reference anomalies. Frozen source eabd8c02 is ready to submit 40 updates on all 20 easy questions within four hours on eight MI350 GPUs.",
+  "nextAction": "Obtain the real Slurm receipt, then monitor conversion, rollout, native optimizer steps, weight publication and saving.",
   "owner": "Codex",
-  "revision": 139,
-  "updatedAt": "2026-11-21T07:46:34.866775Z"
+  "revision": 140,
+  "updatedAt": "2026-11-21T07:49:12.630337Z"
 }
