@@ -160,6 +160,9 @@ def wait_for_group(*, directory, job_id, remote_directory, state_repo, output):
 
 def start_service(*, input_file, directory, port, training, python, judge_config=None):
     with socket.socket() as probe:
+        # Match aiohttp's restart behavior after our own closed preflight server.
+        # A live listener still prevents this bind.
+        probe.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         probe.bind(("127.0.0.1", port))
     log = (directory / "reward-service.log").open("a")
     child = subprocess.Popen(

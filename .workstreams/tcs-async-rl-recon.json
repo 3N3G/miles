@@ -1764,15 +1764,22 @@
       "actor": "codex",
       "summary": "Automatic RL handoff stopped before acceptance",
       "revision": 141
+    },
+    {
+      "id": "f614c4a3-7097-4b84-b436-f637f92d0c33",
+      "at": "2026-11-21T07:49:54.309368Z",
+      "actor": "codex",
+      "summary": "Repair local closed-socket restart before any GPU submission",
+      "revision": 142
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "Automatic RL handoff stopped before acceptance",
-  "nextAction": "Inspect handoff-state.json and preserve the strict reward gate. Resolve any required research decision.",
+  "summary": "All 60 real grading controls passed. Initial controller stopped before submission because its port probe rejected the closed preflight socket in TCP TIME_WAIT. Match aiohttp socket reuse and restart the owned controller. No GPU job submitted.",
+  "nextAction": "Restart from frozen repaired source, obtain the real Slurm receipt and monitor native training.",
   "owner": "Codex",
-  "revision": 141,
-  "updatedAt": "2026-11-21T07:49:21.717639Z"
+  "revision": 142,
+  "updatedAt": "2026-11-21T07:49:54.309368Z"
 }
