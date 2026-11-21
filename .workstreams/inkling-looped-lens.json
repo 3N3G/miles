@@ -34,29 +34,14 @@
   ],
   "jobs": [
     {
-      "id": "536316",
+      "id": "536932",
       "cluster": "hpcfund",
-      "status": "FAILED"
+      "status": "CANCELLED"
     },
     {
-      "id": "536317",
+      "id": "536947",
       "cluster": "hpcfund",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "536326",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "536342",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "536354",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -114,15 +99,22 @@
       "actor": "codex",
       "summary": "Resumed at the user request to discover a useful transport lens, including powers of a recent rotation",
       "revision": 6
+    },
+    {
+      "id": "23a09ad2-2d76-4425-a7a5-4be40018b3c4",
+      "at": "2026-11-21T15:53:21.129161Z",
+      "actor": "codex",
+      "summary": "Froze transport fits and reserved a final test split; replaced a queued large-GPU job with an idle MI210 allocation",
+      "revision": 7
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Discover and validate a useful Inkling interpretability lens, beginning with transport by recent rotations and testing semantic causal effects.",
   "state": "running",
-  "summary": "User explicitly requested continued creative experimentation and suggested applying a recent rotation for the remaining depth. Beginning a bounded transport-lens experiment under the existing compute authorization.",
-  "nextAction": "Freeze the rotation/transport protocol, fit on unlabeled calibration text, and evaluate prediction and intermediate-concept controls separately.",
+  "summary": "Frozen 144 unlabeled calibration paragraphs, 55 development items, and 43 reserved test identities. Implemented local angular extrapolation, powers of learned recent rotations, direct rotations, and affine controls. Existing traces show local extrapolation behaves differently in the two banks. Capturing new trajectories on AMD MI210 after a large-GPU queue delay.",
+  "nextAction": "Validate capture, fit on unlabeled text, then inspect geometric prediction and unspoken-concept recovery separately.",
   "owner": "Codex",
-  "revision": 6,
-  "updatedAt": "2026-11-21T15:36:16.337503Z"
+  "revision": 7,
+  "updatedAt": "2026-11-21T15:53:21.129161Z"
 }

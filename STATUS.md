@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): User explicitly requested continued creative experimentation and suggested applying a recent rotation for the remaining depth. Beginning a bounded transport-lens experiment under the existing compute  Jobs: hpcfund/536316 FAILED; hpcfund/536317 COMPLETED
-  Next: Freeze the rotation/transport protocol, fit on unlabeled calibration text, and evaluate prediction and intermediate-concept controls separately.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Frozen 144 unlabeled calibration paragraphs, 55 development items, and 43 reserved test identities. Implemented local angular extrapolation, powers of learned recent rotations, direct rotations, and a Jobs: hpcfund/536932 CANCELLED; hpcfund/536947 SUBMITTED
+  Next: Validate capture, fit on unlabeled text, then inspect geometric prediction and unspoken-concept recovery separately.
 
 ## Next / blocked
 
