@@ -153,15 +153,22 @@
       "actor": "codex",
       "summary": "Found development semantic effects from exact Jacobian rows; froze transfer and held-out evaluation",
       "revision": 9
+    },
+    {
+      "id": "707f2cf5-892c-4b3d-8c54-94bf33c4e661",
+      "at": "2026-11-21T16:52:53.464112Z",
+      "actor": "codex",
+      "summary": "Confirmed semantic country swaps inside the repeated block with independent-pair and matched-dose controls",
+      "revision": 10
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Discover and validate a useful Inkling interpretability lens, beginning with transport by recent rotations and testing semantic causal effects.",
   "state": "running",
-  "summary": "Completed exact country Jacobian rows and observed task-specific country swaps on development prompts. Orthogonal rotation powers and learned final-state predictors do not yet give a better bridge reader. Independent Germany/China transfer, same-phase cycle diagnostics, and the frozen 43-item final mean/scale comparison are queued sequentially.",
-  "nextAction": "Complete the frozen transfer and final-test jobs, inspect paired cases and matched-norm controls, archive all results, and prepare a standalone user-review report.",
+  "summary": "Exact corpus-fitted country directions swapped all four valid Germany/China capital cases in each fit. Changes confined to the repeated block retained all swaps; the final-bank-only intervention had none. Matched-dose random directions had no swaps. Final bridge evaluation, long-loop convergence, normalized baselines, and single-pass decoder transfer remain in progress.",
+  "nextAction": "Complete the frozen checks, report paired final-test uncertainty and recurrent-state convergence, archive terminal runs, and save standalone user-review reports.",
   "owner": "Codex",
-  "revision": 9,
-  "updatedAt": "2026-11-21T16:36:45.176486Z"
+  "revision": 10,
+  "updatedAt": "2026-11-21T16:52:53.464112Z"
 }

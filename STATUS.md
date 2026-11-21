@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed exact country Jacobian rows and observed task-specific country swaps on development prompts. Orthogonal rotation powers and learned final-state predictors do not yet give a better bridge rea Jobs: hpcfund/536947 COMPLETED; hpcfund/536965 COMPLETED
-  Next: Complete the frozen transfer and final-test jobs, inspect paired cases and matched-norm controls, archive all results, and prepare a standalone user-review report.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Exact corpus-fitted country directions swapped all four valid Germany/China capital cases in each fit. Changes confined to the repeated block retained all swaps; the final-bank-only intervention had n Jobs: hpcfund/536947 COMPLETED; hpcfund/536965 COMPLETED
+  Next: Complete the frozen checks, report paired final-test uncertainty and recurrent-state convergence, archive terminal runs, and save standalone user-review reports.
 
 ## Next / blocked
 
