@@ -619,6 +619,11 @@
   ],
   "jobs": [
     {
+      "id": "536321",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "535170",
       "cluster": "hpcfund",
       "status": "COMPLETED"
@@ -1771,15 +1776,22 @@
       "actor": "codex",
       "summary": "Repair local closed-socket restart before any GPU submission",
       "revision": 142
+    },
+    {
+      "id": "23a66f78-1284-4866-b6c7-a276b32e87d5",
+      "at": "2026-11-21T07:50:20.426248Z",
+      "actor": "codex",
+      "summary": "Automatically submitted approved RL job 536321",
+      "revision": 143
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "All 60 real grading controls passed. Initial controller stopped before submission because its port probe rejected the closed preflight socket in TCP TIME_WAIT. Match aiohttp socket reuse and restart the owned controller. No GPU job submitted.",
-  "nextAction": "Restart from frozen repaired source, obtain the real Slurm receipt and monitor native training.",
+  "summary": "Automatically submitted approved RL job 536321",
+  "nextAction": "Monitor the owned RL job, reward tunnel, optimizer updates and saving.",
   "owner": "Codex",
-  "revision": 142,
-  "updatedAt": "2026-11-21T07:49:54.309368Z"
+  "revision": 143,
+  "updatedAt": "2026-11-21T07:50:20.426248Z"
 }

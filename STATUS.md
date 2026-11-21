@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): All 60 real grading controls passed. Initial controller stopped before submission because its port probe rejected the closed preflight socket in TCP TIME_WAIT. Match aiohttp socket reuse and restart t Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: Restart from frozen repaired source, obtain the real Slurm receipt and monitor native training.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 536321 Jobs: hpcfund/536321 SUBMITTED; hpcfund/535170 COMPLETED
+  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
 
 ## Next / blocked
 
