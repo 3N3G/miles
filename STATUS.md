@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 535170 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending. Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatic RL handoff stopped before acceptance Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: Inspect handoff-state.json and preserve the strict reward gate. Resolve any required research decision.
 
 ## Finished
 

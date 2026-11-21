@@ -1662,15 +1662,22 @@
       "actor": "codex",
       "summary": "Imported terminal state and results for approved AMD job 535170",
       "revision": 131
+    },
+    {
+      "id": "87e3abe1-c6a1-461c-bfe3-a9e776967ac6",
+      "at": "2026-11-21T00:48:17.290287Z",
+      "actor": "codex",
+      "summary": "Automatic RL handoff stopped before acceptance",
+      "revision": 132
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
-  "state": "running",
-  "summary": "AMD job 535170 ended COMPLETED. 28 provisional group grades saved. Human calibration remains pending.",
-  "nextAction": "Verify nonconstant grades, then submit and debug the authorized bounded RL runtime check.",
+  "state": "needs-you",
+  "summary": "Automatic RL handoff stopped before acceptance",
+  "nextAction": "Inspect handoff-state.json and preserve the strict reward gate. Resolve any required research decision.",
   "owner": "Codex",
-  "revision": 131,
-  "updatedAt": "2026-11-21T00:48:03.843648Z"
+  "revision": 132,
+  "updatedAt": "2026-11-21T00:48:17.290287Z"
 }
