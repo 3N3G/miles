@@ -57,8 +57,8 @@ def ssh_command(target, *, forward_port=None):
         f"User={target[0]}",
         "-o",
         "BatchMode=yes",
-        # The AMD alias has a literal login-host ControlPath. A node override
-        # must open its own connection, rather than reuse the login socket.
+        # ControlPersist can detach an SSH master and make Popen report exit
+        # while its remote listener survives. Track one foreground connection.
         "-o",
         "ControlMaster=no",
         "-o",
