@@ -20,16 +20,38 @@ from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
 from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, prepare_smoke_row, question_key
 from experiments.tcs_async_rl.rl_artifacts import export_rollouts
+from experiments.tcs_async_rl.rl_inputs import read_bundle
 
 
-def validate_group_gate(grades, expected_samples, *, expected_sampling=None):
+def validate_group_gate(grades, expected_samples, *, expected_sampling=None, policy="complete_only"):
+    if policy not in ("complete_only", "recorded_caps_judged_v1"):
+        raise ValueError("Unknown diagnostic qualification policy")
     if expected_sampling is not None and grades.get("generation_sampling") != expected_sampling:
         raise ValueError("Diagnostic gate does not match the training sampling parameters")
     scores = grades["scores_by_case"]
     candidates = [scores[key] for key in sorted(scores) if key.startswith("sample-")]
     if grades["scored_responses"] != expected_samples or len(candidates) != expected_samples:
         raise ValueError("The complete diagnostic response group must be graded first")
-    if grades["incomplete_or_empty_final_answers"] or len(set(candidates)) < 2:
+    missing = grades["incomplete_or_empty_final_answers"]
+    if missing and policy == "recorded_caps_judged_v1":
+        caps = grades.get("recorded_cap_judgments", [])
+        if grades.get("qualification_policy") != policy or len(caps) != missing:
+            raise ValueError("Missing finals need actual recorded-cap judgments")
+        if len({cap["case"] for cap in caps}) != missing:
+            raise ValueError("Duplicate cap qualification cases")
+        for cap in caps:
+            if (
+                cap["finish_reason"].get("type") != "length"
+                or cap["generated_tokens"] != grades["generation_sampling"]["max_new_tokens"]
+                or cap["finish_reason"].get("length") != cap["generated_tokens"]
+                or cap["scores"] != [0, 0]
+                or scores.get(cap["case"]) != 0
+                or len(cap.get("receipts", [])) != 2
+            ):
+                raise ValueError("Cap qualification is not an actual empty-answer judgment at the declared limit")
+    elif missing:
+        raise ValueError("Diagnostic requires completed answers")
+    if len(set(candidates)) < 2:
         raise ValueError("Diagnostic requires completed answers and non-constant real rubric rewards")
     if [scores.get(key) for key in ("control-reference", "control-empty", "control-irrelevant")] != [7, 0, 0]:
         raise ValueError("Rubric controls did not pass")
@@ -169,20 +191,33 @@ def main():
         **sampling_parameters({"miles_args": sampling_args}),
         "skip_special_tokens": sampling_args["rollout_skip_special_tokens"],
     }
-    validate_group_gate(grades, training["miles_args"]["n_samples_per_prompt"], expected_sampling=expected_sampling)
+    validate_group_gate(
+        grades,
+        training["miles_args"]["n_samples_per_prompt"],
+        expected_sampling=expected_sampling,
+        policy=config.get("diagnostic_gate_policy", "complete_only"),
+    )
     run_id = U.create_run_id()
     args, conversion_name = resolved_args(config, training, work_dir=cli.work_dir, run_dir=cli.run_dir, run_id=run_id)
     tokenizer = AutoTokenizer.from_pretrained(args["hf_checkpoint"], local_files_only=True)
-    formatted = tokenizer.apply_chat_template(
-        [{"role": "user", "content": row["problem"]}],
-        tokenize=False,
-        add_generation_prompt=True,
-        **args["apply_chat_template_kwargs"],
+    rows, service_key = ([row], question_key(row))
+    if config.get("dataset_file"):
+        rows, service_key = read_bundle(
+            Path(config["dataset_file"]), expected_sha256=config["dataset_sha256"], training=training
+        )
+    for item in rows:
+        formatted = tokenizer.apply_chat_template(
+            [{"role": "user", "content": item["problem"]}],
+            tokenize=False,
+            add_generation_prompt=True,
+            **args["apply_chat_template_kwargs"],
+        )
+        if formatted != item["formatted_prompt"]:
+            raise ValueError("Training prompt differs from the frozen input")
+    (cli.run_dir / "input.jsonl").write_text(
+        "\n".join(json.dumps(prepare_smoke_row(item), ensure_ascii=False) for item in rows) + "\n"
     )
-    if formatted != row["formatted_prompt"]:
-        raise ValueError("Training prompt differs from the approved group diagnostic")
-    (cli.run_dir / "input.jsonl").write_text(json.dumps(prepare_smoke_row(row), ensure_ascii=False) + "\n")
-    (cli.run_dir / "formatted-prompt.txt").write_text(formatted)
+    (cli.run_dir / "formatted-prompt.txt").write_text(rows[0]["formatted_prompt"])
     (cli.run_dir / "rollout_data").mkdir(exist_ok=True)
     (cli.run_dir / "resolved-config.json").write_text(
         json.dumps(
@@ -190,13 +225,14 @@ def main():
                 "args": args,
                 "run_id": run_id,
                 "gate_sha256": hashlib.sha256(gate_file.read_bytes()).hexdigest(),
-                "question_key": question_key(row),
+                "question_key": service_key,
+                "question_count": len(rows),
             },
             indent=2,
         )
         + "\n"
     )
-    wait_for_judge(args["rm_url"], question_key(row), judge=training["judge"])
+    wait_for_judge(args["rm_url"], service_key, judge=training["judge"])
     os.environ.update(
         NCCL_NVLS_ENABLE="0",
         RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES="1",
@@ -206,6 +242,7 @@ def main():
         WANDB_CACHE_DIR=str(cli.work_dir / "cache" / "wandb"),
         WANDB_CONFIG_DIR=str(cli.run_dir / "wandb" / "config"),
         WANDB_DATA_DIR=str(cli.run_dir / "wandb" / "data"),
+        TCS_COMPRESS_ARTIFACTS=config.get("artifact_compression", "none"),
     )
     if devices := os.environ.get("HIP_VISIBLE_DEVICES"):
         os.environ["CUDA_VISIBLE_DEVICES"] = devices
@@ -252,6 +289,7 @@ def main():
             "WANDB_CACHE_DIR",
             "WANDB_CONFIG_DIR",
             "WANDB_DATA_DIR",
+            "TCS_COMPRESS_ARTIFACTS",
         )
     }
     try:

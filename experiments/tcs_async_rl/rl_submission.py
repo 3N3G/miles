@@ -17,6 +17,7 @@ from pathlib import Path
 from experiments.tcs_async_rl.amd_preflight import load_configs, render_job
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
 from experiments.tcs_async_rl.resource_estimate import GIB, model_inputs
+from experiments.tcs_async_rl.rl_inputs import read_bundle
 from experiments.tcs_async_rl.rl_smoke import validate_group_gate
 
 
@@ -64,7 +65,14 @@ def prepare(*, config_path, run_dir, work_dir, expected_commit):
     if grades.get("input_sha256") != input_config["input_sha256"]:
         raise ValueError("RL gate input hash differs")
     sampling = sampling_parameters({"miles_args": {**training["miles_args"], **config["overrides"]}})
-    validate_group_gate(grades, training["miles_args"]["n_samples_per_prompt"], expected_sampling=sampling)
+    validate_group_gate(
+        grades,
+        training["miles_args"]["n_samples_per_prompt"],
+        expected_sampling=sampling,
+        policy=config.get("diagnostic_gate_policy", "complete_only"),
+    )
+    if config.get("dataset_file"):
+        read_bundle(Path(config["dataset_file"]), expected_sha256=config["dataset_sha256"], training=training)
     if run_dir.resolve().parent != (work_dir / "runs").resolve():
         raise ValueError("RL output must be an immediate child of the approved work directory")
     run_dir.mkdir(exist_ok=True)

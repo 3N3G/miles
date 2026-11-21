@@ -59,6 +59,31 @@ class RLSmokeTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "sampling parameters"):
             validate_group_gate(grades, 2, expected_sampling={"temperature": 1, "top_p": 0.95, "top_k": 20})
 
+    def test_only_explicit_actual_cap_judgments_relax_the_complete_final_gate(self):
+        grades = self.gate()
+        grades.update(
+            incomplete_or_empty_final_answers=1,
+            generation_sampling={"max_new_tokens": 90000},
+            qualification_policy="recorded_caps_judged_v1",
+            recorded_cap_judgments=[
+                {
+                    "case": "sample-00",
+                    "generated_tokens": 90000,
+                    "finish_reason": {"type": "length", "length": 90000},
+                    "scores": [0, 0],
+                    "receipts": ["order0.json", "order1.json"],
+                }
+            ],
+        )
+        with self.assertRaises(ValueError):
+            validate_group_gate(grades, 2)
+        validate_group_gate(grades, 2, policy="recorded_caps_judged_v1")
+        for key, value in (("scores", [0, 1]), ("generated_tokens", 100), ("receipts", [])):
+            broken = copy.deepcopy(grades)
+            broken["recorded_cap_judgments"][0][key] = value
+            with self.assertRaises(ValueError):
+                validate_group_gate(broken, 2, policy="recorded_caps_judged_v1")
+
     def test_private_pid_namespace_is_mandatory_for_rl_container(self):
         common = dict(image=Path("/work/image"), repo=Path("/repo"), work_dir=Path("/work"))
         ordinary = container_prefix(**common)

@@ -22,6 +22,7 @@ from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.group_inference import sampling_parameters, validate_sampling_support_control
 from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, question_key
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
+from experiments.tcs_async_rl.rl_inputs import read_bundle, service_identity
 from experiments.tcs_async_rl.rl_job_state import record
 from experiments.tcs_async_rl.rl_smoke import validate_group_gate
 from experiments.tcs_async_rl.watch_group import remote_state
@@ -50,10 +51,12 @@ def qualify_medium(directory, config_path):
     digest = hashlib.sha256((directory / "input.json").read_bytes()).hexdigest()
     if digest != input_config["input_sha256"]:
         raise ValueError("Medium input hash differs from the frozen RL snapshot")
-    grades = json.loads((directory / "group-grades.json").read_text())
+    grade_file = Path(config.get("local_gate_file", directory / "group-grades.json"))
+    grades = json.loads(grade_file.read_text())
     expected = sampling_parameters({"miles_args": {**training["miles_args"], **config["overrides"]}})
     count = training["miles_args"]["n_samples_per_prompt"]
-    validate_group_gate(grades, count, expected_sampling=expected)
+    policy = config.get("diagnostic_gate_policy", "complete_only")
+    validate_group_gate(grades, count, expected_sampling=expected, policy=policy)
     if (grades["model"], grades["reasoning_effort"]) != (
         training["judge"]["primary_model"],
         training["judge"]["reasoning_effort"],
@@ -65,8 +68,25 @@ def qualify_medium(directory, config_path):
     rows = [json.loads(line) for line in (directory / "responses.jsonl").read_text().splitlines()]
     if len(rows) != count or {r["sample_index"] for r in rows} != set(range(count)):
         raise ValueError("Medium responses are incomplete or duplicated")
-    if not all(r["final_answer"] for r in rows):
+    if policy == "complete_only" and not all(r["final_answer"] for r in rows):
         raise ValueError("Recorded-cap qualification needs the pending user decision")
+    if policy == "recorded_caps_judged_v1":
+        if (
+            grades.get("original_grades_sha256")
+            != hashlib.sha256((directory / "group-grades.json").read_bytes()).hexdigest()
+        ):
+            raise ValueError("Qualified grades do not preserve the original diagnostic")
+        if (
+            grades.get("original_responses_sha256")
+            != hashlib.sha256((directory / "responses.jsonl").read_bytes()).hexdigest()
+        ):
+            raise ValueError("Cap provenance differs from the generated responses")
+        caps = {cap["case"]: cap for cap in grades["recorded_cap_judgments"]}
+        for item in rows:
+            if not item["final_answer"]:
+                cap = caps[f"sample-{item['sample_index']:02d}"]
+                if cap["raw_response_sha256"] != hashlib.sha256(item["output"]["text"].encode()).hexdigest():
+                    raise ValueError("Cap judgment is linked to a different raw generation")
     verdicts = grades["grades"]
     for case in cases | {"control-reference", "control-empty", "control-irrelevant"}:
         pair = [v for v in verdicts if v["identity"] == case]
@@ -163,7 +183,7 @@ def start_service(*, input_file, directory, port, training, python):
     expected = {
         "ready": True,
         "protocol_version": REWARD_PROTOCOL_VERSION,
-        "question_key": question_key(json.loads(input_file.read_text())),
+        "question_key": service_identity(input_file),
         "model": training["judge"]["primary_model"],
         "reasoning_effort": training["judge"]["reasoning_effort"],
     }
@@ -193,25 +213,33 @@ def start_service(*, input_file, directory, port, training, python):
 
 
 def service_controls(*, directory, input_file, port, key):
-    row = json.loads(input_file.read_text())
+    if service_identity(input_file) != key:
+        raise ValueError("Reward controls do not match the requested service collection")
+    value = json.loads(input_file.read_text())
+    rows = value["questions"] if "questions" in value else [value]
     outputs = {}
-    for name, text, truncated, score in (
-        ("reference", "</think>\n" + row["answer"], False, 7),
-        ("empty", "", True, 0),
-        ("irrelevant", "</think>\nThe answer is 42.", False, 0),
-    ):
-        body = json.dumps({"question_key": key, "response": text, "generator_truncated": truncated}).encode()
-        request = urllib.request.Request(
-            f"http://127.0.0.1:{port}/score", data=body, headers={"Content-Type": "application/json"}
-        )
-        with urllib.request.urlopen(request, timeout=1300) as response:
-            outputs[name] = json.load(response)
-        save(directory / "online-controls.json", outputs)
-        if outputs[name]["scores"] != [score, score]:
-            raise ValueError("Online reward controls failed before GPU submission")
+    for row in rows:
+        identity = question_key(row)
+        for name, text, truncated, score in (
+            ("reference", "</think>\n" + row["answer"], False, 7),
+            ("empty", "", True, 0),
+            ("irrelevant", "</think>\nThe answer is 42.", False, 0),
+        ):
+            case = identity + "-" + name
+            body = json.dumps({"question_key": identity, "response": text, "generator_truncated": truncated}).encode()
+            request = urllib.request.Request(
+                f"http://127.0.0.1:{port}/score", data=body, headers={"Content-Type": "application/json"}
+            )
+            with urllib.request.urlopen(request, timeout=1300) as response:
+                outputs[case] = json.load(response)
+            save(directory / "online-controls.json", outputs)
+            if outputs[case]["scores"] != [score, score]:
+                raise ValueError("Online reward controls failed before GPU submission")
 
 
-def stage_and_submit(*, config_path, source_commit, grades, directory, work_dir, checkout, remote_run):
+def stage_and_submit(
+    *, config_path, source_commit, grades, directory, work_dir, checkout, remote_run, training_data=None
+):
     config = json.loads(config_path.read_text())
     local_gate = directory / "qualified-medium-grades.json"
     save(local_gate, grades)
@@ -229,6 +257,8 @@ def stage_and_submit(*, config_path, source_commit, grades, directory, work_dir,
         raise RuntimeError("Could not determine the remote checkout state")
     remote(["mkdir", "-p", remote_run, Path(config["gate_file"]).parent])
     subprocess.run(["scp", str(local_gate), f"amd:{config['gate_file']}"], check=True, timeout=60)
+    if config.get("dataset_file"):
+        subprocess.run(["scp", str(training_data), f"amd:{config['dataset_file']}"], check=True, timeout=60)
     result = remote(
         [
             "env",
@@ -268,12 +298,16 @@ def run(cli):
     )
     grades = qualify_medium(cli.diagnostic_dir, cli.config)
     save(cli.run_dir / "qualified-medium-grades.json", grades)
-    (cli.run_dir / "input.json").write_bytes((cli.diagnostic_dir / "input.json").read_bytes())
+    service_file = cli.diagnostic_dir / "input.json"
+    if config.get("dataset_file"):
+        read_bundle(cli.training_data, expected_sha256=config["dataset_sha256"], training=training)
+        service_file = cli.training_data
+    (cli.run_dir / "input.json").write_bytes(service_file.read_bytes())
     address = urlsplit(config["overrides"]["rm_url"])
     if address.hostname != "127.0.0.1" or address.scheme != "http" or not address.port:
         raise ValueError("Only a loopback reward service is allowed")
     service, health = start_service(
-        input_file=cli.diagnostic_dir / "input.json",
+        input_file=service_file,
         directory=cli.run_dir,
         port=address.port,
         training=training,
@@ -283,7 +317,7 @@ def run(cli):
     try:
         service_controls(
             directory=cli.run_dir,
-            input_file=cli.diagnostic_dir / "input.json",
+            input_file=service_file,
             port=address.port,
             key=health["question_key"],
         )
@@ -295,6 +329,7 @@ def run(cli):
             work_dir=cli.work_dir,
             checkout=cli.remote_checkout,
             remote_run=cli.remote_run_dir,
+            training_data=service_file,
         )
         event = {
             **receipt,
@@ -332,7 +367,7 @@ def run(cli):
                     "--run-dir",
                     str(cli.run_dir),
                     "--input-file",
-                    str(cli.diagnostic_dir / "input.json"),
+                    str(service_file),
                 ],
                 cwd=ROOT,
                 stdin=subprocess.DEVNULL,
@@ -377,6 +412,7 @@ def main():
         parser.add_argument("--" + name, type=Path, required=True)
     for name in ("group-job-id", "remote-diagnostic-dir", "expected-commit", "session-uuid"):
         parser.add_argument("--" + name, required=True)
+    parser.add_argument("--training-data", type=Path)
     cli = parser.parse_args()
     cli.run_dir.mkdir(parents=True, exist_ok=True)
     with (cli.run_dir / "handoff.lock").open("a") as lock:

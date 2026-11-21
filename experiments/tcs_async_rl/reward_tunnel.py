@@ -19,7 +19,8 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
-from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, question_key
+from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION
+from experiments.tcs_async_rl.rl_inputs import service_identity
 from experiments.tcs_async_rl.watch_group import ACTIVE, remote_state
 
 
@@ -164,7 +165,8 @@ def main():
     args.run_dir.mkdir(parents=True, exist_ok=True)
     config, training = load_configs(args.config)
     input_config, _ = load_configs(args.config.parent / config["input_config"])
-    if hashlib.sha256(args.input_file.read_bytes()).hexdigest() != input_config["input_sha256"]:
+    expected_hash = config.get("dataset_sha256", input_config["input_sha256"])
+    if hashlib.sha256(args.input_file.read_bytes()).hexdigest() != expected_hash:
         raise ValueError("Tunnel input does not match the approved question")
     address = urlsplit(config["overrides"]["rm_url"])
     if address.scheme != "http" or address.hostname != "127.0.0.1" or not address.port:
@@ -174,7 +176,7 @@ def main():
     expected_health = {
         "ready": True,
         "protocol_version": REWARD_PROTOCOL_VERSION,
-        "question_key": question_key(json.loads(args.input_file.read_text())),
+        "question_key": service_identity(args.input_file),
         "model": training["judge"]["primary_model"],
         "reasoning_effort": training["judge"]["reasoning_effort"],
     }
