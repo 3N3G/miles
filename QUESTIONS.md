@@ -86,6 +86,18 @@
   The later user reply selects 40 updates within four hours on eight GPUs. A separate development split remains unspecified.
   No broader screening job was submitted.
 
+## 2026-11-21: Sampling concurrency after native training qualification
+
+- Question: after the first native optimizer update works, should a later attempt use 96 concurrent samples?
+- Evidence: the approved 32-sample limit permits one 32-answer group in flight.
+  The first group runs on one TP2 engine at about 4,800 generated tokens/second. Two rollout engines are idle.
+  `miles/rollout/fully_async_rollout.py:_max_in_flight_groups` floors the sample limit by the group size.
+- Options: finish the current bounded pilot at concurrency 32, or approve a replacement at 96 after native training works.
+- Recommendation: validate backward computation first, then review 96 to keep three groups active on three engines.
+  Keep the optimizer batch, data, reward, model and token limits fixed. Measure memory and actual sample use.
+- Blocks: a later throughput change. The current approved pilot continues with its existing 32-sample setting.
+- Status: observed during job 536360. No concurrency change or additional throughput job submitted.
+
 # Answered questions
 
 - 2026-11-21: user approved option 1: actual Luna grades for recorded 90,000-token empty finals.

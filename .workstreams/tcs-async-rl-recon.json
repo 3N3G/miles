@@ -1855,15 +1855,22 @@
       "actor": "codex",
       "summary": "RL job 536360 is RUNNING",
       "revision": 152
+    },
+    {
+      "id": "76c0c1b9-7332-44f4-8783-a4c1031a23d1",
+      "at": "2026-11-21T08:09:22.394077Z",
+      "actor": "codex",
+      "summary": "All initial weight checks pass and real async generation has started",
+      "revision": 153
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "running",
-  "summary": "RL job 536360 is RUNNING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "AMD job 536360 passed initial weight equality on all three rollout engines and started real async generation. The first 32-answer group runs near 4,800 tokens/s on one TP2 engine. The approved concurrency permits one group in flight, leaving two engines idle. No optimizer update yet.",
+  "nextAction": "Measure the first real group and validate native backward/weight publication. Preserve the current concurrency and record the optional throughput decision in QUESTIONS.md.",
   "owner": "Codex",
-  "revision": 152,
-  "updatedAt": "2026-11-21T08:02:28.861125Z"
+  "revision": 153,
+  "updatedAt": "2026-11-21T08:09:22.394077Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 536360 is RUNNING Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD job 536360 passed initial weight equality on all three rollout engines and started real async generation. The first 32-answer group runs near 4,800 tokens/s on one TP2 engine. The approved concurr Jobs: hpcfund/536360 RUNNING; hpcfund/536321 FAILED
+  Next: Measure the first real group and validate native backward/weight publication. Preserve the current concurrency and record the optional throughput decision in QUESTIONS.md.
 
 ## Next / blocked
 
