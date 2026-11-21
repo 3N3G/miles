@@ -1,0 +1,3174 @@
+{
+  "bank_commit": "abd152e20aa2fa5d7df7f01ade6759ebe0f858fb",
+  "bank_sha256": "59d1d1cd9b50d0b683a0964ce1069f31282b9bdbcc42ee00de3a847bfdce709f",
+  "frozen_plan_commit": "1674a51d",
+  "items": [
+    {
+      "name": "mh-w1-copper-29",
+      "prompt": "Fact: The atomic number of the metal forming the green-patinated skin of the Statue of Liberty is",
+      "target": "29",
+      "target_alts": [
+        "twenty-nine"
+      ],
+      "intermediates": [
+        "copper"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "chemical element",
+        "gold": "copper",
+        "aliases": [
+          "Cu",
+          "\u94dc"
+        ],
+        "distractors": [
+          "iron",
+          "gold",
+          "silver",
+          "aluminum"
+        ],
+        "distractor_aliases": {
+          "iron": [
+            "\u94c1"
+          ],
+          "gold": [
+            "\u91d1"
+          ],
+          "silver": [
+            "\u94f6"
+          ],
+          "aluminum": [
+            "aluminium",
+            "\u94dd"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "iron",
+          "gold",
+          "silver",
+          "lead"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The atomic number of a metal is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The atomic number of the metal forming the skin of the Statue of Liberty is",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The atomic number of the green-patinated metal is",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The atomic number of the metal is",
+          "greedy_hit": false,
+          "hits": 3,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 10
+    },
+    {
+      "name": "mh-w1-nintendo-kyoto",
+      "prompt": "Fact: The company that created Super Mario and the Switch console is headquartered in the city of",
+      "target": "Kyoto",
+      "intermediates": [
+        "Nintendo"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "company",
+        "gold": "Nintendo",
+        "aliases": [
+          "Nintendo Co., Ltd.",
+          "\u4efb\u5929\u5802"
+        ],
+        "distractors": [
+          "Sony",
+          "Microsoft",
+          "Sega",
+          "Capcom"
+        ],
+        "distractor_aliases": {
+          "Sony": [
+            "Sony Group",
+            "\u7d22\u5c3c"
+          ],
+          "Microsoft": [
+            "\u5fae\u8f6f"
+          ],
+          "Sega": [
+            "\u4e16\u5609"
+          ],
+          "Capcom": [
+            "Capcom Co., Ltd.",
+            "\u5361\u666e\u7a7a"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Sony",
+          "Sega",
+          "Microsoft",
+          "Apple"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: A video game company is headquartered in the city of",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The company that created the Switch console is headquartered in the city of",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The video game company is headquartered in the city of",
+          "greedy_hit": false,
+          "hits": 3,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The company that created Super Mario is headquartered in the city of",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 10
+    },
+    {
+      "name": "spaceneedle-border",
+      "prompt": "Fact: The US state where the Space Needle is located shares its northern border with ",
+      "target": "Canada",
+      "intermediates": [
+        "Washington"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain_stripped",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "US state",
+        "gold": "Washington",
+        "aliases": [
+          "Washington State",
+          "\u534e\u76db\u987f\u5dde"
+        ],
+        "distractors": [
+          "California",
+          "Florida",
+          "Georgia",
+          "Texas"
+        ],
+        "distractor_aliases": {
+          "California": [
+            "\u52a0\u5229\u798f\u5c3c\u4e9a\u5dde",
+            "\u52a0\u5dde"
+          ],
+          "Florida": [
+            "\u4f5b\u7f57\u91cc\u8fbe"
+          ],
+          "Georgia": [
+            "\u4f50\u6cbb\u4e9a",
+            "\u683c\u9c81\u5409\u4e9a"
+          ],
+          "Texas": [
+            "\u5fb7\u514b\u8428\u65af",
+            "\u5f97\u514b\u8428\u65af"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Ohio",
+          "Florida",
+          "Texas",
+          "Georgia"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "mh-w1-napoleon-corsica",
+      "prompt": "Fact: The emperor defeated at the Battle of Waterloo was born on the island of",
+      "target": "Corsica",
+      "target_alts": [
+        "Corse"
+      ],
+      "intermediates": [
+        "Napoleon"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "person",
+        "gold": "Napoleon",
+        "aliases": [
+          "Napoleon Bonaparte",
+          "Napoleon I",
+          "\u62ff\u7834\u4ed1",
+          "Bonaparte",
+          "\u62ff\u7834\u4ed1\u00b7\u6ce2\u62ff\u5df4"
+        ],
+        "distractors": [
+          "Alexander the Great",
+          "Genghis Khan",
+          "Julius Caesar",
+          "Charlemagne"
+        ],
+        "distractor_aliases": {
+          "Alexander the Great": [
+            "Alexander III of Macedon",
+            "\u4e9a\u5386\u5c71\u5927\u5927\u5e1d"
+          ],
+          "Genghis Khan": [
+            "Chinggis Khan",
+            "\u6210\u5409\u601d\u6c57"
+          ],
+          "Julius Caesar": [
+            "Caesar",
+            "\u5c24\u5229\u4e4c\u65af\u00b7\u607a\u6492",
+            "\u607a\u6492"
+          ],
+          "Charlemagne": [
+            "Charles the Great",
+            "\u67e5\u7406\u66fc",
+            "\u67e5\u7406\u5927\u5e1d"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Julius Caesar",
+          "Alexander the Great",
+          "Charlemagne",
+          "Genghis Khan"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: An emperor was born on the island of",
+          "greedy_hit": false,
+          "hits": 1,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The emperor was born on the island of",
+          "greedy_hit": false,
+          "hits": 2,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The emperor defeated in battle was born on the island of",
+          "greedy_hit": false,
+          "hits": 1,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The defeated emperor was born on the island of",
+          "greedy_hit": false,
+          "hits": 1,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 2,
+      "gate_g1": 6
+    },
+    {
+      "name": "b3-mh-windycity-state",
+      "prompt": "Fact: The US state containing the city nicknamed the Windy City is",
+      "target": "Illinois",
+      "intermediates": [
+        "Chicago"
+      ],
+      "source": "staging_b3",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "city",
+        "gold": "Chicago",
+        "aliases": [
+          "\u829d\u52a0\u54e5"
+        ],
+        "distractors": [
+          "London",
+          "Paris",
+          "Los Angeles",
+          "Tokyo"
+        ],
+        "distractor_aliases": {
+          "London": [
+            "\u4f26\u6566"
+          ],
+          "Paris": [
+            "\u5df4\u9ece"
+          ],
+          "Los Angeles": [
+            "L.A.",
+            "\u6d1b\u6749\u77f6"
+          ],
+          "Tokyo": [
+            "\u4e1c\u4eac"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Sydney",
+          "Houston",
+          "Mumbai",
+          "Moscow"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "bf-nile-desert",
+      "prompt": "Fact: The largest hot desert, found on the continent where the Nile flows, is the",
+      "target": "Sahara",
+      "intermediates": [
+        "Africa"
+      ],
+      "source": "staging",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "continent",
+        "gold": "Africa",
+        "aliases": [
+          "\u975e\u6d32"
+        ],
+        "distractors": [
+          "South America",
+          "Asia",
+          "Europe",
+          "North America"
+        ],
+        "distractor_aliases": {
+          "South America": [
+            "\u5357\u7f8e",
+            "\u5357\u7f8e\u6d32"
+          ],
+          "Asia": [
+            "\u4e9a\u6d32"
+          ],
+          "Europe": [
+            "\u6b27\u6d32"
+          ],
+          "North America": [
+            "\u5317\u7f8e",
+            "\u5317\u7f8e\u6d32"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Europe",
+          "North America",
+          "Oceania",
+          "South America"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "mh-w1-io-jupiter",
+      "prompt": "Fact: The planet orbited by the moon with the most volcanic activity in the Solar System is",
+      "target": "Jupiter",
+      "intermediates": [
+        "Io"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "moon",
+        "gold": "Io",
+        "aliases": [
+          "\u6728\u536b\u4e00",
+          "Jupiter I"
+        ],
+        "distractors": [
+          "Titan",
+          "Triton",
+          "Enceladus",
+          "Charon"
+        ],
+        "distractor_aliases": {
+          "Titan": [
+            "Saturn VI",
+            "\u571f\u536b\u516d"
+          ],
+          "Triton": [
+            "Neptune I",
+            "\u6d77\u536b\u4e00"
+          ],
+          "Enceladus": [
+            "Saturn II",
+            "\u571f\u536b\u4e8c"
+          ],
+          "Charon": [
+            "\u51a5\u536b\u4e00",
+            "Pluto I"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Titan",
+          "Triton",
+          "Enceladus",
+          "Phobos"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The planet orbited by a moon is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The planet orbited by the moon is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The planet orbited by the moon in the Solar System is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The planet orbited by the volcanic moon is",
+          "greedy_hit": true,
+          "hits": 15,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 15,
+      "gate_g1": 9
+    },
+    {
+      "name": "violin-strings",
+      "prompt": "Fact: The number of strings on the instrument that fiddlers play is ",
+      "target": "4",
+      "intermediates": [
+        "violin"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "instrument",
+        "gold": "violin",
+        "aliases": [
+          "violins",
+          "\u5c0f\u63d0\u7434"
+        ],
+        "distractors": [
+          "drums",
+          "harp",
+          "piano",
+          "trumpet"
+        ],
+        "distractor_aliases": {
+          "drums": [
+            "\u9f13"
+          ],
+          "harp": [
+            "\u7ad6\u7434"
+          ],
+          "piano": [
+            "\u94a2\u7434"
+          ],
+          "trumpet": [
+            "\u5c0f\u53f7"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "drums",
+          "harp",
+          "piano",
+          "trumpet"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "b3-mh-bakerstreet-city",
+      "prompt": "Fact: The home city of the detective of 221B Baker Street is",
+      "target": "London",
+      "intermediates": [
+        "Sherlock Holmes"
+      ],
+      "source": "staging_b3",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "fictional character",
+        "gold": "Sherlock Holmes",
+        "aliases": [
+          "Sherlock",
+          "Holmes",
+          "\u798f\u5c14\u6469\u65af",
+          "\u590f\u6d1b\u514b"
+        ],
+        "distractors": [
+          "Dracula",
+          "Hamlet",
+          "Harry Potter",
+          "Batman"
+        ],
+        "distractor_aliases": {
+          "Dracula": [
+            "\u5fb7\u53e4\u62c9"
+          ],
+          "Hamlet": [
+            "\u54c8\u59c6\u96f7\u7279"
+          ],
+          "Harry Potter": [
+            "Harry",
+            "\u54c8\u5229\u00b7\u6ce2\u7279",
+            "\u54c8\u5229\u6ce2\u7279"
+          ],
+          "Batman": [
+            "Bruce Wayne",
+            "\u8759\u8760\u4fa0"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Don Quixote",
+          "Dracula",
+          "Huckleberry Finn",
+          "Tarzan"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "double-dice-faces",
+      "prompt": "Fact: Double the number of faces on a standard die is ",
+      "target": "12",
+      "intermediates": [
+        "6",
+        "six"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "number",
+        "gold": "6",
+        "aliases": [
+          "six",
+          "\u516d",
+          "sixth",
+          "6th",
+          "\u7b2c\u516d"
+        ],
+        "distractors": [
+          "9",
+          "8",
+          "17",
+          "5"
+        ],
+        "distractor_aliases": {},
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "9",
+          "8",
+          "17",
+          "5"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "b3-mh-greatwall-river",
+      "prompt": "Fact: The longest river of the country that built the Great Wall is the",
+      "target": "Yangtze",
+      "intermediates": [
+        "China"
+      ],
+      "source": "staging_b3",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "China",
+        "aliases": [
+          "\u4e2d\u56fd"
+        ],
+        "distractors": [
+          "France",
+          "United States",
+          "Italy",
+          "Germany"
+        ],
+        "distractor_aliases": {
+          "France": [
+            "\u6cd5\u56fd"
+          ],
+          "United States": [
+            "USA",
+            "United States of America",
+            "America",
+            "\u7f8e\u56fd"
+          ],
+          "Italy": [
+            "\u610f\u5927\u5229"
+          ],
+          "Germany": [
+            "\u5fb7\u56fd"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Brazil",
+          "Mexico",
+          "Portugal",
+          "Switzerland"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "mh-w1-skin-integumentar",
+      "prompt": "Fact: The largest organ of the human body belongs to the body system called the",
+      "target": "integumentary",
+      "intermediates": [
+        "skin"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "organ",
+        "gold": "skin",
+        "aliases": [
+          "\u76ae\u80a4",
+          "the skin"
+        ],
+        "distractors": [
+          "brain",
+          "pancreas",
+          "kidney",
+          "lung"
+        ],
+        "distractor_aliases": {
+          "brain": [
+            "the brain",
+            "\u5927\u8111",
+            "\u8111"
+          ],
+          "pancreas": [
+            "the pancreas",
+            "\u80f0\u817a",
+            "\u80f0"
+          ],
+          "kidney": [
+            "kidneys",
+            "the kidney",
+            "\u80be",
+            "\u80be\u810f"
+          ],
+          "lung": [
+            "lungs",
+            "\u80ba"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 1 (blind to readouts)",
+        "distractors_draft": [
+          "liver",
+          "heart",
+          "lung",
+          "brain"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: An organ belongs to the body system called the",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The largest organ belongs to the body system called the",
+          "greedy_hit": true,
+          "hits": 19,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The largest organ of the human body is part of the system called the",
+          "greedy_hit": true,
+          "hits": 18,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The outer organ of the human body belongs to the body system called the",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 0
+    },
+    {
+      "name": "colosseum-currency",
+      "prompt": "Fact: The currency used in the country where the Colosseum stands is the ",
+      "target": "Euro",
+      "intermediates": [
+        "Italy"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "Italy",
+        "aliases": [
+          "\u610f\u5927\u5229"
+        ],
+        "distractors": [
+          "United States",
+          "United Kingdom",
+          "China",
+          "Japan"
+        ],
+        "distractor_aliases": {
+          "United States": [
+            "USA",
+            "America",
+            "\u7f8e\u56fd"
+          ],
+          "United Kingdom": [
+            "Britain",
+            "Great Britain",
+            "\u82f1\u56fd"
+          ],
+          "China": [
+            "\u4e2d\u56fd"
+          ],
+          "Japan": [
+            "\u65e5\u672c"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Brazil",
+          "Denmark",
+          "Sweden",
+          "Argentina"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "mh-w1-mercury-80",
+      "prompt": "Fact: The atomic number of the only metal that is liquid at standard room temperature is",
+      "target": "80",
+      "target_alts": [
+        "eighty"
+      ],
+      "intermediates": [
+        "mercury"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "chemical element",
+        "gold": "mercury",
+        "aliases": [
+          "quicksilver",
+          "Hg",
+          "\u6c5e"
+        ],
+        "distractors": [
+          "iron",
+          "copper",
+          "gold",
+          "silver"
+        ],
+        "distractor_aliases": {
+          "iron": [
+            "\u94c1"
+          ],
+          "copper": [
+            "\u94dc"
+          ],
+          "gold": [
+            "\u91d1"
+          ],
+          "silver": [
+            "\u94f6"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "iron",
+          "gold",
+          "silver",
+          "lead"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 0.9,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The atomic number of a metal is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The atomic number of the only metal is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The atomic number of the liquid metal is",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The atomic number of the metal is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 3
+    },
+    {
+      "name": "mh-w1-the-last-supper-milan",
+      "prompt": "Fact: The city that houses Leonardo da Vinci's mural of Jesus sharing a final meal with his apostles is",
+      "target": "Milan",
+      "target_alts": [
+        "Milano"
+      ],
+      "intermediates": [
+        "The Last Supper"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "painting",
+        "gold": "The Last Supper",
+        "aliases": [
+          "Last Supper",
+          "Il Cenacolo",
+          "L'Ultima Cena",
+          "\u6700\u540e\u7684\u665a\u9910"
+        ],
+        "distractors": [
+          "Mona Lisa",
+          "The Starry Night",
+          "The Scream",
+          "Girl with a Pearl Earring"
+        ],
+        "distractor_aliases": {
+          "Mona Lisa": [
+            "La Gioconda",
+            "La Joconde",
+            "\u8499\u5a1c\u4e3d\u838e"
+          ],
+          "The Starry Night": [
+            "Starry Night",
+            "\u661f\u591c"
+          ],
+          "The Scream": [
+            "Scream",
+            "\u5450\u558a"
+          ],
+          "Girl with a Pearl Earring": [
+            "\u6234\u73cd\u73e0\u8033\u73af\u7684\u5c11\u5973"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Mona Lisa",
+          "The Starry Night",
+          "The Night Watch",
+          "Guernica"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 0.9,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The city that houses a famous mural is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The city that houses Leonardo da Vinci's mural is",
+          "greedy_hit": true,
+          "hits": 12,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The city that houses the mural of Jesus sharing a final meal with his apostles is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The city that houses Leonardo da Vinci's most famous mural is",
+          "greedy_hit": true,
+          "hits": 13,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 13,
+      "gate_g1": 10
+    },
+    {
+      "name": "chem-bones-Z",
+      "prompt": "Fact: The atomic number of the metal most abundant in human bones is ",
+      "target": "20",
+      "intermediates": [
+        "calcium"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "element",
+        "gold": "calcium",
+        "aliases": [
+          "\u9499"
+        ],
+        "distractors": [
+          "iron",
+          "hydrogen",
+          "copper",
+          "sulfur"
+        ],
+        "distractor_aliases": {
+          "iron": [
+            "\u94c1"
+          ],
+          "hydrogen": [
+            "\u6c22"
+          ],
+          "copper": [
+            "\u94dc"
+          ],
+          "sulfur": [
+            "\u786b"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "iron",
+          "hydrogen",
+          "copper",
+          "sulfur"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "mh-w1-venus-0",
+      "prompt": "Fact: The number of moons of the hottest planet in the solar system is",
+      "target": "0",
+      "target_alts": [
+        "zero",
+        "none"
+      ],
+      "intermediates": [
+        "Venus"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "planet",
+        "gold": "Venus",
+        "aliases": [
+          "\u91d1\u661f"
+        ],
+        "distractors": [
+          "Jupiter",
+          "Saturn",
+          "Mars",
+          "Earth"
+        ],
+        "distractor_aliases": {
+          "Jupiter": [
+            "\u6728\u661f"
+          ],
+          "Saturn": [
+            "\u571f\u661f"
+          ],
+          "Mars": [
+            "\u706b\u661f"
+          ],
+          "Earth": [
+            "the Earth",
+            "\u5730\u7403"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Mars",
+          "Jupiter",
+          "Saturn",
+          "Earth"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The number of moons of a planet is",
+          "greedy_hit": false,
+          "hits": 1,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The number of moons of the innermost planet in the solar system is",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The number of moons of the hottest planet is",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 10
+    },
+    {
+      "name": "bf-bordeaux-fruit",
+      "prompt": "Fact: The fruit fermented to make the drink Bordeaux is famous for is the",
+      "target": "grape",
+      "intermediates": [
+        "wine"
+      ],
+      "source": "staging",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "drink",
+        "gold": "wine",
+        "aliases": [
+          "wines",
+          "\u8461\u8404\u9152",
+          "\u7ea2\u9152"
+        ],
+        "distractors": [
+          "milk",
+          "beer",
+          "coffee",
+          "tea"
+        ],
+        "distractor_aliases": {
+          "milk": [
+            "\u725b\u5976"
+          ],
+          "beer": [
+            "\u5564\u9152"
+          ],
+          "coffee": [
+            "\u5496\u5561"
+          ],
+          "tea": [
+            "\u8336"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "milk",
+          "beer",
+          "coffee",
+          "tea"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "holiday-independence-monthnum",
+      "prompt": "Fact: The US Independence Day holiday is celebrated in month number ",
+      "target": "7",
+      "intermediates": [
+        "July"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "month",
+        "gold": "July",
+        "aliases": [
+          "Jul",
+          "\u4e03\u6708"
+        ],
+        "distractors": [
+          "February",
+          "June",
+          "November",
+          "October"
+        ],
+        "distractor_aliases": {
+          "February": [
+            "Feb",
+            "\u4e8c\u6708"
+          ],
+          "June": [
+            "\u516d\u6708"
+          ],
+          "November": [
+            "\u5341\u4e00\u6708"
+          ],
+          "October": [
+            "Oct",
+            "\u5341\u6708"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "February",
+          "June",
+          "November",
+          "October"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "b3-mh-blindpoet-epic",
+      "prompt": "Fact: The blind poet of the Odyssey also composed the",
+      "target": "Iliad",
+      "intermediates": [
+        "Homer"
+      ],
+      "source": "staging_b3",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "person",
+        "gold": "Homer",
+        "aliases": [
+          "\u8377\u9a6c"
+        ],
+        "distractors": [
+          "Shakespeare",
+          "Einstein",
+          "Leonardo da Vinci",
+          "Napoleon"
+        ],
+        "distractor_aliases": {
+          "Shakespeare": [
+            "William Shakespeare",
+            "\u838e\u58eb\u6bd4\u4e9a"
+          ],
+          "Einstein": [
+            "Albert Einstein",
+            "\u7231\u56e0\u65af\u5766"
+          ],
+          "Leonardo da Vinci": [
+            "Leonardo",
+            "Da Vinci",
+            "\u8fbe\u00b7\u82ac\u5947",
+            "\u5217\u5965\u7eb3\u591a\u00b7\u8fbe\u00b7\u82ac\u5947"
+          ],
+          "Napoleon": [
+            "Napoleon Bonaparte",
+            "\u62ff\u7834\u4ed1"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Beethoven",
+          "Lincoln",
+          "Picasso",
+          "Columbus"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "mh-w1-k2-karakoram",
+      "prompt": "Fact: The mountain range that contains the world's second-highest mountain is the",
+      "target": "Karakoram",
+      "target_alts": [
+        "Karakorum"
+      ],
+      "intermediates": [
+        "K2"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.9,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "mountain",
+        "gold": "K2",
+        "aliases": [
+          "Mount Godwin-Austen",
+          "Chhogori",
+          "\u4e54\u6208\u91cc\u5cf0"
+        ],
+        "distractors": [
+          "Mount Everest",
+          "Kilimanjaro",
+          "Mount Fuji",
+          "Denali"
+        ],
+        "distractor_aliases": {
+          "Mount Everest": [
+            "Everest",
+            "Sagarmatha",
+            "Chomolungma",
+            "\u73e0\u7a46\u6717\u739b\u5cf0"
+          ],
+          "Kilimanjaro": [
+            "Mount Kilimanjaro",
+            "\u4e5e\u529b\u9a6c\u624e\u7f57\u5c71"
+          ],
+          "Mount Fuji": [
+            "Fuji",
+            "Fujisan",
+            "\u5bcc\u58eb\u5c71"
+          ],
+          "Denali": [
+            "Mount McKinley",
+            "\u5fb7\u7eb3\u5229\u5c71",
+            "\u9ea6\u91d1\u5229\u5c71"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Mount Everest",
+          "Kilimanjaro",
+          "Mont Blanc",
+          "Matterhorn"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The mountain range that contains a mountain is the",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The mountain range that contains the second-highest mountain is the",
+          "greedy_hit": true,
+          "hits": 18,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The mountain range that contains the world's second mountain is the",
+          "greedy_hit": true,
+          "hits": 19,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 19,
+      "gate_g1": 9
+    },
+    {
+      "name": "mh-w1-peregrine-falcon-birds",
+      "prompt": "Fact: The fastest creature on Earth, diving at over 300 kilometres per hour, belongs to the animal class of",
+      "target": "birds",
+      "target_alts": [
+        "bird",
+        "Aves"
+      ],
+      "intermediates": [
+        "peregrine falcon"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "animal",
+        "gold": "peregrine falcon",
+        "aliases": [
+          "peregrine",
+          "Falco peregrinus",
+          "\u6e38\u96bc",
+          "peregrine falcons"
+        ],
+        "distractors": [
+          "cheetah",
+          "sailfish",
+          "pronghorn",
+          "black marlin"
+        ],
+        "distractor_aliases": {
+          "cheetah": [
+            "cheetahs",
+            "\u730e\u8c79"
+          ],
+          "sailfish": [
+            "\u65d7\u9c7c"
+          ],
+          "pronghorn": [
+            "pronghorns",
+            "pronghorn antelope",
+            "Antilocapra americana",
+            "\u53c9\u89d2\u7f9a"
+          ],
+          "black marlin": [
+            "marlin",
+            "\u9ed1\u67aa\u9c7c"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "cheetah",
+          "sailfish",
+          "black marlin",
+          "mako shark"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 0.9,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: A creature belongs to the animal class of",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The creature diving at over 300 kilometres per hour belongs to the animal class of",
+          "greedy_hit": true,
+          "hits": 19,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The fastest diving creature belongs to the animal class of",
+          "greedy_hit": true,
+          "hits": 15,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The fastest creature on Earth belongs to the animal class of",
+          "greedy_hit": true,
+          "hits": 14,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 19,
+      "gate_g1": 5
+    },
+    {
+      "name": "carnival-ocean",
+      "prompt": "Fact: The ocean on the coast of the country where Carnival is most famously celebrated is the ",
+      "target": "Atlantic",
+      "intermediates": [
+        "Brazil"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "Brazil",
+        "aliases": [
+          "\u5df4\u897f"
+        ],
+        "distractors": [
+          "Italy",
+          "Japan",
+          "Nepal",
+          "Russia"
+        ],
+        "distractor_aliases": {
+          "Italy": [
+            "\u610f\u5927\u5229"
+          ],
+          "Japan": [
+            "\u65e5\u672c"
+          ],
+          "Nepal": [
+            "\u5c3c\u6cca\u5c14"
+          ],
+          "Russia": [
+            "\u4fc4\u7f57\u65af"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Italy",
+          "Japan",
+          "Nepal",
+          "Russia"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "b3-mh-pizza-continent",
+      "prompt": "Fact: The continent of the country where pizza originated is",
+      "target": "Europe",
+      "intermediates": [
+        "Italy"
+      ],
+      "source": "staging_b3",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "Italy",
+        "aliases": [
+          "\u610f\u5927\u5229"
+        ],
+        "distractors": [
+          "Japan",
+          "China",
+          "India",
+          "Australia"
+        ],
+        "distractor_aliases": {
+          "Japan": [
+            "\u65e5\u672c"
+          ],
+          "China": [
+            "\u4e2d\u56fd",
+            "PRC"
+          ],
+          "India": [
+            "\u5370\u5ea6"
+          ],
+          "Australia": [
+            "\u6fb3\u6d32",
+            "\u6fb3\u5927\u5229\u4e9a"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Australia",
+          "New Zealand",
+          "Mexico",
+          "Canada"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "super-smallest-continent",
+      "prompt": "Fact: The smallest country in the world is located on the continent of ",
+      "target": "Europe",
+      "intermediates": [
+        "Vatican"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "country",
+        "gold": "Vatican",
+        "aliases": [
+          "Vatican City",
+          "Holy See",
+          "\u68b5\u8482\u5188"
+        ],
+        "distractors": [
+          "China",
+          "United States",
+          "Japan",
+          "India"
+        ],
+        "distractor_aliases": {
+          "China": [
+            "People's Republic of China",
+            "PRC",
+            "\u4e2d\u56fd"
+          ],
+          "United States": [
+            "USA",
+            "United States of America",
+            "America",
+            "\u7f8e\u56fd"
+          ],
+          "Japan": [
+            "\u65e5\u672c"
+          ],
+          "India": [
+            "Republic of India",
+            "\u5370\u5ea6"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Australia",
+          "Brazil",
+          "New Zealand",
+          "Mexico"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "mh-w1-taj-mahal-yamuna",
+      "prompt": "Fact: The river that flows beside the white marble mausoleum Shah Jahan built for his wife is the",
+      "target": "Yamuna",
+      "target_alts": [
+        "Jumna"
+      ],
+      "intermediates": [
+        "Taj Mahal"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "landmark",
+        "gold": "Taj Mahal",
+        "aliases": [
+          "Taj",
+          "\u6cf0\u59ec\u9675",
+          "the Taj Mahal"
+        ],
+        "distractors": [
+          "Eiffel Tower",
+          "Great Pyramid of Giza",
+          "Great Wall of China",
+          "Statue of Liberty"
+        ],
+        "distractor_aliases": {
+          "Eiffel Tower": [
+            "the Eiffel Tower",
+            "Tour Eiffel",
+            "\u57c3\u83f2\u5c14\u94c1\u5854"
+          ],
+          "Great Pyramid of Giza": [
+            "Great Pyramid",
+            "Pyramids of Giza",
+            "\u5409\u8428\u5927\u91d1\u5b57\u5854",
+            "\u80e1\u592b\u91d1\u5b57\u5854"
+          ],
+          "Great Wall of China": [
+            "the Great Wall",
+            "Great Wall",
+            "\u957f\u57ce"
+          ],
+          "Statue of Liberty": [
+            "the Statue of Liberty",
+            "\u81ea\u7531\u5973\u795e\u50cf"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Eiffel Tower",
+          "Great Wall of China",
+          "Colosseum",
+          "Machu Picchu"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The river that flows beside a landmark is the",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The river that flows beside the mausoleum Shah Jahan built is the",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The river that flows beside the monument Shah Jahan built is the",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The river that flows beside the white marble mausoleum is the",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 10
+    },
+    {
+      "name": "atomic-26-symbol",
+      "prompt": "Fact: The chemical symbol for the element with atomic number 26 is ",
+      "target": "Fe",
+      "intermediates": [
+        "iron"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain_stripped",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "element",
+        "gold": "iron",
+        "aliases": [
+          "\u94c1"
+        ],
+        "distractors": [
+          "oxygen",
+          "hydrogen",
+          "gold",
+          "carbon"
+        ],
+        "distractor_aliases": {
+          "oxygen": [
+            "\u6c27"
+          ],
+          "hydrogen": [
+            "\u6c22"
+          ],
+          "gold": [
+            "\u91d1"
+          ],
+          "carbon": [
+            "\u78b3"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "nitrogen",
+          "platinum",
+          "zinc",
+          "sodium"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "mh-w1-danube-black",
+      "prompt": "Fact: The sea into which the river celebrated in Johann Strauss II's most famous waltz empties is the",
+      "target": "Black",
+      "intermediates": [
+        "Danube"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.9,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "river",
+        "gold": "Danube",
+        "aliases": [
+          "Danube River",
+          "Blue Danube",
+          "\u591a\u7459\u6cb3",
+          "River Danube",
+          "Donau"
+        ],
+        "distractors": [
+          "Nile",
+          "Seine",
+          "Amazon",
+          "Volga"
+        ],
+        "distractor_aliases": {
+          "Nile": [
+            "Nile River",
+            "River Nile",
+            "\u5c3c\u7f57\u6cb3"
+          ],
+          "Seine": [
+            "Seine River",
+            "River Seine",
+            "\u585e\u7eb3\u6cb3"
+          ],
+          "Amazon": [
+            "Amazon River",
+            "River Amazon",
+            "\u4e9a\u9a6c\u900a\u6cb3",
+            "\u4e9a\u9a6c\u5b59\u6cb3"
+          ],
+          "Volga": [
+            "Volga River",
+            "\u4f0f\u5c14\u52a0\u6cb3"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 1 (blind to readouts)",
+        "distractors_draft": [
+          "Rhine",
+          "Volga",
+          "Elbe",
+          "Thames"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The sea into which a river empties is the",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The sea into which the river celebrated in a famous waltz empties is the",
+          "greedy_hit": true,
+          "hits": 13,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The sea into which the river in Johann Strauss II's waltz empties is the",
+          "greedy_hit": true,
+          "hits": 17,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 17,
+      "gate_g1": 9
+    },
+    {
+      "name": "mh-w1-potassium-k",
+      "prompt": "Fact: The chemical symbol of the element that bananas are famously rich in is",
+      "target": "K",
+      "intermediates": [
+        "potassium"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "chemical element",
+        "gold": "potassium",
+        "aliases": [
+          "kalium",
+          "\u94be",
+          "K"
+        ],
+        "distractors": [
+          "iron",
+          "oxygen",
+          "calcium",
+          "carbon"
+        ],
+        "distractor_aliases": {
+          "iron": [
+            "\u94c1"
+          ],
+          "oxygen": [
+            "\u6c27"
+          ],
+          "calcium": [
+            "\u9499"
+          ],
+          "carbon": [
+            "\u78b3"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "sodium",
+          "calcium",
+          "magnesium",
+          "iron"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The chemical symbol of an element is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The chemical symbol of the element that bananas are rich in is",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The chemical symbol of the element in bananas is",
+          "greedy_hit": true,
+          "hits": 19,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The chemical symbol of the element is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 10
+    },
+    {
+      "name": "nhop-spider-element",
+      "prompt": "Count the items in a dozen. The element at that position on the periodic table is magnesium. Count the legs on a spider. The element at that position on the periodic table is ",
+      "target": "oxygen",
+      "intermediates": [
+        "8"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain_stripped",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "number",
+        "gold": "8",
+        "aliases": [
+          "eight",
+          "\u516b",
+          "eighth",
+          "8th",
+          "\u7b2c\u516b"
+        ],
+        "distractors": [
+          "17",
+          "11",
+          "7",
+          "4"
+        ],
+        "distractor_aliases": {},
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "17",
+          "11",
+          "7",
+          "4"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "bf-christmas-season",
+      "prompt": "Fact: In the Northern Hemisphere, the season during the month of Christmas is",
+      "target": "winter",
+      "intermediates": [
+        "December"
+      ],
+      "source": "staging",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "month",
+        "gold": "December",
+        "aliases": [
+          "Dec",
+          "\u5341\u4e8c\u6708"
+        ],
+        "distractors": [
+          "May",
+          "July",
+          "August",
+          "October"
+        ],
+        "distractor_aliases": {
+          "May": [
+            "\u4e94\u6708"
+          ],
+          "July": [
+            "Jul",
+            "\u4e03\u6708"
+          ],
+          "August": [
+            "\u516b\u6708"
+          ],
+          "October": [
+            "Oct",
+            "\u5341\u6708"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "May",
+          "July",
+          "August",
+          "October"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "b3-mh-goldengate-ocean",
+      "prompt": "Fact: The ocean beside the city of the Golden Gate Bridge is the",
+      "target": "Pacific",
+      "intermediates": [
+        "San Francisco"
+      ],
+      "source": "staging_b3",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "city",
+        "gold": "San Francisco",
+        "aliases": [
+          "\u65e7\u91d1\u5c71",
+          "\u4e09\u85e9\u5e02"
+        ],
+        "distractors": [
+          "Chicago",
+          "Berlin",
+          "London",
+          "Washington, D.C."
+        ],
+        "distractor_aliases": {
+          "Chicago": [
+            "\u829d\u52a0\u54e5"
+          ],
+          "Berlin": [
+            "\u67cf\u6797"
+          ],
+          "London": [
+            "\u4f26\u6566"
+          ],
+          "Washington, D.C.": [
+            "Washington DC",
+            "Washington",
+            "\u534e\u76db\u987f",
+            "\u534e\u76db\u987f\u7279\u533a"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Berlin",
+          "Miami",
+          "Houston",
+          "New York"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "firstletter-halloween-month",
+      "prompt": "Fact: The first letter of the month containing Halloween is \"",
+      "target": "O",
+      "intermediates": [
+        "October"
+      ],
+      "source": "jlens_source",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "month",
+        "gold": "October",
+        "aliases": [
+          "Oct",
+          "\u5341\u6708"
+        ],
+        "distractors": [
+          "August",
+          "December",
+          "July",
+          "April"
+        ],
+        "distractor_aliases": {
+          "August": [
+            "\u516b\u6708"
+          ],
+          "December": [
+            "Dec",
+            "\u5341\u4e8c\u6708"
+          ],
+          "July": [
+            "Jul",
+            "\u4e03\u6708"
+          ],
+          "April": [
+            "Apr",
+            "\u56db\u6708"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "March",
+          "September",
+          "February",
+          "August"
+        ],
+        "list_source": "v3+observed"
+      }
+    },
+    {
+      "name": "mh-w1-blue-whale-mammals",
+      "prompt": "Fact: The largest animal that has ever lived on Earth belongs to the animal class of",
+      "target": "mammals",
+      "target_alts": [
+        "mammal",
+        "Mammalia"
+      ],
+      "intermediates": [
+        "blue whale"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "animal",
+        "gold": "blue whale",
+        "aliases": [
+          "whale",
+          "Balaenoptera musculus",
+          "\u84dd\u9cb8"
+        ],
+        "distractors": [
+          "giant squid",
+          "Tyrannosaurus rex",
+          "great white shark",
+          "colossal squid"
+        ],
+        "distractor_aliases": {
+          "giant squid": [
+            "Architeuthis",
+            "\u5927\u738b\u4e4c\u8d3c"
+          ],
+          "Tyrannosaurus rex": [
+            "T. rex",
+            "T-rex",
+            "Tyrannosaurus",
+            "\u9738\u738b\u9f99"
+          ],
+          "great white shark": [
+            "great white",
+            "white shark",
+            "\u5927\u767d\u9ca8"
+          ],
+          "colossal squid": [
+            "Mesonychoteuthis hamiltoni",
+            "\u5927\u738b\u9178\u6d46\u9c7f"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "great white shark",
+          "giant squid",
+          "saltwater crocodile",
+          "ostrich"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 0.9,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: An animal belongs to the animal class of",
+          "greedy_hit": false,
+          "hits": 4,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The largest animal belongs to the animal class of",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The largest animal on Earth belongs to the animal class of",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The largest animal that has ever lived belongs to the animal class of",
+          "greedy_hit": true,
+          "hits": 20,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 20,
+      "gate_g1": 10
+    },
+    {
+      "name": "b3-mh-gravity-fruit",
+      "prompt": "Fact: The fruit that famously fell in the story of gravity's discovery is the",
+      "target": "apple",
+      "intermediates": [
+        "Newton"
+      ],
+      "source": "staging_b3",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "person",
+        "gold": "Newton",
+        "aliases": [
+          "Isaac Newton",
+          "\u725b\u987f"
+        ],
+        "distractors": [
+          "Einstein",
+          "Shakespeare",
+          "Darwin",
+          "Lincoln"
+        ],
+        "distractor_aliases": {
+          "Einstein": [
+            "Albert Einstein",
+            "\u7231\u56e0\u65af\u5766"
+          ],
+          "Shakespeare": [
+            "William Shakespeare",
+            "\u838e\u58eb\u6bd4\u4e9a"
+          ],
+          "Darwin": [
+            "\u8fbe\u5c14\u6587"
+          ],
+          "Lincoln": [
+            "\u6797\u80af"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Armstrong",
+          "Lincoln",
+          "Homer",
+          "Darwin"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "spider-legs",
+      "prompt": "Fact: The number of legs on the animal that spins webs is ",
+      "target": "8",
+      "intermediates": [
+        "spider"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "animal",
+        "gold": "spider",
+        "aliases": [
+          "spiders",
+          "\u8718\u86db"
+        ],
+        "distractors": [
+          "lion",
+          "elephant",
+          "tiger",
+          "horse"
+        ],
+        "distractor_aliases": {
+          "lion": [
+            "lions",
+            "\u72ee\u5b50"
+          ],
+          "elephant": [
+            "elephants",
+            "\u5927\u8c61",
+            "\u8c61"
+          ],
+          "tiger": [
+            "tigers",
+            "\u8001\u864e",
+            "\u864e"
+          ],
+          "horse": [
+            "\u9a6c"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "horse",
+          "polar bear",
+          "camel",
+          "frog"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "etym-caesar-monthnum",
+      "prompt": "Fact: The month named after Julius Caesar is month number ",
+      "target": "7",
+      "intermediates": [
+        "July"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "month",
+        "gold": "July",
+        "aliases": [
+          "\u4e03\u6708"
+        ],
+        "distractors": [
+          "September",
+          "May",
+          "March",
+          "April"
+        ],
+        "distractor_aliases": {
+          "September": [
+            "\u4e5d\u6708"
+          ],
+          "May": [
+            "\u4e94\u6708"
+          ],
+          "March": [
+            "\u4e09\u6708"
+          ],
+          "April": [
+            "\u56db\u6708"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "September",
+          "May",
+          "March",
+          "April"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "rhyme-tree-squared",
+      "prompt": "Fact: The square of the number whose name rhymes with tree is ",
+      "target": "9",
+      "intermediates": [
+        "three"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -2
+        ]
+      },
+      "mc": {
+        "bridge_type": "number",
+        "gold": "3",
+        "aliases": [
+          "three",
+          "\u4e09",
+          "third",
+          "3rd",
+          "\u7b2c\u4e09"
+        ],
+        "distractors": [
+          "4",
+          "16",
+          "1",
+          "8"
+        ],
+        "distractor_aliases": {},
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "4",
+          "16",
+          "1",
+          "8"
+        ],
+        "list_source": "v2"
+      }
+    },
+    {
+      "name": "mh-w1-achilles-thetis",
+      "prompt": "Fact: The mother of the hero whose only weak spot was his heel is",
+      "target": "Thetis",
+      "intermediates": [
+        "Achilles"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "chat",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "mythological figure",
+        "gold": "Achilles",
+        "aliases": [
+          "Akhilleus",
+          "\u963f\u5580\u7409\u65af",
+          "\u963f\u57fa\u91cc\u65af",
+          "Achilleus"
+        ],
+        "distractors": [
+          "Odysseus",
+          "Heracles",
+          "Theseus",
+          "Perseus"
+        ],
+        "distractor_aliases": {
+          "Odysseus": [
+            "Ulysses",
+            "\u5965\u5fb7\u4fee\u65af"
+          ],
+          "Heracles": [
+            "Herakles",
+            "Hercules",
+            "\u8d6b\u62c9\u514b\u52d2\u65af"
+          ],
+          "Theseus": [
+            "\u5fd2\u4fee\u65af"
+          ],
+          "Perseus": [
+            "\u73c0\u8033\u4fee\u65af"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "Heracles",
+          "Perseus",
+          "Odysseus",
+          "Theseus"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 0.9,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: The mother of a hero is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The mother of the hero is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The mother of the hero with a weak spot is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The mother of the hero whose only weakness was is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 0,
+      "gate_g1": 10
+    },
+    {
+      "name": "mh-w1-charles-dickens-portsmouth",
+      "prompt": "Fact: The novelist who wrote Oliver Twist was born in the English city of",
+      "target": "Portsmouth",
+      "intermediates": [
+        "Charles Dickens"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "person",
+        "gold": "Charles Dickens",
+        "aliases": [
+          "Dickens",
+          "\u72c4\u66f4\u65af",
+          "Charles John Huffam Dickens",
+          "\u67e5\u5c14\u65af\u00b7\u72c4\u66f4\u65af"
+        ],
+        "distractors": [
+          "Jane Austen",
+          "William Shakespeare",
+          "Oscar Wilde",
+          "Arthur Conan Doyle"
+        ],
+        "distractor_aliases": {
+          "Jane Austen": [
+            "Austen",
+            "\u7b80\u00b7\u5965\u65af\u6c40"
+          ],
+          "William Shakespeare": [
+            "Shakespeare",
+            "\u838e\u58eb\u6bd4\u4e9a"
+          ],
+          "Oscar Wilde": [
+            "Wilde",
+            "\u5965\u65af\u5361\u00b7\u738b\u5c14\u5fb7",
+            "\u738b\u5c14\u5fb7"
+          ],
+          "Arthur Conan Doyle": [
+            "Conan Doyle",
+            "Sir Arthur Conan Doyle",
+            "\u963f\u745f\u00b7\u67ef\u5357\u00b7\u9053\u5c14",
+            "\u67ef\u5357\u00b7\u9053\u5c14"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "William Shakespeare",
+          "Jane Austen",
+          "Thomas Hardy",
+          "George Eliot"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 0.8,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: A novelist was born in the English city of",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: The novelist who wrote a famous novel was born in the English city of",
+          "greedy_hit": false,
+          "hits": 1,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: The author of Oliver Twist was born in the city of",
+          "greedy_hit": true,
+          "hits": 18,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-3",
+          "text": "Fact: The novelist was born in the English city of",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        }
+      ],
+      "shortcut_max": 18,
+      "gate_g1": 0
+    },
+    {
+      "name": "b3-mh-tallest-continent",
+      "prompt": "Fact: The continent of the world's tallest mountain is",
+      "target": "Asia",
+      "intermediates": [
+        "Everest"
+      ],
+      "source": "staging_b3",
+      "consistency": 0.9,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "mountain",
+        "gold": "Everest",
+        "aliases": [
+          "Mount Everest",
+          "\u73e0\u7a46\u6717\u739b\u5cf0",
+          "\u73e0\u5cf0"
+        ],
+        "distractors": [
+          "Kilimanjaro",
+          "Denali",
+          "Mont Blanc",
+          "Matterhorn"
+        ],
+        "distractor_aliases": {
+          "Kilimanjaro": [
+            "\u4e5e\u529b\u9a6c\u624e\u7f57"
+          ],
+          "Denali": [
+            "\u5fb7\u7eb3\u91cc"
+          ],
+          "Mont Blanc": [
+            "\u52c3\u6717\u5cf0"
+          ],
+          "Matterhorn": [
+            "Mont Cervin",
+            "Monte Cervino",
+            "\u9a6c\u7279\u6d2a\u5cf0"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "Mont Blanc",
+          "Denali",
+          "Kilimanjaro",
+          "Aconcagua"
+        ],
+        "list_source": "v3"
+      }
+    },
+    {
+      "name": "dbl-altitude-antonym",
+      "prompt": "Fact: The antonym of how you would describe an airplane's cruising altitude is \"",
+      "target": "low",
+      "intermediates": [
+        "high"
+      ],
+      "source": "jlens_source",
+      "consistency": 1.0,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "altitude level",
+        "gold": "high",
+        "aliases": [
+          "\u9ad8"
+        ],
+        "distractors": [
+          "sea level",
+          "ground level",
+          "treetop level",
+          "rooftop level"
+        ],
+        "distractor_aliases": {
+          "sea level": [
+            "\u6d77\u5e73\u9762"
+          ],
+          "ground level": [
+            "\u5730\u9762"
+          ],
+          "treetop level": [
+            "\u6811\u68a2\u9ad8\u5ea6"
+          ],
+          "rooftop level": [
+            "\u5c4b\u9876\u9ad8\u5ea6"
+          ]
+        },
+        "topic_confusers": 4,
+        "distractors_v2": [
+          "hard",
+          "late",
+          "night",
+          "hot"
+        ],
+        "list_source": "v3+relabel",
+        "bridge_type_v2": "antonym word",
+        "distractors_pre_relabel": [
+          "hard",
+          "late",
+          "night",
+          "hot"
+        ]
+      }
+    },
+    {
+      "name": "mh-w1-rib-24",
+      "prompt": "Fact: In an adult human, the total number of curved bones that form a protective cage around the heart and lungs is",
+      "target": "24",
+      "target_alts": [
+        "twenty-four"
+      ],
+      "intermediates": [
+        "rib"
+      ],
+      "source": "authored:claude-opus-5-5 2026-11-04 wave w1 (scripts/newq/author_multihop.py)",
+      "consistency": 0.8,
+      "gate_variant": "plain",
+      "eval_render": "plain",
+      "readout": {
+        "kind": "last_word_token",
+        "offsets": [
+          -1
+        ]
+      },
+      "mc": {
+        "bridge_type": "bone",
+        "gold": "rib",
+        "aliases": [
+          "ribs",
+          "\u808b\u9aa8"
+        ],
+        "distractors": [
+          "femur",
+          "skull",
+          "humerus",
+          "tibia"
+        ],
+        "distractor_aliases": {
+          "femur": [
+            "thigh bone",
+            "\u80a1\u9aa8"
+          ],
+          "skull": [
+            "cranium",
+            "\u9885\u9aa8"
+          ],
+          "humerus": [
+            "humeri",
+            "\u80b1\u9aa8"
+          ],
+          "tibia": [
+            "tibiae",
+            "tibias",
+            "shinbone",
+            "\u80eb\u9aa8"
+          ]
+        },
+        "topic_confusers": 4,
+        "list_source": "newq-w1 mc_leakage_r4 round 0 (blind to readouts)",
+        "distractors_draft": [
+          "femur",
+          "skull",
+          "sternum",
+          "clavicle"
+        ]
+      },
+      "consistency_greedy": 1,
+      "bridge_consistency": 1.0,
+      "hop_consistency": 1.0,
+      "shortcut_probes": [
+        {
+          "leg": "s1",
+          "text": "Fact: In an adult human, the total number of bones is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": true
+        },
+        {
+          "leg": "s2-1",
+          "text": "Fact: In an adult human, the total number of bones that form a cage around the heart and lungs is",
+          "greedy_hit": true,
+          "hits": 13,
+          "k": 20,
+          "reaches": true,
+          "gates": false
+        },
+        {
+          "leg": "s2-2",
+          "text": "Fact: In an adult human, the total number of curved bones is",
+          "greedy_hit": false,
+          "hits": 0,
+          "k": 20,
+          "reaches": false,
+          "gates": false
+        }
+      ],
+      "shortcut_max": 13,
+      "gate_g1": 7
+    }
+  ]
+}
