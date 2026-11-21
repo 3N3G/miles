@@ -217,6 +217,10 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/main/miles/medium-check-v15-mi350",
       "label": "Private results for AMD inference job 535170"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/df899421fac85aa59009542bd86109eeee83a11e/miles/medium-check-v15-mi350",
+      "label": "Immutable medium outputs, both-order grades, plots and exact mathematical audit"
     }
   ],
   "evidence": [
@@ -583,6 +587,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/automatic_handoff_armed_20261120.json",
       "label": "Observed live VM controller, frozen source and waiting state"
+    },
+    {
+      "path": "experiments/tcs_async_rl/MEDIUM_GROUP_FINDINGS_20261121.md",
+      "label": "Complete medium-question results and exact claim checks"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/medium_group_v15_outcome_20261121.json",
+      "label": "Medium counts, stopped handoff and immutable result archive"
     }
   ],
   "jobs": [
@@ -1669,15 +1681,22 @@
       "actor": "codex",
       "summary": "Automatic RL handoff stopped before acceptance",
       "revision": 132
+    },
+    {
+      "id": "d5cdbcb1-fcf4-4080-84ce-81beef9395cd",
+      "at": "2026-11-21T06:34:28.424090Z",
+      "actor": "codex",
+      "summary": "Reviewed the constant-zero medium group and identified the remaining easy qualification decision",
+      "revision": 133
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Complete the fixed TCS rollout diagnostic with non-constant measured rubric rewards, then complete and debug a bounded async CISPO RL run with W&B logging where credentials permit",
   "state": "needs-you",
-  "summary": "Automatic RL handoff stopped before acceptance",
-  "nextAction": "Inspect handoff-state.json and preserve the strict reward gate. Resolve any required research decision.",
+  "summary": "Medium finished: 28 graded finals all zero, four missing finals. Automatic RL submission stopped. Easy remains a varied-reward candidate.",
+  "nextAction": "User decision: qualify easy with actual Luna empty-answer grades for recorded caps, or retain the strict 32-nonempty-finals requirement. No RL job is queued.",
   "owner": "Codex",
-  "revision": 132,
-  "updatedAt": "2026-11-21T00:48:17.290287Z"
+  "revision": 133,
+  "updatedAt": "2026-11-21T06:34:28.424090Z"
 }

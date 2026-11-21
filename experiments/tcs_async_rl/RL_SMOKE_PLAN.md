@@ -122,7 +122,9 @@ Preserve these verdicts, inspect paired-reference scores alongside candidate rew
 No diagnostic reward, prompt, model or rubric was changed to open the gate.
 The user approved the [easy/medium sequence](EASY_MEDIUM_CHECK_PLAN_20261120.md).
 The easy group completed with 15 positive grades, 13 zeros and four capped missing finals.
-See [its standalone findings](EASY_GROUP_FINDINGS_20261120.md). Medium is pending.
+See [its standalone findings](EASY_GROUP_FINDINGS_20261120.md).
+Medium completed with 28 zero grades and four missing finals. Its automatic handoff stopped without submitting RL.
+See [medium findings](MEDIUM_GROUP_FINDINGS_20261121.md).
 The easy group supports the medium diagnostic but fails the original 32-nonempty-finals qualification rule.
 The user was asked whether actual empty-answer judgments for recorded model limits may satisfy that rule.
 No rule or missing-answer reward has been changed. RL remains unsubmitted.

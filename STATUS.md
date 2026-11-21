@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatic RL handoff stopped before acceptance Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
-  Next: Inspect handoff-state.json and preserve the strict reward gate. Resolve any required research decision.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Medium finished: 28 graded finals all zero, four missing finals. Automatic RL submission stopped. Easy remains a varied-reward candidate. Jobs: hpcfund/535170 COMPLETED; hpcfund/535067 COMPLETED
+  Next: User decision: qualify easy with actual Luna empty-answer grades for recorded caps, or retain the strict 32-nonempty-finals requirement. No RL job is queued.
 
 ## Finished
 

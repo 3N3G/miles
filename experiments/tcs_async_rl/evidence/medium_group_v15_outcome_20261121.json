@@ -1,0 +1,93 @@
+{
+  "observed_at_utc": "2026-11-21T06:32:40.241185+00:00",
+  "job_id": "535170",
+  "source_commit": "87d975836be0569b6f6f575a86182cb2de549b66",
+  "config": "experiments/tcs_async_rl/group_check_v15_medium_mi350.json",
+  "input_sha256": "205bddcca16bfbb58ff979e34a4c255ea9cdc091a49b4fcedec415c5ba0314bf",
+  "difficulty": "medium",
+  "responses": 32,
+  "nonempty_finals": 28,
+  "scored_responses": 28,
+  "positive_scores": 0,
+  "zero_scores": 28,
+  "population_score_variance": 0.0,
+  "missing_final_indices": [
+    4,
+    19,
+    25,
+    31
+  ],
+  "length_limits": [
+    {
+      "sample_index": 4,
+      "tokens": 90000,
+      "nonempty_final": false,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      }
+    },
+    {
+      "sample_index": 9,
+      "tokens": 90000,
+      "nonempty_final": true,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      }
+    },
+    {
+      "sample_index": 19,
+      "tokens": 90000,
+      "nonempty_final": false,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      }
+    },
+    {
+      "sample_index": 25,
+      "tokens": 90000,
+      "nonempty_final": false,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      }
+    },
+    {
+      "sample_index": 31,
+      "tokens": 90000,
+      "nonempty_final": false,
+      "finish_reason": {
+        "type": "length",
+        "length": 90000
+      }
+    }
+  ],
+  "generated_tokens": {
+    "min": 44650,
+    "median": 69761.0,
+    "max": 90000,
+    "total": 2278962
+  },
+  "paired_reference_histogram": {
+    "7.0": 62
+  },
+  "controls": [
+    7.0,
+    0.0,
+    0.0
+  ],
+  "allocation_elapsed": "00:19:30",
+  "judge_cost_estimate_usd": 0.0525912,
+  "rl_submitted": false,
+  "stopped_handoff": {
+    "phase": "stopped",
+    "error_type": "ValueError",
+    "reason": "The complete diagnostic response group must be graded first",
+    "at": "2026-11-21T00:48:17.176937+00:00"
+  },
+  "limits": "One preselected medium question. Provisional grades. No learning, human calibration, independent-provider audit or corpus-wide estimate.",
+  "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/df899421fac85aa59009542bd86109eeee83a11e/miles/medium-check-v15-mi350",
+  "mathematical_review": "Seed-selected answer 13 does not derive its little-o conclusion from the fast-transform assumption. Exact recurrence countersequence and dimension-two zero-count checks are in the private analytic-spotcheck.json."
+}

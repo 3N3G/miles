@@ -67,7 +67,8 @@
 - Evidence at the original efficiency concern: one unique hard question had generated answers.
   Its two latest groups had constant zero scores and cost 3,410,866 generated tokens in total.
   The subsequent preselected easy question has 15 positive grades, 13 zeros and four capped missing finals.
-  Medium remains pending. One question per difficulty cannot estimate coverage or determine corpus sampling weights.
+  Medium completed with 28 zero grades and four missing finals. Its automatic RL handoff stopped.
+  One question per difficulty cannot estimate coverage or determine corpus sampling weights.
 - Options: retain the two-question software check, propose a representative eligible-question baseline,
   or propose a different initialization such as a stronger model or supervised warm-start.
 - Recommendation: measure representative per-question reward variation and token cost with calibrated judgments first.
@@ -92,7 +93,9 @@
 - Recommendation: accept explicit recorded caps after actual judging. Keep unexpected missing finals and provider failures fatal.
 - Blocks: choosing the RL qualification policy if the selected group has capped missing finals.
   It does not block the already approved medium diagnostic or its unchanged grading policy.
-- Status: asked in chat on 2026-11-20. No response yet. No scores or qualification rules were changed.
+- Status: asked in chat on 2026-11-20. Re-presented on 2026-11-21 after medium failed its gate.
+  Recommended the easy question with actual empty-answer judgments for recorded caps.
+  No response yet. No scores or qualification rules were changed.
 
 # Answered questions
 
