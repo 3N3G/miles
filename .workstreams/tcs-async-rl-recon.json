@@ -2295,15 +2295,22 @@
       "actor": "codex",
       "summary": "Private archives recover; audit all 27 consumed groups and 24.8 million token positions with five positive direction checks",
       "revision": 203
+    },
+    {
+      "id": "e11febd3-b3f6-4874-8d33-a2152a9bb313",
+      "at": "2026-11-22T07:57:02.592119Z",
+      "actor": "codex",
+      "summary": "36 new updates complete; all six scheduled fixed-batch update-direction observations are positive",
+      "revision": 204
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Private archives recover; audit all 27 consumed groups and 24.8 million token positions with five positive direction checks",
-  "nextAction": "Continue to 40 new updates, inspect remaining repeated questions and the final direction observation, then verify checkpoint, private results and full W&B readback.",
+  "summary": "36 new updates complete; all six scheduled fixed-batch update-direction observations are positive",
+  "nextAction": "Watch through the last four updates and terminal cleanup. Verify final checkpoint, all consumed traces and all W&B scalars before reporting completion.",
   "owner": "Codex",
-  "revision": 203,
-  "updatedAt": "2026-11-22T07:31:14.049629Z"
+  "revision": 204,
+  "updatedAt": "2026-11-22T07:57:02.592119Z"
 }

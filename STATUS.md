@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Private archives recover; audit all 27 consumed groups and 24.8 million token positions with five positive direction checks Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
-  Next: Continue to 40 new updates, inspect remaining repeated questions and the final direction observation, then verify checkpoint, private results and full W&B readback.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 36 new updates complete; all six scheduled fixed-batch update-direction observations are positive Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
+  Next: Watch through the last four updates and terminal cleanup. Verify final checkpoint, all consumed traces and all W&B scalars before reporting completion.
 
 ## Next / blocked
 
