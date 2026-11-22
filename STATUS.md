@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 538154 ended COMPLETED; acceptance True Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 40 new updates completed and archived; 15 matched question means rose 5.291 to 5.428/7, with substantial judge-order uncertainty Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
+  Next: Review findings and label the existing ten-example calibration packet. Decide any further frozen-checkpoint evaluation or training budget. No GPU job remains active.
 
 ## Finished
 

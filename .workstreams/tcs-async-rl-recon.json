@@ -3,6 +3,18 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/b944b262c244e09338c0f07664111d688802a732/miles/easy-overfit-v12-diagnostic-20261122",
+      "label": "Verified full continuation report, plots, samples and all diagnostics"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/e0929a55ece4dd3890ff588ec0a6f7300c2d8aef/miles/easy-overfit-v12",
+      "label": "Verified complete raw run archive, terminal state and checkpoint inventory"
+    },
+    {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261122-050822-879-native",
+      "label": "Finished online run: all 40 optimizer steps and 3,253 scalars verified"
+    },
+    {
       "url": "https://huggingface.co/datasets/ian-and-friends/tcs_v3",
       "label": "Requested TCS dataset"
     },
@@ -232,6 +244,18 @@
     }
   ],
   "evidence": [
+    {
+      "path": "experiments/tcs_async_rl/EASY_CONTINUATION_FINDINGS_20261122.md",
+      "label": "Completed 40-update continuation: small matched-question gain and grading uncertainty"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/easy_continuation_outcome_20261122.json",
+      "label": "Terminal scheduler, checkpoint, every scalar and immutable archive readback"
+    },
+    {
+      "path": "experiments/tcs_async_rl/EASY_CONTINUATION_PLAN_20261122_APPROVED.md",
+      "label": "Approved 40-new-update and four-hour scope"
+    },
     {
       "path": "experiments/tcs_async_rl/PLAN.md",
       "label": "Source-backed reconnaissance and unapproved experiment proposal"
@@ -2323,15 +2347,29 @@
       "actor": "codex",
       "summary": "RL job 538154 ended COMPLETED; acceptance True",
       "revision": 207
+    },
+    {
+      "id": "eabca48c-cf61-4b06-abde-358db643d757",
+      "at": "2026-11-22T08:26:45.899788Z",
+      "actor": "codex",
+      "summary": "Attach verified final report and both immutable result archives",
+      "revision": 208
+    },
+    {
+      "id": "5cc0ab0c-d424-497d-a582-b4111292ede0",
+      "at": "2026-11-22T08:26:46.040756Z",
+      "actor": "codex",
+      "summary": "40 new updates completed and archived; 15 matched question means rose 5.291 to 5.428/7, with substantial judge-order uncertainty",
+      "revision": 209
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "RL job 538154 ended COMPLETED; acceptance True",
-  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
+  "state": "needs-you",
+  "summary": "40 new updates completed and archived; 15 matched question means rose 5.291 to 5.428/7, with substantial judge-order uncertainty",
+  "nextAction": "Review findings and label the existing ten-example calibration packet. Decide any further frozen-checkpoint evaluation or training budget. No GPU job remains active.",
   "owner": "Codex",
-  "revision": 207,
-  "updatedAt": "2026-11-22T08:14:06.768921Z"
+  "revision": 209,
+  "updatedAt": "2026-11-22T08:26:46.040756Z"
 }
