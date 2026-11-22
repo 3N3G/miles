@@ -2246,15 +2246,22 @@
       "actor": "codex",
       "summary": "Real updates and standard RL diagnostics pass; verify all176 W&B scalars and inspect raw proof",
       "revision": 196
+    },
+    {
+      "id": "1d386463-c315-4659-a083-e3bfaa01c7a3",
+      "at": "2026-11-22T05:42:08.136981Z",
+      "actor": "codex",
+      "summary": "First continuation checkpoint retains30 updates; inspect repeated zero-signal question and continue",
+      "revision": 197
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Real updates and standard RL diagnostics pass; verify all176 W&B scalars and inspect raw proof",
-  "nextAction": "Continue the approved run, inspect first saved checkpoint and compare repeated-question rewards at hourly reviews.",
+  "summary": "First continuation checkpoint retains30 updates; inspect repeated zero-signal question and continue",
+  "nextAction": "Continue through40 new updates or walltime; review matched questions, gradients, entropy, divergence, judge gaps and checkpoint turnover.",
   "owner": "Codex",
-  "revision": 196,
-  "updatedAt": "2026-11-22T05:35:46.426958Z"
+  "revision": 197,
+  "updatedAt": "2026-11-22T05:42:08.136981Z"
 }
