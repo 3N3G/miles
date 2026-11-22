@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First-hour review: 11 valid updates and positive direction checks; isolate metric reporting from slow upload Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
-  Next: Continue the approved run. Verify independent W&B reporting, audit new traces and compare repeated questions at the next review.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): GPU training and grading continue while private archive respects its commit-rate backoff Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
+  Next: Keep foreground supervision. Review native metrics and raw answers. Let the separate archive worker drain traces, then resume the original supervisor for terminal finalization.
 
 ## Next / blocked
 
