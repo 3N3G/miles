@@ -693,7 +693,7 @@
     {
       "id": "537888",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "537846",
@@ -2171,15 +2171,22 @@
       "actor": "codex",
       "summary": "Hourly review: replacement waits on priority; no new training or judging",
       "revision": 186
+    },
+    {
+      "id": "290ed070-3374-469c-a569-021d81d46917",
+      "at": "2026-11-22T04:52:32.825454Z",
+      "actor": "codex",
+      "summary": "RL job 537888 is RUNNING",
+      "revision": 187
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Hourly review: replacement waits on priority; no new training or judging",
-  "nextAction": "Keep minute health checks and hourly reviews; qualify resumed GPU training when Slurm allocates the node.",
+  "summary": "RL job 537888 is RUNNING",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 186,
-  "updatedAt": "2026-11-22T04:09:42.678449Z"
+  "revision": 187,
+  "updatedAt": "2026-11-22T04:52:32.825454Z"
 }
