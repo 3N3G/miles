@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 537846 Jobs: hpcfund/537846 SUBMITTED; hpcfund/536360 TIMEOUT
-  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 537846 is PENDING Jobs: hpcfund/537846 PENDING; hpcfund/536360 TIMEOUT
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
