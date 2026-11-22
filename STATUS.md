@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Comparing published judge-repair evidence against the observed TCS grading failures. No paid calls or experiment changes. Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
-  Next: Save source-backed options and a calibration-first recommendation.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Saved source-backed judge repair options: targeted rubric clarification and calibrated examples, then compare reasoning effort and stronger models. No new judge calls. Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
+  Next: Human-label the existing packet and choose the judge comparison and spending cap. Current Luna medium prompt and scores remain unchanged.
 
 ## Finished
 

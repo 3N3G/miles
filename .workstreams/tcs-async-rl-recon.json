@@ -249,6 +249,10 @@
   ],
   "evidence": [
     {
+      "path": "experiments/tcs_async_rl/JUDGE_REPAIR_OPTIONS_20261122.md",
+      "label": "Primary-source evidence on prompt clarification, few-shot examples and stronger reasoning judges"
+    },
+    {
       "path": "experiments/tcs_async_rl/JUDGE_ROLLOUT_REVIEW_20261122.md",
       "label": "Exact judge prompt and mathematical review of six actual graded answers"
     },
@@ -2401,15 +2405,22 @@
       "actor": "codex",
       "summary": "Review primary research on prompt, example and reasoning repairs for rubric judges",
       "revision": 213
+    },
+    {
+      "id": "61b212aa-92e4-46b9-ad40-cb31a4d8a9a8",
+      "at": "2026-11-22T08:52:13.953356Z",
+      "actor": "codex",
+      "summary": "Save evidence-backed judge repair options without changing the experiment",
+      "revision": 214
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "Comparing published judge-repair evidence against the observed TCS grading failures. No paid calls or experiment changes.",
-  "nextAction": "Save source-backed options and a calibration-first recommendation.",
+  "state": "needs-you",
+  "summary": "Saved source-backed judge repair options: targeted rubric clarification and calibrated examples, then compare reasoning effort and stronger models. No new judge calls.",
+  "nextAction": "Human-label the existing packet and choose the judge comparison and spending cap. Current Luna medium prompt and scores remain unchanged.",
   "owner": "Codex",
-  "revision": 213,
-  "updatedAt": "2026-11-22T08:51:20.918678Z"
+  "revision": 214,
+  "updatedAt": "2026-11-22T08:52:13.953356Z"
 }
