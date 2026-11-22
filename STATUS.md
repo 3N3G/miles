@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Transport-repair job 539594 is queued with healthy independent monitors; exact failed sample and all 70 saved generations are preserved and checked Jobs: hpcfund/539594 PENDING; hpcfund/538647 FAILED
-  Next: Continue foreground queue and service supervision, then verify restored optimizer state, update 65 and native W&B; inspect entropy, drift, repetitions and actual matched-question p
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 remains queued; a 2h minimum now allows shorter backfill slots within the unchanged 3h43m maximum and shared budget Jobs: hpcfund/539594 PENDING; hpcfund/538647 FAILED
+  Next: Keep foreground supervision; on allocation read actual walltime, verify optimizer restore and update 65, and resume only within the remaining combined budget if Slurm grants a shor
 
 ## Next / blocked
 

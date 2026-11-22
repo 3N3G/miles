@@ -2692,15 +2692,22 @@
       "actor": "codex",
       "summary": "Transport-repair job 539594 is queued with healthy independent monitors; exact failed sample and all 70 saved generations are preserved and checked",
       "revision": 244
+    },
+    {
+      "id": "7ede1dd3-1479-4212-8f36-bc9ed96d7356",
+      "at": "2026-11-22T20:52:16.891521Z",
+      "actor": "codex",
+      "summary": "AMD 539594 remains queued; a 2h minimum now allows shorter backfill slots within the unchanged 3h43m maximum and shared budget",
+      "revision": 245
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Transport-repair job 539594 is queued with healthy independent monitors; exact failed sample and all 70 saved generations are preserved and checked",
-  "nextAction": "Continue foreground queue and service supervision, then verify restored optimizer state, update 65 and native W&B; inspect entropy, drift, repetitions and actual matched-question proofs through terminal cleanup",
+  "summary": "AMD 539594 remains queued; a 2h minimum now allows shorter backfill slots within the unchanged 3h43m maximum and shared budget",
+  "nextAction": "Keep foreground supervision; on allocation read actual walltime, verify optimizer restore and update 65, and resume only within the remaining combined budget if Slurm grants a shorter slot",
   "owner": "Codex",
-  "revision": 244,
-  "updatedAt": "2026-11-22T20:35:45.177132Z"
+  "revision": 245,
+  "updatedAt": "2026-11-22T20:52:16.891521Z"
 }
