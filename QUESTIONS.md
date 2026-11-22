@@ -1,5 +1,14 @@
 # Open questions
 
+## 2026-11-22: Storage for a bounded continuation after the two-hour backfill slot
+
+- Question: may the replacement's intermediate checkpoint be removed only after a newer continuation checkpoint is atomically saved and verified?
+- Evidence: the 23:13 UTC snapshot has 95.7 GB shared free space. Each checkpoint is 60.6 GB. A separate continuation would need two new checkpoint copies during a save while keeping its source, creating a 25.4 GB shortfall before a reserve. The current job fits its own save peaks.
+- Options: retain original protected checkpoints and all results, but remove only the replacement source checkpoint after the first newer checkpoint is verified; or preserve every job's source checkpoint and wait for more filesystem space.
+- Recommendation: allow the former under the existing one-latest-checkpoint policy for this logical continuation. Preserve original iteration 64, the earlier protected checkpoint, every used config, metric and rollout.
+- Blocks: only an additional remaining-budget allocation if space stays below its safe peak. It does not block the current running job.
+- Permission basis: the approved `experiments/tcs_async_rl/JUDGE_REPAIR_RESUME_PLAN_20261122.md` says “Preserve all old prompts, configurations, grades, and checkpoints.” Deleting this intermediate source requires an explicit exception.
+
 ## 2026-11-18: Output-head precision
 
 - Question: enable FP32 logits on both trainer and rollout engine for learning?
