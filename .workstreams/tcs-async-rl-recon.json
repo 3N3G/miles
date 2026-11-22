@@ -2566,15 +2566,22 @@
       "actor": "codex",
       "summary": "AMD 538647 remains queued; tentative start advanced to 18:06 UTC, with no GPU time used and all services healthy",
       "revision": 229
+    },
+    {
+      "id": "c4f803e9-a761-4d3a-8dfc-55c8bcc25dba",
+      "at": "2026-11-22T17:46:21.195827Z",
+      "actor": "codex",
+      "summary": "AMD continuation 538647 remains pending on priority; start estimates remain unstable. No GPU time used, judge and all monitors healthy",
+      "revision": 230
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 538647 remains queued; tentative start advanced to 18:06 UTC, with no GPU time used and all services healthy",
-  "nextAction": "Keep foreground supervision. On allocation inspect restored checkpoint and scheduler counter, all rollout-engine hashes, first native update and W&B point, then matched-question proofs.",
+  "summary": "AMD continuation 538647 remains pending on priority; start estimates remain unstable. No GPU time used, judge and all monitors healthy",
+  "nextAction": "Continue foreground queue/service supervision. Recheck estimates directly. On allocation inspect checkpoint restoration, first native update and W&B coordinates, then actual matched-question proofs.",
   "owner": "Codex",
-  "revision": 229,
-  "updatedAt": "2026-11-22T16:41:44.331436Z"
+  "revision": 230,
+  "updatedAt": "2026-11-22T17:46:21.195827Z"
 }
