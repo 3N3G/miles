@@ -679,6 +679,11 @@
   ],
   "jobs": [
     {
+      "id": "537846",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "536360",
       "cluster": "hpcfund",
       "status": "TIMEOUT"
@@ -2058,15 +2063,22 @@
       "actor": "codex",
       "summary": "Claim the approved 96-answer continuation and detailed hourly supervision",
       "revision": 173
+    },
+    {
+      "id": "1dcc18ff-e9f9-42e6-91f7-5bab376a33a9",
+      "at": "2026-11-22T01:54:03.177376Z",
+      "actor": "codex",
+      "summary": "Automatically submitted approved RL job 537846",
+      "revision": 174
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "User approved the bounded continuation with recommended concurrency 96 and requested hourly detailed supervision, repairs and reruns for diagnosed failures. Freeze the reviewed setup and submit from the retained 25-update checkpoint.",
-  "nextAction": "Freeze the approved 40-new-update/four-hour/eight-MI350/$5 continuation, verify service/checkpoint/storage, submit once and supervise all optimizer, entropy/divergence, rollout and archive details through completion.",
+  "summary": "Automatically submitted approved RL job 537846",
+  "nextAction": "Monitor the owned RL job, reward tunnel, optimizer updates and saving.",
   "owner": "Codex",
-  "revision": 173,
-  "updatedAt": "2026-11-22T01:46:11.455191Z"
+  "revision": 174,
+  "updatedAt": "2026-11-22T01:54:03.177376Z"
 }

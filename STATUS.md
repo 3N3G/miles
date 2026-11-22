@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved the bounded continuation with recommended concurrency 96 and requested hourly detailed supervision, repairs and reruns for diagnosed failures. Freeze the reviewed setup and submit from t Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Freeze the approved 40-new-update/four-hour/eight-MI350/$5 continuation, verify service/checkpoint/storage, submit once and supervise all optimizer, entropy/divergence, rollout and
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 537846 Jobs: hpcfund/537846 SUBMITTED; hpcfund/536360 TIMEOUT
+  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
 
 ## Next / blocked
 
