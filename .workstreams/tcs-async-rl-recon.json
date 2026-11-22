@@ -2164,15 +2164,22 @@
       "actor": "codex",
       "summary": "Privately archive and verify pending readiness and first hourly review",
       "revision": 185
+    },
+    {
+      "id": "eb5f46db-d789-42e5-abfc-5c9aa7603d20",
+      "at": "2026-11-22T04:09:42.678449Z",
+      "actor": "codex",
+      "summary": "Hourly review: replacement waits on priority; no new training or judging",
+      "revision": 186
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Privately archive and verify pending readiness and first hourly review",
-  "nextAction": "Wait for owned allocation; qualify native resume and monitor through terminal state, upload and W&B verification.",
+  "summary": "Hourly review: replacement waits on priority; no new training or judging",
+  "nextAction": "Keep minute health checks and hourly reviews; qualify resumed GPU training when Slurm allocates the node.",
   "owner": "Codex",
-  "revision": 185,
-  "updatedAt": "2026-11-22T03:32:50.116114Z"
+  "revision": 186,
+  "updatedAt": "2026-11-22T04:09:42.678449Z"
 }

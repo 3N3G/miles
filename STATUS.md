@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Privately archive and verify pending readiness and first hourly review Jobs: hpcfund/537888 PENDING; hpcfund/537846 FAILED
-  Next: Wait for owned allocation; qualify native resume and monitor through terminal state, upload and W&B verification.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Hourly review: replacement waits on priority; no new training or judging Jobs: hpcfund/537888 PENDING; hpcfund/537846 FAILED
+  Next: Keep minute health checks and hourly reviews; qualify resumed GPU training when Slurm allocates the node.
 
 ## Next / blocked
 
