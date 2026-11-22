@@ -2699,15 +2699,22 @@
       "actor": "codex",
       "summary": "AMD 539594 remains queued; a 2h minimum now allows shorter backfill slots within the unchanged 3h43m maximum and shared budget",
       "revision": 245
+    },
+    {
+      "id": "4d6a5e86-5104-4e69-9d3d-b67613ae6756",
+      "at": "2026-11-22T21:27:02.760371Z",
+      "actor": "codex",
+      "summary": "Hourly check: AMD 539594 remains queued, all 20 frozen judge manifests and service health match, storage remains sufficient",
+      "revision": 246
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 539594 remains queued; a 2h minimum now allows shorter backfill slots within the unchanged 3h43m maximum and shared budget",
-  "nextAction": "Keep foreground supervision; on allocation read actual walltime, verify optimizer restore and update 65, and resume only within the remaining combined budget if Slurm grants a shorter slot",
+  "summary": "Hourly check: AMD 539594 remains queued, all 20 frozen judge manifests and service health match, storage remains sufficient",
+  "nextAction": "Continue foreground supervision and read actual allocated time on startup; verify resumed optimizer, first complete update, native W&B and graded proofs",
   "owner": "Codex",
-  "revision": 245,
-  "updatedAt": "2026-11-22T20:52:16.891521Z"
+  "revision": 246,
+  "updatedAt": "2026-11-22T21:27:02.760371Z"
 }

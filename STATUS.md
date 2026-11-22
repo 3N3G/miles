@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 remains queued; a 2h minimum now allows shorter backfill slots within the unchanged 3h43m maximum and shared budget Jobs: hpcfund/539594 PENDING; hpcfund/538647 FAILED
-  Next: Keep foreground supervision; on allocation read actual walltime, verify optimizer restore and update 65, and resume only within the remaining combined budget if Slurm grants a shor
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Hourly check: AMD 539594 remains queued, all 20 frozen judge manifests and service health match, storage remains sufficient Jobs: hpcfund/539594 PENDING; hpcfund/538647 FAILED
+  Next: Continue foreground supervision and read actual allocated time on startup; verify resumed optimizer, first complete update, native W&B and graded proofs
 
 ## Next / blocked
 
