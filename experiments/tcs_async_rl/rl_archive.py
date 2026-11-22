@@ -9,6 +9,7 @@ import os
 import re
 import shlex
 import shutil
+import signal
 import subprocess
 from pathlib import Path
 
@@ -17,6 +18,20 @@ from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes, file_sha256
 TRACE_BATCH_BYTES = 64 * 2**20
 VM_RESERVE_BYTES = 2**30
 VM_STARTUP_RESERVE_BYTES = 5 * 2**30
+
+
+def invoke_upload(argv, *, capture_output, text, timeout, env):
+    """On timeout, stop our upload wrapper and all of its client descendants."""
+    with subprocess.Popen(
+        argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=text, env=env, start_new_session=True
+    ) as child:
+        try:
+            stdout, stderr = child.communicate(timeout=timeout)
+        except subprocess.TimeoutExpired as error:
+            os.killpg(child.pid, signal.SIGKILL)
+            stdout, stderr = child.communicate()
+            raise subprocess.TimeoutExpired(argv, timeout, output=stdout, stderr=stderr) from error
+        return subprocess.CompletedProcess(argv, child.returncode, stdout, stderr)
 
 
 def require_vm_startup_space(directory):
@@ -43,7 +58,7 @@ def trace_paths(directory):
     ]
 
 
-def upload_run(directory, *, log_name="upload.log", invoke=subprocess.run):
+def upload_run(directory, *, log_name="upload.log", invoke=invoke_upload):
     """Upload without deleting files, requiring an immutable private receipt."""
     upload_cache = directory / ".cache/xet-upload"
     if upload_cache.is_symlink() or directory.resolve() not in upload_cache.resolve().parents:
@@ -54,8 +69,14 @@ def upload_run(directory, *, log_name="upload.log", invoke=subprocess.run):
             capture_output=True,
             text=True,
             timeout=1800,
-            env={**os.environ, "HF_XET_CACHE": str(upload_cache)},
+            # The streamed Xet pipeline can split every live snapshot into
+            # several commits. Repeated snapshots exhausted the shared Hub
+            # commit rate limit. The SDK's ordinary upload path uses one commit.
+            env={**os.environ, "HF_XET_CACHE": str(upload_cache), "HF_HUB_DISABLE_XET": "1"},
         )
+    except subprocess.TimeoutExpired as error:
+        (directory / log_name).write_text((error.stdout or "") + (error.stderr or ""))
+        raise
     finally:
         if upload_cache.is_dir() and not upload_cache.is_symlink():
             shutil.rmtree(upload_cache)
@@ -67,7 +88,7 @@ def upload_run(directory, *, log_name="upload.log", invoke=subprocess.run):
     return urls[-1]
 
 
-def archive_chunks(directory, *, invoke=subprocess.run):
+def archive_chunks(directory, *, invoke=invoke_upload):
     paths = trace_paths(directory)
     if not paths:
         return None

@@ -23,3 +23,28 @@ At 06:10:59 UTC, the observer verified all eleven completed updates through
 global step 35 in W&B, with state `running`. It repeated that verification at
 06:12:04 UTC. The first readback lagged SDK delivery, then caught up without
 resending acknowledged points. The archive uploader was still waiting.
+
+## Private archive commit rate limit
+
+At 06:15:37 UTC, I terminated only the owned upload client. Its captured log
+identified HTTP 429 at the Hub's dataset `commit/main` endpoint. The client
+requested a 3,601-second delay. Its streamed upload had checked 2,304 files and
+committed 1,703 files in three partial commits. It had not produced the final
+immutable receipt. All four local trace copies remained intact and unindexed.
+
+At 06:16:32 UTC, I paused only the original artifact supervisor, PID 1114406.
+Its reward service and tunnel remain active. The independent native metric
+observer and GPU telemetry remain active. Foreground supervision checks those
+processes and new grading receipts while the original supervisor waits.
+
+The separate `watch_archive.py` worker respects a conservative backoff until
+07:16 UTC, one hour after observing the error. It then takes live snapshots
+at most once every five minutes. The ordinary Hugging Face upload path makes
+one commit per snapshot, rather than splitting snapshots across several commits.
+The worker drains the remaining traces after the GPU job ends. Resume the
+original supervisor only after that worker exits, so two uploaders never race.
+
+Upload timeouts now stop the owned shell wrapper and its client descendants.
+They retain output for diagnosis and preserve all unarchived traces. A real
+parent/child timeout test verifies that neither process continues running.
+The live GPU source, experiment settings, score rules, and limits are unchanged.

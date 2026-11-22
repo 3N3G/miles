@@ -2,7 +2,9 @@ import asyncio
 import copy
 import gzip
 import json
+import os
 import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -12,7 +14,7 @@ from unittest.mock import Mock, patch
 from experiments.tcs_async_rl.grade_group import Budget, grade_one
 from experiments.tcs_async_rl.reward_hook import question_key
 from experiments.tcs_async_rl.reward_service import MultiScorer
-from experiments.tcs_async_rl.rl_archive import archive_chunks, copy_trace_batch, read_index
+from experiments.tcs_async_rl.rl_archive import archive_chunks, copy_trace_batch, invoke_upload, read_index
 from experiments.tcs_async_rl.rl_artifacts import file_sha256, retain_latest_checkpoint, save_generated_sample
 from experiments.tcs_async_rl.rl_inputs import question_set_key, read_bundle
 from experiments.tcs_async_rl.rl_smoke import native_argv
@@ -375,6 +377,23 @@ class ArchiveTests(unittest.TestCase):
                     archive_chunks(root, invoke=invoke)
                 self.assertTrue(path.exists())
                 self.assertFalse(read_index(root))
+
+    @unittest.skipUnless(sys.platform == "linux", "Upload process groups require Linux")
+    def test_upload_timeout_stops_client_descendants(self):
+        code = (
+            "import subprocess,sys,time; "
+            "p=subprocess.Popen([sys.executable,'-c','import time;time.sleep(60)']); "
+            "print(p.pid,flush=True); time.sleep(60)"
+        )
+        with self.assertRaises(subprocess.TimeoutExpired) as raised:
+            invoke_upload([sys.executable, "-c", code], capture_output=True, text=True, timeout=0.5, env=os.environ)
+        pid = int(raised.exception.stdout.strip())
+        path = Path(f"/proc/{pid}/stat")
+        try:
+            state = path.read_text().split(") ", 1)[1].split()[0]
+        except (FileNotFoundError, ProcessLookupError):
+            return
+        self.assertIn(state, ("Z", "X"))
 
     def test_compressed_generated_output_roundtrips_exact_policy_replay_fields(self):
         with tempfile.TemporaryDirectory() as name:
