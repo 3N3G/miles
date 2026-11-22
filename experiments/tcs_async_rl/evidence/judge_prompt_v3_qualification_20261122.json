@@ -1,0 +1,31 @@
+{
+  "development_after_v2_diagnosis": {
+    "cases": 11,
+    "item_decisions": 102,
+    "matches": 99,
+    "mismatches": 3,
+    "equal_order_scores": 10
+  },
+  "validation": {
+    "cases": 5,
+    "item_decisions": 48,
+    "matches": 43,
+    "mismatches": 5,
+    "equal_order_scores": 4
+  },
+  "gate_samples": 32,
+  "gate_histogram": {
+    "0.0": 17,
+    "5.0": 5,
+    "6.0": 4,
+    "7.0": 6
+  },
+  "all_paired_references_seven": true,
+  "controls_passed": 60,
+  "judge_model": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "prompt_sha256": "b4203477f291321c2192de24b37fecef4b85ed0989dd1f61d47825121136e2a5",
+  "new_gpu_jobs": 0,
+  "estimated_judge_usd_including_v2": 0.3972903,
+  "remaining_limit": "Assistant labels are not human calibration; some strictness disagreements remain. Training remains provisional."
+}
