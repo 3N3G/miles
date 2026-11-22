@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 538647 is RUNNING Jobs: hpcfund/538647 RUNNING; hpcfund/538154 COMPLETED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 538647 is running on k007-002; judge tunnel and all three rollout engines are healthy, checkpoint load and first update pending Jobs: hpcfund/538647 RUNNING; hpcfund/538154 COMPLETED
+  Next: Keep foreground supervision. Verify restored iteration64 and scheduler2080, initial weight checks, first finite update65 and correct native W&B coordinates, then inspect actual gra
 
 ## Next / blocked
 

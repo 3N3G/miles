@@ -2631,15 +2631,22 @@
       "actor": "codex",
       "summary": "RL job 538647 is RUNNING",
       "revision": 236
+    },
+    {
+      "id": "80e3dee1-fdc3-46d0-934f-7fe5d9afa8e3",
+      "at": "2026-11-22T20:02:44.615759Z",
+      "actor": "codex",
+      "summary": "AMD 538647 is running on k007-002; judge tunnel and all three rollout engines are healthy, checkpoint load and first update pending",
+      "revision": 237
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 538647 is RUNNING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "AMD 538647 is running on k007-002; judge tunnel and all three rollout engines are healthy, checkpoint load and first update pending",
+  "nextAction": "Keep foreground supervision. Verify restored iteration64 and scheduler2080, initial weight checks, first finite update65 and correct native W&B coordinates, then inspect actual graded rollouts.",
   "owner": "Codex",
-  "revision": 236,
-  "updatedAt": "2026-11-22T19:58:13.491492Z"
+  "revision": 237,
+  "updatedAt": "2026-11-22T20:02:44.615759Z"
 }
