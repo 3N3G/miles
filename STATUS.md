@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 538647 is PENDING Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Revised judge qualified; resumed AMD job 538647 is queued from 65 saved updates, with independent monitoring active Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Watch the scheduler and owned services. Current estimated start is Nov 22 23:36 UTC (18:36 Eastern), subject to change. Inspect first native update, then every metric and matched-q
 
 ## Next / blocked
 

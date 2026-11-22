@@ -3,6 +3,14 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/b69851eb463907e85d0bb760e97d4acf48f63742/miles/easy-overfit-v14",
+      "label": "Verified pre-submission prompt v3 qualification and all judging receipts"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ddcfe3aa37d888f7376835682baa7dcdde8f7e0f/miles/easy-overfit-v13",
+      "label": "Verified preserved prompt v2 qualification, no GPU submission"
+    },
+    {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/11a802f912aab51aea0effb85ff85a29c4f8a840/miles/easy-overfit-v12-graded-rollout-review-20261122",
       "label": "Verified six-case raw proofs, original grades and exact prompt payloads"
     },
@@ -248,6 +256,22 @@
     }
   ],
   "evidence": [
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_REPAIR_RESUME_PLAN_20261122.md",
+      "label": "User-authorized judge repair and bounded resumed-run plan"
+    },
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_FOLLOWTHROUGH_REPAIR_20261122.md",
+      "label": "Exact second prompt repair and preserved first qualification"
+    },
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_PROMPT_QUALIFICATION_FINDINGS_20261122.md",
+      "label": "Qualification, assistant-label agreement and remaining grading uncertainty"
+    },
+    {
+      "path": "experiments/tcs_async_rl/rl_easy_overfit_v14.json",
+      "label": "Frozen iteration-64 continuation, prompt v3, 40 new updates"
+    },
     {
       "path": "experiments/tcs_async_rl/JUDGE_REPAIR_OPTIONS_20261122.md",
       "label": "Primary-source evidence on prompt clarification, few-shot examples and stronger reasoning judges"
@@ -2438,15 +2462,29 @@
       "actor": "codex",
       "summary": "RL job 538647 is PENDING",
       "revision": 217
+    },
+    {
+      "id": "16548fb0-d65f-4ddc-a78b-bdb61926b767",
+      "at": "2026-11-22T09:40:56.771298Z",
+      "actor": "codex",
+      "summary": "Attach both prompt qualifications and frozen resumed-run scope",
+      "revision": 218
+    },
+    {
+      "id": "d80f78df-36c5-4098-b51e-3cc970da5603",
+      "at": "2026-11-22T09:40:56.908855Z",
+      "actor": "codex",
+      "summary": "Revised judge qualified; resumed AMD job 538647 is queued from 65 saved updates, with independent monitoring active",
+      "revision": 219
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 538647 is PENDING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "Revised judge qualified; resumed AMD job 538647 is queued from 65 saved updates, with independent monitoring active",
+  "nextAction": "Watch the scheduler and owned services. Current estimated start is Nov 22 23:36 UTC (18:36 Eastern), subject to change. Inspect first native update, then every metric and matched-question proof at least hourly.",
   "owner": "Codex",
-  "revision": 217,
-  "updatedAt": "2026-11-22T09:34:38.865892Z"
+  "revision": 219,
+  "updatedAt": "2026-11-22T09:40:56.908855Z"
 }
