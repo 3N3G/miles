@@ -44,6 +44,13 @@ one commit per snapshot, rather than splitting snapshots across several commits.
 The worker drains the remaining traces after the GPU job ends. Resume the
 original supervisor only after that worker exits, so two uploaders never race.
 
+The replacement eight-call judge service has its own process receipt. After
+the GPU job reaches a terminal state, let its remaining provider requests drain.
+Stop that replacement service after the drain, then resume the original
+supervisor once the archive worker has exited. Its final upload can then include
+all grade receipts and the completed cleanup record. The original supervisor
+still owns its old service handle and tunnel. Keep it paused during live training.
+
 Upload timeouts now stop the owned shell wrapper and its client descendants.
 They retain output for diagnosis and preserve all unarchived traces. A real
 parent/child timeout test verifies that neither process continues running.
