@@ -3,6 +3,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from experiments.tcs_async_rl.diagnose_rl import question_comparisons, trace_summary
@@ -14,10 +15,30 @@ from experiments.tcs_async_rl.native_metrics import (
     sync_live_audit,
     sync_terminal_audit,
 )
+from experiments.tcs_async_rl.optimizer_probe import read_optimizer_snapshot
 from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_sampled_entropy
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_optimizer_probe_reads_cached_scalars_without_gradient_calls_or_mutation(self):
+        optimizer = SimpleNamespace(
+            grad_norms_by_group={"mtp": 0.7},
+            param_groups=[{"lr": 1e-6, "weight_decay": 0.1}],
+            get_grad_norm=Mock(side_effect=AssertionError("No collectives in a read-only probe")),
+        )
+        actor = SimpleNamespace(
+            optimizer=optimizer,
+            opt_param_scheduler=SimpleNamespace(num_steps=800, lr_decay_steps=1280, lr_decay_style="constant"),
+            _rank=0,
+            args=SimpleNamespace(wandb_run_id="id", use_checkpoint_opt_param_scheduler=True),
+            _active_model_tag="actor",
+        )
+        result = read_optimizer_snapshot(actor)
+        self.assertEqual(result["separate_gradient_norms"], {"mtp": 0.7})
+        self.assertEqual(result["scheduler_counter"], 800)
+        optimizer.get_grad_norm.assert_not_called()
+        self.assertEqual(optimizer.param_groups, [{"lr": 1e-6, "weight_decay": 0.1}])
+
     def test_detailed_review_flags_wrong_update_direction_and_compares_only_repeated_questions(self):
         native = [
             {"optimizer_step": 25, "train/lr-pg_0": 1e-6, "train/update_direction/surrogate_gain": -0.1},

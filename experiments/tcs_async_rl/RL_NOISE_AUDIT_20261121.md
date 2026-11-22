@@ -10,7 +10,7 @@ Luna medium graded the supplied rubrics in both anonymous answer orders.
 These are provisional training observations from one seed, without a frozen-policy comparison.
 
 - Group means range from 0 to 6.875. Raw differences between successive questions are not learning progress.
-- Gradients are finite. Nonzero norms range from 0.173 to 0.607, below the clipping threshold of one.
+- Main-policy gradients are finite. Nonzero norms range from 0.173 to 0.607, below the clipping threshold of one.
   One constant-zero group has zero new policy gradient. No update is skipped. CISPO clipping is zero throughout.
 - All three rollout engines match at 28 weight publications. Maximum observed decode lag is one update.
   Per-token effective sample-size ratios stay above 0.9992. These do not measure drift from initialization.
@@ -26,6 +26,8 @@ The constant-zero group's example confuses an extremal bound with a random-proce
 
 The evidence does not identify an optimal learning rate or isolate a cause of absent improvement.
 Entropy, cumulative reference-policy divergence and component gradient norms were not measured.
+The installed optimizer clips MTP parameters separately. The reported norm excludes them.
+See [the source-backed clarification](OPTIMIZER_OBSERVATIONS_20261122.md).
 The [evidence record](evidence/easy_overfit_noise_audit_20261121.json) links the full report, all 75 native scalar metrics,
 paired-question plots, raw examples and reproduction details.
 Use the [corrected W&B series](WANDB.md#verify-offline-metric-axes). Original grades and used configs remain unchanged.
