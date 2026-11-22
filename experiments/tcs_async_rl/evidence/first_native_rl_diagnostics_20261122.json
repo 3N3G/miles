@@ -1,0 +1,111 @@
+{
+  "at_utc": "2026-11-22T05:34:41.815867+00:00",
+  "job_id": "538154",
+  "source_commit": "61bfb46077807e9b1f37da3e3035e5512ff968a7",
+  "completed_native_updates": 4,
+  "optimizer_steps": [
+    25,
+    26,
+    27,
+    28
+  ],
+  "all_metrics_finite": true,
+  "first_group": {
+    "answers": 32,
+    "mean_reward": 5.0,
+    "min_reward": 3.0,
+    "max_reward": 7.0,
+    "capped_answers": 0,
+    "mean_response_tokens": 16321.78125,
+    "verified_response_tokens": 522297,
+    "judge_order_disagreements": 17,
+    "max_judge_order_gap": 4,
+    "seeded_example_sample_index": 845,
+    "seeded_example_reward": 4.5,
+    "example_literal_gap": "Substitutes M=alpha*N although the problem assumes only M/N tends to alpha."
+  },
+  "first_update_diagnostics": {
+    "train/loss": -0.0005088597536087036,
+    "train/pg_loss": -0.0005088597536087036,
+    "train/entropy_loss": 0.5248551368713379,
+    "train/pg_clipfrac": 0.0,
+    "train/ppo_kl": 0.00031693337950855494,
+    "train/ess_ratio": 0.9993898868560791,
+    "train/train_rollout_logprob_abs_diff": 0.008839486166834831,
+    "train/train_rollout_kl": 0.0003049971128348261,
+    "train/kl_loss": 0.0020074176136404276,
+    "train/reference_sampled_log_ratio": 0.0016025175573304296,
+    "train/full_policy_entropy": 0.5248551368713379,
+    "train/sampling_entropy": 0.42715808749198914,
+    "train/grad_norm": 0.387956440448761,
+    "train/mtp_loss": 0.55897057056427,
+    "train/lr-pg_0": 1e-06,
+    "train/lr-pg_1": 1e-06,
+    "train/step": 25,
+    "train/update_direction/surrogate_gain": 0.0006393537939715088,
+    "train/update_direction/samples": 32,
+    "train/update_direction/positive_advantage_samples": 12,
+    "train/update_direction/negative_advantage_samples": 13,
+    "train/update_direction/positive_advantage_mean_logprob_change": 0.0007234023029620099,
+    "train/update_direction/negative_advantage_mean_logprob_change": -0.0006027486782001618
+  },
+  "optimizer_scalar_observation": {
+    "at_utc": "2026-11-22T05:31:57.740799+00:00",
+    "workers": [
+      {
+        "rank": 0,
+        "run_id": "261122-050822-879",
+        "scheduler_counter": 896,
+        "scheduler_decay_steps": 1280,
+        "scheduler_style": "constant",
+        "restores_checkpoint_scheduler": true,
+        "last_started_rollout": 27,
+        "active_model_tag": "actor",
+        "learning_rates": [
+          1e-06,
+          1e-06
+        ],
+        "weight_decays": [
+          0.1,
+          0.0
+        ],
+        "separate_gradient_norms": {
+          "mtp": 0.08457603305578232
+        }
+      },
+      {
+        "rank": 1,
+        "run_id": "261122-050822-879",
+        "scheduler_counter": 896,
+        "scheduler_decay_steps": 1280,
+        "scheduler_style": "constant",
+        "restores_checkpoint_scheduler": true,
+        "last_started_rollout": 27,
+        "active_model_tag": "actor",
+        "learning_rates": [
+          1e-06,
+          1e-06
+        ],
+        "weight_decays": [
+          0.1,
+          0.0
+        ],
+        "separate_gradient_norms": {
+          "mtp": 0.08457603305578232
+        }
+      }
+    ]
+  },
+  "wandb": {
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261122-050822-879-native",
+    "verified_optimizer_steps": [
+      25,
+      26
+    ],
+    "exact_native_scalar_values_verified": 176,
+    "mismatches": 0,
+    "reward_metric": "audit/rollout/episode_raw_reward",
+    "x_axis": "audit/optimizer_step"
+  },
+  "learning_limit": "These early visits are not a demonstrated rising learning curve. Continue the approved run and compare matched questions. Human calibration remains unmeasured."
+}
