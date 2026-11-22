@@ -11,12 +11,19 @@ uses standing inference-repair authorization. No subagents were authorized or sp
 - Actual allocation started **2026-11-22 22:16:44 UTC** on `k007-003`, with **2h** granted by backfill.
   Its scheduled limit is **2026-11-23 00:16:44 UTC**. Source configuration retains its original maximum unchanged.
   `owned-allocation-start.json` preserves the exact scheduler readback and a successful service check from the owned node.
-- Producer run ID: **`261122-221746-947`**. Its prospective native W&B ID is `261122-221746-947-native`.
-  No new optimizer update or online W&B training point was verified at this startup check.
+- Producer run ID: **`261122-221746-947`**. The [native W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261122-221746-947-native)
+  is running. At 22:45 UTC, all 88 scalar values for completed update 65 matched their exact native coordinates.
+  `first-native-wandb-all-scalars-verification.json` records that readback. Judge and resume provenance was added to its config/tags.
 - The 22:22:47 UTC read-only probe verifies both ranks at scheduler counter 2,080 and learning rate 1e-6.
   Iteration 64 loaded successfully, and the restored weight checks cover all three rollout engines at version 65.
   The producer was active with 96 in-flight samples, three running groups and zero completed buffer groups.
   `optimizer-and-rollout-bootstrap-probe.json` preserves the snapshot. Separate MTP norms were unset before any new update.
+- First published update 65 is finite: reward 4.5625/7, 14/32 caps, gradient norm 0.16368, full entropy 0.51334,
+  sampling entropy 0.42736, sampled initialization divergence 0.0067501, rollout mismatch 0.00027755,
+  effective sample-size ratio 0.999445, policy clipping zero and positive surrogate gain 0.00009912.
+  This is a numerical startup check, not a learning trend. Its communication-protocol group took 902.7 seconds to generate.
+  The raw batch has 17 sevens, three sixes, one five, one four and ten zeros. A seed-selected proof is preserved
+  in `first-batch-provisional-raw-review.json`, pending its immutable batch-archive readback.
 - Training/controller source **`1620b3a0569f9192696406d51332b513f3d793e0`**.
 - Frozen configuration `rl_easy_overfit_v15.json`, unchanged judge configuration `judge_group_v5_followthrough_repair.json`.
 - Resume the original iteration-64 checkpoint, containing 65 updates. Target new global updates 65–104.
