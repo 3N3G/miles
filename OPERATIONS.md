@@ -93,3 +93,19 @@ under `reports/` and full methods in local `DETAILS.md`.
 These drafts are stored on local branch `review/continued-research` and are not pushed.
 The initial report remains on `review/initial-report`.
 Keep human-facing drafts local until the user reviews them.
+
+
+## Literature mapping requested on 2026-11-22
+
+The user redirected the next step to a broad technique-by-technique map.
+This stage performed literature reading and first-principles analysis only.
+No model inference, new experiment, Slurm submission or job modification ran.
+The inventory covers 86 entries in eight families and links 80 sources.
+The source inventory and structural validation are in `evidence/interpretability_survey_*.json`.
+Every assessment of looping is explicitly labeled as inference, not a measured ranking.
+
+The local user-review drafts are `SURVEY.md` and
+`reports/TRANSFORMER_TECHNIQUES_AND_LOOPING.md`, with a machine-readable catalog.
+They are preserved on local branch `review/looping-survey` and are not pushed.
+The source bibliography and operational state may be backed up normally.
+All earlier experimental reports and review branches remain preserved.

@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The user redirected the next step to a broad literature map. The completed experiments and all old protocols remain preserved. This stage uses literature and first-principles analysis only.
-  Next: Map technique families from primary sources, distinguish weight sharing from Inkling-specific state architecture, and write a short synthesis plus a complete local catalog for user
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,4 +16,4 @@
 
 ## Finished
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed the requested literature map: 86 entries in eight families, linked to 80 sources. Every entry has a one-line operation and a looping assessment labeled as inference. The short summary and fu

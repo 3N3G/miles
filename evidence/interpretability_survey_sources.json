@@ -1,0 +1,662 @@
+{
+  "as_of": "2026-11-22",
+  "scope": "Core transformer interpretability operations, adjacent methods and controls",
+  "entry_count": 86,
+  "family_counts": {
+    "Representations and concepts": 14,
+    "Vocabulary and language readouts": 10,
+    "Feature dictionaries and interpretable surrogates": 10,
+    "Causal localization and interventions": 16,
+    "Attribution and parameter algebra": 16,
+    "Parameter editing as an interpretability test": 4,
+    "Behavioral explanations and training-data attribution": 10,
+    "Training structure and ground-truth validation": 6
+  },
+  "sources": [
+    {
+      "id": "framework",
+      "title": "A Mathematical Framework for Transformer Circuits",
+      "url": "https://transformer-circuits.pub/2021/framework/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "exemplars",
+      "title": "Language models can explain neurons in language models",
+      "url": "https://openaipublic.blob.core.windows.net/neuron-explainer/paper/index.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "visualization",
+      "title": "Feature Visualization",
+      "url": "https://distill.pub/2017/feature-visualization/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "probecontrols",
+      "title": "Designing and Interpreting Probes with Control Tasks",
+      "url": "https://aclanthology.org/D19-1275/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "sparseprobe",
+      "title": "Finding Neurons in a Haystack: Case Studies with Sparse Probing",
+      "url": "https://arxiv.org/abs/2305.01610",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "structural",
+      "title": "A Structural Probe for Finding Syntax in Word Representations",
+      "url": "https://aclanthology.org/N19-1419/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "mdl",
+      "title": "Information-Theoretic Probing with Minimum Description Length",
+      "url": "https://aclanthology.org/2020.emnlp-main.14/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "tcav",
+      "title": "Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors",
+      "url": "https://proceedings.mlr.press/v80/kim18d.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "decomposition",
+      "title": "Matrix decomposition: PCA, ICA and NMF",
+      "url": "https://scikit-learn.org/stable/modules/decomposition.html",
+      "kind": "official mathematical-method documentation",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "svcca",
+      "title": "SVCCA: Singular Vector Canonical Correlation Analysis for Deep Learning Dynamics and Interpretability",
+      "url": "https://arxiv.org/abs/1706.05806",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "cka",
+      "title": "Similarity of Neural Network Representations Revisited",
+      "url": "https://proceedings.mlr.press/v97/kornblith19a.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "procrustes",
+      "title": "Orthogonal Procrustes problem",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.orthogonal_procrustes.html",
+      "kind": "official mathematical-method documentation",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "logit",
+      "title": "Interpreting GPT: the logit lens",
+      "url": "https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "tuned",
+      "title": "Eliciting Latent Predictions from Transformers with the Tuned Lens",
+      "url": "https://arxiv.org/abs/2303.08112",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "jacobian",
+      "title": "The Global Workspace of Language Models",
+      "url": "https://transformer-circuits.pub/2026/workspace/index.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "rlens",
+      "title": "R-lens: Making J-lens More Faithful on Early Layers",
+      "url": "https://www.lesswrong.com/posts/nv8oedrnLXKRzNEL9/r-lens-making-j-lens-more-faithful-on-early-layers",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "jpp",
+      "title": "J++ Lens: Jacobian Filtering Enables More Faithful Workspace Lenses",
+      "url": "https://www.lesswrong.com/posts/nc9dHfcB22JdMzGbr/j-lens-jacobian-filtering-enables-more-faithful-workspace-lenses",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "prisms",
+      "title": "Logit Prisms",
+      "url": "https://neuralblog.github.io/logit-prisms/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "patchscopes",
+      "title": "Patchscopes: A Unifying Framework for Inspecting Hidden Representations of Language Models",
+      "url": "https://arxiv.org/abs/2401.06102",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "goodfire",
+      "title": "Interpreting Inkling 2 Mini",
+      "url": "https://www.goodfire.com/research/interpreting-inkling-2-mini/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "latentqa",
+      "title": "LatentQA: Teaching LLMs to Decode Activations Into Natural Language",
+      "url": "https://arxiv.org/abs/2412.08686",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "oracles",
+      "title": "Activation Oracles: Training and evaluating LLMs as general-purpose activation explainers",
+      "url": "https://alignment.anthropic.com/2025/activation-oracles/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "nla",
+      "title": "Natural Language Autoencoders",
+      "url": "https://transformer-circuits.pub/2026/nla/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "sae",
+      "title": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+      "url": "https://arxiv.org/abs/2309.08600",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "topk",
+      "title": "Scaling and evaluating sparse autoencoders",
+      "url": "https://arxiv.org/abs/2406.04093",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "gatedsae",
+      "title": "Improving Dictionary Learning with Gated Sparse Autoencoders",
+      "url": "https://arxiv.org/abs/2404.16014",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "jumprelu",
+      "title": "Jumping Ahead: Improving Reconstruction Fidelity with JumpReLU Sparse Autoencoders",
+      "url": "https://arxiv.org/abs/2407.14435",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "matryoshka",
+      "title": "Learning Multi-Level Features with Matryoshka Sparse Autoencoders",
+      "url": "https://proceedings.mlr.press/v267/bussmann25a.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "transcoder",
+      "title": "Transcoders Find Interpretable LLM Feature Circuits",
+      "url": "https://arxiv.org/abs/2406.11944",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "clt",
+      "title": "Circuit Tracing: Revealing Computational Graphs in Language Models",
+      "url": "https://www.transformer-circuits.pub/2025/attribution-graphs/methods.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "crosscoder",
+      "title": "Crosscoders: Towards a Model Diffing Framework",
+      "url": "https://transformer-circuits.pub/2024/crosscoders/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "featurecircuits",
+      "title": "Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models",
+      "url": "https://arxiv.org/abs/2403.19647",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "lib",
+      "title": "The Local Interaction Basis: Identifying Computationally-Relevant and Sparsely Interacting Features in Neural Networks",
+      "url": "https://arxiv.org/abs/2405.10928",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "molt",
+      "title": "Sparse mixtures of linear transforms",
+      "url": "https://transformer-circuits.pub/2025/bulk-update/index.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "rome",
+      "title": "Locating and Editing Factual Associations in GPT",
+      "url": "https://arxiv.org/abs/2202.05262",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "pathpatch",
+      "title": "Localizing Model Behavior with Path Patching",
+      "url": "https://arxiv.org/abs/2304.05969",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "mediation",
+      "title": "Causal Mediation Analysis for Interpreting Neural NLP: The Case of Gender Bias",
+      "url": "https://arxiv.org/abs/2004.12265",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "eap",
+      "title": "Attribution Patching Outperforms Automated Circuit Discovery",
+      "url": "https://arxiv.org/abs/2310.10348",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "eapig",
+      "title": "Have Faith in Faithfulness: Going Beyond Circuit Overlap When Finding Model Mechanisms",
+      "url": "https://arxiv.org/abs/2403.17806",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "atpstar",
+      "title": "AtP*: An efficient and scalable method for localizing LLM behaviour to components",
+      "url": "https://arxiv.org/abs/2403.00745",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "acdc",
+      "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+      "url": "https://arxiv.org/abs/2304.14997",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "subnetwork",
+      "title": "Low-Complexity Probing via Finding Subnetworks",
+      "url": "https://aclanthology.org/2021.naacl-main.74/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "scrubbing",
+      "title": "Causal Scrubbing: a method for rigorously testing interpretability hypotheses",
+      "url": "https://www.alignmentforum.org/s/h95ayYYwMebGEYN5y/p/JvZhhzycHu2Yd57RN",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "das",
+      "title": "Finding Alignments Between Interpretable Causal Variables and Distributed Neural Representations",
+      "url": "https://proceedings.mlr.press/v236/geiger24a/geiger24a.pdf",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "leace",
+      "title": "LEACE: Perfect linear concept erasure in closed form",
+      "url": "https://arxiv.org/abs/2306.03819",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "inlp",
+      "title": "Null It Out: Guarding Protected Attributes by Iterative Nullspace Projection",
+      "url": "https://arxiv.org/abs/2004.07667",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "actadd",
+      "title": "Steering Language Models With Activation Engineering",
+      "url": "https://arxiv.org/abs/2308.10248",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "caa",
+      "title": "Steering Llama 2 via Contrastive Activation Addition",
+      "url": "https://arxiv.org/abs/2312.06681",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "repe",
+      "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+      "url": "https://arxiv.org/abs/2310.01405",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "functionvectors",
+      "title": "Function Vectors in Large Language Models",
+      "url": "https://arxiv.org/abs/2310.15213",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "iit",
+      "title": "Inducing Causal Structure for Interpretable Neural Networks",
+      "url": "https://proceedings.mlr.press/v162/geiger22a.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "attention",
+      "title": "Attention is All you Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "rollout",
+      "title": "Quantifying Attention Flow in Transformers",
+      "url": "https://aclanthology.org/2020.acl-main.385/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "alti",
+      "title": "Measuring the Mixing of Contextual Information in the Transformer",
+      "url": "https://aclanthology.org/2022.emnlp-main.595/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "ffn",
+      "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+      "url": "https://aclanthology.org/2021.emnlp-main.446/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "embeddingweights",
+      "title": "Analyzing Transformers in Embedding Space",
+      "url": "https://aclanthology.org/2023.acl-long.893/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "ig",
+      "title": "Axiomatic Attribution for Deep Networks",
+      "url": "https://proceedings.mlr.press/v70/sundararajan17a.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "smoothgrad",
+      "title": "SmoothGrad: removing noise by adding noise",
+      "url": "https://arxiv.org/abs/1706.03825",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "deeplift",
+      "title": "Learning Important Features Through Propagating Activation Differences",
+      "url": "https://arxiv.org/abs/1704.02685",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "attnlrp",
+      "title": "AttnLRP: Attention-Aware Layer-Wise Relevance Propagation for Transformers",
+      "url": "https://arxiv.org/abs/2402.05602",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "hessians",
+      "title": "Explaining Explanations: Axiomatic Feature Interactions for Deep Networks",
+      "url": "https://arxiv.org/abs/2002.04138",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "cdt",
+      "title": "Efficient Automated Circuit Discovery in Transformers using Contextual Decomposition",
+      "url": "https://arxiv.org/abs/2407.00886",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "knowledgeneurons",
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "url": "https://aclanthology.org/2022.acl-long.581/",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "memit",
+      "title": "Mass-Editing Memory in a Transformer",
+      "url": "https://arxiv.org/abs/2210.07229",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "mend",
+      "title": "Fast Model Editing at Scale",
+      "url": "https://arxiv.org/abs/2110.11309",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "taskarith",
+      "title": "Editing Models with Task Arithmetic",
+      "url": "https://arxiv.org/abs/2212.04089",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "lime",
+      "title": "Why Should I Trust You?: Explaining the Predictions of Any Classifier",
+      "url": "https://arxiv.org/abs/1602.04938",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "shap",
+      "title": "A Unified Approach to Interpreting Model Predictions",
+      "url": "https://arxiv.org/abs/1705.07874",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "cot",
+      "title": "Language Models Do Not Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting",
+      "url": "https://arxiv.org/abs/2305.04388",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "cotfaith",
+      "title": "Measuring Faithfulness in Chain-of-Thought Reasoning",
+      "url": "https://arxiv.org/abs/2307.13702",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "influence",
+      "title": "Studying Large Language Model Generalization with Influence Functions",
+      "url": "https://arxiv.org/abs/2308.03296",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "tracin",
+      "title": "Estimating Training Data Influence by Tracing Gradient Descent",
+      "url": "https://arxiv.org/abs/2002.08484",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "trak",
+      "title": "TRAK: Attributing Model Behavior at Scale",
+      "url": "https://arxiv.org/abs/2303.14186",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "datamodels",
+      "title": "Datamodels: Predicting Predictions from Training Data",
+      "url": "https://arxiv.org/abs/2202.00622",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "grokking",
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "url": "https://arxiv.org/abs/2301.05217",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "degeneracy",
+      "title": "Using Degeneracy in the Loss Landscape for Mechanistic Interpretability",
+      "url": "https://arxiv.org/abs/2405.10927",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "tracr",
+      "title": "Tracr: Compiled Transformers as a Laboratory for Interpretability",
+      "url": "https://arxiv.org/abs/2301.05062",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "solu",
+      "title": "Softmax Linear Units",
+      "url": "https://transformer-circuits.pub/2022/solu/index.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "weightsparse",
+      "title": "Weight-sparse transformers have interpretable circuits",
+      "url": "https://proceedings.mlr.press/v306/gao26w.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    },
+    {
+      "id": "bottleneck",
+      "title": "Concept Bottleneck Models",
+      "url": "https://proceedings.mlr.press/v119/koh20a.html",
+      "kind": "primary research",
+      "review_as_of": "2026-11-22",
+      "consultation": "This survey or the preceding Inkling lens literature review"
+    }
+  ],
+  "limitations": [
+    "Source consultation varied from abstracts to methods and previously inspected full lens sources.",
+    "Loop effects are first-principles predictions, not benchmark results.",
+    "Entries overlap and group related aliases; count is not a count of independent techniques."
+  ]
+}

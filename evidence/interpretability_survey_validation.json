@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-11-22",
+  "entry_count": 86,
+  "source_count": 80,
+  "checks": {
+    "unique_ids": true,
+    "source_mappings_complete": true,
+    "principles_at_most_20_words": true,
+    "one_table_row_per_entry": true,
+    "loop_assessments_labeled_inference": true,
+    "local_document_links_resolve": true
+  },
+  "limits": [
+    "External link availability was not automatically checked for all references.",
+    "This checks document structure, not scientific validity.",
+    "No new model inference or GPU jobs ran."
+  ]
+}
