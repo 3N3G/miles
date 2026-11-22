@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation remains pending; tentative start moved to 23:27 UTC. Optional Flame capacity check awaits trusted host fingerprint Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Keep foreground AMD queue/service supervision. Inspect resume and first native update on allocation. If the user verifies Flame host identity, inspect fallback capacity without dup
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 538647 remains queued; tentative start advanced to 18:06 UTC, with no GPU time used and all services healthy Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Keep foreground supervision. On allocation inspect restored checkpoint and scheduler counter, all rollout-engine hashes, first native update and W&B point, then matched-question pr
 
 ## Next / blocked
 

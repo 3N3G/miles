@@ -2559,15 +2559,22 @@
       "actor": "codex",
       "summary": "AMD continuation remains pending; tentative start moved to 23:27 UTC. Optional Flame capacity check awaits trusted host fingerprint",
       "revision": 228
+    },
+    {
+      "id": "41a53172-c355-493e-8e34-faa32c88af4c",
+      "at": "2026-11-22T16:41:44.331436Z",
+      "actor": "codex",
+      "summary": "AMD 538647 remains queued; tentative start advanced to 18:06 UTC, with no GPU time used and all services healthy",
+      "revision": 229
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD continuation remains pending; tentative start moved to 23:27 UTC. Optional Flame capacity check awaits trusted host fingerprint",
-  "nextAction": "Keep foreground AMD queue/service supervision. Inspect resume and first native update on allocation. If the user verifies Flame host identity, inspect fallback capacity without duplicating GPU jobs.",
+  "summary": "AMD 538647 remains queued; tentative start advanced to 18:06 UTC, with no GPU time used and all services healthy",
+  "nextAction": "Keep foreground supervision. On allocation inspect restored checkpoint and scheduler counter, all rollout-engine hashes, first native update and W&B point, then matched-question proofs.",
   "owner": "Codex",
-  "revision": 228,
-  "updatedAt": "2026-11-22T16:11:24.515119Z"
+  "revision": 229,
+  "updatedAt": "2026-11-22T16:41:44.331436Z"
 }
