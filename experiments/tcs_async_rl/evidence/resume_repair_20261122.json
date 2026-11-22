@@ -54,12 +54,22 @@
   "scheduler_control_script": "experiments/tcs_async_rl/check_scheduler_resume.py",
   "replacement_job_id": "537888",
   "replacement_source_commit": "df5e5624abcc15e0b4d2766e6027db7aac161108",
-  "failure_diagnosis_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ade84130001d250ceeafc0ee3e19d3460e5cc86e/miles/easy-overfit-v10",
+  "failure_diagnosis_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/fc8ba7125451142748737542717ab4975d98a226/miles/easy-overfit-v10",
   "latest_vm_readiness": {
     "openai_model_metadata_http_status": 200,
     "gemini_model_metadata_http_status": 401,
     "new_training_updates": 0,
     "optimizer_scalar_probe_cpu_test": "passes; no gradient method called and no optimizer fields changed",
-    "native_scalar_probe": "not run while job is pending"
+    "native_scalar_probe": "not run while job is pending",
+    "zero_coefficient_reference_initialization": "Verified miles/ray/specs/train.py includes use_kl_loss independently of coefficient, with auxiliary ref checkpoint load in Megatron actor.",
+    "restored_rollout_queue": "Saved rollout metadata has one unscored group of32 empty answers and no completed buffer. Native restoration remains pending."
+  },
+  "human_calibration_packet": {
+    "path": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ae47d47f23c9bb54aa773b53f06d059389ad9870/miles/easy-overfit-v9-human-review-20261122-final",
+    "cases": 10,
+    "questions": 9,
+    "binary_rubric_items": 43,
+    "human_agreement": "unmeasured",
+    "new_inference": false
   }
 }

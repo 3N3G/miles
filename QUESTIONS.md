@@ -63,6 +63,9 @@
   The 2026-11-21 easy-run audit found different candidate scores between swapped calls for 215/864 consumed answers.
   Two pairs give the supplied reference six instead of seven points. These are not human agreement estimates.
   See `experiments/tcs_async_rl/RL_NOISE_AUDIT_20261121.md`. Original grades remain unchanged.
+  A [new blinded packet](https://huggingface.co/datasets/3N3G/internalization-runs/blob/ae47d47f23c9bb54aa773b53f06d059389ad9870/miles/easy-overfit-v9-human-review-20261122-final/README.md)
+  contains ten seeded training answers across nine questions and 43 binary rubric items.
+  Both anonymous answers need labels. No new inference or judge call was used. Human agreement remains unmeasured.
 
 ## 2026-11-20: Dataset-wide RL feasibility versus software qualification
 
