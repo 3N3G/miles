@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation remains pending: all three usable MI350 nodes are allocated, four higher-priority jobs are ready, start estimate unavailable Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Continue foreground queue and service supervision. Keep the frozen four-hour/40-update allocation. Inspect resume, native metrics and actual proofs as soon as assigned.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation remains pending; tentative start moved to 23:27 UTC. Optional Flame capacity check awaits trusted host fingerprint Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Keep foreground AMD queue/service supervision. Inspect resume and first native update on allocation. If the user verifies Flame host identity, inspect fallback capacity without dup
 
 ## Next / blocked
 
