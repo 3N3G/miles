@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): GPU training and grading continue while private archive respects its commit-rate backoff Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
-  Next: Keep foreground supervision. Review native metrics and raw answers. Let the separate archive worker drain traces, then resume the original supervisor for terminal finalization.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Identify saturated judge transport and drain active requests before doubling API concurrency Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
+  Next: Wait for zero sample tasks and zero unsettled judge calls. Restart only the drained owned VM service, replay a cached score, then resume producer submissions.
 
 ## Next / blocked
 

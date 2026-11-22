@@ -2267,15 +2267,22 @@
       "actor": "codex",
       "summary": "GPU training and grading continue while private archive respects its commit-rate backoff",
       "revision": 199
+    },
+    {
+      "id": "a5cca429-c3dd-4120-acd2-8d58892a46d2",
+      "at": "2026-11-22T06:46:20.325202Z",
+      "actor": "codex",
+      "summary": "Identify saturated judge transport and drain active requests before doubling API concurrency",
+      "revision": 200
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "GPU training and grading continue while private archive respects its commit-rate backoff",
-  "nextAction": "Keep foreground supervision. Review native metrics and raw answers. Let the separate archive worker drain traces, then resume the original supervisor for terminal finalization.",
+  "summary": "Identify saturated judge transport and drain active requests before doubling API concurrency",
+  "nextAction": "Wait for zero sample tasks and zero unsettled judge calls. Restart only the drained owned VM service, replay a cached score, then resume producer submissions.",
   "owner": "Codex",
-  "revision": 199,
-  "updatedAt": "2026-11-22T06:22:37.336853Z"
+  "revision": 200,
+  "updatedAt": "2026-11-22T06:46:20.325202Z"
 }
