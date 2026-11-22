@@ -1,5 +1,9 @@
 # Reward signal, output precision, and recovery audit
 
+Historical support audit. For the active continuation, use [its operational record](RUN_V15_OPERATIONS_20261122.md).
+The later [bounded-sampling repair](REPETITION_REPAIR_20261120.md) selected the Torch log-probability backend.
+The fused-head discussion below describes the initial proposal, not the current launched backend.
+
 Current qualification is recorded in [the native runtime diagnostic](NATIVE_IMPORTS_20261120.md)
 and [the fixed-group capacity repair](VLLM_CAPACITY_REPAIR_20261120.md).
 Four real frozen-model answers received provisional zero grades in both anonymous orders.

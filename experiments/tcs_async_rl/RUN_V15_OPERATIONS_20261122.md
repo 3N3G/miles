@@ -8,6 +8,11 @@ uses standing inference-repair authorization. No subagents were authorized or sp
 
 - AMD job **539594**, `tcs-easy-overfit-v15`, submitted **2026-11-22 20:23:43 UTC**.
 - Last direct scheduler check at 20:24 UTC: PENDING for resources, no start estimate. Recheck before reporting live state.
+- Actual allocation started **2026-11-22 22:16:44 UTC** on `k007-003`, with **2h** granted by backfill.
+  Its scheduled limit is **2026-11-23 00:16:44 UTC**. Source configuration retains its original maximum unchanged.
+  `owned-allocation-start.json` preserves the exact scheduler readback and a successful service check from the owned node.
+- Producer run ID: **`261122-221746-947`**. Its prospective native W&B ID is `261122-221746-947-native`.
+  No new optimizer update or online W&B training point was verified at this startup check.
 - Training/controller source **`1620b3a0569f9192696406d51332b513f3d793e0`**.
 - Frozen configuration `rl_easy_overfit_v15.json`, unchanged judge configuration `judge_group_v5_followthrough_repair.json`.
 - Resume the original iteration-64 checkpoint, containing 65 updates. Target new global updates 65–104.
@@ -24,6 +29,8 @@ uses standing inference-repair authorization. No subagents were authorized or sp
   The exact failed 4,671,119-byte sample now produces a 133-byte request and the same cached paired zero verdicts.
 - Models, questions, solver and judge prompts, rubric weights, seed, sampling, optimization and GPU layout remain fixed.
   FOCS/STOC 2026 stay sealed. Do not claim a changed grading scale as learning.
+- The actual qualified `log_probs_backend` is **`torch`**, with chunk size 512. Bounded sampling requires this path.
+  Do not infer a fused-head backend from Ian's example or the separate tiled-head benchmark.
 
 ## Paths and owned processes
 
@@ -48,6 +55,7 @@ Read each receipt and `/proc` before managing these session-owned processes.
 
 The controller owns the reward-tunnel watcher. Never start a second `auto_rl` against an existing submission receipt.
 Provider credentials remain in the authorized VM service. Do not inspect or transfer them.
+The verified running-node reverse tunnel uses PID **1250672**, recorded in `reward-tunnel-state.json`.
 
 ## Startup, learning checks and closure
 
