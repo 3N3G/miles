@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Replacement queued; failure archive verified and reference initialization checked Jobs: hpcfund/537888 PENDING; hpcfund/537846 FAILED
-  Next: Qualify resumed scheduler, reference scoring and entropy on GPU; supervise through completion.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Keep owned pending replacement within four-hour combined budget after Slurm rounding Jobs: hpcfund/537888 PENDING; hpcfund/537846 FAILED
+  Next: Watch queued job; qualify actual scheduler restore, reference diagnostics and first finite update on allocation.
 
 ## Next / blocked
 

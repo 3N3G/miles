@@ -2150,15 +2150,22 @@
       "actor": "codex",
       "summary": "Replacement queued; failure archive verified and reference initialization checked",
       "revision": 183
+    },
+    {
+      "id": "14607f7a-2e60-44db-b77b-78389885d734",
+      "at": "2026-11-22T03:15:20.901551Z",
+      "actor": "codex",
+      "summary": "Keep owned pending replacement within four-hour combined budget after Slurm rounding",
+      "revision": 184
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Replacement queued; failure archive verified and reference initialization checked",
-  "nextAction": "Qualify resumed scheduler, reference scoring and entropy on GPU; supervise through completion.",
+  "summary": "Keep owned pending replacement within four-hour combined budget after Slurm rounding",
+  "nextAction": "Watch queued job; qualify actual scheduler restore, reference diagnostics and first finite update on allocation.",
   "owner": "Codex",
-  "revision": 183,
-  "updatedAt": "2026-11-22T02:51:01.053958Z"
+  "revision": 184,
+  "updatedAt": "2026-11-22T03:15:20.901551Z"
 }
