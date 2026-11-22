@@ -2538,15 +2538,22 @@
       "actor": "codex",
       "summary": "Offline judge-signal review archived: 233/1280 old answers reverse centered sign between orders; continue queued-run supervision",
       "revision": 225
+    },
+    {
+      "id": "059b4bcb-2b1f-40da-b60f-38a9b6bf2751",
+      "at": "2026-11-22T12:40:31.138741Z",
+      "actor": "codex",
+      "summary": "AMD continuation 538647 is still queued; current start estimate is 21:32 UTC, no GPU time used, all monitors healthy",
+      "revision": 226
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Offline judge-signal review archived: 233/1280 old answers reverse centered sign between orders; continue queued-run supervision",
-  "nextAction": "Keep foreground queue and service supervision. On allocation inspect the first native update, all standard diagnostics and actual matched-question proofs under the repaired prompt.",
+  "summary": "AMD continuation 538647 is still queued; current start estimate is 21:32 UTC, no GPU time used, all monitors healthy",
+  "nextAction": "Continue foreground queue and service monitoring. Once allocated verify iteration-64 resume, first native update, W&B coordinates and actual graded proofs.",
   "owner": "Codex",
-  "revision": 225,
-  "updatedAt": "2026-11-22T11:09:22.042296Z"
+  "revision": 226,
+  "updatedAt": "2026-11-22T12:40:31.138741Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Offline judge-signal review archived: 233/1280 old answers reverse centered sign between orders; continue queued-run supervision Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Keep foreground queue and service supervision. On allocation inspect the first native update, all standard diagnostics and actual matched-question proofs under the repaired prompt.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation 538647 is still queued; current start estimate is 21:32 UTC, no GPU time used, all monitors healthy Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Continue foreground queue and service monitoring. Once allocated verify iteration-64 resume, first native update, W&B coordinates and actual graded proofs.
 
 ## Next / blocked
 
