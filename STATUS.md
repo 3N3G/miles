@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Auditing the exact Luna judge prompt and saved graded rollouts at the user request. No new GPU or judge calls. Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
-  Next: Read seeded examples and disagreement cases. Save mathematical checks and exact request provenance.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Verified Luna medium prompt and reviewed six real graded proofs; found valid full-credit proofs, a wrong zero-grade answer, and inconsistent strictness Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
+  Next: Human calibration remains pending. Review the saved proofs and ten-example blinded packet before choosing a new evaluation or training allocation.
 
 ## Finished
 

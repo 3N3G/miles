@@ -3,6 +3,10 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/11a802f912aab51aea0effb85ff85a29c4f8a840/miles/easy-overfit-v12-graded-rollout-review-20261122",
+      "label": "Verified six-case raw proofs, original grades and exact prompt payloads"
+    },
+    {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/b944b262c244e09338c0f07664111d688802a732/miles/easy-overfit-v12-diagnostic-20261122",
       "label": "Verified full continuation report, plots, samples and all diagnostics"
     },
@@ -244,6 +248,14 @@
     }
   ],
   "evidence": [
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_ROLLOUT_REVIEW_20261122.md",
+      "label": "Exact judge prompt and mathematical review of six actual graded answers"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/judge_rollout_review_20261122.json",
+      "label": "Seeded selection, exact requests and immutable review readbacks"
+    },
     {
       "path": "experiments/tcs_async_rl/EASY_CONTINUATION_FINDINGS_20261122.md",
       "label": "Completed 40-update continuation: small matched-question gain and grading uncertainty"
@@ -2368,15 +2380,29 @@
       "actor": "codex",
       "summary": "Inspect exact judge requests and actual scored proofs after completed continuation",
       "revision": 210
+    },
+    {
+      "id": "f478f750-b51d-4a52-89d8-276bcec5ee77",
+      "at": "2026-11-22T08:45:18.020642Z",
+      "actor": "codex",
+      "summary": "Attach the six-answer mathematical review and exact anonymous judge requests",
+      "revision": 211
+    },
+    {
+      "id": "3df8afd2-5344-4ca6-87e5-5a1e22467362",
+      "at": "2026-11-22T08:45:18.168328Z",
+      "actor": "codex",
+      "summary": "Verified Luna medium prompt and reviewed six real graded proofs; found valid full-credit proofs, a wrong zero-grade answer, and inconsistent strictness",
+      "revision": 212
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "Auditing the exact Luna judge prompt and saved graded rollouts at the user request. No new GPU or judge calls.",
-  "nextAction": "Read seeded examples and disagreement cases. Save mathematical checks and exact request provenance.",
+  "state": "needs-you",
+  "summary": "Verified Luna medium prompt and reviewed six real graded proofs; found valid full-credit proofs, a wrong zero-grade answer, and inconsistent strictness",
+  "nextAction": "Human calibration remains pending. Review the saved proofs and ten-example blinded packet before choosing a new evaluation or training allocation.",
   "owner": "Codex",
-  "revision": 210,
-  "updatedAt": "2026-11-22T08:39:47.792047Z"
+  "revision": 212,
+  "updatedAt": "2026-11-22T08:45:18.168328Z"
 }
