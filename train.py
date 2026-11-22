@@ -1,9 +1,11 @@
 import asyncio
 import logging
 import os
+from functools import partial
 
 from sglang.srt.constants import GPU_MEMORY_TYPE_CUDA_GRAPH, GPU_MEMORY_TYPE_KV_CACHE, GPU_MEMORY_TYPE_WEIGHTS
 
+from miles.backends.training_utils.weight_update.initial_check import check_initial_weight_update
 from miles.ray.placement_group import (
     create_rollout_components,
     create_training_models,
@@ -47,13 +49,11 @@ async def train(args, *, disposer: Disposer):
     # always update weight first so that sglang has the loaded weights from training.
     await update_weights(args, actor_model, rollout_executor, inference_controller)
 
-    if args.check_weight_update_equal:
-        await inference_controller.check_weights(
-            action="compare",
-            allow_quant_error=args.check_weight_update_allow_quant_error,
-            selector=args.check_weight_update_selector,
-            skip_list=args.check_weight_update_skip_list,
-        )
+    await check_initial_weight_update(
+        args,
+        inference_controller=inference_controller,
+        republish_weights=partial(update_weights, args, actor_model, rollout_executor, inference_controller),
+    )
 
     if args.offload_rollout:
         await inference_controller.onload_kv()

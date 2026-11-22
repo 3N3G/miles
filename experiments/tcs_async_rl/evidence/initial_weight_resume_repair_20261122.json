@@ -1,0 +1,47 @@
+{
+  "failed_job_id": "537888",
+  "source_commit": "df5e5624abcc15e0b4d2766e6027db7aac161108",
+  "scheduler": {
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "00:04:31",
+    "start_cluster_time": "2026-11-21T22:52:28",
+    "end_cluster_time": "2026-11-21T22:56:59"
+  },
+  "new_optimizer_updates": 0,
+  "new_generated_training_answers": 0,
+  "new_judge_spending": 0,
+  "failure": "Initialization compares restored trained actor weights against the original HF snapshot. Trained language tensors differ by design.",
+  "checkpoint_native_load": "Actor source checkpoint loaded at iteration24. Original frozen reference loaded at iteration0. Rollout state restored with0completed batches.",
+  "native_resume_publication_control": {
+    "source_optimizer_step": 24,
+    "source_completed_updates": 25,
+    "new_initial_publication_optimizer_coordinate": 24,
+    "new_engine_count": 3,
+    "new_all_engines_identical": true,
+    "checkpoint_resume_matches_source_publication": true,
+    "source_tensors": 1416,
+    "resumed_tensors": 1416,
+    "changed_or_missing_tensor_hashes": 0,
+    "canonical_source_checksum_map_sha256": "eb0e7b1f9b6166b70854cbef17842f0e8ec4cc41e3966140961ec2bf93c0d0e7",
+    "canonical_resumed_checksum_map_sha256": "eb0e7b1f9b6166b70854cbef17842f0e8ec4cc41e3966140961ec2bf93c0d0e7"
+  },
+  "repair": "For nonzero starting rollout, snapshot restored engines, reset checked tensors, republish the same actor version and compare. Fresh starts retain original HF comparison. Keep all configured equality and checksum checks enabled.",
+  "cpu_validation": {
+    "protocol_tests_passed": 4,
+    "negative_control": "Omitting a tensor from the second broadcast raises a comparison failure.",
+    "tcs_tests_passed": 95,
+    "syntax_and_style": "passed"
+  },
+  "runtime_qualification_pending": true,
+  "same_models_data_prompts_reward_optimizer_sampling_profile_and_seed": true,
+  "rng_limit": "The additional SGLang reset uses random draws before generation. The configured seed is unchanged, but this is not a bitwise continuation of the earlier inference RNG stream.",
+  "first_failed_elapsed_seconds": 258,
+  "second_failed_elapsed_seconds": 271,
+  "replacement_walltime": "03:51:00",
+  "combined_maximum_allocation_seconds": 14389,
+  "combined_gpu_hours_maximum": 31.975555555555555,
+  "replacement_config": "experiments/tcs_async_rl/rl_easy_overfit_v12.json",
+  "failed_archive": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/588c5abba7f65cddf5d09347cd5a649bac434580/miles/easy-overfit-v11",
+  "authorization": "Approved continuation and explicit diagnosis, repair and replacement permission. No extra compute beyond the combined four-hour limit."
+}
