@@ -76,6 +76,9 @@ Inspect scheduler state, native updates, finite losses and gradients, publicatio
 Expected restored scheduler counter is 2,080 with constant learning rate 1e-6. The final target counter is 3,360.
 Scheduled fixed-batch update-direction observations are at 65, 66, 70, 80, 90, and 100.
 Inspect full/sampling entropy, sampled initialization drift, rollout mismatch, clipping, staleness, caps, length, and judge gaps.
+Native history exports `train/grad_norm` and `train/mtp_loss`, without a separate MTP gradient-norm scalar.
+Separate MTP norms come from [read-only optimizer probes](optimizer_probe.py) inside a verified owned running allocation.
+Record each probe's timestamp and expected run ID. These snapshots are not a continuous per-update MTP norm history.
 Read actual seeded proofs behind matched-question changes at least hourly. Use `audit_live.py`, then `summarize_continuation.py`
 and `plot_continuation.py` on a new diagnostic output directory. Keep prior diagnostics unchanged.
 Use `judge_signal.py` on audited samples to inspect agreement after group centering.
