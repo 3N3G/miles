@@ -2361,15 +2361,22 @@
       "actor": "codex",
       "summary": "40 new updates completed and archived; 15 matched question means rose 5.291 to 5.428/7, with substantial judge-order uncertainty",
       "revision": 209
+    },
+    {
+      "id": "fb0e6852-d65a-4a1c-be2d-bce23a296b82",
+      "at": "2026-11-22T08:39:47.792047Z",
+      "actor": "codex",
+      "summary": "Inspect exact judge requests and actual scored proofs after completed continuation",
+      "revision": 210
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "needs-you",
-  "summary": "40 new updates completed and archived; 15 matched question means rose 5.291 to 5.428/7, with substantial judge-order uncertainty",
-  "nextAction": "Review findings and label the existing ten-example calibration packet. Decide any further frozen-checkpoint evaluation or training budget. No GPU job remains active.",
+  "state": "running",
+  "summary": "Auditing the exact Luna judge prompt and saved graded rollouts at the user request. No new GPU or judge calls.",
+  "nextAction": "Read seeded examples and disagreement cases. Save mathematical checks and exact request provenance.",
   "owner": "Codex",
-  "revision": 209,
-  "updatedAt": "2026-11-22T08:26:46.040756Z"
+  "revision": 210,
+  "updatedAt": "2026-11-22T08:39:47.792047Z"
 }

@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Auditing the exact Luna judge prompt and saved graded rollouts at the user request. No new GPU or judge calls. Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
+  Next: Read seeded examples and disagreement cases. Save mathematical checks and exact request provenance.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 40 new updates completed and archived; 15 matched question means rose 5.291 to 5.428/7, with substantial judge-order uncertainty Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
-  Next: Review findings and label the existing ten-example calibration packet. Decide any further frozen-checkpoint evaluation or training budget. No GPU job remains active.
+- Nothing recorded.
 
 ## Finished
 
