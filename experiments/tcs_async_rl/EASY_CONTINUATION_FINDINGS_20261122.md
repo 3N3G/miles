@@ -25,6 +25,8 @@ All 40 updates completed without skips or nonfinite metrics. The checkpoint cont
 
 Candidate scores differed across judge orders for **338/1,280 answers (26.4%)**.
 One diagnostic extreme received **4/7 and 0/7** for the same answer.
+The [six-answer mathematical review](JUDGE_ROLLOUT_REVIEW_20261122.md) separates sound proofs, errors, and inconsistent grading strictness.
+These two-call disagreements do not isolate position effects from judge sampling variability.
 The [private report](https://huggingface.co/datasets/3N3G/internalization-runs/blob/b944b262c244e09338c0f07664111d688802a732/miles/easy-overfit-v12-diagnostic-20261122/REPORT.md)
 links that raw answer, both decisions, all per-question trajectories, and a seeded example from every group.
 

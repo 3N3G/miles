@@ -1,0 +1,141 @@
+{
+  "at_utc": "2026-11-22T08:44:10.031299+00:00",
+  "source_commit": "38cc1d59e907d980a9c2a1c1a2d831109b4cf7e7",
+  "judge_model": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "system_prompt": "experiments/tcs_async_rl/rubric_judge_prompt.txt",
+  "prompt_sha256": "22ec137ff1eab13d58fc74098fc8f7c2ed8d19f1981d638111640f032a18f9a9",
+  "initial_max_completion_tokens": 8192,
+  "unfinished_verdict_retry_limit": 32768,
+  "temperature_sent": false,
+  "seed_sent": false,
+  "seeded_steps": [
+    61,
+    57,
+    40,
+    49
+  ],
+  "cases": [
+    {
+      "step": 61,
+      "sample_index": 2029,
+      "label": "Affine dimension / kernel",
+      "selection": "seeded_random",
+      "scores": [
+        7.0,
+        7.0
+      ],
+      "reward": 7.0,
+      "file": "case-step-61.json"
+    },
+    {
+      "step": 57,
+      "sample_index": 1901,
+      "label": "Auction residual surplus",
+      "selection": "seeded_random",
+      "scores": [
+        7.0,
+        5.0
+      ],
+      "reward": 6.0,
+      "file": "case-step-57.json"
+    },
+    {
+      "step": 40,
+      "sample_index": 1325,
+      "label": "Communication protocol",
+      "selection": "seeded_random",
+      "scores": [
+        7.0,
+        6.0
+      ],
+      "reward": 6.5,
+      "file": "case-step-40.json"
+    },
+    {
+      "step": 49,
+      "sample_index": 1549,
+      "label": "Row-subset lower bound",
+      "selection": "seeded_random",
+      "scores": [
+        7.0,
+        7.0
+      ],
+      "reward": 7.0,
+      "file": "case-step-49.json"
+    },
+    {
+      "step": 28,
+      "sample_index": 909,
+      "label": "Hypergraph removal / zero group",
+      "selection": "zero_group_diagnostic",
+      "scores": [
+        0.0,
+        0.0
+      ],
+      "reward": 0.0,
+      "file": "case-step-28.json"
+    },
+    {
+      "step": 45,
+      "sample_index": 1425,
+      "label": "Unary certification counterexample",
+      "selection": "seeded_among_maximum_order_gap_diagnostic",
+      "scores": [
+        4.0,
+        0.0
+      ],
+      "reward": 2.0,
+      "file": "case-maximum-order-gap.json"
+    }
+  ],
+  "new_api_calls": 0,
+  "new_gpu_jobs": 0,
+  "prompt_modified": false,
+  "training_rewards_modified": false,
+  "private_archive": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/11a802f912aab51aea0effb85ff85a29c4f8a840/miles/easy-overfit-v12-graded-rollout-review-20261122",
+  "readback_checks": [
+    {
+      "file": "REPORT.md",
+      "sha256": "f4d9c7cebefa0b40d8ce4f6c0be530b287abd11217006a283b447ba4d0da30c3",
+      "matches": true
+    },
+    {
+      "file": "system-prompt.txt",
+      "sha256": "22ec137ff1eab13d58fc74098fc8f7c2ed8d19f1981d638111640f032a18f9a9",
+      "matches": true
+    },
+    {
+      "file": "review-manifest.json",
+      "sha256": "cc3ff407fd8f7a47e7d2f026fd32ad76c86a733cfc3e0388e682271130017b4b",
+      "matches": true
+    },
+    {
+      "file": "judge-request-example-order0.json",
+      "sha256": "5f87f2fba98a4a4cb0340bfd570e8e8cf90149c9eeb77cc986daf659e6295adb",
+      "matches": true
+    },
+    {
+      "file": "judge-request-example-order1.json",
+      "sha256": "8335bcf44084e1b3b84e2d2cf3e2f858d781d1b1f6ab499aff5889aa79163e84",
+      "matches": true
+    },
+    {
+      "file": "case-step-57.md",
+      "sha256": "78e2e3c99096d8f945952d03e3c656382b2f8fbce2a32ca65f89c46ef4d9340f",
+      "matches": true
+    },
+    {
+      "file": "case-maximum-order-gap.md",
+      "sha256": "885d705468712367b5bce7110ac4c8a5baa5fd03c0db65b988dbaecdb756031e",
+      "matches": true
+    }
+  ],
+  "limits": [
+    "Assistant review of six saved examples is not human judge calibration.",
+    "Four random draws come from one seed-selected answer per training group, not a uniform draw over all candidate answers.",
+    "Two diagnostic cases are deliberately nonrepresentative.",
+    "Swapped-call disagreement combines position effects with judge sampling variability. No same-order repeat control was run.",
+    "No revised judge or prompt was evaluated."
+  ]
+}
