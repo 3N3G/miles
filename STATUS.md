@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved the bounded continuation with recommended concurrency 96 and requested hourly detailed supervision, repairs and reruns for diagnosed failures. Freeze the reviewed setup and submit from t Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
+  Next: Freeze the approved 40-new-update/four-hour/eight-MI350/$5 continuation, verify service/checkpoint/storage, submit once and supervise all optimizer, entropy/divergence, rollout and
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Full/sampling entropy, zero-coefficient reference drift and fixed-batch update-direction repairs pass CPU/live logging controls. Retrospective sampler estimate is 0.43747→0.44422 nats across seven rep Jobs: hpcfund/536360 TIMEOUT; hpcfund/536321 FAILED
-  Next: Approve the prepared 40-new-update, four-hour/eight-MI350 continuation with a $5 judge cap, choosing concurrency 96 or the existing 32. Then freeze, submit, qualify real ROCm obser
+- Nothing recorded.
 
 ## Finished
 

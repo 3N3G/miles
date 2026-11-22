@@ -2051,15 +2051,22 @@
       "actor": "codex",
       "summary": "Privately archived and checksum-verified sampler entropy, figure and raw examples; awaiting the bounded GPU decision",
       "revision": 172
+    },
+    {
+      "id": "825b049c-24ab-436a-9f2f-b1aa22ca2584",
+      "at": "2026-11-22T01:46:11.455191Z",
+      "actor": "codex",
+      "summary": "Claim the approved 96-answer continuation and detailed hourly supervision",
+      "revision": 173
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "needs-you",
-  "summary": "Full/sampling entropy, zero-coefficient reference drift and fixed-batch update-direction repairs pass CPU/live logging controls. Retrospective sampler estimate is 0.43747→0.44422 nats across seven repeated questions, without full-policy entropy. No GPU submission. Continuation allocation/concurrency decision pending.",
-  "nextAction": "Approve the prepared 40-new-update, four-hour/eight-MI350 continuation with a $5 judge cap, choosing concurrency 96 or the existing 32. Then freeze, submit, qualify real ROCm observations and supervise through completion. All independent repair/retrospective work is committed and privately archived.",
+  "state": "running",
+  "summary": "User approved the bounded continuation with recommended concurrency 96 and requested hourly detailed supervision, repairs and reruns for diagnosed failures. Freeze the reviewed setup and submit from the retained 25-update checkpoint.",
+  "nextAction": "Freeze the approved 40-new-update/four-hour/eight-MI350/$5 continuation, verify service/checkpoint/storage, submit once and supervise all optimizer, entropy/divergence, rollout and archive details through completion.",
   "owner": "Codex",
-  "revision": 172,
-  "updatedAt": "2026-11-21T23:37:09.417164Z"
+  "revision": 173,
+  "updatedAt": "2026-11-22T01:46:11.455191Z"
 }
