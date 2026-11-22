@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 538647 is running on k007-002; judge tunnel and all three rollout engines are healthy, checkpoint load and first update pending Jobs: hpcfund/538647 RUNNING; hpcfund/538154 COMPLETED
-  Next: Keep foreground supervision. Verify restored iteration64 and scheduler2080, initial weight checks, first finite update65 and correct native W&B coordinates, then inspect actual gra
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 538647 restored iteration 64, both optimizer counters 2080 and learning rate 1e-6; first complete rollout group pending Jobs: hpcfund/538647 RUNNING; hpcfund/538154 COMPLETED
+  Next: Verify finite update 65, exact native W&B coordinates and published weights; inspect graded proofs and matched-question visits hourly through terminal cleanup
 
 ## Next / blocked
 
