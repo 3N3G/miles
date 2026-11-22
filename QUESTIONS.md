@@ -1,5 +1,18 @@
 # Open questions
 
+## 2026-11-22: Next step after the approved easy-question continuation
+
+- Question: should the next allocation evaluate frozen checkpoints or continue training, after judge calibration?
+- Evidence: the approved 40 new updates completed. Fifteen repeated question means rose from 5.291 to 5.428 out of seven.
+  Eleven increased and four decreased. Mean answer length rose 18.2%. Scores differed across judge orders for 338/1,280 answers.
+  These are uneven training visits from one seed, without an independent correctness estimate.
+  See [the findings](experiments/tcs_async_rl/EASY_CONTINUATION_FINDINGS_20261122.md).
+- Options: review the existing ten-example human packet first, approve a frozen-checkpoint comparison on training questions,
+  or specify another bounded training continuation. Any evaluation must preserve the sealed FOCS/STOC 2026 split.
+- Recommendation: label the existing packet first. Use its agreement results to plan an interpretable checkpoint comparison.
+  No new GPU job or paid judge call is needed to review that packet.
+- Blocks: the next experiment's design and compute budget. The approved continuation and its final audit are complete.
+
 ## 2026-11-18: Output-head precision
 
 - Question: enable FP32 logits on both trainer and rollout engine for learning?

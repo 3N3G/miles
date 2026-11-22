@@ -1,0 +1,353 @@
+{
+  "at_utc": "2026-11-22T08:24:41.328978+00:00",
+  "job_id": "538154",
+  "scheduler": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "02:57:41",
+    "start_cluster_time": "2026-11-21T23:07:06",
+    "end_cluster_time": "2026-11-22T02:04:47"
+  },
+  "run": "easy-overfit-v12",
+  "gpu_source": "61bfb46077807e9b1f37da3e3035e5512ff968a7",
+  "grader_repair_source": "e2396e9b",
+  "analysis_source": "1065ba05f4bafe5eee6f47af70339052140abbd5",
+  "config_path": "experiments/tcs_async_rl/rl_easy_overfit_v12.json",
+  "config_sha256": "0f53634cec2d0bc38b6d21585b6a6cf6cbecd330a4d8074d6be03006975e4c01",
+  "input_sha256": "18ed636017d16c3af5c1448ee4967b4aa6b996037c73f5304bf4ce95469e5929",
+  "new_updates": 40,
+  "first_optimizer_step": 25,
+  "last_optimizer_step": 64,
+  "saved_total_updates": 65,
+  "checkpoint": {
+    "tracker": "64",
+    "iterations": [
+      {
+        "name": "iter_0000064",
+        "files": 4,
+        "bytes": 60577362603
+      }
+    ]
+  },
+  "checkpoint_path": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v12/checkpoints/iter_0000064",
+  "original_checkpoint_preserved": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v9/checkpoints/iter_0000024",
+  "startup_failures": [
+    {
+      "job_id": "537846",
+      "elapsed_seconds": 258,
+      "cause": "restored scheduler horizon mismatch",
+      "new_updates": 0
+    },
+    {
+      "job_id": "537888",
+      "elapsed_seconds": 271,
+      "cause": "resume compared against original HF weights",
+      "new_updates": 0
+    }
+  ],
+  "successful_run_seconds": 10661,
+  "total_attempt_seconds": 11190,
+  "total_gpu_hours": 24.866666666666667,
+  "gpu_hour_cap": 32,
+  "judge_estimated_usd": 3.1285652,
+  "judge_usd_cap": 5,
+  "judge_settled_api_calls": 2659,
+  "outstanding_provider_calls": 0,
+  "service_concurrency_repair": {
+    "old": 4,
+    "new": 8,
+    "gpu_restarted": false,
+    "scoring_identity_preserved": true,
+    "controls_replayed_without_new_calls": true,
+    "plan": "experiments/tcs_async_rl/JUDGE_THROUGHPUT_REPAIR_20261122.md"
+  },
+  "stale_groups_filtered": [
+    {
+      "optimizer_step": 51,
+      "staleness": 7
+    },
+    {
+      "optimizer_step": 62,
+      "staleness": 8
+    }
+  ],
+  "maximum_accepted_staleness": 6,
+  "skipped_optimizer_updates": 0,
+  "acceptance": {
+    "scheduler_completed": true,
+    "launcher_completed": true,
+    "optimizer_updates_recorded": true,
+    "no_skipped_updates": true,
+    "finite_step_metrics": true,
+    "consumed_groups_exported": true,
+    "real_reward_variation_in_consumed_groups": true,
+    "retained_checkpoints_exist": true,
+    "final_checkpoint_tracker": true
+  },
+  "wandb": {
+    "at_utc": "2026-11-22T08:14:15.999876+00:00",
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261122-050822-879-native",
+    "wandb_state": "finished",
+    "native_updates": 40,
+    "observed_unique_optimizer_coordinates": 40,
+    "checked_exact_scalar_values": 3253,
+    "pending_native_steps": [],
+    "duplicate_optimizer_coordinates": [],
+    "mismatches": []
+  },
+  "full_audit": {
+    "at_utc": "2026-11-22T08:14:21.880813+00:00",
+    "newly_audited_optimizer_steps": [
+      61,
+      62,
+      63,
+      64
+    ],
+    "audited_optimizer_steps": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64
+    ],
+    "answers": 1280,
+    "response_tokens": 41091491,
+    "judge_order_disagreements": 338,
+    "reference_scores_below_seven": 6,
+    "maximum_order_gap": 4.0,
+    "new_inference_or_judge_calls": 0,
+    "analysis_source_commit": "1065ba05f4bafe5eee6f47af70339052140abbd5"
+  },
+  "root_hf_revision": "e0929a55ece4dd3890ff588ec0a6f7300c2d8aef",
+  "all_owned_processes_exited": {
+    "1114406": true,
+    "1114410": true,
+    "1114516": true,
+    "1114703": true,
+    "1114704": true,
+    "1126099": true,
+    "1128441": true,
+    "1132851": true
+  },
+  "remaining_limits": [
+    "Single seed, observational training visits, uneven visits and changing policy ages.",
+    "No frozen-policy comparison or held-out test. FOCS/STOC 2026 remain sealed.",
+    "Human agreement unmeasured. Independent-provider Gemini check returned HTTP 401.",
+    "No FP32-head training comparison. Component gradient norms do not measure answer-quality effects.",
+    "Minute telemetry can miss peaks. Estimated API cost is not a provider billing receipt."
+  ],
+  "next_research_decision": "Review human calibration and choose any further evaluation or training budget before another GPU allocation.",
+  "diagnostic_archive": {
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/b944b262c244e09338c0f07664111d688802a732/miles/easy-overfit-v12-diagnostic-20261122",
+    "readback": {
+      "at_utc": "2026-11-22T08:25:10.826070+00:00",
+      "revision": "b944b262c244e09338c0f07664111d688802a732",
+      "private_path": "miles/easy-overfit-v12-diagnostic-20261122",
+      "checks": [
+        {
+          "file": "REPORT.md",
+          "sha256": "8dbea1739cec02281e7a0fa52247d71855ecb84145fa5c79731f567e82d44129",
+          "matches": true
+        },
+        {
+          "file": "summary.json",
+          "sha256": "992ea9a99bd80dbf0f8b6b1db8c0b64f644ceabe69072e66026f22cd7cb4f4d7",
+          "matches": true
+        },
+        {
+          "file": "matched-question-rewards.png",
+          "sha256": "2c4b85fe6f07a63ccbc63dda4705db0ee8e122f378df0f2c90303a8029d45d3e",
+          "matches": true
+        },
+        {
+          "file": "entropy-divergence.png",
+          "sha256": "19f8afd31ca07151ed0d99042574f632412f8cd1e29887a6fe6e338a4e019088",
+          "matches": true
+        },
+        {
+          "file": "update-direction.png",
+          "sha256": "bce8d7ec4fc187443ee6b17aa94278908d3f8eeff9e8698a57ddc808bccc6927",
+          "matches": true
+        },
+        {
+          "file": "wandb-final-all-scalars-readback.json",
+          "sha256": "4494cb93dd30ab66c441ddb3b9ca0357a51940afb0f956ff9d610fe0feed42a9",
+          "matches": true
+        },
+        {
+          "file": "operational-closure.json",
+          "sha256": "058cd33206510b20ed4260fa0a353813d7b3f999f85caa349939aae8da166a18",
+          "matches": true
+        },
+        {
+          "file": "live-audit-receipt.json",
+          "sha256": "396253c0a6c5c50f5703d96a18851737211b34ce6a6c1b91276259be1da1a9fe",
+          "matches": true
+        }
+      ]
+    }
+  },
+  "raw_archive_readback": {
+    "revision": "e0929a55ece4dd3890ff588ec0a6f7300c2d8aef",
+    "checks": [
+      {
+        "file": "runtime-acceptance.json",
+        "sha256": "7e99dd4d98a44b40d352cf99743e491bc678ecabc5a1d273fb16f39a35c413f1",
+        "matches": true
+      },
+      {
+        "file": "checkpoint-inventory.json",
+        "sha256": "1d6aa1772e0f3b5bd5b5bfbd7f774d0553a244191cdae00731b74836fcad378d",
+        "matches": true
+      },
+      {
+        "file": "terminal-service-cleanup.json",
+        "sha256": "f2084e8d3fb16b1d4ad4f16f3ab28a93827cf2f9a8acee7e03149c152624f7eb",
+        "matches": true
+      },
+      {
+        "file": "training-finished.json",
+        "sha256": "3dcbab66767b8685c96ee7033940454fd561425b0a5545be6a3c41d3c426a653",
+        "matches": true
+      }
+    ]
+  },
+  "scientific_observations": {
+    "questions": 20,
+    "question_visit_count_histogram": {
+      "3": 5,
+      "2": 10,
+      "1": 5
+    },
+    "questions_with_repeated_visits": 15,
+    "matched_first_mean_reward": 5.290625,
+    "matched_latest_mean_reward": 5.428125,
+    "same_question_mean_change": 0.1375,
+    "questions_increased": 11,
+    "questions_decreased": 4,
+    "matched_visit_diagnostics": {
+      "full_credit_rate": {
+        "questions": 15,
+        "first_mean": 0.36875,
+        "latest_mean": 0.3958333333333333
+      },
+      "zero_rate": {
+        "questions": 15,
+        "first_mean": 0.08541666666666667,
+        "latest_mean": 0.08333333333333333
+      },
+      "mean_tokens": {
+        "questions": 15,
+        "first_mean": 27604.585416666665,
+        "latest_mean": 32620.09375
+      },
+      "cap_rate": {
+        "questions": 15,
+        "first_mean": 0.0125,
+        "latest_mean": 0.03333333333333333
+      }
+    },
+    "varied_groups": 39,
+    "zero_answers": 120,
+    "full_credit_answers": 498,
+    "capped_answers": 37,
+    "judge_order_disagreements": 338,
+    "reference_scores_below_seven": 6
+  },
+  "training_infrastructure_checks": {
+    "three_rollout_engines_agree_at_every_new_publication": true,
+    "full_policy_entropy_range_nats_per_token": [
+      0.37436342239379883,
+      0.6910679340362549
+    ],
+    "sampled_initialization_k3_range_nats_per_token": [
+      0.001680533168837428,
+      0.015518185682594776
+    ],
+    "all_six_scheduled_update_gains_positive": true,
+    "gpu_telemetry": {
+      "samples": 171,
+      "valid_samples": 171,
+      "errors": 0,
+      "minimum_observed_shared_free_bytes": 26245533696,
+      "cards": {
+        "card0": {
+          "peak_observed_vram_bytes": 266798125056,
+          "total_vram_bytes": 309220868096,
+          "mean_sampled_gpu_use_percent": 42.72514619883041
+        },
+        "card1": {
+          "peak_observed_vram_bytes": 199014076416,
+          "total_vram_bytes": 309220868096,
+          "mean_sampled_gpu_use_percent": 28.57894736842105
+        },
+        "card2": {
+          "peak_observed_vram_bytes": 199030870016,
+          "total_vram_bytes": 309220868096,
+          "mean_sampled_gpu_use_percent": 28.567251461988302
+        },
+        "card3": {
+          "peak_observed_vram_bytes": 267561508864,
+          "total_vram_bytes": 309220868096,
+          "mean_sampled_gpu_use_percent": 41.24561403508772
+        },
+        "card4": {
+          "peak_observed_vram_bytes": 199208427520,
+          "total_vram_bytes": 309220868096,
+          "mean_sampled_gpu_use_percent": 50.1578947368421
+        },
+        "card5": {
+          "peak_observed_vram_bytes": 199757111296,
+          "total_vram_bytes": 309220868096,
+          "mean_sampled_gpu_use_percent": 73.0701754385965
+        },
+        "card6": {
+          "peak_observed_vram_bytes": 199731941376,
+          "total_vram_bytes": 309220868096,
+          "mean_sampled_gpu_use_percent": 73.08771929824562
+        },
+        "card7": {
+          "peak_observed_vram_bytes": 199183253504,
+          "total_vram_bytes": 309220868096,
+          "mean_sampled_gpu_use_percent": 50.15204678362573
+        }
+      },
+      "limit": "Minute samples can miss peaks. Sampled utilization is not a continuous busy-time measurement."
+    }
+  }
+}
