@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Replace only the drained judge service; cached grades match and 96 generation tasks resume Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
-  Next: Verify eight-call provider throughput and finite training. Review repeated questions hourly. After archive draining and GPU terminal state, resume the original artifact supervisor 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Second-hour review: 24 valid updates, seven repeated questions average +0.13 points, full W&B readback passes Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
+  Next: Continue the approved 40-update run. Inspect seeded repeated proofs, verify the remaining scheduled direction checks and drain private archives after the backoff.
 
 ## Next / blocked
 

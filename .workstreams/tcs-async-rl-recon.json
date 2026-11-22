@@ -2281,15 +2281,22 @@
       "actor": "codex",
       "summary": "Replace only the drained judge service; cached grades match and 96 generation tasks resume",
       "revision": 201
+    },
+    {
+      "id": "03bac5c7-0feb-41ae-90e8-065a70040e0c",
+      "at": "2026-11-22T07:10:10.306121Z",
+      "actor": "codex",
+      "summary": "Second-hour review: 24 valid updates, seven repeated questions average +0.13 points, full W&B readback passes",
+      "revision": 202
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Replace only the drained judge service; cached grades match and 96 generation tasks resume",
-  "nextAction": "Verify eight-call provider throughput and finite training. Review repeated questions hourly. After archive draining and GPU terminal state, resume the original artifact supervisor and clean up the replacement service.",
+  "summary": "Second-hour review: 24 valid updates, seven repeated questions average +0.13 points, full W&B readback passes",
+  "nextAction": "Continue the approved 40-update run. Inspect seeded repeated proofs, verify the remaining scheduled direction checks and drain private archives after the backoff.",
   "owner": "Codex",
-  "revision": 201,
-  "updatedAt": "2026-11-22T07:00:01.035053Z"
+  "revision": 202,
+  "updatedAt": "2026-11-22T07:10:10.306121Z"
 }
