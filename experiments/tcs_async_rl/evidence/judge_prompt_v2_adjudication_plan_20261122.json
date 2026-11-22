@@ -1,0 +1,13 @@
+{
+  "labels_sha256": "22066bcf568c5005a1dca3c6025ec4283e7960932dffe51b2d9157ba84fc5465",
+  "labels_path": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-overfit-v13/assistant-adjudications.json",
+  "cases": 11,
+  "validation_cases": 5,
+  "validation_questions": 4,
+  "source_kind": "assistant_not_human",
+  "validation_seed": 20261123,
+  "versioned_prompt": "rubric_judge_prompt_v2.txt",
+  "old_prompt_preserved": true,
+  "judge_model": "gpt-6-luna",
+  "reasoning_effort": "medium"
+}

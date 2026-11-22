@@ -361,7 +361,10 @@ def watch(*, job_id, config_path, directory, remote_directory, checkout, state_r
 
     config, training = load_configs(config_path)
     port = urlsplit(config["overrides"]["rm_url"]).port
-
+    archive_interval = config.get("archive_interval_seconds", 60)
+    if archive_interval < 60:
+        raise ValueError("Live archive interval must be at least 60 seconds")
+    last_archive = None
     previous = None
     while True:
         try:
@@ -422,7 +425,13 @@ def watch(*, job_id, config_path, directory, remote_directory, checkout, state_r
             sync_outputs(remote_directory, directory, bounded=config.get("incremental_archive", False))
             if config.get("incremental_archive"):
                 consumed_rollouts(directory, allow_pending=True)
-                archive_chunks(directory)
+                now = time.monotonic()
+                if last_archive is None or now - last_archive >= archive_interval:
+                    # Bound commit rate independently of minute-level metadata
+                    # and metric checks. A failed snapshot also respects the
+                    # interval; finalization still drains every remaining trace.
+                    last_archive = now
+                    archive_chunks(directory)
             if config.get("wandb_metrics_source") == "native_vm" and state["state"] in ACTIVE:
                 sync_native_wandb(directory, state["state"])
         except (OSError, subprocess.SubprocessError, ValueError, RuntimeError) as error:

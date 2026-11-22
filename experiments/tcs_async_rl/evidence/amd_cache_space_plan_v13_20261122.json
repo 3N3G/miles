@@ -1,0 +1,55 @@
+{
+  "at_utc": "2026-11-22T09:17:59.625972+00:00",
+  "reason": "Shared AMD filesystem has about 81 GiB free; unchanged two-checkpoint preflight needs 151265361920 bytes.",
+  "cache_root": "/work1/aviralkumar/geney/hf_cache/hub",
+  "public_revisions": [
+    {
+      "repo": "allenai/Olmo-3-7B-Think",
+      "revision": "031240693eb33d302cfa8d2df76af15d2da4b579",
+      "remote_private": false,
+      "remote_gated": false,
+      "remote_sha_verified": true,
+      "restore_command": "hf download allenai/Olmo-3-7B-Think --revision 031240693eb33d302cfa8d2df76af15d2da4b579 --cache-dir /work1/aviralkumar/geney/hf_cache/hub"
+    },
+    {
+      "repo": "allenai/Olmo-3-7B-Think",
+      "revision": "30e2d2e14fb590de4866f5eb3f5e9e92750f53ac",
+      "remote_private": false,
+      "remote_gated": false,
+      "remote_sha_verified": true,
+      "restore_command": "hf download allenai/Olmo-3-7B-Think --revision 30e2d2e14fb590de4866f5eb3f5e9e92750f53ac --cache-dir /work1/aviralkumar/geney/hf_cache/hub"
+    },
+    {
+      "repo": "allenai/Olmo-3-7B-Think",
+      "revision": "c8c813c0d1a0e3352849f7bf0be99f294d4217da",
+      "remote_private": false,
+      "remote_gated": false,
+      "remote_sha_verified": true,
+      "restore_command": "hf download allenai/Olmo-3-7B-Think --revision c8c813c0d1a0e3352849f7bf0be99f294d4217da --cache-dir /work1/aviralkumar/geney/hf_cache/hub"
+    },
+    {
+      "repo": "allenai/Olmo-3-7B-Instruct-DPO",
+      "revision": "b33130b7de49f0c2553b5c2b3bc8409ff3e627d1",
+      "remote_private": false,
+      "remote_gated": false,
+      "remote_sha_verified": true,
+      "restore_command": "hf download allenai/Olmo-3-7B-Instruct-DPO --revision b33130b7de49f0c2553b5c2b3bc8409ff3e627d1 --cache-dir /work1/aviralkumar/geney/hf_cache/hub"
+    },
+    {
+      "repo": "allenai/Olmo-3-7B-Think-DPO",
+      "revision": "7b18bf927b430ff06376fdfa5610eb3b1b6a5c38",
+      "remote_private": false,
+      "remote_gated": false,
+      "remote_sha_verified": true,
+      "restore_command": "hf download allenai/Olmo-3-7B-Think-DPO --revision 7b18bf927b430ff06376fdfa5610eb3b1b6a5c38 --cache-dir /work1/aviralkumar/geney/hf_cache/hub"
+    }
+  ],
+  "active_user_slurm_jobs_at_preflight": 0,
+  "preserve": [
+    "All experiment runs, scores, configs and checkpoints",
+    "All Qwen caches and the standalone TCS 4B/ref models",
+    "Latest Olmo Think main revision d97e442d7cc678210054dbcc9b440894d62c89a4",
+    "Olmo Instruct main revision 6e5971d9eba42665f5bd5a0fcf047f299ce1dccc"
+  ],
+  "deletion_method": "hf cache rm immutable-revision hashes, after a CLI dry run"
+}

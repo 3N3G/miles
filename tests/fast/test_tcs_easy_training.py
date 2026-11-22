@@ -36,6 +36,50 @@ def question(index):
 
 
 class EasyDataTests(unittest.TestCase):
+    def test_live_archive_rate_does_not_reduce_metric_or_terminal_checks(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            config = {
+                "overrides": {"rm_url": "http://127.0.0.1:18500/score"},
+                "incremental_archive": True,
+                "archive_interval_seconds": 600,
+                "wandb_metrics_source": "native_vm",
+            }
+            children = [Mock(), Mock()]
+            for child in children:
+                child.poll.return_value = None
+            states = [{"state": "RUNNING"}] * 3 + [{"state": "COMPLETED"}]
+            with patch("experiments.tcs_async_rl.watch_rl.load_configs", return_value=(config, {})), patch(
+                "experiments.tcs_async_rl.watch_rl.remote_state", side_effect=states
+            ), patch("experiments.tcs_async_rl.watch_rl.record"), patch(
+                "experiments.tcs_async_rl.watch_rl.sync_outputs", return_value=0
+            ) as sync, patch(
+                "experiments.tcs_async_rl.watch_rl.consumed_rollouts"
+            ), patch(
+                "experiments.tcs_async_rl.watch_rl.archive_chunks"
+            ) as archive, patch(
+                "experiments.tcs_async_rl.watch_rl.sync_native_wandb"
+            ) as metrics, patch(
+                "experiments.tcs_async_rl.watch_rl.finish"
+            ) as finish, patch(
+                "experiments.tcs_async_rl.watch_rl.time.monotonic", side_effect=[0, 60, 600, 660]
+            ), patch(
+                "experiments.tcs_async_rl.watch_rl.time.sleep"
+            ):
+                watch(
+                    job_id="123",
+                    config_path=root / "config.json",
+                    directory=root,
+                    remote_directory=Path("/remote"),
+                    checkout=Path("/checkout"),
+                    state_repo=root,
+                    children=children,
+                )
+            self.assertEqual(archive.call_count, 2)
+            self.assertEqual(metrics.call_count, 3)
+            self.assertEqual(sync.call_count, 4)
+            self.assertEqual(finish.call_args.kwargs["scheduler"]["state"], "COMPLETED")
+
     def test_budget_timeout_does_not_mean_nonfinite_training(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
