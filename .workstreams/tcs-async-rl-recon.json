@@ -2091,15 +2091,22 @@
       "actor": "codex",
       "summary": "RL job 537846 is FAILED",
       "revision": 177
+    },
+    {
+      "id": "0afd7836-ebc8-4be5-a4d0-041a2e09b599",
+      "at": "2026-11-22T01:59:33.069913Z",
+      "actor": "codex",
+      "summary": "RL job 537846 ended FAILED; acceptance False",
+      "revision": 178
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 537846 is FAILED",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "RL job 537846 ended FAILED; acceptance False",
+  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
   "owner": "Codex",
-  "revision": 177,
-  "updatedAt": "2026-11-22T01:59:14.269483Z"
+  "revision": 178,
+  "updatedAt": "2026-11-22T01:59:33.069913Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 537846 is FAILED Jobs: hpcfund/537846 FAILED; hpcfund/536360 TIMEOUT
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 537846 ended FAILED; acceptance False Jobs: hpcfund/537846 FAILED; hpcfund/536360 TIMEOUT
+  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
 
 ## Next / blocked
 
