@@ -693,7 +693,7 @@
     {
       "id": "538154",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "537888",
@@ -2302,15 +2302,22 @@
       "actor": "codex",
       "summary": "36 new updates complete; all six scheduled fixed-batch update-direction observations are positive",
       "revision": 204
+    },
+    {
+      "id": "3e95b307-b22b-4d25-b810-8b4c0d23ad8f",
+      "at": "2026-11-22T08:12:59.734608Z",
+      "actor": "codex",
+      "summary": "GPU job completes all 40 new updates normally; checkpoint retains 65 total updates within the combined budget",
+      "revision": 205
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "36 new updates complete; all six scheduled fixed-batch update-direction observations are positive",
-  "nextAction": "Watch through the last four updates and terminal cleanup. Verify final checkpoint, all consumed traces and all W&B scalars before reporting completion.",
+  "summary": "GPU job completes all 40 new updates normally; checkpoint retains 65 total updates within the combined budget",
+  "nextAction": "Stop the drained replacement judge, resume the original terminal finalizer, then finish complete trace audit, paired-question results, private uploads and all-scalar W&B verification.",
   "owner": "Codex",
-  "revision": 204,
-  "updatedAt": "2026-11-22T07:57:02.592119Z"
+  "revision": 205,
+  "updatedAt": "2026-11-22T08:12:59.734608Z"
 }

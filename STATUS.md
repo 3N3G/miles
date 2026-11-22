@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): 36 new updates complete; all six scheduled fixed-batch update-direction observations are positive Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
-  Next: Watch through the last four updates and terminal cleanup. Verify final checkpoint, all consumed traces and all W&B scalars before reporting completion.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): GPU job completes all 40 new updates normally; checkpoint retains 65 total updates within the combined budget Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
+  Next: Stop the drained replacement judge, resume the original terminal finalizer, then finish complete trace audit, paired-question results, private uploads and all-scalar W&B verificati
 
 ## Next / blocked
 
