@@ -42,7 +42,12 @@ def plot(directory):
         ax.plot([g["optimizer_step"] for g in visits], [g["mean_reward"] for g in visits], "o-", color=blue)
         title = visits[0]["paper_id"].replace("_", " ")
         ax.set_title("\n".join(textwrap.wrap(title, 34)) + "\n" + visits[0]["prompt_type"], fontsize=8)
-        ax.set(xlabel="Global optimizer update", ylabel="Mean rubric points", ylim=(0, 7.15))
+        ax.set(
+            xlabel="Global optimizer update",
+            ylabel="Mean rubric points",
+            ylim=(0, 7.15),
+            xlim=(steps[0] - 0.5, steps[-1] + 0.5),
+        )
     for ax in list(axes.flat)[len(questions) :]:
         ax.set_visible(False)
     fig.suptitle("All consumed question visits; one seed, descriptive training observations", y=1.01)

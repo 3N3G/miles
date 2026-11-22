@@ -52,4 +52,7 @@ The only judge-configuration difference was `max_concurrency: 4 -> 8`.
 At 06:58:45 UTC, the executor confirmed resumed submissions and 96 generation
 tasks. Its training source and approved compute limits remain unchanged.
 Ninety-seven TCS CPU tests passed, including the ownership and thread-safe
-producer-control test. New provider throughput still needs live qualification.
+producer-control test. By 07:06:36 UTC, the new service reached eight active calls.
+All 126 newly settled calls had HTTP 200 and finished verdicts. Their mean wall
+time was 19.28 seconds. This qualifies the new service transport, not a claim
+that training throughput or rewards doubled.
