@@ -6,6 +6,7 @@ No gradient computation, collective, optimizer method or model tensor is read.
 """
 
 import argparse
+import collections
 import datetime
 import json
 from pathlib import Path
@@ -40,6 +41,56 @@ def trainer_names(manager):
     ]
 
 
+def rollout_names(manager):
+    return [
+        (actor.name, actor.generation)
+        for cell in manager._all_cells()
+        if cell.alive and cell.actors is not None
+        for actor in cell.actors
+        if getattr(actor.spec, "worker_class", "").endswith(".RolloutExecutor")
+    ]
+
+
+def await_chain(task):
+    current = task.get_coro()
+    chain = []
+    for _ in range(20):
+        if current is None:
+            break
+        frame = getattr(current, "cr_frame", getattr(current, "gi_frame", None))
+        if frame is not None:
+            chain.append({"function": frame.f_code.co_name, "line": frame.f_lineno})
+        current = getattr(current, "cr_await", getattr(current, "gi_yieldfrom", None))
+    return chain
+
+
+def read_rollout_snapshot(actor):
+    fn = actor.generate_rollout
+    return {
+        "run_id": actor.args.wandb_run_id,
+        "published_weight_versions": actor._weight_versions_of_model_id,
+        "last_requested_rollouts": actor.last_get_rollout_id_of_model_id,
+        "samples_in_flight": fn._scheduler.samples_in_flight,
+        "generation_semaphore_available": fn.state.generate_fn_semaphore._value,
+        "completed_buffer_groups": len(fn._output._buffer),
+        "completed_buffer_capacity": fn._output._capacity,
+        "retry_groups": len(fn._retry_buffer),
+        "producer_resumed": fn._producer_resumed.is_set(),
+        "producer_done": fn._worker.done(),
+        "producer_await_chain": await_chain(fn._worker),
+        "running_groups": [
+            {
+                "first_sample_index": entry.prompt_group[0].index,
+                "samples": len(entry.prompt_group),
+                "statuses": dict(collections.Counter(sample.status.name for sample in entry.prompt_group)),
+                "task_done": entry.task.done(),
+                "await_chain": await_chain(entry.task),
+            }
+            for entry in list(fn._running_tasks)
+        ],
+    }
+
+
 def main():
     # Ray belongs to the allocated AMD runtime, not the VM's review utilities.
     import ray
@@ -47,6 +98,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--expected-run-id", required=True)
     parser.add_argument("--expected-workers", type=int, default=2)
+    parser.add_argument("--include-rollout", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     cli = parser.parse_args()
     ray.init(address="auto", log_to_driver=False, logging_level="ERROR")
@@ -66,6 +118,16 @@ def main():
         if any(r["run_id"] != cli.expected_run_id for r in snapshots):
             raise RuntimeError("Optimizer probe reached a different run")
         result = {"at_utc": datetime.datetime.now(datetime.UTC).isoformat(), "workers": snapshots}
+        if cli.include_rollout:
+            names = ray.get(manager.__ray_call__.remote(rollout_names), timeout=60)
+            if len(names) != 1:
+                raise RuntimeError("Expected one initialized rollout executor")
+            name, generation = names[0]
+            handle = ray.get(manager.get_actor_handle.remote(name, expected_generation=generation), timeout=60)
+            rollout = ray.get(handle.__ray_call__.remote(read_rollout_snapshot), timeout=90)
+            if rollout["run_id"] != cli.expected_run_id:
+                raise RuntimeError("Rollout probe reached a different run")
+            result["rollout"] = rollout
         cli.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
         print(json.dumps(result, indent=2, allow_nan=False))
     finally:
