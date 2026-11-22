@@ -109,18 +109,29 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--expected-run-id", required=True)
     parser.add_argument("--expected-workers", type=int, default=2)
+    parser.add_argument(
+        "--actor-read-timeout-seconds",
+        type=int,
+        default=300,
+        help="Allow the read-only snapshot to queue behind an active long training update.",
+    )
     parser.add_argument("--include-rollout", action="store_true")
     parser.add_argument("--rollout-only", action="store_true")
     parser.add_argument("--producer-action", choices=("pause", "resume"))
     parser.add_argument("--output", type=Path, required=True)
     cli = parser.parse_args()
+    if cli.actor_read_timeout_seconds <= 0:
+        parser.error("--actor-read-timeout-seconds must be positive")
     ray.init(address="auto", log_to_driver=False, logging_level="ERROR")
     try:
         managers = [x for x in ray.util.list_named_actors(all_namespaces=True) if x["name"] == "ray_worker_manager"]
         if len(managers) != 1:
             raise RuntimeError("Expected one worker manager in the owned allocation")
         manager = ray.get_actor(managers[0]["name"], namespace=managers[0]["namespace"])
-        result = {"at_utc": datetime.datetime.now(datetime.UTC).isoformat()}
+        result = {
+            "at_utc": datetime.datetime.now(datetime.UTC).isoformat(),
+            "actor_read_timeout_seconds": cli.actor_read_timeout_seconds,
+        }
         if not cli.producer_action and not cli.rollout_only:
             names = ray.get(manager.__ray_call__.remote(trainer_names), timeout=60)
             if len(names) != cli.expected_workers:
@@ -130,7 +141,8 @@ def main():
                 timeout=60,
             )
             snapshots = ray.get(
-                [handle.__ray_call__.remote(read_optimizer_snapshot) for handle in handles], timeout=90
+                [handle.__ray_call__.remote(read_optimizer_snapshot) for handle in handles],
+                timeout=cli.actor_read_timeout_seconds,
             )
             if any(r["run_id"] != cli.expected_run_id for r in snapshots):
                 raise RuntimeError("Optimizer probe reached a different run")
