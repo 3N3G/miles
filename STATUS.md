@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First-hour inspection verifies 10 updates, iteration-74 checkpoint, all three engine weights and 826 W&B scalars; sampled proofs expose residual rubric boundaries Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
-  Next: Keep foreground supervision through terminal and shared-budget continuation, auditing matched-question visits without treating different-question rewards as learning
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 has 17 finite updates and four positive direction checks; continuation checkpoint-space decision is pending while current training continues Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
+  Next: Watch through the two-hour limit, inspect repeated-question visits and current free storage, then complete terminal archives and W&B verification before any bounded continuation
 
 ## Next / blocked
 
