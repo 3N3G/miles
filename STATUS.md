@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 537888 ended FAILED; acceptance False Jobs: hpcfund/537888 FAILED; hpcfund/537846 FAILED
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Checkpoint restoration verified; repair trained-weight comparison and prepare bounded replacement Jobs: hpcfund/537888 FAILED; hpcfund/537846 FAILED
+  Next: Submit v12 with remaining3h51m; qualify native rebroadcast check, entropy, reference drift and finite optimizer progress.
 
 ## Next / blocked
 
