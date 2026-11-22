@@ -3,7 +3,9 @@
 Prompt clarification, labeled examples, and stronger reasoning are all supported options.
 Their effects must be measured against human labels. Agreement between repeated judge calls is not proof of correctness.
 This is a literature review and a proposed comparison, not an executed judge experiment.
-The active prompt, Luna medium, original rewards, and held-out split remain unchanged.
+It preceded the user's authorization of assistant mathematical adjudication. The resulting [prompt repair](JUDGE_FOLLOWTHROUGH_REPAIR_20261122.md)
+and [bounded transport-repair continuation](INFERENCE_TRANSPORT_REPAIR_20261122.md) now govern execution.
+Luna medium, original rubric weights and the held-out split remain fixed. The model/effort comparison below has not run.
 
 ## What the primary sources support
 
@@ -20,9 +22,14 @@ It recommends trying zero-shot first, then consistent few-shot examples when nee
 Adding a generic request to think step by step is not a demonstrated repair for an existing reasoning model.
 [Luna's model documentation](https://developers.openai.com/api/docs/models/gpt-6-luna) confirms support for high reasoning effort.
 
+A later [rubric-position study](https://arxiv.org/abs/2602.02219v3) also finds effects from criterion ordering,
+in addition to score-option order. Our answer-order swaps do not test that separate effect.
+The paper reports model-dependent benefits from permutations. It does not establish that this repair should add them,
+or that our seven-point totals are now accurate. The submitted continuation keeps the original criterion order.
+
 ## Application to the saved failures
 
-Our [current judge](JUDGE_ROLLOUT_REVIEW_20261122.md) already uses binary weighted items, references, anonymous answers, and order swaps.
+Our [pre-repair judge](JUDGE_ROLLOUT_REVIEW_20261122.md) already used binary weighted items, references, anonymous answers, and order swaps.
 The six-answer review found inconsistent treatment of implicit monotonicity, a domain typo, and prerequisites for partial credit.
 It also found valid full-credit proofs and an incorrect zero-credit answer.
 These observations motivate specific prompt clarification. They do not establish that prompt wording is the only limitation.
