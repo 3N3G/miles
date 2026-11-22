@@ -41,9 +41,9 @@
     "Prompts, thinking and sampling profile",
     "Learning rate 1e-6, Adam and MTP coefficient",
     "Batch32, concurrency96, GRPO/CISPO and reward",
-    "Four-hour replacement cap and $5 judge cap"
+    "Four-hour combined continuation cap and $5 judge cap"
   ],
-  "tests_passed": 93,
+  "tests_passed": 95,
   "replacement_submission_status": "PENDING",
   "authorization": "User approved continuation and explicitly requested repair and rerun for identified causes.",
   "runtime_repair_validation_status": "CPU scheduler negative and positive controls passed; native GPU load still pending.",
@@ -71,5 +71,9 @@
     "binary_rubric_items": 43,
     "human_agreement": "unmeasured",
     "new_inference": false
-  }
+  },
+  "replacement_effective_slurm_walltime": "03:55:00",
+  "slurm_minute_rounding_adjustment": "The requested03:55:42 rounded upward to03:56:00. Updated this session-owned pending job537888 to03:55:00 and verified scontrol output. The used config remains unchanged.",
+  "combined_allocation_maximum_seconds": 14358,
+  "combined_gpu_hours_maximum": 31.906666666666666
 }

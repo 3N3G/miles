@@ -39,6 +39,16 @@ def load_configs(path=CONFIG):
     return qualification, training
 
 
+def _slurm_walltime(walltime):
+    # Slurm rounds seconds upward. Whole minutes preserve a strict resource cap.
+    hours, minutes, seconds = map(int, walltime.split(":"))
+    if hours < 0 or not 0 <= minutes < 60 or not 0 <= seconds < 60:
+        raise ValueError("Walltime must use nonnegative hours and minutes/seconds below 60")
+    if hours == minutes == 0:
+        raise ValueError("Slurm needs at least one minute within the approved walltime")
+    return f"{hours:02d}:{minutes:02d}:00"
+
+
 def render_job(*, repo, work_dir, run_dir, expected_commit, config_path=CONFIG):
     qualification, _ = load_configs(config_path)
     allocation = qualification["allocation"]
@@ -70,7 +80,7 @@ def render_job(*, repo, work_dir, run_dir, expected_commit, config_path=CONFIG):
             "#SBATCH --ntasks=1",
             f"#SBATCH --cpus-per-task={allocation.get('cpus_per_task', 1)}",
             "#SBATCH --exclusive",
-            f"#SBATCH --time={allocation['walltime']}",
+            f"#SBATCH --time={_slurm_walltime(allocation['walltime'])}",
             f"#SBATCH --chdir={repo}",
             f"#SBATCH --output={run_dir}/slurm-%j.log",
             "import subprocess",

@@ -21,6 +21,12 @@ The reader now excludes events before the approved starting iteration.
 The failed attempt's 25 inherited W&B points remain preserved and explicitly labeled as zero new training updates.
 Future VM-native histories use a distinct online run ID.
 
-Ninety-three TCS tests pass. Native GPU resume, entropy and update-direction observations still need qualification.
+Ninety-five TCS tests pass. Native GPU resume, entropy and update-direction observations still need qualification.
 The replacement is an authorized runtime repair. Its used configuration will remain unchanged.
 Detailed sources, counters and the failed run's archive are in [the operational record](evidence/resume_repair_20261122.json).
+
+Slurm rounded the requested replacement limit of 3h55m42s upward to 3h56m.
+The owned pending job was reduced to 3h55m and verified through `scontrol`.
+Both attempts together can therefore use at most 3h59m18s, or 31.907 GPU-hours.
+The renderer now floors limits to whole minutes. A regression test covers the rounding failure.
+The submitted configuration and training source remain unchanged.

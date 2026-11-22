@@ -62,6 +62,19 @@ class TestAMDPreflight(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "Slurm"):
                 run_in_allocation(config_path=CONFIG, work_dir=Path("/nonexistent"), run_dir=Path("/nonexistent"))
 
+    def test_render_cannot_exceed_seconds_budget_after_slurm_rounding(self):
+        config, training = load_configs()
+        config["allocation"]["walltime"] = "03:55:42"
+        with patch("experiments.tcs_async_rl.amd_preflight.load_configs", return_value=(config, training)):
+            rendered = render_job(
+                repo=ROOT, work_dir=Path("/work/tcs"), run_dir=Path("/work/tcs/run"), expected_commit="abc123"
+            )
+        self.assertIn("#SBATCH --time=03:55:00", rendered)
+        config["allocation"]["walltime"] = "00:00:59"
+        with patch("experiments.tcs_async_rl.amd_preflight.load_configs", return_value=(config, training)):
+            with self.assertRaisesRegex(ValueError, "at least one minute"):
+                render_job(repo=ROOT, work_dir=Path("/work/tcs"), run_dir=Path("/work/tcs/run"), expected_commit="abc")
+
     def test_rejects_other_partition(self):
         with patch.dict(os.environ, {"SLURM_JOB_ID": "1", "SLURM_JOB_PARTITION": "mi3501x"}, clear=True):
             with self.assertRaisesRegex(RuntimeError, "partition"):
