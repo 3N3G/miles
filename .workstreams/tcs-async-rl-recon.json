@@ -257,6 +257,10 @@
   ],
   "evidence": [
     {
+      "path": "experiments/tcs_async_rl/RUN_V14_OPERATIONS_20261122.md",
+      "label": "Current owned processes, frozen source, monitoring and finalization procedure"
+    },
+    {
       "path": "experiments/tcs_async_rl/JUDGE_REPAIR_RESUME_PLAN_20261122.md",
       "label": "User-authorized judge repair and bounded resumed-run plan"
     },
@@ -2476,6 +2480,13 @@
       "actor": "codex",
       "summary": "Revised judge qualified; resumed AMD job 538647 is queued from 65 saved updates, with independent monitoring active",
       "revision": 219
+    },
+    {
+      "id": "5b1aedcd-b81f-46a4-bb77-787248991c09",
+      "at": "2026-11-22T09:51:30.221203Z",
+      "actor": "codex",
+      "summary": "Record live supervision handoff and bounded retry guard for the queued continuation",
+      "revision": 220
     }
   ],
   "projectId": "understanding",
@@ -2485,6 +2496,6 @@
   "summary": "Revised judge qualified; resumed AMD job 538647 is queued from 65 saved updates, with independent monitoring active",
   "nextAction": "Watch the scheduler and owned services. Current estimated start is Nov 22 23:36 UTC (18:36 Eastern), subject to change. Inspect first native update, then every metric and matched-question proof at least hourly.",
   "owner": "Codex",
-  "revision": 219,
-  "updatedAt": "2026-11-22T09:40:56.908855Z"
+  "revision": 220,
+  "updatedAt": "2026-11-22T09:51:30.221203Z"
 }
