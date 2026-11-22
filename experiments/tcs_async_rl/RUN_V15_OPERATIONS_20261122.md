@@ -137,3 +137,16 @@ Shared storage has 95.7 GB free after the 60.6 GB checkpoint save. The save hook
 Ray warns because the shared filesystem exceeds 95% utilization; no spill or save failure occurred. Continue watching free bytes.
 Evidence: `first-hour-intense-review.json`, `first-hour-native-wandb-all-scalars-verification.json`,
 `first-hour-wandb-readback-initial-pending.json`, and sibling `judge-signal-first-five-groups.json`.
+
+## Update-80 direction and ongoing storage watch
+
+At 23:42 UTC, 17 new updates (65–81) are complete, without a training exception.
+Update 80's observed surrogate gain is +0.00013274, with positive-advantage mean log-probability change +0.00005609
+and negative-advantage change −0.00048707. All four observed direction checks (65, 66, 70, 80) are positive.
+The latest 11 immutable audited groups contain 352 answers, with 53 judge-order disagreements and one paired reference grade below seven.
+No question has yet repeated in those audited groups. These numbers do not establish a reward trend.
+
+A current-job storage warning is monitored: this run fits its two-checkpoint atomic-save peak, but preserving its source during
+a separate continuation would require roughly 26 GB more at the next two-checkpoint save peak if free capacity stays near 95 GB.
+The user's intermediate-checkpoint retention decision is pending in `QUESTIONS.md`. Elapsed time is not approval.
+No checkpoint has been removed outside the already configured current-run retention hook.
