@@ -14,9 +14,14 @@ import time
 from pathlib import Path
 
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
+from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates
 
 
 def read_native_metrics(directory, *, allow_pending=False, require_publication=False):
+    # Restoring a checkpoint also restores its historical event files. The
+    # reviewed checkpoint owns the boundary between inherited and new updates.
+    config_path = directory / "approved-config.json"
+    initial = initial_optimizer_updates(json.loads(config_path.read_text())) if config_path.exists() else 0
     rows = {}
     sources = ["actor_cell00000_rank00000.jsonl", "rollout_executor.jsonl"]
     for name in sources:
@@ -34,6 +39,8 @@ def read_native_metrics(directory, *, allow_pending=False, require_publication=F
             if event["type"] != "metric":
                 continue
             step = event["rollout_id"]
+            if step < initial:
+                continue
             metrics = event["metrics"]
             row = rows.setdefault(step, {"optimizer_step": step})
             for key, value in metrics.items():
@@ -175,7 +182,9 @@ def sync_live_audit(directory, output, scheduler_state):
         return {"phase": "waiting_for_first_complete_update", "verified_points": 0}
     config = json.loads(config_path.read_text())
     args = config["args"]
-    path = f"{args['wandb_team']}/{args['wandb_project']}/{config['run_id']}"
+    # Keep the single online writer separate from AMD's offline producer IDs.
+    online_id = config["run_id"] + "-native"
+    path = f"{args['wandb_team']}/{args['wandb_project']}/{online_id}"
     receipt_path = output / "wandb-live-metrics.json"
     submitted_path = output / "wandb-submitted-metrics.json"
     with (output / "wandb-live-metrics.lock").open("a") as lock:
@@ -193,7 +202,7 @@ def sync_live_audit(directory, output, scheduler_state):
             run = wandb.init(
                 entity=args["wandb_team"],
                 project=args["wandb_project"],
-                id=config["run_id"],
+                id=online_id,
                 resume="allow",
                 dir=str(client_directory),
                 config={

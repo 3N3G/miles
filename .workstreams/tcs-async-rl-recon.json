@@ -675,6 +675,18 @@
     {
       "path": "experiments/tcs_async_rl/evidence/sampled_entropy_20261121.json",
       "label": "Sampler entropy reproduction and source checksums"
+    },
+    {
+      "path": "experiments/tcs_async_rl/RESUME_REPAIR_20261122.md",
+      "label": "Diagnosed scheduler resume failure and exact validated repair"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/resume_repair_20261122.json",
+      "label": "Scheduler controls, failed archive, inherited metric history and unchanged scope"
+    },
+    {
+      "path": "experiments/tcs_async_rl/rl_easy_overfit_v11.json",
+      "label": "Approved replacement restoring saved scheduler state"
     }
   ],
   "jobs": [
@@ -2098,15 +2110,29 @@
       "actor": "codex",
       "summary": "RL job 537846 ended FAILED; acceptance False",
       "revision": 178
+    },
+    {
+      "id": "48a0fe83-f998-401e-98cd-c5d40dcd59ab",
+      "at": "2026-11-22T02:05:45.318413Z",
+      "actor": "codex",
+      "summary": "Diagnosed and CPU-validated continuation scheduler repair; preserve zero-update failure and correct inherited logging",
+      "revision": 179
+    },
+    {
+      "id": "8bfe9394-ad21-43ac-8ba5-d658df8e0e9a",
+      "at": "2026-11-22T02:06:33.242649Z",
+      "actor": "codex",
+      "summary": "Keep replacement and failed allocation within the approved combined GPU budget",
+      "revision": 180
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 537846 ended FAILED; acceptance False",
-  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
+  "summary": "Job 537846 failed before training: scheduler horizon mismatch. CPU repair preserves LR 1e-6. Inherited metrics filtered. Preparing authorized replacement.",
+  "nextAction": "Submit the scheduler repair. Verify resume, entropy, divergence and update direction. Review raw proofs and supervise through completion.",
   "owner": "Codex",
-  "revision": 178,
-  "updatedAt": "2026-11-22T01:59:33.069913Z"
+  "revision": 180,
+  "updatedAt": "2026-11-22T02:06:33.242649Z"
 }

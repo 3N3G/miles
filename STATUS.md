@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 537846 ended FAILED; acceptance False Jobs: hpcfund/537846 FAILED; hpcfund/536360 TIMEOUT
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Job 537846 failed before training: scheduler horizon mismatch. CPU repair preserves LR 1e-6. Inherited metrics filtered. Preparing authorized replacement. Jobs: hpcfund/537846 FAILED; hpcfund/536360 TIMEOUT
+  Next: Submit the scheduler repair. Verify resume, entropy, divergence and update direction. Review raw proofs and supervise through completion.
 
 ## Next / blocked
 

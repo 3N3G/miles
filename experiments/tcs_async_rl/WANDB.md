@@ -49,6 +49,8 @@ See [the full reward and optimizer audit](RL_NOISE_AUDIT_20261121.md).
 
 New configurations can set `wandb_metrics_source` to `native_vm`.
 The monitor publishes complete native optimizer rows from one VM client during training.
+Its online run ID appends `-native` to the allocation's producer run ID.
+Checkpoint restoration also restores old event files. The approved resume iteration filters out these inherited rows.
 It waits for the optimizer, reward and weight-publication metrics before publishing an active step.
 It uses the same `audit/` series and explicit optimizer-step axis described above.
 

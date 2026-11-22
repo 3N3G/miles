@@ -1,0 +1,55 @@
+{
+  "failed_job_id": "537846",
+  "failed_source_commit": "c55fbdef4003fb1059797c9a33f1334363fcdfdf",
+  "scheduler": {
+    "state": "FAILED",
+    "exit_code": "1:0",
+    "elapsed": "00:04:18",
+    "start_cluster_time": "2026-11-21T19:54:03",
+    "end_cluster_time": "2026-11-21T19:58:21"
+  },
+  "new_optimizer_updates": 0,
+  "new_training_answers": 0,
+  "new_judge_spending": 0,
+  "failure": "OptimizerParamScheduler: class input value 2080 and checkpointvalue 1280 for total number of iterations do not match",
+  "scheduler_control": {
+    "source_sha256": "b6a19da4c72a7e4deda5897b6829be0e1e233e4f2f5dae19f62274217b188c3a",
+    "negative_control_error": "OptimizerParamScheduler: class input value 2080 and checkpointvalue 1280 for total number of iterations do not match",
+    "logging_import_only_stubbed": true,
+    "restored_num_steps": 800,
+    "final_num_steps": 2080,
+    "additional_optimizer_steps": 40,
+    "learning_rates": [
+      1e-06
+    ],
+    "weight_decay": 0.1
+  },
+  "failed_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/9706034eb3dc944cb0e954b7e61aac01c7d5f977/miles/easy-overfit-v10",
+  "old_wandb_run": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261122-015504-326",
+  "old_wandb_point_origin": "Inherited optimizer steps 0\u201324, not new training. Failed state and history preserved, summary corrected.",
+  "repair_config": "experiments/tcs_async_rl/rl_easy_overfit_v11.json",
+  "parent_approved_plan": "experiments/tcs_async_rl/EASY_CONTINUATION_PLAN_20261122_APPROVED.md",
+  "exact_changes": [
+    "Enable restoration of saved optimizer scheduler state, including counter 800.",
+    "Filter inherited metric events before iteration25.",
+    "Separate online VM metric run IDs with -native suffix.",
+    "Read-only GPU/filesystem telemetry every minute and detailed metric/matched-question summaries."
+  ],
+  "unchanged": [
+    "Model and checkpoint initialization",
+    "All 20 easy questions and held-out split",
+    "Prompts, thinking and sampling profile",
+    "Learning rate 1e-6, Adam and MTP coefficient",
+    "Batch32, concurrency96, GRPO/CISPO and reward",
+    "Four-hour replacement cap and $5 judge cap"
+  ],
+  "tests_passed": 93,
+  "replacement_submission_status": "not_yet_submitted",
+  "authorization": "User approved continuation and explicitly requested repair and rerun for identified causes.",
+  "runtime_repair_validation_status": "CPU scheduler negative and positive controls passed; native GPU load still pending.",
+  "replacement_walltime": "03:55:42",
+  "first_failed_allocation_seconds": 258,
+  "cumulative_continuation_gpu_hours_cap": 32,
+  "budget_note": "Subtract the failed 4m18s allocation from the replacement so both attempts together remain within four hours on eight GPUs.",
+  "scheduler_control_script": "experiments/tcs_async_rl/check_scheduler_resume.py"
+}

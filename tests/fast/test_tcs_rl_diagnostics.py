@@ -6,6 +6,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from experiments.tcs_async_rl.diagnose_rl import question_comparisons, trace_summary
+from experiments.tcs_async_rl.live_review import build_review
 from experiments.tcs_async_rl.native_metrics import (
     compare_wandb,
     publish_audit,
@@ -17,6 +18,40 @@ from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_samp
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_detailed_review_flags_wrong_update_direction_and_compares_only_repeated_questions(self):
+        native = [
+            {"optimizer_step": 25, "train/lr-pg_0": 1e-6, "train/update_direction/surrogate_gain": -0.1},
+            {"optimizer_step": 26, "train/lr-pg_0": 1e-6},
+            {"optimizer_step": 27, "train/lr-pg_0": 1e-6},
+        ]
+        groups = [
+            {
+                "rollout_ids": [step],
+                "by_question": {key: {"scores": [reward], "lengths": [100], "capped": 0}},
+                "example_file": "raw.json",
+                "decode_tokens_by_weight_version": {},
+            }
+            for step, key, reward in [(25, "a", 1), (26, "b", 6), (27, "a", 2)]
+        ]
+        result = build_review(native, groups, [])
+        self.assertEqual(result["completed_updates"], 3)
+        self.assertEqual(result["flags_to_inspect"]["negative_observed_surrogate_gain"], [25])
+        self.assertEqual(result["within_continuation_matched_visits"]["mean_change"], 1)
+        self.assertEqual(result["within_continuation_matched_visits"]["questions"], 1)
+
+    def test_resuming_filters_metric_history_restored_from_the_checkpoint(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "events").mkdir()
+            (root / "approved-config.json").write_text(json.dumps({"resume": {"iteration": 24}}))
+            for source, metric in [
+                ("actor_cell00000_rank00000.jsonl", "train/pg_loss"),
+                ("rollout_executor.jsonl", "rollout/episode_raw_reward"),
+            ]:
+                events = [{"type": "metric", "rollout_id": step, "metrics": {metric: 1.0}} for step in [0, 24, 25]]
+                (root / "events" / source).write_text("\n".join(json.dumps(e) for e in events))
+            self.assertEqual([r["optimizer_step"] for r in read_native_metrics(root)], [25])
+
     def test_sampled_surprisal_keeps_answer_and_token_weighting_separate_and_matches_questions(self):
         rows = [
             dict(
@@ -86,6 +121,7 @@ class DiagnosticTests(unittest.TestCase):
                 receipt = sync_live_audit(root, root, "RUNNING")
                 self.assertEqual(receipt["verified_points"], 1)
                 self.assertFalse(sdk.Settings.call_args.kwargs["x_update_finish_state"])
+                self.assertEqual(sdk.init.call_args.kwargs["id"], "id-native")
                 remote.scan_history.assert_called_with(
                     keys=["audit/optimizer_step", "audit/rollout/episode_raw_reward"], use_cache=False
                 )
