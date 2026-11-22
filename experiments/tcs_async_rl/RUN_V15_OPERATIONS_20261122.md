@@ -13,6 +13,9 @@ uses standing inference-repair authorization. No subagents were authorized or sp
 - Resume the original iteration-64 checkpoint, containing 65 updates. Target new global updates 65–104.
 - Replacement limit **3h43m on eight MI350 GPUs**, no automatic Slurm requeue.
   `slurm-budget-guard.json` records the owner/name check and `Requeue=0` readback.
+- At 20:51 UTC the owned pending job accepted `TimeMin=02:00:00`, with its maximum unchanged at 3h43m.
+  See the [scheduling amendment](SCHEDULING_REPAIR_20261122.md) and `slurm-backfill-minimum-time.json` before/after readbacks.
+  Slurm may grant a shorter slot. Read its actual time limit on allocation, and charge every continuation to the same remaining budget.
 - The failed predecessor used 16m36s. The combined ceiling is 31.9467 GPU-hours, below the approved 32.
 - Judge ledger inherits **552 settled calls, $0.6374188 estimated spend, zero pending reservations**, within the same $5 cap.
   Earlier qualification, proof audits and failed-run calls remain included. Do not reset the ledger.
