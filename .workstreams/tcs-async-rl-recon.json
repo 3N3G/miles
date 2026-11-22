@@ -2545,15 +2545,22 @@
       "actor": "codex",
       "summary": "AMD continuation 538647 is still queued; current start estimate is 21:32 UTC, no GPU time used, all monitors healthy",
       "revision": 226
+    },
+    {
+      "id": "372a2f1c-b17e-4d9b-9b8f-4e664cdab0b9",
+      "at": "2026-11-22T14:39:36.781087Z",
+      "actor": "codex",
+      "summary": "AMD continuation remains pending: all three usable MI350 nodes are allocated, four higher-priority jobs are ready, start estimate unavailable",
+      "revision": 227
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD continuation 538647 is still queued; current start estimate is 21:32 UTC, no GPU time used, all monitors healthy",
-  "nextAction": "Continue foreground queue and service monitoring. Once allocated verify iteration-64 resume, first native update, W&B coordinates and actual graded proofs.",
+  "summary": "AMD continuation remains pending: all three usable MI350 nodes are allocated, four higher-priority jobs are ready, start estimate unavailable",
+  "nextAction": "Continue foreground queue and service supervision. Keep the frozen four-hour/40-update allocation. Inspect resume, native metrics and actual proofs as soon as assigned.",
   "owner": "Codex",
-  "revision": 226,
-  "updatedAt": "2026-11-22T12:40:31.138741Z"
+  "revision": 227,
+  "updatedAt": "2026-11-22T14:39:36.781087Z"
 }

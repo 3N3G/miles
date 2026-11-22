@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation 538647 is still queued; current start estimate is 21:32 UTC, no GPU time used, all monitors healthy Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Continue foreground queue and service monitoring. Once allocated verify iteration-64 resume, first native update, W&B coordinates and actual graded proofs.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation remains pending: all three usable MI350 nodes are allocated, four higher-priority jobs are ready, start estimate unavailable Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Continue foreground queue and service supervision. Keep the frozen four-hour/40-update allocation. Inspect resume, native metrics and actual proofs as soon as assigned.
 
 ## Next / blocked
 
