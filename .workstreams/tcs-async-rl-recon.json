@@ -2734,15 +2734,22 @@
       "actor": "codex",
       "summary": "AMD 539594 completed finite update 65 with positive update direction; all 88 W&B scalar values match native logs, reward 4.56/7",
       "revision": 250
+    },
+    {
+      "id": "9fcd99e0-99dc-4a62-9a03-e956b294529b",
+      "at": "2026-11-22T23:02:41.794860Z",
+      "actor": "codex",
+      "summary": "AMD 539594 has six finite published updates, a tracked iteration-69 checkpoint and 64 immutable raw-answer audits; no matched-question trend yet",
+      "revision": 251
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 539594 completed finite update 65 with positive update direction; all 88 W&B scalar values match native logs, reward 4.56/7",
-  "nextAction": "Continue foreground monitoring, immutable raw-group audits and matched-question checks; verify checkpoint saves and inspect the hard-question reward distribution without treating mixed-question changes as learning",
+  "summary": "AMD 539594 has six finite published updates, a tracked iteration-69 checkpoint and 64 immutable raw-answer audits; no matched-question trend yet",
+  "nextAction": "Continue foreground supervision through terminal; inspect hourly entropy, divergence, caps, judge boundaries, matched question visits and remaining shared budget",
   "owner": "Codex",
-  "revision": 250,
-  "updatedAt": "2026-11-22T22:48:03.213233Z"
+  "revision": 251,
+  "updatedAt": "2026-11-22T23:02:41.794860Z"
 }
