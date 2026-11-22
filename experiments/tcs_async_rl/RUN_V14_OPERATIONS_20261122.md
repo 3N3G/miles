@@ -56,6 +56,9 @@ Credential loading remains inside the authorized VM service. Never inspect or tr
 - All 60 reference/empty/irrelevant controls passed. The regraded 32-answer gate has 17 zeros, five fives, four sixes, six sevens.
 - Both qualification phases settled with zero pending calls and $0.3972903 estimated total cost.
   The v14 ledger inherits the entire v13 ledger prefix. Do not reset it or add another allowance.
+- A later [eight-proof audit](JUDGE_ADDITIONAL_AUDIT_FINDINGS_20261122.md) matches all 70 repeated assistant item decisions.
+  Its sixteen new calls bring the same ledger to $0.4150215, with 422 settled call IDs and zero pending reservations.
+  The prompt, queued job and training settings remain unchanged. Keep earlier borderline disagreements and calibration limits.
 - [Preserved v2 qualification](https://huggingface.co/datasets/3N3G/internalization-runs/tree/ddcfe3aa37d888f7376835682baa7dcdde8f7e0f/miles/easy-overfit-v13).
 - [Verified v3 pre-submission archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/b69851eb463907e85d0bb760e97d4acf48f63742/miles/easy-overfit-v14).
 - The VM run also contains a manual algebra/boundary check of all 20 references, without data changes or extra judge calls.
