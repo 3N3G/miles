@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Comparing published judge-repair evidence against the observed TCS grading failures. No paid calls or experiment changes. Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
+  Next: Save source-backed options and a calibration-first recommendation.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Verified Luna medium prompt and reviewed six real graded proofs; found valid full-credit proofs, a wrong zero-grade answer, and inconsistent strictness Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
-  Next: Human calibration remains pending. Review the saved proofs and ten-example blinded packet before choosing a new evaluation or training allocation.
+- Nothing recorded.
 
 ## Finished
 
