@@ -257,6 +257,10 @@
   ],
   "evidence": [
     {
+      "path": "experiments/tcs_async_rl/evidence/resume_reward_buffer_and_label_review_20261122.json",
+      "label": "Exact resume-buffer inspection and preserved correction to an assistant diagnostic label"
+    },
+    {
       "path": "experiments/tcs_async_rl/RUN_V14_OPERATIONS_20261122.md",
       "label": "Current owned processes, frozen source, monitoring and finalization procedure"
     },
@@ -2494,15 +2498,22 @@
       "actor": "codex",
       "summary": "Scheduler withdrew its estimate; owned job and monitors remain healthy while pending",
       "revision": 221
+    },
+    {
+      "id": "a5dfc22d-6b3e-4a72-b684-ec39c5d3a5ac",
+      "at": "2026-11-22T10:30:38.921852Z",
+      "actor": "codex",
+      "summary": "Verify empty scored resume buffers and record a retrospective assistant-label correction without changing the frozen run",
+      "revision": 222
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Resumed AMD job 538647 remains pending on priority; scheduler now provides no start estimate. No GPU time used.",
-  "nextAction": "Continue foreground queue and service monitoring. Recheck start estimates directly. Inspect the first native update and all matched-question proofs once allocated.",
+  "summary": "Resumed AMD job 538647 remains queued on priority with an unstable start estimate. Verified no old scored batches restore across the judge change. No GPU time used.",
+  "nextAction": "Keep foreground queue/service supervision. Check the first native update once allocated, then inspect matched-question metrics and actual proofs under the revised judge.",
   "owner": "Codex",
-  "revision": 221,
-  "updatedAt": "2026-11-22T09:53:16.842778Z"
+  "revision": 222,
+  "updatedAt": "2026-11-22T10:30:38.921852Z"
 }

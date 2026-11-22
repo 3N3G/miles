@@ -1,0 +1,34 @@
+{
+  "at_utc": "2026-11-22T10:30:38.809357+00:00",
+  "run": "easy-overfit-v14",
+  "job_id": "538647",
+  "frozen_training_source": "3f33bbd0d370d31126e792750f3a363f83a5c5e6",
+  "new_provider_calls": 0,
+  "training_config_changed": false,
+  "source_checkpoint_changed": false,
+  "checkpoint_inspection": {
+    "completed_scored_groups": 0,
+    "executor_replay_batches": 0,
+    "method": "Exact source ZIP/pickle-opcode inspection on temporary copies, without executing pickle; copies removed."
+  },
+  "retrospective_adjudication": {
+    "case": "step-53",
+    "item": 2,
+    "original_assistant_label": false,
+    "reconsidered_label": true,
+    "reason": "Deleting each selected vertex\u2019s parent edge already confines its component to descendants. Another selected descendant would be separated by its own deleted parent edge. This is an elementary implicit inference from the candidate\u2019s preceding statements.",
+    "original_pre_call_labels_preserved": true,
+    "fresh_validation_counts_unchanged": true,
+    "independent_new_validation": false
+  },
+  "private_evidence": [
+    {
+      "run_relative_path": "resume-old-reward-buffer-inspection.json",
+      "sha256": "466002e3baf1c95ef87ffd82ae5a6d3d5a48f5581828117cb1d404d133e1455e"
+    },
+    {
+      "run_relative_path": "assistant-adjudication-followup.json",
+      "sha256": "931f7b0183240e5f68f43dc349324eeea670b0edf818dea4db9cc43e3e40c798"
+    }
+  ]
+}

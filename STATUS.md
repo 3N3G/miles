@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Resumed AMD job 538647 remains pending on priority; scheduler now provides no start estimate. No GPU time used. Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Continue foreground queue and service monitoring. Recheck start estimates directly. Inspect the first native update and all matched-question proofs once allocated.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Resumed AMD job 538647 remains queued on priority with an unstable start estimate. Verified no old scored batches restore across the judge change. No GPU time used. Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Keep foreground queue/service supervision. Check the first native update once allocated, then inspect matched-question metrics and actual proofs under the revised judge.
 
 ## Next / blocked
 

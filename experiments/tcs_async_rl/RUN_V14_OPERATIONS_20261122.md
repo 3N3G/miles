@@ -60,6 +60,12 @@ Credential loading remains inside the authorized VM service. Never inspect or tr
 - [Verified v3 pre-submission archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/b69851eb463907e85d0bb760e97d4acf48f63742/miles/easy-overfit-v14).
 - The VM run also contains a manual algebra/boundary check of all 20 references, without data changes or extra judge calls.
   It is not formal certification. One reference invokes the standard fractional spanning-tree-packing bound.
+- The iteration-64 rollout checkpoint has zero completed scored groups and zero executor replay batches.
+  Exact ZIP/pickle-opcode inspection is recorded in `resume-old-reward-buffer-inspection.json` in the VM run.
+  Source checkpoint bytes remain unchanged. Temporary inspection copies were removed before archival.
+- A post-qualification review supports full credit for the forest proof's component invariant: the cut already confines each
+  sampled vertex's component to its descendants. The earlier assistant denial was too strict under the permitted implicit-step policy.
+  `assistant-adjudication-followup.json` preserves this correction separately. Original pre-call labels and validation counts stay intact.
 - Five reproducible public cache revisions were evicted after verifying their immutable remote availability.
   Shared free space then became 160,078,282,752 bytes, above the unchanged 151,265,361,920-byte submission preflight.
   See the cache plan/recovery evidence for restoration commands. All research results and checkpoints remain.
