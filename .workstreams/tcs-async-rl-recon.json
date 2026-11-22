@@ -2720,15 +2720,22 @@
       "actor": "codex",
       "summary": "AMD 539594 started on k007-003 with a two-hour backfill slot; repaired judge tunnel is healthy and model startup is in progress",
       "revision": 248
+    },
+    {
+      "id": "fe3e439c-a572-4238-a98a-4085a9127131",
+      "at": "2026-11-22T22:24:05.386496Z",
+      "actor": "codex",
+      "summary": "AMD 539594 restored iteration 64 and both optimizer counters 2080 at learning rate 1e-6; 96 answers are generating across three engines",
+      "revision": 249
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 539594 started on k007-003 with a two-hour backfill slot; repaired judge tunnel is healthy and model startup is in progress",
-  "nextAction": "Verify iteration 64 and scheduler 2080, restored weight checksums, finite update 65 and native W&B; supervise through the actual two-hour limit and preserve the remaining combined budget",
+  "summary": "AMD 539594 restored iteration 64 and both optimizer counters 2080 at learning rate 1e-6; 96 answers are generating across three engines",
+  "nextAction": "Verify finite update 65, native W&B coordinates and real graded proofs; inspect entropy, initialization drift, rollout mismatch, gradients and repetition through the two-hour allocation",
   "owner": "Codex",
-  "revision": 248,
-  "updatedAt": "2026-11-22T22:20:40.517945Z"
+  "revision": 249,
+  "updatedAt": "2026-11-22T22:24:05.386496Z"
 }

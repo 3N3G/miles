@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 started on k007-003 with a two-hour backfill slot; repaired judge tunnel is healthy and model startup is in progress Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
-  Next: Verify iteration 64 and scheduler 2080, restored weight checksums, finite update 65 and native W&B; supervise through the actual two-hour limit and preserve the remaining combined 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 restored iteration 64 and both optimizer counters 2080 at learning rate 1e-6; 96 answers are generating across three engines Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
+  Next: Verify finite update 65, native W&B coordinates and real graded proofs; inspect entropy, initialization drift, rollout mismatch, gradients and repetition through the two-hour alloc
 
 ## Next / blocked
 
