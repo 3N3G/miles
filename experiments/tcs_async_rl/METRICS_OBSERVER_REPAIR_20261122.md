@@ -18,3 +18,8 @@ The observer stops after publishing the scheduler's terminal state.
 Validation: the actual rsync dry run selected only the native event files and
 `rl-smoke.log`. Python compilation, Black, isort, and Ruff passed. Live W&B
 readback and fresh optimizer coordinates will qualify the observer after launch.
+
+At 06:10:59 UTC, the observer verified all eleven completed updates through
+global step 35 in W&B, with state `running`. It repeated that verification at
+06:12:04 UTC. The first readback lagged SDK delivery, then caught up without
+resending acknowledged points. The archive uploader was still waiting.
