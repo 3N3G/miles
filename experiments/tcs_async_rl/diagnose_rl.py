@@ -9,6 +9,7 @@ import argparse
 import collections
 import csv
 import gzip
+import hashlib
 import json
 import math
 import random
@@ -133,16 +134,59 @@ def publication_checks(directory, rows, native):
     }
 
 
+def completed_judge_receipt(folder, identity, order):
+    manifest = json.loads((folder / "service-manifest.json").read_text())
+    base_tokens = manifest["judge"]["max_completion_tokens"]
+    maximum_tokens = manifest["judge_config"].get("length_retry_max_completion_tokens", base_tokens)
+    files = [path for path in folder.glob(f"{identity}-order{order}-*.json") if "-attempt" not in path.name]
+    if not files:
+        raise ValueError(f"Missing judge receipt: {identity}, order {order}")
+    receipts = []
+    for path in files:
+        receipt = json.loads(path.read_text())
+        digest = hashlib.sha256(json.dumps(receipt["payload"], sort_keys=True).encode()).hexdigest()
+        if receipt["request_sha256"] != digest or path.name != f"{identity}-order{order}-{digest[:12]}.json":
+            raise ValueError("Judge receipt does not match its request fingerprint")
+        if receipt["http_status"] != 200 or receipt["identity"] != identity or receipt["swapped"] != bool(order):
+            raise ValueError("Judge receipt has a different identity or presentation order")
+        receipts.append((path, receipt))
+    receipts.sort(key=lambda entry: entry[1]["payload"]["max_completion_tokens"])
+    if receipts[0][1]["payload"]["max_completion_tokens"] != base_tokens:
+        raise ValueError("Judge retry is missing its original request")
+    if receipts[-1][1]["payload"]["max_completion_tokens"] > maximum_tokens:
+        raise ValueError("Judge retry exceeds its recorded inference budget")
+    retry_file = folder / "length-retries.jsonl"
+    links = [json.loads(line) for line in retry_file.read_text().splitlines()] if retry_file.exists() else []
+    for (path, previous), (_, current) in zip(receipts, receipts[1:], strict=False):
+        before, after = previous["payload"], current["payload"]
+        if previous["body"]["choices"][0]["finish_reason"] != "length":
+            raise ValueError("A completed valid judge verdict was regraded")
+        if {k: v for k, v in before.items() if k != "max_completion_tokens"} != {
+            k: v for k, v in after.items() if k != "max_completion_tokens"
+        }:
+            raise ValueError("Judge length retry changed the scoring request")
+        if after["max_completion_tokens"] != min(2 * before["max_completion_tokens"], maximum_tokens):
+            raise ValueError("Judge retry does not match the recorded token-budget expansion")
+        if not any(
+            Path(link["receipt"]).name == path.name
+            and link["from_tokens"] == before["max_completion_tokens"]
+            and link["to_tokens"] == after["max_completion_tokens"]
+            for link in links
+        ):
+            raise ValueError("Judge length retry has no recorded provenance")
+    final = receipts[-1][1]
+    if final["body"]["choices"][0]["finish_reason"] != "stop":
+        raise ValueError("No completed judge verdict")
+    return final
+
+
 def judge_receipts(directory, question, sample):
     folder = directory / "judging" / sample["metadata"]["question_key"]
     identity = sample["judge_identity"]
     score = json.loads((folder / f"{identity}-score.json").read_text())
     orders, refs, decisions = [], [], []
     for order in (0, 1):
-        files = [p for p in folder.glob(f"{identity}-order{order}-*.json") if "-attempt" not in p.name]
-        if len(files) != 1:
-            raise ValueError(f"Missing or ambiguous judge receipt: {identity}, order {order}")
-        receipt = json.loads(files[0].read_text())
+        receipt = completed_judge_receipt(folder, identity, order)
         assert receipt["http_status"] == 200 and receipt["swapped"] == bool(order)
         choice = receipt["body"]["choices"][0]
         assert choice["finish_reason"] == "stop"

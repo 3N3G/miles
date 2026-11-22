@@ -6,7 +6,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
-from experiments.tcs_async_rl.diagnose_rl import question_comparisons, trace_summary
+from experiments.tcs_async_rl.diagnose_rl import completed_judge_receipt, question_comparisons, trace_summary
 from experiments.tcs_async_rl.live_review import build_review
 from experiments.tcs_async_rl.native_metrics import (
     compare_wandb,
@@ -20,6 +20,51 @@ from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_samp
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_audit_follows_only_recorded_unfinished_judge_budget_retries(self):
+        for invalid in (None, "valid_regraded", "changed_payload", "missing_link", "unfinished_only"):
+            with self.subTest(invalid=invalid), tempfile.TemporaryDirectory() as name:
+                folder = Path(name)
+                (folder / "service-manifest.json").write_text(
+                    json.dumps(
+                        {
+                            "judge": {"max_completion_tokens": 8},
+                            "judge_config": {"length_retry_max_completion_tokens": 32},
+                        }
+                    )
+                )
+
+                def receipt(tokens, finish, message="same scoring request", root=folder):
+                    payload = {"max_completion_tokens": tokens, "messages": [message]}
+                    digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
+                    path = root / f"online-example-order1-{digest[:12]}.json"
+                    value = {
+                        "payload": payload,
+                        "request_sha256": digest,
+                        "identity": "online-example",
+                        "swapped": True,
+                        "http_status": 200,
+                        "body": {"choices": [{"finish_reason": finish}]},
+                    }
+                    path.write_text(json.dumps(value))
+                    return path, value
+
+                first, _ = receipt(8, "stop" if invalid == "valid_regraded" else "length")
+                if invalid != "unfinished_only":
+                    _, final = receipt(
+                        16, "stop", "changed request" if invalid == "changed_payload" else "same scoring request"
+                    )
+                if invalid != "missing_link":
+                    (folder / "length-retries.jsonl").write_text(
+                        json.dumps({"receipt": str(first), "from_tokens": 8, "to_tokens": 16}) + "\n"
+                    )
+                original = first.read_bytes()
+                if invalid is None:
+                    self.assertEqual(completed_judge_receipt(folder, "online-example", 1), final)
+                    self.assertEqual(first.read_bytes(), original)
+                else:
+                    with self.assertRaises(ValueError):
+                        completed_judge_receipt(folder, "online-example", 1)
+
     def test_producer_control_rejects_another_run_and_queues_on_the_owned_loop(self):
         event, loop = Mock(), Mock()
         fn = SimpleNamespace(_producer_resumed=event, _worker=Mock())

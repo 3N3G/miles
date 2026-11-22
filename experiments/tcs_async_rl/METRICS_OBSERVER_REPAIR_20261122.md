@@ -48,3 +48,25 @@ Upload timeouts now stop the owned shell wrapper and its client descendants.
 They retain output for diagnosis and preserve all unarchived traces. A real
 parent/child timeout test verifies that neither process continues running.
 The live GPU source, experiment settings, score rules, and limits are unchanged.
+
+At 07:16:42 UTC, the bounded-rate worker completed its first ordinary upload in
+one commit: `5597f043bebc1bdac88e42e4a79fe84b8f22ce47`. It archived all 24 consumed
+groups available at that snapshot. Three exact metadata files, including the
+before/after judge-service manifests, were downloaded from that revision and
+matched their local SHA-256 hashes. Generated-sample cache files remain queued
+for later bounded transfers. AMD originals remain intact.
+
+## Trace-audit retry-chain repair
+
+The resumed full trace audit stopped at a preserved judge length retry. It had
+assumed exactly one HTTP-200 receipt per answer and presentation order. The real
+case kept an 8,192-token unfinished verdict and its completed 16,384-token retry.
+The training grader had already selected the completed verdict correctly.
+
+The audit now verifies request fingerprints, identities, anonymous orders,
+the original and maximum judge budgets, unchanged scoring payloads, and the
+recorded expansion chain. It accepts one completed endpoint after unfinished
+verdicts. It rejects regrading a completed verdict, a changed payload, an
+unrecorded expansion, or an unfinished endpoint. Original receipts stay intact.
+Ninety-eight TCS CPU tests pass. The actual 8,192-to-16,384 case also passed.
+This changes only artifact validation. Scores and GPU execution are unchanged.
