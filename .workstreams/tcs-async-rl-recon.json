@@ -2316,15 +2316,22 @@
       "actor": "codex",
       "summary": "RL job 538154 is COMPLETED",
       "revision": 206
+    },
+    {
+      "id": "123dac5d-af53-4ce7-86ce-333d8cc38168",
+      "at": "2026-11-22T08:14:06.768921Z",
+      "actor": "codex",
+      "summary": "RL job 538154 ended COMPLETED; acceptance True",
+      "revision": 207
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 538154 is COMPLETED",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "RL job 538154 ended COMPLETED; acceptance True",
+  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
   "owner": "Codex",
-  "revision": 206,
-  "updatedAt": "2026-11-22T08:13:27.680046Z"
+  "revision": 207,
+  "updatedAt": "2026-11-22T08:14:06.768921Z"
 }
