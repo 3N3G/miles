@@ -38,6 +38,9 @@
 - Blocks: reading current Flame GPU inventory and using its login host. AMD preparation continues.
 - Status: rechecked on 2026-11-20. The same ED25519 fingerprint still fails verification.
   No saved host key was changed. Evidence: `experiments/tcs_async_rl/evidence/flame_access_20261120.json`.
+  Rechecked on 2026-11-22 while AMD job 538647 was queued. The same mismatch remains.
+  Asked for a trusted fingerprint check before inspecting fallback capacity. AMD supervision continues independently.
+  Evidence: `experiments/tcs_async_rl/evidence/flame_fallback_reachability_20261122.json`.
 
 ## 2026-11-18: Gemini backup access
 

@@ -1,0 +1,13 @@
+{
+  "checked_at_utc": "2026-11-22T15:10:31.165615+00:00",
+  "purpose": "Read-only check of the previously authorized alternative cluster while AMD is queued",
+  "ssh_alias": "flame",
+  "exit_code": 255,
+  "result": "SSH host key verification failed after the cluster repair. No scheduler information was obtained.",
+  "observed_ed25519_fingerprint": "SHA256:A7VaRWl2lzXVUdArY/+N+Ob9K+Q0hzomXTFlyqC7x8A",
+  "known_hosts_modified": false,
+  "strict_host_key_checking_bypassed": false,
+  "gpu_jobs_submitted": 0,
+  "amd_job_changed": false,
+  "trusted_fingerprint_question_pending": true
+}
