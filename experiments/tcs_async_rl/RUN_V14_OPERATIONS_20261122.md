@@ -78,6 +78,8 @@ Scheduled fixed-batch update-direction observations are at 65, 66, 70, 80, 90, a
 Inspect full/sampling entropy, sampled initialization drift, rollout mismatch, clipping, staleness, caps, length, and judge gaps.
 Read actual seeded proofs behind matched-question changes at least hourly. Use `audit_live.py`, then `summarize_continuation.py`
 and `plot_continuation.py` on a new diagnostic output directory. Keep prior diagnostics unchanged.
+Use `judge_signal.py` on audited samples to inspect agreement after group centering.
+Its [retrospective findings](JUDGE_REWARD_SIGNAL_FINDINGS_20261122.md) describe the original judge, without measuring new-prompt accuracy.
 
 `baseline-groups.json` is deliberately empty. Never compare old-prompt rewards directly with new-prompt rewards.
 Use within-continuation matched question visits. The independent metrics observer uses the existing locked single writer.

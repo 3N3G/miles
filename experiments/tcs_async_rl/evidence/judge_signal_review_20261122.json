@@ -46,5 +46,28 @@
     "source_sha256": "2e789da74b6f9c52d805f3c8aa0024f8b47d25ec4719f56556ac815411712c6b",
     "selection": "Previously seed-selected example, chosen here to illustrate a sign reversal. It is not presented as a typical answer."
   },
-  "diagnostic_archive_pending": true
+  "private_diagnostic_archive": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7ab813e7b201e8aef7fa3daae36684ed863789ff/miles/easy-overfit-v12-judge-signal-review-20261122",
+  "immutable_exact_readbacks": [
+    {
+      "file": "judge-signal.json",
+      "sha256": "b2a1596bc278f68f32a0bd72bf4e363abf150d122b4ca02ab6860a9c44eb5651",
+      "bytes": 503974
+    },
+    {
+      "file": "analysis-provenance.json",
+      "sha256": "fe0e0de510cc949ffbbf3c7e607aebfbd6867a93ff148daea8e20b528408afc2",
+      "bytes": 1932
+    },
+    {
+      "file": "auction-example.json",
+      "sha256": "2e789da74b6f9c52d805f3c8aa0024f8b47d25ec4719f56556ac815411712c6b",
+      "bytes": 141069
+    },
+    {
+      "file": "REPORT.md",
+      "sha256": "b67facea1c2620c6e70e09493b1868d6885a1dbbe84c1acb3a2e793695508be3",
+      "bytes": 2119
+    }
+  ],
+  "analysis_source_commit": "049dc42537969e6c228600232bedbb02d39fd089"
 }
