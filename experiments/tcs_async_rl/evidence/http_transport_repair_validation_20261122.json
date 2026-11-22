@@ -1,0 +1,76 @@
+{
+  "at_utc": "2026-11-22T20:35:15.504398+00:00",
+  "failure": {
+    "job_id": "538647",
+    "state": "FAILED",
+    "elapsed_seconds": 996,
+    "new_optimizer_updates": 0,
+    "output_checkpoints": 0,
+    "root_cause": "Raw 4,671,119-byte thinking trace exceeded two-MiB HTTP request allowance; generic error mapping produced 502",
+    "exact_reproduction_http_status": 502,
+    "provider_calls": 0,
+    "native_wandb_run_verified_absent": true,
+    "main_archive_revision": "81df47c1f98e5b11e4058793116ca06a6a462842",
+    "exact_main_files_verified": 4
+  },
+  "repair": {
+    "source_commit": "1620b3a0569f9192696406d51332b513f3d793e0",
+    "protocol_version": 3,
+    "new_request_bytes": 133,
+    "exact_replay_http_status": 200,
+    "paired_cached_scores": [
+      0,
+      0
+    ],
+    "extra_provider_calls": 0,
+    "raw_artifact_preserved": true,
+    "tests_passed": 103,
+    "format_lint_checks": [
+      "Black",
+      "isort",
+      "Ruff"
+    ],
+    "diagnostic_archive_revision": "dc7405a761eda62702a262b3b479c43647e760c8",
+    "exact_diagnostic_files_verified": 13
+  },
+  "generation_diagnostic": {
+    "archived_generated_samples_verified": 70,
+    "completed_before_crash_selection": "completion-biased, unconsumed",
+    "capped_answers": 7,
+    "empty_final_answers": 5,
+    "responses_over_old_request_limit": 1,
+    "failing_sample_periodic_tail_tokens": 70732,
+    "period_tokens": 2,
+    "extra_provider_calls": 0,
+    "archive_revision": "2edc42914f514426b7be2aa7b9bf99d263dc95c9",
+    "exact_files_verified": 4
+  },
+  "grader_spotcheck": {
+    "scored_nonempty_unique_answers": 65,
+    "questions": 4,
+    "order_disagreements": 7,
+    "seed": 20261126,
+    "seed_selected_answers_reviewed": 4,
+    "additional_maximum_gap_cases_reviewed": 4,
+    "human_accuracy_measured": false,
+    "reward_or_prompt_changes_from_spotcheck": 0
+  },
+  "replacement": {
+    "job_id": "539594",
+    "run": "easy-overfit-v15",
+    "source_commit": "1620b3a0569f9192696406d51332b513f3d793e0",
+    "submitted_at_utc": "2026-11-22T20:23:43.098977+00:00",
+    "walltime": "03:43:00",
+    "combined_maximum_gpu_hours": 31.946666666666665,
+    "automatic_requeue": false,
+    "initial_saved_updates": 65,
+    "target_new_updates": 40,
+    "shared_estimated_judge_usd": 0.6374188,
+    "shared_cap_usd": 5,
+    "settled_inherited_calls": 552,
+    "pending_inherited_calls": 0,
+    "cached_startup_controls_passed": 60,
+    "startup_ledger_bytes_unchanged": true
+  },
+  "operational_document": "experiments/tcs_async_rl/RUN_V15_OPERATIONS_20261122.md"
+}
