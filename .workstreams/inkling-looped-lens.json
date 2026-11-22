@@ -24,33 +24,7 @@
       "label": "Private immutable raw results"
     }
   ],
-  "jobs": [
-    {
-      "id": "537071",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "537088",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "537093",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    },
-    {
-      "id": "537100",
-      "cluster": "hpcfund",
-      "status": "FAILED"
-    },
-    {
-      "id": "537103",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    }
-  ],
+  "jobs": [],
   "sessions": [
     {
       "agent": "codex",
@@ -148,15 +122,22 @@
       "actor": "codex",
       "summary": "Completed bounded follow-up, verified all results and archives, and prepared standalone reports for user review",
       "revision": 12
+    },
+    {
+      "id": "fb38e08d-c5ca-438a-a279-9ceae65d3000",
+      "at": "2026-11-22T18:14:13.656902Z",
+      "actor": "codex",
+      "summary": "Started the user-requested interpretability taxonomy and looping assessment",
+      "revision": 13
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
-  "endpoint": "Discover and validate a useful Inkling interpretability lens, beginning with transport by recent rotations and testing semantic causal effects.",
-  "state": "finished",
-  "summary": "Completed 76 GPU minutes of bounded follow-up. Found controlled country exchanges with late Jacobian rows, horizon-dependent write effects, and early probe recovery. Confirmed approximate three-pass recurrence on eight separate WikiText paragraphs through 64 passes. The generic readout gain did not survive the reserved test. All owned jobs are terminal and all executed stages have private immutable archives. Standalone user-review reports are saved locally.",
-  "nextAction": "Review REPORT.md and the local review/continued-research branch. A future broader lens fit needs fresh held-out tasks; compare modified-backward concept rows before a full vocabulary fit.",
+  "endpoint": "Produce a source-backed catalog of transformer interpretability techniques, each reduced to one first-principles line and assessed for the benefits and risks of looping.",
+  "state": "running",
+  "summary": "The user redirected the next step to a broad literature map. The completed experiments and all old protocols remain preserved. This stage uses literature and first-principles analysis only.",
+  "nextAction": "Map technique families from primary sources, distinguish weight sharing from Inkling-specific state architecture, and write a short synthesis plus a complete local catalog for user review.",
   "owner": "Codex",
-  "revision": 12,
-  "updatedAt": "2026-11-21T17:48:20.112219Z"
+  "revision": 13,
+  "updatedAt": "2026-11-22T18:14:13.656902Z"
 }

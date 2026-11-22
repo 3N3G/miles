@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The user redirected the next step to a broad literature map. The completed experiments and all old protocols remain preserved. This stage uses literature and first-principles analysis only.
+  Next: Map technique families from primary sources, distinguish weight sharing from Inkling-specific state architecture, and write a short synthesis plus a complete local catalog for user
 
 ## Next / blocked
 
@@ -16,4 +17,4 @@
 
 ## Finished
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed 76 GPU minutes of bounded follow-up. Found controlled country exchanges with late Jacobian rows, horizon-dependent write effects, and early probe recovery. Confirmed approximate three-pass r Jobs: hpcfund/537071 COMPLETED; hpcfund/537088 COMPLETED
+- Nothing recorded.
