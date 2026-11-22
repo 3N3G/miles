@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Validated final-only reward transport against the exact failed 4.67 MB rollout; preparing replacement within 3h43m and the inherited $5 cap Jobs: hpcfund/538647 FAILED; hpcfund/538154 COMPLETED
-  Next: Submit one frozen transport-repair replacement from iteration 64; disable requeue and verify update 65, native W&B and actual proofs through terminal completion
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 539594 Jobs: hpcfund/539594 SUBMITTED; hpcfund/538647 FAILED
+  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
 
 ## Next / blocked
 

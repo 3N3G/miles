@@ -791,6 +791,11 @@
   ],
   "jobs": [
     {
+      "id": "539594",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "538647",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -2666,15 +2671,22 @@
       "actor": "codex",
       "summary": "Validated final-only reward transport against the exact failed 4.67 MB rollout; preparing replacement within 3h43m and the inherited $5 cap",
       "revision": 241
+    },
+    {
+      "id": "c1b43c8e-0e1e-4c37-85eb-1d217242a102",
+      "at": "2026-11-22T20:23:43.263676Z",
+      "actor": "codex",
+      "summary": "Automatically submitted approved RL job 539594",
+      "revision": 242
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Validated final-only reward transport against the exact failed 4.67 MB rollout; preparing replacement within 3h43m and the inherited $5 cap",
-  "nextAction": "Submit one frozen transport-repair replacement from iteration 64; disable requeue and verify update 65, native W&B and actual proofs through terminal completion",
+  "summary": "Automatically submitted approved RL job 539594",
+  "nextAction": "Monitor the owned RL job, reward tunnel, optimizer updates and saving.",
   "owner": "Codex",
-  "revision": 241,
-  "updatedAt": "2026-11-22T20:23:02.098194Z"
+  "revision": 242,
+  "updatedAt": "2026-11-22T20:23:43.263676Z"
 }
