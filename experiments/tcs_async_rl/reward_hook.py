@@ -8,7 +8,7 @@ import os
 from experiments.tcs_async_rl.group_inference import final_answer
 from experiments.tcs_async_rl.rl_artifacts import save_generated_sample, save_judge_outcome
 
-REWARD_PROTOCOL_VERSION = 2
+REWARD_PROTOCOL_VERSION = 3
 
 
 def question_key(row):
@@ -51,13 +51,16 @@ def validate_reward(result):
 
 def scoring_request(sample):
     truncated = getattr(sample.status, "value", None) == "truncated"
-    if final_answer(sample.response) is None and not truncated:
+    candidate = final_answer(sample.response)
+    if candidate is None and not truncated:
         raise ValueError("Unexpected unfinished thinking without a recorded model token limit")
     if not sample.metadata.get("question_key"):
         raise ValueError("TCS reward requires a pinned question identity")
     return {
         "question_key": sample.metadata["question_key"],
-        "response": sample.response,
+        # Full thinking remains in the generated artifact. The judge consumes
+        # only this exact extracted answer, including a recorded empty cap.
+        "final_answer": candidate or "",
         "generator_truncated": truncated,
     }
 

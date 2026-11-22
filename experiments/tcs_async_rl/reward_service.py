@@ -6,6 +6,7 @@ import hashlib
 import json
 import statistics
 import subprocess
+import traceback
 from pathlib import Path
 
 from experiments.tcs_async_rl.grade_group import Budget, grade_one
@@ -43,14 +44,19 @@ class Scorer:
         (directory / "service-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 
     async def score(self, request):
-        if not isinstance(request, dict) or not isinstance(request.get("response"), str):
+        if not isinstance(request, dict):
             raise ValueError("Expected a question identity and response text")
+        supplied = [name for name in ("final_answer", "response") if name in request]
+        if len(supplied) != 1 or not isinstance(request[supplied[0]], str):
+            raise ValueError("Expected exactly one final answer or legacy response")
         if request.get("question_key") != self.question_key:
             raise ValueError("Question differs from the approved smoke input")
         truncated = request.get("generator_truncated", False)
         if type(truncated) is not bool:
             raise ValueError("Generator finish classification must be Boolean")
-        candidate = final_answer(request.get("response", ""))
+        # Protocol 3 transports the already extracted answer. Legacy diagnostic
+        # clients can still send a delimited response, without changing grading.
+        candidate = request["final_answer"] if supplied[0] == "final_answer" else final_answer(request["response"])
         if not candidate:
             if not truncated:
                 raise ValueError("No completed final answer or recorded model token limit")
@@ -171,15 +177,36 @@ def make_app(scorer):
             }
         )
 
+    def failed_response(error, status):
+        # Keep structural diagnostics without exception text, credentials,
+        # headers, or request bodies.
+        print(
+            json.dumps(
+                {
+                    "event": "score_error",
+                    "http_status": status,
+                    "error_type": type(error).__name__,
+                    "frames": [
+                        {"file": frame.filename, "line": frame.lineno, "function": frame.name}
+                        for frame in traceback.extract_tb(error.__traceback__)
+                    ],
+                }
+            ),
+            flush=True,
+        )
+        return web.json_response({"error_type": type(error).__name__}, status=status)
+
     async def score(request):
         try:
             return web.json_response(await scorer.score(await request.json()))
+        except web.HTTPException as error:
+            return failed_response(error, error.status)
         except ValueError as error:
-            return web.json_response({"error_type": type(error).__name__}, status=422)
+            return failed_response(error, 422)
         except Exception as error:
-            return web.json_response({"error_type": type(error).__name__}, status=502)
+            return failed_response(error, 502)
 
-    app = web.Application(client_max_size=2 * 1024**2)
+    app = web.Application(client_max_size=32 * 1024**2)
     app.router.add_get("/health", health)
     app.router.add_post("/score", score)
     return app
