@@ -15,8 +15,9 @@ import subprocess
 from pathlib import Path
 
 from experiments.tcs_async_rl.amd_preflight import load_configs, render_job
+from experiments.tcs_async_rl.checkpoint_policy import storage_required
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
-from experiments.tcs_async_rl.resource_estimate import GIB, model_inputs
+from experiments.tcs_async_rl.resource_estimate import model_inputs
 from experiments.tcs_async_rl.rl_inputs import read_bundle
 from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates, validate_group_gate
 
@@ -86,11 +87,10 @@ def prepare(*, config_path, run_dir, work_dir, expected_commit):
     if not (run_dir / "submission-intent.json").exists():
         inputs = model_inputs(training, base_dir=config_path.parent)
         parameters = inputs["text_parameters"] + inputs["mtp_parameters"]
-        # Two model+master+Adam checkpoints, the initial BF16 conversion, plus logs/workspace margin.
-        required = 30 * parameters + 20 * GIB
+        required = storage_required(config, run_dir, parameters)
         free = shutil.disk_usage(work_dir).free
         if free < required:
-            raise RuntimeError("Insufficient shared-filesystem space for both checkpoints and margin")
+            raise RuntimeError("Insufficient shared-filesystem space for checkpoint saves and margin")
         body = render_job(
             repo=repo, work_dir=work_dir, run_dir=run_dir, expected_commit=expected_commit, config_path=config_path
         )

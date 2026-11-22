@@ -7,6 +7,7 @@
 - Options: retain original protected checkpoints and all results, but remove only the replacement source checkpoint after the first newer checkpoint is verified; or preserve every job's source checkpoint and wait for more filesystem space.
 - Recommendation: allow the former under the existing one-latest-checkpoint policy for this logical continuation. Preserve original iteration 64, the earlier protected checkpoint, every used config, metric and rollout.
 - Blocks: only an additional remaining-budget allocation if space stays below its safe peak. It does not block the current running job.
+- Status: withdrawn at 23:54 UTC. `experiments/tcs_async_rl/CHECKPOINT_STORAGE_REPAIR_20261122.md` validates one final-or-deadline checkpoint without deleting any source. No user answer or deletion approval is inferred.
 - Permission basis: the approved `experiments/tcs_async_rl/JUDGE_REPAIR_RESUME_PLAN_20261122.md` says “Preserve all old prompts, configurations, grades, and checkpoints.” Deleting this intermediate source requires an explicit exception.
 
 ## 2026-11-18: Output-head precision
