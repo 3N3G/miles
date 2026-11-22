@@ -1,0 +1,58 @@
+{
+  "at_utc": "2026-11-22T05:16:54.461663+00:00",
+  "job_id": "538154",
+  "gpu_source_commit": "61bfb46077807e9b1f37da3e3035e5512ff968a7",
+  "actor_loaded_iteration": 24,
+  "reference_loaded_iteration": 0,
+  "restored_completed_updates": 25,
+  "same_source_hashes_on_all_three_engines_before_and_after_roundtrip": true,
+  "tensors_per_publication": 1416,
+  "startup_exact_comparison": "passed on all six inference TP ranks",
+  "async_generation": "started;96 concurrent requests across3engines",
+  "scheduler_observation": {
+    "at_utc": "2026-11-22T05:15:38.890778+00:00",
+    "workers": [
+      {
+        "rank": 0,
+        "run_id": "261122-050822-879",
+        "scheduler_counter": 800,
+        "scheduler_decay_steps": 1280,
+        "scheduler_style": "constant",
+        "restores_checkpoint_scheduler": true,
+        "last_started_rollout": null,
+        "active_model_tag": "actor",
+        "learning_rates": [
+          1e-06,
+          1e-06
+        ],
+        "weight_decays": [
+          0.1,
+          0.0
+        ],
+        "separate_gradient_norms": null
+      },
+      {
+        "rank": 1,
+        "run_id": "261122-050822-879",
+        "scheduler_counter": 800,
+        "scheduler_decay_steps": 1280,
+        "scheduler_style": "constant",
+        "restores_checkpoint_scheduler": true,
+        "last_started_rollout": null,
+        "active_model_tag": "actor",
+        "learning_rates": [
+          1e-06,
+          1e-06
+        ],
+        "weight_decays": [
+          0.1,
+          0.0
+        ],
+        "separate_gradient_norms": null
+      }
+    ]
+  },
+  "first_backward_update": "pending",
+  "entropy_and_initial_policy_drift": "pending first training batch",
+  "observer_connection_repair": "Read-only observer needs host PID visibility for Ray2.58 node discovery. It does not launch or stop Ray. Training retains original PID isolation."
+}

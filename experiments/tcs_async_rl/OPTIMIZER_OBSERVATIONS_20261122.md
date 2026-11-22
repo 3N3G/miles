@@ -13,7 +13,12 @@ These source checks do not identify why rewards have not consistently increased.
 The read-only [optimizer probe](optimizer_probe.py) reads cached component norms, learning rates and scheduler position.
 It performs no forward/backward pass, gradient collective, parameter read or optimizer update.
 The observer's CPU test verifies that it does not call a gradient-norm method or change optimizer fields.
-Native Ray access still needs qualification when the replacement allocation starts.
+Native Ray access passed on both workers in the replacement allocation.
+Before the first new update, both report scheduler counter 800 and learning rate 1e-6.
+The cached component norms are absent before backward computation, as expected.
+The read-only client needs host PID visibility because Ray 2.58 discovers the raylet through process IDs.
+Its first attempt in a separate PID namespace failed. The corrected client only connects, reads and disconnects.
+The training job keeps its original PID isolation. No launcher or Ray cleanup command runs in the observer.
 Use it alongside full/sampling entropy, sampled initial-policy drift and fixed-batch update direction.
 
 Source locations in the pinned runtime:

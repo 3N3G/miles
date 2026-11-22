@@ -33,7 +33,7 @@
     "tcs_tests_passed": 95,
     "syntax_and_style": "passed"
   },
-  "runtime_qualification_pending": true,
+  "runtime_qualification_pending": "First new backward update, entropy, reference drift and update-direction pass.",
   "same_models_data_prompts_reward_optimizer_sampling_profile_and_seed": true,
   "rng_limit": "The additional SGLang reset uses random draws before generation. The configured seed is unchanged, but this is not a bitwise continuation of the earlier inference RNG stream.",
   "first_failed_elapsed_seconds": 258,
@@ -42,6 +42,10 @@
   "combined_maximum_allocation_seconds": 14389,
   "combined_gpu_hours_maximum": 31.975555555555555,
   "replacement_config": "experiments/tcs_async_rl/rl_easy_overfit_v12.json",
-  "failed_archive": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/588c5abba7f65cddf5d09347cd5a649bac434580/miles/easy-overfit-v11",
-  "authorization": "Approved continuation and explicit diagnosis, repair and replacement permission. No extra compute beyond the combined four-hour limit."
+  "failed_archive": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/68fc630ba43bfee9dba49ecd3f958328b190f26c/miles/easy-overfit-v11",
+  "authorization": "Approved continuation and explicit diagnosis, repair and replacement permission. No extra compute beyond the combined four-hour limit.",
+  "replacement_job_id": "538154",
+  "replacement_source_commit": "61bfb46077807e9b1f37da3e3035e5512ff968a7",
+  "native_startup_transfer_validation": "Passed all three engines and all six TP ranks. Both startup publications match all1416 source tensor hashes.",
+  "native_scheduler_validation": "Both workers report counter800, constant schedule and learning rates1e-6."
 }

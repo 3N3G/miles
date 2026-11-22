@@ -12,7 +12,11 @@ The repair keeps equality checking enabled. A resumed driver snapshots the resto
 resets the checked tensors, rebroadcasts the same actor version, and compares with that snapshot.
 Fresh starts retain the original Hugging Face comparison. Per-publication engine checksum logging remains enabled.
 Four CPU protocol controls pass, including an incomplete rebroadcast that must fail.
-The 95 TCS tests, syntax checks and formatting checks pass. The actual GPU round trip still needs qualification.
+The 95 TCS tests, syntax checks and formatting checks pass.
+The replacement passed the actual GPU round trip on all three engines and all six inference ranks.
+Both initial publications match all 1,416 source tensor hashes. Both workers report scheduler counter 800 and learning rate 1e-6.
+The [native startup evidence](evidence/native_startup_qualification_20261122.json) preserves these observations.
+The first backward update, entropy and initial-policy drift still need qualification.
 
 The approved Qwen3.5-4B setup, 20 questions, prompts, rewards, optimizer and sampling profile remain unchanged.
 The extra startup reset consumes inference-server random draws before generation.
