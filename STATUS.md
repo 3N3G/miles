@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 539594 is PENDING Jobs: hpcfund/539594 PENDING; hpcfund/538647 FAILED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Transport-repair job 539594 is queued with healthy independent monitors; exact failed sample and all 70 saved generations are preserved and checked Jobs: hpcfund/539594 PENDING; hpcfund/538647 FAILED
+  Next: Continue foreground queue and service supervision, then verify restored optimizer state, update 65 and native W&B; inspect entropy, drift, repetitions and actual matched-question p
 
 ## Next / blocked
 

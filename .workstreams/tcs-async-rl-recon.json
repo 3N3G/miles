@@ -2685,15 +2685,22 @@
       "actor": "codex",
       "summary": "RL job 539594 is PENDING",
       "revision": 243
+    },
+    {
+      "id": "3101ae6c-8e15-45e2-8158-aa5141c15192",
+      "at": "2026-11-22T20:35:45.177132Z",
+      "actor": "codex",
+      "summary": "Transport-repair job 539594 is queued with healthy independent monitors; exact failed sample and all 70 saved generations are preserved and checked",
+      "revision": 244
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 539594 is PENDING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "Transport-repair job 539594 is queued with healthy independent monitors; exact failed sample and all 70 saved generations are preserved and checked",
+  "nextAction": "Continue foreground queue and service supervision, then verify restored optimizer state, update 65 and native W&B; inspect entropy, drift, repetitions and actual matched-question proofs through terminal cleanup",
   "owner": "Codex",
-  "revision": 243,
-  "updatedAt": "2026-11-22T20:23:45.404326Z"
+  "revision": 244,
+  "updatedAt": "2026-11-22T20:35:45.177132Z"
 }
