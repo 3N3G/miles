@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User authorized careful assistant adjudication of grading ambiguities, prompt repair, and resuming RL. Preserve Luna medium, data and optimizer. Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
-  Next: Create a versioned grading prompt, validate against assistant-reviewed saved proofs and fresh controls, then resume iteration 64 with the existing per-run limits.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 538647 Jobs: hpcfund/538647 SUBMITTED; hpcfund/538154 COMPLETED
+  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
 
 ## Next / blocked
 

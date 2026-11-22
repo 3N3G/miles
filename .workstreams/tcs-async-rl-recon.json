@@ -731,6 +731,11 @@
   ],
   "jobs": [
     {
+      "id": "538647",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "538154",
       "cluster": "hpcfund",
       "status": "COMPLETED"
@@ -2419,15 +2424,22 @@
       "actor": "codex",
       "summary": "Start user-authorized judge-prompt repair and resumed easy-question RL supervision",
       "revision": 215
+    },
+    {
+      "id": "82ea2a26-a307-4997-b4bc-91da55e18939",
+      "at": "2026-11-22T09:34:36.668136Z",
+      "actor": "codex",
+      "summary": "Automatically submitted approved RL job 538647",
+      "revision": 216
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "User authorized careful assistant adjudication of grading ambiguities, prompt repair, and resuming RL. Preserve Luna medium, data and optimizer.",
-  "nextAction": "Create a versioned grading prompt, validate against assistant-reviewed saved proofs and fresh controls, then resume iteration 64 with the existing per-run limits.",
+  "summary": "Automatically submitted approved RL job 538647",
+  "nextAction": "Monitor the owned RL job, reward tunnel, optimizer updates and saving.",
   "owner": "Codex",
-  "revision": 215,
-  "updatedAt": "2026-11-22T09:05:51.301938Z"
+  "revision": 216,
+  "updatedAt": "2026-11-22T09:34:36.668136Z"
 }
