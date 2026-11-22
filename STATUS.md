@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 restored iteration 64 and both optimizer counters 2080 at learning rate 1e-6; 96 answers are generating across three engines Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
-  Next: Verify finite update 65, native W&B coordinates and real graded proofs; inspect entropy, initialization drift, rollout mismatch, gradients and repetition through the two-hour alloc
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 completed finite update 65 with positive update direction; all 88 W&B scalar values match native logs, reward 4.56/7 Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
+  Next: Continue foreground monitoring, immutable raw-group audits and matched-question checks; verify checkpoint saves and inspect the hard-question reward distribution without treating m
 
 ## Next / blocked
 
