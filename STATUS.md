@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Replacement running; restored-weight evidence privately verified and native transfer check pending Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
-  Next: Verify resumed snapshot/reset/rebroadcast comparison, then first real reward group and optimizer diagnostics.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native resume and exact rebroadcast checks pass; real generation and provisional grading active Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
+  Next: Inspect first consumed group, full/sampling entropy, frozen-reference drift, update direction and live W&B coordinates.
 
 ## Next / blocked
 

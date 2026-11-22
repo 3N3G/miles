@@ -2232,15 +2232,22 @@
       "actor": "codex",
       "summary": "Replacement running; restored-weight evidence privately verified and native transfer check pending",
       "revision": 194
+    },
+    {
+      "id": "8026c364-9838-4b96-a843-7da0329751e6",
+      "at": "2026-11-22T05:19:24.916671Z",
+      "actor": "codex",
+      "summary": "Native resume and exact rebroadcast checks pass; real generation and provisional grading active",
+      "revision": 195
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Replacement running; restored-weight evidence privately verified and native transfer check pending",
-  "nextAction": "Verify resumed snapshot/reset/rebroadcast comparison, then first real reward group and optimizer diagnostics.",
+  "summary": "Native resume and exact rebroadcast checks pass; real generation and provisional grading active",
+  "nextAction": "Inspect first consumed group, full/sampling entropy, frozen-reference drift, update direction and live W&B coordinates.",
   "owner": "Codex",
-  "revision": 194,
-  "updatedAt": "2026-11-22T05:09:45.148907Z"
+  "revision": 195,
+  "updatedAt": "2026-11-22T05:19:24.916671Z"
 }
