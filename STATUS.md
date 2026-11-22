@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 539594 is RUNNING Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 started on k007-003 with a two-hour backfill slot; repaired judge tunnel is healthy and model startup is in progress Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
+  Next: Verify iteration 64 and scheduler 2080, restored weight checksums, finite update 65 and native W&B; supervise through the actual two-hour limit and preserve the remaining combined 
 
 ## Next / blocked
 
