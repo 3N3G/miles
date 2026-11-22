@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 has six finite published updates, a tracked iteration-69 checkpoint and 64 immutable raw-answer audits; no matched-question trend yet Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
-  Next: Continue foreground supervision through terminal; inspect hourly entropy, divergence, caps, judge boundaries, matched question visits and remaining shared budget
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First-hour inspection verifies 10 updates, iteration-74 checkpoint, all three engine weights and 826 W&B scalars; sampled proofs expose residual rubric boundaries Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
+  Next: Keep foreground supervision through terminal and shared-budget continuation, auditing matched-question visits without treating different-question rewards as learning
 
 ## Next / blocked
 

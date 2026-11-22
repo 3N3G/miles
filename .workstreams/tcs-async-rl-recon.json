@@ -2741,15 +2741,22 @@
       "actor": "codex",
       "summary": "AMD 539594 has six finite published updates, a tracked iteration-69 checkpoint and 64 immutable raw-answer audits; no matched-question trend yet",
       "revision": 251
+    },
+    {
+      "id": "80a69673-fcb5-45e1-8adb-21e61f93dcab",
+      "at": "2026-11-22T23:15:31.919840Z",
+      "actor": "codex",
+      "summary": "First-hour inspection verifies 10 updates, iteration-74 checkpoint, all three engine weights and 826 W&B scalars; sampled proofs expose residual rubric boundaries",
+      "revision": 252
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 539594 has six finite published updates, a tracked iteration-69 checkpoint and 64 immutable raw-answer audits; no matched-question trend yet",
-  "nextAction": "Continue foreground supervision through terminal; inspect hourly entropy, divergence, caps, judge boundaries, matched question visits and remaining shared budget",
+  "summary": "First-hour inspection verifies 10 updates, iteration-74 checkpoint, all three engine weights and 826 W&B scalars; sampled proofs expose residual rubric boundaries",
+  "nextAction": "Keep foreground supervision through terminal and shared-budget continuation, auditing matched-question visits without treating different-question rewards as learning",
   "owner": "Codex",
-  "revision": 251,
-  "updatedAt": "2026-11-22T23:02:41.794860Z"
+  "revision": 252,
+  "updatedAt": "2026-11-22T23:15:31.919840Z"
 }
