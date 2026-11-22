@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 538647 is waiting for resources after three of four MI350 nodes became drained; no GPU time used and grading audits are complete Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Continue foreground queue and service supervision. Recheck capacity directly. On allocation inspect resume, native progress, W&B and actual proofs. Optional Flame capacity awaits t
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 538647 is RUNNING Jobs: hpcfund/538647 RUNNING; hpcfund/538154 COMPLETED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
