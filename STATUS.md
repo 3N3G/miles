@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Identify saturated judge transport and drain active requests before doubling API concurrency Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
-  Next: Wait for zero sample tasks and zero unsettled judge calls. Restart only the drained owned VM service, replay a cached score, then resume producer submissions.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Replace only the drained judge service; cached grades match and 96 generation tasks resume Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
+  Next: Verify eight-call provider throughput and finite training. Review repeated questions hourly. After archive draining and GPU terminal state, resume the original artifact supervisor 
 
 ## Next / blocked
 

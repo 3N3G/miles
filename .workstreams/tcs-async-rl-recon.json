@@ -2274,15 +2274,22 @@
       "actor": "codex",
       "summary": "Identify saturated judge transport and drain active requests before doubling API concurrency",
       "revision": 200
+    },
+    {
+      "id": "a7526070-8a06-49bd-93de-9116750373b2",
+      "at": "2026-11-22T07:00:01.035053Z",
+      "actor": "codex",
+      "summary": "Replace only the drained judge service; cached grades match and 96 generation tasks resume",
+      "revision": 201
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Identify saturated judge transport and drain active requests before doubling API concurrency",
-  "nextAction": "Wait for zero sample tasks and zero unsettled judge calls. Restart only the drained owned VM service, replay a cached score, then resume producer submissions.",
+  "summary": "Replace only the drained judge service; cached grades match and 96 generation tasks resume",
+  "nextAction": "Verify eight-call provider throughput and finite training. Review repeated questions hourly. After archive draining and GPU terminal state, resume the original artifact supervisor and clean up the replacement service.",
   "owner": "Codex",
-  "revision": 200,
-  "updatedAt": "2026-11-22T06:46:20.325202Z"
+  "revision": 201,
+  "updatedAt": "2026-11-22T07:00:01.035053Z"
 }
