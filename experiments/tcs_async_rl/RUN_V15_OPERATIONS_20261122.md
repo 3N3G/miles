@@ -115,3 +115,25 @@ This exposes an unresolved proof-retraction boundary. The assistant review prese
 Evidence lives in `first-live-checkpoint-inventory.json`, `optimizer-and-rollout-after-first-updates.json`,
 `first-batch-immutable-raw-review-verification.json`, `first-maximum-gap-raw-case.json` and
 `first-maximum-gap-assistant-review.json` in the VM run, plus the sibling diagnostic directory.
+
+## First-hour detailed inspection
+
+At 23:15 UTC, ten new updates (65–74) are complete, and the latest tracked checkpoint is iteration 74.
+A fresh independent read of AMD's main events verifies all ten publications and exact agreement across all three engines.
+Between 448 and 460 of 822 checked language tensors change at each update, including the all-seven group through optimizer momentum/weight decay.
+The all-scalar W&B readback matches 826 values. An initial read preceded point 74's publication and was preserved as pending, then verified successfully.
+A separate analysis read also encountered a lagging VM copy of main events; the fresh AMD read resolves that snapshot mismatch.
+Neither was a training exception.
+
+Five consumed groups (160 answers, 6,696,562 tokens) are now audited from immutable archives.
+Twenty-five answers differ between judge orders; 12/160 reverse sign after hypothetical single-order group centering.
+Training averages the orders. This diagnostic measures disagreement, not correctness or actual gradient agreement.
+The seeded linear-algebra and hashing proofs are valid. The former has a one-point dispute over whether demonstrating all selections
+also explains why checking one basis is insufficient. The recursive-runtime answer omits candidate-cost comparisons and receives partial credit.
+These remain recorded rubric boundaries; no live prompt, reward or optimizer change was made.
+
+Minute GPU samples peak at 265,754,066,944 bytes (247.5 GiB), below each GPU's 288 GiB capacity.
+Shared storage has 95.7 GB free after the 60.6 GB checkpoint save. The save hook retains only the latest completed checkpoint.
+Ray warns because the shared filesystem exceeds 95% utilization; no spill or save failure occurred. Continue watching free bytes.
+Evidence: `first-hour-intense-review.json`, `first-hour-native-wandb-all-scalars-verification.json`,
+`first-hour-wandb-readback-initial-pending.json`, and sibling `judge-signal-first-five-groups.json`.
