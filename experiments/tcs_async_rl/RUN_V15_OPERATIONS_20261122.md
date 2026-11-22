@@ -23,7 +23,7 @@ uses standing inference-repair authorization. No subagents were authorized or sp
   effective sample-size ratio 0.999445, policy clipping zero and positive surrogate gain 0.00009912.
   This is a numerical startup check, not a learning trend. Its communication-protocol group took 902.7 seconds to generate.
   The raw batch has 17 sevens, three sixes, one five, one four and ten zeros. A seed-selected proof is preserved
-  in `first-batch-provisional-raw-review.json`, pending its immutable batch-archive readback.
+  in `first-batch-provisional-raw-review.json`, whose immutable batch readback is now verified at revision `b071c21745a8f5d6a0edb9c537952eb7b07ed73f`.
 - Training/controller source **`1620b3a0569f9192696406d51332b513f3d793e0`**.
 - Frozen configuration `rl_easy_overfit_v15.json`, unchanged judge configuration `judge_group_v5_followthrough_repair.json`.
 - Resume the original iteration-64 checkpoint, containing 65 updates. Target new global updates 65–104.
@@ -95,3 +95,23 @@ If the bounded run does not show reliable improvement, report the evidence and n
 
 Session `01a1ed24-1032-7731-910b-824f484f5f71`, home VM, original directory `/home/ubuntu/miles`.
 Workstream `tcs-async-rl-recon`. Failed-run closure and causal validation remain in the linked repair document and private evidence.
+
+## First six updates and raw audit
+
+At 23:01 UTC, six native published points (65–70) matched W&B's six points. All observed metrics are finite.
+Direction observations at 65, 66 and 70 have positive surrogate gains; step 70 is +0.00018325.
+Its positive-advantage mean log-probability change is +0.00019063, versus −0.00016716 for negative advantages.
+The questions differ, so the reward sequence is not a learning trend. Step 68 has all-seven rewards and zero policy gradient.
+A 22:51:53 read-only probe finds both scheduler counters at 2,240, learning rate 1e-6 and separate MTP norm 0.0849264.
+The first checked output tracker is iteration 69, with four files totaling 60,577,362,603 bytes at 22:58:35 UTC.
+Recheck the tracker before any resume.
+
+The first two immutable consumed batches contain 64 answers and 3,818,722 response tokens.
+Six answers have judge-order disagreement; the maximum gap is four, and all paired reference scores are seven.
+The seeded sampled proof (step 65, sample 2146) has a valid main proof and defensible 7/7 grades.
+The maximum-gap answer (sample 2149) first gives a valid proof, then repeatedly rejects its own valid simulation.
+Its final answer contains 565 instances of “Wait” and hits the cap. Its two judges give 3 and 7; training used their mean, 5.
+This exposes an unresolved proof-retraction boundary. The assistant review preserves both readings and changes no live reward.
+Evidence lives in `first-live-checkpoint-inventory.json`, `optimizer-and-rollout-after-first-updates.json`,
+`first-batch-immutable-raw-review-verification.json`, `first-maximum-gap-raw-case.json` and
+`first-maximum-gap-assistant-review.json` in the VM run, plus the sibling diagnostic directory.
