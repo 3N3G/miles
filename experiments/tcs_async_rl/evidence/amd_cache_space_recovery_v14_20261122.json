@@ -1,0 +1,13 @@
+{
+  "cache_cli_reported_eviction": "73.0G",
+  "public_revisions_deleted": 5,
+  "repos_deleted": 2,
+  "free_bytes_after_filesystem_refresh": 160078282752,
+  "required_bytes_unchanged": 151265361920,
+  "preserved_checkpoint_trackers": {
+    "easy-overfit-v9": 24,
+    "easy-overfit-v12": 64
+  },
+  "plan": "amd_cache_space_plan_v13_20261122.json",
+  "all_results_and_checkpoints_preserved": true
+}

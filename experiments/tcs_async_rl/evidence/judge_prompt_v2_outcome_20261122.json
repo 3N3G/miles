@@ -1,0 +1,21 @@
+{
+  "prompt": "rubric_judge_prompt_v2.txt",
+  "development_cases": 6,
+  "development_item_mismatches": 0,
+  "fresh_validation_cases": 5,
+  "validation_item_mismatches": 10,
+  "controls_passed": 60,
+  "gate_samples": 32,
+  "new_gpu_jobs": 0,
+  "decision": "Do not submit this revision. Make follow-through policy explicit in v3 and use fresh validation cases.",
+  "budget_carry_forward": {
+    "at_utc": "2026-11-22T09:25:18.027551+00:00",
+    "source_run": "easy-overfit-v13",
+    "source_ledger_sha256": "3501213ac311790ae03ca608b94068aede6ca6916f6b094f98c8fcc249464208",
+    "inherited_estimated_usd": 0.1849453,
+    "settled_calls": 198,
+    "pending_calls": 0,
+    "combined_usd_cap": 5,
+    "reason": "Carry all prompt-qualification costs into the next continuation ledger, rather than reset the budget."
+  }
+}

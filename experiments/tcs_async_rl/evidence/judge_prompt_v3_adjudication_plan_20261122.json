@@ -1,0 +1,17 @@
+{
+  "labels_path": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-overfit-v14/assistant-adjudications.json",
+  "labels_sha256": "8b41eebf03f251fa09eda0ebafbf13cd3b500647236973663f429e8b9cce0a26",
+  "validation_steps": [
+    32,
+    60,
+    26,
+    27,
+    62
+  ],
+  "validation_seed": 20261124,
+  "development_cases": 11,
+  "validation_cases": 5,
+  "label_kind": "assistant_not_human",
+  "prompt": "rubric_judge_prompt_v3.txt",
+  "reason": "V2 resolved all six known cases but charged missing derivations again in later independent components. V3 explicitly defines follow-through credit."
+}
