@@ -2225,15 +2225,22 @@
       "actor": "codex",
       "summary": "RL job 538154 is RUNNING",
       "revision": 193
+    },
+    {
+      "id": "0f691054-1a59-4ed4-b51f-59e08c0265f7",
+      "at": "2026-11-22T05:09:45.148907Z",
+      "actor": "codex",
+      "summary": "Replacement running; restored-weight evidence privately verified and native transfer check pending",
+      "revision": 194
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 538154 is RUNNING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "Replacement running; restored-weight evidence privately verified and native transfer check pending",
+  "nextAction": "Verify resumed snapshot/reset/rebroadcast comparison, then first real reward group and optimizer diagnostics.",
   "owner": "Codex",
-  "revision": 193,
-  "updatedAt": "2026-11-22T05:08:13.196415Z"
+  "revision": 194,
+  "updatedAt": "2026-11-22T05:09:45.148907Z"
 }
