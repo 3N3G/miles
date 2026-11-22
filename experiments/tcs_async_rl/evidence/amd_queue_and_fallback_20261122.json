@@ -1,0 +1,47 @@
+{
+  "recorded_at_utc": "2026-11-22T19:36:07.232586+00:00",
+  "observations_utc_interval": [
+    "2026-11-22T19:28:19Z",
+    "2026-11-22T19:33:00Z"
+  ],
+  "active_job": "538647",
+  "scheduler_state": "PENDING",
+  "scheduler_reason": "Resources",
+  "tentative_start_cluster_time": "2026-11-22T22:48:58-06:00",
+  "tentative_start_utc": "2026-11-23T04:48:58Z",
+  "estimate_is_not_guaranteed": true,
+  "partitions": {
+    "mi3508x": {
+      "allocated_nodes": 1,
+      "drained_nodes": 3,
+      "idle_nodes": 0
+    },
+    "mi3008x": {
+      "allocated_nodes": 2,
+      "drained_nodes": 0,
+      "idle_nodes": 0
+    }
+  },
+  "mi300_running_job_limits_utc": [
+    "2026-11-23T05:46:29Z",
+    "2026-11-23T06:17:54Z"
+  ],
+  "previous_max_observed_device_used_bytes": 267561508864,
+  "mi300_observed_device_capacity_bytes": 206141652992,
+  "device_used_includes_allocator_reservations": true,
+  "tensor_parallelism": 2,
+  "context_parallelism": 1,
+  "fully_reshardable_optimizer_flag": false,
+  "old_restore_metadata_type": "dp_reshardable",
+  "iteration_64_metadata_bytes": 544950,
+  "iteration_64_metadata_sha256": "5193bd49f664091e3b77e670425cacf3864812179d9af86afc718aa45c98ca8b",
+  "iteration_64_metadata_observation": "Optimizer keys describe distributed gradient buffers and buckets. Metadata was inspected with pickletools only; no pickle execution, Torch import, tensor load or checkpoint modification.",
+  "tensor_parallel_four_load_tested": false,
+  "context_parallel_two_qualified": false,
+  "direct_mi300_layout_qualified": false,
+  "new_gpu_jobs": 0,
+  "existing_job_or_configuration_modified": false,
+  "other_jobs_modified": false,
+  "source_reference": "https://docs.nvidia.com/megatron-core/developer-guide/latest/apidocs/core/core.optimizer.distrib_optimizer.html",
+  "run_plan_changed": false
+}
