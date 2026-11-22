@@ -3,6 +3,10 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/5e04681b64bccd11e840eac5e8e8d2545e1f6eb4/miles/easy-overfit-v14-additional-proof-audit-20261122",
+      "label": "Verified additional eight proofs, pre-call labels and all sixteen judge receipts"
+    },
+    {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7ab813e7b201e8aef7fa3daae36684ed863789ff/miles/easy-overfit-v12-judge-signal-review-20261122",
       "label": "Verified old-run centered judge signals and raw auction example"
     },
@@ -260,6 +264,10 @@
     }
   ],
   "evidence": [
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_ADDITIONAL_AUDIT_FINDINGS_20261122.md",
+      "label": "Additional same-question audit: 70/70 repeated decisions match assistant labels"
+    },
     {
       "path": "experiments/tcs_async_rl/JUDGE_ADDITIONAL_AUDIT_PLAN_20261122.md",
       "label": "Additional same-question proof audit, pre-call labels and unchanged budget"
@@ -2584,15 +2592,29 @@
       "actor": "codex",
       "summary": "Prepare eight additional pre-adjudicated saved-proof checks during the priority wait",
       "revision": 231
+    },
+    {
+      "id": "002db6dc-2775-45df-8d26-1fca0839a35b",
+      "at": "2026-11-22T18:57:12.894215Z",
+      "actor": "codex",
+      "summary": "Attach additional saved-proof audit and immutable verified private receipts",
+      "revision": 232
+    },
+    {
+      "id": "246037c2-977c-4939-8e11-0c5158058e47",
+      "at": "2026-11-22T18:57:13.034130Z",
+      "actor": "codex",
+      "summary": "Eight additional saved-proof checks match 70/70 assistant decisions; shared judge cost is $0.415, AMD continuation still queued",
+      "revision": 233
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 538647 remains queued. Eight more saved proofs were assistant-adjudicated before revised-judge calls; frozen training settings stay unchanged.",
-  "nextAction": "Run the sixteen-call diagnostic through the existing service and shared $5 cap, then continue foreground GPU supervision and inspect native updates on allocation.",
+  "summary": "Eight additional saved-proof checks match 70/70 assistant decisions; shared judge cost is $0.415, AMD continuation still queued",
+  "nextAction": "Continue foreground queue/service supervision. On allocation inspect checkpoint restoration, first native update and W&B coordinates, then actual matched-question proofs under unchanged prompt v3.",
   "owner": "Codex",
-  "revision": 231,
-  "updatedAt": "2026-11-22T18:50:38.306280Z"
+  "revision": 233,
+  "updatedAt": "2026-11-22T18:57:13.034130Z"
 }

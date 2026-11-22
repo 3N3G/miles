@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 538647 remains queued. Eight more saved proofs were assistant-adjudicated before revised-judge calls; frozen training settings stay unchanged. Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Run the sixteen-call diagnostic through the existing service and shared $5 cap, then continue foreground GPU supervision and inspect native updates on allocation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eight additional saved-proof checks match 70/70 assistant decisions; shared judge cost is $0.415, AMD continuation still queued Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Continue foreground queue/service supervision. On allocation inspect checkpoint restoration, first native update and W&B coordinates, then actual matched-question proofs under unch
 
 ## Next / blocked
 
