@@ -2309,15 +2309,22 @@
       "actor": "codex",
       "summary": "GPU job completes all 40 new updates normally; checkpoint retains 65 total updates within the combined budget",
       "revision": 205
+    },
+    {
+      "id": "93d70244-a447-420a-ab8c-2450d1f4f3f5",
+      "at": "2026-11-22T08:13:27.680046Z",
+      "actor": "codex",
+      "summary": "RL job 538154 is COMPLETED",
+      "revision": 206
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "GPU job completes all 40 new updates normally; checkpoint retains 65 total updates within the combined budget",
-  "nextAction": "Stop the drained replacement judge, resume the original terminal finalizer, then finish complete trace audit, paired-question results, private uploads and all-scalar W&B verification.",
+  "summary": "RL job 538154 is COMPLETED",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 205,
-  "updatedAt": "2026-11-22T08:12:59.734608Z"
+  "revision": 206,
+  "updatedAt": "2026-11-22T08:13:27.680046Z"
 }
