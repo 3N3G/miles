@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User authorized careful assistant adjudication of grading ambiguities, prompt repair, and resuming RL. Preserve Luna medium, data and optimizer. Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
+  Next: Create a versioned grading prompt, validate against assistant-reviewed saved proofs and fresh controls, then resume iteration 64 with the existing per-run limits.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Saved source-backed judge repair options: targeted rubric clarification and calibrated examples, then compare reasoning effort and stronger models. No new judge calls. Jobs: hpcfund/538154 COMPLETED; hpcfund/537888 FAILED
-  Next: Human-label the existing packet and choose the judge comparison and spending cap. Current Luna medium prompt and scores remain unchanged.
+- Nothing recorded.
 
 ## Finished
 

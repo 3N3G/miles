@@ -2412,15 +2412,22 @@
       "actor": "codex",
       "summary": "Save evidence-backed judge repair options without changing the experiment",
       "revision": 214
+    },
+    {
+      "id": "e06349f9-42b2-4032-85d7-6c6527df4c5d",
+      "at": "2026-11-22T09:05:51.301938Z",
+      "actor": "codex",
+      "summary": "Start user-authorized judge-prompt repair and resumed easy-question RL supervision",
+      "revision": 215
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "needs-you",
-  "summary": "Saved source-backed judge repair options: targeted rubric clarification and calibrated examples, then compare reasoning effort and stronger models. No new judge calls.",
-  "nextAction": "Human-label the existing packet and choose the judge comparison and spending cap. Current Luna medium prompt and scores remain unchanged.",
+  "state": "running",
+  "summary": "User authorized careful assistant adjudication of grading ambiguities, prompt repair, and resuming RL. Preserve Luna medium, data and optimizer.",
+  "nextAction": "Create a versioned grading prompt, validate against assistant-reviewed saved proofs and fresh controls, then resume iteration 64 with the existing per-run limits.",
   "owner": "Codex",
-  "revision": 214,
-  "updatedAt": "2026-11-22T08:52:13.953356Z"
+  "revision": 215,
+  "updatedAt": "2026-11-22T09:05:51.301938Z"
 }
