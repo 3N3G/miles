@@ -13,6 +13,10 @@ uses standing inference-repair authorization. No subagents were authorized or sp
   `owned-allocation-start.json` preserves the exact scheduler readback and a successful service check from the owned node.
 - Producer run ID: **`261122-221746-947`**. Its prospective native W&B ID is `261122-221746-947-native`.
   No new optimizer update or online W&B training point was verified at this startup check.
+- The 22:22:47 UTC read-only probe verifies both ranks at scheduler counter 2,080 and learning rate 1e-6.
+  Iteration 64 loaded successfully, and the restored weight checks cover all three rollout engines at version 65.
+  The producer was active with 96 in-flight samples, three running groups and zero completed buffer groups.
+  `optimizer-and-rollout-bootstrap-probe.json` preserves the snapshot. Separate MTP norms were unset before any new update.
 - Training/controller source **`1620b3a0569f9192696406d51332b513f3d793e0`**.
 - Frozen configuration `rl_easy_overfit_v15.json`, unchanged judge configuration `judge_group_v5_followthrough_repair.json`.
 - Resume the original iteration-64 checkpoint, containing 65 updates. Target new global updates 65–104.
