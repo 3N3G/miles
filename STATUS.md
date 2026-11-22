@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Job 537846 failed before training: scheduler horizon mismatch. CPU repair preserves LR 1e-6. Inherited metrics filtered. Preparing authorized replacement. Jobs: hpcfund/537846 FAILED; hpcfund/536360 TIMEOUT
-  Next: Submit the scheduler repair. Verify resume, entropy, divergence and update direction. Review raw proofs and supervise through completion.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 537888 Jobs: hpcfund/537888 SUBMITTED; hpcfund/537846 FAILED
+  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
 
 ## Next / blocked
 

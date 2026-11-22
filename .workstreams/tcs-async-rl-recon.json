@@ -691,6 +691,11 @@
   ],
   "jobs": [
     {
+      "id": "537888",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "537846",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -2124,15 +2129,22 @@
       "actor": "codex",
       "summary": "Keep replacement and failed allocation within the approved combined GPU budget",
       "revision": 180
+    },
+    {
+      "id": "68f273f7-afde-46aa-933c-cb0954f8cbb0",
+      "at": "2026-11-22T02:08:12.795665Z",
+      "actor": "codex",
+      "summary": "Automatically submitted approved RL job 537888",
+      "revision": 181
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Job 537846 failed before training: scheduler horizon mismatch. CPU repair preserves LR 1e-6. Inherited metrics filtered. Preparing authorized replacement.",
-  "nextAction": "Submit the scheduler repair. Verify resume, entropy, divergence and update direction. Review raw proofs and supervise through completion.",
+  "summary": "Automatically submitted approved RL job 537888",
+  "nextAction": "Monitor the owned RL job, reward tunnel, optimizer updates and saving.",
   "owner": "Codex",
-  "revision": 180,
-  "updatedAt": "2026-11-22T02:06:33.242649Z"
+  "revision": 181,
+  "updatedAt": "2026-11-22T02:08:12.795665Z"
 }
