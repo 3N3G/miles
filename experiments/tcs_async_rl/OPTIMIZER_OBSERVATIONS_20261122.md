@@ -22,6 +22,11 @@ The training job keeps its original PID isolation. No launcher or Ray cleanup co
 After global update 27, both workers report counter 896 and a cached MTP gradient norm of 0.084576.
 That update's logged main-policy norm is 0.186181. Both are below their clipping threshold of 1.
 These are different parameter groups. Their scalar norms alone do not measure their effects on answer quality.
+After global update 40, both workers report counter 1,312 and learning rate 1e-6.
+The restored decay horizon is 1,280. The constant scheduler correctly keeps the
+same learning rate beyond that horizon. The cached MTP norm is 0.091067.
+That update's main-policy norm is 0.200248. Its fixed-batch surrogate gain is
+positive, +0.00016625. This verifies the CPU scheduler replay under the native runtime.
 See [the first native diagnostics](evidence/first_native_rl_diagnostics_20261122.json).
 Use it alongside full/sampling entropy, sampled initial-policy drift and fixed-batch update direction.
 

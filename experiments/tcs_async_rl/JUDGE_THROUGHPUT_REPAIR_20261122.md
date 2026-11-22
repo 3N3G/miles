@@ -34,3 +34,22 @@ Resume producer submissions only after those checks pass.
 Record pause, drain, restart, replay, and resume times in the run artifacts.
 Report the phase change with final throughput and per-question results.
 The used four-call configuration and all scores remain preserved.
+
+## Native qualification
+
+New submissions paused at 06:45:21 UTC. At 06:56:08 UTC, the executor reported
+zero samples in flight, all 1,536 generation semaphore slots available, and
+four completed group tasks. Its producer remained paused. The grade ledger
+then had zero unsettled calls and estimated spend of $1.669418.
+
+The replacement started at 06:57:50 UTC. Health matched the exact original
+question collection, protocol, Luna model and medium reasoning effort.
+A cached answer retained scores `[7, 7]` and mean reward 7. The replay left
+the ledger byte-for-byte unchanged. Twenty-one previous manifests were preserved.
+All six scoring-source and prompt/config files matched the original source hashes.
+The only judge-configuration difference was `max_concurrency: 4 -> 8`.
+
+At 06:58:45 UTC, the executor confirmed resumed submissions and 96 generation
+tasks. Its training source and approved compute limits remain unchanged.
+Ninety-seven TCS CPU tests passed, including the ownership and thread-safe
+producer-control test. New provider throughput still needs live qualification.
