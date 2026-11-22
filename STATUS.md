@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Native resume and exact rebroadcast checks pass; real generation and provisional grading active Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
-  Next: Inspect first consumed group, full/sampling entropy, frozen-reference drift, update direction and live W&B coordinates.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Real updates and standard RL diagnostics pass; verify all176 W&B scalars and inspect raw proof Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
+  Next: Continue the approved run, inspect first saved checkpoint and compare repeated-question rewards at hourly reviews.
 
 ## Next / blocked
 
