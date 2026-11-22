@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation 538647 remains queued. Retrospective analysis finds opposite centered reward signs between judge orders for 233/1,280 prior answers. Frozen run unchanged. Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Archive the verified offline diagnostic, then keep foreground queue supervision and inspect the first new update and matched-question proofs once allocated.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Offline judge-signal review archived: 233/1280 old answers reverse centered sign between orders; continue queued-run supervision Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Keep foreground queue and service supervision. On allocation inspect the first native update, all standard diagnostics and actual matched-question proofs under the repaired prompt.
 
 ## Next / blocked
 

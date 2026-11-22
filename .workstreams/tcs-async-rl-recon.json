@@ -3,6 +3,10 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7ab813e7b201e8aef7fa3daae36684ed863789ff/miles/easy-overfit-v12-judge-signal-review-20261122",
+      "label": "Verified old-run centered judge signals and raw auction example"
+    },
+    {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/b69851eb463907e85d0bb760e97d4acf48f63742/miles/easy-overfit-v14",
       "label": "Verified pre-submission prompt v3 qualification and all judging receipts"
     },
@@ -256,6 +260,10 @@
     }
   ],
   "evidence": [
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_REWARD_SIGNAL_FINDINGS_20261122.md",
+      "label": "233/1,280 hypothetical single-order reward contrasts reverse sign, with clear limits"
+    },
     {
       "path": "experiments/tcs_async_rl/evidence/judge_signal_review_20261122.json",
       "label": "Old judge disagreement after group centering, analytic controls and verified source"
@@ -2516,15 +2524,29 @@
       "actor": "codex",
       "summary": "Add an offline diagnostic of whether judge-order disagreement changes centered reward signs",
       "revision": 223
+    },
+    {
+      "id": "c9268abf-1846-4cd9-a663-543c875e54ae",
+      "at": "2026-11-22T11:09:21.904360Z",
+      "actor": "codex",
+      "summary": "Attach verified offline judge signal archive and standalone findings",
+      "revision": 224
+    },
+    {
+      "id": "e717bb76-3a3a-4ca2-97da-60ac41ca99fd",
+      "at": "2026-11-22T11:09:22.042296Z",
+      "actor": "codex",
+      "summary": "Offline judge-signal review archived: 233/1280 old answers reverse centered sign between orders; continue queued-run supervision",
+      "revision": 225
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD continuation 538647 remains queued. Retrospective analysis finds opposite centered reward signs between judge orders for 233/1,280 prior answers. Frozen run unchanged.",
-  "nextAction": "Archive the verified offline diagnostic, then keep foreground queue supervision and inspect the first new update and matched-question proofs once allocated.",
+  "summary": "Offline judge-signal review archived: 233/1280 old answers reverse centered sign between orders; continue queued-run supervision",
+  "nextAction": "Keep foreground queue and service supervision. On allocation inspect the first native update, all standard diagnostics and actual matched-question proofs under the repaired prompt.",
   "owner": "Codex",
-  "revision": 223,
-  "updatedAt": "2026-11-22T11:07:55.194814Z"
+  "revision": 225,
+  "updatedAt": "2026-11-22T11:09:22.042296Z"
 }
