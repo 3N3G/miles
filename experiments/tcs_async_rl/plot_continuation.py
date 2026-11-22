@@ -20,6 +20,7 @@ def plot(directory):
     native = json.loads((directory / "native-metrics.json").read_text())
     groups = json.loads((directory / "groups.json").read_text())
     samples = json.loads((directory / "samples.json").read_text())
+    pairs = json.loads((directory / "same-question-comparisons.json").read_text())
     by_step = {row["optimizer_step"]: row for row in native}
     if any(group["optimizer_step"] not in by_step for group in groups):
         raise ValueError("A plotted group has no completed native update")
@@ -53,6 +54,31 @@ def plot(directory):
     fig.suptitle("All consumed question visits; one seed, descriptive training observations", y=1.01)
     finish(fig, "question-rewards.png")
 
+    if pairs:
+        groups_by_key = {group["question_key"]: group for group in groups}
+        fig, ax = plt.subplots(figsize=(12, max(5, len(pairs) * 0.42)))
+        labels = []
+        for index, pair in enumerate(pairs):
+            group = groups_by_key[pair["question_key"]]
+            title = textwrap.shorten(pair["paper_id"].replace("_", " "), width=64, placeholder="…")
+            kind = "proof plan" if group["prompt_type"] == "proof_strategy" else "proof"
+            labels.append(f"{title} ({kind})")
+            ax.plot([pair["first_reward"], pair["last_reward"]], [index, index], color=gray)
+        ax.scatter([pair["first_reward"] for pair in pairs], range(len(pairs)), color=gray, label="First visit")
+        ax.scatter(
+            [pair["last_reward"] for pair in pairs], range(len(pairs)), color=blue, marker="s", label="Latest visit"
+        )
+        ax.set(
+            yticks=range(len(pairs)),
+            yticklabels=labels,
+            xlabel="Mean rubric points (32 answers per training visit)",
+            xlim=(0, 7.15),
+            title=f"{len(pairs)} repeated questions; descriptive visits from one training seed",
+        )
+        ax.tick_params(axis="y", labelsize=9)
+        ax.legend()
+        finish(fig, "matched-question-rewards.png")
+
     fig, axes = plt.subplots(2, 1, figsize=(9, 6), sharex=True)
     series(axes[0], "train/full_policy_entropy", "Full policy", blue)
     series(axes[0], "train/sampling_entropy", "After top-k/top-p filtering", orange)
@@ -64,6 +90,16 @@ def plot(directory):
     axes[1].legend()
     fig.suptitle("Entropy and sampled policy drift on changing training questions")
     finish(fig, "entropy-divergence.png")
+
+    fig, ax = plt.subplots(figsize=(9, 4))
+    series(ax, "train/reference_sampled_log_ratio", "Observed current/initial log-probability ratio")
+    ax.axhline(0, color=gray, linestyle="--")
+    ax.set(
+        xlabel="Global optimizer update",
+        ylabel="Mean log[p(current)/p(initial)]\n(nats/token)",
+        title="Signed score change on observed rollout prefixes; changing questions",
+    )
+    finish(fig, "reference-signed-score-change.png")
 
     fig, axes = plt.subplots(2, 1, figsize=(9, 6), sharex=True)
     series(axes[0], "train/update_direction/surrogate_gain", "Observed CISPO surrogate gain")

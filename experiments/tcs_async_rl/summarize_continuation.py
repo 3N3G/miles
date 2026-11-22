@@ -98,6 +98,16 @@ def summarize(directory, output):
         for key, entries in visits.items()
     ]
     pairs = question_comparisons(groups)
+    groups_by_step = {group["optimizer_step"]: group for group in groups}
+    matched = {}
+    for metric in ("full_credit_rate", "zero_rate", "mean_tokens", "cap_rate"):
+        first = [groups_by_step[pair["first_step"]][metric] for pair in pairs]
+        last = [groups_by_step[pair["last_step"]][metric] for pair in pairs]
+        matched[metric] = {
+            "questions": len(pairs),
+            "first_mean": statistics.mean(first) if first else None,
+            "latest_mean": statistics.mean(last) if last else None,
+        }
     for pair in pairs:
         for key in ("train/full_policy_entropy", "train/sampling_entropy", "train/kl_loss"):
             pair[key] = {
@@ -123,6 +133,7 @@ def summarize(directory, output):
         "same_question_mean_change": statistics.mean(pair["difference"] for pair in pairs) if pairs else None,
         "questions_increased": sum(pair["difference"] > 0 for pair in pairs),
         "questions_decreased": sum(pair["difference"] < 0 for pair in pairs),
+        "matched_visit_diagnostics": matched,
         "varied_groups": sum(group["reward_std"] > 0 for group in groups),
         "zero_answers": sum(sample["reward"] == 0 for sample in samples),
         "full_credit_answers": sum(sample["reward"] == 7 for sample in samples),
