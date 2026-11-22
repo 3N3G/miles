@@ -89,26 +89,6 @@
   The later user reply selects 40 updates within four hours on eight GPUs. A separate development split remains unspecified.
   No broader screening job was submitted.
 
-## 2026-11-21: Sampling concurrency after native training qualification
-
-- Question: after the first native optimizer update works, should a later attempt use 96 concurrent samples?
-- Evidence: the approved 32-sample limit permits one 32-answer group in flight.
-  The first group runs on one TP2 engine at about 4,800 generated tokens/second. Two rollout engines are idle.
-  `miles/rollout/fully_async_rollout.py:_max_in_flight_groups` floors the sample limit by the group size.
-- Options: finish the current bounded pilot at concurrency 32, or approve a replacement at 96 after native training works.
-- Recommendation: validate backward computation first, then review 96 to keep three groups active on three engines.
-  Keep the optimizer batch, data, reward, model and token limits fixed. Measure memory and actual sample use.
-- Blocks: a later throughput change. The current approved pilot continues with its existing 32-sample setting.
-- Status: observed during job 536360. No concurrency change or additional throughput job submitted.
-  The complete run has 76% actor waiting time and visible decode logs from one engine actor.
-  Only seven questions receive a second visit before the time limit. The throughput repair remains a user decision.
-  The user requested continued work toward rising rewards. A concrete continuation is ready in
-  `experiments/tcs_async_rl/EASY_CONTINUATION_PLAN_20261121.md` and `rl_easy_overfit_v10.draft.json`.
-  It resumes the saved 25-update checkpoint for 40 additional updates within four hours on eight MI350 GPUs.
-  It preserves the scientific setup and adds observations, with a separate $5 judge cap.
-  Approval was requested for that bounded allocation with concurrency 96, or with the existing 32.
-  New GPU submission and the concurrency choice are blocked pending that answer. CPU repairs and logging checks continue.
-
 # Answered questions
 
 - 2026-11-21: user approved option 1: actual Luna grades for recorded 90,000-token empty finals.
@@ -177,3 +157,28 @@
   then using those results to inform the RL run. The approved sequence is in
   `experiments/tcs_async_rl/EASY_MEDIUM_CHECK_PLAN_20261120.md`.
   This resolves permission to change the diagnostic question. It does not establish corpus-wide feasibility.
+
+## 2026-11-21: Sampling concurrency after native training qualification
+
+- Question: after the first native optimizer update works, should a later attempt use 96 concurrent samples?
+- Evidence: the approved 32-sample limit permits one 32-answer group in flight.
+  The first group runs on one TP2 engine at about 4,800 generated tokens/second. Two rollout engines are idle.
+  `miles/rollout/fully_async_rollout.py:_max_in_flight_groups` floors the sample limit by the group size.
+- Options: finish the current bounded pilot at concurrency 32, or approve a replacement at 96 after native training works.
+- Recommendation: validate backward computation first, then review 96 to keep three groups active on three engines.
+  Keep the optimizer batch, data, reward, model and token limits fixed. Measure memory and actual sample use.
+- Blocks: a later throughput change. The current approved pilot continues with its existing 32-sample setting.
+- Status: observed during job 536360. No concurrency change or additional throughput job submitted.
+  The complete run has 76% actor waiting time and visible decode logs from one engine actor.
+  Only seven questions receive a second visit before the time limit. The throughput repair remains a user decision.
+  The user requested continued work toward rising rewards. A concrete continuation is ready in
+  `experiments/tcs_async_rl/EASY_CONTINUATION_PLAN_20261121.md` and `rl_easy_overfit_v10.draft.json`.
+  It resumes the saved 25-update checkpoint for 40 additional updates within four hours on eight MI350 GPUs.
+  It preserves the scientific setup and adds observations, with a separate $5 judge cap.
+  Approval was requested for that bounded allocation with concurrency 96, or with the existing 32.
+  New GPU submission and the concurrency choice are blocked pending that answer. CPU repairs and logging checks continue.
+
+- Answer (2026-11-22 UTC): user approved the recommended 96-answer continuation and hourly detailed supervision.
+  The approved snapshot is `experiments/tcs_async_rl/rl_easy_overfit_v10.json`.
+  The user authorized repair and rerun for a diagnosed cause, while preserving the bounded scientific setup.
+

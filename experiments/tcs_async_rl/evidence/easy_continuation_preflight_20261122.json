@@ -1,0 +1,35 @@
+{
+  "at_utc": "2026-11-22T01:53:19.942931+00:00",
+  "approval": "User approved the recommended 96-answer bounded continuation and hourly supervision, repair/rerun for diagnosed causes, and continued execution if rewards increase.",
+  "approved_config": "experiments/tcs_async_rl/rl_easy_overfit_v10.json",
+  "approved_plan": "experiments/tcs_async_rl/EASY_CONTINUATION_PLAN_20261122_APPROVED.md",
+  "local_run_dir": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-overfit-v10",
+  "source_checkpoint_iteration": 24,
+  "initial_saved_updates": 25,
+  "qualified_diagnostic": "easy-check-v14-mi350",
+  "qualified_samples": 32,
+  "controls_reused": 60,
+  "judge_ledger_initial_usd": 0,
+  "amd_cache_cleanup": {
+    "free_bytes_before": 63867056128,
+    "free_bytes_after": 151731412992,
+    "deleted_caches": [
+      "/work1/aviralkumar/geney/hf_cache/hub/models--Qwen--Qwen3.8-27B",
+      "/work1/aviralkumar/geney/tcs-async-rl/cache/apptainer/cache"
+    ],
+    "public_model_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "public_model_restore": "hf download Qwen/Qwen3.8-27B --revision 1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0 --cache-dir /work1/aviralkumar/geney/hf_cache/hub",
+    "preserved": [
+      "All training checkpoints and results",
+      "Qwen3.5-4B source weights and conversion",
+      "Existing SIF and extracted runtime",
+      "Compiled kernel caches"
+    ],
+    "amd_user_queue_empty_before_cleanup": true
+  },
+  "sampling_concurrency": 96,
+  "new_update_target": 40,
+  "gpu_hours_cap": 32,
+  "judge_usd_cap": 5,
+  "supervision": "Foreground through completion; native/process/storage checks every minute, full metric and raw-proof review at least hourly."
+}
