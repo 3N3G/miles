@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eight additional saved-proof checks match 70/70 assistant decisions; shared judge cost is $0.415, AMD continuation still queued Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Continue foreground queue/service supervision. On allocation inspect checkpoint restoration, first native update and W&B coordinates, then actual matched-question proofs under unch
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 538647 is waiting for resources after three of four MI350 nodes became drained; no GPU time used and grading audits are complete Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Continue foreground queue and service supervision. Recheck capacity directly. On allocation inspect resume, native progress, W&B and actual proofs. Optional Flame capacity awaits t
 
 ## Next / blocked
 
