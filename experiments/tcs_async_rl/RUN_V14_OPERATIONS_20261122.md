@@ -8,6 +8,11 @@ The existing background processes do not replace diagnosis. Do not claim reliabl
 - User requested assistant adjudication of grading ambiguities, prompt repair, and rerun/resume with close supervision.
 - Plan: [judge repair and resume](JUDGE_REPAIR_RESUME_PLAN_20261122.md), with [the follow-through clarification](JUDGE_FOLLOWTHROUGH_REPAIR_20261122.md).
 - AMD job **538647**, `tcs-easy-overfit-v14`, submitted 2026-11-22 09:34:36 UTC.
+- Actual allocation started **2026-11-22 19:57:31 UTC** on `k007-002`, verified against Slurm owner/name.
+  The current four-hour limit ends at 23:57:31 UTC. Producer run ID is `261122-195832-676`.
+  The VM-native W&B writer will use `261122-195832-676-native` after the first complete new update.
+- At 20:01 UTC the owned node could reach the expected Luna-medium service through the loopback tunnel.
+  All three rollout engines returned health HTTP 200. Checkpoint restoration and the first new update were still pending.
 - Direct scheduler check at 2026-11-22 09:52 UTC: PENDING, priority wait, start estimate unavailable.
   The earlier 23:36 UTC estimate was withdrawn. Recheck before reporting a live state or ETA.
 - Limit: 40 new updates, global steps 65–104, or four hours on eight MI350 GPUs. Combined repair ceiling 32 GPU-hours.
