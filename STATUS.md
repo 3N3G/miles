@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Keep owned pending replacement within four-hour combined budget after Slurm rounding Jobs: hpcfund/537888 PENDING; hpcfund/537846 FAILED
-  Next: Watch queued job; qualify actual scheduler restore, reference diagnostics and first finite update on allocation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Privately archive and verify pending readiness and first hourly review Jobs: hpcfund/537888 PENDING; hpcfund/537846 FAILED
+  Next: Wait for owned allocation; qualify native resume and monitor through terminal state, upload and W&B verification.
 
 ## Next / blocked
 

@@ -2157,15 +2157,22 @@
       "actor": "codex",
       "summary": "Keep owned pending replacement within four-hour combined budget after Slurm rounding",
       "revision": 184
+    },
+    {
+      "id": "6ae44eb5-ba07-487a-99fe-4ecfc0fbca0b",
+      "at": "2026-11-22T03:32:50.116114Z",
+      "actor": "codex",
+      "summary": "Privately archive and verify pending readiness and first hourly review",
+      "revision": 185
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Keep owned pending replacement within four-hour combined budget after Slurm rounding",
-  "nextAction": "Watch queued job; qualify actual scheduler restore, reference diagnostics and first finite update on allocation.",
+  "summary": "Privately archive and verify pending readiness and first hourly review",
+  "nextAction": "Wait for owned allocation; qualify native resume and monitor through terminal state, upload and W&B verification.",
   "owner": "Codex",
-  "revision": 184,
-  "updatedAt": "2026-11-22T03:15:20.901551Z"
+  "revision": 185,
+  "updatedAt": "2026-11-22T03:32:50.116114Z"
 }
