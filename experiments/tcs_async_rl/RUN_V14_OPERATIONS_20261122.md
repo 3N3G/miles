@@ -13,6 +13,10 @@ The existing background processes do not replace diagnosis. Do not claim reliabl
   The VM-native W&B writer will use `261122-195832-676-native` after the first complete new update.
 - At 20:01 UTC the owned node could reach the expected Luna-medium service through the loopback tunnel.
   All three rollout engines returned health HTTP 200. Checkpoint restoration and the first new update were still pending.
+- The 20:08:54 UTC read-only probe verified both trainer ranks at scheduler counter 2,080 and learning rate 1e-6.
+  The runtime loaded iteration 64 and checked the restored weight broadcast to all three rollout engines.
+  The producer was active with three groups, no completed buffer group, and weight version 65. No optimizer update had completed.
+  Probe evidence is `optimizer-and-rollout-bootstrap-probe.json` in the run directory.
 - Direct scheduler check at 2026-11-22 09:52 UTC: PENDING, priority wait, start estimate unavailable.
   The earlier 23:36 UTC estimate was withdrawn. Recheck before reporting a live state or ETA.
 - Limit: 40 new updates, global steps 65–104, or four hours on eight MI350 GPUs. Combined repair ceiling 32 GPU-hours.
@@ -87,6 +91,9 @@ Inspect full/sampling entropy, sampled initialization drift, rollout mismatch, c
 Native history exports `train/grad_norm` and `train/mtp_loss`, without a separate MTP gradient-norm scalar.
 Separate MTP norms come from [read-only optimizer probes](optimizer_probe.py) inside a verified owned running allocation.
 Record each probe's timestamp and expected run ID. These snapshots are not a continuous per-update MTP norm history.
+For an external probe, use the same container/runtime bind and `RAY_ADDRESS`, but omit `--pid` from its prefix.
+Ray 2.58 discovers local raylets by scanning process arguments. A fresh private PID namespace hides the running raylet
+and caused the preserved first probe attempt to fail before reaching any actor. The host-PID read-only retry succeeded.
 Read actual seeded proofs behind matched-question changes at least hourly. Use `audit_live.py`, then `summarize_continuation.py`
 and `plot_continuation.py` on a new diagnostic output directory. Keep prior diagnostics unchanged.
 Use `judge_signal.py` on audited samples to inspect agreement after group centering.
