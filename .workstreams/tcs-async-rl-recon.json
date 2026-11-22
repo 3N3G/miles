@@ -2185,15 +2185,22 @@
       "actor": "codex",
       "summary": "RL job 537888 is FAILED",
       "revision": 188
+    },
+    {
+      "id": "42e01237-fd71-40ec-9c41-955364f07794",
+      "at": "2026-11-22T04:58:04.918451Z",
+      "actor": "codex",
+      "summary": "RL job 537888 ended FAILED; acceptance False",
+      "revision": 189
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 537888 is FAILED",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "RL job 537888 ended FAILED; acceptance False",
+  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
   "owner": "Codex",
-  "revision": 188,
-  "updatedAt": "2026-11-22T04:57:51.429958Z"
+  "revision": 189,
+  "updatedAt": "2026-11-22T04:58:04.918451Z"
 }
