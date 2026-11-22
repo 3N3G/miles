@@ -691,6 +691,11 @@
   ],
   "jobs": [
     {
+      "id": "538154",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "537888",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -2199,15 +2204,22 @@
       "actor": "codex",
       "summary": "Checkpoint restoration verified; repair trained-weight comparison and prepare bounded replacement",
       "revision": 190
+    },
+    {
+      "id": "c9a5215d-e66a-44a9-8c4d-abc07c532fcb",
+      "at": "2026-11-22T05:07:06.490276Z",
+      "actor": "codex",
+      "summary": "Automatically submitted approved RL job 538154",
+      "revision": 191
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Checkpoint restoration verified; repair trained-weight comparison and prepare bounded replacement",
-  "nextAction": "Submit v12 with remaining3h51m; qualify native rebroadcast check, entropy, reference drift and finite optimizer progress.",
+  "summary": "Automatically submitted approved RL job 538154",
+  "nextAction": "Monitor the owned RL job, reward tunnel, optimizer updates and saving.",
   "owner": "Codex",
-  "revision": 190,
-  "updatedAt": "2026-11-22T05:06:45.299731Z"
+  "revision": 191,
+  "updatedAt": "2026-11-22T05:07:06.490276Z"
 }
