@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First continuation checkpoint retains30 updates; inspect repeated zero-signal question and continue Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
-  Next: Continue through40 new updates or walltime; review matched questions, gradients, entropy, divergence, judge gaps and checkpoint turnover.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First-hour review: 11 valid updates and positive direction checks; isolate metric reporting from slow upload Jobs: hpcfund/538154 RUNNING; hpcfund/537888 FAILED
+  Next: Continue the approved run. Verify independent W&B reporting, audit new traces and compare repeated questions at the next review.
 
 ## Next / blocked
 

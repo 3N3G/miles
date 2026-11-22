@@ -2253,15 +2253,22 @@
       "actor": "codex",
       "summary": "First continuation checkpoint retains30 updates; inspect repeated zero-signal question and continue",
       "revision": 197
+    },
+    {
+      "id": "6157e0af-f051-4084-9745-90085ac51c84",
+      "at": "2026-11-22T06:10:27.701245Z",
+      "actor": "codex",
+      "summary": "First-hour review: 11 valid updates and positive direction checks; isolate metric reporting from slow upload",
+      "revision": 198
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "First continuation checkpoint retains30 updates; inspect repeated zero-signal question and continue",
-  "nextAction": "Continue through40 new updates or walltime; review matched questions, gradients, entropy, divergence, judge gaps and checkpoint turnover.",
+  "summary": "First-hour review: 11 valid updates and positive direction checks; isolate metric reporting from slow upload",
+  "nextAction": "Continue the approved run. Verify independent W&B reporting, audit new traces and compare repeated questions at the next review.",
   "owner": "Codex",
-  "revision": 197,
-  "updatedAt": "2026-11-22T05:42:08.136981Z"
+  "revision": 198,
+  "updatedAt": "2026-11-22T06:10:27.701245Z"
 }
