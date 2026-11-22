@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Hourly check: AMD 539594 remains queued, all 20 frozen judge manifests and service health match, storage remains sufficient Jobs: hpcfund/539594 PENDING; hpcfund/538647 FAILED
-  Next: Continue foreground supervision and read actual allocated time on startup; verify resumed optimizer, first complete update, native W&B and graded proofs
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 539594 is RUNNING Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
