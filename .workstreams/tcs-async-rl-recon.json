@@ -793,7 +793,7 @@
     {
       "id": "538647",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "FAILED"
     },
     {
       "id": "538154",
@@ -2645,15 +2645,22 @@
       "actor": "codex",
       "summary": "AMD 538647 restored iteration 64, both optimizer counters 2080 and learning rate 1e-6; first complete rollout group pending",
       "revision": 238
+    },
+    {
+      "id": "6bf041cc-4c3e-4cbe-9b9e-64c430742e65",
+      "at": "2026-11-22T20:14:23.129419Z",
+      "actor": "codex",
+      "summary": "RL job 538647 is FAILED",
+      "revision": 239
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 538647 restored iteration 64, both optimizer counters 2080 and learning rate 1e-6; first complete rollout group pending",
-  "nextAction": "Verify finite update 65, exact native W&B coordinates and published weights; inspect graded proofs and matched-question visits hourly through terminal cleanup",
+  "summary": "RL job 538647 is FAILED",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 238,
-  "updatedAt": "2026-11-22T20:09:50.881652Z"
+  "revision": 239,
+  "updatedAt": "2026-11-22T20:14:23.129419Z"
 }

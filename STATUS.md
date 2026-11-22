@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 538647 restored iteration 64, both optimizer counters 2080 and learning rate 1e-6; first complete rollout group pending Jobs: hpcfund/538647 RUNNING; hpcfund/538154 COMPLETED
-  Next: Verify finite update 65, exact native W&B coordinates and published weights; inspect graded proofs and matched-question visits hourly through terminal cleanup
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 538647 is FAILED Jobs: hpcfund/538647 FAILED; hpcfund/538154 COMPLETED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
