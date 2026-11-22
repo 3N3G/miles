@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 538647 ended FAILED; acceptance False Jobs: hpcfund/538647 FAILED; hpcfund/538154 COMPLETED
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Validated final-only reward transport against the exact failed 4.67 MB rollout; preparing replacement within 3h43m and the inherited $5 cap Jobs: hpcfund/538647 FAILED; hpcfund/538154 COMPLETED
+  Next: Submit one frozen transport-repair replacement from iteration 64; disable requeue and verify update 65, native W&B and actual proofs through terminal completion
 
 ## Next / blocked
 
