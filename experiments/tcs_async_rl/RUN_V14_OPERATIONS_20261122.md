@@ -8,8 +8,8 @@ The existing background processes do not replace diagnosis. Do not claim reliabl
 - User requested assistant adjudication of grading ambiguities, prompt repair, and rerun/resume with close supervision.
 - Plan: [judge repair and resume](JUDGE_REPAIR_RESUME_PLAN_20261122.md), with [the follow-through clarification](JUDGE_FOLLOWTHROUGH_REPAIR_20261122.md).
 - AMD job **538647**, `tcs-easy-overfit-v14`, submitted 2026-11-22 09:34:36 UTC.
-- Last direct scheduler check: PENDING, priority wait. Estimated start 2026-11-22 23:36 UTC, 18:36 Eastern.
-  This is a scheduler estimate, not a promise or a live status. Recheck before reporting it.
+- Direct scheduler check at 2026-11-22 09:52 UTC: PENDING, priority wait, start estimate unavailable.
+  The earlier 23:36 UTC estimate was withdrawn. Recheck before reporting a live state or ETA.
 - Limit: 40 new updates, global steps 65–104, or four hours on eight MI350 GPUs. Combined repair ceiling 32 GPU-hours.
 - Slurm automatic requeue was disabled on this owned pending job. Any repair must respect the remaining combined budget.
 - Judge: Luna medium, original weighted binary rubrics, anonymous order swaps, final-only extraction. Shared cap $5.

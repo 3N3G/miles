@@ -2487,15 +2487,22 @@
       "actor": "codex",
       "summary": "Record live supervision handoff and bounded retry guard for the queued continuation",
       "revision": 220
+    },
+    {
+      "id": "ba629713-df86-4d03-b71f-9e5c229fc6da",
+      "at": "2026-11-22T09:53:16.842778Z",
+      "actor": "codex",
+      "summary": "Scheduler withdrew its estimate; owned job and monitors remain healthy while pending",
+      "revision": 221
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Revised judge qualified; resumed AMD job 538647 is queued from 65 saved updates, with independent monitoring active",
-  "nextAction": "Watch the scheduler and owned services. Current estimated start is Nov 22 23:36 UTC (18:36 Eastern), subject to change. Inspect first native update, then every metric and matched-question proof at least hourly.",
+  "summary": "Resumed AMD job 538647 remains pending on priority; scheduler now provides no start estimate. No GPU time used.",
+  "nextAction": "Continue foreground queue and service monitoring. Recheck start estimates directly. Inspect the first native update and all matched-question proofs once allocated.",
   "owner": "Codex",
-  "revision": 220,
-  "updatedAt": "2026-11-22T09:51:30.221203Z"
+  "revision": 221,
+  "updatedAt": "2026-11-22T09:53:16.842778Z"
 }
