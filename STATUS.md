@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 537888 is PENDING Jobs: hpcfund/537888 PENDING; hpcfund/537846 FAILED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Replacement queued; failure archive verified and reference initialization checked Jobs: hpcfund/537888 PENDING; hpcfund/537846 FAILED
+  Next: Qualify resumed scheduler, reference scoring and entropy on GPU; supervise through completion.
 
 ## Next / blocked
 
