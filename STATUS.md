@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 539594 has 17 finite updates and four positive direction checks; continuation checkpoint-space decision is pending while current training continues Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
-  Next: Watch through the two-hour limit, inspect repeated-question visits and current free storage, then complete terminal archives and W&B verification before any bounded continuation
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Current AMD run has 19 updates; a tested one-checkpoint continuation preserves every source and removes the pending deletion decision Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
+  Next: Supervise the current allocation through terminal, archive and verify it, then resume only unfinished target updates within actual remaining GPU time and the same judge ledger
 
 ## Next / blocked
 
