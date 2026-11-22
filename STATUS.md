@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Resumed AMD job 538647 remains queued on priority with an unstable start estimate. Verified no old scored batches restore across the judge change. No GPU time used. Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Keep foreground queue/service supervision. Check the first native update once allocated, then inspect matched-question metrics and actual proofs under the revised judge.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation 538647 remains queued. Retrospective analysis finds opposite centered reward signs between judge orders for 233/1,280 prior answers. Frozen run unchanged. Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Archive the verified offline diagnostic, then keep foreground queue supervision and inspect the first new update and matched-question proofs once allocated.
 
 ## Next / blocked
 

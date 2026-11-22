@@ -1,0 +1,50 @@
+{
+  "answers": 1280,
+  "groups": 40,
+  "score_disagreements": 338,
+  "strict_sign_reversals": 233,
+  "one_order_ties": 32,
+  "both_orders_tie": 32,
+  "groups_with_defined_cosine": 38,
+  "mean_group_cosine": 0.6897758945220085,
+  "minimum_group_cosine": 0.03256309922505102,
+  "source_sha256": "a7f1e2a0e3d98cd65df55139c13091bc34ee12813d6d6b9746766cba9b8f7de9",
+  "new_provider_calls": 0,
+  "limits": [
+    "Both orders were averaged for actual training. These are hypothetical single-order centered contrasts.",
+    "Token whitening, response lengths, importance weights and gradients are not reconstructed here.",
+    "Presentation order and stochastic judge variation are confounded without same-order repeated calls.",
+    "Agreement does not establish mathematical correctness. Groups and answers are not independent seeds."
+  ],
+  "at_utc": "2026-11-22T11:07:55.079428+00:00",
+  "source_run": "easy-overfit-v12",
+  "source_archive": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/b944b262c244e09338c0f07664111d688802a732/miles/easy-overfit-v12-diagnostic-20261122",
+  "source_exact_readback_verified": true,
+  "implementation": "experiments/tcs_async_rl/judge_signal.py",
+  "implementation_sha256": "d50ce41361f5b7addf12038ed7304da9719c7d55673535a65378729b051b1699",
+  "analytic_controls_passed": [
+    "positive affine score transformation preserves centered direction despite score differences",
+    "reversed score ranking has cosine minus one and opposite nonzero signs",
+    "one constant order yields undefined cosine and explicit ties",
+    "empty source gives zero groups",
+    "incorrect averaged consumed reward is rejected"
+  ],
+  "example": {
+    "scores": [
+      7.0,
+      5.0
+    ],
+    "means": [
+      6.875,
+      6.75
+    ],
+    "centered_scores": [
+      0.125,
+      -1.75
+    ],
+    "actual_centered_average": -0.8125,
+    "source_sha256": "2e789da74b6f9c52d805f3c8aa0024f8b47d25ec4719f56556ac815411712c6b",
+    "selection": "Previously seed-selected example, chosen here to illustrate a sign reversal. It is not presented as a typical answer."
+  },
+  "diagnostic_archive_pending": true
+}

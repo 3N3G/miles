@@ -257,6 +257,10 @@
   ],
   "evidence": [
     {
+      "path": "experiments/tcs_async_rl/evidence/judge_signal_review_20261122.json",
+      "label": "Old judge disagreement after group centering, analytic controls and verified source"
+    },
+    {
       "path": "experiments/tcs_async_rl/evidence/resume_reward_buffer_and_label_review_20261122.json",
       "label": "Exact resume-buffer inspection and preserved correction to an assistant diagnostic label"
     },
@@ -2505,15 +2509,22 @@
       "actor": "codex",
       "summary": "Verify empty scored resume buffers and record a retrospective assistant-label correction without changing the frozen run",
       "revision": 222
+    },
+    {
+      "id": "52de9424-96ee-448c-975e-332020bec7b3",
+      "at": "2026-11-22T11:07:55.194814Z",
+      "actor": "codex",
+      "summary": "Add an offline diagnostic of whether judge-order disagreement changes centered reward signs",
+      "revision": 223
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Resumed AMD job 538647 remains queued on priority with an unstable start estimate. Verified no old scored batches restore across the judge change. No GPU time used.",
-  "nextAction": "Keep foreground queue/service supervision. Check the first native update once allocated, then inspect matched-question metrics and actual proofs under the revised judge.",
+  "summary": "AMD continuation 538647 remains queued. Retrospective analysis finds opposite centered reward signs between judge orders for 233/1,280 prior answers. Frozen run unchanged.",
+  "nextAction": "Archive the verified offline diagnostic, then keep foreground queue supervision and inspect the first new update and matched-question proofs once allocated.",
   "owner": "Codex",
-  "revision": 222,
-  "updatedAt": "2026-11-22T10:30:38.921852Z"
+  "revision": 223,
+  "updatedAt": "2026-11-22T11:07:55.194814Z"
 }
