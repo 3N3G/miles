@@ -1,8 +1,10 @@
-"""Read existing optimizer scalars from an owned Ray job without a new forward pass.
+"""Observe an owned Ray job without a new forward pass.
 
 Run this file as a script inside the allocation's container so Ray serializes
 the observer functions by value. The caller verifies Slurm ownership first.
 No gradient computation, collective, optimizer method or model tensor is read.
+An explicit producer-action option pauses or resumes submission for a drained
+reward-service repair. The default remains read-only.
 """
 
 import argparse
@@ -91,6 +93,15 @@ def read_rollout_snapshot(actor):
     }
 
 
+def change_producer_state(actor, action, expected_run_id):
+    if actor.args.wandb_run_id != expected_run_id or action not in ("pause", "resume"):
+        raise ValueError("Producer action does not match the owned run")
+    fn = actor.generate_rollout
+    callback = fn._producer_resumed.clear if action == "pause" else fn._producer_resumed.set
+    fn._worker.get_loop().call_soon_threadsafe(callback)
+    return {"producer_action_queued": action, "run_id": expected_run_id}
+
+
 def main():
     # Ray belongs to the allocated AMD runtime, not the VM's review utilities.
     import ray
@@ -99,6 +110,8 @@ def main():
     parser.add_argument("--expected-run-id", required=True)
     parser.add_argument("--expected-workers", type=int, default=2)
     parser.add_argument("--include-rollout", action="store_true")
+    parser.add_argument("--rollout-only", action="store_true")
+    parser.add_argument("--producer-action", choices=("pause", "resume"))
     parser.add_argument("--output", type=Path, required=True)
     cli = parser.parse_args()
     ray.init(address="auto", log_to_driver=False, logging_level="ERROR")
@@ -107,23 +120,34 @@ def main():
         if len(managers) != 1:
             raise RuntimeError("Expected one worker manager in the owned allocation")
         manager = ray.get_actor(managers[0]["name"], namespace=managers[0]["namespace"])
-        names = ray.get(manager.__ray_call__.remote(trainer_names), timeout=60)
-        if len(names) != cli.expected_workers:
-            raise RuntimeError("Expected the reviewed number of initialized training workers")
-        handles = ray.get(
-            [manager.get_actor_handle.remote(name, expected_generation=generation) for name, generation in names],
-            timeout=60,
-        )
-        snapshots = ray.get([handle.__ray_call__.remote(read_optimizer_snapshot) for handle in handles], timeout=90)
-        if any(r["run_id"] != cli.expected_run_id for r in snapshots):
-            raise RuntimeError("Optimizer probe reached a different run")
-        result = {"at_utc": datetime.datetime.now(datetime.UTC).isoformat(), "workers": snapshots}
-        if cli.include_rollout:
+        result = {"at_utc": datetime.datetime.now(datetime.UTC).isoformat()}
+        if not cli.producer_action and not cli.rollout_only:
+            names = ray.get(manager.__ray_call__.remote(trainer_names), timeout=60)
+            if len(names) != cli.expected_workers:
+                raise RuntimeError("Expected the reviewed number of initialized training workers")
+            handles = ray.get(
+                [manager.get_actor_handle.remote(name, expected_generation=generation) for name, generation in names],
+                timeout=60,
+            )
+            snapshots = ray.get(
+                [handle.__ray_call__.remote(read_optimizer_snapshot) for handle in handles], timeout=90
+            )
+            if any(r["run_id"] != cli.expected_run_id for r in snapshots):
+                raise RuntimeError("Optimizer probe reached a different run")
+            result["workers"] = snapshots
+        if cli.include_rollout or cli.rollout_only or cli.producer_action:
             names = ray.get(manager.__ray_call__.remote(rollout_names), timeout=60)
             if len(names) != 1:
                 raise RuntimeError("Expected one initialized rollout executor")
             name, generation = names[0]
             handle = ray.get(manager.get_actor_handle.remote(name, expected_generation=generation), timeout=60)
+            if cli.producer_action:
+                result.update(
+                    ray.get(
+                        handle.__ray_call__.remote(change_producer_state, cli.producer_action, cli.expected_run_id),
+                        timeout=30,
+                    )
+                )
             rollout = ray.get(handle.__ray_call__.remote(read_rollout_snapshot), timeout=90)
             if rollout["run_id"] != cli.expected_run_id:
                 raise RuntimeError("Rollout probe reached a different run")

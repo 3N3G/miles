@@ -15,11 +15,26 @@ from experiments.tcs_async_rl.native_metrics import (
     sync_live_audit,
     sync_terminal_audit,
 )
-from experiments.tcs_async_rl.optimizer_probe import read_optimizer_snapshot
+from experiments.tcs_async_rl.optimizer_probe import change_producer_state, read_optimizer_snapshot
 from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_sampled_entropy
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_producer_control_rejects_another_run_and_queues_on_the_owned_loop(self):
+        event, loop = Mock(), Mock()
+        fn = SimpleNamespace(_producer_resumed=event, _worker=Mock())
+        fn._worker.get_loop.return_value = loop
+        actor = SimpleNamespace(args=SimpleNamespace(wandb_run_id="owned"), generate_rollout=fn)
+        with self.assertRaises(ValueError):
+            change_producer_state(actor, "pause", "other")
+        loop.call_soon_threadsafe.assert_not_called()
+        change_producer_state(actor, "pause", "owned")
+        loop.call_soon_threadsafe.assert_called_once_with(event.clear)
+        event.clear.assert_not_called()
+        loop.call_soon_threadsafe.reset_mock()
+        change_producer_state(actor, "resume", "owned")
+        loop.call_soon_threadsafe.assert_called_once_with(event.set)
+
     def test_optimizer_probe_reads_cached_scalars_without_gradient_calls_or_mutation(self):
         optimizer = SimpleNamespace(
             grad_norms_by_group={"mtp": 0.7},
