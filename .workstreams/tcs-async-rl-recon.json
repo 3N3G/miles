@@ -261,6 +261,10 @@
   ],
   "evidence": [
     {
+      "path": "experiments/tcs_async_rl/JUDGE_ADDITIONAL_AUDIT_PLAN_20261122.md",
+      "label": "Additional same-question proof audit, pre-call labels and unchanged budget"
+    },
+    {
       "path": "experiments/tcs_async_rl/JUDGE_REWARD_SIGNAL_FINDINGS_20261122.md",
       "label": "233/1,280 hypothetical single-order reward contrasts reverse sign, with clear limits"
     },
@@ -2573,15 +2577,22 @@
       "actor": "codex",
       "summary": "AMD continuation 538647 remains pending on priority; start estimates remain unstable. No GPU time used, judge and all monitors healthy",
       "revision": 230
+    },
+    {
+      "id": "53f65118-bb61-405a-bb1f-b6bcddf177bf",
+      "at": "2026-11-22T18:50:38.306280Z",
+      "actor": "codex",
+      "summary": "Prepare eight additional pre-adjudicated saved-proof checks during the priority wait",
+      "revision": 231
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD continuation 538647 remains pending on priority; start estimates remain unstable. No GPU time used, judge and all monitors healthy",
-  "nextAction": "Continue foreground queue/service supervision. Recheck estimates directly. On allocation inspect checkpoint restoration, first native update and W&B coordinates, then actual matched-question proofs.",
+  "summary": "AMD 538647 remains queued. Eight more saved proofs were assistant-adjudicated before revised-judge calls; frozen training settings stay unchanged.",
+  "nextAction": "Run the sixteen-call diagnostic through the existing service and shared $5 cap, then continue foreground GPU supervision and inspect native updates on allocation.",
   "owner": "Codex",
-  "revision": 230,
-  "updatedAt": "2026-11-22T17:46:21.195827Z"
+  "revision": 231,
+  "updatedAt": "2026-11-22T18:50:38.306280Z"
 }

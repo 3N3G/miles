@@ -1,0 +1,57 @@
+{
+  "selection_seed": 20261125,
+  "case_steps": [
+    29,
+    36,
+    48,
+    54,
+    63,
+    37,
+    34,
+    59
+  ],
+  "cases": 8,
+  "training_questions": 8,
+  "item_labels": 35,
+  "planned_initial_judge_calls": 16,
+  "labels_completed_before_new_calls": true,
+  "labels_sha256": "ebceaa8fea99eabe8949fab3afc4272784dfaa5e14bfac3291834a470120b187",
+  "selection_plan_sha256": "5f0d0f139089493f179ffbb069524366aa56f1e30e27951a2b7b7aab81438044",
+  "candidate_source_sha256": [
+    "afcfbcc7e6cc67a687ea06f0d911d38add98e175e087d81739a429766d0652c7",
+    "3e4f84007bc699e9f83bcbace44bbc3fd8dda9c12f531cdd1ef523e865a9368e",
+    "379c32688f5f2cce33549f94b55d7f9638aab2aa9b8724feda500cc0c39951bc",
+    "4c1e674c5e922e7132b63838d41c39cf1d83f299aca1073aa032d35c2bd9f5b8",
+    "9296fe8c59c0df33e961855086959077976d579a513a534f21d34b318fac3183",
+    "c019942c2711af37c9646cf5b990a19145f6d3c70cbdc331413248dbb531123a",
+    "4250fffbfb22780e92f396c43a6a9abddd91bd1e288699312e8998f4642e38ee",
+    "b792260e9d4170d55ff2d3d61033f64b3d8434b3de4eb92c423f0fbd67e737e5"
+  ],
+  "expected_assistant_totals": [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    0
+  ],
+  "cached_transport_control": {
+    "kind": "cached_reference_HTTP_transport_control",
+    "scores": [
+      7.0,
+      7.0
+    ],
+    "provider_ledger_unchanged": true,
+    "new_provider_calls": 0,
+    "prompt_sha256": "b4203477f291321c2192de24b37fecef4b85ed0989dd1f61d47825121136e2a5",
+    "client_source_sha256": "5c1090335f922ae06ea00190315de8b1f77746c89af8997d0c884ec35831be62"
+  },
+  "shared_cap_usd": 5,
+  "new_gpu_jobs": 0,
+  "new_solver_generations": 0,
+  "heldout_reads": 0,
+  "existing_judge_config_and_prompt_changed": false,
+  "limits": "Assistant review is not human calibration. Questions come from the same twenty-question training bundle. These cases were not in the explicit prompt-development label set. No general accuracy estimate or independent-seed test."
+}

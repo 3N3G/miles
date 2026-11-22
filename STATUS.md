@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation 538647 remains pending on priority; start estimates remain unstable. No GPU time used, judge and all monitors healthy Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
-  Next: Continue foreground queue/service supervision. Recheck estimates directly. On allocation inspect checkpoint restoration, first native update and W&B coordinates, then actual matche
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 538647 remains queued. Eight more saved proofs were assistant-adjudicated before revised-judge calls; frozen training settings stay unchanged. Jobs: hpcfund/538647 PENDING; hpcfund/538154 COMPLETED
+  Next: Run the sixteen-call diagnostic through the existing service and shared $5 cap, then continue foreground GPU supervision and inspect native updates on allocation.
 
 ## Next / blocked
 
