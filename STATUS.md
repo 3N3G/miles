@@ -13,7 +13,7 @@
 ## Waiting on user
 
 - [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Four-problem ×32-answer batch prepared and 114 tests pass. Submission needs a new budget and 83.1 GB more free AMD storage. Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Resolve the pending 10-update/four-hour/new-$5 allowance and source-checkpoint storage decision. Then freeze, submit once, verify the first 128-answer update and supervise through 
+  Next: Resolve the new run budget and 83.1 GB storage shortfall. Then freeze the config, submit once, verify the 128-answer update, and supervise through terminal archival.
 
 ## Finished
 
