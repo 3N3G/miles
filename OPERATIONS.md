@@ -242,3 +242,19 @@ Human reports remain local review drafts under ignored `reports/`. They must
 stand alone, state uncertainty, show raw examples and distinguish routing,
 readout and intervention. Preserve them on a local review branch. Do not push
 mentor-facing prose. Code/evidence backup is explicitly `HEAD:inkling-interp`.
+
+## Completed native expert program
+
+All approved stages are complete. GPU accounting is6523/18000 seconds, including
+the prior350-second pilot. There are no active jobs or prepared reservations.
+The final independent unit test is `native-unit-atlas-confirmation-v1`; all32
+articles completed. Its private immutable archive is in
+`evidence/artifact_archives.json`. The fixed MMLU test confirmed0/4 candidates.
+Its separate replication cohort remains unused.
+
+Seven standalone human reports remain local user-review drafts. They are
+preserved byte-for-byte on local branch `review/native-experts`, commit
+`e86b6222db723e53cd6fd3ae17cfbc1ab3d01495`. The short reading path begins at
+`reports/NATIVE_EXPERTS.md`. Do not push this prose branch without user review.
+Code, plans, raw-artifact receipts, plots and structured state use the explicit
+backup target `HEAD:inkling-interp`. No job should be resumed from this note.

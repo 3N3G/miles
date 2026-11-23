@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): On32 unused articles, the full local lens cut eight-unit forecast error13-fold versus dot-only, with3/4 new causal routing reversals. The math-specific expert test confirmed0/4 candidates. Jobs: hpcfund/542012 COMPLETED; hpcfund/542015 COMPLETED
-  Next: Preserve standalone local report drafts and close the reproducibility audit.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,4 +16,4 @@
 
 ## Finished
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Validated a local unit lens on32 unused articles:13-fold lower eight-unit forecast error and3/4 new routing reversals. Independent math test confirmed0/4 expert candidates. Used6523/18000 GPU seconds.
