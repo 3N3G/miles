@@ -90,12 +90,16 @@ class DiagnosticTests(unittest.TestCase):
             optimizer=optimizer,
             opt_param_scheduler=SimpleNamespace(num_steps=800, lr_decay_steps=1280, lr_decay_style="constant"),
             _rank=0,
-            args=SimpleNamespace(wandb_run_id="id", use_checkpoint_opt_param_scheduler=True),
+            args=SimpleNamespace(
+                wandb_run_id="id", use_checkpoint_opt_param_scheduler=True, single_checkpoint=True, save_interval=105
+            ),
             _active_model_tag="actor",
         )
         result = read_optimizer_snapshot(actor)
         self.assertEqual(result["separate_gradient_norms"], {"mtp": 0.7})
         self.assertEqual(result["scheduler_counter"], 800)
+        self.assertTrue(result["single_checkpoint"])
+        self.assertEqual(result["save_interval"], 105)
         optimizer.get_grad_norm.assert_not_called()
         self.assertEqual(optimizer.param_groups, [{"lr": 1e-6, "weight_decay": 0.1}])
 
@@ -179,6 +183,12 @@ class DiagnosticTests(unittest.TestCase):
                     + "\n"
                 )
                 stream.write('{"incomplete":')
+            # Actor timing can describe the previous transfer. A long save can
+            # still delay the current transfer after all these metrics exist.
+            self.assertEqual(read_native_metrics(root, allow_pending=True, require_publication=True), [])
+            (root / "events/main.jsonl").write_text(
+                json.dumps({"type": "inference_engine_weight_checksum", "rollout_id": 25}) + "\n"
+            )
             rows = read_native_metrics(root, allow_pending=True, require_publication=True)
             self.assertEqual([row["optimizer_step"] for row in rows], [25])
 
@@ -208,6 +218,18 @@ class DiagnosticTests(unittest.TestCase):
                 )
                 sync_live_audit(root, root, "RUNNING")
                 self.assertEqual(sdk.init.call_count, 1)
+                logged = sdk.init.return_value.log.call_count
+                sent = json.loads((root / "wandb-submitted-metrics.json").read_text())
+                with patch(
+                    "experiments.tcs_async_rl.native_metrics.time.time",
+                    return_value=sent["last_heartbeat_unix"] + 121,
+                ):
+                    refreshed = sync_live_audit(root, root, "RUNNING")
+                self.assertEqual(sdk.init.call_count, 2)
+                self.assertEqual(sdk.init.return_value.log.call_count, logged)
+                self.assertEqual(refreshed["verified_points"], 1)
+                self.assertEqual(refreshed["wandb_state"], "running")
+                self.assertFalse(sdk.Settings.call_args.kwargs["x_update_finish_state"])
                 remote.state = "failed"
                 sync_live_audit(root, root, "TIMEOUT")
                 self.assertTrue(sdk.Settings.call_args.kwargs["x_update_finish_state"])

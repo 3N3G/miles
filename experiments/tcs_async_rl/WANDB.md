@@ -51,10 +51,14 @@ New configurations can set `wandb_metrics_source` to `native_vm`.
 The monitor publishes complete native optimizer rows from one VM client during training.
 Its online run ID appends `-native` to the allocation's producer run ID.
 Checkpoint restoration also restores old event files. The approved resume iteration filters out these inherited rows.
-It waits for the optimizer, reward and weight-publication metrics before publishing an active step.
+It waits for optimizer and reward metrics plus the driver's actual three-engine weight-check event before publishing an active step.
+Actor timing metrics can describe the preceding transfer. They do not prove the current transfer finished, especially during a save.
 It uses the same `audit/` series and explicit optimizer-step axis described above.
 
-The client preserves the running state between monitor polls. It closes the run only after Slurm ends.
+The client refreshes its serialized SDK heartbeat at least every two minutes, even without a new optimizer point.
+A long rollout gap otherwise lets the server mark an active GPU job as crashed. Heartbeats append no history rows.
+The delivery acknowledgement owns the heartbeat time independently of the verified-history cursor.
+The client closes the run only after Slurm ends.
 It verifies reward coordinates and run state through fresh API reads before advancing its local cursor.
 History indexing can lag a successful SDK upload. Reads bypass the SDK history cache.
 The client records upload acknowledgement separately from verified history. Monitor retries do not resend acknowledged points.

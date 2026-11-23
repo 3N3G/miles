@@ -17,6 +17,24 @@ from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
 from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates
 
 
+def published_optimizer_steps(directory, *, allow_pending):
+    path = directory / "events/main.jsonl"
+    if not path.exists():
+        return set()
+    lines = path.read_text().splitlines()
+    published = set()
+    for position, line in enumerate(lines):
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            if allow_pending and position == len(lines) - 1:
+                continue
+            raise
+        if event["type"] == "inference_engine_weight_checksum":
+            published.add(event["rollout_id"])
+    return published
+
+
 def read_native_metrics(directory, *, allow_pending=False, require_publication=False):
     # Restoring a checkpoint also restores its historical event files. The
     # reviewed checkpoint owns the boundary between inherited and new updates.
@@ -54,13 +72,16 @@ def read_native_metrics(directory, *, allow_pending=False, require_publication=F
                     raise ValueError(f"Conflicting native metric at step {step}: {key}")
                 row[key] = value
     observed = sorted(rows)
+    published = (
+        published_optimizer_steps(directory, allow_pending=allow_pending) if require_publication else set(observed)
+    )
     if allow_pending:
         complete = []
         required = {"train/pg_loss", "rollout/episode_raw_reward"}
         if require_publication:
             required.add("perf/update_weights_time")
         for step in observed:
-            if not required <= rows[step].keys():
+            if not required <= rows[step].keys() or step not in published:
                 break
             complete.append(step)
         observed = complete
@@ -71,6 +92,8 @@ def read_native_metrics(directory, *, allow_pending=False, require_publication=F
     for step in observed:
         if "train/pg_loss" not in rows[step] or "rollout/episode_raw_reward" not in rows[step]:
             raise ValueError(f"Missing optimizer or rollout metrics at step {step}")
+        if step not in published:
+            raise ValueError(f"Missing actual weight publication at step {step}")
     return [rows[step] for step in observed]
 
 
@@ -194,9 +217,12 @@ def sync_live_audit(directory, output, scheduler_state):
         last_verified = previous.get("last_verified_optimizer_step", native[0]["optimizer_step"] - 1)
         last = max(last_verified, submitted.get("last_submitted_optimizer_step", last_verified))
         pending = [row for row in native if row["optimizer_step"] > last]
-        if not pending and not terminal and last_verified == last:
+        # Long rollout gaps can outlive the server's SDK heartbeat lease. Refresh
+        # the same serialized client without appending another history point.
+        heartbeat_due = not terminal and time.time() - submitted.get("last_heartbeat_unix", 0) >= 120
+        if not pending and not terminal and last_verified == last and not heartbeat_due:
             return previous
-        if pending or terminal:
+        if pending or terminal or heartbeat_due:
             client_directory = output.parent / ".wandb-clients" / output.name
             client_directory.mkdir(parents=True, exist_ok=True)
             run = wandb.init(
@@ -225,7 +251,15 @@ def sync_live_audit(directory, output, scheduler_state):
             # do not resend a successful upload whose readback was delayed.
             _atomic_bytes(
                 submitted_path,
-                (json.dumps({"last_submitted_optimizer_step": native[-1]["optimizer_step"]}) + "\n").encode(),
+                (
+                    json.dumps(
+                        {
+                            "last_submitted_optimizer_step": native[-1]["optimizer_step"],
+                            "last_heartbeat_unix": time.time(),
+                        }
+                    )
+                    + "\n"
+                ).encode(),
             )
         expected = [(row["optimizer_step"], row["rollout/episode_raw_reward"]) for row in native]
         expected_state = ("finished" if scheduler_state == "COMPLETED" else "failed") if terminal else "running"
