@@ -133,7 +133,7 @@
       "maximum_gpu_seconds": 1800,
       "status": "RUNNING",
       "reserved_gpu_seconds": 1800,
-      "observed_allocation_seconds": 180
+      "observed_allocation_seconds": 495
     }
   ],
   "used_gpu_seconds": 4974,
@@ -145,9 +145,15 @@
       "gpus": 1,
       "maximum_gpu_seconds": 600,
       "status": "prepared"
+    },
+    {
+      "run_name": "native-unit-atlas-confirmation-v1",
+      "gpus": 1,
+      "maximum_gpu_seconds": 600,
+      "status": "prepared conditional on development guards"
     }
   ],
-  "unreserved_gpu_seconds": 10626,
-  "reserved_gpu_seconds": 2400,
-  "observed_at": "2026-11-23T07:55:02.600849+00:00"
+  "unreserved_gpu_seconds": 10026,
+  "reserved_gpu_seconds": 3000,
+  "observed_at": "2026-11-23T08:00:17.776271+00:00"
 }
