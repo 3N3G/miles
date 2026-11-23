@@ -87,7 +87,7 @@ def main():
                               'all_expert_overlap_with_native':float(overlap(routes[:,:,visit],observed[:,:,visit]).mean())})
     result={'controls':controls,'transitions':results,'routing_edits':edits,'examples':examples,
             'mean_phase_edit_norm':float(delta.norm(dim=-1).mean()),'mean_native_input_norm':float(validation.norm(dim=-1).mean()),
-            'fit_articles':128,'development_articles':16,'development_fit_article_overlap':3,
+            'fit_paragraphs':128,'fit_unique_articles':106,'development_articles':16,'development_fit_article_overlap':3,
             'not_full_model_inference':True,'final_states_used':False,
             'router_tensor_sha256':{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in a.weights.glob('*.raw')}}
     (a.out/'phase_routing.json').write_text(json.dumps(result,indent=2)+'\n')

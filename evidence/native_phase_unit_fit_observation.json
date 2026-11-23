@@ -1,0 +1,17 @@
+{
+  "source": "Old fitting native observations only. No MMLU confirmation outcomes read.",
+  "fit_paragraphs": 128,
+  "fit_unique_articles": 106,
+  "layer_index": 11,
+  "expert": 45,
+  "unit": 1127,
+  "paired_positions_selected_on_pass1_and3": 1318,
+  "negative_to_positive": 1113,
+  "positive_to_negative": 2,
+  "paired_weighted_activation_means": [
+    -0.3820665489075814,
+    0.36703711434674585
+  ],
+  "hypothesis": "Pass-dependent block routing. Correlation does not establish a global clock.",
+  "next_plan": "plans/native_unit_block_routing.md"
+}

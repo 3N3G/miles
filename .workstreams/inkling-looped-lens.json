@@ -22,9 +22,9 @@
   ],
   "jobs": [
     {
-      "id": "541774",
+      "id": "541818",
       "cluster": "hpcfund",
-      "status": "COMPLETED"
+      "status": "RUNNING"
     }
   ],
   "sessions": [
@@ -236,15 +236,22 @@
       "actor": "codex",
       "summary": "Completed native grouped unit observation and froze independent expert confirmation",
       "revision": 28
+    },
+    {
+      "id": "37df9824-a3eb-48b5-8ef3-29e80bb017f3",
+      "at": "2026-11-23T06:55:05.795800Z",
+      "actor": "codex",
+      "summary": "Started unchanged single-prompt confirmation after a failed calibration-only batching gate",
+      "revision": 29
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Native unit capture succeeded with unchanged logits. A twelve-expert numeric-routing family and four primary confirmation targets are frozen from development data only.",
-  "nextAction": "Run64+64 independent questions, three answer-order seeds, native deletions and equal-norm controls. Used27.4 of300 GPU minutes.",
+  "summary": "Native single-prompt confirmation seed0 is running. Batched calibration failed before test questions. Two later seeds remain reserved. Native unit phase candidates are recorded.",
+  "nextAction": "Complete all three fixed seeds before efficacy analysis. Prepare a causal test of phase-correlated native units using independent text.",
   "owner": "Codex",
-  "revision": 28,
-  "updatedAt": "2026-11-23T06:46:14.088495Z"
+  "revision": 29,
+  "updatedAt": "2026-11-23T06:55:05.795800Z"
 }

@@ -5,6 +5,7 @@ import torch
 from native_expert import RouterEdit,letter_metrics,render_question
 from native_expert_confirmation import OutputNormControl
 from capture_native_neurons import NativeNeuronObserver
+from native_unit_routing import UnitControl,ReaderObserver
 
 
 class TeacherExperts(torch.nn.Module):
@@ -99,6 +100,44 @@ class NativeExpertChecks(unittest.TestCase):
         for i,pos in enumerate(row['positions']):
             self.assertTrue(torch.equal(torch.from_numpy(row['activation'][i]),x[pos]*2))
             self.assertAlmostEqual(float(row['weights'][i]),.3 if pos==1 else .6,places=6)
+
+    def test_native_grouped_unit_deletion_and_norm_control(self):
+        class Grouped(torch.nn.Module):
+            def __init__(self):super().__init__();self.act_fn=torch.nn.Identity()
+            def forward(self,x,indices,weights):
+                ids,perm=indices.reshape(-1).sort();token=perm//indices.shape[-1]
+                h=self.act_fn(x[token]*(ids[:,None]+1));weighted=h*weights.reshape(-1)[perm,None]
+                inverse=torch.empty_like(perm);inverse[perm]=torch.arange(len(perm))
+                return weighted[inverse].reshape(*indices.shape,-1).sum(1)
+        m=Grouped();x=torch.arange(12,dtype=torch.float32).reshape(3,4)
+        ix=torch.tensor([[2,0],[1,2],[0,1]]);w=torch.tensor([[.2,.8],[.3,.7],[.4,.6]])
+        base=m(x,ix,w)
+        def evaluate(control):
+            handles=[m.register_forward_pre_hook(control.begin),m.act_fn.register_forward_hook(control.activation),m.register_forward_hook(control.end)]
+            try:return m(x,ix,w)
+            finally:
+                for h in handles:h.remove()
+        deleted=evaluate(UnitControl([(1,1)],visits=[1]))
+        direct=evaluate(UnitControl([(1,1)],visits=[1],direct=True))
+        self.assertTrue(torch.equal(deleted,direct))
+        expected=base.clone();expected[1,1]-=x[1,1]*2*.3;expected[2,1]-=x[2,1]*2*.6
+        self.assertTrue(torch.allclose(deleted,expected,atol=1e-6))
+        random=evaluate(UnitControl([(1,1)],visits=[1],random_seed=7))
+        self.assertTrue(torch.allclose((random-base).norm(dim=-1),(deleted-base).norm(dim=-1),atol=1e-6))
+
+    def test_native_block_reader_reconstruction(self):
+        class Reader(torch.nn.Module):
+            def __init__(self):super().__init__();self.norm=torch.nn.Identity();self.query=torch.nn.Parameter(torch.tensor([1.,0.,-.5,2.]))
+            def forward(self,blocks,partial):
+                keys=torch.cat([blocks,partial.unsqueeze(-2)],-2)
+                q=self.query.view(1,1,1,4).expand(1,3,1,4)
+                weights=(q@keys.transpose(2,3)*.5).softmax(-1)
+                return ((weights@keys)[:,:,0],)
+        torch.manual_seed(7);m=Reader();blocks=torch.randn(1,3,2,4);partial=torch.randn(1,3,4)
+        o=ReaderObserver();h=m.register_forward_hook(o)
+        try:m(blocks,partial)
+        finally:h.remove()
+        self.assertEqual(o.errors,[0]);self.assertTrue(torch.allclose(torch.from_numpy(o.rows[0]).sum(-1),torch.ones(3)))
 
 
 if __name__=='__main__':unittest.main()

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Native unit capture succeeded with unchanged logits. A twelve-expert numeric-routing family and four primary confirmation targets are frozen from development data only. Jobs: hpcfund/541774 COMPLETED
-  Next: Run64+64 independent questions, three answer-order seeds, native deletions and equal-norm controls. Used27.4 of300 GPU minutes.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Native single-prompt confirmation seed0 is running. Batched calibration failed before test questions. Two later seeds remain reserved. Native unit phase candidates are recorded. Jobs: hpcfund/541818 RUNNING
+  Next: Complete all three fixed seeds before efficacy analysis. Prepare a causal test of phase-correlated native units using independent text.
 
 ## Next / blocked
 

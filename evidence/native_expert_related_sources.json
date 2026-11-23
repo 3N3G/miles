@@ -1,0 +1,22 @@
+[
+  {
+    "title": "The Expert Strikes Back",
+    "url": "https://arxiv.org/html/2604.02178v2",
+    "use": "Readable expert labels and direct logit attribution. Its section5.3 does not perform expert-removal tests."
+  },
+  {
+    "title": "How Modular Is a Frontier Mixture-of-Experts?",
+    "url": "https://arxiv.org/abs/2606.25092",
+    "use": "Metric, corpus and random-control sensitivity of causal modularity claims."
+  },
+  {
+    "title": "Sparse Layers are Critical to Scaling Looped Language Models",
+    "url": "https://arxiv.org/html/2605.09165v3",
+    "use": "Cross-loop routing divergence is already studied. Route changes alone are not new."
+  },
+  {
+    "title": "Interpreting Inkling2 Mini",
+    "url": "https://www.goodfire.com/research/interpreting-inkling-2-mini/",
+    "use": "Prior block-reader/writer alignment and loop-dependent outliers. Test specific native units causally rather than claim the outlier observation is new."
+  }
+]

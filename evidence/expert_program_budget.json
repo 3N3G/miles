@@ -61,7 +61,7 @@
       "maximum_gpu_seconds": 600,
       "status": "COMPLETED",
       "reserved_gpu_seconds": 0,
-      "observed_allocation_seconds": 111,
+      "observed_allocation_seconds": 161,
       "actual_allocation_seconds": 161,
       "actual_gpu_seconds": 161
     },
@@ -74,19 +74,24 @@
       "status": "FAILED",
       "actual_allocation_seconds": 60,
       "actual_gpu_seconds": 60,
-      "reserved_gpu_seconds": 0
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 60
+    },
+    {
+      "run_name": "expert-confirmation-s0",
+      "job_id": "541818",
+      "gpus": 1,
+      "maximum_allocation_seconds": 1800,
+      "maximum_gpu_seconds": 1800,
+      "status": "RUNNING",
+      "reserved_gpu_seconds": 1800,
+      "observed_allocation_seconds": 260
     }
   ],
   "used_gpu_seconds": 1702,
   "remaining_gpu_seconds": 16298,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
   "pending_reservations": [
-    {
-      "run_name": "expert-confirmation-s0",
-      "gpus": 1,
-      "maximum_gpu_seconds": 1800,
-      "status": "prepared"
-    },
     {
       "run_name": "expert-confirmation-s1",
       "gpus": 1,
@@ -102,5 +107,5 @@
   ],
   "unreserved_gpu_seconds": 10898,
   "reserved_gpu_seconds": 5400,
-  "observed_at": "2026-11-23T06:42:47.138058+00:00"
+  "observed_at": "2026-11-23T06:55:06.669648+00:00"
 }

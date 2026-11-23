@@ -1237,7 +1237,6 @@
   ],
   "mean_phase_edit_norm": 2.87188720703125,
   "mean_native_input_norm": 30.53676414489746,
-  "fit_articles": 128,
   "development_articles": 16,
   "development_fit_article_overlap": 3,
   "not_full_model_inference": true,
@@ -1245,5 +1244,8 @@
   "router_tensor_sha256": {
     "bias.raw": "c017bf6e78a9b4555c977f34c802eda46224da8d76eb00d40ae11c3a8647bfcc",
     "weight.raw": "a9ec721ccbdb67a208b072eff927deab516d50a44bc34dd46c43c5112e82f16b"
-  }
+  },
+  "fit_paragraphs": 128,
+  "fit_unique_articles": 106,
+  "metadata_correction": "The original fit_articles=128 label counted paragraphs. All numerical results are unchanged. Original bytes are preserved in evidence/archive/native_router_phase_result_v1.json and the private raw archive."
 }
