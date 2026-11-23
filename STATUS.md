@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Confirmation seed0 completed. Its efficacy remains unread until seeds1/2 finish. A native unit-to-block routing test is ready on16 unseen articles. Jobs: hpcfund/541818 COMPLETED
-  Next: Run the fixed unit-routing test, then complete unchanged confirmation seeds1 and2. Used54 of300 GPU minutes.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Native unit-routing test completed with exact controls on16 unseen articles. Seed0 is privately archived and efficacy remains unread. Jobs: hpcfund/541868 COMPLETED
+  Next: Run unchanged confirmation seed1 while analyzing the independent unit-routing test, then complete seed2.
 
 ## Next / blocked
 

@@ -25,5 +25,13 @@ print(json.dumps({"stage":stage,"repo":repo,"revision":info.sha,"private":info.p
         record=json.loads(r.stdout);record['verified_at']=datetime.datetime.now(datetime.timezone.utc).isoformat()
         path=Path('evidence/artifact_archives.json');old=json.loads(path.read_text())
         if not any(x['stage']==stage and x['revision']==record['revision'] for x in old):old.append(record);path.write_text(json.dumps(old,indent=2)+'\n')
+        registry=Path('jobs.jsonl')
+        rows=[json.loads(line) for line in registry.read_text().splitlines()]
+        submissions=[r for r in rows if r.get('run_name')==stage and r.get('submission_returncode')==0 and r.get('job_id')]
+        if submissions and not any(r.get('artifact_url')==record['url'] for r in rows):
+            receipt={'at':record['verified_at'],'kind':'artifact_archive','cluster':'hpcfund',
+                     'job_id':submissions[-1]['job_id'],'run_name':stage,
+                     'artifact_url':record['url'],'artifact_revision':record['revision']}
+            with registry.open('a') as f:f.write(json.dumps(receipt)+'\n')
         print(json.dumps(record),flush=True)
 if __name__=='__main__':main()

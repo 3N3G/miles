@@ -22,7 +22,7 @@
   ],
   "jobs": [
     {
-      "id": "541818",
+      "id": "541868",
       "cluster": "hpcfund",
       "status": "COMPLETED"
     }
@@ -250,15 +250,29 @@
       "actor": "codex",
       "summary": "Completed first independent confirmation order without inspecting efficacy",
       "revision": 30
+    },
+    {
+      "id": "c3d5bc76-d8ce-44ca-adfe-ef3c42edeae0",
+      "at": "2026-11-23T07:19:02.921186Z",
+      "actor": "codex",
+      "summary": "Submitted the preregistered native unit routing test541868 on unseen text",
+      "revision": 31
+    },
+    {
+      "id": "0b092634-1ec5-4bcc-97cf-cb50619510e3",
+      "at": "2026-11-23T07:23:19.260841Z",
+      "actor": "codex",
+      "summary": "Completed all16 native unit-routing articles and preserved blind confirmation seed0",
+      "revision": 32
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Confirmation seed0 completed. Its efficacy remains unread until seeds1/2 finish. A native unit-to-block routing test is ready on16 unseen articles.",
-  "nextAction": "Run the fixed unit-routing test, then complete unchanged confirmation seeds1 and2. Used54 of300 GPU minutes.",
+  "summary": "Native unit-routing test completed with exact controls on16 unseen articles. Seed0 is privately archived and efficacy remains unread.",
+  "nextAction": "Run unchanged confirmation seed1 while analyzing the independent unit-routing test, then complete seed2.",
   "owner": "Codex",
-  "revision": 30,
-  "updatedAt": "2026-11-23T07:17:33.820509Z"
+  "revision": 32,
+  "updatedAt": "2026-11-23T07:23:19.260841Z"
 }

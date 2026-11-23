@@ -85,13 +85,25 @@
       "maximum_gpu_seconds": 1800,
       "status": "COMPLETED",
       "reserved_gpu_seconds": 0,
-      "observed_allocation_seconds": 260,
+      "observed_allocation_seconds": 1537,
       "actual_allocation_seconds": 1537,
       "actual_gpu_seconds": 1537
+    },
+    {
+      "run_name": "native-unit-routing-v1",
+      "job_id": "541868",
+      "gpus": 1,
+      "maximum_allocation_seconds": 600,
+      "maximum_gpu_seconds": 600,
+      "status": "COMPLETED",
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 234,
+      "actual_allocation_seconds": 276,
+      "actual_gpu_seconds": 276
     }
   ],
-  "used_gpu_seconds": 3239,
-  "remaining_gpu_seconds": 14761,
+  "used_gpu_seconds": 3515,
+  "remaining_gpu_seconds": 14485,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
   "pending_reservations": [
     {
@@ -105,15 +117,9 @@
       "gpus": 1,
       "maximum_gpu_seconds": 1800,
       "status": "prepared"
-    },
-    {
-      "run_name": "native-unit-routing-v1",
-      "gpus": 1,
-      "maximum_gpu_seconds": 600,
-      "status": "prepared"
     }
   ],
-  "unreserved_gpu_seconds": 10561,
-  "reserved_gpu_seconds": 4200,
-  "observed_at": "2026-11-23T06:55:06.669648+00:00"
+  "unreserved_gpu_seconds": 10885,
+  "reserved_gpu_seconds": 3600,
+  "observed_at": "2026-11-23T07:21:31.673206+00:00"
 }
