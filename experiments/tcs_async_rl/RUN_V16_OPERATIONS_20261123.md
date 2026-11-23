@@ -70,6 +70,17 @@ Session-owned VM processes: controller **1276272**, judge **1276276**, metrics o
 GPU telemetry **1276762**, hourly review **1276763**, and active reverse tunnel **1276570**.
 Verify process receipts and `/proc` before managing them. Do not start a second controller against this submission.
 
+## Exact training launcher
+
+The original submission was `sbatch /work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/job.py`, producing job 540286.
+The [saved batch file](https://huggingface.co/datasets/3N3G/internalization-runs/blob/c971823603e3efbe35c7fe78a51e2aa303fa146d/miles/easy-overfit-v16/job.py)
+invokes `experiments.tcs_async_rl.amd_preflight --run-in-allocation` with the frozen v16 configuration.
+Inside the pinned ROCm container, it runs `python3 -m experiments.tcs_async_rl.rl_smoke`.
+Despite that helper's historical name, its `backend.execute_train` call launches the actual `train_async.py` trainer.
+The exact resolved flags are in the run's archived `resolved-config.json` and `validated-native-arguments.json`.
+All three layers use the recorded source commit 4fb3ca73fe9667fe19766d1626671df8d275283e.
+These are the original submission paths, not instructions to overwrite or resubmit this completed run directory.
+
 ## Update-90 review and guards
 
 At 01:47 UTC, all 487 scalar values for updates 85–90 match the sole W&B history, without duplicate coordinates.

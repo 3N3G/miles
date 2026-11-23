@@ -67,3 +67,36 @@ After a lost acknowledgement, an identical repeated point is accepted. Conflicti
 For these configurations, do not also sync the independent AMD offline histories into the online run.
 Keep those files in the private result archive. The monitor handles active and terminal publication automatically.
 The observer adds no provider credentials to AMD. Transient W&B client files stay outside each result directory.
+
+## Key charts and summary status
+
+The selected [personal workspace](https://forge.coreweave.com/wandb/geney/tcs-async-rl/workspace) now opens these sections:
+
+- **Return:** mean raw rubric reward, on its original zero-to-seven scale.
+- **Policy health:** full/sampling entropy, sampled initialization divergence, trainer–rollout mismatch and gradient norm.
+- **Generation:** response length and the fraction reaching the token cap.
+- **Run status:** summary cards for total saved updates, new saved updates and shared judge spend.
+
+The complete automatic `audit` section remains available below, collapsed by default.
+Every key time-series panel explicitly uses `audit/optimizer_step`. The audit section also selects that axis.
+The original workspace filters, run selections and unrelated panel definitions are preserved.
+
+`monitor/*` contains final/current summary values, not optimizer history. Automatic line plots of those fields have no points,
+including when `_step` is selected. Summary cards read these fields directly.
+`_step` exists for training history, but counts publisher rows; optimizer updates are the research coordinate.
+The raw rubric reward is the displayed return. Group-centered GRPO rewards/advantages average near zero and are unsuitable for this chart.
+See [W&B's custom-axis documentation](https://docs.coreweave.com/products/wandb/track/log/customize-logging-axes).
+
+`wandb_dashboard.py` prepares a reversible workspace proposal, then applies it with an unchanged-history check:
+
+```bash
+uv run --no-project --with wandb==0.31.0 --with wandb-workspaces==0.4.13 \
+  python -m experiments.tcs_async_rl.wandb_dashboard \
+  --entity geney --project tcs-async-rl --view-name nw-nwusergenejinyang-w \
+  --run-id 261123-010857-293-native --output <new-backup-directory>
+```
+
+Inspect `view-before.json`, `spec-proposed.json` and `proposal-verification.json`.
+Repeat with `--apply` and the same directory. A concurrent workspace edit blocks an outdated proposal.
+The helper checks saved layout readback, aligned chart data, unchanged run history and unchanged terminal state.
+It never calls `wandb.init`, publishes a metric or submits a training job.

@@ -1,0 +1,53 @@
+{
+  "at_utc": "2026-11-23T04:10:14.218028+00:00",
+  "task": "User-requested key chart sections and empty monitor repair",
+  "workspace_url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/workspace",
+  "verification": {
+    "applied": true,
+    "view_id": "VmlldzoxODM0NTU1OQ==",
+    "run_path": "geney/tcs-async-rl/261123-010857-293-native",
+    "history_rows": 14,
+    "history_sha256": "f33ed7bc0c6c1ffc8a5b0e78da47b231bda622793a14696c3f0538c7a1eeddac",
+    "validated_metrics": {
+      "audit/rollout/episode_raw_reward": 14,
+      "audit/train/full_policy_entropy": 14,
+      "audit/train/sampling_entropy": 14,
+      "audit/train/kl_loss": 14,
+      "audit/train/train_rollout_kl": 14,
+      "audit/train/grad_norm": 14,
+      "audit/rollout/response_lengths": 14,
+      "audit/rollout/truncated_ratio": 14,
+      "monitor/saved_total_optimizer_updates": 99,
+      "monitor/new_durable_updates": 14,
+      "monitor/shared_judge_settled_usd": 4.6894719
+    },
+    "sections": [
+      "Return",
+      "Policy health",
+      "Generation",
+      "Run status",
+      "audit",
+      "perf",
+      "rollout",
+      "train",
+      "System",
+      "Hidden Panels"
+    ]
+  },
+  "original_section_names": [
+    "monitor",
+    "audit",
+    "perf",
+    "rollout",
+    "train",
+    "System",
+    "Hidden Panels"
+  ],
+  "cause": "monitor/* fields are summary values without history rows. The actual training history has _step 0\u201313 and audit/optimizer_step 85\u201398.",
+  "history_writes": 0,
+  "training_jobs_submitted": 0,
+  "training_source_commit": "4fb3ca73fe9667fe19766d1626671df8d275283e",
+  "backup_directory": "/home/ubuntu/.cache/miles/tcs-async-rl/dashboards/20261123-return",
+  "script_sha256": "0b53a2d19a447297c41a1b182460d3771d227a116b0993ba37b04cf5d7bb46b5",
+  "validation": "Live workspace API readback, aligned chart data and unchanged full history/terminal state; Black/isort/Ruff passed. Browser rendering was not inspected."
+}
