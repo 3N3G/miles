@@ -1,0 +1,212 @@
+{
+  "primary": [
+    {
+      "metric": "pass1_block2_weight_change_above_random",
+      "mean": 8.086984356244405e-05,
+      "interval": [
+        1.6815898319085437e-05,
+        0.0001673709290723008
+      ],
+      "family_size": 3,
+      "n_articles": 16,
+      "sampling_unit": "article",
+      "resamples": 10000,
+      "seed": 1729
+    },
+    {
+      "metric": "pass3_block2_weight_change_above_random",
+      "mean": -0.0001767762005329132,
+      "interval": [
+        -0.0003659568106134733,
+        -5.282027026017499e-05
+      ],
+      "family_size": 3,
+      "n_articles": 16,
+      "sampling_unit": "article",
+      "resamples": 10000,
+      "seed": 1729
+    },
+    {
+      "metric": "pass3_minus_pass1_adjusted_change",
+      "mean": -0.0002576460440953573,
+      "interval": [
+        -0.0005159714259207248,
+        -7.441348085800806e-05
+      ],
+      "family_size": 3,
+      "n_articles": 16,
+      "sampling_unit": "article",
+      "resamples": 10000,
+      "seed": 1729
+    }
+  ],
+  "passes_preregistered_sign_reversal_rule": true,
+  "native_unit_replication": [
+    {
+      "id": "unit-routing-000",
+      "paired_selected_positions": 2,
+      "negative_to_positive": 2,
+      "positive_to_negative": 0,
+      "mean_early": -0.2796629071235657,
+      "mean_late": 0.42650194466114044
+    },
+    {
+      "id": "unit-routing-001",
+      "paired_selected_positions": 4,
+      "negative_to_positive": 3,
+      "positive_to_negative": 0,
+      "mean_early": -0.10334465466439724,
+      "mean_late": 0.38769201189279556
+    },
+    {
+      "id": "unit-routing-002",
+      "paired_selected_positions": 12,
+      "negative_to_positive": 10,
+      "positive_to_negative": 0,
+      "mean_early": -0.0476059890158164,
+      "mean_late": 0.2623105465124051
+    },
+    {
+      "id": "unit-routing-003",
+      "paired_selected_positions": 32,
+      "negative_to_positive": 30,
+      "positive_to_negative": 0,
+      "mean_early": -0.5386903536855243,
+      "mean_late": 0.3695995182442857
+    },
+    {
+      "id": "unit-routing-004",
+      "paired_selected_positions": 0,
+      "negative_to_positive": 0,
+      "positive_to_negative": 0,
+      "mean_early": null,
+      "mean_late": null
+    },
+    {
+      "id": "unit-routing-005",
+      "paired_selected_positions": 1,
+      "negative_to_positive": 1,
+      "positive_to_negative": 0,
+      "mean_early": -0.32122987508773804,
+      "mean_late": 0.3723478615283966
+    },
+    {
+      "id": "unit-routing-006",
+      "paired_selected_positions": 0,
+      "negative_to_positive": 0,
+      "positive_to_negative": 0,
+      "mean_early": null,
+      "mean_late": null
+    },
+    {
+      "id": "unit-routing-007",
+      "paired_selected_positions": 110,
+      "negative_to_positive": 96,
+      "positive_to_negative": 0,
+      "mean_early": -0.5074658920649778,
+      "mean_late": 0.6305340670133857
+    },
+    {
+      "id": "unit-routing-008",
+      "paired_selected_positions": 3,
+      "negative_to_positive": 3,
+      "positive_to_negative": 0,
+      "mean_early": -0.09449848781029384,
+      "mean_late": 0.5028136769930521
+    },
+    {
+      "id": "unit-routing-009",
+      "paired_selected_positions": 88,
+      "negative_to_positive": 65,
+      "positive_to_negative": 0,
+      "mean_early": -0.5773230852765582,
+      "mean_late": 0.29935818285130983
+    },
+    {
+      "id": "unit-routing-010",
+      "paired_selected_positions": 36,
+      "negative_to_positive": 28,
+      "positive_to_negative": 0,
+      "mean_early": -0.25881317508820856,
+      "mean_late": 0.26920462487679386
+    },
+    {
+      "id": "unit-routing-011",
+      "paired_selected_positions": 0,
+      "negative_to_positive": 0,
+      "positive_to_negative": 0,
+      "mean_early": null,
+      "mean_late": null
+    },
+    {
+      "id": "unit-routing-012",
+      "paired_selected_positions": 15,
+      "negative_to_positive": 14,
+      "positive_to_negative": 0,
+      "mean_early": -0.40213594970603783,
+      "mean_late": 0.32338841607173285
+    },
+    {
+      "id": "unit-routing-013",
+      "paired_selected_positions": 7,
+      "negative_to_positive": 6,
+      "positive_to_negative": 0,
+      "mean_early": -0.30371202395430635,
+      "mean_late": 0.33885793813637327
+    },
+    {
+      "id": "unit-routing-014",
+      "paired_selected_positions": 1,
+      "negative_to_positive": 1,
+      "positive_to_negative": 0,
+      "mean_early": -0.43131324648857117,
+      "mean_late": 0.4857643246650696
+    },
+    {
+      "id": "unit-routing-015",
+      "paired_selected_positions": 1,
+      "negative_to_positive": 1,
+      "positive_to_negative": 0,
+      "mean_early": -0.4137037992477417,
+      "mean_late": 0.24604956805706024
+    }
+  ],
+  "native_factor_sign_accounting": {
+    "paired_positions": 312,
+    "negative_to_positive": 260,
+    "gate_sign_changes_among_output_flips": 0,
+    "up_sign_changes_among_output_flips": 260,
+    "means_weighted_output_gate_up_pass1_then_pass3": [
+      -0.4626050876641574,
+      -1.9942345252403846,
+      1.1208145924103565,
+      0.42502484496817955,
+      -1.8699356470352564,
+      -1.3026309869228265
+    ],
+    "status": "Descriptive algebraic decomposition of native unit values; no additional primary test."
+  },
+  "limits": [
+    "Native local block routing is the tested outcome. This does not establish a global iteration counter.",
+    "All comparisons except the three primary intervals are descriptive, unadjusted95% intervals."
+  ],
+  "native_controls": [
+    {
+      "condition": "identity",
+      "max_logit_error": 0,
+      "max_reader_error": 0
+    },
+    {
+      "condition": "absent",
+      "max_logit_error": 0,
+      "max_reader_error": 0
+    },
+    {
+      "condition": "native_direct_unit_vs_output_counterfactual",
+      "max_logit_error": 0,
+      "max_reader_error": 0
+    }
+  ],
+  "job_id": "541868",
+  "allocated_gpu_seconds": 276
+}

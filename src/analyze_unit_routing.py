@@ -41,18 +41,28 @@ def main():
                             'next_token_nll_increase':interval(nll,draw),'mean_kl':float(np.mean([np.mean(r['kl']) for r in records])),
                             'mean_top1_agreement':float(np.mean([r['native_top1_agreement'] for r in records])),
                             'aggregate_norm_relative_error':abs(actual-intended)/max(intended,1e-20)})
-    unit_values=defaultdict(dict);fit_counts=[]
+    unit_values=defaultdict(dict);fit_counts=[];factor_values=[]
     for q in sorted(paired):
-        values=json.loads((a.run/(q+'-native_units.json')).read_text());z={}
+        values=json.loads((a.run/(q+'-native_units.json')).read_text());z={};factors={}
         for row in values:
             if row['expert']==45 and row['unit']==1127:
                 z[row['visit']]=dict(zip(row['positions'],row['weighted_activation']))
-        both=sorted(set(z[1])&set(z[3])&set(range(16,128)))
-        early=np.array([z[1][p] for p in both]);late=np.array([z[3][p] for p in both])
+                factors[row['visit']]={pos:(h,g,u) for pos,h,g,u in zip(row['positions'],row['weighted_activation'],row['raw_gate'],row['raw_up'])}
+        first=z.get(1,{});third=z.get(3,{})
+        both=sorted(set(first)&set(third)&set(range(16,128)))
+        early=np.array([first[p] for p in both]);late=np.array([third[p] for p in both])
+        factor_values.extend([*factors[1][pos],*factors[3][pos]] for pos in both)
         fit_counts.append({'id':q,'paired_selected_positions':len(both),'negative_to_positive':int(((early<0)&(late>0)).sum()),
                            'positive_to_negative':int(((early>0)&(late<0)).sum()),'mean_early':float(early.mean()) if len(early) else None,
                            'mean_late':float(late.mean()) if len(late) else None})
+    factors=np.asarray(factor_values);flips=(factors[:,0]<0)&(factors[:,3]>0)
+    factor_summary={'paired_positions':len(factors),'negative_to_positive':int(flips.sum()),
+                    'gate_sign_changes_among_output_flips':int((flips&(factors[:,1]*factors[:,4]<0)).sum()),
+                    'up_sign_changes_among_output_flips':int((flips&(factors[:,2]*factors[:,5]<0)).sum()),
+                    'means_weighted_output_gate_up_pass1_then_pass3':factors.mean(0).tolist(),
+                    'status':'Descriptive algebraic decomposition of native unit values; no additional primary test.'}
     result={'primary':primary,'passes_preregistered_sign_reversal_rule':bool(reversal),'descriptive':descriptive,'native_unit_replication':fit_counts,
+            'native_factor_sign_accounting':factor_summary,
             'article_interactions':[{'id':q,'adjusted_pass1':float(c[0][i]),'adjusted_pass3':float(c[1][i]),'interaction':float(c[1][i]-c[0][i])} for i,q in enumerate(sorted(paired))],
             'limits':['Native local block routing is the tested outcome. This does not establish a global iteration counter.',
                       'All comparisons except the three primary intervals are descriptive, unadjusted95% intervals.']}

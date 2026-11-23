@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Native unit-routing test completed with exact controls on16 unseen articles. Seed0 is privately archived and efficacy remains unread. Jobs: hpcfund/541868 COMPLETED
-  Next: Run unchanged confirmation seed1 while analyzing the independent unit-routing test, then complete seed2.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): On16 unseen articles, a native unit reverses its block-routing effect across passes with corrected intervals. All260 replicated output sign flips occur in the up input. Jobs: hpcfund/541880 RUNNING
+  Next: Finish blind confirmation seeds1/2 and explain the routing result with exact local replay.
 
 ## Next / blocked
 

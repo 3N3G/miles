@@ -4,27 +4,27 @@
   "sources": [],
   "evidence": [
     {
-      "path": "plans/native_expert_program.md",
-      "label": "Autonomous program and decision rules"
+      "path": "evidence/native_unit_routing_result.json",
+      "label": "Preregistered native causal routing test and exact controls"
     },
     {
-      "path": "plans/native_expert_calibration.md",
-      "label": "First native causal screen"
+      "path": "evidence/native_expert_screen_result.json",
+      "label": "Replicated number routing and primary loss nulls"
     },
     {
       "path": "evidence/expert_program_budget.json",
       "label": "Five-hour GPU accounting"
     },
     {
-      "path": "evidence/native_expert_inputs.json",
-      "label": "Frozen calibration, discovery and independent test cohorts"
+      "path": "plans/native_expert_confirmation_serial.md",
+      "label": "Unchanged independent task confirmation"
     }
   ],
   "jobs": [
     {
-      "id": "541868",
+      "id": "541880",
       "cluster": "hpcfund",
-      "status": "COMPLETED"
+      "status": "RUNNING"
     }
   ],
   "sessions": [
@@ -264,15 +264,22 @@
       "actor": "codex",
       "summary": "Completed all16 native unit-routing articles and preserved blind confirmation seed0",
       "revision": 32
+    },
+    {
+      "id": "3ec62525-c3a9-4b6b-a234-e4ce4c112242",
+      "at": "2026-11-23T07:39:33.387576Z",
+      "actor": "codex",
+      "summary": "Confirmed a small native routing sign reversal and identified its value-input sign change",
+      "revision": 33
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Native unit-routing test completed with exact controls on16 unseen articles. Seed0 is privately archived and efficacy remains unread.",
-  "nextAction": "Run unchanged confirmation seed1 while analyzing the independent unit-routing test, then complete seed2.",
+  "summary": "On16 unseen articles, a native unit reverses its block-routing effect across passes with corrected intervals. All260 replicated output sign flips occur in the up input.",
+  "nextAction": "Finish blind confirmation seeds1/2 and explain the routing result with exact local replay.",
   "owner": "Codex",
-  "revision": 32,
-  "updatedAt": "2026-11-23T07:23:19.260841Z"
+  "revision": 33,
+  "updatedAt": "2026-11-23T07:39:33.387576Z"
 }

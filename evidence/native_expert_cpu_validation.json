@@ -17,5 +17,6 @@
   "grouped_native_observer_teacher": true,
   "causal_padded_batch_readout_teacher": true,
   "native_unit_counterfactual_teacher": true,
-  "native_block_reader_reconstruction_teacher": true
+  "native_block_reader_reconstruction_teacher": true,
+  "rms_scale_invariance_teacher_passed": true
 }
