@@ -1,0 +1,12 @@
+{
+  "selection": "Article nearest median numeric-target-minus-other loss contrast among42 eligible articles. Cue target nearest its median cue loss change.",
+  "article": "= Hed PE =",
+  "id": "text-confirmation-025",
+  "article_mean_loss_change": -0.005475706752255425,
+  "article_numeric_target_minus_other_loss_contrast": -0.014881882778104018,
+  "prediction_position": 87,
+  "context": "ught and DJ Product \u00a9 196",
+  "target_token": "196",
+  "loss_change": 0.00576019287109375,
+  "target_is_numeric_cue": true
+}

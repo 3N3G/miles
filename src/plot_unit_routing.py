@@ -15,7 +15,7 @@ def main():
     fig,ax=plt.subplots(figsize=(7.2,4.8));x=np.array([1,3])
     ax.errorbar(x,means,yerr=np.stack([means-bounds[:,0],bounds[:,1]-means]),fmt='o',color='#0072B2',capsize=5,markersize=7)
     ax.axhline(0,color='#777777',lw=.9)
-    ax.set(xticks=[1,3],xticklabels=['Pass 1','Pass 3'],xlim=(.5,3.5),
+    ax.set(xticks=[1,3],xticklabels=['Pass 1','Pass 3'],xlim=(.5,3.8),
            ylabel='Change in Block 2 read weight (percentage points)',
            title='The same native unit has opposite routing effects')
     for i,mean in zip(x,means):ax.annotate(f'{mean:+.3f} pp',(i,mean),xytext=(12,0),textcoords='offset points',va='center',fontsize=11)
