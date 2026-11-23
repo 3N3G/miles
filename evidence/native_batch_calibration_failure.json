@@ -1,0 +1,17 @@
+{
+  "calibration_examples": 8,
+  "same_predictions": 8,
+  "max_logit_error": 3.1352732181549072,
+  "max_choice_gold_log_probability_error": 0.4015345573425293,
+  "max_deletion_effect_error": 0.4796266555786133,
+  "identity_error": 0,
+  "router_vs_output_deletion_error": 0,
+  "tolerances_nats": 0.05,
+  "batch_size_tested": 8,
+  "passed": false,
+  "fallback_if_failed": "single prompt forwards, no padding",
+  "job_id": "541796",
+  "actual_allocation_seconds": 60,
+  "confirmation_questions_read": 0,
+  "repair_plan": "plans/native_expert_confirmation_serial.md"
+}
