@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Review the user-requested learning diagnosis, including actual batch size and GRPO amplification of near-ceiling grading disputes Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
+  Next: Record verified batch settings, the update-91 normalization example, and evidence-ranked hypotheses without changing an experiment.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Requested W&B repair complete: return and key metrics have separate sections, summary-only monitor fields are cards, all fourteen history rows are unchanged Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Dashboard and launcher explanation are complete. The underlying RL investigation still awaits the human calibration and next-stage research decision already recorded in QUESTIONS.m
+- Nothing recorded.
 
 ## Finished
 

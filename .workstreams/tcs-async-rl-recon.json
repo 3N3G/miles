@@ -2889,15 +2889,22 @@
       "actor": "codex",
       "summary": "Requested W&B repair complete: return and key metrics have separate sections, summary-only monitor fields are cards, all fourteen history rows are unchanged",
       "revision": 268
+    },
+    {
+      "id": "47320fb0-ee93-4e46-b956-9127bde07bdc",
+      "at": "2026-11-23T04:40:46.624149Z",
+      "actor": "codex",
+      "summary": "Review the user-requested learning diagnosis, including actual batch size and GRPO amplification of near-ceiling grading disputes",
+      "revision": 269
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "needs-you",
-  "summary": "Requested W&B repair complete: return and key metrics have separate sections, summary-only monitor fields are cards, all fourteen history rows are unchanged",
-  "nextAction": "Dashboard and launcher explanation are complete. The underlying RL investigation still awaits the human calibration and next-stage research decision already recorded in QUESTIONS.md.",
+  "state": "running",
+  "summary": "Review the user-requested learning diagnosis, including actual batch size and GRPO amplification of near-ceiling grading disputes",
+  "nextAction": "Record verified batch settings, the update-91 normalization example, and evidence-ranked hypotheses without changing an experiment.",
   "owner": "Codex",
-  "revision": 268,
-  "updatedAt": "2026-11-23T04:12:45.688762Z"
+  "revision": 269,
+  "updatedAt": "2026-11-23T04:40:46.624149Z"
 }
