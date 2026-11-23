@@ -49,5 +49,29 @@
   "training_source_commit": "4fb3ca73fe9667fe19766d1626671df8d275283e",
   "backup_directory": "/home/ubuntu/.cache/miles/tcs-async-rl/dashboards/20261123-return",
   "script_sha256": "0b53a2d19a447297c41a1b182460d3771d227a116b0993ba37b04cf5d7bb46b5",
-  "validation": "Live workspace API readback, aligned chart data and unchanged full history/terminal state; Black/isort/Ruff passed. Browser rendering was not inspected."
+  "validation": "Live workspace API readback, aligned chart data and unchanged full history/terminal state; Black/isort/Ruff passed. Browser rendering was not inspected.",
+  "layout_helper_commit": "43aedb42",
+  "private_backup_archive": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/44c41cd9d0cd0d7c7bd475376f0167fb338ea328/miles/wandb-dashboard-20261123",
+  "backup_archive_verification": {
+    "revision": "44c41cd9d0cd0d7c7bd475376f0167fb338ea328",
+    "exact_readbacks": 4,
+    "files": [
+      {
+        "file": "view-before.json",
+        "sha256": "15431b2411f1122d8de4b7f1e7ff2edff17ae9af237c7a2d0b47822a44b6b125"
+      },
+      {
+        "file": "view-after.json",
+        "sha256": "1482e31e28d35a9192acbd9207473619f48afffdee96ef8145b615e681792b41"
+      },
+      {
+        "file": "verification.json",
+        "sha256": "42bb78ef6d1e3296562d0af6ca5fd39443894a3b1a1ceec1b3da73423626309e"
+      },
+      {
+        "file": "chart-data-verification.json",
+        "sha256": "349c08e67092ea90856b7b29286a43c6567e64f1cb460da369c33b80dabb3acf"
+      }
+    ]
+  }
 }

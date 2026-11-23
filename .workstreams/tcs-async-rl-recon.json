@@ -807,6 +807,10 @@
     {
       "path": "experiments/tcs_async_rl/BOUNDED_CONTINUATION_RESULTS_20261123.md",
       "label": "Completed bounded continuation and complete saved-path comparison"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/wandb_dashboard_20261123.json",
+      "label": "Verified key charts, monitor summary cards and unchanged 14-row history"
     }
   ],
   "jobs": [
@@ -2878,15 +2882,22 @@
       "actor": "codex",
       "summary": "Inspect the exact AMD training launcher and repair W&B axes and key-metric sections at the user’s request",
       "revision": 267
+    },
+    {
+      "id": "74e3ae32-4268-408d-9931-813504e22b65",
+      "at": "2026-11-23T04:12:45.688762Z",
+      "actor": "codex",
+      "summary": "Requested W&B repair complete: return and key metrics have separate sections, summary-only monitor fields are cards, all fourteen history rows are unchanged",
+      "revision": 268
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "Inspect the exact AMD training launcher and repair W&B axes and key-metric sections at the user’s request",
-  "nextAction": "Inspect native history and saved dashboard layouts, preserve the current view, then arrange return and core RL metrics with optimizer-step axes.",
+  "state": "needs-you",
+  "summary": "Requested W&B repair complete: return and key metrics have separate sections, summary-only monitor fields are cards, all fourteen history rows are unchanged",
+  "nextAction": "Dashboard and launcher explanation are complete. The underlying RL investigation still awaits the human calibration and next-stage research decision already recorded in QUESTIONS.md.",
   "owner": "Codex",
-  "revision": 267,
-  "updatedAt": "2026-11-23T04:00:47.689299Z"
+  "revision": 268,
+  "updatedAt": "2026-11-23T04:12:45.688762Z"
 }
