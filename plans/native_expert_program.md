@@ -6,7 +6,8 @@ On 2026-11-23 the user requested autonomous investigation of the native experts,
 with up to five GPU hours. This covers the adaptive stages below and their
 repairs. The model and checkpoint remain pinned in `evidence/source_pins.json`.
 Count the previous 350-second pilot conservatively within 18,000 GPU seconds.
-Run one GPU at a time. Reserve each queued job's entire time limit before
+Run one allocation at a time. Count every allocated GPU, including loading
+and waiting within a job. Reserve each queued job's entire GPU time limit before
 submission. Record actual allocation seconds after completion. Stop submitting
 when the reserved plus used time reaches the cap.
 
