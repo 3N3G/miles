@@ -109,3 +109,41 @@ The local user-review drafts are `SURVEY.md` and
 They are preserved on local branch `review/looping-survey` and are not pushed.
 The source bibliography and operational state may be backed up normally.
 All earlier experimental reports and review branches remain preserved.
+
+
+## Shared-operator pilot preparation on 2026-11-22
+
+The user selected the shared-operator direction. The required allocation budget
+has not yet been specified. No new GPU job or native-model inference ran.
+Only job-list and existing-artifact inspections were performed on AMD.
+The unrelated live job observed during that inspection was not modified.
+
+The proposed experiment is `plans/shared_operator_pilot.md`. Its active config
+is `evidence/operator_pilot_config.json`. The active fixed inputs are
+`evidence/operator_pilot_inputs_articles.json`: 128 fit paragraphs, 16 development
+paragraphs and one paragraph from each of 32 new final articles. The earlier
+paragraph-sampling draft remains unchanged in `evidence/operator_pilot_inputs.json`.
+No model outputs were collected from either draft during preparation.
+
+Nine CPU checks passed, including capture/replay on a small CPU model and
+invariance of fitting when the final values are replaced with extreme values.
+The planted-teacher and shuffled-pair control results are implementation checks,
+not evidence about Mini. Their numbers and environment are in
+`evidence/operator_pilot_validation.json`.
+
+Prepared submission, after the allocation decision is recorded and pushed:
+
+```sh
+.venv/bin/python src/submit_stage.py --name shared-operator-v1 \
+  --plan plans/shared_operator_pilot.md --minutes 30 --partition mi2101x \
+  python src/operator_pilot.py --config evidence/operator_pilot_config.json \
+  --inputs evidence/operator_pilot_inputs_articles.json \
+  --out /work1/aviralkumar/geney/inkling-interp-data/runs/shared-operator-v1
+```
+
+The program refuses model execution while the config's allocation status is
+pending. After execution, produce plots with `src/analyze_operator_pilot.py`
+on the VM using copied small analysis artifacts. Preserve all raw failures.
+Archive results with `push-run` and record the private immutable path.
+Keep trained surrogate checkpoints on the cluster, with hashes recorded, rather
+than uploading model checkpoints. No mentor-facing reporting is authorized.

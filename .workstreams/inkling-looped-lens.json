@@ -4,28 +4,28 @@
   "sources": [],
   "evidence": [
     {
+      "path": "plans/shared_operator_pilot.md",
+      "label": "Prepared experiment and exact proposed budget"
+    },
+    {
+      "path": "evidence/operator_pilot_config.json",
+      "label": "Ready configuration; submission blocked until budget approval"
+    },
+    {
+      "path": "evidence/operator_pilot_validation.json",
+      "label": "Nine CPU controls and source hashes"
+    },
+    {
+      "path": "evidence/operator_pilot_inputs_articles.json",
+      "label": "Fixed 128/16/32 input split with article sampling"
+    },
+    {
       "path": "evidence/interpretability_survey_sources.json",
-      "label": "Survey scope, coverage and 80 linked references"
-    },
-    {
-      "path": "evidence/interpretability_survey_validation.json",
-      "label": "Catalog structure and source mapping checks"
-    },
-    {
-      "path": "evidence/country_horizon_summary.json",
-      "label": "Prior matched direction controls and recovery traces"
-    },
-    {
-      "path": "evidence/period_confirmation_summary.json",
-      "label": "Prior recurrent three-pass observations"
-    },
-    {
-      "path": "evidence/final_validation.json",
-      "label": "Prior experimental validation"
+      "label": "Literature map supporting the selected direction"
     },
     {
       "path": "evidence/artifact_archives.json",
-      "label": "Private immutable experimental results"
+      "label": "Earlier private experimental results"
     }
   ],
   "jobs": [],
@@ -147,15 +147,22 @@
       "actor": "codex",
       "summary": "Resumed the user-selected shared-operator investigation and began a bounded transcoder pilot",
       "revision": 15
+    },
+    {
+      "id": "be8d1e89-40f0-4e57-b924-904308e4248c",
+      "at": "2026-11-23T00:44:21.224051Z",
+      "actor": "codex",
+      "summary": "Prepared and CPU-validated the shared-operator pilot; awaiting the required allocation cap",
+      "revision": 16
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Test a compact surrogate for one tied Inkling sublayer across its three passes, then causally validate any reusable features.",
-  "state": "running",
-  "summary": "The user asked to follow the shared-operator suspicion. I am auditing the exact hook, existing captures and controls, then preparing a bounded pilot. Existing research and reports remain preserved.",
-  "nextAction": "Prepare the experiment protocol and tested implementation. Resolve the project-required compute budget before any new GPU submission.",
+  "state": "needs-you",
+  "summary": "The shared-operator pilot is ready: one tied sublayer, shared versus three separate sparse surrogates, three seeds, 32 final articles, native replacement and feature controls. Nine CPU checks passed. No new GPU job or native Mini inference ran.",
+  "nextAction": "Approve the proposed single MI210 job capped at 30 allocation minutes, or specify another cap. The research direction is already selected.",
   "owner": "Codex",
-  "revision": 15,
-  "updatedAt": "2026-11-23T00:29:02.110943Z"
+  "revision": 16,
+  "updatedAt": "2026-11-23T00:44:21.224051Z"
 }

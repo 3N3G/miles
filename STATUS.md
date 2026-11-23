@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The user asked to follow the shared-operator suspicion. I am auditing the exact hook, existing captures and controls, then preparing a bounded pilot. Existing research and reports remain preserved.
-  Next: Prepare the experiment protocol and tested implementation. Resolve the project-required compute budget before any new GPU submission.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The shared-operator pilot is ready: one tied sublayer, shared versus three separate sparse surrogates, three seeds, 32 final articles, native replacement and feature controls. Nine CPU checks passed. 
+  Next: Approve the proposed single MI210 job capped at 30 allocation minutes, or specify another cap. The research direction is already selected.
 
 ## Finished
 

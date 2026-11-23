@@ -1,0 +1,52 @@
+{
+  "status": "CPU implementation checks passed; no new Inkling inference or GPU submission",
+  "tests_passed": 9,
+  "controls": [
+    "Sparse budget and native-unit feature decomposition",
+    "Checkpoint round trip",
+    "Visit and last-token edit scope",
+    "Matched-norm random control",
+    "Identity and per-pass replacements",
+    "Known affine ridge recovery",
+    "Planted nonlinear sparse teacher versus shuffled pairs",
+    "Article-level paired bootstrap",
+    "Capture hooks and router shapes on a small CPU model",
+    "Frozen-fit invariance when final values are poisoned"
+  ],
+  "planted_control": {
+    "paired_test_nmse": 0.0023686045315116644,
+    "shuffled_test_nmse": 1.058240294456482,
+    "not_an_inkling_result": true
+  },
+  "input_counts": {
+    "fit_paragraphs": 128,
+    "validation_paragraphs": 16,
+    "final_articles": 32,
+    "tokens_per_input": 64,
+    "positions_per_pass": 48,
+    "passes": 3
+  },
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.5",
+    "pyarrow": "26.0.1",
+    "tokenizers": "0.23.3"
+  },
+  "sha256": {
+    "src/operator_surrogate.py": "f8878ab452855f05f9f1f5985917ee412a5381b588ea96a425b73c8e0d1a0de4",
+    "src/operator_pilot.py": "d28dc616f0bd9e0437f7724bba258e72c39c2069cc5505b3f83a013e521a53dc",
+    "src/operator_native_checks.py": "067f3124d54ebfcaf0eeda451eae5e5aa6e63e68211ffb54b7833bd9d41205d9",
+    "src/analyze_operator_pilot.py": "7ca3890fd5236a13288237cbb51194278e89c35c74abe9a38416cbdb27d9b195",
+    "src/test_operator_surrogate.py": "6c14786cfb8a1bc6f3cf5c948c4e0db1b5860e7fa208beea5a9579beb78e6ee4",
+    "src/prepare_operator_inputs.py": "0c67cd0d3515f920a34f8edbb7033e9c1ce979bdeae659c75a5fc0789bac899b",
+    "evidence/operator_pilot_config.json": "5dcd776eca27570b0402d0635fa987322eaea705e7a19cd9e2464b37b0df4e29",
+    "evidence/operator_pilot_inputs_articles.json": "76be3edd6050a127c841fdbc5a1412e445fbb7ec3fe780a689bfbf851d7ae10f"
+  },
+  "preserved_unused_draft": "evidence/operator_pilot_inputs.json",
+  "limits": [
+    "Native Mini replay and GPU fitting remain unverified until the proposed job runs.",
+    "CPU teacher recovery does not establish feature quality or fidelity on Mini.",
+    "The final article states have not been collected."
+  ]
+}
