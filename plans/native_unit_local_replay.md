@@ -13,6 +13,15 @@ It is not another independent confirmation, and it cannot change the original
 test, uncertainty intervals or MMLU conditions. MMLU efficacy remains unread
 until the three fixed orders finish.
 
+Also decompose the unit's gate and up projections into the current depth path
+and direct previous-loop message path. Recompute the native message keep/gain
+coefficients and require exact reconstruction of the mixed input. Apply the
+same observed RMS normalization to both terms. Keep normalization/cast and
+projection-rounding residuals as separate terms. The current depth path can
+already contain earlier-loop information, so this is a direct-path accounting,
+not a separation of all information by its original loop. Record all three
+passes. No new intervention or significance test is added.
+
 ## Fixed replay and controls
 
 Use the same pinned model, backend,128-token inputs and exact single-prompt

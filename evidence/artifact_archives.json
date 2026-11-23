@@ -307,5 +307,14 @@
     "files": 6,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/23555fe8b4af48748bb8d6ad92a159653a786d17/inkling-interp/expert-confirmation-s0",
     "verified_at": "2026-11-23T07:22:39.884464+00:00"
+  },
+  {
+    "stage": "native-unit-routing-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "a879928ce44fc602960bf53ecda55e279102568d",
+    "private": true,
+    "files": 393,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a879928ce44fc602960bf53ecda55e279102568d/inkling-interp/native-unit-routing-v1",
+    "verified_at": "2026-11-23T07:40:58.467088+00:00"
   }
 ]
