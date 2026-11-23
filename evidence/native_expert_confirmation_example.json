@@ -1,0 +1,18 @@
+{
+  "selection": "Question nearest the median three-order loss change for L12-E105.",
+  "id": "elementary_mathematics-test-337",
+  "question": "What is a reasonable height for a doorway?",
+  "gold_answer_text": "2 m",
+  "seed0_gold": "C",
+  "mean_three_order_loss_change": -7.549899881572248e-07,
+  "seed0_predictions": {
+    "clean": "C",
+    "L12-E105-all": "C",
+    "L12-E105-random": "C"
+  },
+  "seed0_correct_choice_probabilities": {
+    "clean": 0.9999960660934448,
+    "L12-E105-all": 0.9999973773956299,
+    "L12-E105-random": 0.9999955892562866
+  }
+}

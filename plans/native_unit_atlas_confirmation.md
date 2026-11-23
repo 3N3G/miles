@@ -87,6 +87,15 @@ on the fixed selected units and this reader. Otherwise report the limit of
 local linear forecasts at native deletion size. Neither result establishes
 an arithmetic expert, a global iteration counter or improved final answers.
 
+## Frozen identities
+
+Development selected phase units83:1107,52:585,58:285 and44:492, plus
+stable comparators38:1033 and111:310. Keep known comparators45:1127 and3:664.
+All are in physical layer12. The exact selected-unit file is
+`evidence/native_unit_atlas_spec.json`, SHA256
+`912eef5da0ec779a58861c60f86c1276fcf6f49bcdaaa8cf356855f1c9b94c28`.
+This was recorded before starting any new-article inference.
+
 ## Results
 
 Pending.

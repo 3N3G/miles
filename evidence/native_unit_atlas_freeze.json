@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-23T08:17:19.158919+00:00",
+  "sha256": "912eef5da0ec779a58861c60f86c1276fcf6f49bcdaaa8cf356855f1c9b94c28",
+  "source_stage": "native-unit-atlas-v1",
+  "source_manifest": {
+    "status": "completed",
+    "wall_seconds": 57.59860372543335,
+    "source_commit": "3956147a282bca87e49b627d4577490950c61912",
+    "model": "thinkingmachines/Inkling-2-Mini",
+    "revision": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+    "peak_gpu_bytes": 54601935872,
+    "scope": "Development atlas on the existing 16 articles. No new independent claim."
+  },
+  "held_out_stage_not_started": true
+}

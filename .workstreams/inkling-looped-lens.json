@@ -4,32 +4,32 @@
   "sources": [],
   "evidence": [
     {
+      "path": "evidence/native_expert_confirmation_result.json",
+      "label": "Fixed independent task confirmation"
+    },
+    {
       "path": "evidence/native_unit_routing_result.json",
       "label": "Independent native unit sign reversal"
     },
     {
       "path": "evidence/native_unit_replay_result.json",
-      "label": "Exact replay and normalization decomposition"
+      "label": "Exact normalization explanation"
     },
     {
       "path": "evidence/expert_program_budget.json",
       "label": "Five-hour GPU accounting"
-    },
-    {
-      "path": "plans/native_unit_atlas.md",
-      "label": "Native unit atlas development plan"
     }
   ],
   "jobs": [
     {
-      "id": "541961",
+      "id": "541963",
       "cluster": "hpcfund",
       "status": "COMPLETED"
     },
     {
-      "id": "541963",
+      "id": "542012",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -290,15 +290,22 @@
       "actor": "codex",
       "summary": "Exact replay identifies normalization reversal and separates direct message contributions",
       "revision": 35
+    },
+    {
+      "id": "e416ee0e-3609-431b-bdeb-c8bbdff98b18",
+      "at": "2026-11-23T08:15:51.120866Z",
+      "actor": "codex",
+      "summary": "Complete the fixed expert confirmation and start native unit atlas development",
+      "revision": 36
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Exact replay matches all128 native reader changes. For the phase-sensitive unit, normalization reverses the dot-product contribution on both tested passes.",
-  "nextAction": "Finish the third blind task order and develop a normalization-aware atlas of native units.",
+  "summary": "None of four expert candidates passed all fixed math-specific causal criteria on64 math and64 biology questions. Native unit routing remains the measured positive result.",
+  "nextAction": "Complete unit atlas development and test its fixed units on32 unused articles.",
   "owner": "Codex",
-  "revision": 35,
-  "updatedAt": "2026-11-23T07:55:44.977881Z"
+  "revision": 36,
+  "updatedAt": "2026-11-23T08:15:51.120866Z"
 }

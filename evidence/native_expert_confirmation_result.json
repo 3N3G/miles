@@ -1,0 +1,1238 @@
+{
+  "primary": [
+    {
+      "name": "L12-E105",
+      "math_native_deletion_harm": {
+        "mean": -0.03006077823499266,
+        "interval": [
+          -0.10527681795346168,
+          0.030221913228864243
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "math_harm_above_random": {
+        "mean": -0.025445640324377038,
+        "interval": [
+          -0.08589015430923085,
+          0.0223973224236917
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "math_minus_biology_harm_above_random": {
+        "mean": -0.03196074175038563,
+        "interval": [
+          -0.10198547999197184,
+          0.025623367272042678
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "passes_all_three_preregistered_requirements": false
+    },
+    {
+      "name": "L11-E63",
+      "math_native_deletion_harm": {
+        "mean": 0.006204259293357775,
+        "interval": [
+          0.00045298555288705595,
+          0.016282409898742925
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "math_harm_above_random": {
+        "mean": -0.008512800264841872,
+        "interval": [
+          -0.03323956481776087,
+          0.008176893146005707
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "math_minus_biology_harm_above_random": {
+        "mean": -0.01145028599008491,
+        "interval": [
+          -0.04473934541357195,
+          0.02299950634849519
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "passes_all_three_preregistered_requirements": false
+    },
+    {
+      "name": "L7-E73",
+      "math_native_deletion_harm": {
+        "mean": -0.1320902728898452,
+        "interval": [
+          -0.42899505883795896,
+          0.15038146841230263
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "math_harm_above_random": {
+        "mean": -0.11539224825961324,
+        "interval": [
+          -0.42520837221377616,
+          0.209982983035788
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "math_minus_biology_harm_above_random": {
+        "mean": -0.10015555531163192,
+        "interval": [
+          -0.4377663537471613,
+          0.23753976037947708
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "passes_all_three_preregistered_requirements": false
+    },
+    {
+      "name": "numeric-family",
+      "math_native_deletion_harm": {
+        "mean": 0.2116604502336277,
+        "interval": [
+          -0.17897412151465192,
+          0.6734395018347675
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "math_harm_above_random": {
+        "mean": 0.04269765857998091,
+        "interval": [
+          -0.3108992740968002,
+          0.3996104261700595
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "math_minus_biology_harm_above_random": {
+        "mean": 0.04012139486775427,
+        "interval": [
+          -0.3185095758225575,
+          0.3953606886988992
+        ],
+        "interval_family_size": 12,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "passes_all_three_preregistered_requirements": false
+    }
+  ],
+  "descriptive_conditions": [
+    {
+      "subject": "elementary_mathematics",
+      "condition": "clean",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 138,
+      "accuracy": {
+        "mean": 0.71875,
+        "interval": [
+          0.625,
+          0.8072916666666666
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.0,
+        "interval": [
+          0.0,
+          0.0
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8872730965570856,
+      "full_vocabulary_nll_increase": 0.0
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L12-E105-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 141,
+      "accuracy": {
+        "mean": 0.734375,
+        "interval": [
+          0.6458333333333333,
+          0.8177083333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.03006077823499266,
+        "interval": [
+          -0.07983514262841274,
+          0.013790747426567516
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8877999763935804,
+      "full_vocabulary_nll_increase": -0.028301478847026836
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L12-E105-random",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 138,
+      "accuracy": {
+        "mean": 0.71875,
+        "interval": [
+          0.6302083333333333,
+          0.8020833333333334
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.004615137910615628,
+        "interval": [
+          -0.042391108954315075,
+          0.029481649937706928
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8857324385705094,
+      "full_vocabulary_nll_increase": -0.00044533702867964424
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L11-E63-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 138,
+      "accuracy": {
+        "mean": 0.71875,
+        "interval": [
+          0.625,
+          0.8072916666666666
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.006204259293357775,
+        "interval": [
+          0.001600828790773384,
+          0.012454477120077969
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.887289382905389,
+      "full_vocabulary_nll_increase": 0.006079829526299813
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L11-E63-random",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 137,
+      "accuracy": {
+        "mean": 0.7135416666666667,
+        "interval": [
+          0.6197916666666666,
+          0.8020833333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.014717059558199647,
+        "interval": [
+          0.002345427662294728,
+          0.0317206411172094
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8875064478100587,
+      "full_vocabulary_nll_increase": 0.014428348865957707
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L7-E73-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 149,
+      "accuracy": {
+        "mean": 0.7760416666666667,
+        "interval": [
+          0.6875,
+          0.8541666666666666
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.1320902728898452,
+        "interval": [
+          -0.32423157089556653,
+          0.06141153509693387
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9476359227361778,
+      "full_vocabulary_nll_increase": -0.22121519909398066
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L7-E73-random",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 136,
+      "accuracy": {
+        "mean": 0.7083333333333333,
+        "interval": [
+          0.6197916666666666,
+          0.7916666666666666
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.01669802463023198,
+        "interval": [
+          -0.12364092938591052,
+          0.0872783560022485
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8846067834626107,
+      "full_vocabulary_nll_increase": 0.019217960111556416
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "numeric-family-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 121,
+      "accuracy": {
+        "mean": 0.6302083333333333,
+        "interval": [
+          0.5364583333333333,
+          0.71875
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.2116604502336277,
+        "interval": [
+          -0.06798038464253524,
+          0.5262809363595755
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9129668519987415,
+      "full_vocabulary_nll_increase": 0.17040757529716188
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "numeric-family-random",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 123,
+      "accuracy": {
+        "mean": 0.640625,
+        "interval": [
+          0.5520833333333333,
+          0.7291666666666666
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.1689627916536468,
+        "interval": [
+          -0.03358649916137179,
+          0.3760173772018279
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.888109433290083,
+      "full_vocabulary_nll_increase": 0.17018300856740137
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L12-E105-pass1",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 140,
+      "accuracy": {
+        "mean": 0.7291666666666667,
+        "interval": [
+          0.640625,
+          0.8125
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.006477974859803545,
+        "interval": [
+          -0.04873997362021049,
+          0.03425215408302793
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8861266027670354,
+      "full_vocabulary_nll_increase": -0.001245148143273908
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L12-E105-pass2",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 139,
+      "accuracy": {
+        "mean": 0.7239583333333334,
+        "interval": [
+          0.6354166666666666,
+          0.8072916666666667
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.0023598645813116604,
+        "interval": [
+          -0.02342483874871469,
+          0.017536694302903492
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8889428718636433,
+      "full_vocabulary_nll_increase": -0.006865171069705413
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L12-E105-pass3",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 138,
+      "accuracy": {
+        "mean": 0.71875,
+        "interval": [
+          0.625,
+          0.8072916666666666
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.007782918319467312,
+        "interval": [
+          -0.022117321388792844,
+          0.0058934001511095745
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8868290103661517,
+      "full_vocabulary_nll_increase": -0.0060331510213131835
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L12-E105-question-numeric",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 138,
+      "accuracy": {
+        "mean": 0.71875,
+        "interval": [
+          0.6302083333333333,
+          0.8020833333333334
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.005866072887577921,
+        "interval": [
+          -0.018979176989913225,
+          0.032681655675457
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8907454366950939,
+      "full_vocabulary_nll_increase": -0.0004249015140279249
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L12-E105-nonnumeric",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 140,
+      "accuracy": {
+        "mean": 0.7291666666666666,
+        "interval": [
+          0.640625,
+          0.8125
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.005111286659658251,
+        "interval": [
+          -0.03687804329613398,
+          0.02694047387609759
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8856315690403183,
+      "full_vocabulary_nll_increase": 0.0012231621542753129
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "L12-E105-renormalized",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 136,
+      "accuracy": {
+        "mean": 0.7083333333333333,
+        "interval": [
+          0.6197916666666666,
+          0.796875
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.013211784275688632,
+        "interval": [
+          -0.05276574131886087,
+          0.021110475097446287
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.888240483046199,
+      "full_vocabulary_nll_increase": -0.013251261311665971
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "frequency-family-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 139,
+      "accuracy": {
+        "mean": 0.7239583333333334,
+        "interval": [
+          0.640625,
+          0.8072916666666666
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.031580528792134896,
+        "interval": [
+          -0.07260012561685028,
+          0.1516162018512487
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.8497589585604146,
+      "full_vocabulary_nll_increase": 0.12038502774622846
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "clean",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 178,
+      "accuracy": {
+        "mean": 0.9270833333333333,
+        "interval": [
+          0.8697916666666667,
+          0.9739583333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.0,
+        "interval": [
+          0.0,
+          0.0
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.995205162713925,
+      "full_vocabulary_nll_increase": 0.0
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L12-E105-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 178,
+      "accuracy": {
+        "mean": 0.9270833333333333,
+        "interval": [
+          0.8697916666666667,
+          0.9739583333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.003945714792943515,
+        "interval": [
+          -0.011596583035256928,
+          0.02320920548089731
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9952617296949029,
+      "full_vocabulary_nll_increase": 0.0038834338125563308
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L12-E105-random",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 178,
+      "accuracy": {
+        "mean": 0.9270833333333334,
+        "interval": [
+          0.8697916666666666,
+          0.9739583333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.0025693866330650716,
+        "interval": [
+          -0.03091855607429535,
+          0.02344787822006837
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9949871354425948,
+      "full_vocabulary_nll_increase": -0.0023397016977166254
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L11-E63-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 179,
+      "accuracy": {
+        "mean": 0.9322916666666666,
+        "interval": [
+          0.875,
+          0.9791666666666666
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.015204162005363248,
+        "interval": [
+          -0.04366600893560574,
+          0.006426820317836329
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.995198502515753,
+      "full_vocabulary_nll_increase": -0.015200812615811788
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L11-E63-random",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 180,
+      "accuracy": {
+        "mean": 0.9375,
+        "interval": [
+          0.8802083333333333,
+          0.9791666666666667
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.018141647730606288,
+        "interval": [
+          -0.04166651991092428,
+          -0.0011597222853630693
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.995201335599025,
+      "full_vocabulary_nll_increase": -0.018142913882684294
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L7-E73-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 177,
+      "accuracy": {
+        "mean": 0.921875,
+        "interval": [
+          0.8645833333333333,
+          0.96875
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.008810412981107374,
+        "interval": [
+          -0.06630289243556535,
+          0.05586591238154699
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9954086213062208,
+      "full_vocabulary_nll_increase": -0.009036592786249749
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L7-E73-random",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 175,
+      "accuracy": {
+        "mean": 0.9114583333333335,
+        "interval": [
+          0.8541666666666666,
+          0.9583333333333334
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.006426279966873932,
+        "interval": [
+          -0.043771423653487226,
+          0.054197899663168285
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9933321016530196,
+      "full_vocabulary_nll_increase": 0.00837812902835821
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "numeric-family-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 180,
+      "accuracy": {
+        "mean": 0.9375,
+        "interval": [
+          0.8802083333333334,
+          0.9791666666666667
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.01823851686095187,
+        "interval": [
+          -0.04800879483953331,
+          0.005518045196236432
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9950468568131328,
+      "full_vocabulary_nll_increase": -0.018043667884493665
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "numeric-family-random",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 178,
+      "accuracy": {
+        "mean": 0.9270833333333334,
+        "interval": [
+          0.8697916666666666,
+          0.9739583333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.020814780573178503,
+        "interval": [
+          -0.060449494578528024,
+          0.01041649956529176
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9937965925782919,
+      "full_vocabulary_nll_increase": -0.019090470249655794
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L12-E105-pass1",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 178,
+      "accuracy": {
+        "mean": 0.9270833333333333,
+        "interval": [
+          0.8697916666666667,
+          0.9739583333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.007287495840614626,
+        "interval": [
+          -0.016295246380675612,
+          0.0009660909917646354
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9951955868552129,
+      "full_vocabulary_nll_increase": -0.0072802287262069085
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L12-E105-pass2",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 178,
+      "accuracy": {
+        "mean": 0.9270833333333333,
+        "interval": [
+          0.8697916666666667,
+          0.9739583333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.003323968556638109,
+        "interval": [
+          -0.010520146304756386,
+          0.0036893119744630556
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9952816773826878,
+      "full_vocabulary_nll_increase": -0.003406802863101651
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L12-E105-pass3",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 179,
+      "accuracy": {
+        "mean": 0.9322916666666667,
+        "interval": [
+          0.875,
+          0.9791666666666666
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.0008281670001035129,
+        "interval": [
+          -0.004761418858701944,
+          0.0033496815583830995
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9952264496435721,
+      "full_vocabulary_nll_increase": -0.0008546094296093564
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L12-E105-question-numeric",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 178,
+      "accuracy": {
+        "mean": 0.9270833333333333,
+        "interval": [
+          0.8697916666666667,
+          0.9739583333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 7.677833787056605e-05,
+        "interval": [
+          -0.002009916419382305,
+          0.0024807244624923943
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9949749767159421,
+      "full_vocabulary_nll_increase": 0.00032722992834048235
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L12-E105-nonnumeric",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 178,
+      "accuracy": {
+        "mean": 0.9270833333333333,
+        "interval": [
+          0.8697916666666667,
+          0.9739583333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.0007428694420733928,
+        "interval": [
+          -0.012176454455760675,
+          0.009933458791883258
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9951467271894217,
+      "full_vocabulary_nll_increase": -0.0006790096012233926
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "L12-E105-renormalized",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 176,
+      "accuracy": {
+        "mean": 0.9166666666666667,
+        "interval": [
+          0.859375,
+          0.9635416666666667
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": 0.005400970963947335,
+        "interval": [
+          -0.016540075983326092,
+          0.028811723434183773
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9954030377169449,
+      "full_vocabulary_nll_increase": 0.005200242026489808
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "frequency-family-all",
+      "questions": 64,
+      "answer_order_views": 192,
+      "correct_views": 177,
+      "accuracy": {
+        "mean": 0.921875,
+        "interval": [
+          0.859375,
+          0.9739583333333333
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "choice_nll_increase": {
+        "mean": -0.006698341832395368,
+        "interval": [
+          -0.06676428486541437,
+          0.06797589306054816
+        ],
+        "interval_family_size": 1,
+        "resamples": 10000,
+        "seed": 1729,
+        "sampling_unit": "question after averaging three answer orders"
+      },
+      "mean_letter_mass": 0.9962981926898161,
+      "full_vocabulary_nll_increase": -0.007740995948793756
+    }
+  ],
+  "dose_checks": [
+    {
+      "condition": "L11-E63-random",
+      "intended_total_norm": 118945.4482178688,
+      "actual_total_norm": 118947.72786211967,
+      "aggregate_relative_norm_error": 1.9165460175442738e-05,
+      "question_relative_norm_error_max": 0.0018968091403330262,
+      "question_relative_norm_error_95th": 0.000516442874018206
+    },
+    {
+      "condition": "L12-E105-random",
+      "intended_total_norm": 216354.99089050293,
+      "actual_total_norm": 216358.93894195557,
+      "aggregate_relative_norm_error": 1.824802578570893e-05,
+      "question_relative_norm_error_max": 0.0001402914021390869,
+      "question_relative_norm_error_95th": 7.149590100400078e-05
+    },
+    {
+      "condition": "L7-E73-random",
+      "intended_total_norm": 840254.8609313965,
+      "actual_total_norm": 840264.1188354492,
+      "aggregate_relative_norm_error": 1.1017971431277737e-05,
+      "question_relative_norm_error_max": 3.4115407975344765e-05,
+      "question_relative_norm_error_95th": 2.37155007890087e-05
+    },
+    {
+      "condition": "numeric-family-random",
+      "intended_total_norm": 2856335.350276947,
+      "actual_total_norm": 2856429.314685583,
+      "aggregate_relative_norm_error": 3.289684057125241e-05,
+      "question_relative_norm_error_max": 0.0001392365998508045,
+      "question_relative_norm_error_95th": 9.72274838362638e-05
+    }
+  ],
+  "baselines": [
+    {
+      "subject": "elementary_mathematics",
+      "constant_calibration_majority_letter": "B",
+      "correct_views": 41,
+      "views": 192,
+      "uniform_expected_accuracy": 0.25,
+      "uniform_choice_nll": 1.3862943611198906
+    },
+    {
+      "subject": "high_school_biology",
+      "constant_calibration_majority_letter": "B",
+      "correct_views": 51,
+      "views": 192,
+      "uniform_expected_accuracy": 0.25,
+      "uniform_choice_nll": 1.3862943611198906
+    }
+  ],
+  "unique_questions": 128,
+  "orders_per_question": 3,
+  "source_manifests": [
+    {
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "revision": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+      "code_commit": "11da24420a9c8c796a21f308b3be99dbb143740d",
+      "spec_sha256": "225746f83e37d9c99926daa01b8590b803da9505626fc6b5c12556d6ceea402d",
+      "inputs_sha256": "52d4fb021c5b2d977cff825e8a0200c8e604b9261b19f73d5f9a8e50e5415bef",
+      "wall_seconds": 1524.1784689426422,
+      "peak_gpu_bytes": 54605638656,
+      "status": "completed"
+    },
+    {
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "revision": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+      "code_commit": "c6149ac1035754be552c0ac8840e3d697d219b7d",
+      "spec_sha256": "225746f83e37d9c99926daa01b8590b803da9505626fc6b5c12556d6ceea402d",
+      "inputs_sha256": "52d4fb021c5b2d977cff825e8a0200c8e604b9261b19f73d5f9a8e50e5415bef",
+      "wall_seconds": 1376.020681142807,
+      "peak_gpu_bytes": 54605999104,
+      "status": "completed"
+    },
+    {
+      "model": "thinkingmachines/Inkling-2-Mini",
+      "revision": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+      "code_commit": "3727590fc845f97184529794019188056ee161fa",
+      "spec_sha256": "225746f83e37d9c99926daa01b8590b803da9505626fc6b5c12556d6ceea402d",
+      "inputs_sha256": "52d4fb021c5b2d977cff825e8a0200c8e604b9261b19f73d5f9a8e50e5415bef",
+      "wall_seconds": 1358.5176429748535,
+      "peak_gpu_bytes": 54606949376,
+      "status": "completed"
+    }
+  ],
+  "limits": [
+    "This is a two-subject native-model test, not a proof of a unique arithmetic algorithm.",
+    "Three order seeds are averaged within each question; they are not extra independent observations.",
+    "Potential MMLU pretraining exposure limits fresh capability claims.",
+    "All nonprimary comparisons have descriptive unadjusted95% intervals."
+  ]
+}

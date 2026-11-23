@@ -352,5 +352,14 @@
     "files": 301,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a54223416d7929102aced71862f2279f41f6bd82/inkling-interp/native-neurons-v2",
     "verified_at": "2026-11-23T08:07:59.736117+00:00"
+  },
+  {
+    "stage": "expert-confirmation-s2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "0fccd7601a8599deeb8345d9fb526e26362a1b00",
+    "private": true,
+    "files": 6,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/0fccd7601a8599deeb8345d9fb526e26362a1b00/inkling-interp/expert-confirmation-s2",
+    "verified_at": "2026-11-23T08:15:43.791180+00:00"
   }
 ]

@@ -1,0 +1,78 @@
+{
+  "physical_layer": 12,
+  "selected_before_exact_validation": true,
+  "candidates": [
+    {
+      "expert": 83,
+      "unit": 1107,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.00024163852503988892,
+        6.339412720990367e-06,
+        -4.3080104660475627e-05
+      ]
+    },
+    {
+      "expert": 52,
+      "unit": 585,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.00022232660558074713,
+        -1.4705464309372474e-05,
+        -5.312289431458339e-05
+      ]
+    },
+    {
+      "expert": 58,
+      "unit": 285,
+      "category": "phase",
+      "predicted_per_pass": [
+        -2.0250390662113205e-05,
+        7.166717841755599e-05,
+        0.00022751458163838834
+      ]
+    },
+    {
+      "expert": 44,
+      "unit": 492,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.0001253370865015313,
+        0.00020596665854100138,
+        -0.00012218246411066502
+      ]
+    },
+    {
+      "expert": 38,
+      "unit": 1033,
+      "category": "stable",
+      "predicted_per_pass": [
+        0.00022653101768810302,
+        0.00016336620319634676,
+        6.738172669429332e-05
+      ]
+    },
+    {
+      "expert": 111,
+      "unit": 310,
+      "category": "stable",
+      "predicted_per_pass": [
+        8.857088687364012e-05,
+        0.0001537932112114504,
+        0.0002013250777963549
+      ]
+    }
+  ],
+  "known_comparators": [
+    {
+      "expert": 45,
+      "unit": 1127,
+      "category": "known"
+    },
+    {
+      "expert": 3,
+      "unit": 664,
+      "category": "known"
+    }
+  ]
+}
