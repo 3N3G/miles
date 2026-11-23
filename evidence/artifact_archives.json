@@ -334,5 +334,23 @@
     "files": 5,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/96cea8eeb0a73c4f5e66f5fe7704752992f556dc/inkling-interp/native-unit-replay-v1",
     "verified_at": "2026-11-23T07:53:13.320933+00:00"
+  },
+  {
+    "stage": "native-unit-replay-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "979133cbf1fc0ba69c99ba41e00fa16374031233",
+    "private": true,
+    "files": 6,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/979133cbf1fc0ba69c99ba41e00fa16374031233/inkling-interp/native-unit-replay-v1",
+    "verified_at": "2026-11-23T08:07:51.451414+00:00"
+  },
+  {
+    "stage": "native-neurons-v2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "a54223416d7929102aced71862f2279f41f6bd82",
+    "private": true,
+    "files": 301,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a54223416d7929102aced71862f2279f41f6bd82/inkling-interp/native-neurons-v2",
+    "verified_at": "2026-11-23T08:07:59.736117+00:00"
   }
 ]

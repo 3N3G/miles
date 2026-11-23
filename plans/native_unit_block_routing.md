@@ -78,4 +78,11 @@ inspecting their efficacy or changing their conditions. The global cap remains
 
 ## Results
 
-Pending.
+Completed on all16 frozen articles. Primary deletion-minus-random Block2
+weight changes were+0.00008087 on pass1 and-0.00017678 on pass3. Corrected
+intervals were[0.00001682,0.00016737] and[-0.00036596,-0.00005282].
+The difference was-0.00025765, interval[-0.00051597,-0.00007441]. The
+preregistered sign-reversal rule passed. Identity, absent-expert and two
+native deletion implementations matched exactly. Full results and limits:
+`evidence/native_unit_routing_result.json`. Private immutable artifacts:
+`evidence/artifact_archives.json`, stage `native-unit-routing-v1`.

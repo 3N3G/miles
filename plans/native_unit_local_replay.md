@@ -59,4 +59,19 @@ efficacy. Count actual allocation toward the18,000-second program cap.
 
 ## Results
 
-Pending.
+Completed on all16 existing articles. All128 edited reader-weight vectors
+matched the saved full-model interventions exactly. Unmodified expert,
+convolution and residual block reconstruction were exact. Both algebraic
+attribution terms summed to the total with maximum error0.
+
+For unit45:1127, the raw mean pass1 weight change+0.00007939 decomposed into
+numerator-0.00028288 and RMS+0.00036227. Pass3's-0.00017851 decomposed into
+numerator+0.00014100 and RMS-0.00031951. These are descriptive attributions
+on the existing sample, without random subtraction.
+
+At pass3 the selected-token mean up projection was-1.21052, with current-depth
+contribution-0.70043 and direct-message contribution-0.50999. Among260 paired
+up-sign changes,242 current-depth contributions were already negative.
+This decomposition does not separate all information by its original loop.
+Full results: `evidence/native_unit_replay_result.json`. Private archive stage:
+`native-unit-replay-v1` in `evidence/artifact_archives.json`.
