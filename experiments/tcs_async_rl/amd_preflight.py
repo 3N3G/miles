@@ -216,6 +216,18 @@ def _run(stage, argv, *, run_dir, env):
     )
 
 
+def check_container_storage(qualification, work_dir, sif, sandbox):
+    cached = sif.is_file() and (sandbox / ".miles-ready").is_file()
+    free = shutil.disk_usage(work_dir).free
+    # RL rechecks its checkpoint-specific requirement before model startup.
+    # The original image-download allowance is still required for provisioning.
+    if (qualification.get("mode") != "rl_smoke" or not cached) and free < qualification["container"][
+        "minimum_free_bytes"
+    ]:
+        raise RuntimeError("Insufficient filesystem space for container preparation; also check the lab quota")
+    return {"cached_image": cached, "shared_free_bytes": free}
+
+
 def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
     if not os.environ.get("SLURM_JOB_ID"):
         raise RuntimeError("GPU preparation must run through Slurm")
@@ -228,8 +240,11 @@ def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
     run_dir.mkdir(parents=True, exist_ok=True)
     if (run_dir / "manifest.json").exists():
         raise RuntimeError("Use a fresh run directory; existing evidence will not be overwritten")
-    if shutil.disk_usage(work_dir).free < qualification["container"]["minimum_free_bytes"]:
-        raise RuntimeError("Less than 120 GiB filesystem space is free; also check the lab quota")
+    digest = qualification["container"]["uri"].split("sha256:")[1]
+    image_dir = work_dir / "containers"
+    sif = image_dir / f"{digest}.sif"
+    sandbox = image_dir / f"{digest}.sandbox"
+    image_storage = check_container_storage(qualification, work_dir, sif, sandbox)
     commit = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
     if not expected_commit or commit != expected_commit:
         raise RuntimeError("Checkout changed since batch-file review; render and review a new batch file")
@@ -243,6 +258,7 @@ def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
         "training_proposal": training,
         "qualification_sha256": hashlib.sha256(config_path.read_bytes()).hexdigest(),
         "scope": qualification.get("scope"),
+        "image_storage": image_storage,
     }
     (run_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     env = _public_environment()
@@ -250,11 +266,7 @@ def run_in_allocation(*, config_path, work_dir, run_dir, expected_commit=None):
     env["APPTAINER_TMPDIR"] = str(work_dir / "tmp")
     for key in ("APPTAINER_CACHEDIR", "APPTAINER_TMPDIR"):
         Path(env[key]).mkdir(parents=True, exist_ok=True)
-    digest = qualification["container"]["uri"].split("sha256:")[1]
-    image_dir = work_dir / "containers"
     image_dir.mkdir(exist_ok=True)
-    sif = image_dir / f"{digest}.sif"
-    sandbox = image_dir / f"{digest}.sandbox"
     if not sif.exists():
         temporary = sif.with_suffix(".partial.sif")
         _run(

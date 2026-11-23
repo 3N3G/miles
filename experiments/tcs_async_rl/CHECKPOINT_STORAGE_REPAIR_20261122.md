@@ -45,7 +45,7 @@ This policy trades intermediate recovery points for source preservation and a bo
 
 ## Validation before submission
 
-- All 110 TCS CPU tests pass in the existing service environment, with no provider calls or GPU allocation.
+- All 111 TCS CPU tests pass in the existing service environment, with no provider calls or GPU allocation.
 - Tests execute the actual async driver's checkpoint block and actual epoch predicate. Normal mode saves at 89, 94, 99
   and 104. Single-checkpoint mode saves only at 104, or only at an earlier external request. Data saves precede model saves.
 - The tests also cover a completed deadline checkpoint, a rejected second request, positive native argument serialization,
@@ -55,3 +55,11 @@ This policy trades intermediate recovery points for source preservation and a bo
 - Black, isort and Ruff pass. Existing used snapshots are unchanged.
 
 The earlier deletion question is withdrawn. No source checkpoint is removed, and no retention exception is needed.
+
+## Cached container gate
+
+The old host preflight also required 120 GiB before checking whether the container was already ready. That blanket gate
+would reject this continuation despite its smaller checkpoint requirement. The corrected preflight reuses a cached SIF
+and ready sandbox for RL, then applies the independent checkpoint guard before model startup. Missing or incomplete image
+assets still require the original provisioning allowance. Other qualification modes keep their original threshold.
+The new test covers all three cases. No GPU job used either rejected preparation proposal.

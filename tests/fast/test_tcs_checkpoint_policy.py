@@ -9,7 +9,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
-from experiments.tcs_async_rl.amd_preflight import load_configs
+from experiments.tcs_async_rl.amd_preflight import check_container_storage, load_configs
 from experiments.tcs_async_rl.checkpoint_policy import check_storage, single_checkpoint, storage_required
 from experiments.tcs_async_rl.rl_smoke import native_argv, resolved_args
 
@@ -17,6 +17,26 @@ from miles.utils.checkpoint_policy import should_save_checkpoint
 
 
 class CheckpointPolicyTests(unittest.TestCase):
+    def test_cached_rl_image_uses_checkpoint_guard_without_relaxing_image_provisioning(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            sif = root / "image.sif"
+            sandbox = root / "image.sandbox"
+            sandbox.mkdir()
+            q = {"mode": "rl_smoke", "container": {"minimum_free_bytes": 120 * 2**30}}
+            with patch(
+                "experiments.tcs_async_rl.amd_preflight.shutil.disk_usage",
+                return_value=SimpleNamespace(free=90 * 2**30),
+            ):
+                with self.assertRaisesRegex(RuntimeError, "container preparation"):
+                    check_container_storage(q, root, sif, sandbox)
+                sif.touch()
+                (sandbox / ".miles-ready").touch()
+                self.assertTrue(check_container_storage(q, root, sif, sandbox)["cached_image"])
+                q["mode"] = "group_check"
+                with self.assertRaisesRegex(RuntimeError, "container preparation"):
+                    check_container_storage(q, root, sif, sandbox)
+
     def test_native_flag_defaults_and_backend_validation(self):
         tree = ast.parse(Path("miles/utils/arguments.py").read_text())
         call = next(
