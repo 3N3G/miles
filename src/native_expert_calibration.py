@@ -54,6 +54,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--inputs',type=Path,required=True);parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--rank',type=int,default=0);parser.add_argument('--world-size',type=int,default=1)
     parser.add_argument('--natural-text',type=Path);parser.add_argument('--gradients',action='store_true')
+    parser.add_argument('--offload-gradients',action='store_true')
     args=parser.parse_args();root=args.out;root.mkdir(parents=True,exist_ok=True)
     args.out=root/f'rank{args.rank}';args.out.mkdir(exist_ok=False)
     started=time.time();inputs=json.loads(args.inputs.read_text());write(args.out/'frozen_inputs.json',inputs)
@@ -129,7 +130,7 @@ def main():
         print(json.dumps({'event':'text','id':record['id'],'elapsed':time.time()-started}),flush=True)
     if args.gradients:
         from native_expert_gradients import discover
-        discover(model,tokenizer,groups,discovery[args.rank::args.world_size],fmt,args.out)
+        discover(model,tokenizer,groups,discovery[args.rank::args.world_size],fmt,args.out,offload=args.offload_gradients)
     write(args.out/'manifest.json',{'model':MODEL,'revision':REVISION,'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
                                    'inputs_sha256':hashlib.sha256(args.inputs.read_bytes()).hexdigest(),'wall_seconds':time.time()-started,
                                    'peak_allocated_gpu_bytes':torch.cuda.max_memory_allocated(),'status':'completed'})

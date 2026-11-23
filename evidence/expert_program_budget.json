@@ -23,16 +23,24 @@
       "gpus": 8,
       "maximum_allocation_seconds": 720,
       "maximum_gpu_seconds": 5760,
-      "status": "PENDING",
-      "reserved_gpu_seconds": 5760,
-      "observed_allocation_seconds": 0
+      "status": "CANCELLED",
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 0,
+      "actual_allocation_seconds": 0
     }
   ],
   "used_gpu_seconds": 350,
   "remaining_gpu_seconds": 17650,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [],
-  "unreserved_gpu_seconds": 11890,
-  "reserved_gpu_seconds": 5760,
+  "pending_reservations": [
+    {
+      "run_name": "expert-screen-v3",
+      "gpus": 1,
+      "maximum_gpu_seconds": 1800,
+      "status": "prepared"
+    }
+  ],
+  "unreserved_gpu_seconds": 15850,
+  "reserved_gpu_seconds": 1800,
   "observed_at": "2026-11-23T05:59:44.579810+00:00"
 }

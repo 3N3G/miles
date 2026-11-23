@@ -1,12 +1,20 @@
 """Development-only routing derivatives. Expert IDs always include their layer."""
 
 import json
+import contextlib
 import torch
 from native_expert import formatted_prompt, render_question
 
 
-def discover(model, tokenizer, groups, records, fmt, out):
+def discover(model, tokenizer, groups, records, fmt, out, offload=False):
     results=[]
+    parameter_storage={p.untyped_storage().data_ptr() for p in model.parameters()}
+    def pack(tensor):
+        if tensor.device.type!='cuda' or tensor.untyped_storage().data_ptr() in parameter_storage:
+            return ('original',tensor)
+        return ('cpu',tensor.device,tensor.detach().to('cpu',copy=True))
+    def unpack(saved):
+        return saved[1] if saved[0]=='original' else saved[2].to(saved[1])
     for record in records:
         text,answer=render_question(record)
         ids=tokenizer(formatted_prompt(tokenizer,text,fmt),return_tensors='pt',add_special_tokens=False).input_ids.to('cuda')
@@ -24,10 +32,12 @@ def discover(model, tokenizer, groups, records, fmt, out):
         for layer in range(5,17):
             handles.append(model.model.language_model.layers[layer].mlp.gate.register_forward_hook(hook_for(layer)))
         try:
-            logits=model(input_ids=ids,use_cache=False,logits_to_keep=1).logits[0,-1].float()
-            scores=torch.stack([torch.logsumexp(logits[groups[x]],-1) for x in 'ABCD'])
-            objective=scores.log_softmax(-1)['ABCD'.index(answer)]
-            objective.backward()
+            context=torch.autograd.graph.saved_tensors_hooks(pack,unpack) if offload else contextlib.nullcontext()
+            with context:
+                logits=model(input_ids=ids,use_cache=False,logits_to_keep=1).logits[0,-1].float()
+                scores=torch.stack([torch.logsumexp(logits[groups[x]],-1) for x in 'ABCD'])
+                objective=scores.log_softmax(-1)['ABCD'.index(answer)]
+                objective.backward()
             scores_out=[]
             for layer,visit,weights,indices in captured:
                 assert weights.grad is not None

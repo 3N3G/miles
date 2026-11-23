@@ -1,0 +1,13 @@
+{
+  "router_edit_checks": [
+    "visit mask",
+    "exact selected-weight zero",
+    "renormalized sum",
+    "absent expert",
+    "alias mass",
+    "answer permutation"
+  ],
+  "saved_tensor_derivative_exact": true,
+  "native_router_replay_all_route_sets_exact": true,
+  "native_router_max_weight_error": 2.0265579223632812e-06
+}
