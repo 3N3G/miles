@@ -316,5 +316,14 @@
     "files": 393,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a879928ce44fc602960bf53ecda55e279102568d/inkling-interp/native-unit-routing-v1",
     "verified_at": "2026-11-23T07:40:58.467088+00:00"
+  },
+  {
+    "stage": "expert-confirmation-s1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "232c4325e0cbc9c3c0981b93bb46247de49cbd0e",
+    "private": true,
+    "files": 6,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/232c4325e0cbc9c3c0981b93bb46247de49cbd0e/inkling-interp/expert-confirmation-s1",
+    "verified_at": "2026-11-23T07:50:36.761225+00:00"
   }
 ]

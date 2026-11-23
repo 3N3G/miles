@@ -1,5 +1,5 @@
 {
-  "observed_at": "2026-11-23T06:26:27.082617+00:00",
+  "observed_at": "2026-11-23T07:50:06.397855+00:00",
   "jobs": [
     {
       "id": "536316",
@@ -224,6 +224,48 @@
       "status": "FAILED",
       "elapsed": "00:11:57",
       "exit_code": "1:0"
+    },
+    {
+      "id": "541723",
+      "cluster": "hpcfund",
+      "status": "FAILED",
+      "elapsed": "00:06:54",
+      "exit_code": "1:0"
+    },
+    {
+      "id": "541774",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:02:41",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "541796",
+      "cluster": "hpcfund",
+      "status": "FAILED",
+      "elapsed": "00:01:00",
+      "exit_code": "1:0"
+    },
+    {
+      "id": "541818",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:25:37",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "541868",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:04:36",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "541880",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:23:08",
+      "exit_code": "0:0"
     }
   ]
 }

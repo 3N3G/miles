@@ -24,7 +24,12 @@
     {
       "id": "541880",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
+    },
+    {
+      "id": "541961",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -271,6 +276,13 @@
       "actor": "codex",
       "summary": "Confirmed a small native routing sign reversal and identified its value-input sign change",
       "revision": 33
+    },
+    {
+      "id": "c0194372-80b7-4a06-beb3-8e7370e69bf4",
+      "at": "2026-11-23T07:50:27.577632Z",
+      "actor": "codex",
+      "summary": "Finished second blind confirmation order and submitted exact local replay",
+      "revision": 34
     }
   ],
   "projectId": "interpretability",
@@ -278,8 +290,8 @@
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
   "summary": "On16 unseen articles, a native unit reverses its block-routing effect across passes with corrected intervals. All260 replicated output sign flips occur in the up input.",
-  "nextAction": "Finish blind confirmation seeds1/2 and explain the routing result with exact local replay.",
+  "nextAction": "Validate exact replay, run the third fixed confirmation order, then read task efficacy.",
   "owner": "Codex",
-  "revision": 33,
-  "updatedAt": "2026-11-23T07:39:33.387576Z"
+  "revision": 34,
+  "updatedAt": "2026-11-23T07:50:27.577632Z"
 }

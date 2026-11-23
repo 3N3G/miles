@@ -20,7 +20,7 @@ def main():
            title='The same native unit has opposite routing effects')
     for i,mean in zip(x,means):ax.annotate(f'{mean:+.3f} pp',(i,mean),xytext=(12,0),textcoords='offset points',va='center',fontsize=11)
     fig.subplots_adjust(left=.17,bottom=.30)
-    fig.text(.17,.035,'Inkling 2 Mini: layer 12, expert 45, unit 1127. Outcome: layer 13 block reader.\nNative deletion minus the mean of three edits with matched output norms.\n16 unseen articles. Article-bootstrap intervals adjust for three primary tests.\nThese are small local routing effects; this plot does not show task improvement.',fontsize=9)
+    fig.text(.17,.035,'Inkling 2 Mini: layer 12, expert 45, unit 1127. Outcome: layer 13 block reader.\nNative deletion minus the mean of three edits with matched output norms.\n16 unseen articles. Article-bootstrap intervals adjust for three primary tests.\nNative Block 2 read weight: 70.10% on pass 1 and 87.64% on pass 3.',fontsize=9)
     Path('figures').mkdir(exist_ok=True);fig.savefig('figures/native_unit45_causal_routing.png',dpi=180);fig.savefig('figures/native_unit45_causal_routing.pdf');plt.close(fig)
 
 
