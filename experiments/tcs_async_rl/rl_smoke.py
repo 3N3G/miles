@@ -17,7 +17,9 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
+from experiments.tcs_async_rl.checkpoint_policy import check_storage
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
+from experiments.tcs_async_rl.resource_estimate import model_inputs
 from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, prepare_smoke_row, question_key
 from experiments.tcs_async_rl.rl_artifacts import export_rollouts
 from experiments.tcs_async_rl.rl_inputs import read_bundle
@@ -174,6 +176,9 @@ def main():
             config=U.ExecuteTrainConfig(output_dir=str(cli.run_dir)),
         )
     )
+    inputs = model_inputs(training, base_dir=cli.config.parent)
+    space = check_storage(config, cli.run_dir, inputs["text_parameters"] + inputs["mtp_parameters"], cli.work_dir)
+    (cli.run_dir / "checkpoint-storage-at-allocation.json").write_text(json.dumps(space, indent=2) + "\n")
     if cli.validate_arguments_only:
         from miles.utils.arguments import parse_args
         from miles.utils.external_utils.model_args_utils import load_model_args

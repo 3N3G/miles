@@ -1,3 +1,4 @@
+import argparse
 import ast
 import asyncio
 import copy
@@ -6,14 +7,70 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
-from experiments.tcs_async_rl.checkpoint_policy import single_checkpoint, storage_required
+from experiments.tcs_async_rl.checkpoint_policy import check_storage, single_checkpoint, storage_required
 from experiments.tcs_async_rl.rl_smoke import native_argv, resolved_args
+
 from miles.utils.checkpoint_policy import should_save_checkpoint
 
 
 class CheckpointPolicyTests(unittest.TestCase):
+    def test_native_flag_defaults_and_backend_validation(self):
+        tree = ast.parse(Path("miles/utils/arguments.py").read_text())
+        call = next(
+            node
+            for node in ast.walk(tree)
+            if isinstance(node, ast.Call)
+            and node.args
+            and isinstance(node.args[0], ast.Constant)
+            and node.args[0].value == "--single-checkpoint"
+        )
+        parser = argparse.ArgumentParser()
+        exec(
+            compile(
+                ast.fix_missing_locations(ast.Module(body=[ast.Expr(value=call)], type_ignores=[])),
+                "native-flag",
+                "exec",
+            ),
+            {"parser": parser},
+        )
+        self.assertFalse(parser.parse_args([]).single_checkpoint)
+        self.assertTrue(parser.parse_args(["--single-checkpoint"]).single_checkpoint)
+        clause = next(
+            node
+            for node in ast.walk(tree)
+            if isinstance(node, ast.If) and ast.unparse(node.test) == "args.single_checkpoint"
+        )
+        code = compile(
+            ast.fix_missing_locations(ast.Module(body=[clause], type_ignores=[])), "native-validation", "exec"
+        )
+        args = SimpleNamespace(
+            single_checkpoint=True, train_backend="megatron", save="/work/run/checkpoints", save_interval=105
+        )
+        exec(code, {"args": args, "Path": Path})
+        args.train_backend = "fsdp"
+        with self.assertRaisesRegex(AssertionError, "Megatron only"):
+            exec(code, {"args": args, "Path": Path})
+        with tempfile.TemporaryDirectory() as name:
+            args.train_backend = "megatron"
+            args.save = name
+            (Path(name) / "latest_checkpointed_iteration.txt").write_text("84")
+            with self.assertRaisesRegex(AssertionError, "fresh output"):
+                exec(code, {"args": args, "Path": Path})
+
+    def test_allocation_rechecks_space_instead_of_trusting_an_earlier_submission(self):
+        run = Path("/work/runs/continuation")
+        config, _ = self.config(run)
+        required = storage_required(config, run, 1000)
+        with patch("experiments.tcs_async_rl.checkpoint_policy.shutil.disk_usage") as usage:
+            usage.return_value = SimpleNamespace(free=required)
+            self.assertEqual(check_storage(config, run, 1000, Path("/work"))["required_bytes"], required)
+            usage.return_value = SimpleNamespace(free=required - 1)
+            with self.assertRaisesRegex(RuntimeError, "Checkpoint saves require"):
+                check_storage(config, run, 1000, Path("/work"))
+
     def test_actual_async_checkpoint_block_keeps_one_save_and_preserves_default_cadence(self):
         # Execute the driver's actual checkpoint block without its optional GPU
         # imports. This checks the caller, epoch predicate and save ordering.

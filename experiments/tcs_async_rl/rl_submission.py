@@ -10,12 +10,11 @@ import fcntl
 import hashlib
 import json
 import re
-import shutil
 import subprocess
 from pathlib import Path
 
 from experiments.tcs_async_rl.amd_preflight import load_configs, render_job
-from experiments.tcs_async_rl.checkpoint_policy import storage_required
+from experiments.tcs_async_rl.checkpoint_policy import check_storage
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
 from experiments.tcs_async_rl.resource_estimate import model_inputs
 from experiments.tcs_async_rl.rl_inputs import read_bundle
@@ -87,10 +86,8 @@ def prepare(*, config_path, run_dir, work_dir, expected_commit):
     if not (run_dir / "submission-intent.json").exists():
         inputs = model_inputs(training, base_dir=config_path.parent)
         parameters = inputs["text_parameters"] + inputs["mtp_parameters"]
-        required = storage_required(config, run_dir, parameters)
-        free = shutil.disk_usage(work_dir).free
-        if free < required:
-            raise RuntimeError("Insufficient shared-filesystem space for checkpoint saves and margin")
+        space = check_storage(config, run_dir, parameters, work_dir)
+        (run_dir / "checkpoint-storage-preflight.json").write_text(json.dumps(space, indent=2) + "\n")
         body = render_job(
             repo=repo, work_dir=work_dir, run_dir=run_dir, expected_commit=expected_commit, config_path=config_path
         )
@@ -103,8 +100,8 @@ def prepare(*, config_path, run_dir, work_dir, expected_commit):
                     "allocation": config["allocation"],
                     "gate_sha256": hashlib.sha256(Path(config["gate_file"]).read_bytes()).hexdigest(),
                     "input_sha256": input_config["input_sha256"],
-                    "free_bytes": free,
-                    "required_bytes": required,
+                    "free_bytes": space["free_bytes"],
+                    "required_bytes": space["required_bytes"],
                 },
                 indent=2,
             )

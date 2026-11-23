@@ -19,7 +19,8 @@ A large interval alone would still save at epoch boundaries and would not solve 
 Preflight validates a positive interval and this run's sentinel before using the one-checkpoint space estimate. Other
 configurations keep the old estimate. For 4,326,350,848 text-plus-MTP parameters, the requirement is 90,696,450,048 bytes:
 one model/master/Adam checkpoint, the existing conversion allowance, and 20 GiB workspace margin. The measured checkpoint
-is 60,577,362,603 bytes. Recheck free space immediately before submission and allocation.
+is 60,577,362,603 bytes. The same storage guard now runs before submission and again at allocation, before model startup.
+The native flag rejects unsupported FSDP use and requires a fresh output directory with a separate resume source.
 
 ## Deadline safeguard and fixed limits
 
@@ -44,7 +45,7 @@ This policy trades intermediate recovery points for source preservation and a bo
 
 ## Validation before submission
 
-- All 108 TCS CPU tests pass in the existing service environment, with no provider calls or GPU allocation.
+- All 110 TCS CPU tests pass in the existing service environment, with no provider calls or GPU allocation.
 - Tests execute the actual async driver's checkpoint block and actual epoch predicate. Normal mode saves at 89, 94, 99
   and 104. Single-checkpoint mode saves only at 104, or only at an earlier external request. Data saves precede model saves.
 - The tests also cover a completed deadline checkpoint, a rejected second request, positive native argument serialization,

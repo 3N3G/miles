@@ -1641,7 +1641,7 @@ def get_miles_extra_args_provider(add_custom_arguments=None):
                 "--single-checkpoint",
                 action="store_true",
                 help=(
-                    "Save once at the final rollout or an earlier external checkpoint request. "
+                    "Megatron: save once at the final rollout or an earlier external checkpoint request. "
                     "Overrides periodic and epoch-boundary saves, and rejects another external request "
                     "after a completed checkpoint. Keep a positive --save-interval for Megatron validation."
                 ),
@@ -3759,8 +3759,14 @@ def miles_validate_args(args):
         assert args.save is not None, "'--save' is required when save_trigger_sentinel is set."
 
     if args.single_checkpoint:
+        assert args.train_backend == "megatron", "Single-checkpoint mode currently supports Megatron only."
         assert args.save is not None, "'--save' is required for a single checkpoint."
         assert args.save_interval is not None and args.save_interval > 0, "A positive save interval is required."
+        assert not (
+            Path(args.save) / "latest_checkpointed_iteration.txt"
+        ).exists(), (
+            "Single-checkpoint mode requires a fresh output directory. Resume from a separate --load directory."
+        )
 
     if args.custom_megatron_post_save_hook_path is not None:
         assert args.save is not None, "'--save' is required when custom_megatron_post_save_hook_path is set."
