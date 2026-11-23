@@ -150,3 +150,23 @@ A current-job storage warning is monitored: this run fits its two-checkpoint ato
 a separate continuation would require roughly 26 GB more at the next two-checkpoint save peak if free capacity stays near 95 GB.
 The user's intermediate-checkpoint retention decision is pending in `QUESTIONS.md`. Elapsed time is not approval.
 No checkpoint has been removed outside the already configured current-run retention hook.
+
+## Terminal closure
+
+Slurm reports TIMEOUT at 2026-11-23 00:16:53 UTC after 7,209 seconds. Its batch ends two seconds later.
+Charge 7,211 seconds conservatively. No training exception preceded the scheduler's signal.
+Twenty-four updates (65–88) completed and published. Tracked iteration 84 contains 85 total saved updates, including 20 new ones.
+Updates 85–88 are an unsaved branch. No partial later checkpoint exists. The tracked directory has four files and 60,577,362,603 bytes.
+All owned controller, judge, tunnel, telemetry and observer processes have exited. The judge ledger has 2,135 settled calls,
+zero pending reservations and $3.1215173 estimated spend.
+
+All 24 published coordinates and 1,955 scalar values match W&B. Its actual terminal state is failed because Slurm timed out;
+its summary records the walltime reason and executed/durable counts. All 24 three-engine weight publications agree.
+The immutable audit covers 768 answers and 41,853,024 response tokens. Six repeated-question means decline by 0.54167 points.
+Four within the durable prefix decline by 0.453125. The human results and raw examples are linked in
+[RUBRIC_CLARIFICATION_RESULTS_20261123.md](RUBRIC_CLARIFICATION_RESULTS_20261123.md).
+
+Primary final archive: `ebb7b87360ccb464f0e6368ed2431dc6d3de1075`. Diagnostic archive:
+`848b571b4f6b29c4dc7a2f21930dbe3d6c6082fa`. Exact readback receipts live in the VM run.
+A final closure snapshot will include the later manual scalar verification and archive-readback receipts.
+The remaining bounded continuation uses [the source-preserving storage repair](CHECKPOINT_STORAGE_REPAIR_20261122.md).
