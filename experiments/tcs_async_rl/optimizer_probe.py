@@ -10,8 +10,19 @@ reward-service repair. The default remains read-only.
 import argparse
 import collections
 import datetime
+import hashlib
 import json
+import sys
 from pathlib import Path
+
+
+def worker_source_files(actor):
+    modules = sorted({cls.__module__ for cls in type(actor).__mro__ if cls.__module__.startswith("miles.")})
+    paths = {name: Path(sys.modules[name].__file__).resolve() for name in modules}
+    return {
+        name: {"path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+        for name, path in paths.items()
+    }
 
 
 def read_optimizer_snapshot(actor):
@@ -21,6 +32,9 @@ def read_optimizer_snapshot(actor):
     return {
         "rank": actor._rank,
         "run_id": actor.args.wandb_run_id,
+        "worker_source_files": worker_source_files(actor),
+        "single_checkpoint": actor.args.single_checkpoint,
+        "save_interval": actor.args.save_interval,
         "scheduler_counter": scheduler.num_steps,
         "scheduler_decay_steps": scheduler.lr_decay_steps,
         "scheduler_style": scheduler.lr_decay_style,
@@ -70,6 +84,7 @@ def read_rollout_snapshot(actor):
     fn = actor.generate_rollout
     return {
         "run_id": actor.args.wandb_run_id,
+        "worker_source_files": worker_source_files(actor),
         "published_weight_versions": actor._weight_versions_of_model_id,
         "last_requested_rollouts": actor.last_get_rollout_id_of_model_id,
         "samples_in_flight": fn._scheduler.samples_in_flight,
