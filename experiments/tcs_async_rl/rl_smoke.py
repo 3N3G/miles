@@ -17,7 +17,6 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
-from experiments.tcs_async_rl.checkpoint_policy import single_checkpoint
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
 from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, prepare_smoke_row, question_key
 from experiments.tcs_async_rl.rl_artifacts import export_rollouts
@@ -104,10 +103,6 @@ def resolved_args(config, training, *, work_dir, run_dir, run_id):
         # attempt, and scope.optimizer_updates counts only new optimizer steps.
         args["load"] = config["resume"]["checkpoint_root"]
         args["num_rollout"] = initial_optimizer_updates(config) + config["scope"]["optimizer_updates"]
-    if single_checkpoint(config, run_dir):
-        # Omitting this flag selects Miles' native None default. The explicit
-        # before-step hook owns the final request, avoiding epoch-boundary saves.
-        del args["save_interval"]
     if any(value is None for value in args.values()):
         raise ValueError("Every Miles argument must be resolved before submission")
     return args, conversion_name

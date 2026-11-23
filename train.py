@@ -15,6 +15,7 @@ from miles.ray.placement_group import (
 from miles.ray.rollout.eval_dispatch import EvalDispatcher
 from miles.utils.arguments import parse_args
 from miles.utils.async_utils import Disposer, with_disposer
+from miles.utils.checkpoint_policy import should_save_checkpoint
 from miles.utils.data import remove_rollout_data_refs, remove_train_output_refs
 from miles.utils.ft_utils.mini_ft_controller import maybe_start_mini_ft_controller
 from miles.utils.lora.utils import lora_rollout_enabled
@@ -131,10 +132,15 @@ async def train(args, *, disposer: Disposer):
         remove_rollout_data_refs(args, rollout_data_pack)
 
         external_save = args.save_trigger_sentinel is not None and os.path.exists(args.save_trigger_sentinel)
-        if external_save or should_run_periodic_action(
-            rollout_id, args.save_interval, num_rollout_per_epoch, args.num_rollout
+        if should_save_checkpoint(
+            args,
+            rollout_id,
+            external_save=external_save,
+            periodic_save=should_run_periodic_action(
+                rollout_id, args.save_interval, num_rollout_per_epoch, args.num_rollout
+            ),
         ):
-            await save(rollout_id, force_sync=external_save)
+            await save(rollout_id, force_sync=external_save or args.single_checkpoint)
             if external_save:
                 os.remove(args.save_trigger_sentinel)
 

@@ -1,47 +1,56 @@
 # Preserve source checkpoints during the remaining-budget continuation
 
-The current two-hour replacement is healthy. A separate continuation would need about 151.3 GB free under the existing
-two-checkpoint space guard. Recent shared free space is about 94–96 GB. Every original checkpoint must remain preserved.
-This operational amendment uses the existing repair authorization and changes only checkpoint timing, not the experiment.
-No new GPU job has been submitted for this amendment. The running v15 snapshot remains unchanged.
+A separate continuation needs about 151.3 GB free under the existing two-checkpoint space guard. The terminal shared-space
+snapshot has 91.5 GB free. Every original checkpoint stays preserved. This operational amendment changes checkpoint timing
+only. The current v15 allocation is already terminal. No GPU job has used the new option yet.
 
-## One checkpoint, using existing Miles machinery
+## Native single-checkpoint option
 
-Use the new `checkpoint_policy.request_final_checkpoint` before-training-step hook. It reads no model or optimizer state.
-Disable `save_interval` by omitting its native flag, whose verified default is `None`. This also disables epoch-boundary saves.
-A large interval alone would still save at epoch boundaries and would not solve the storage problem.
-On the final global rollout, the hook touches this run's `checkpoint-request` sentinel before the optimizer step.
-Miles checks it after training that rollout, saves synchronously with the rollout state, and removes the sentinel.
-The hook does nothing if a completed checkpoint already exists. The source checkpoint is never modified.
-Do not trigger from the rollout logger: prefetch can run it before the preceding optimizer step finishes.
+Use `--single-checkpoint` with a positive save interval of 105 and the new run's external `checkpoint-request` sentinel.
+The native option overrides periodic and epoch-boundary saves in both training drivers. It saves at the final rollout or
+at the first earlier external request. After a completed checkpoint exists, it skips the final save and rejects another
+external request. Both final and external saves are synchronous. Source checkpoints remain read-only.
 
-The explicit sentinel path must be `<new-run>/checkpoint-request`, and the native periodic-save interval must be disabled.
-Preflight validates both before allowing the one-checkpoint storage estimate. Other configurations keep the old estimate.
-For 4,326,350,848 text-plus-MTP parameters, the guarded requirement is 90,696,450,048 bytes:
-one model/master/Adam checkpoint, the existing conversion allowance, and 20 GiB workspace margin.
-The measured checkpoint is 60,577,362,603 bytes. Recheck free space immediately before submission and allocation.
+The first CPU-only proposal omitted `save_interval`. Inspection of the installed Megatron validator found that this fails
+its positive-interval assertion. No GPU job used that proposal. Its exact draft and document are preserved privately.
+The corrected native option retains a positive interval and changes the checkpoint predicate explicitly, after validation.
+A large interval alone would still save at epoch boundaries and would not solve the problem. No training hook is needed.
+
+Preflight validates a positive interval and this run's sentinel before using the one-checkpoint space estimate. Other
+configurations keep the old estimate. For 4,326,350,848 text-plus-MTP parameters, the requirement is 90,696,450,048 bytes:
+one model/master/Adam checkpoint, the existing conversion allowance, and 20 GiB workspace margin. The measured checkpoint
+is 60,577,362,603 bytes. Recheck free space immediately before submission and allocation.
 
 ## Deadline safeguard and fixed limits
 
-Read actual elapsed allocation times after v15 terminates. The combined ceiling remains four hours on eight GPUs and $5
-for the shared judge ledger. Resume the atomically tracked v15 checkpoint and retain the original final global target 104.
-Use an exact remaining-duration request without a shorter backfill minimum. Preserve all old configurations and results.
+The first failed allocation used 996 seconds. The second used 7,209 seconds, with its batch ending after 7,211 seconds.
+Charge the larger value conservatively. Of the original combined 14,400 seconds on eight GPUs, 6,193 seconds remain.
+Reserve 60 seconds for scheduler termination overhead and request 102 minutes, leaving 73 seconds outside that request.
+The shared judge ledger contains 2,135 settled calls and $3.1215173 estimated spend, with zero pending reservations.
+Its cap stays $5. Do not reset the ledger. Cost may stop the continuation before its target.
 
-Keep foreground supervision. If the final update is unfinished with 15 minutes left in the actual allocation, and no output
-checkpoint exists, write the owned sentinel once. Let the current optimizer rollout finish and verify its tracker and all
-checkpoint files. If that checkpoint precedes the final target, stop only this owned allocation after verification.
-A single completed checkpoint prevents the final hook from requesting another save, even if monitoring is delayed.
-Never issue a second external request. Record a deadline stop as a bounded operational stop, not a training exception.
-If the final update completes first, its sentinel requests the one final checkpoint and the job exits normally.
-If no checkpoint finishes before the limit, preserve the original source and report the missing new durable checkpoint.
+Resume tracked iteration 84, containing 85 total saved updates. Target only the remaining global updates 85–104. The prior
+allocation executed 65–88, but 85–88 were not saved and belong to a rolled-back branch. Keep that branch's results separate.
+Use the exact remaining-duration request without a shorter backfill minimum. Keep all model, data, prompt, rubric, sampling,
+optimizer, metric, seed and held-out settings fixed.
+
+Keep foreground supervision. If the final update is unfinished with 15 minutes left in the actual allocation and no new
+checkpoint exists, write the owned sentinel once. Let the current rollout finish and verify its tracker and checkpoint
+files. Stop only this owned allocation after verifying an early checkpoint. Never issue a second external request.
+Also inspect judge cost and pending reservations. Request the one checkpoint before a budget rejection when feasible.
+Never fabricate a zero reward or raise the cap. If the cap blocks completion first, preserve the source and report lost
+unsaved progress. Record a managed deadline stop separately from a training exception.
 This policy trades intermediate recovery points for source preservation and a bounded storage peak. It does not enlarge compute.
 
 ## Validation before submission
 
-- All 106 TCS CPU tests pass in the existing service environment, with no provider calls or GPU allocation.
-- New checks cover the final rollout boundary, an existing deadline checkpoint, absence of training-state access, native flag omission,
-  the unchanged global target, and rejection of periodic saves or a foreign sentinel before lowering the space guard.
-- Black, isort and Ruff pass. The native before-step hook signature and post-training synchronous sentinel save were read directly.
-- A first attempt with system Python lacked `aiohttp`; the established service environment passes both HTTP tests and the full suite.
+- All 108 TCS CPU tests pass in the existing service environment, with no provider calls or GPU allocation.
+- Tests execute the actual async driver's checkpoint block and actual epoch predicate. Normal mode saves at 89, 94, 99
+  and 104. Single-checkpoint mode saves only at 104, or only at an earlier external request. Data saves precede model saves.
+- The tests also cover a completed deadline checkpoint, a rejected second request, positive native argument serialization,
+  the unchanged final target, and a foreign sentinel rejected before reducing the space estimate.
+- The installed Megatron save-validation clause is tested directly from its source. Interval 105 passes. None fails.
+  Its source SHA is in `native-checkpoint-policy-compatibility.json`. Full GPU startup validation remains mandatory.
+- Black, isort and Ruff pass. Existing used snapshots are unchanged.
 
-The earlier deletion-permission question is withdrawn. This alternative preserves every old checkpoint and needs no retention exception.
+The earlier deletion question is withdrawn. No source checkpoint is removed, and no retention exception is needed.
