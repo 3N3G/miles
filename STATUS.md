@@ -12,7 +12,7 @@
 
 ## Waiting on user
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The shared-operator pilot is ready: one tied sublayer, shared versus three separate sparse surrogates, three seeds, 32 final articles, native replacement and feature controls. Nine CPU checks passed. 
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Prepared the shared-operator pilot. Nine CPU checks passed. Fixed inputs cover 128 fit paragraphs, 16 development paragraphs and 32 final articles. No new GPU job or native Mini inference ran.
   Next: Approve the proposed single MI210 job capped at 30 allocation minutes, or specify another cap. The research direction is already selected.
 
 ## Finished

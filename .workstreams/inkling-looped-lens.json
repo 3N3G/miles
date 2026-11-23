@@ -154,15 +154,22 @@
       "actor": "codex",
       "summary": "Prepared and CPU-validated the shared-operator pilot; awaiting the required allocation cap",
       "revision": 16
+    },
+    {
+      "id": "cdee5917-00e6-4520-b04c-32a7cca233f2",
+      "at": "2026-11-23T00:44:37.388839Z",
+      "actor": "codex",
+      "summary": "Keep the generated status concise and free of clipped trailing whitespace",
+      "revision": 17
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Test a compact surrogate for one tied Inkling sublayer across its three passes, then causally validate any reusable features.",
   "state": "needs-you",
-  "summary": "The shared-operator pilot is ready: one tied sublayer, shared versus three separate sparse surrogates, three seeds, 32 final articles, native replacement and feature controls. Nine CPU checks passed. No new GPU job or native Mini inference ran.",
+  "summary": "Prepared the shared-operator pilot. Nine CPU checks passed. Fixed inputs cover 128 fit paragraphs, 16 development paragraphs and 32 final articles. No new GPU job or native Mini inference ran.",
   "nextAction": "Approve the proposed single MI210 job capped at 30 allocation minutes, or specify another cap. The research direction is already selected.",
   "owner": "Codex",
-  "revision": 16,
-  "updatedAt": "2026-11-23T00:44:21.224051Z"
+  "revision": 17,
+  "updatedAt": "2026-11-23T00:44:37.388839Z"
 }
