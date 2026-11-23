@@ -2864,15 +2864,22 @@
       "actor": "codex",
       "summary": "The bounded run saved 99 total updates and closed at $4.689; fourteen matched questions average 5.067 to 4.969/7, without reliable improvement",
       "revision": 265
+    },
+    {
+      "id": "de22513c-8ea0-4a76-9a33-c981e6c6f0a1",
+      "at": "2026-11-23T02:32:25.484228Z",
+      "actor": "codex",
+      "summary": "Verified closure: 99 updates saved, all archives and W&B match; fourteen comparable questions remain flat at 5.067 to 4.969/7",
+      "revision": 266
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "needs-you",
-  "summary": "The bounded run saved 99 total updates and closed at $4.689; fourteen matched questions average 5.067 to 4.969/7, without reliable improvement",
-  "nextAction": "Review the complete saved-path results and human rubric boundaries before choosing another research variant or training extension. Finish the manual closure snapshot readback.",
+  "summary": "Verified closure: 99 updates saved, all archives and W&B match; fourteen comparable questions remain flat at 5.067 to 4.969/7",
+  "nextAction": "Review the standalone results and human rubric boundaries in QUESTIONS.md before selecting another research variant or bounded training extension. No TCS job is active.",
   "owner": "Codex",
-  "revision": 265,
-  "updatedAt": "2026-11-23T02:29:35.344614Z"
+  "revision": 266,
+  "updatedAt": "2026-11-23T02:32:25.484228Z"
 }

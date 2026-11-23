@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The bounded run saved 99 total updates and closed at $4.689; fourteen matched questions average 5.067 to 4.969/7, without reliable improvement Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Review the complete saved-path results and human rubric boundaries before choosing another research variant or training extension. Finish the manual closure snapshot readback.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Verified closure: 99 updates saved, all archives and W&B match; fourteen comparable questions remain flat at 5.067 to 4.969/7 Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
+  Next: Review the standalone results and human rubric boundaries in QUESTIONS.md before selecting another research variant or bounded training extension. No TCS job is active.
 
 ## Finished
 
