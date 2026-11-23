@@ -5,31 +5,31 @@
   "evidence": [
     {
       "path": "evidence/native_unit_routing_result.json",
-      "label": "Preregistered native causal routing test and exact controls"
+      "label": "Independent native unit sign reversal"
     },
     {
-      "path": "evidence/native_expert_screen_result.json",
-      "label": "Replicated number routing and primary loss nulls"
+      "path": "evidence/native_unit_replay_result.json",
+      "label": "Exact replay and normalization decomposition"
     },
     {
       "path": "evidence/expert_program_budget.json",
       "label": "Five-hour GPU accounting"
     },
     {
-      "path": "plans/native_expert_confirmation_serial.md",
-      "label": "Unchanged independent task confirmation"
+      "path": "plans/native_unit_atlas.md",
+      "label": "Native unit atlas development plan"
     }
   ],
   "jobs": [
     {
-      "id": "541880",
+      "id": "541961",
       "cluster": "hpcfund",
       "status": "COMPLETED"
     },
     {
-      "id": "541961",
+      "id": "541963",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "RUNNING"
     }
   ],
   "sessions": [
@@ -283,15 +283,22 @@
       "actor": "codex",
       "summary": "Finished second blind confirmation order and submitted exact local replay",
       "revision": 34
+    },
+    {
+      "id": "6491b6d0-4de5-4576-ba85-a1cb83a6c116",
+      "at": "2026-11-23T07:55:44.977881Z",
+      "actor": "codex",
+      "summary": "Exact replay identifies normalization reversal and separates direct message contributions",
+      "revision": 35
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "On16 unseen articles, a native unit reverses its block-routing effect across passes with corrected intervals. All260 replicated output sign flips occur in the up input.",
-  "nextAction": "Validate exact replay, run the third fixed confirmation order, then read task efficacy.",
+  "summary": "Exact replay matches all128 native reader changes. For the phase-sensitive unit, normalization reverses the dot-product contribution on both tested passes.",
+  "nextAction": "Finish the third blind task order and develop a normalization-aware atlas of native units.",
   "owner": "Codex",
-  "revision": 34,
-  "updatedAt": "2026-11-23T07:50:27.577632Z"
+  "revision": 35,
+  "updatedAt": "2026-11-23T07:55:44.977881Z"
 }

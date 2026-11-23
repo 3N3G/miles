@@ -139,5 +139,25 @@ class NativeExpertChecks(unittest.TestCase):
         finally:h.remove()
         self.assertEqual(o.errors,[0]);self.assertTrue(torch.allclose(torch.from_numpy(o.rows[0]).sum(-1),torch.ones(3)))
 
+    def test_reader_normalization_can_reverse_writer_direction(self):
+        # A writer points towards the query, but even more strongly away from it.
+        # Its radial component changes normalization enough to reverse its effect.
+        base=torch.tensor([1.,1.],dtype=torch.float64)
+        writer=torch.tensor([1.,3.],dtype=torch.float64)
+        h=torch.tensor(0.,dtype=torch.float64,requires_grad=True)
+        block=base+h*writer
+        rms=block.square().mean().sqrt()
+        full=torch.stack([h*0,block[0]/rms]).softmax(0)[-1]
+        direct=torch.stack([h*0,block[0]/rms.detach()]).softmax(0)[-1]
+        grad,=torch.autograd.grad(full,h,retain_graph=True)
+        direct_grad,=torch.autograd.grad(direct,h)
+        epsilon=1e-5
+        changed=base-epsilon*writer
+        exact=torch.stack([changed[0]*0,changed[0]/changed.square().mean().sqrt()]).softmax(0)[-1]-full.detach()
+        self.assertGreater(float(exact),0)
+        self.assertGreater(float(-epsilon*grad),0)
+        self.assertLess(float(-epsilon*direct_grad),0)
+        self.assertAlmostEqual(float(exact),float(-epsilon*grad),places=9)
+
 
 if __name__=='__main__':unittest.main()

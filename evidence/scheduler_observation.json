@@ -1,5 +1,5 @@
 {
-  "observed_at": "2026-11-23T07:50:06.397855+00:00",
+  "observed_at": "2026-11-23T07:51:59.939191+00:00",
   "jobs": [
     {
       "id": "536316",
@@ -265,6 +265,13 @@
       "cluster": "hpcfund",
       "status": "COMPLETED",
       "elapsed": "00:23:08",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "541961",
+      "cluster": "hpcfund",
+      "status": "COMPLETED",
+      "elapsed": "00:01:11",
       "exit_code": "0:0"
     }
   ]

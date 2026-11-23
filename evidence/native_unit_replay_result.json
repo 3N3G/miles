@@ -1,0 +1,297 @@
+{
+  "effects": [
+    {
+      "condition": "unit45",
+      "visit": 1,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": 7.939453436327831e-05,
+        "descriptive_95_interval": [
+          2.47702792486442e-05,
+          0.00014857639949436165
+        ]
+      },
+      "numerator_contribution": {
+        "mean": -0.0002828754700853356,
+        "descriptive_95_interval": [
+          -0.0005489363875572703,
+          -6.749497240109901e-05
+        ]
+      },
+      "rms_contribution": {
+        "mean": 0.00036227000444861393,
+        "descriptive_95_interval": [
+          9.264512253659111e-05,
+          0.000694527374331041
+        ]
+      }
+    },
+    {
+      "condition": "unit45",
+      "visit": 3,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": -0.00017851474694907665,
+        "descriptive_95_interval": [
+          -0.00033233115100301803,
+          -6.412148359231653e-05
+        ]
+      },
+      "numerator_contribution": {
+        "mean": 0.00014099851250648499,
+        "descriptive_95_interval": [
+          5.009247979614884e-05,
+          0.000258529553372812
+        ]
+      },
+      "rms_contribution": {
+        "mean": -0.00031951325945556164,
+        "descriptive_95_interval": [
+          -0.0005909160448936745,
+          -0.00011496236755712226
+        ]
+      }
+    },
+    {
+      "condition": "unit3",
+      "visit": 1,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": -1.530344265380076e-05,
+        "descriptive_95_interval": [
+          -3.5769361004765546e-05,
+          2.2142023746190225e-06
+        ]
+      },
+      "numerator_contribution": {
+        "mean": 2.0154685314212528e-05,
+        "descriptive_95_interval": [
+          3.3192775195597537e-06,
+          4.1532907510242824e-05
+        ]
+      },
+      "rms_contribution": {
+        "mean": -3.5458127968013287e-05,
+        "descriptive_95_interval": [
+          -7.162372577503057e-05,
+          -3.6234027772609765e-06
+        ]
+      }
+    },
+    {
+      "condition": "unit3",
+      "visit": 3,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": -0.00013659588460411342,
+        "descriptive_95_interval": [
+          -0.00020696535024658906,
+          -7.233314182875417e-05
+        ]
+      },
+      "numerator_contribution": {
+        "mean": 4.2838709694998595e-05,
+        "descriptive_95_interval": [
+          2.256779033424599e-05,
+          6.493328712947135e-05
+        ]
+      },
+      "rms_contribution": {
+        "mean": -0.00017943459429911206,
+        "descriptive_95_interval": [
+          -0.00027025025337934494,
+          -9.635033534972799e-05
+        ]
+      }
+    },
+    {
+      "condition": "joint",
+      "visit": 1,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": 6.310661722506796e-05,
+        "descriptive_95_interval": [
+          -1.2273779637845453e-06,
+          0.00013945603568572539
+        ]
+      },
+      "numerator_contribution": {
+        "mean": -0.0002630428311281971,
+        "descriptive_95_interval": [
+          -0.0005329836954063338,
+          -4.155482518919084e-05
+        ]
+      },
+      "rms_contribution": {
+        "mean": 0.00032614944835326497,
+        "descriptive_95_interval": [
+          4.297035359611202e-05,
+          0.0006684186219769929
+        ]
+      }
+    },
+    {
+      "condition": "joint",
+      "visit": 3,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": -0.0003142611323190587,
+        "descriptive_95_interval": [
+          -0.00045619518995018937,
+          -0.00020075288235342937
+        ]
+      },
+      "numerator_contribution": {
+        "mean": 0.00017911674720900398,
+        "descriptive_95_interval": [
+          9.354943717231176e-05,
+          0.00028886809845321944
+        ]
+      },
+      "rms_contribution": {
+        "mean": -0.0004933778795280627,
+        "descriptive_95_interval": [
+          -0.0007427386224402912,
+          -0.0002984571698886741
+        ]
+      }
+    },
+    {
+      "condition": "control45",
+      "visit": 1,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": 4.308747260698251e-06,
+        "descriptive_95_interval": [
+          -3.1939874004040463e-07,
+          1.0135843435169331e-05
+        ]
+      },
+      "numerator_contribution": {
+        "mean": 3.713682027799743e-06,
+        "descriptive_95_interval": [
+          -9.403871704957314e-07,
+          1.0217311501037328e-05
+        ]
+      },
+      "rms_contribution": {
+        "mean": 5.950652328985079e-07,
+        "descriptive_95_interval": [
+          -1.0979790074218596e-06,
+          2.851147811660277e-06
+        ]
+      }
+    },
+    {
+      "condition": "control45",
+      "visit": 3,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": 5.546358547040394e-07,
+        "descriptive_95_interval": [
+          -8.741942500429494e-07,
+          2.053044902692948e-06
+        ]
+      },
+      "numerator_contribution": {
+        "mean": -1.114277568246637e-06,
+        "descriptive_95_interval": [
+          -4.125313716940581e-06,
+          1.831936034640031e-06
+        ]
+      },
+      "rms_contribution": {
+        "mean": 1.6689134229506763e-06,
+        "descriptive_95_interval": [
+          -1.5935411543718408e-06,
+          4.7912696442965934e-06
+        ]
+      }
+    }
+  ],
+  "projection_sources": [
+    {
+      "projection": "gate",
+      "visit": 1,
+      "selected_positions": 383,
+      "token_weighted_means": {
+        "native": -1.9900915877937337,
+        "current_depth_path": -1.9901396959008497,
+        "direct_previous_loop_path": 0.0,
+        "normalization_cast_residual": -0.00010019729821061273,
+        "projection_rounding_residual": 0.00014830540905022075
+      }
+    },
+    {
+      "projection": "gate",
+      "visit": 2,
+      "selected_positions": 402,
+      "token_weighted_means": {
+        "native": -1.9106858286691542,
+        "current_depth_path": -1.7006575820309606,
+        "direct_previous_loop_path": -0.21006524351087227,
+        "normalization_cast_residual": 2.5695448220633342e-05,
+        "projection_rounding_residual": 1.130142525436162e-05
+      }
+    },
+    {
+      "projection": "gate",
+      "visit": 3,
+      "selected_positions": 450,
+      "token_weighted_means": {
+        "native": -1.8608680555555555,
+        "current_depth_path": -1.73777083463139,
+        "direct_previous_loop_path": -0.12325703251692983,
+        "normalization_cast_residual": -8.250492052563156e-06,
+        "projection_rounding_residual": 0.0001680620825694253
+      }
+    },
+    {
+      "projection": "up",
+      "visit": 1,
+      "selected_positions": 383,
+      "token_weighted_means": {
+        "native": 1.09896539832531,
+        "current_depth_path": 1.0990783249079092,
+        "direct_previous_loop_path": 0.0,
+        "normalization_cast_residual": 2.108441021228963e-05,
+        "projection_rounding_residual": -0.00013401099471113944
+      }
+    },
+    {
+      "projection": "up",
+      "visit": 2,
+      "selected_positions": 402,
+      "token_weighted_means": {
+        "native": 0.18974577490963154,
+        "current_depth_path": 0.2429306879083612,
+        "direct_previous_loop_path": -0.0531995970459275,
+        "normalization_cast_residual": 2.1116196043819503e-05,
+        "projection_rounding_residual": -6.432148773600787e-06
+      }
+    },
+    {
+      "projection": "up",
+      "visit": 3,
+      "selected_positions": 450,
+      "token_weighted_means": {
+        "native": -1.2105234781901042,
+        "current_depth_path": -0.700426826874415,
+        "direct_previous_loop_path": -0.5099929325944847,
+        "normalization_cast_residual": 2.6329253499473757e-05,
+        "projection_rounding_residual": -0.00013004817091213125
+      }
+    }
+  ],
+  "paired_positions": 312,
+  "positive_to_negative_up": 260,
+  "current_path_already_negative_among_flips": 242,
+  "maximum_replayed_reader_weight_error": 0.0,
+  "maximum_attribution_sum_error": 0.0,
+  "limits": [
+    "Exploratory explanation of the existing 16-article test, not another independent sample.",
+    "Attribution factors are algebraic and need not be separately realizable interventions.",
+    "The current depth path can already contain information from previous loops.",
+    "Projection means weight selected token positions, not independent articles."
+  ]
+}

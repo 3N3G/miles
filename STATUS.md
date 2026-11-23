@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): On16 unseen articles, a native unit reverses its block-routing effect across passes with corrected intervals. All260 replicated output sign flips occur in the up input. Jobs: hpcfund/541880 COMPLETED; hpcfund/541961 SUBMITTED
-  Next: Validate exact replay, run the third fixed confirmation order, then read task efficacy.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Exact replay matches all128 native reader changes. For the phase-sensitive unit, normalization reverses the dot-product contribution on both tested passes. Jobs: hpcfund/541961 COMPLETED; hpcfund/541963 RUNNING
+  Next: Finish the third blind task order and develop a normalization-aware atlas of native units.
 
 ## Next / blocked
 
