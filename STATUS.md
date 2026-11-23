@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The user asked to follow the shared-operator suspicion. I am auditing the exact hook, existing captures and controls, then preparing a bounded pilot. Existing research and reports remain preserved.
+  Next: Prepare the experiment protocol and tested implementation. Resolve the project-required compute budget before any new GPU submission.
 
 ## Next / blocked
 
@@ -16,4 +17,4 @@
 
 ## Finished
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed the requested literature map: 86 entries in eight families, linked to 80 sources. Every entry has a one-line operation and a looping assessment labeled as inference. The short summary and fu
+- Nothing recorded.

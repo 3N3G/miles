@@ -140,15 +140,22 @@
       "actor": "codex",
       "summary": "Completed a source-backed 86-entry interpretability catalog with explicit first-principles looping assessments",
       "revision": 14
+    },
+    {
+      "id": "87e4af52-d836-40ab-82cc-a6b35d9d21d6",
+      "at": "2026-11-23T00:29:02.110943Z",
+      "actor": "codex",
+      "summary": "Resumed the user-selected shared-operator investigation and began a bounded transcoder pilot",
+      "revision": 15
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
-  "endpoint": "Produce a source-backed catalog of transformer interpretability techniques, each reduced to one first-principles line and assessed for the benefits and risks of looping.",
-  "state": "finished",
-  "summary": "Completed the requested literature map: 86 entries in eight families, linked to 80 sources. Every entry has a one-line operation and a looping assessment labeled as inference. The short summary and full catalog remain local user-review drafts. No new model experiment ran.",
-  "nextAction": "The requested survey is complete. Review SURVEY.md and the full local catalog. Any subsequent experiment needs a separate protocol.",
+  "endpoint": "Test a compact surrogate for one tied Inkling sublayer across its three passes, then causally validate any reusable features.",
+  "state": "running",
+  "summary": "The user asked to follow the shared-operator suspicion. I am auditing the exact hook, existing captures and controls, then preparing a bounded pilot. Existing research and reports remain preserved.",
+  "nextAction": "Prepare the experiment protocol and tested implementation. Resolve the project-required compute budget before any new GPU submission.",
   "owner": "Codex",
-  "revision": 14,
-  "updatedAt": "2026-11-22T18:35:19.963265Z"
+  "revision": 15,
+  "updatedAt": "2026-11-23T00:29:02.110943Z"
 }
