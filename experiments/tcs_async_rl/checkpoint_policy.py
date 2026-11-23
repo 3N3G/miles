@@ -1,7 +1,7 @@
 """Bound checkpoint storage without deleting a continuation's source checkpoint.
 
-The single-checkpoint mode disables periodic and epoch saves. A read-only
-training hook requests the final save through Miles' existing sentinel. The
+The single-checkpoint mode disables periodic and epoch saves. A training hook
+requests the final save without inspecting model state, using Miles' sentinel. The
 foreground supervisor can request one earlier deadline save and stop the owned
 job after verifying it. It must never request a second save in this mode.
 """
