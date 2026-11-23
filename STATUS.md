@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The user approved the prepared shared-operator pilot and its one-GPU, 30-minute cap. Code and input hashes match the CPU-validated versions. Preparing the recorded submission.
-  Next: Submit the approved MI210 job, monitor it through completion, validate the native controls and report the results.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The approved shared-operator pilot is running as MI210 job 541303, capped at 30 minutes. It checks native replay before fitting the fixed shared and pass-specific surrogates. Jobs: hpcfund/541303 RUNNING
+  Next: Monitor native controls, fitting and intervention stages. Preserve all artifacts and remain within the approved allocation cap.
 
 ## Next / blocked
 

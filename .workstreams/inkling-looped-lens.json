@@ -28,7 +28,13 @@
       "label": "Earlier private experimental results"
     }
   ],
-  "jobs": [],
+  "jobs": [
+    {
+      "id": "541303",
+      "cluster": "hpcfund",
+      "status": "RUNNING"
+    }
+  ],
   "sessions": [
     {
       "agent": "codex",
@@ -168,15 +174,22 @@
       "actor": "codex",
       "summary": "Recorded explicit user approval for the single 30-minute MI210 pilot",
       "revision": 18
+    },
+    {
+      "id": "b363dfad-96f2-4db8-8983-57c553299f5c",
+      "at": "2026-11-23T04:37:20.072479Z",
+      "actor": "codex",
+      "summary": "Submitted approved MI210 job 541303 from pinned commit c6ea41d9",
+      "revision": 19
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Test a compact surrogate for one tied Inkling sublayer across its three passes, then causally validate any reusable features.",
   "state": "running",
-  "summary": "The user approved the prepared shared-operator pilot and its one-GPU, 30-minute cap. Code and input hashes match the CPU-validated versions. Preparing the recorded submission.",
-  "nextAction": "Submit the approved MI210 job, monitor it through completion, validate the native controls and report the results.",
+  "summary": "The approved shared-operator pilot is running as MI210 job 541303, capped at 30 minutes. It checks native replay before fitting the fixed shared and pass-specific surrogates.",
+  "nextAction": "Monitor native controls, fitting and intervention stages. Preserve all artifacts and remain within the approved allocation cap.",
   "owner": "Codex",
-  "revision": 18,
-  "updatedAt": "2026-11-23T04:36:43.699066Z"
+  "revision": 19,
+  "updatedAt": "2026-11-23T04:37:20.072479Z"
 }
