@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The two-hour run closed with 24 published and 20 saved updates; six matched questions declined. The 102-minute remainder preserves all source checkpoints Jobs: hpcfund/539594 TIMEOUT; hpcfund/538647 FAILED
-  Next: Complete the final closure receipt readback, freeze and submit the prepared 20-update remainder, then supervise through terminal within the original GPU and judge caps
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 540286 Jobs: hpcfund/540286 SUBMITTED; hpcfund/539594 TIMEOUT
+  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
 
 ## Next / blocked
 

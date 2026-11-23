@@ -791,6 +791,11 @@
   ],
   "jobs": [
     {
+      "id": "540286",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "539594",
       "cluster": "hpcfund",
       "status": "TIMEOUT"
@@ -2783,15 +2788,22 @@
       "actor": "codex",
       "summary": "The two-hour run closed with 24 published and 20 saved updates; six matched questions declined. The 102-minute remainder preserves all source checkpoints",
       "revision": 257
+    },
+    {
+      "id": "58caaeeb-c452-4414-aea4-7c92183c8062",
+      "at": "2026-11-23T01:07:42.437425Z",
+      "actor": "codex",
+      "summary": "Automatically submitted approved RL job 540286",
+      "revision": 258
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "The two-hour run closed with 24 published and 20 saved updates; six matched questions declined. The 102-minute remainder preserves all source checkpoints",
-  "nextAction": "Complete the final closure receipt readback, freeze and submit the prepared 20-update remainder, then supervise through terminal within the original GPU and judge caps",
+  "summary": "Automatically submitted approved RL job 540286",
+  "nextAction": "Monitor the owned RL job, reward tunnel, optimizer updates and saving.",
   "owner": "Codex",
-  "revision": 257,
-  "updatedAt": "2026-11-23T00:54:43.020530Z"
+  "revision": 258,
+  "updatedAt": "2026-11-23T01:07:42.437425Z"
 }
