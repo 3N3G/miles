@@ -182,7 +182,14 @@ class NativeExpertChecks(unittest.TestCase):
         full,dot=sensitivity(layer,reader,capture,1)
         actual=local_delta(layer,reader,capture,1,[(45,1127)])
         self.assertGreater(actual,0);self.assertGreater(full[45,1127],0);self.assertLess(dot[45,1127],0)
-        self.assertLess(abs(float(full[45,1127])-actual),1e-5)
+        # Check the gradient against the analytic derivative, not a finite deletion.
+        # The latter includes curvature, which the forecast test measures separately.
+        b=torch.tensor([1.01,1.03],dtype=torch.float64)
+        rms=(b.square().mean()+1e-6).sqrt();s=b[0]/rms/2**.5
+        ds=(1/rms-b[0]*(b@torch.tensor([1.,3.],dtype=torch.float64))/2/rms**3)/2**.5
+        analytic=float(-.01*torch.sigmoid(s)*(1-torch.sigmoid(s))*ds)
+        self.assertAlmostEqual(float(full[45,1127]),analytic,places=7)
+        self.assertLess(abs(float(full[45,1127])-actual),abs(float(dot[45,1127])-actual))
         self.assertEqual(int((full!=0).sum()),1)
 
 

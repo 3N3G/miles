@@ -21,5 +21,10 @@
   "rms_scale_invariance_teacher_passed": true,
   "normalization_direction_reversal_teacher_passed": true,
   "native_edit_unit_tests_passed": 11,
-  "native_unit_atlas_radial_teacher_passed": true
+  "native_unit_atlas_radial_teacher_passed": true,
+  "native_unit_atlas_teacher_initial_failure": {
+    "absolute_error_against_finite_step": 2.1160230971872807e-05,
+    "initial_tolerance": 1e-05,
+    "reason": "The first-order gradient was compared against a finite deletion. The repaired teacher checks the analytic derivative directly and retains the finite-deletion direction and baseline comparison. Native replay and experiment criteria are unchanged."
+  }
 }
