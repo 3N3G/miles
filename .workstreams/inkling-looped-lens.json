@@ -28,13 +28,7 @@
       "label": "Observed terminal scheduler state"
     }
   ],
-  "jobs": [
-    {
-      "id": "541303",
-      "cluster": "hpcfund",
-      "status": "COMPLETED"
-    }
-  ],
+  "jobs": [],
   "sessions": [
     {
       "agent": "codex",
@@ -195,15 +189,22 @@
       "actor": "codex",
       "summary": "Finished the approved pilot, verified private artifacts and prepared standalone reports with a native routing lead",
       "revision": 21
+    },
+    {
+      "id": "48e0b936-e295-4ec1-8acd-939349b7d04b",
+      "at": "2026-11-23T05:48:40.959453Z",
+      "actor": "codex",
+      "summary": "Started the explicitly authorized autonomous expert study with a five-hour GPU cap",
+      "revision": 22
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
-  "endpoint": "Test a compact surrogate for one tied Inkling sublayer across its three passes, then causally validate any reusable features.",
-  "state": "finished",
-  "summary": "Completed the pilot in 5m50s. Sharing beats separate fits, while ridge predicts better. Expert 105 shows numeric-cue routing preference across passes. Its causal role remains untested.",
-  "nextAction": "Review reports/SHARED_OPERATOR.md. The next options are exact expert ablation or more surrogate data. No GPU job remains active.",
+  "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
+  "state": "running",
+  "summary": "The user authorized autonomous expert research and up to five GPU hours. Starting native expert ablation, task calibration and controls. The completed pilot remains preserved.",
+  "nextAction": "Record the adaptive research plan and budget ledger, validate native interventions, then run bounded discovery and confirmation stages without repeated approval requests.",
   "owner": "Codex",
-  "revision": 21,
-  "updatedAt": "2026-11-23T05:17:09.981171Z"
+  "revision": 22,
+  "updatedAt": "2026-11-23T05:48:40.959453Z"
 }

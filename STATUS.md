@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The user authorized autonomous expert research and up to five GPU hours. Starting native expert ablation, task calibration and controls. The completed pilot remains preserved.
+  Next: Record the adaptive research plan and budget ledger, validate native interventions, then run bounded discovery and confirmation stages without repeated approval requests.
 
 ## Next / blocked
 
@@ -16,4 +17,4 @@
 
 ## Finished
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed the pilot in 5m50s. Sharing beats separate fits, while ridge predicts better. Expert 105 shows numeric-cue routing preference across passes. Its causal role remains untested. Jobs: hpcfund/541303 COMPLETED
+- Nothing recorded.
