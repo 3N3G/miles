@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Native expert screen541690 is running on one MI210. The two superseded pending jobs used zero GPU time. CPU routing replay matched all native route sets. Jobs: hpcfund/541690 RUNNING
-  Next: Inspect clean task capability and causal effects, then freeze candidate confirmation within the remaining budget.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): All32 repaired derivative questions completed without weight gradients or changed native logits. Two native expert candidates are undergoing exact development edits. Jobs: hpcfund/541723 RUNNING
+  Next: Inspect candidate controls and native units, then run the frozen independent questions with three answer-order seeds.
 
 ## Next / blocked
 

@@ -262,5 +262,14 @@
     "private": true,
     "files": 2,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/82bd45440ca35a9dac2c34388bd8e468e8acb6a3/inkling-interp/router-phase-v1"
+  },
+  {
+    "stage": "expert-screen-v3",
+    "repo": "3N3G/internalization-runs",
+    "revision": "b091063b180ae9d2f91853eb41e6d9462bd9224b",
+    "private": true,
+    "files": 109,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/b091063b180ae9d2f91853eb41e6d9462bd9224b/inkling-interp/expert-screen-v3",
+    "verified_at": "2026-11-23T06:29:23.787963+00:00"
   }
 ]

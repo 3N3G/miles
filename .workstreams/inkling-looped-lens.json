@@ -22,7 +22,7 @@
   ],
   "jobs": [
     {
-      "id": "541690",
+      "id": "541723",
       "cluster": "hpcfund",
       "status": "RUNNING"
     }
@@ -215,15 +215,29 @@
       "actor": "codex",
       "summary": "Started the frozen single-GPU screen541690 after finding an immediate development slot",
       "revision": 25
+    },
+    {
+      "id": "7689ed23-4c0d-4244-b717-3390b38af6f2",
+      "at": "2026-11-23T06:29:57.834470Z",
+      "actor": "codex",
+      "summary": "Recorded prospective routing replication, primary causal nulls and derivative repair submission",
+      "revision": 26
+    },
+    {
+      "id": "ea70609c-6681-403c-acc6-dd63a65a5845",
+      "at": "2026-11-23T06:33:54.815621Z",
+      "actor": "codex",
+      "summary": "Repaired derivative search completed and native candidate validation is running",
+      "revision": 27
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Native expert screen541690 is running on one MI210. The two superseded pending jobs used zero GPU time. CPU routing replay matched all native route sets.",
-  "nextAction": "Inspect clean task capability and causal effects, then freeze candidate confirmation within the remaining budget.",
+  "summary": "All32 repaired derivative questions completed without weight gradients or changed native logits. Two native expert candidates are undergoing exact development edits.",
+  "nextAction": "Inspect candidate controls and native units, then run the frozen independent questions with three answer-order seeds.",
   "owner": "Codex",
-  "revision": 25,
-  "updatedAt": "2026-11-23T06:14:13.564158Z"
+  "revision": 27,
+  "updatedAt": "2026-11-23T06:33:54.815621Z"
 }
