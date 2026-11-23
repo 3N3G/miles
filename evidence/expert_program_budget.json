@@ -148,20 +148,25 @@
       "observed_allocation_seconds": 71,
       "actual_allocation_seconds": 71,
       "actual_gpu_seconds": 71
-    }
-  ],
-  "used_gpu_seconds": 6415,
-  "remaining_gpu_seconds": 11585,
-  "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [
+    },
     {
       "run_name": "native-unit-atlas-confirmation-v1",
+      "job_id": "542015",
       "gpus": 1,
+      "maximum_allocation_seconds": 600,
       "maximum_gpu_seconds": 600,
-      "status": "prepared conditional on development guards"
+      "status": "COMPLETED",
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 108,
+      "actual_allocation_seconds": 108,
+      "actual_gpu_seconds": 108
     }
   ],
-  "unreserved_gpu_seconds": 10985,
-  "reserved_gpu_seconds": 600,
-  "observed_at": "2026-11-23T08:17:38.984587+00:00"
+  "used_gpu_seconds": 6523,
+  "remaining_gpu_seconds": 11477,
+  "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
+  "pending_reservations": [],
+  "unreserved_gpu_seconds": 11477,
+  "reserved_gpu_seconds": 0,
+  "observed_at": "2026-11-23T08:21:09.965843+00:00"
 }

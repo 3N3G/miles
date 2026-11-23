@@ -4,32 +4,32 @@
   "sources": [],
   "evidence": [
     {
+      "path": "evidence/native_unit_atlas_confirmation_result.json",
+      "label": "Fixed32-article forecast and native unit interventions"
+    },
+    {
+      "path": "evidence/native_unit_atlas_activity.json",
+      "label": "Different gate and up sign mechanisms"
+    },
+    {
       "path": "evidence/native_expert_confirmation_result.json",
-      "label": "Fixed independent task confirmation"
-    },
-    {
-      "path": "evidence/native_unit_routing_result.json",
-      "label": "Independent native unit sign reversal"
-    },
-    {
-      "path": "evidence/native_unit_replay_result.json",
-      "label": "Exact normalization explanation"
+      "label": "Independent math test confirms0/4 candidates"
     },
     {
       "path": "evidence/expert_program_budget.json",
-      "label": "Five-hour GPU accounting"
+      "label": "6523/18000 GPU seconds used"
     }
   ],
   "jobs": [
     {
-      "id": "541963",
+      "id": "542012",
       "cluster": "hpcfund",
       "status": "COMPLETED"
     },
     {
-      "id": "542012",
+      "id": "542015",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "COMPLETED"
     }
   ],
   "sessions": [
@@ -297,15 +297,29 @@
       "actor": "codex",
       "summary": "Complete the fixed expert confirmation and start native unit atlas development",
       "revision": 36
+    },
+    {
+      "id": "c75c67ea-da71-4ae0-b40e-9ba62771766e",
+      "at": "2026-11-23T08:18:41.186166Z",
+      "actor": "codex",
+      "summary": "Complete native unit development and submit the fixed new-article forecast test",
+      "revision": 37
+    },
+    {
+      "id": "cb5d86eb-04d9-4711-a53b-96a6de4b34e0",
+      "at": "2026-11-23T08:30:14.554483Z",
+      "actor": "codex",
+      "summary": "Complete fixed unit tests with three new routing reversals and a validated predictor",
+      "revision": 38
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "None of four expert candidates passed all fixed math-specific causal criteria on64 math and64 biology questions. Native unit routing remains the measured positive result.",
-  "nextAction": "Complete unit atlas development and test its fixed units on32 unused articles.",
+  "summary": "On32 unused articles, the full local lens cut eight-unit forecast error13-fold versus dot-only, with3/4 new causal routing reversals. The math-specific expert test confirmed0/4 candidates.",
+  "nextAction": "Preserve standalone local report drafts and close the reproducibility audit.",
   "owner": "Codex",
-  "revision": 36,
-  "updatedAt": "2026-11-23T08:15:51.120866Z"
+  "revision": 38,
+  "updatedAt": "2026-11-23T08:30:14.554483Z"
 }

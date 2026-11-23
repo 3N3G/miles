@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): None of four expert candidates passed all fixed math-specific causal criteria on64 math and64 biology questions. Native unit routing remains the measured positive result. Jobs: hpcfund/541963 COMPLETED; hpcfund/542012 SUBMITTED
-  Next: Complete unit atlas development and test its fixed units on32 unused articles.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): On32 unused articles, the full local lens cut eight-unit forecast error13-fold versus dot-only, with3/4 new causal routing reversals. The math-specific expert test confirmed0/4 candidates. Jobs: hpcfund/542012 COMPLETED; hpcfund/542015 COMPLETED
+  Next: Preserve standalone local report drafts and close the reproducibility audit.
 
 ## Next / blocked
 

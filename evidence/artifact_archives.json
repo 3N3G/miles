@@ -361,5 +361,32 @@
     "files": 6,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/0fccd7601a8599deeb8345d9fb526e26362a1b00/inkling-interp/expert-confirmation-s2",
     "verified_at": "2026-11-23T08:15:43.791180+00:00"
+  },
+  {
+    "stage": "native-unit-atlas-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "7bdbbf3020e746bf84088e22549320587282644b",
+    "private": true,
+    "files": 7,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7bdbbf3020e746bf84088e22549320587282644b/inkling-interp/native-unit-atlas-v1",
+    "verified_at": "2026-11-23T08:18:37.213308+00:00"
+  },
+  {
+    "stage": "expert-confirmation-analysis-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "f483fb4bca83d848f11e5c0e462e38898401027c",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/f483fb4bca83d848f11e5c0e462e38898401027c/inkling-interp/expert-confirmation-analysis-v1",
+    "verified_at": "2026-11-23T08:19:43.817383+00:00"
+  },
+  {
+    "stage": "native-unit-atlas-confirmation-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "dea7a9564c00bfcd133495bd01345b0a3282e150",
+    "private": true,
+    "files": 43,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/dea7a9564c00bfcd133495bd01345b0a3282e150/inkling-interp/native-unit-atlas-confirmation-v1",
+    "verified_at": "2026-11-23T08:23:52.131826+00:00"
   }
 ]

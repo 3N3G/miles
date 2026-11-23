@@ -60,4 +60,4 @@ and native unit examples with activation and route weights.
 
 ## Results
 
-Pending.
+Completed32 discovery questions and416 scored condition views for two candidates and controls. Layer7 expert73 mathematics deletion loss increased0.3445 nats, versus0.2510 for random edits. Layer11 expert63 increased0.0417, versus0.0456 for random edits. These were development observations. Neither candidate passed the later independent criteria. See evidence/native_expert_confirmation_result.json. Archive: expert-development-v1.

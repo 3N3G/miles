@@ -76,5 +76,4 @@ Plots show one claim, article/question intervals and at least one raw example.
 
 ## Results
 
-Pending. Stage plans and evidence files hold the measured results. Scientific
-interpretations in the final report are drafts for the user.
+Completed the approved study using6523 of18,000 GPU seconds, including the prior350-second pilot conservatively. No GPU job or reservation remains. Number/time routing preference replicated, but primary cue-specific loss tests included0. None of four candidates passed the fixed math-specific task criteria. Native unit45:1127 showed a prospective routing sign reversal. Exact replay identified a dominant normalization contribution. A fixed32-article follow-up reduced eight-unit forecast error about13-fold versus dot-only and confirmed3/4 new phase-unit reversals. Six new units alone retained a4.7-fold gain. Human reports are local review drafts under reports/. No final-answer improvement, global counter or fixed-point convergence is established.

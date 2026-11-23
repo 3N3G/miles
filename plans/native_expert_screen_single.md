@@ -28,4 +28,4 @@ pending jobs receive their actual zero allocation time in the same ledger.
 
 ## Results
 
-Pending.
+All calibration, development-question and text forwards completed. Expert105 prospective routing ratios were3.625,3.654,3.330 across passes on48 new articles. Both primary cue-specific deletion-loss contrasts included0. The subsequent derivative stage failed because the hooked range included an unlooped layer and omitted a core layer. Forward results were preserved and not rerun. See evidence/native_expert_screen_result.json and native_expert_derivative_repair.md.

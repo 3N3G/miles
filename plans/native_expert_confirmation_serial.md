@@ -36,4 +36,4 @@ plots and raw-example rules are unchanged from `native_expert_confirmation.md`.
 
 ## Results
 
-Pending.
+All three fixed single-prompt orders completed, each with128 questions and16 conditions. Native identity and deletion-equivalence controls were exact. Results stayed unread until all orders finished. None of four identities passed all three primary requirements with12-family correction. See evidence/native_expert_confirmation_result.json. The replication cohort remains unused.

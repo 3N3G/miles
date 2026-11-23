@@ -40,4 +40,4 @@ GPU seconds. A confirmation plan and spec will precede held-out inference.
 
 ## Results
 
-Pending.
+Completed derivatives on32 discovery questions using the configured core range. Full-model logits after gradients matched exactly and pretrained parameters had no gradients. Selected physical layer11 expert63 and layer7 expert73. Exact candidate validation completed before a final neuron observer failed on the grouped backend. Valid outputs were preserved in expert-development-v1. Observation was repaired separately in native_neuron_capture_repair.md.

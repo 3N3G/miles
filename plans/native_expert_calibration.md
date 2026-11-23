@@ -46,4 +46,4 @@ other experts rather than infer that routing means computation.
 
 ## Results
 
-Pending.
+The initial allocation was cancelled while pending, using0 GPU seconds. Calibration and forward stages instead executed under native_expert_screen_single.md. No output is attributed to the cancelled allocation.

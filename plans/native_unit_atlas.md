@@ -58,4 +58,4 @@ or gradient-finiteness guard. Any repair must preserve this question and data.
 
 ## Results
 
-Pending.
+Completed16 development articles. Local gradients ranked147,456 units per pass. Six new identities were frozen before256 exact validation cases, including two known comparators. Native logits stayed unchanged after gradients and weight gradients were absent. Full, dot-only and zero forecast errors were0.0000140,0.0001056,0.0001284. These are development results. See evidence/native_unit_atlas_development.json and native_unit_atlas_freeze.json. Archive: native-unit-atlas-v1.

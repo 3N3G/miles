@@ -113,4 +113,4 @@ Keep total program use plus reservations under18,000 GPU seconds.
 
 ## Results
 
-Pending.
+Batched calibration failed before any confirmation inference, with maximum choice-log-probability error0.4015 and effect error0.4796 nats. The cause was not isolated. The unchanged single-prompt repair completed128 questions, three answer orders and16 conditions, giving6144 scored condition views. None of four identities passed all three corrected primary requirements. The separate replication cohort remains unused. See evidence/native_expert_confirmation_result.json and the three expert-confirmation-s0/s1/s2 archives plus expert-confirmation-analysis-v1.

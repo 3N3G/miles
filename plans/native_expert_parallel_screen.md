@@ -63,4 +63,4 @@ are preserved even if the new test fails.
 
 ## Results
 
-Pending.
+The eight-GPU allocation was cancelled while pending, using0 GPU seconds. The frozen forward stages ran on one GPU under native_expert_screen_single.md. Forward outputs completed before the later derivative-range assertion failed. Results: evidence/native_expert_screen_result.json. Archive: expert-screen-v3.

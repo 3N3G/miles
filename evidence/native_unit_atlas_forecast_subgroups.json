@@ -1,0 +1,23 @@
+{
+  "scope": "Descriptive checks. The primary unit set and two primary comparisons are unchanged.",
+  "groups": [
+    {
+      "group": "six_new",
+      "cases": 384,
+      "mae": {
+        "predicted_full": 7.0937940292540675e-06,
+        "predicted_dot_only": 3.350293373123129e-05,
+        "zero": 0.00013316265310709766
+      }
+    },
+    {
+      "group": "two_known",
+      "cases": 128,
+      "mae": {
+        "predicted_full": 6.650760349211082e-06,
+        "predicted_dot_only": 0.0002613437970834104,
+        "zero": 0.00011761680132159336
+      }
+    }
+  ]
+}

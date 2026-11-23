@@ -41,4 +41,4 @@ The program cap remains18,000 GPU seconds.
 
 ## Results
 
-Pending.
+Completed144 old paragraphs with the unchanged grouped backend and exact logit identity. The128 fitting paragraphs came from106 articles. The16 development paragraphs had3 article overlaps with fitting. These are development data. The numeric family used fitting only. Later article tests excluded these sources. Archive: native-neurons-v2.

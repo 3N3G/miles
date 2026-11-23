@@ -98,4 +98,4 @@ This was recorded before starting any new-article inference.
 
 ## Results
 
-Pending.
+Completed32 unused articles and512 unit/pass deletion cases. All28 initial native full-forward checks were exact. Full MAE was6.983e-6, versus9.046e-5 for dot-only and1.293e-4 for zero. Both corrected forecast comparisons passed. New units83:1107,52:585,44:492 passed the eight-family corrected sign-reversal rule. Unit58:285 did not. Direction agreement was427/450 versus334/450, descriptive. The six new units alone retained a4.7-fold error reduction. Random norm mismatch was at most1.46% per aggregated unit/pass and5.58% per article/control. See evidence/native_unit_atlas_confirmation_result.json and adjacent activity/dose evidence. Archive: native-unit-atlas-confirmation-v1.

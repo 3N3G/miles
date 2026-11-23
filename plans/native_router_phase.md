@@ -35,4 +35,4 @@ expert research. All analysis is development-only, with no final article states.
 
 ## Results
 
-Pending.
+Reproduced every saved native top8 set exactly, with maximum selected-weight error2.027e-6. Fitting used128 paragraphs from106 articles, correcting an earlier128-article metadata label. Mean translation improved cross-pass overlap only0.6–2.6 percentage points. Expert105 retained about4-fold cue preference after removing the fitted phase span. These are descriptive old-data results. See evidence/native_router_phase_result.json. Archive: router-phase-v1.

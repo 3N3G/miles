@@ -1,0 +1,589 @@
+{
+  "primary_forecast_contrasts": [
+    {
+      "contrast": "MAE_full_minus_dot_only",
+      "mean": -8.348011396003274e-05,
+      "interval": [
+        -0.00011104583939428037,
+        -5.860907353710251e-05
+      ],
+      "family_size": 2,
+      "sampling_unit": "article",
+      "articles": 32,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    {
+      "contrast": "MAE_full_minus_zero",
+      "mean": -0.00012229315455147827,
+      "interval": [
+        -0.00013721425398020363,
+        -0.000107527401357764
+      ],
+      "family_size": 2,
+      "sampling_unit": "article",
+      "articles": 32,
+      "resamples": 10000,
+      "seed": 1729
+    }
+  ],
+  "passes_both_forecast_requirements": true,
+  "mae": {
+    "full": {
+      "mean": 6.983035609243321e-06,
+      "interval": [
+        6.124050972472657e-06,
+        7.915931709612678e-06
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 32,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "dot_only": {
+      "mean": 9.046314956927606e-05,
+      "interval": [
+        6.802986382951184e-05,
+        0.00011448092894897464
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 32,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "zero": {
+      "mean": 0.0001292761901607216,
+      "interval": [
+        0.00011609199630164893,
+        0.0001426964983439737
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 32,
+      "resamples": 10000,
+      "seed": 1729
+    }
+  },
+  "direction_accuracy_nonzero_effects": {
+    "full": 0.9488888888888889,
+    "dot_only": 0.7422222222222222
+  },
+  "nonzero_effect_cases": 450,
+  "total_unit_pass_article_cases": 512,
+  "per_unit": [
+    {
+      "expert": 83,
+      "unit": 1107,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.00024163852503988892,
+        6.339412720990367e-06,
+        -4.3080104660475627e-05
+      ],
+      "raw_effects": [
+        {
+          "visit": 1,
+          "mean": 0.00010675755656364139,
+          "interval": [
+            5.9433922136653554e-05,
+            0.00016096576622816604
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": -4.541143850822493e-05,
+          "interval": [
+            -6.254327125851944e-05,
+            -2.9811596480744388e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "adjusted_effects": [
+        {
+          "visit": 1,
+          "mean": 0.00010516544388187535,
+          "interval": [
+            4.545514736185678e-05,
+            0.00018308792303785927
+          ],
+          "family_size": 8,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": -4.4833364360845805e-05,
+          "interval": [
+            -7.006598992771119e-05,
+            -2.514621188253438e-05
+          ],
+          "family_size": 8,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "passes_sign_reversal_rule": true,
+      "is_primary_replication": true
+    },
+    {
+      "expert": 52,
+      "unit": 585,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.00022232660558074713,
+        -1.4705464309372474e-05,
+        -5.312289431458339e-05
+      ],
+      "raw_effects": [
+        {
+          "visit": 1,
+          "mean": 0.00016641784733906206,
+          "interval": [
+            8.637416783727759e-05,
+            0.0002700542316539156
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": -5.569854478437719e-05,
+          "interval": [
+            -9.733289933997469e-05,
+            -2.9249670905429072e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "adjusted_effects": [
+        {
+          "visit": 1,
+          "mean": 0.0001688060577647958,
+          "interval": [
+            6.434751636527717e-05,
+            0.0003253766771831226
+          ],
+          "family_size": 8,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": -5.4936235074594844e-05,
+          "interval": [
+            -0.00011681518477745764,
+            -2.4012631086034694e-05
+          ],
+          "family_size": 8,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "passes_sign_reversal_rule": true,
+      "is_primary_replication": true
+    },
+    {
+      "expert": 58,
+      "unit": 285,
+      "category": "phase",
+      "predicted_per_pass": [
+        -2.0250390662113205e-05,
+        7.166717841755599e-05,
+        0.00022751458163838834
+      ],
+      "raw_effects": [
+        {
+          "visit": 1,
+          "mean": -2.6541221636477985e-05,
+          "interval": [
+            -6.40647629744251e-05,
+            1.4651599779647015e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": 0.0002194516281548431,
+          "interval": [
+            0.0001412714863580078,
+            0.0003030157523884469
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "adjusted_effects": [
+        {
+          "visit": 1,
+          "mean": -2.5741675667212416e-05,
+          "interval": [
+            -7.831381358708952e-05,
+            3.360213160983004e-05
+          ],
+          "family_size": 8,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": 0.00022855351035566684,
+          "interval": [
+            0.0001198505499414887,
+            0.0003505766745466992
+          ],
+          "family_size": 8,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "passes_sign_reversal_rule": false,
+      "is_primary_replication": true
+    },
+    {
+      "expert": 44,
+      "unit": 492,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.0001253370865015313,
+        0.00020596665854100138,
+        -0.00012218246411066502
+      ],
+      "raw_effects": [
+        {
+          "visit": 1,
+          "mean": 0.00011471056848044725,
+          "interval": [
+            5.755316098161601e-05,
+            0.00017357246502540662
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": -0.0002368783216866177,
+          "interval": [
+            -0.00028279295217501497,
+            -0.00018907405532999635
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "adjusted_effects": [
+        {
+          "visit": 1,
+          "mean": 0.00011573579101176178,
+          "interval": [
+            3.700408214217104e-05,
+            0.0002020246692754148
+          ],
+          "family_size": 8,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": -0.00023297196675072426,
+          "interval": [
+            -0.00029398840353219943,
+            -0.0001677974228741607
+          ],
+          "family_size": 8,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "passes_sign_reversal_rule": true,
+      "is_primary_replication": true
+    },
+    {
+      "expert": 38,
+      "unit": 1033,
+      "category": "stable",
+      "predicted_per_pass": [
+        0.00022653101768810302,
+        0.00016336620319634676,
+        6.738172669429332e-05
+      ],
+      "raw_effects": [
+        {
+          "visit": 1,
+          "mean": 0.00041934118576136825,
+          "interval": [
+            0.0003434804298478866,
+            0.0004988478736265733
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": 8.251765808964251e-05,
+          "interval": [
+            6.248274577043133e-05,
+            0.00010336771839192238
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "adjusted_effects": [],
+      "passes_sign_reversal_rule": false,
+      "is_primary_replication": false
+    },
+    {
+      "expert": 111,
+      "unit": 310,
+      "category": "stable",
+      "predicted_per_pass": [
+        8.857088687364012e-05,
+        0.0001537932112114504,
+        0.0002013250777963549
+      ],
+      "raw_effects": [
+        {
+          "visit": 1,
+          "mean": -5.408406775764263e-07,
+          "interval": [
+            -4.273576072255647e-06,
+            2.297359147507282e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": 3.851401420784661e-06,
+          "interval": [
+            -4.4996392727369995e-07,
+            1.1728645135322676e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "adjusted_effects": [],
+      "passes_sign_reversal_rule": false,
+      "is_primary_replication": false
+    },
+    {
+      "expert": 45,
+      "unit": 1127,
+      "category": "known",
+      "raw_effects": [
+        {
+          "visit": 1,
+          "mean": 0.00014893253238845716,
+          "interval": [
+            8.787733686448363e-05,
+            0.0002137102643638311
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": -0.00024862547717319217,
+          "interval": [
+            -0.0003600590066458409,
+            -0.00014869752275057383
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "adjusted_effects": [
+        {
+          "visit": 1,
+          "mean": 0.00014825635065413012,
+          "interval": [
+            8.833778630125596e-05,
+            0.00021158471628736117
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": -0.0002472759963017731,
+          "interval": [
+            -0.0003573917588261533,
+            -0.00014813997385677757
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "passes_sign_reversal_rule": true,
+      "is_primary_replication": false
+    },
+    {
+      "expert": 3,
+      "unit": 664,
+      "category": "known",
+      "raw_effects": [
+        {
+          "visit": 1,
+          "mean": -8.193934038780437e-06,
+          "interval": [
+            -1.6624768399084445e-05,
+            -8.227855437970009e-07
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "visit": 3,
+          "mean": -5.790536437855209e-05,
+          "interval": [
+            -8.222865116700451e-05,
+            -3.701426488720295e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 32,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "adjusted_effects": [],
+      "passes_sign_reversal_rule": false,
+      "is_primary_replication": false
+    }
+  ],
+  "representative_example": {
+    "selection": "Article nearest the median dot-only-minus-full MAE. Unit/pass with largest error reduction within that article.",
+    "id": "unit-atlas-test-012",
+    "article": "= Iguanodon =",
+    "mean_absolute_error_full": 8.177842460099782e-06,
+    "mean_absolute_error_dot_only": 5.943484512727082e-05,
+    "case": {
+      "id": "unit-atlas-test-012",
+      "article": "= Iguanodon =",
+      "expert": 52,
+      "unit": 585,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.00022232660558074713,
+        -1.4705464309372474e-05,
+        -5.312289431458339e-05
+      ],
+      "visit": 1,
+      "predicted_full": 0.0006184933590702713,
+      "predicted_dot_only": 0.0004208743921481073,
+      "actual_delta": 0.0006119917379692197,
+      "random_deltas": [
+        -1.2068876458215527e-05,
+        -1.0543103599047754e-05,
+        1.545676241221372e-05
+      ],
+      "random_audits": [
+        {
+          "visit": 1,
+          "intended_norm_sum": 21.981670379638672,
+          "actual_norm_sum": 22.080066680908203,
+          "nonzero_token_edits": 17,
+          "relative_norm_sum_error": 0.004476288799196482
+        },
+        {
+          "visit": 1,
+          "intended_norm_sum": 21.981670379638672,
+          "actual_norm_sum": 22.079437255859375,
+          "nonzero_token_edits": 17,
+          "relative_norm_sum_error": 0.004447654355317354
+        },
+        {
+          "visit": 1,
+          "intended_norm_sum": 21.981670379638672,
+          "actual_norm_sum": 22.087657928466797,
+          "nonzero_token_edits": 17,
+          "relative_norm_sum_error": 0.004821632988750935
+        }
+      ],
+      "native_block2_weight": 0.7150527238845825
+    }
+  },
+  "maximum_random_norm_sum_error": 0.05581245198845863,
+  "limits": [
+    "All identities were selected on development data. This tests the fixed eight units, not all native units.",
+    "The unit/pass cases are averaged within articles for primary forecasting inference.",
+    "Sign agreement is descriptive. The two forecasting intervals form a separate family from the eight new-unit phase intervals.",
+    "The measured endpoint is a local reader weight, not answer accuracy."
+  ]
+}
