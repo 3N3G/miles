@@ -69,3 +69,24 @@ Receipts: `optimizer-and-rollout-bootstrap-probe.json`, `restored-weight-publica
 Session-owned VM processes: controller **1276272**, judge **1276276**, metrics observer **1276761**,
 GPU telemetry **1276762**, hourly review **1276763**, and active reverse tunnel **1276570**.
 Verify process receipts and `/proc` before managing them. Do not start a second controller against this submission.
+
+## Update-90 review and guards
+
+At 01:47 UTC, all 487 scalar values for updates 85–90 match the sole W&B history, without duplicate coordinates.
+Update 90's fixed-batch surrogate gain is +0.00041719. Positive-advantage mean log-probability change is +0.00038898,
+versus −0.00035641 for negative advantages. This checks update direction, not future answer quality.
+`six-updates-native-wandb-all-scalars-verification.json` and `update-90-direction-check.json` preserve these observations.
+
+The first three complete immutable audits cover 96 answers and 6,411,855 response tokens.
+Three answers have judge-order disagreement, with maximum gap one. Every paired reference score is seven.
+Seed-selected examples include a defensible one-point incomplete counterexample, a valid seven-point matrix construction,
+and a valid seven-point argument that the stated parameter range is empty. These assistant checks are not human calibration.
+The later local summaries remain provisional until their immutable full-group checks finish.
+
+At five new groups, the combined saved trajectory has eight repeated questions: three increase and five decrease.
+Their first-to-latest mean change is −0.3046875/7. This includes the earlier durable prefix, not just recent positive pairs.
+Always exclude the predecessor's unsaved updates 85–88 from this combined path.
+
+The foreground disk alert is 85,000,000,000 free bytes. It requests inspection rather than changing the training protocol.
+One observed checkpoint plus 20 GiB workspace requires 82,052,199,083 bytes. Other users also write to this filesystem.
+The cost/deadline request thresholds above remain authoritative. `foreground-resource-guard.json` records the live guard.

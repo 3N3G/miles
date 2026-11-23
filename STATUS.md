@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 540286 restored exact saved weights and completed update 85; both optimizer ranks and all 79 W&B scalar values verified Jobs: hpcfund/540286 RUNNING; hpcfund/539594 TIMEOUT
-  Next: Inspect fresh versus restored rollouts, entropy/divergence and matched-question rewards; request one checkpoint by 02:34:51 UTC or $4.50 and supervise through full closure.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation reached seven finite updates; update-90 direction is positive, but combined repeated-question rewards still decline Jobs: hpcfund/540286 RUNNING; hpcfund/539594 TIMEOUT
+  Next: Continue minute-level supervision and raw audits; checkpoint once at $4.50, the time deadline, or a verified storage threat, then complete archives and W&B readback.
 
 ## Next / blocked
 

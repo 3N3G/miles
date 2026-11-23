@@ -2824,15 +2824,22 @@
       "actor": "codex",
       "summary": "AMD 540286 restored exact saved weights and completed update 85; both optimizer ranks and all 79 W&B scalar values verified",
       "revision": 261
+    },
+    {
+      "id": "93e0828b-21b6-4cf6-a618-b472028583d7",
+      "at": "2026-11-23T01:48:05.515785Z",
+      "actor": "codex",
+      "summary": "AMD continuation reached seven finite updates; update-90 direction is positive, but combined repeated-question rewards still decline",
+      "revision": 262
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 540286 restored exact saved weights and completed update 85; both optimizer ranks and all 79 W&B scalar values verified",
-  "nextAction": "Inspect fresh versus restored rollouts, entropy/divergence and matched-question rewards; request one checkpoint by 02:34:51 UTC or $4.50 and supervise through full closure.",
+  "summary": "AMD continuation reached seven finite updates; update-90 direction is positive, but combined repeated-question rewards still decline",
+  "nextAction": "Continue minute-level supervision and raw audits; checkpoint once at $4.50, the time deadline, or a verified storage threat, then complete archives and W&B readback.",
   "owner": "Codex",
-  "revision": 261,
-  "updatedAt": "2026-11-23T01:25:52.553771Z"
+  "revision": 262,
+  "updatedAt": "2026-11-23T01:48:05.515785Z"
 }
