@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD continuation reached seven finite updates; update-90 direction is positive, but combined repeated-question rewards still decline Jobs: hpcfund/540286 RUNNING; hpcfund/539594 TIMEOUT
-  Next: Continue minute-level supervision and raw audits; checkpoint once at $4.50, the time deadline, or a verified storage threat, then complete archives and W&B readback.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 540286 is CANCELLED Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 

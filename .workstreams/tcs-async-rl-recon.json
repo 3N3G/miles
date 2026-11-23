@@ -801,7 +801,7 @@
     {
       "id": "540286",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "CANCELLED"
     },
     {
       "id": "539594",
@@ -2831,15 +2831,22 @@
       "actor": "codex",
       "summary": "AMD continuation reached seven finite updates; update-90 direction is positive, but combined repeated-question rewards still decline",
       "revision": 262
+    },
+    {
+      "id": "de4196d8-b1e6-4300-848d-3d0028330504",
+      "at": "2026-11-23T02:17:27.180978Z",
+      "actor": "codex",
+      "summary": "RL job 540286 is CANCELLED",
+      "revision": 263
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD continuation reached seven finite updates; update-90 direction is positive, but combined repeated-question rewards still decline",
-  "nextAction": "Continue minute-level supervision and raw audits; checkpoint once at $4.50, the time deadline, or a verified storage threat, then complete archives and W&B readback.",
+  "summary": "RL job 540286 is CANCELLED",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 262,
-  "updatedAt": "2026-11-23T01:48:05.515785Z"
+  "revision": 263,
+  "updatedAt": "2026-11-23T02:17:27.180978Z"
 }
