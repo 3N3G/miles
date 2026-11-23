@@ -1,0 +1,19 @@
+{
+  "verified_at": "2026-11-23T05:09:42.836187+00:00",
+  "repo": "3N3G/internalization-runs",
+  "revision": "74d36b2f3eaf690fce37d6ea2455649103a696ad",
+  "private": true,
+  "files": 208,
+  "critical_file_sha256": {
+    "manifest.json": "3f87cc01dd684825c465dcdd662e6cfaabae961217f78a6baf179bc727d2a269",
+    "native_controls.json": "b2a2648f74946ec50fadd39a442dd9e200263c3fd0f9b0ab25f2e51ee6f2d088",
+    "final_metrics.json": "37733ecac148b96e42fdd1918127697642c439a391a44fa5bb117cea79cf93bf",
+    "analysis_manifest.json": "75c2b931e857cd023e2a8dfb2c59d3d2268bef595e0fc1ae0ab821f086fb0505",
+    "native_expert_contexts.json": "510ab81aa3998294c2b08dd74967ed6513f31a9cbb16235b22016019a7bc02a5",
+    "native_decoder_alignment.json": "a006493b82ac96933e74beed1b2d4764f8b819d94640f4ec3d5d5d78b1ee8648",
+    "feature_development_inspection.json": "380e40638e024c7a70b3c0395f022201f6f56b6d6a35f0c3e9fcf884573d361f",
+    "article_provenance.json": "1c4c358073d8dd378d8ed5ea8978b38805477f8c10803f788d731d6eaf0c57b9"
+  },
+  "checkpoints_or_native_weights_uploaded": false,
+  "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/74d36b2f3eaf690fce37d6ea2455649103a696ad/inkling-interp/shared-operator-v1"
+}

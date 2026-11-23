@@ -4,28 +4,28 @@
   "sources": [],
   "evidence": [
     {
+      "path": "evidence/operator_pilot_result.json",
+      "label": "Validated primary comparison and exploratory native routing counts"
+    },
+    {
+      "path": "evidence/operator_pilot_archive_verification.json",
+      "label": "Private archive, 208 entries, exact critical files and excluded weights"
+    },
+    {
+      "path": "evidence/operator_pilot_analysis_manifest.json",
+      "label": "Analysis source hashes and scope"
+    },
+    {
       "path": "plans/shared_operator_pilot.md",
-      "label": "Prepared experiment and exact proposed budget"
+      "label": "Completed approved protocol with results"
     },
     {
-      "path": "evidence/operator_pilot_config.json",
-      "label": "Ready configuration; submission blocked until budget approval"
+      "path": "figures/native_expert_numeric_cues.png",
+      "label": "Repeated native routing association across passes"
     },
     {
-      "path": "evidence/operator_pilot_validation.json",
-      "label": "Nine CPU controls and source hashes"
-    },
-    {
-      "path": "evidence/operator_pilot_inputs_articles.json",
-      "label": "Fixed 128/16/32 input split with article sampling"
-    },
-    {
-      "path": "evidence/interpretability_survey_sources.json",
-      "label": "Literature map supporting the selected direction"
-    },
-    {
-      "path": "evidence/artifact_archives.json",
-      "label": "Earlier private experimental results"
+      "path": "evidence/scheduler_observation.json",
+      "label": "Observed terminal scheduler state"
     }
   ],
   "jobs": [
@@ -188,15 +188,22 @@
       "actor": "codex",
       "summary": "Completed GPU execution and began source-backed analysis of prediction and native feature edits",
       "revision": 20
+    },
+    {
+      "id": "9fabacda-12e9-410c-bc63-cb8b10fc7135",
+      "at": "2026-11-23T05:17:09.981171Z",
+      "actor": "codex",
+      "summary": "Finished the approved pilot, verified private artifacts and prepared standalone reports with a native routing lead",
+      "revision": 21
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Test a compact surrogate for one tied Inkling sublayer across its three passes, then causally validate any reusable features.",
-  "state": "running",
-  "summary": "Job 541303 completed successfully in 5m50s. Shared sparse fitting modestly beats separate fits, while ridge predicts better. Native replay and frozen-model checks pass. Analysis and private archival are in progress.",
-  "nextAction": "Inspect development examples and controls, validate the completed artifacts, archive them, and write the standalone user-review report.",
+  "state": "finished",
+  "summary": "Completed the pilot in 5m50s. Sharing beats separate fits, while ridge predicts better. Expert 105 shows numeric-cue routing preference across passes. Its causal role remains untested.",
+  "nextAction": "Review reports/SHARED_OPERATOR.md. The next options are exact expert ablation or more surrogate data. No GPU job remains active.",
   "owner": "Codex",
-  "revision": 20,
-  "updatedAt": "2026-11-23T04:45:59.009180Z"
+  "revision": 21,
+  "updatedAt": "2026-11-23T05:17:09.981171Z"
 }

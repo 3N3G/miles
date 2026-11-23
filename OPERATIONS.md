@@ -147,3 +147,42 @@ on the VM using copied small analysis artifacts. Preserve all raw failures.
 Archive results with `push-run` and record the private immutable path.
 Keep trained surrogate checkpoints on the cluster, with hashes recorded, rather
 than uploading model checkpoints. No mentor-facing reporting is authorized.
+
+
+## Completed shared-operator pilot
+
+The user approved the one-MI210, 30-minute cap with “yes” on 2026-11-22.
+Job 541303 ran from detached source commit
+`c6ea41d9f71801d2bdee4fe8883425896ca66fe9` and completed with exit 0:0.
+`sacct` reports 00:05:50. The model program reports 337.91 seconds.
+There were no replacement jobs and no other session's jobs were modified.
+The submitted protocol is preserved in `plans/archive/shared_operator_pilot_submitted.md`.
+
+All 15 fits, 54 final metric rows, 24 native replacements and 192 feature/random
+edits completed. Replay and hook controls passed exactly. Original native logits
+also remained unchanged after fitting. `src/validate_operator_pilot.py` checks
+artifact counts, source/input hashes, split integrity, sham edits and norm matching.
+Its numerical summary is `evidence/operator_pilot_result.json`.
+
+Post hoc CPU work inspected development contexts, partial native-neuron output
+alignment and numerical-token routing. No new native forward passes, fits or
+GPU allocations were added. The original native decoder ranges were extracted
+outside the run folder, using `src/extract_operator_decoder.py`, and are not
+uploaded. Four conversion checks against the pinned class agree exactly.
+The source and interpretation limits are in the analysis manifest and reports.
+
+The original 16 development paragraphs map to 16 articles. Three also occur in
+the fitting set. No final article overlaps either earlier set. Article mapping
+is preserved in the private raw artifacts.
+
+The final archive is `https://huggingface.co/datasets/3N3G/internalization-runs/tree/74d36b2f3eaf690fce37d6ea2455649103a696ad/inkling-interp/shared-operator-v1`.
+The verification record confirms 208 entries, eight downloaded critical files
+matching local hashes, private visibility, and no uploaded checkpoint or native
+weight files. The earlier snapshot is also retained in the archive registry.
+Training checkpoints remain on AMD, with 17 hashes in the archived manifest.
+
+The short user-review report is local `reports/SHARED_OPERATOR.md`. Full methods
+and raw examples are in `reports/SHARED_OPERATOR_DETAILS.md`. These drafts and
+their builder are preserved on local branch `review/shared-operator` and are not
+pushed. The report keeps the primary prediction test distinct from the post hoc
+native expert finding. The next research choice is recorded in `QUESTIONS.md`.

@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Status: approved for execution. The user selected this direction with
+Status: completed and validated. The user selected this direction with
 “Follow your suspicion” and approved the proposed allocation with “yes” on
 2026-11-22. The preapproval config is preserved in `plans/archive/`.
 
@@ -139,7 +139,27 @@ establish general semantic validity, a unique feature basis or a full loop rule.
 
 ## Results
 
-Not run. CPU validation covers implementation controls only.
+Completed all 15 surrogate fits and the frozen final evaluation on 32 articles.
+Shared normalized error: 0.81776. Matching separate fits: 0.84199.
+The paired difference is -0.02422, with 95% article-bootstrap interval
+[-0.02749, -0.02098]. Ridge regression is better at 0.77051.
+
+Native replay and observational-hook errors are exactly zero. Native logits
+remain unchanged after surrogate fitting. Shared replacement gives 89.06%
+native top-token agreement, versus 85.68% for pass-specific mean replacement.
+There are 192 feature/random edits, including 96 feature-removal conditions.
+Only 15 feature removals are nonzero. None changes the top next token.
+
+A post hoc inspection links year/duration candidates to native expert 105.
+On 16 development articles, this expert is selected 3.74-4.87 times as often
+at defined lexical numeric/time cues as at other token positions. This is
+an exploratory routing association. The expert itself was not ablated.
+
+One MI210 allocation completed in 350 seconds, below the approved 1,800-second
+cap. No replacement GPU job was needed. Raw outputs, controls and checkpoint
+hashes are in the [verified private archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/74d36b2f3eaf690fce37d6ea2455649103a696ad/inkling-interp/shared-operator-v1).
+Checkpoints are retained on the cluster and excluded from upload.
+Standalone interpretations remain local user-review drafts.
 
 ### Exact plots wanted
 
@@ -162,10 +182,9 @@ is a draft for the user. No mentor-facing or public report is authorized.
 
 ## Next steps
 
-Prepare and validate code, freeze the final paragraph identities, then obtain
-the required 30-minute compute-budget decision. If approved, submit the single
-job through `src/submit_stage.py`, record it immediately, monitor it, and upload
-the run using `push-run inkling-interp`.
+Execution, native controls, final evaluation and private archival are complete.
+The next research choice is in `QUESTIONS.md`. A further experiment needs its
+own protocol. This completed allocation does not leave a GPU job running.
 
 ## Questions
 

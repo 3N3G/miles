@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Job 541303 completed successfully in 5m50s. Shared sparse fitting modestly beats separate fits, while ridge predicts better. Native replay and frozen-model checks pass. Analysis and private archival a Jobs: hpcfund/541303 COMPLETED
-  Next: Inspect development examples and controls, validate the completed artifacts, archive them, and write the standalone user-review report.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,4 +16,4 @@
 
 ## Finished
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed the pilot in 5m50s. Sharing beats separate fits, while ridge predicts better. Expert 105 shows numeric-cue routing preference across passes. Its causal role remains untested. Jobs: hpcfund/541303 COMPLETED

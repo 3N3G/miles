@@ -236,5 +236,23 @@
     "files": 3,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/4005fa6225f7c6776caf1c710a698f12a4657fb6/inkling-interp/matched-country-directions-v2",
     "verified_at": "2026-11-21T17:41:43.646237+00:00"
+  },
+  {
+    "stage": "shared-operator-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "d52e8ee8ccbf93bf7ef7a280d84645230bb569e5",
+    "private": true,
+    "files": 206,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/d52e8ee8ccbf93bf7ef7a280d84645230bb569e5/inkling-interp/shared-operator-v1",
+    "verified_at": "2026-11-23T05:06:15.487220+00:00"
+  },
+  {
+    "stage": "shared-operator-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "74d36b2f3eaf690fce37d6ea2455649103a696ad",
+    "private": true,
+    "files": 208,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/74d36b2f3eaf690fce37d6ea2455649103a696ad/inkling-interp/shared-operator-v1",
+    "verified_at": "2026-11-23T05:07:48.589677+00:00"
   }
 ]

@@ -18,5 +18,6 @@
     "Native expert routing and lexical cue rates",
     "Article provenance audit"
   ],
-  "native_weight_conversion_checks": "Four experts agree exactly with the inspected pinned conversion class on CPU."
+  "native_weight_conversion_checks": "Four experts agree exactly with the inspected pinned conversion class on CPU.",
+  "analysis_source_commit": "94928b1bf1928d2dfa8d930943a5fe115b8bbcfe"
 }
