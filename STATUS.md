@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Review the user-requested learning diagnosis, including actual batch size and GRPO amplification of near-ceiling grading disputes Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Record verified batch settings, the update-91 normalization example, and evidence-ranked hypotheses without changing an experiment.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Learning diagnosis recorded: one problem ×32 answers per update; a half-point near-ceiling grading dispute becomes −5.48 advantage under group normalization Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
+  Next: Use the recorded evidence to choose judge calibration and controlled tests of prompt-batch diversity, response length or sampler behavior. No new experiment or hyperparameter chang
 
 ## Finished
 

@@ -811,6 +811,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/wandb_dashboard_20261123.json",
       "label": "Verified key charts, monitor summary cards and unchanged 14-row history"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/learning_diagnosis_20261123.json",
+      "label": "Verified 1×32 batching, normalization example and ranked learning hypotheses"
     }
   ],
   "jobs": [
@@ -2896,15 +2900,22 @@
       "actor": "codex",
       "summary": "Review the user-requested learning diagnosis, including actual batch size and GRPO amplification of near-ceiling grading disputes",
       "revision": 269
+    },
+    {
+      "id": "ff26701d-3ad5-40af-9f94-a08eb9606f86",
+      "at": "2026-11-23T04:42:45.347904Z",
+      "actor": "codex",
+      "summary": "Learning diagnosis recorded: one problem ×32 answers per update; a half-point near-ceiling grading dispute becomes −5.48 advantage under group normalization",
+      "revision": 270
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "Review the user-requested learning diagnosis, including actual batch size and GRPO amplification of near-ceiling grading disputes",
-  "nextAction": "Record verified batch settings, the update-91 normalization example, and evidence-ranked hypotheses without changing an experiment.",
+  "state": "needs-you",
+  "summary": "Learning diagnosis recorded: one problem ×32 answers per update; a half-point near-ceiling grading dispute becomes −5.48 advantage under group normalization",
+  "nextAction": "Use the recorded evidence to choose judge calibration and controlled tests of prompt-batch diversity, response length or sampler behavior. No new experiment or hyperparameter change has been made.",
   "owner": "Codex",
-  "revision": 269,
-  "updatedAt": "2026-11-23T04:40:46.624149Z"
+  "revision": 270,
+  "updatedAt": "2026-11-23T04:42:45.347904Z"
 }

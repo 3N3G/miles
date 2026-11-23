@@ -1,0 +1,105 @@
+{
+  "at_utc": "2026-11-23T04:41:43.788116+00:00",
+  "status": "Evidence-ranked hypotheses, not an isolated causal result",
+  "setup": {
+    "generator": "Qwen3.5-4B, thinking enabled",
+    "judge": "GPT-6 Luna medium, averaged reversed anonymous orders",
+    "questions_per_optimizer_update": 1,
+    "rollouts_per_question": 32,
+    "global_batch_size": 32,
+    "async_admission": 96,
+    "optimizer_steps_per_consumed_group": 1,
+    "saved_updates_under_repaired_judge": 34,
+    "total_saved_updates_including_earlier_judging": 99,
+    "questions": 20,
+    "per_question_update_count_histogram": {
+      "one": 6,
+      "two": 14
+    }
+  },
+  "observed_normalization_example": {
+    "optimizer_step": 91,
+    "scores": {
+      "7": 31,
+      "6.5": 1
+    },
+    "mean": 6.984375,
+    "sample_standard_deviation": 0.08838834764831845,
+    "normalization": "(reward - group_mean) / (group_std + 1e-6)",
+    "low_answer_advantage": -5.480015554897185,
+    "high_answer_advantage": 0.17677469531926404,
+    "grpo_std_normalization": true,
+    "source": "miles/ray/rollout/train_data_conversion.py:330",
+    "implication": "A small score difference can yield a large standardized negative advantage. Whether this particular deduction was justified remains a human rubric question.",
+    "candidate_sample_index": 2968
+  },
+  "interpretation_hypotheses": [
+    {
+      "priority": 1,
+      "hypothesis": "Grading variation plus group standardization creates unreliable relative-learning signals.",
+      "evidence": "45/448 candidate scores disagree across swapped calls; one identical proof receives 2 versus 7; near-ceiling normalization example above.",
+      "limit": "Both orders are averaged for actual training. Disagreement is not a measured error rate, and presentation order is confounded with stochastic variation."
+    },
+    {
+      "priority": 2,
+      "hypothesis": "One-question gradients and few clean repetitions make improvement noisy and cross-question interference plausible.",
+      "evidence": "One problem and 32 answers per step, versus 64 problems and 2048 answers in the supplied Ian recipe. Only one or two updates per question under the repaired judge.",
+      "limit": "No larger-prompt-batch or longer-training control was run."
+    },
+    {
+      "priority": 3,
+      "hypothesis": "Long, repetitive answers and terminal-reward credit assignment waste compute and dilute useful proof feedback.",
+      "evidence": "Matched mean output length 52355 to 56344 tokens; cap fraction 0.17634 to 0.22991. The same sequence-level advantage is broadcast across the response and loss is averaged over its active tokens.",
+      "limit": "No matched shorter-budget or concise-output control was run. Several short mathematical arguments are correct, while a sampled zero makes false claims."
+    },
+    {
+      "priority": 4,
+      "hypothesis": "Truncated sampling and support replay may restrict useful exploration and direct token gradients.",
+      "evidence": "54.514% of latest-run token positions have singleton support. Their conditional log probability is zero and its direct score-function gradient is zero.",
+      "limit": "Predictable syntax can also have singleton support. Other positions still update shared parameters. This percentage alone does not establish a bug or cause."
+    }
+  ],
+  "health_checks": {
+    "finite_updates": 14,
+    "same_three_engine_weights": true,
+    "positive_fixed_batch_update_direction": true,
+    "effective_sample_size_ratio_min": 0.9991074204444885,
+    "cispo_clip_fraction": 0,
+    "gradient_norm_max": 0.3416174352169037,
+    "gradient_clip_threshold": 1.0,
+    "matched_full_entropy": [
+      0.5260378058467593,
+      0.4984772503376007
+    ],
+    "matched_reference_sampled_k3": [
+      0.007788916085181492,
+      0.009282058005088143
+    ],
+    "matched_rollout_sampled_k3": [
+      0.00037605426249293875,
+      0.00036548812100331167
+    ],
+    "reference_kl_coefficient": 0.0,
+    "entropy_coefficient": 0.0,
+    "maximum_observed_weight_staleness": 5,
+    "constant_reward_groups": 1,
+    "nonconstant_reward_groups": 13,
+    "limits": "Finite metrics and per-token ESS do not prove gradient correctness for mathematical truth, full-trajectory alignment, or an optimal learning rate."
+  },
+  "overall_result": {
+    "matched_questions": 14,
+    "first_mean_reward": 5.066964285714286,
+    "latest_mean_reward": 4.96875,
+    "increased": 6,
+    "decreased": 7,
+    "unchanged": 1,
+    "interpretation": "No clear reward gain; the evidence does not isolate a single cause."
+  },
+  "sources": {
+    "training_commit": "4fb3ca73fe9667fe19766d1626671df8d275283e",
+    "immutable_diagnostics": "6eb6ab1a9781ec1392d18cf6144e21401c93d5db",
+    "grpo_method": "https://arxiv.org/html/2402.03300#S4.SS1.SSS2"
+  },
+  "new_gpu_jobs": 0,
+  "new_judge_calls": 0
+}
