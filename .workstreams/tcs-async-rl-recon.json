@@ -273,6 +273,18 @@
   ],
   "evidence": [
     {
+      "path": "experiments/tcs_async_rl/MULTIPROBLEM_BATCH_PLAN_20261123.md",
+      "label": "Approved batch change, proposed bounded run and resource decisions"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/multiproblem_validation_20261123.json",
+      "label": "114 passing tests, exact batch-only argument diff and checkpoint argument control"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/multiproblem_resources_20261123.json",
+      "label": "Live empty AMD queue, protected checkpoints and 83.1 GB storage shortfall"
+    },
+    {
       "path": "experiments/tcs_async_rl/RESOURCE_QUEUE_20261122.md",
       "label": "Reduced MI350 capacity, current queue snapshot and unqualified fallback limits"
     },
@@ -2914,15 +2926,22 @@
       "actor": "codex",
       "summary": "User approved the four-problem global-batch test; claim preparation and resource validation",
       "revision": 271
+    },
+    {
+      "id": "ef9ec581-4757-4cbc-bc14-c5081644ea9c",
+      "at": "2026-11-23T12:42:35.552783Z",
+      "actor": "codex",
+      "summary": "Prepare the approved batch128 continuation and validate monitoring; record actual budget and checkpoint-storage blockers",
+      "revision": 272
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "Preparing the approved four-problem ×32-answer optimizer batch, preserving the latest checkpoint and all other research settings.",
-  "nextAction": "Validate the 128-answer batch and resume path. Check remaining compute/judge allowances and checkpoint storage before submitting.",
+  "state": "needs-you",
+  "summary": "Four-problem ×32-answer batch prepared and 114 tests pass. Submission needs a new budget and 83.1 GB more free AMD storage.",
+  "nextAction": "Resolve the pending 10-update/four-hour/new-$5 allowance and source-checkpoint storage decision. Then freeze, submit once, verify the first 128-answer update and supervise through terminal archival.",
   "owner": "Codex",
-  "revision": 271,
-  "updatedAt": "2026-11-23T12:33:09.794021Z"
+  "revision": 272,
+  "updatedAt": "2026-11-23T12:42:35.552783Z"
 }

@@ -172,6 +172,7 @@ class EvidenceTests(unittest.TestCase):
             (root / "rollout_data").mkdir()
             path = root / "rollout_data/rollout-0.jsonl"
             row = {
+                "group_index": 0,
                 "reward": {"reward": 5},
                 "optimizer_rollout_id": 0,
                 "response_length": 10,

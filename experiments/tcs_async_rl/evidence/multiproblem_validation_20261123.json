@@ -1,0 +1,117 @@
+{
+  "observed_at_utc": "2026-11-23T12:41:59.899168+00:00",
+  "status": "Batch change approved; GPU submission waits for explicit new budget and safe storage",
+  "resolved_argument_changes": {
+    "global_batch_size": [
+      32,
+      128
+    ],
+    "load": [
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v15/checkpoints",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/checkpoints"
+    ],
+    "num_rollout": [
+      105,
+      109
+    ],
+    "prompt_data": [
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/input.jsonl",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/input.jsonl"
+    ],
+    "rollout_batch_size": [
+      1,
+      4
+    ],
+    "save": [
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/checkpoints",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/checkpoints"
+    ],
+    "save_debug_event_data": [
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/events",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/events"
+    ],
+    "save_debug_rollout_data": [
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/rollout_data/rollout-{rollout_id}.pt",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/rollout_data/rollout-{rollout_id}.pt"
+    ],
+    "save_interval": [
+      105,
+      109
+    ],
+    "save_trigger_sentinel": [
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/checkpoint-request",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/checkpoint-request"
+    ],
+    "tb_experiment_name": [
+      "prior",
+      "next"
+    ],
+    "tb_project_name": [
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/tensorboard",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/tensorboard"
+    ],
+    "wandb_dir": [
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/wandb",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/wandb"
+    ],
+    "wandb_group": [
+      "prior",
+      "next"
+    ],
+    "wandb_run_id": [
+      "prior",
+      "next"
+    ]
+  },
+  "unchanged_training_config": true,
+  "batch": {
+    "problems_per_update": 4,
+    "answers_per_problem": 32,
+    "answers_per_update": 128,
+    "concurrent_generation_limit": 96,
+    "token_microbatch_limit": 98304,
+    "target_new_updates_proposed": 10,
+    "target_consumed_answers_proposed": 1280
+  },
+  "data": {
+    "sha256": "18ed636017d16c3af5c1448ee4967b4aa6b996037c73f5304bf4ce95469e5929",
+    "question_set_key": "0322e03abfcd95da12b783f3f1525d5fc5f6434a0455f3b56bb84c4c272e7e11",
+    "questions": 20,
+    "papers": 17,
+    "heldout_reads": 0,
+    "formatted_inputs": "Read unchanged, already prepared easy-only bundle; each formatted prompt and its supplied reference/rubric remains preserved in the private input bundle"
+  },
+  "checks": {
+    "tcs_tests_passed": 114,
+    "black": "passed",
+    "isort": "passed",
+    "ruff": "passed",
+    "obsolete_32_answer_monitor_shape": "rejected for the configured 128-answer update",
+    "four_different_constant_problem_scores": "not counted as within-problem reward variation",
+    "one_varied_problem_in_four": "counted correctly",
+    "terminal_monitor": "passes the actual resolved batch128 and initial saved count99",
+    "resource_limits_unresolved": true
+  },
+  "checkpoint_argument_control": {
+    "installed_source_sha256": "4179820bc4edac05090ad295e31eec7c30315a0f6e92df71e03828f1ca0e2582",
+    "source_path": "/work1/aviralkumar/geney/tcs-async-rl/containers/25597c01ab3fc8e77bfeb48434262c535080dc6857c8d591165b4b9304425019.sandbox/root/Megatron-LM/megatron/training/checkpointing.py",
+    "actual_phase_transition_iterations": null,
+    "changed_batch_checkpoint_argument_check": "passed",
+    "phase_transition_negative_control": "rejected changed batch as expected",
+    "scope": "Execute the actual argument-check function only. No GPU model or optimizer state has been loaded."
+  },
+  "file_sha256": {
+    "experiments/tcs_async_rl/rl_easy_overfit_v17.proposed.json": "2cb575fb2869ac6957a9199079f973afea74f1d6e4c79fa0cba9960b28368454",
+    "experiments/tcs_async_rl/watch_rl.py": "2d1a9cb5db96731ca11743da8427902a1a7c6e2d9e08a5febbad044754d39e53",
+    "tests/fast/test_tcs_easy_training.py": "090343c52c03a0c94a72ef28bf93f38f8a20d75ef9e038c1e2ca34ebeff523b7",
+    "tests/fast/test_tcs_auto_rl.py": "f7f5a8f71b70593ecfcdc23a6ad5042c614a971a3e5c430c00f2eef0eae07adc"
+  },
+  "limits": [
+    "No GPU load, backward pass or 128-answer runtime has run.",
+    "The latest checkpoint inventory is checked without reading full weight contents.",
+    "New judge budget and storage decisions remain pending.",
+    "No variance or learning improvement has been measured."
+  ],
+  "new_gpu_jobs": 0,
+  "new_provider_calls": 0
+}

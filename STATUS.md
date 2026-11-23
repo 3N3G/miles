@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Preparing the approved four-problem ×32-answer optimizer batch, preserving the latest checkpoint and all other research settings. Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Validate the 128-answer batch and resume path. Check remaining compute/judge allowances and checkpoint storage before submitting.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Four-problem ×32-answer batch prepared and 114 tests pass. Submission needs a new budget and 83.1 GB more free AMD storage. Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
+  Next: Resolve the pending 10-update/four-hour/new-$5 allowance and source-checkpoint storage decision. Then freeze, submit once, verify the first 128-answer update and supervise through 
 
 ## Finished
 

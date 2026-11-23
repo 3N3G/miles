@@ -1,0 +1,40 @@
+{
+  "observed_at_utc": "2026-11-23T12:38:45.204368+00:00",
+  "free_bytes": 7597572096,
+  "total_bytes": 4000000000000,
+  "checkpoints": {
+    "easy-overfit-v9": {
+      "path": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v9/checkpoints",
+      "tracker": "24",
+      "files": 55,
+      "bytes": 60623529764
+    },
+    "easy-overfit-v12": {
+      "path": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v12/checkpoints",
+      "tracker": "64",
+      "files": 85,
+      "bytes": 60935586232
+    },
+    "easy-overfit-v15": {
+      "path": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v15/checkpoints",
+      "tracker": "84",
+      "files": 45,
+      "bytes": 61012021875
+    },
+    "easy-overfit-v16": {
+      "path": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v16/checkpoints",
+      "tracker": "98",
+      "files": 15,
+      "bytes": 60627182392
+    }
+  },
+  "scheduler": "",
+  "required_free_bytes": 90696450048,
+  "shortfall_bytes": 83098877952,
+  "prior_remaining_gpu_hours": 4.568888888888889,
+  "prior_remaining_judge_usd": 0.3105281,
+  "new_gpu_jobs": 0,
+  "new_judge_calls": 0,
+  "credential_access": "none",
+  "weight_contents_read": "none; checkpoint inventories use filenames and sizes only"
+}

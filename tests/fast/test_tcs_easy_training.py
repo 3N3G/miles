@@ -18,7 +18,7 @@ from experiments.tcs_async_rl.rl_archive import archive_chunks, copy_trace_batch
 from experiments.tcs_async_rl.rl_artifacts import file_sha256, retain_latest_checkpoint, save_generated_sample
 from experiments.tcs_async_rl.rl_inputs import question_set_key, read_bundle
 from experiments.tcs_async_rl.rl_smoke import native_argv
-from experiments.tcs_async_rl.watch_rl import acceptance, consumed_rollouts, run_training_evidence, watch
+from experiments.tcs_async_rl.watch_rl import acceptance, consumed_rollouts, finish, run_training_evidence, watch
 
 BASE = Path(__file__).resolve().parents[2] / "experiments/tcs_async_rl"
 
@@ -102,6 +102,42 @@ class EasyDataTests(unittest.TestCase):
             self.assertTrue(result["checks"]["finite_step_metrics"])
             self.assertFalse(result["checks"]["optimizer_updates_recorded"])
             self.assertFalse(result["runtime_acceptance_passed"])
+
+    def test_acceptance_checks_the_configured_batch_size(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            with patch(
+                "experiments.tcs_async_rl.watch_rl.consumed_rollouts",
+                return_value=[{"samples": 128, "varied_rewards": True}],
+            ):
+                kwargs = dict(minimum_varied_groups=1, retained_checkpoints=1)
+                old_shape = acceptance(root, {"state": "COMPLETED"}, 1, **kwargs)
+                new_shape = acceptance(root, {"state": "COMPLETED"}, 1, expected_samples_per_update=128, **kwargs)
+            self.assertFalse(old_shape["checks"]["consumed_groups_exported"])
+            self.assertTrue(new_shape["checks"]["consumed_groups_exported"])
+
+    def test_terminal_monitor_passes_the_resolved_global_batch_to_acceptance(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            with patch("experiments.tcs_async_rl.auto_rl.remote"), patch(
+                "experiments.tcs_async_rl.watch_rl.sync_outputs", return_value=0
+            ), patch("experiments.tcs_async_rl.watch_rl.consumed_rollouts"), patch(
+                "experiments.tcs_async_rl.watch_rl.archive_chunks"
+            ), patch(
+                "experiments.tcs_async_rl.watch_rl.acceptance", side_effect=RuntimeError("acceptance reached")
+            ) as check:
+                with self.assertRaisesRegex(RuntimeError, "acceptance reached"):
+                    finish(
+                        job_id="unused",
+                        config_path=BASE / "rl_easy_overfit_v17.proposed.json",
+                        directory=root,
+                        remote_directory=Path("/remote"),
+                        checkout=Path("/checkout"),
+                        scheduler={"state": "COMPLETED"},
+                        state_repo=root,
+                    )
+                self.assertEqual(check.call_args.kwargs["expected_samples_per_update"], 128)
+                self.assertEqual(check.call_args.kwargs["initial_updates"], 99)
 
     def test_monitor_retries_terminal_archive_backpressure(self):
         with tempfile.TemporaryDirectory() as name:
@@ -377,6 +413,7 @@ class ArchiveTests(unittest.TestCase):
         folder.mkdir()
         path = folder / "rollout-0.jsonl.gz"
         row = {
+            "group_index": 0,
             "reward": {"reward": 5},
             "optimizer_rollout_id": 0,
             "weight_versions": [],
@@ -390,6 +427,31 @@ class ArchiveTests(unittest.TestCase):
             json.dumps([{"path": str(path), "samples": 1, "sha256": file_sha256(path)}])
         )
         return path
+
+    def test_different_constant_prompt_rewards_do_not_count_as_grpo_variation(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            path = self.make_trace(root)
+            with gzip.open(path, "rt") as stream:
+                template = json.loads(stream.readline())
+            for varied in (False, True):
+                with gzip.open(path, "wt") as stream:
+                    for group in range(4):
+                        for sample in range(32):
+                            row = {
+                                **template,
+                                "group_index": group,
+                                "metadata": {"question_key": f"q{group}"},
+                                "reward": {"reward": group + int(varied and group == 0 and sample == 0)},
+                            }
+                            stream.write(json.dumps(row) + "\n")
+                (root / "rollout-export.json").write_text(
+                    json.dumps([{"path": str(path), "samples": 128, "sha256": file_sha256(path)}])
+                )
+                summary = consumed_rollouts(root)[0]
+                self.assertEqual(summary["varied_rewards"], varied)
+                self.assertEqual([g["samples"] for g in summary["prompt_groups"]], [32] * 4)
+                self.assertEqual(sum(g["varied_rewards"] for g in summary["prompt_groups"]), int(varied))
 
     def test_verified_upload_can_evict_only_immutable_local_copies_and_reuse_summary(self):
         with tempfile.TemporaryDirectory() as name:
