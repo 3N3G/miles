@@ -24,6 +24,11 @@
     {
       "id": "541634",
       "cluster": "hpcfund",
+      "status": "CANCELLED"
+    },
+    {
+      "id": "541645",
+      "cluster": "hpcfund",
       "status": "PENDING"
     }
   ],
@@ -201,15 +206,22 @@
       "actor": "codex",
       "summary": "Submitted native expert calibration 541634 and froze independent task cohorts",
       "revision": 23
+    },
+    {
+      "id": "37ef1eac-98dc-4541-b7a3-72937b98ed4c",
+      "at": "2026-11-23T06:02:39.067479Z",
+      "actor": "codex",
+      "summary": "Recorded eight-GPU screen reservation after cancelling only the pending owned job",
+      "revision": 24
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Submitted a 20-minute native expert causal screen. Independent MMLU confirmation and replication questions are frozen before inference.",
-  "nextAction": "Monitor calibration, prepare prospective text and gradient discovery, then confirm useful roles within the five-hour cap.",
+  "summary": "Frozen48 prospective text articles and independent task questions. Native causal and derivative screen541645 is queued on eight GPUs.",
+  "nextAction": "Run the recorded screen, validate derivative candidates with exact removal, and confirm on frozen questions. Count all eight GPUs within300 minutes.",
   "owner": "Codex",
-  "revision": 23,
-  "updatedAt": "2026-11-23T05:55:29.376251Z"
+  "revision": 24,
+  "updatedAt": "2026-11-23T06:02:39.067479Z"
 }

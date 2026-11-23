@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Submitted a 20-minute native expert causal screen. Independent MMLU confirmation and replication questions are frozen before inference. Jobs: hpcfund/541634 PENDING
-  Next: Monitor calibration, prepare prospective text and gradient discovery, then confirm useful roles within the five-hour cap.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Frozen48 prospective text articles and independent task questions. Native causal and derivative screen541645 is queued on eight GPUs. Jobs: hpcfund/541634 CANCELLED; hpcfund/541645 PENDING
+  Next: Run the recorded screen, validate derivative candidates with exact removal, and confirm on frozen questions. Count all eight GPUs within300 minutes.
 
 ## Next / blocked
 
