@@ -273,3 +273,11 @@ Rebuild data with `src/build_expert_blog_examples.py`, figures with
 source hashes, native factor equations and the next-token offset. The raw
 derivative bundle is privately archived as `expert-blog-examples-v1`. No model
 inference or GPU allocation was used for this writing follow-up.
+
+The final casebook also explains the mixed-sign example: both positions have
+a negative-to-positive gate change, while their up factors have opposite
+signs. This is algebraic accounting of existing measurements, not a new test.
+The updated local `review/expert-case-studies` commit is
+`9ab71daefc42e82b1649729ac3c5b580802c940f`. Its parent preserves the previous draft.
+The audit includes this gate/up sign check and still verifies30 displayed
+numbers against45 source files.

@@ -397,5 +397,14 @@
     "files": 14,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/331447a09024c400fce447b2c2a9118e66999225/inkling-interp/expert-blog-examples-v1",
     "verified_at": "2026-11-23T12:57:56.965750+00:00"
+  },
+  {
+    "stage": "expert-blog-examples-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "60c0b39c0833eea2307a74b9129b71750307484a",
+    "private": true,
+    "files": 14,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/60c0b39c0833eea2307a74b9129b71750307484a/inkling-interp/expert-blog-examples-v1",
+    "verified_at": "2026-11-23T13:00:54.224458+00:00"
   }
 ]

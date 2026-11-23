@@ -16,4 +16,4 @@
 
 ## Finished
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed five illustrated expert case studies with four new figures. Verified30 displayed values and45 source files. Preserved the local review draft and privately archived figure data.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Five illustrated expert case studies are ready. They include gate/up switches, opposite activities with matching routing effects, and a shared gate change producing opposite outputs at two tokens. All

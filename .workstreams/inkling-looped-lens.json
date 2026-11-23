@@ -328,15 +328,22 @@
       "actor": "codex",
       "summary": "Finish illustrated expert case studies with verified sources and local review backup",
       "revision": 42
+    },
+    {
+      "id": "a4417b7d-0cfb-4e7d-a873-e0d9b5ad1b69",
+      "at": "2026-11-23T13:01:34.973559Z",
+      "actor": "codex",
+      "summary": "Verify and preserve the final shared-gate explanation in the illustrated casebook",
+      "revision": 43
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "finished",
-  "summary": "Completed five illustrated expert case studies with four new figures. Verified30 displayed values and45 source files. Preserved the local review draft and privately archived figure data.",
-  "nextAction": "Read reports/EXPERT_CASE_STUDIES.md. No additional model inference or GPU time was used.",
+  "summary": "Five illustrated expert case studies are ready. They include gate/up switches, opposite activities with matching routing effects, and a shared gate change producing opposite outputs at two tokens. All30 displayed values and45 sources were audited.",
+  "nextAction": "Read the local draft at reports/EXPERT_CASE_STUDIES.md. No additional GPU time was used.",
   "owner": "Codex",
-  "revision": 42,
-  "updatedAt": "2026-11-23T12:59:10.608345Z"
+  "revision": 43,
+  "updatedAt": "2026-11-23T13:01:34.973559Z"
 }
