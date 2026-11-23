@@ -124,6 +124,11 @@ See the [standalone results](BOUNDED_CONTINUATION_RESULTS_20261123.md) for scien
 
 Primary archive: **`2ea9cf54a7e52fb27ceb1a0e4c70c513dd0f999b`**, with seven exact immutable file readbacks.
 Diagnostic archive: **`6eb6ab1a9781ec1392d18cf6144e21401c93d5db`**.
+Its eight exact readbacks include the complete comparison, both stress cases and the final matched-question plot.
+The final manual closure archive is **`c971823603e3efbe35c7fe78a51e2aa303fa146d`**.
+Nine exact readbacks verify its terminal supervision, W&B scalar audit and stop provenance, saved/source checkpoint checks,
+weight publication, judge ledger, both earlier readback receipts and owned-process closure.
+`closure-archive-verification.json` preserves these hashes. W&B's terminal stop summary was also independently read back.
 The VM run preserves `primary-archive-verification.json`, `diagnostic-archive-verification.json`,
 `terminal-supervision.json`, `terminal-native-wandb-all-scalars-verification.json`,
 `budget-stop-checkpoint-and-source-verification.json`, `budget-stop-saved-weight-publication.json` and `owned-process-closure.json`.
@@ -140,3 +145,5 @@ The corrected reader waits for the driver's actual checksum publication event, r
 All final counts above were independently checked against those actual events.
 All 111 TCS CPU tests pass, and Black, isort and Ruff checks pass.
 Training source and every used configuration remain frozen at their recorded revisions.
+AMD's clean main checkout has pulled the reporting repairs. No TCS allocation remains active or queued.
+No further GPU job was submitted. The next research decision is recorded in `QUESTIONS.md`.
