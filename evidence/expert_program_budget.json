@@ -35,16 +35,25 @@
       "gpus": 1,
       "maximum_allocation_seconds": 1800,
       "maximum_gpu_seconds": 1800,
-      "status": "RUNNING",
-      "reserved_gpu_seconds": 1800,
-      "observed_allocation_seconds": 37
+      "status": "FAILED",
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 37,
+      "actual_allocation_seconds": 717,
+      "actual_gpu_seconds": 717
     }
   ],
-  "used_gpu_seconds": 350,
-  "remaining_gpu_seconds": 17650,
+  "used_gpu_seconds": 1067,
+  "remaining_gpu_seconds": 16933,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [],
-  "unreserved_gpu_seconds": 15850,
-  "reserved_gpu_seconds": 1800,
+  "pending_reservations": [
+    {
+      "run_name": "expert-development-v1",
+      "gpus": 1,
+      "maximum_gpu_seconds": 1200,
+      "status": "prepared"
+    }
+  ],
+  "unreserved_gpu_seconds": 15733,
+  "reserved_gpu_seconds": 1200,
   "observed_at": "2026-11-23T06:14:14.466373+00:00"
 }

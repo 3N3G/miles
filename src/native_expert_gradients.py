@@ -29,7 +29,8 @@ def discover(model, tokenizer, groups, records, fmt, out, offload=False):
                 captured.append((layer,calls[layer],weights,indices))
                 return logits,weights,indices
             return hook
-        for layer in range(5,17):
+        config=model.model.language_model.config
+        for layer in range(config.loop_layer_index_start,config.loop_layer_index_end):
             handles.append(model.model.language_model.layers[layer].mlp.gate.register_forward_hook(hook_for(layer)))
         try:
             context=torch.autograd.graph.saved_tensors_hooks(pack,unpack) if offload else contextlib.nullcontext()
@@ -47,7 +48,7 @@ def discover(model, tokenizer, groups, records, fmt, out, offload=False):
                 # Positive weight*gradient predicts that removal reduces the gold objective.
                 scores_out.append({'layer_index':layer,'visit':visit,'signed':signed.cpu().tolist(),
                                    'absolute':absolute.cpu().tolist()})
-            assert set(calls.values())=={3},calls
+            assert set(calls.values())=={config.loop_num_passes},calls
             results.append({'id':record['id'],'subject':record['subject'],'answer':answer,
                             'objective':'gold four-choice log probability','clean_objective':float(objective.detach()),
                             'scores':scores_out})

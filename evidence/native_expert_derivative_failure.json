@@ -1,0 +1,15 @@
+{
+  "job_id": "541690",
+  "state": "FAILED",
+  "allocation_seconds": 717,
+  "failure": "Derivative range included prelude index5 (one visit) and omitted core index17. Assertion prevented candidate selection.",
+  "completed_forward_counts": {
+    "discovery_questions": 32,
+    "text_articles": 64,
+    "prospective_test_articles": 48,
+    "conditions_per_input": 11
+  },
+  "repair": "Read loop range and visit count from the model config. Rerun derivative stage only.",
+  "new_plan": "plans/native_expert_derivative_repair.md",
+  "recorded_at": "2026-11-23T06:28:54.028108+00:00"
+}

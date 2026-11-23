@@ -1,0 +1,943 @@
+{
+  "development_questions": [
+    {
+      "subject": "elementary_mathematics",
+      "condition": "105-all",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.9155604690313339,
+      "mean_gold_choice_lp": -1.2156780671198248,
+      "choice_nll_increase": {
+        "mean": 0.06341457381265059,
+        "interval": [
+          -0.017267510719536003,
+          0.1743196080308102
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "105-pass1",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.9147809334099293,
+      "mean_gold_choice_lp": -1.2594752979480717,
+      "choice_nll_increase": {
+        "mean": 0.10721180464089741,
+        "interval": [
+          0.0027098844928133315,
+          0.23514200866544033
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "105-pass2",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.9094937182962894,
+      "mean_gold_choice_lp": -1.1974578323264637,
+      "choice_nll_increase": {
+        "mean": 0.04519433901928949,
+        "interval": [
+          -0.03206278946457814,
+          0.13514982545638682
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "105-pass3",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.9170296154916286,
+      "mean_gold_choice_lp": -1.121860152677911,
+      "choice_nll_increase": {
+        "mean": -0.030403340629263198,
+        "interval": [
+          -0.0764964213577457,
+          0.004549560280485915
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "105-renormalized",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.9130181968212128,
+      "mean_gold_choice_lp": -1.1823588667255223,
+      "choice_nll_increase": {
+        "mean": 0.030095373418348004,
+        "interval": [
+          -0.037152836782803435,
+          0.1041620718741992
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "3-all",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.9223706051707268,
+      "mean_gold_choice_lp": -1.154735612416573,
+      "choice_nll_increase": {
+        "mean": 0.002472119109398818,
+        "interval": [
+          -0.02450262955422957,
+          0.03328978914620251
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "41-all",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.913802195340395,
+      "mean_gold_choice_lp": -1.2936651503089251,
+      "choice_nll_increase": {
+        "mean": 0.1414016570017509,
+        "interval": [
+          0.009765020412808668,
+          0.29294226434192355
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "45-all",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.9178660660982132,
+      "mean_gold_choice_lp": -1.1997819480903757,
+      "choice_nll_increase": {
+        "mean": 0.04751845478320149,
+        "interval": [
+          -0.0018059803987142686,
+          0.1345822458971071
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "89-all",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.905508816242218,
+      "mean_gold_choice_lp": -1.2837595515662912,
+      "choice_nll_increase": {
+        "mean": 0.13149605825911692,
+        "interval": [
+          0.003623604196728182,
+          0.31611053204928713
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "90-all",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.9197085946798325,
+      "mean_gold_choice_lp": -1.200180502543688,
+      "choice_nll_increase": {
+        "mean": 0.04791700923651376,
+        "interval": [
+          0.000612835689987179,
+          0.10740702043032044
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "elementary_mathematics",
+      "condition": "clean",
+      "correct": 11,
+      "n": 16,
+      "mean_letter_mass": 0.9154775179922581,
+      "mean_gold_choice_lp": -1.1522634933071743,
+      "choice_nll_increase": {
+        "mean": 0.0,
+        "interval": [
+          0.0,
+          0.0
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "105-all",
+      "correct": 12,
+      "n": 16,
+      "mean_letter_mass": 0.9931999556720257,
+      "mean_gold_choice_lp": -0.8268527624506987,
+      "choice_nll_increase": {
+        "mean": -0.05159567158079881,
+        "interval": [
+          -0.19872114053059703,
+          0.03540869677319732
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "105-pass1",
+      "correct": 12,
+      "n": 16,
+      "mean_letter_mass": 0.9929735213518143,
+      "mean_gold_choice_lp": -0.7821768396970583,
+      "choice_nll_increase": {
+        "mean": -0.09627159433443921,
+        "interval": [
+          -0.28612574086935183,
+          0.016179335292184748
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "105-pass2",
+      "correct": 13,
+      "n": 16,
+      "mean_letter_mass": 0.9933194890618324,
+      "mean_gold_choice_lp": -0.8322844540814458,
+      "choice_nll_increase": {
+        "mean": -0.046163979950051726,
+        "interval": [
+          -0.13478344505917902,
+          0.012722790332031761
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "105-pass3",
+      "correct": 13,
+      "n": 16,
+      "mean_letter_mass": 0.9930641204118729,
+      "mean_gold_choice_lp": -0.8984704955950065,
+      "choice_nll_increase": {
+        "mean": 0.02002206156350894,
+        "interval": [
+          0.00514066468144847,
+          0.037523297896677826
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "105-renormalized",
+      "correct": 12,
+      "n": 16,
+      "mean_letter_mass": 0.9929263144731522,
+      "mean_gold_choice_lp": -0.8905592674127547,
+      "choice_nll_increase": {
+        "mean": 0.01211083338125718,
+        "interval": [
+          -0.024565459663688217,
+          0.05090033808151587
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "3-all",
+      "correct": 13,
+      "n": 16,
+      "mean_letter_mass": 0.9926690980792046,
+      "mean_gold_choice_lp": -0.8827498833970822,
+      "choice_nll_increase": {
+        "mean": 0.004301449365584631,
+        "interval": [
+          -7.359570417975192e-06,
+          0.012421628848642285
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "41-all",
+      "correct": 12,
+      "n": 16,
+      "mean_letter_mass": 0.9928866326808929,
+      "mean_gold_choice_lp": -0.8461094149495239,
+      "choice_nll_increase": {
+        "mean": -0.032339019081973674,
+        "interval": [
+          -0.13672430333184593,
+          0.03586058942091767
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "45-all",
+      "correct": 13,
+      "n": 16,
+      "mean_letter_mass": 0.9930170252919197,
+      "mean_gold_choice_lp": -0.8563885687915445,
+      "choice_nll_increase": {
+        "mean": -0.02205986523995307,
+        "interval": [
+          -0.06663898176997236,
+          0.0005314646392889694
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "89-all",
+      "correct": 13,
+      "n": 16,
+      "mean_letter_mass": 0.9924188777804375,
+      "mean_gold_choice_lp": -0.8475971579083534,
+      "choice_nll_increase": {
+        "mean": -0.03085127612314409,
+        "interval": [
+          -0.16564511620440214,
+          0.06220680469459974
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "90-all",
+      "correct": 12,
+      "n": 16,
+      "mean_letter_mass": 0.9925506338477135,
+      "mean_gold_choice_lp": -0.9162655666375485,
+      "choice_nll_increase": {
+        "mean": 0.03781713260605102,
+        "interval": [
+          -0.04301239838441688,
+          0.14858277401342543
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    },
+    {
+      "subject": "high_school_biology",
+      "condition": "clean",
+      "correct": 13,
+      "n": 16,
+      "mean_letter_mass": 0.9930390156805515,
+      "mean_gold_choice_lp": -0.8784484340314975,
+      "choice_nll_increase": {
+        "mean": 0.0,
+        "interval": [
+          0.0,
+          0.0
+        ],
+        "n": 16,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      }
+    }
+  ],
+  "prospective_text": [
+    {
+      "condition": "105-all",
+      "mean_nll_increase": {
+        "mean": -0.0005698333025002734,
+        "interval": [
+          -0.0033447548219081072,
+          0.0024477150499109986
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": -0.010511687160920227,
+          "interval": [
+            -0.0359069442746312,
+            0.014390565168902766
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 2
+        },
+        "numeric_input": {
+          "mean": -0.004396049657029872,
+          "interval": [
+            -0.04096834046822965,
+            0.024214701782489977
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 2
+        }
+      }
+    },
+    {
+      "condition": "105-pass1",
+      "mean_nll_increase": {
+        "mean": -0.0004755642582715944,
+        "interval": [
+          -0.002587866592478543,
+          0.001692630569341556
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": -0.01452461300341518,
+          "interval": [
+            -0.030086125342837233,
+            -0.001201975402933437
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": -0.018163579395002977,
+          "interval": [
+            -0.05420729781568146,
+            0.005957133982228675
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    },
+    {
+      "condition": "105-pass2",
+      "mean_nll_increase": {
+        "mean": 9.225161865784496e-05,
+        "interval": [
+          -0.0018021105592911698,
+          0.0018527200253062857
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": 0.004208320727577748,
+          "interval": [
+            -0.0032536657025635744,
+            0.0124733863240037
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": 0.004379007717452199,
+          "interval": [
+            -0.008142719575988515,
+            0.015829474835836216
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    },
+    {
+      "condition": "105-pass3",
+      "mean_nll_increase": {
+        "mean": -0.0003154506847343262,
+        "interval": [
+          -0.0016517047741879433,
+          0.0010073249284625885
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": 0.0019918744170614143,
+          "interval": [
+            -0.006794637570888223,
+            0.011316554940746543
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": 0.004109092530750764,
+          "interval": [
+            -0.0075345946385222875,
+            0.019698908633771293
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    },
+    {
+      "condition": "105-renormalized",
+      "mean_nll_increase": {
+        "mean": 0.0007976896895733995,
+        "interval": [
+          -0.0015979345132483007,
+          0.0032411174560376785
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": 0.005003151230946563,
+          "interval": [
+            -0.014158280461879929,
+            0.027149307587474598
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": 0.003922283661685808,
+          "interval": [
+            -0.01504179578196407,
+            0.025086737422369335
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    },
+    {
+      "condition": "3-all",
+      "mean_nll_increase": {
+        "mean": 0.0008777020336989025,
+        "interval": [
+          -0.003504575359628499,
+          0.005684642743610123
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": -0.003320348792912035,
+          "interval": [
+            -0.026623909008019832,
+            0.018236949584595496
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": -0.026645262552441182,
+          "interval": [
+            -0.06945422509383764,
+            0.003294101621971884
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    },
+    {
+      "condition": "41-all",
+      "mean_nll_increase": {
+        "mean": 0.00362851574693316,
+        "interval": [
+          -0.0005046036471807922,
+          0.008373136824998672
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": -0.016577790261170008,
+          "interval": [
+            -0.04009409649941647,
+            0.0024496456502169106
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": -0.019165965868053438,
+          "interval": [
+            -0.04644211575609702,
+            0.0015821028862468408
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    },
+    {
+      "condition": "45-all",
+      "mean_nll_increase": {
+        "mean": 0.0030270965929239044,
+        "interval": [
+          -0.00013827834529139352,
+          0.006419803999299457
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": -0.0021789639995383908,
+          "interval": [
+            -0.025741758980465507,
+            0.02920605087380501
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": 0.005865265380980316,
+          "interval": [
+            -0.006457293300413019,
+            0.018892545211476184
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    },
+    {
+      "condition": "89-all",
+      "mean_nll_increase": {
+        "mean": -0.00013611261425028752,
+        "interval": [
+          -0.0026236874646521843,
+          0.0024538266719074456
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": 0.006900801993686529,
+          "interval": [
+            -0.006175784599618847,
+            0.019836589467274107
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": 0.0021603565154182064,
+          "interval": [
+            -0.014949514242636693,
+            0.02151715452251951
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    },
+    {
+      "condition": "90-all",
+      "mean_nll_increase": {
+        "mean": -0.0006283660397601601,
+        "interval": [
+          -0.003046208992553885,
+          0.0018470120558448963
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": -0.0009876689963496414,
+          "interval": [
+            -0.011778477002744694,
+            0.010886928997504833
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": -0.004338141093556107,
+          "interval": [
+            -0.015861473859381022,
+            0.007688820152066324
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    },
+    {
+      "condition": "clean",
+      "mean_nll_increase": {
+        "mean": 0.0,
+        "interval": [
+          0.0,
+          0.0
+        ],
+        "n": 48,
+        "unit": "article or question, not tokens or loop visits",
+        "resamples": 10000,
+        "seed": 1729,
+        "family_size": 1
+      },
+      "contrasts": {
+        "numeric_target": {
+          "mean": 0.0,
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        },
+        "numeric_input": {
+          "mean": 0.0,
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "n": 42,
+          "unit": "article or question, not tokens or loop visits",
+          "resamples": 10000,
+          "seed": 1729,
+          "family_size": 1
+        }
+      }
+    }
+  ],
+  "prospective_routing_105": [
+    {
+      "visit": 1,
+      "selected_numeric": 214,
+      "numeric_tokens": 287,
+      "selected_other": 1037,
+      "other_tokens": 5041,
+      "rate_ratio": 3.6246812199489953,
+      "family95_interval": [
+        2.8574527940706833,
+        4.881127302128179
+      ],
+      "article_count": 48
+    },
+    {
+      "visit": 2,
+      "selected_numeric": 202,
+      "numeric_tokens": 287,
+      "selected_other": 971,
+      "other_tokens": 5041,
+      "rate_ratio": 3.653986514854114,
+      "family95_interval": [
+        2.873111255980111,
+        4.859228581721505
+      ],
+      "article_count": 48
+    },
+    {
+      "visit": 3,
+      "selected_numeric": 215,
+      "numeric_tokens": 287,
+      "selected_other": 1134,
+      "other_tokens": 5041,
+      "rate_ratio": 3.3301224735603365,
+      "family95_interval": [
+        2.6593052578302565,
+        4.332762515287104
+      ],
+      "article_count": 48
+    }
+  ],
+  "limits": [
+    "Development questions are exploratory. Numeric cue list includes time words. Only text article tests were prospective.",
+    "Routing derivatives fix top-k choices locally and need exact validation.",
+    "Bootstrap is over unique articles/questions. No loop visit is counted as an independent sample."
+  ]
+}

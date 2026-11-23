@@ -1,5 +1,5 @@
 {
-  "observed_at": "2026-11-23T04:44:34.064143+00:00",
+  "observed_at": "2026-11-23T06:26:27.082617+00:00",
   "jobs": [
     {
       "id": "536316",
@@ -203,6 +203,27 @@
       "status": "COMPLETED",
       "elapsed": "00:05:50",
       "exit_code": "0:0"
+    },
+    {
+      "id": "541634",
+      "cluster": "hpcfund",
+      "status": "CANCELLED",
+      "elapsed": "00:00:00",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "541645",
+      "cluster": "hpcfund",
+      "status": "CANCELLED",
+      "elapsed": "00:00:00",
+      "exit_code": "0:0"
+    },
+    {
+      "id": "541690",
+      "cluster": "hpcfund",
+      "status": "FAILED",
+      "elapsed": "00:11:57",
+      "exit_code": "1:0"
     }
   ]
 }

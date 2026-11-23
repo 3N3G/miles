@@ -37,9 +37,18 @@ def capture(model,records,out,experts=(105,45,3)):
         observer=NativeNeuronObserver(experts)
         ids=torch.tensor([record['token_ids']],device='cuda')
         baseline=model(input_ids=ids,use_cache=False,logits_to_keep=1).logits if index==0 else None
+        routes=[];route_calls={}
+        def route_hook(layer):
+            def observe(module,args,output):
+                route_calls[layer]=route_calls.get(layer,0)+1
+                routes.append((layer,route_calls[layer],output[2].detach().cpu().numpy(),output[1].detach().cpu().numpy()))
+            return observe
         handles=[operator.experts.register_forward_pre_hook(observer.begin),
                  operator.experts.act_fn.register_forward_hook(observer.activation),
                  operator.experts.register_forward_hook(observer.end)]
+        config=model.model.language_model.config
+        for layer in range(config.loop_layer_index_start,config.loop_layer_index_end):
+            handles.append(model.model.language_model.layers[layer].mlp.gate.register_forward_hook(route_hook(layer)))
         try:
             logits=model(input_ids=ids,use_cache=False,logits_to_keep=1).logits
         finally:
@@ -51,6 +60,9 @@ def capture(model,records,out,experts=(105,45,3)):
         for j,row in enumerate(observer.rows):
             for key,value in row.items():arrays[f'{j}_{key}']=value
         np.savez_compressed(out/f'{index:03}.npz',**arrays)
+        np.savez_compressed(out/f'core_routing_{index:03}.npz',layer_indices=np.array([r[0] for r in routes]),
+                            visits=np.array([r[1] for r in routes]),indices=np.stack([r[2] for r in routes]),weights=np.stack([r[3] for r in routes]))
+        assert set(route_calls.values())=={config.loop_num_passes}
         manifest.append({'id':record['id'],'split':record.get('split',record.get('cohort')),
                          'rendered_input':record['rendered_input'],'token_ids':record['token_ids'],
                          'file':f'{index:03}.npz','expert_visit_rows':len(observer.rows)})
