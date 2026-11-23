@@ -4,31 +4,29 @@
   "sources": [],
   "evidence": [
     {
-      "path": "evidence/operator_pilot_result.json",
-      "label": "Validated primary comparison and exploratory native routing counts"
+      "path": "plans/native_expert_program.md",
+      "label": "Autonomous program and decision rules"
     },
     {
-      "path": "evidence/operator_pilot_archive_verification.json",
-      "label": "Private archive, 208 entries, exact critical files and excluded weights"
+      "path": "plans/native_expert_calibration.md",
+      "label": "First native causal screen"
     },
     {
-      "path": "evidence/operator_pilot_analysis_manifest.json",
-      "label": "Analysis source hashes and scope"
+      "path": "evidence/expert_program_budget.json",
+      "label": "Five-hour GPU accounting"
     },
     {
-      "path": "plans/shared_operator_pilot.md",
-      "label": "Completed approved protocol with results"
-    },
-    {
-      "path": "figures/native_expert_numeric_cues.png",
-      "label": "Repeated native routing association across passes"
-    },
-    {
-      "path": "evidence/scheduler_observation.json",
-      "label": "Observed terminal scheduler state"
+      "path": "evidence/native_expert_inputs.json",
+      "label": "Frozen calibration, discovery and independent test cohorts"
     }
   ],
-  "jobs": [],
+  "jobs": [
+    {
+      "id": "541634",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    }
+  ],
   "sessions": [
     {
       "agent": "codex",
@@ -196,15 +194,22 @@
       "actor": "codex",
       "summary": "Started the explicitly authorized autonomous expert study with a five-hour GPU cap",
       "revision": 22
+    },
+    {
+      "id": "76a8a370-239e-41ef-a106-de5ac71f3c7d",
+      "at": "2026-11-23T05:55:29.376251Z",
+      "actor": "codex",
+      "summary": "Submitted native expert calibration 541634 and froze independent task cohorts",
+      "revision": 23
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "The user authorized autonomous expert research and up to five GPU hours. Starting native expert ablation, task calibration and controls. The completed pilot remains preserved.",
-  "nextAction": "Record the adaptive research plan and budget ledger, validate native interventions, then run bounded discovery and confirmation stages without repeated approval requests.",
+  "summary": "Submitted a 20-minute native expert causal screen. Independent MMLU confirmation and replication questions are frozen before inference.",
+  "nextAction": "Monitor calibration, prepare prospective text and gradient discovery, then confirm useful roles within the five-hour cap.",
   "owner": "Codex",
-  "revision": 22,
-  "updatedAt": "2026-11-23T05:48:40.959453Z"
+  "revision": 23,
+  "updatedAt": "2026-11-23T05:55:29.376251Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The user authorized autonomous expert research and up to five GPU hours. Starting native expert ablation, task calibration and controls. The completed pilot remains preserved.
-  Next: Record the adaptive research plan and budget ledger, validate native interventions, then run bounded discovery and confirmation stages without repeated approval requests.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Submitted a 20-minute native expert causal screen. Independent MMLU confirmation and replication questions are frozen before inference. Jobs: hpcfund/541634 PENDING
+  Next: Monitor calibration, prepare prospective text and gradient discovery, then confirm useful roles within the five-hour cap.
 
 ## Next / blocked
 

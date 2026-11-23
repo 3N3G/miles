@@ -4,16 +4,19 @@
   "authorization": "Yes continue. Work autonomously to uncover more about these experts. You can use up to 5 hours of GPU time.",
   "limit_gpu_seconds": 18000,
   "prior_pilot_seconds_counted_conservatively": 350,
-  "jobs": [],
+  "jobs": [
+    {
+      "run_name": "expert-calibration-v1",
+      "job_id": "541634",
+      "maximum_gpu_seconds": 1200,
+      "status": "PENDING",
+      "reserved_gpu_seconds": 1200
+    }
+  ],
   "used_gpu_seconds": 350,
   "remaining_gpu_seconds": 17650,
   "accounting": "One GPU at a time. Count completed allocation seconds, plus full remaining limits of submitted jobs. No unrelated jobs count.",
-  "pending_reservations": [
-    {
-      "run_name": "expert-calibration-v1",
-      "maximum_gpu_seconds": 1200,
-      "status": "prepared"
-    }
-  ],
-  "unreserved_gpu_seconds": 16450
+  "pending_reservations": [],
+  "unreserved_gpu_seconds": 16450,
+  "reserved_gpu_seconds": 1200
 }
