@@ -793,7 +793,7 @@
     {
       "id": "540286",
       "cluster": "hpcfund",
-      "status": "UNKNOWN"
+      "status": "RUNNING"
     },
     {
       "id": "539594",
@@ -2802,15 +2802,22 @@
       "actor": "codex",
       "summary": "RL job 540286 is UNKNOWN",
       "revision": 259
+    },
+    {
+      "id": "9becd01b-0031-4e9e-96b5-affe958de50a",
+      "at": "2026-11-23T01:08:48.673841Z",
+      "actor": "codex",
+      "summary": "RL job 540286 is RUNNING",
+      "revision": 260
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 540286 is UNKNOWN",
+  "summary": "RL job 540286 is RUNNING",
   "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 259,
-  "updatedAt": "2026-11-23T01:07:44.690985Z"
+  "revision": 260,
+  "updatedAt": "2026-11-23T01:08:48.673841Z"
 }
