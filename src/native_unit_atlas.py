@@ -56,13 +56,19 @@ def main():
     model=AutoModelForImageTextToText.from_pretrained(MODEL,revision=REVISION,dtype=torch.bfloat16,device_map={'':'cuda:0'}).eval();model.requires_grad_(False)
     layer=model.model.language_model.layers[11];reader=model.model.language_model.layers[12].attention_input
     all_scores=[]
-    for record in records:
+    for index,record in enumerate(records):
         capture=Capture(model)
         try:
             with torch.no_grad():logits,_,_=run(model,torch.tensor([record['token_ids']],device='cuda'))
         finally:capture.close()
-        del logits
         all_scores.append(np.array([sensitivity(layer,reader,capture,v) for v in [1,2,3]]))
+        if index==0:
+            with torch.no_grad():replayed,_,_=run(model,torch.tensor([record['token_ids']],device='cuda'))
+            assert torch.equal(logits,replayed),'Local gradients changed native model logits'
+            assert all(p.grad is None for p in model.parameters())
+            (a.out/'gradient_controls.json').write_text(json.dumps({'native_logits_unchanged_after_local_gradients':True,'pretrained_weight_gradients_absent':True})+'\n')
+            del replayed
+        del logits
         np.save(a.out/'unit_scores.npy',np.array(all_scores))
         print(json.dumps({'event':'unit_gradient_article','id':record['id'],'elapsed':time.time()-started}),flush=True)
     values=np.array(all_scores);mean=values.mean(0)[:,0];contrast=mean[2]-mean[0]

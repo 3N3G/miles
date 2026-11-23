@@ -28,6 +28,8 @@ identities before testing new articles in a separate plan.
 - Make the native grouped activation a differentiable leaf. Compute the
   negative activation-times-gradient score for deleting each native unit.
   Sum its selected-token contributions into the128-by1152 native unit map.
+- After the first article's gradients, require a fresh full model forward's
+  logits to match the original exactly. No pretrained parameter may have a gradient.
 - Also compute a dot-product-only score, holding the block RMS fixed at its
   observed value. This is a diagnostic approximation, not a neural edit.
 - Average scores equally over articles. Select four units with opposite mean
