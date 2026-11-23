@@ -2776,15 +2776,22 @@
       "actor": "codex",
       "summary": "RL job 539594 ended TIMEOUT; acceptance False",
       "revision": 256
+    },
+    {
+      "id": "3d5b073f-a4dc-4ac2-bbfa-5d468866f2bc",
+      "at": "2026-11-23T00:54:43.020530Z",
+      "actor": "codex",
+      "summary": "The two-hour run closed with 24 published and 20 saved updates; six matched questions declined. The 102-minute remainder preserves all source checkpoints",
+      "revision": 257
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 539594 ended TIMEOUT; acceptance False",
-  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
+  "summary": "The two-hour run closed with 24 published and 20 saved updates; six matched questions declined. The 102-minute remainder preserves all source checkpoints",
+  "nextAction": "Complete the final closure receipt readback, freeze and submit the prepared 20-update remainder, then supervise through terminal within the original GPU and judge caps",
   "owner": "Codex",
-  "revision": 256,
-  "updatedAt": "2026-11-23T00:21:17.844892Z"
+  "revision": 257,
+  "updatedAt": "2026-11-23T00:54:43.020530Z"
 }

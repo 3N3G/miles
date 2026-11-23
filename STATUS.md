@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 539594 ended TIMEOUT; acceptance False Jobs: hpcfund/539594 TIMEOUT; hpcfund/538647 FAILED
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The two-hour run closed with 24 published and 20 saved updates; six matched questions declined. The 102-minute remainder preserves all source checkpoints Jobs: hpcfund/539594 TIMEOUT; hpcfund/538647 FAILED
+  Next: Complete the final closure receipt readback, freeze and submit the prepared 20-update remainder, then supervise through terminal within the original GPU and judge caps
 
 ## Next / blocked
 
