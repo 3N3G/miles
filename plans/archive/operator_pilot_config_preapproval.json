@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "layer_index": 11,
+  "width": 4096,
+  "topk": 64,
+  "epochs": 20,
+  "batch_size": 256,
+  "learning_rate": 0.001,
+  "seeds": [0, 1, 2],
+  "ridge_regularizers": [0.01, 0.1, 1.0],
+  "planned_gpu_minutes": 30,
+  "planned_jobs": 1,
+  "allocation_budget_status": "awaiting user decision",
+  "plan": "plans/shared_operator_pilot.md",
+  "inputs": "evidence/operator_pilot_inputs_articles.json"
+}

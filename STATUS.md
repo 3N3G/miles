@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): The user approved the prepared shared-operator pilot and its one-GPU, 30-minute cap. Code and input hashes match the CPU-validated versions. Preparing the recorded submission.
+  Next: Submit the approved MI210 job, monitor it through completion, validate the native controls and report the results.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Prepared the shared-operator pilot. Nine CPU checks passed. Fixed inputs cover 128 fit paragraphs, 16 development paragraphs and 32 final articles. No new GPU job or native Mini inference ran.
-  Next: Approve the proposed single MI210 job capped at 30 allocation minutes, or specify another cap. The research direction is already selected.
+- Nothing recorded.
 
 ## Finished
 

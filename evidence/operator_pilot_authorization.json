@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-11-23T04:36:43.642586+00:00",
+  "user_answer": "yes",
+  "approved_gpu_minutes": 30,
+  "approved_jobs": 1,
+  "partition": "mi2101x",
+  "old_config_sha256": "5dcd776eca27570b0402d0635fa987322eaea705e7a19cd9e2464b37b0df4e29",
+  "approved_config_sha256": "27478a16c0b6961e55b2eb0c362605175494ad9668bccd01c6a4f5291e9b0f48",
+  "inputs_sha256": "76be3edd6050a127c841fdbc5a1412e445fbb7ec3fe780a689bfbf851d7ae10f",
+  "experimental_parameters_changed": false
+}

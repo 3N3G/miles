@@ -2,11 +2,11 @@
 
 ## TLDR
 
-Status: implementation preparation. The user selected this direction with
-“Follow your suspicion” on 2026-11-22. The compute budget still needs approval
-under this project's AGENTS.md. No new GPU job has been submitted.
+Status: approved for execution. The user selected this direction with
+“Follow your suspicion” and approved the proposed allocation with “yes” on
+2026-11-22. The preapproval config is preserved in `plans/archive/`.
 
-Proposed limit: one MI210 job, one GPU, at most 30 allocation minutes.
+Approved limit: one MI210 job, one GPU, at most 30 allocation minutes.
 The released model's weights remain frozen. Only small surrogate models train.
 
 ## Background / motivation
@@ -169,4 +169,4 @@ the run using `push-run inkling-interp`.
 
 ## Questions
 
-The direction is approved. The remaining decision is the proposed GPU budget.
+The direction and proposed 30-minute budget are approved. Record execution and results without requesting the same permission again.

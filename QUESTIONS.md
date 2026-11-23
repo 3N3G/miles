@@ -7,15 +7,6 @@
 - Recommendation: keep the internal interface flexible and wait for official details before packaging a submission.
 - Blocks: final challenge packaging only. It does not block model inspection.
 
-## 2026-11-22: shared-operator pilot allocation
-
-- Question: Approve one MI210 job capped at 30 allocation minutes for the prepared shared-operator pilot?
-- Options: approve that cap, choose another cap, or keep GPU execution on hold.
-- Recommendation: approve the one-job, 30-minute cap. Code, fixed inputs and nine CPU checks are ready.
-- Direction: already selected by the user's “Follow your suspicion” instruction.
-- Evidence: `plans/shared_operator_pilot.md`, `evidence/operator_pilot_config.json`, and `evidence/operator_pilot_validation.json`.
-- Blocks: new GPU submission and native Mini results only. Preparation is complete.
-
 ## Answered
 
 2026-11-21: Where should the work live and which compute is permitted?
@@ -43,3 +34,16 @@ Action: use this standalone checkout and a bounded AMD diagnostic.
 
 User answer on 2026-11-22: follow the shared-operator suspicion from the technique survey.
 Resolution: this supersedes the older lens-choice question. The new pilot allocation is recorded separately above.
+
+
+### 2026-11-22: shared-operator pilot allocation
+
+- Question: Approve one MI210 job capped at 30 allocation minutes for the prepared shared-operator pilot?
+- Options: approve that cap, choose another cap, or keep GPU execution on hold.
+- Recommendation: approve the one-job, 30-minute cap. Code, fixed inputs and nine CPU checks are ready.
+- Direction: already selected by the user's “Follow your suspicion” instruction.
+- Evidence: `plans/shared_operator_pilot.md`, `evidence/operator_pilot_config.json`, and `evidence/operator_pilot_validation.json`.
+- Blocks: new GPU submission and native Mini results only. Preparation is complete.
+
+User answer on 2026-11-22: yes.
+Resolution: one MI210 job capped at 30 allocation minutes is approved.

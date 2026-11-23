@@ -6,11 +6,24 @@
   "epochs": 20,
   "batch_size": 256,
   "learning_rate": 0.001,
-  "seeds": [0, 1, 2],
-  "ridge_regularizers": [0.01, 0.1, 1.0],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "ridge_regularizers": [
+    0.01,
+    0.1,
+    1.0
+  ],
   "planned_gpu_minutes": 30,
   "planned_jobs": 1,
-  "allocation_budget_status": "awaiting user decision",
+  "allocation_budget_status": "approved",
   "plan": "plans/shared_operator_pilot.md",
-  "inputs": "evidence/operator_pilot_inputs_articles.json"
+  "inputs": "evidence/operator_pilot_inputs_articles.json",
+  "authorization": {
+    "user_answer": "yes",
+    "local_date": "2026-11-22",
+    "scope": "One MI210 GPU job, at most 30 allocation minutes, under plans/shared_operator_pilot.md"
+  }
 }
