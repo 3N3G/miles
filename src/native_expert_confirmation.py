@@ -9,10 +9,8 @@ import time
 from pathlib import Path
 import numpy as np
 import torch
-from transformers import AutoModelForImageTextToText, AutoTokenizer
 from native_expert import RouterEdit, aliases, formatted_prompt, letter_metrics, render_question
 from inspect_native_experts import numeric_cue
-from pilot import MODEL, REVISION, token_list
 
 
 def write(path,obj):
@@ -86,9 +84,12 @@ def make_masks(tokenizer,rendered,question,ids):
 
 
 def main():
+    from transformers import AutoModelForImageTextToText, AutoTokenizer
+    from pilot import MODEL, REVISION, token_list
     p=argparse.ArgumentParser();p.add_argument('--spec',type=Path,required=True);p.add_argument('--inputs',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True);p.add_argument('--seed',type=int,required=True)
     p.add_argument('--cohort',default='confirmation');p.add_argument('--take',type=int)
+    p.add_argument('--native-order',action='store_true');p.add_argument('--capture-neurons',type=Path)
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);started=time.time()
     spec=json.loads(a.spec.read_text());inputs=json.loads(a.inputs.read_text())
     write(a.out/'frozen_spec.json',spec);write(a.out/'frozen_inputs.json',inputs)
@@ -99,7 +100,8 @@ def main():
     if a.take is not None:records=records[:a.take]
     rows=[];controls=[];rng=np.random.default_rng(a.seed)
     for index,record in enumerate(records):
-        permutation=rng.permutation(4).tolist();text,answer=render_question(record,permutation)
+        permutation=list(range(4)) if a.native_order else rng.permutation(4).tolist()
+        text,answer=render_question(record,permutation)
         rendered=formatted_prompt(tok,text,spec['format']);ids=tok(rendered,return_tensors='pt',add_special_tokens=False).input_ids.to('cuda')
         assert ids.shape[-1]<=512,(record['id'],ids.shape[-1])
         masks=make_masks(tok,rendered,record['question'],ids)
@@ -123,6 +125,10 @@ def main():
             rows.append(row)
         write(a.out/'results.json',rows)
         print(json.dumps({'event':'confirmed_question','id':record['id'],'index':index,'seed':a.seed,'elapsed':time.time()-started}),flush=True)
+    if a.capture_neurons:
+        from capture_native_neurons import capture
+        source=json.loads(a.capture_neurons.read_text())
+        capture(model,[r for r in source['records'] if r['split'] in ['fit','validation']],a.out/'native_neurons',experts=(105,45,3,89,41,90))
     write(a.out/'manifest.json',{'model':MODEL,'revision':REVISION,'code_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
          'spec_sha256':hashlib.sha256(a.spec.read_bytes()).hexdigest(),'inputs_sha256':hashlib.sha256(a.inputs.read_bytes()).hexdigest(),
          'wall_seconds':time.time()-started,'peak_gpu_bytes':torch.cuda.max_memory_allocated(),'status':'completed'})

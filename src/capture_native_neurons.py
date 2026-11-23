@@ -1,0 +1,62 @@
+"""Observe native expert activations without replacing the native forward code."""
+
+import json
+from pathlib import Path
+import numpy as np
+import torch
+
+
+class NativeNeuronObserver:
+    def __init__(self,experts):
+        self.experts=set(experts);self.visit=0;self.rows=[]
+
+    def begin(self,module,args):
+        _,self.indices,self.weights=args
+        self.order=sorted(e for e in self.indices.unique().tolist() if e<128)
+        self.index=0;self.visit+=1
+
+    def activation(self,module,args,output):
+        expert=self.order[self.index];self.index+=1
+        token,slot=torch.where(self.indices==expert)
+        assert output.shape[0]==len(token),(expert,output.shape,len(token))
+        if expert in self.experts:
+            self.rows.append({'expert':expert,'visit':self.visit,'positions':token.detach().cpu().numpy(),
+                              'weights':self.weights[token,slot].detach().cpu().numpy(),
+                              'activation':output.detach().float().cpu().numpy()})
+
+    def end(self,module,args,output):
+        assert self.index==len(self.order),(self.index,len(self.order))
+
+
+@torch.no_grad()
+def capture(model,records,out,experts=(105,45,3)):
+    out=Path(out);out.mkdir(exist_ok=False)
+    operator=model.model.language_model.layers[11].mlp
+    manifest=[]
+    for index,record in enumerate(records):
+        observer=NativeNeuronObserver(experts)
+        ids=torch.tensor([record['token_ids']],device='cuda')
+        baseline=model(input_ids=ids,use_cache=False,logits_to_keep=1).logits if index==0 else None
+        handles=[operator.experts.register_forward_pre_hook(observer.begin),
+                 operator.experts.act_fn.register_forward_hook(observer.activation),
+                 operator.experts.register_forward_hook(observer.end)]
+        try:
+            logits=model(input_ids=ids,use_cache=False,logits_to_keep=1).logits
+        finally:
+            for handle in handles:handle.remove()
+        assert observer.visit==3
+        if baseline is not None:
+            assert torch.equal(baseline,logits),'Observation changed the native logits'
+        arrays={}
+        for j,row in enumerate(observer.rows):
+            for key,value in row.items():arrays[f'{j}_{key}']=value
+        np.savez_compressed(out/f'{index:03}.npz',**arrays)
+        manifest.append({'id':record['id'],'split':record.get('split',record.get('cohort')),
+                         'rendered_input':record['rendered_input'],'token_ids':record['token_ids'],
+                         'file':f'{index:03}.npz','expert_visit_rows':len(observer.rows)})
+        (out/'inputs.json').write_text(json.dumps(manifest,indent=2)+'\n')
+        print(json.dumps({'event':'native_neuron_capture','id':record['id'],'index':index}),flush=True)
+    norms={str(e):operator.experts.down_proj[e].float().norm(dim=0).cpu().numpy() for e in experts}
+    np.savez_compressed(out/'decoder_column_norms.npz',**norms)
+    (out/'controls.json').write_text(json.dumps({'native_observation_logit_error':0,'visits':3,
+        'layer_index':11,'experts':list(experts),'method':'Unchanged native forward, parent and activation observation hooks'},indent=2)+'\n')
