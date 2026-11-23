@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Five illustrated native-expert case studies are written. Audited30 displayed values against45 source files, including gate/up factors and the autoregressive number example.
-  Next: Archive the figure data and preserve the local review draft.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,4 +16,4 @@
 
 ## Finished
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Completed five illustrated expert case studies with four new figures. Verified30 displayed values and45 source files. Preserved the local review draft and privately archived figure data.

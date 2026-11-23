@@ -321,15 +321,22 @@
       "actor": "codex",
       "summary": "Complete five illustrated case studies and audit their numerical examples",
       "revision": 41
+    },
+    {
+      "id": "6eaf25fc-6b10-4193-bbe7-5e4f9dcf3489",
+      "at": "2026-11-23T12:59:10.608345Z",
+      "actor": "codex",
+      "summary": "Finish illustrated expert case studies with verified sources and local review backup",
+      "revision": 42
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
-  "state": "running",
-  "summary": "Five illustrated native-expert case studies are written. Audited30 displayed values against45 source files, including gate/up factors and the autoregressive number example.",
-  "nextAction": "Archive the figure data and preserve the local review draft.",
+  "state": "finished",
+  "summary": "Completed five illustrated expert case studies with four new figures. Verified30 displayed values and45 source files. Preserved the local review draft and privately archived figure data.",
+  "nextAction": "Read reports/EXPERT_CASE_STUDIES.md. No additional model inference or GPU time was used.",
   "owner": "Codex",
-  "revision": 41,
-  "updatedAt": "2026-11-23T12:57:43.044894Z"
+  "revision": 42,
+  "updatedAt": "2026-11-23T12:59:10.608345Z"
 }

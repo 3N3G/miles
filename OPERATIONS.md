@@ -258,3 +258,18 @@ preserved byte-for-byte on local branch `review/native-experts`, commit
 `reports/NATIVE_EXPERTS.md`. Do not push this prose branch without user review.
 Code, plans, raw-artifact receipts, plots and structured state use the explicit
 backup target `HEAD:inkling-interp`. No job should be resumed from this note.
+
+## Illustrated expert case studies
+
+The requested local blog-style draft is `reports/EXPERT_CASE_STUDIES.md`.
+Eight report files are preserved on local branch `review/expert-case-studies`,
+commit `72d4ae260a3a744272dee1f5377c84ec5f5221ce`. The new article contains five case studies,
+four new figures, and one reused normalization figure. Original reports remain
+on `review/native-experts`. No prose branch was pushed.
+
+Rebuild data with `src/build_expert_blog_examples.py`, figures with
+`src/plot_expert_blog_examples.py`, and the presentation audit with
+`src/audit_expert_blog_examples.py`. The audit checks30 displayed values,45
+source hashes, native factor equations and the next-token offset. The raw
+derivative bundle is privately archived as `expert-blog-examples-v1`. No model
+inference or GPU allocation was used for this writing follow-up.
