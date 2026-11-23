@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Frozen48 prospective text articles and independent task questions. Native causal and derivative screen541645 is queued on eight GPUs. Jobs: hpcfund/541634 CANCELLED; hpcfund/541645 PENDING
-  Next: Run the recorded screen, validate derivative candidates with exact removal, and confirm on frozen questions. Count all eight GPUs within300 minutes.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Native expert screen541690 is running on one MI210. The two superseded pending jobs used zero GPU time. CPU routing replay matched all native route sets. Jobs: hpcfund/541690 RUNNING
+  Next: Inspect clean task capability and causal effects, then freeze candidate confirmation within the remaining budget.
 
 ## Next / blocked
 

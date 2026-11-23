@@ -22,14 +22,9 @@
   ],
   "jobs": [
     {
-      "id": "541634",
+      "id": "541690",
       "cluster": "hpcfund",
-      "status": "CANCELLED"
-    },
-    {
-      "id": "541645",
-      "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     }
   ],
   "sessions": [
@@ -213,15 +208,22 @@
       "actor": "codex",
       "summary": "Recorded eight-GPU screen reservation after cancelling only the pending owned job",
       "revision": 24
+    },
+    {
+      "id": "ba15d912-ec49-4b5d-8e6f-eabf4dcc7d25",
+      "at": "2026-11-23T06:14:13.564158Z",
+      "actor": "codex",
+      "summary": "Started the frozen single-GPU screen541690 after finding an immediate development slot",
+      "revision": 25
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Frozen48 prospective text articles and independent task questions. Native causal and derivative screen541645 is queued on eight GPUs.",
-  "nextAction": "Run the recorded screen, validate derivative candidates with exact removal, and confirm on frozen questions. Count all eight GPUs within300 minutes.",
+  "summary": "Native expert screen541690 is running on one MI210. The two superseded pending jobs used zero GPU time. CPU routing replay matched all native route sets.",
+  "nextAction": "Inspect clean task capability and causal effects, then freeze candidate confirmation within the remaining budget.",
   "owner": "Codex",
-  "revision": 24,
-  "updatedAt": "2026-11-23T06:02:39.067479Z"
+  "revision": 25,
+  "updatedAt": "2026-11-23T06:14:13.564158Z"
 }

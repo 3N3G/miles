@@ -254,5 +254,13 @@
     "files": 208,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/74d36b2f3eaf690fce37d6ea2455649103a696ad/inkling-interp/shared-operator-v1",
     "verified_at": "2026-11-23T05:07:48.589677+00:00"
+  },
+  {
+    "stage": "router-phase-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "82bd45440ca35a9dac2c34388bd8e468e8acb6a3",
+    "private": true,
+    "files": 2,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/82bd45440ca35a9dac2c34388bd8e468e8acb6a3/inkling-interp/router-phase-v1"
   }
 ]
