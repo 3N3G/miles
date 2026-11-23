@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Current AMD run has 19 updates; a tested one-checkpoint continuation preserves every source and removes the pending deletion decision Jobs: hpcfund/539594 RUNNING; hpcfund/538647 FAILED
-  Next: Supervise the current allocation through terminal, archive and verify it, then resume only unfinished target updates within actual remaining GPU time and the same judge ledger
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 539594 is TIMEOUT Jobs: hpcfund/539594 TIMEOUT; hpcfund/538647 FAILED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 

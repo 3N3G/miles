@@ -793,7 +793,7 @@
     {
       "id": "539594",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "TIMEOUT"
     },
     {
       "id": "538647",
@@ -2762,15 +2762,22 @@
       "actor": "codex",
       "summary": "Current AMD run has 19 updates; a tested one-checkpoint continuation preserves every source and removes the pending deletion decision",
       "revision": 254
+    },
+    {
+      "id": "06552d06-8c60-47e8-8dd3-1ffecfffc257",
+      "at": "2026-11-23T00:17:41.652605Z",
+      "actor": "codex",
+      "summary": "RL job 539594 is TIMEOUT",
+      "revision": 255
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Current AMD run has 19 updates; a tested one-checkpoint continuation preserves every source and removes the pending deletion decision",
-  "nextAction": "Supervise the current allocation through terminal, archive and verify it, then resume only unfinished target updates within actual remaining GPU time and the same judge ledger",
+  "summary": "RL job 539594 is TIMEOUT",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 254,
-  "updatedAt": "2026-11-22T23:54:06.106479Z"
+  "revision": 255,
+  "updatedAt": "2026-11-23T00:17:41.652605Z"
 }
