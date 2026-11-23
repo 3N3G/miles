@@ -44,6 +44,10 @@ def main():
     for i,z in enumerate(r['mixed_activity_case']['examples']):
         factors(z,'mixed'+str(i))
         for visit in ['pass1','pass3']:number('mixed'+str(i)+'_'+visit,z[visit]['raw_activation'],3,True)
+        assert z['pass1']['raw_gate']<0<z['pass3']['raw_gate']
+        assert z['pass1']['raw_up']*z['pass3']['raw_up']>0
+    mixed=r['mixed_activity_case']['examples']
+    assert mixed[0]['pass1']['raw_up']>0 and mixed[1]['pass1']['raw_up']<0
     name=r['number_name_case'];assert all(name['expert105_selected_per_pass'])
     assert name['next_target_position']==name['input_position']+1
     number('next_digit_native_probability',name['native_probability']*100,2)
@@ -65,6 +69,7 @@ def main():
             local.append(link)
     out={'status':'passed','source_files_verified':len(r['source_sha256']),'displayed_numbers_verified':checked,
          'native_factor_equations_consistent_with_bf16_rounding':True,'autoregressive_target_offset_verified':True,
+         'mixed_example_has_same_gate_flip_and_opposite_up_signs':True,
          'local_links_verified':local,'article_sha256':hashlib.sha256(a.article.read_bytes()).hexdigest(),
          'example_data_sha256':hashlib.sha256(a.examples.read_bytes()).hexdigest(),
          'scope':'Presentation audit of existing measurements. No new experiment or hypothesis test.'}
