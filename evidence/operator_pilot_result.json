@@ -1,0 +1,304 @@
+{
+  "validation_status": "passed",
+  "execution_manifest": {
+    "model": "thinkingmachines/Inkling-2-Mini",
+    "revision": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+    "torch": "2.12.0+git6bbd260",
+    "code_commit": "c6ea41d9f71801d2bdee4fe8883425896ca66fe9",
+    "inputs_sha256": "76be3edd6050a127c841fdbc5a1412e445fbb7ec3fe780a689bfbf851d7ae10f",
+    "config_sha256": "27478a16c0b6961e55b2eb0c362605175494ad9668bccd01c6a4f5291e9b0f48",
+    "elapsed_seconds": 337.9091748734936,
+    "maximum_gpu_allocated_bytes": 54609505280,
+    "surrogate_fitting_only": true,
+    "native_weights_updated": false
+  },
+  "native_controls": {
+    "operator_replay_max_errors": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "observational_hook_logit_error": 0.0,
+    "first_input_logit_sha256": "0ec4fa31a431861c44fa4c2ad8a20c21d6debae441a8374c82c34d3c4e3443e6",
+    "native_logits_unchanged_after_fitting": true
+  },
+  "methods": {
+    "shared": {
+      "per_pass_nmse": [
+        0.846055825551351,
+        0.8325174848238627,
+        0.774714469909668
+      ],
+      "mean_nmse": 0.8177625934282938
+    },
+    "specific": {
+      "per_pass_nmse": [
+        0.8783076008160909,
+        0.86263507604599,
+        0.7850189407666525
+      ],
+      "mean_nmse": 0.8419872058762445
+    },
+    "dense": {
+      "per_pass_nmse": [
+        0.9038397868474325,
+        0.898467481136322,
+        0.8311912218729655
+      ],
+      "mean_nmse": 0.87783282995224
+    },
+    "ridge": {
+      "per_pass_nmse": [
+        0.7971510887145996,
+        0.7803283929824829,
+        0.7340598106384277
+      ],
+      "mean_nmse": 0.77051309744517
+    },
+    "specific_mean": {
+      "per_pass_nmse": [
+        1.004286766052246,
+        1.004324197769165,
+        1.005696415901184
+      ],
+      "mean_nmse": 1.0047691265741985
+    }
+  },
+  "primary_comparison": {
+    "primary_contrast": "Shared minus matching pass-specific normalized prediction error",
+    "mean_difference": -0.02422461865676774,
+    "paired_95_percent_ci": [
+      -0.027491590856677958,
+      -0.020981792908989723
+    ],
+    "sampling_unit": "one paragraph from each of 32 distinct final articles",
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 1729,
+    "per_article_differences": [
+      -0.019381940364837646,
+      -0.012097981241014268,
+      -0.021143489413791232,
+      -0.014028112093607584,
+      -0.01021575265460544,
+      -0.03193404939439562,
+      -0.02123028039932251,
+      -0.011277198791503906,
+      -0.022224115000830755,
+      -0.03335018290413751,
+      -0.012490842077467177,
+      -0.009891205363803439,
+      -0.02027550670835707,
+      -0.04160790310965644,
+      -0.016864160696665447,
+      -0.024881316555870905,
+      -0.021486355198754206,
+      -0.02600782447391086,
+      -0.028462403350406222,
+      -0.03325444459915161,
+      -0.02769837776819865,
+      -0.04578634765413073,
+      -0.01934018399980333,
+      -0.027630183431837294,
+      -0.03631941477457682,
+      -0.036638743347591825,
+      -0.025619771745469835,
+      -0.031233052412668865,
+      -0.024889972474839952,
+      -0.037659929858313665,
+      -0.016148845354715984,
+      -0.014117909802330865
+    ],
+    "per_seed_and_pass": [
+      {
+        "seed": 0,
+        "pass": 1,
+        "shared_nmse": 0.844005286693573,
+        "specific_nmse": 0.8780601024627686,
+        "difference": -0.03405480273067951
+      },
+      {
+        "seed": 0,
+        "pass": 2,
+        "shared_nmse": 0.8319865465164185,
+        "specific_nmse": 0.8630123734474182,
+        "difference": -0.031025797128677368
+      },
+      {
+        "seed": 0,
+        "pass": 3,
+        "shared_nmse": 0.7737537026405334,
+        "specific_nmse": 0.7854970097541809,
+        "difference": -0.01174330897629261
+      },
+      {
+        "seed": 1,
+        "pass": 1,
+        "shared_nmse": 0.8473538756370544,
+        "specific_nmse": 0.8796306252479553,
+        "difference": -0.03227677382528782
+      },
+      {
+        "seed": 1,
+        "pass": 2,
+        "shared_nmse": 0.8330957293510437,
+        "specific_nmse": 0.8629615306854248,
+        "difference": -0.029865812510252
+      },
+      {
+        "seed": 1,
+        "pass": 3,
+        "shared_nmse": 0.7746863961219788,
+        "specific_nmse": 0.7861552238464355,
+        "difference": -0.011468835175037384
+      },
+      {
+        "seed": 2,
+        "pass": 1,
+        "shared_nmse": 0.8468083143234253,
+        "specific_nmse": 0.8772320747375488,
+        "difference": -0.03042377531528473
+      },
+      {
+        "seed": 2,
+        "pass": 2,
+        "shared_nmse": 0.832470178604126,
+        "specific_nmse": 0.861931324005127,
+        "difference": -0.029461171478033066
+      },
+      {
+        "seed": 2,
+        "pass": 3,
+        "shared_nmse": 0.7757033109664917,
+        "specific_nmse": 0.7834045886993408,
+        "difference": -0.007701290771365166
+      }
+    ],
+    "scope": "One fixed sublayer and one sparse-surrogate configuration"
+  },
+  "first_random_final_article_example": {
+    "id": "final-000",
+    "input": " Some of Churchill 's Native American critics , such as Vernon Bellecourt ( White Earth Ojibwe ) and Suzan Shown Harjo ( Southern Cheyenne @-@ Muscogee Creek ) , argue that his assertion of Native American ancestry without the ability to prove it might constitute mis",
+    "per_method_nmse": {
+      "shared": 0.8687972293959724,
+      "specific": 0.88817916976081,
+      "dense": 0.931643009185791,
+      "ridge": 0.8125195105870565,
+      "specific_mean": 1.0523508588473003
+    }
+  },
+  "native_replacement_development": {
+    "shared": {
+      "mean_kl_positions16_63": 0.06159018166363239,
+      "top1_agreement_positions16_63": 0.8906250298023224,
+      "next_token_nll_positions16_62": 2.46429106593132
+    },
+    "pass_specific": {
+      "mean_kl_positions16_63": 0.06620508199557662,
+      "top1_agreement_positions16_63": 0.872395858168602,
+      "next_token_nll_positions16_62": 2.4757025241851807
+    },
+    "pass_mean": {
+      "mean_kl_positions16_63": 0.0917863599024713,
+      "top1_agreement_positions16_63": 0.856770858168602,
+      "next_token_nll_positions16_62": 2.4966914653778076
+    }
+  },
+  "feature_edits": {
+    "candidate_removals": 96,
+    "nonzero_removals": 15,
+    "top1_changes": 0,
+    "maximum_relative_rounded_norm_mismatch": 0.0014948520968944422
+  },
+  "native_expert105_development": [
+    {
+      "split": "validation",
+      "expert": 105,
+      "pass": 1,
+      "selected_with_cue": 30,
+      "tokens_with_cue": 45,
+      "selected_without_cue": 99,
+      "tokens_without_cue": 723,
+      "selection_rate_with_cue": 0.6666666666666666,
+      "selection_rate_without_cue": 0.13692946058091288,
+      "rate_ratio": 4.868686868686868
+    },
+    {
+      "split": "validation",
+      "expert": 105,
+      "pass": 2,
+      "selected_with_cue": 26,
+      "tokens_with_cue": 45,
+      "selected_without_cue": 87,
+      "tokens_without_cue": 723,
+      "selection_rate_with_cue": 0.5777777777777777,
+      "selection_rate_without_cue": 0.12033195020746888,
+      "rate_ratio": 4.801532567049808
+    },
+    {
+      "split": "validation",
+      "expert": 105,
+      "pass": 3,
+      "selected_with_cue": 27,
+      "tokens_with_cue": 45,
+      "selected_without_cue": 116,
+      "tokens_without_cue": 723,
+      "selection_rate_with_cue": 0.6,
+      "selection_rate_without_cue": 0.16044260027662519,
+      "rate_ratio": 3.7396551724137925
+    }
+  ],
+  "native_expert105_intervals": [
+    {
+      "pass": 1,
+      "rate_ratio_interval": [
+        2.630435141261912,
+        9.757682752030579
+      ],
+      "resamples": 10000,
+      "seed": 1729,
+      "sampling_unit": "development article",
+      "adjustment": "Bonferroni across three pass intervals, nominal family coverage 95 percent",
+      "limit": "Post hoc expert and cue choices are not accounted for by this interval."
+    },
+    {
+      "pass": 2,
+      "rate_ratio_interval": [
+        2.410522828229552,
+        10.159069881149392
+      ],
+      "resamples": 10000,
+      "seed": 1729,
+      "sampling_unit": "development article",
+      "adjustment": "Bonferroni across three pass intervals, nominal family coverage 95 percent",
+      "limit": "Post hoc expert and cue choices are not accounted for by this interval."
+    },
+    {
+      "pass": 3,
+      "rate_ratio_interval": [
+        2.265793767142722,
+        6.594443327271462
+      ],
+      "resamples": 10000,
+      "seed": 1729,
+      "sampling_unit": "development article",
+      "adjustment": "Bonferroni across three pass intervals, nominal family coverage 95 percent",
+      "limit": "Post hoc expert and cue choices are not accounted for by this interval."
+    }
+  ],
+  "data_provenance": {
+    "dataset_revision": "3f68cd45302c7b4b532d933e71d9e6e54b1c7d5e",
+    "fit_unique_articles": 106,
+    "validation_unique_articles": 16,
+    "fit_validation_shared_articles": [
+      "= Hugh Walpole =",
+      "= Hurricane Abby ( 1960 ) =",
+      "= June 1941 uprising in eastern Herzegovina ="
+    ],
+    "final_shared_with_fit_or_validation": []
+  },
+  "scope": {
+    "prediction_evaluation": "32 untouched final articles, three fit seeds",
+    "native_routing_analysis": "Post hoc, 16 development articles, lexical cues",
+    "native_expert_causal_ablation_performed": false
+  }
+}

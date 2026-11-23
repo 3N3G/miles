@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-11-23T05:06:40.739458+00:00",
+  "native_execution_commit": "c6ea41d9f71801d2bdee4fe8883425896ca66fe9",
+  "analysis_source_sha256": {
+    "src/analyze_operator_pilot.py": "1e0473132d6181ca1f92ae1133df6a9a6c570277e77ce69455e7faeb203463e2",
+    "src/inspect_operator_features.py": "b099a0f6080c956b790c350c03f2d05cd7f62e7ba32d662d50c98c7d41998cfb",
+    "src/inspect_native_experts.py": "b0d2bbae64a174f647d1fa7fc5c1ebd1ad55ebd9a5ee9649a49d629ebb6795e2",
+    "src/match_operator_decoder.py": "2b23959cafa3866a2eac6e688e2126abbfff8c937070c681467908a0982e54e1",
+    "src/validate_operator_pilot.py": "16ddb9e2750426129f436c0986aa5919123fc2681b9c21dd294d52a2a7a348b7"
+  },
+  "new_native_model_inference": false,
+  "new_fit": false,
+  "native_model_weight_files_in_archive": false,
+  "final_article_states_revisited_for_feature_selection": false,
+  "descriptive_followups": [
+    "Development feature contexts",
+    "Native decoder-vector alignment with four random direction controls",
+    "Native expert routing and lexical cue rates",
+    "Article provenance audit"
+  ],
+  "native_weight_conversion_checks": "Four experts agree exactly with the inspected pinned conversion class on CPU."
+}

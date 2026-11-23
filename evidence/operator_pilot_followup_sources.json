@@ -1,0 +1,15 @@
+{
+  "checked_on": "2026-11-23",
+  "sources": [
+    {
+      "title": "Comparing Sparsified MLPs and Transcoders: Many Transcoder Features Are Neurons in Disguise",
+      "url": "https://arxiv.org/abs/2610.24521",
+      "role": "Motivated native decoder-direction comparison; abstract and source metadata inspected."
+    },
+    {
+      "title": "Identifying Functionally Important Features with End-to-End Sparse Dictionary Learning",
+      "url": "https://arxiv.org/abs/2405.12241",
+      "role": "Existing downstream-fidelity training alternative; not implemented in this pilot."
+    }
+  ]
+}

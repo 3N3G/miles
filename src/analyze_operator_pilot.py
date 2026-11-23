@@ -75,7 +75,8 @@ def plots(rows, summary, out):
             mean = float(values.mean())
             lo, hi = bootstrap_interval(values)
             means.append(mean); lower.append(max(0, mean-lo)); upper.append(max(0, hi-mean))
-        ax.errorbar([1, 2, 3], means, yerr=[lower, upper], marker="o", color=color, label=label, capsize=3)
+        labels = {"shared":"Shared sparse model", "specific":"Separate sparse models", "dense":"Dense model", "ridge":"Ridge regression", "mean":"Pass mean"}
+        ax.errorbar([1, 2, 3], means, yerr=[lower, upper], marker="o", color=color, label=labels[label], capsize=3)
     ax.set(xlabel="Loop pass", ylabel="Squared prediction error / target variance",
            xticks=[1, 2, 3], ylim=(0, None), title="One shared operator versus separate pass fits")
     ax.legend()
@@ -100,9 +101,9 @@ def plots(rows, summary, out):
         axes[row, 0].plot([1, 2, 3], values, marker="o", color=COLORS["shared"])
         axes[row, 0].set(xlabel="Loop pass", ylabel="Training-token firing rate", xticks=[1, 2, 3], ylim=(0, None), title=f"Exploratory feature {feature}")
         examples = [c for c in contexts if c["feature"] == feature]
-        text = "\n\n".join(f"Pass {c['pass']}: {c['contexts'][0]['context']}" for c in examples)
         import textwrap
-        axes[row, 1].text(0, 0.95, textwrap.fill(text, width=65, replace_whitespace=False), va="top", fontsize=8)
+        text = "\n\n".join(textwrap.fill(f"Pass {c['pass']}: {c['contexts'][0]['context']}", width=65) for c in examples)
+        axes[row, 1].text(0, 0.95, text, va="top", fontsize=8)
         axes[row, 1].axis("off")
     if not selection:
         axes[0, 0].text(0.1, 0.5, "No active validation features")
@@ -113,7 +114,7 @@ def plots(rows, summary, out):
     names = ["shared", "pass_specific", "pass_mean"]
     values = [[r["mean_kl_positions16_63"] for r in replacements if r["condition"] == name] for name in names]
     fig, ax = plt.subplots(figsize=(7, 4), layout="constrained")
-    ax.bar(names, [np.mean(v) for v in values], color=[COLORS["shared"], COLORS["specific"], COLORS["mean"]])
+    ax.bar(["Shared surrogate", "Separate surrogates", "Mean only"], [np.mean(v) for v in values], color=[COLORS["shared"], COLORS["specific"], COLORS["mean"]])
     for i, group in enumerate(values):
         ax.scatter(np.full(len(group), i), group, color="black", s=12, alpha=0.6)
     ax.set(ylabel="Mean output KL divergence (nats)", ylim=(0, None), title="Native sublayer replacement: eight development paragraphs")
