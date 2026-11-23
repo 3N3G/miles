@@ -22,9 +22,9 @@
   ],
   "jobs": [
     {
-      "id": "541723",
+      "id": "541774",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     }
   ],
   "sessions": [
@@ -229,15 +229,22 @@
       "actor": "codex",
       "summary": "Repaired derivative search completed and native candidate validation is running",
       "revision": 27
+    },
+    {
+      "id": "41fa92e4-ac1a-4ad7-a96e-05e5142f05ef",
+      "at": "2026-11-23T06:46:14.088495Z",
+      "actor": "codex",
+      "summary": "Completed native grouped unit observation and froze independent expert confirmation",
+      "revision": 28
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "All32 repaired derivative questions completed without weight gradients or changed native logits. Two native expert candidates are undergoing exact development edits.",
-  "nextAction": "Inspect candidate controls and native units, then run the frozen independent questions with three answer-order seeds.",
+  "summary": "Native unit capture succeeded with unchanged logits. A twelve-expert numeric-routing family and four primary confirmation targets are frozen from development data only.",
+  "nextAction": "Run64+64 independent questions, three answer-order seeds, native deletions and equal-norm controls. Used27.4 of300 GPU minutes.",
   "owner": "Codex",
-  "revision": 27,
-  "updatedAt": "2026-11-23T06:33:54.815621Z"
+  "revision": 28,
+  "updatedAt": "2026-11-23T06:46:14.088495Z"
 }

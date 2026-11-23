@@ -1,0 +1,154 @@
+{
+  "selection_data": "128 old fit paragraphs only, no question performance or new article states",
+  "family_rule": "One expert per core layer maximizing cue-rate difference, at least200 selections pooled over visits",
+  "control_rule": "Closest pooled selection count among experts with smoothed numeric route enrichment below1.5",
+  "numeric_family": [
+    {
+      "layer_index": 6,
+      "expert": 119,
+      "fit_cue_rate_difference": 0.7035253529608039,
+      "fit_count": 2120
+    },
+    {
+      "layer_index": 7,
+      "expert": 49,
+      "fit_cue_rate_difference": 0.5416322843279449,
+      "fit_count": 5407
+    },
+    {
+      "layer_index": 8,
+      "expert": 5,
+      "fit_cue_rate_difference": 0.35298221967323246,
+      "fit_count": 3097
+    },
+    {
+      "layer_index": 9,
+      "expert": 54,
+      "fit_cue_rate_difference": 0.5069112713779037,
+      "fit_count": 3806
+    },
+    {
+      "layer_index": 10,
+      "expert": 96,
+      "fit_cue_rate_difference": 0.6402550153744525,
+      "fit_count": 2277
+    },
+    {
+      "layer_index": 11,
+      "expert": 66,
+      "fit_cue_rate_difference": 0.6935724031667889,
+      "fit_count": 1611
+    },
+    {
+      "layer_index": 12,
+      "expert": 56,
+      "fit_cue_rate_difference": 0.6137217269043368,
+      "fit_count": 1353
+    },
+    {
+      "layer_index": 13,
+      "expert": 104,
+      "fit_cue_rate_difference": 0.5666628141595506,
+      "fit_count": 1133
+    },
+    {
+      "layer_index": 14,
+      "expert": 75,
+      "fit_cue_rate_difference": 0.620993556436093,
+      "fit_count": 1818
+    },
+    {
+      "layer_index": 15,
+      "expert": 97,
+      "fit_cue_rate_difference": 0.6741879261397148,
+      "fit_count": 2158
+    },
+    {
+      "layer_index": 16,
+      "expert": 55,
+      "fit_cue_rate_difference": 0.7401046973811191,
+      "fit_count": 2981
+    },
+    {
+      "layer_index": 17,
+      "expert": 46,
+      "fit_cue_rate_difference": 0.6441330342327323,
+      "fit_count": 1182
+    }
+  ],
+  "frequency_matched_family": [
+    {
+      "layer_index": 6,
+      "expert": 93,
+      "fit_cue_rate_difference": -0.08889496333611575,
+      "fit_count": 2102
+    },
+    {
+      "layer_index": 7,
+      "expert": 28,
+      "fit_cue_rate_difference": -0.12048659833077374,
+      "fit_count": 5465
+    },
+    {
+      "layer_index": 8,
+      "expert": 100,
+      "fit_cue_rate_difference": -0.09945471810882439,
+      "fit_count": 3041
+    },
+    {
+      "layer_index": 9,
+      "expert": 92,
+      "fit_cue_rate_difference": -0.11930837713863297,
+      "fit_count": 4121
+    },
+    {
+      "layer_index": 10,
+      "expert": 15,
+      "fit_cue_rate_difference": -0.014583190561198403,
+      "fit_count": 2412
+    },
+    {
+      "layer_index": 11,
+      "expert": 83,
+      "fit_cue_rate_difference": -0.07711696436295168,
+      "fit_count": 1575
+    },
+    {
+      "layer_index": 12,
+      "expert": 55,
+      "fit_cue_rate_difference": -0.041053284807659254,
+      "fit_count": 1350
+    },
+    {
+      "layer_index": 13,
+      "expert": 61,
+      "fit_cue_rate_difference": -0.035997466052063054,
+      "fit_count": 1124
+    },
+    {
+      "layer_index": 14,
+      "expert": 114,
+      "fit_cue_rate_difference": -0.08814449682231357,
+      "fit_count": 1815
+    },
+    {
+      "layer_index": 15,
+      "expert": 42,
+      "fit_cue_rate_difference": -0.09567556310266224,
+      "fit_count": 2039
+    },
+    {
+      "layer_index": 16,
+      "expert": 69,
+      "fit_cue_rate_difference": -0.15678255176589936,
+      "fit_count": 3002
+    },
+    {
+      "layer_index": 17,
+      "expert": 71,
+      "fit_cue_rate_difference": 0.019287930296490452,
+      "fit_count": 1199
+    }
+  ],
+  "unit": "Expert identity includes its physical layer index"
+}

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): All32 repaired derivative questions completed without weight gradients or changed native logits. Two native expert candidates are undergoing exact development edits. Jobs: hpcfund/541723 RUNNING
-  Next: Inspect candidate controls and native units, then run the frozen independent questions with three answer-order seeds.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Native unit capture succeeded with unchanged logits. A twelve-expert numeric-routing family and four primary confirmation targets are frozen from development data only. Jobs: hpcfund/541774 COMPLETED
+  Next: Run64+64 independent questions, three answer-order seeds, native deletions and equal-norm controls. Used27.4 of300 GPU minutes.
 
 ## Next / blocked
 

@@ -271,5 +271,14 @@
     "files": 109,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/b091063b180ae9d2f91853eb41e6d9462bd9224b/inkling-interp/expert-screen-v3",
     "verified_at": "2026-11-23T06:29:23.787963+00:00"
+  },
+  {
+    "stage": "expert-development-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "c5a9adecff7f7f2282442124c85305be02d416c0",
+    "private": true,
+    "files": 9,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/c5a9adecff7f7f2282442124c85305be02d416c0/inkling-interp/expert-development-v1",
+    "verified_at": "2026-11-23T06:42:01.664479+00:00"
   }
 ]

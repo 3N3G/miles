@@ -1,0 +1,357 @@
+{
+  "model_revision": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+  "format": "chat_text",
+  "cohort": "confirmation",
+  "answer_order_seeds": [
+    0,
+    1,
+    2
+  ],
+  "questions_per_subject": 64,
+  "primary_identities": [
+    {
+      "name": "L12-E105",
+      "deleted": "L12-E105-all",
+      "random": "L12-E105-random"
+    },
+    {
+      "name": "L11-E63",
+      "deleted": "L11-E63-all",
+      "random": "L11-E63-random"
+    },
+    {
+      "name": "L7-E73",
+      "deleted": "L7-E73-all",
+      "random": "L7-E73-random"
+    },
+    {
+      "name": "numeric-family",
+      "deleted": "numeric-family-all",
+      "random": "numeric-family-random"
+    }
+  ],
+  "primary_interval_family_size": 12,
+  "conditions": [
+    {
+      "name": "L12-E105-all",
+      "targets": [
+        {
+          "layer_index": 11,
+          "expert": 105
+        }
+      ]
+    },
+    {
+      "name": "L12-E105-random",
+      "kind": "matched_random",
+      "targets": [
+        {
+          "layer_index": 11,
+          "expert": 105
+        }
+      ]
+    },
+    {
+      "name": "L11-E63-all",
+      "targets": [
+        {
+          "layer_index": 10,
+          "expert": 63
+        }
+      ]
+    },
+    {
+      "name": "L11-E63-random",
+      "kind": "matched_random",
+      "targets": [
+        {
+          "layer_index": 10,
+          "expert": 63
+        }
+      ]
+    },
+    {
+      "name": "L7-E73-all",
+      "targets": [
+        {
+          "layer_index": 6,
+          "expert": 73
+        }
+      ]
+    },
+    {
+      "name": "L7-E73-random",
+      "kind": "matched_random",
+      "targets": [
+        {
+          "layer_index": 6,
+          "expert": 73
+        }
+      ]
+    },
+    {
+      "name": "numeric-family-all",
+      "targets": [
+        {
+          "layer_index": 6,
+          "expert": 119
+        },
+        {
+          "layer_index": 7,
+          "expert": 49
+        },
+        {
+          "layer_index": 8,
+          "expert": 5
+        },
+        {
+          "layer_index": 9,
+          "expert": 54
+        },
+        {
+          "layer_index": 10,
+          "expert": 96
+        },
+        {
+          "layer_index": 11,
+          "expert": 66
+        },
+        {
+          "layer_index": 12,
+          "expert": 56
+        },
+        {
+          "layer_index": 13,
+          "expert": 104
+        },
+        {
+          "layer_index": 14,
+          "expert": 75
+        },
+        {
+          "layer_index": 15,
+          "expert": 97
+        },
+        {
+          "layer_index": 16,
+          "expert": 55
+        },
+        {
+          "layer_index": 17,
+          "expert": 46
+        }
+      ]
+    },
+    {
+      "name": "numeric-family-random",
+      "kind": "matched_random",
+      "targets": [
+        {
+          "layer_index": 6,
+          "expert": 119
+        },
+        {
+          "layer_index": 7,
+          "expert": 49
+        },
+        {
+          "layer_index": 8,
+          "expert": 5
+        },
+        {
+          "layer_index": 9,
+          "expert": 54
+        },
+        {
+          "layer_index": 10,
+          "expert": 96
+        },
+        {
+          "layer_index": 11,
+          "expert": 66
+        },
+        {
+          "layer_index": 12,
+          "expert": 56
+        },
+        {
+          "layer_index": 13,
+          "expert": 104
+        },
+        {
+          "layer_index": 14,
+          "expert": 75
+        },
+        {
+          "layer_index": 15,
+          "expert": 97
+        },
+        {
+          "layer_index": 16,
+          "expert": 55
+        },
+        {
+          "layer_index": 17,
+          "expert": 46
+        }
+      ]
+    },
+    {
+      "name": "L12-E105-pass1",
+      "targets": [
+        {
+          "layer_index": 11,
+          "expert": 105,
+          "visits": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "L12-E105-pass2",
+      "targets": [
+        {
+          "layer_index": 11,
+          "expert": 105,
+          "visits": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "L12-E105-pass3",
+      "targets": [
+        {
+          "layer_index": 11,
+          "expert": 105,
+          "visits": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "L12-E105-question-numeric",
+      "targets": [
+        {
+          "layer_index": 11,
+          "expert": 105,
+          "positions": "question_numeric"
+        }
+      ]
+    },
+    {
+      "name": "L12-E105-nonnumeric",
+      "targets": [
+        {
+          "layer_index": 11,
+          "expert": 105,
+          "positions": "nonnumeric"
+        }
+      ]
+    },
+    {
+      "name": "L12-E105-renormalized",
+      "renormalize": true,
+      "targets": [
+        {
+          "layer_index": 11,
+          "expert": 105
+        }
+      ]
+    },
+    {
+      "name": "frequency-family-all",
+      "targets": [
+        {
+          "layer_index": 6,
+          "expert": 93
+        },
+        {
+          "layer_index": 7,
+          "expert": 28
+        },
+        {
+          "layer_index": 8,
+          "expert": 100
+        },
+        {
+          "layer_index": 9,
+          "expert": 92
+        },
+        {
+          "layer_index": 10,
+          "expert": 15
+        },
+        {
+          "layer_index": 11,
+          "expert": 83
+        },
+        {
+          "layer_index": 12,
+          "expert": 55
+        },
+        {
+          "layer_index": 13,
+          "expert": 61
+        },
+        {
+          "layer_index": 14,
+          "expert": 114
+        },
+        {
+          "layer_index": 15,
+          "expert": 42
+        },
+        {
+          "layer_index": 16,
+          "expert": 69
+        },
+        {
+          "layer_index": 17,
+          "expert": 71
+        }
+      ]
+    }
+  ],
+  "candidate_exact_development_validation": [
+    {
+      "layer_index": 10,
+      "expert": 63,
+      "math_gradient": 0.00013168683221564947,
+      "biology_gradient": -0.2575097836266665,
+      "contrast": 0.25764147045888214,
+      "exact_nll_increase": {
+        "elementary_mathematics": 0.04173409356735647,
+        "high_school_biology": -0.20386537364208834
+      },
+      "retained": true
+    },
+    {
+      "layer_index": 6,
+      "expert": 73,
+      "math_gradient": 0.27725670107586176,
+      "biology_gradient": 0.03507248450404177,
+      "contrast": 0.24218421657182,
+      "exact_nll_increase": {
+        "elementary_mathematics": 0.3444920901717978,
+        "high_school_biology": 0.03215519578770909
+      },
+      "retained": true
+    }
+  ],
+  "family_selection": "Old fitting text only, one per physical core layer; independent MMLU outcomes unused",
+  "baselines": {
+    "uniform_choice_probability": 0.25,
+    "uniform_nll_nats": 1.3862943611198906,
+    "calibration_majority_letter": "B"
+  },
+  "source_sha256": {
+    "evidence/numeric_routing_family.json": "4a3ec74d6bc3accc0a6b5dd259cfbba864b8e47b98210297beb9be76d6284d03",
+    "/home/ubuntu/inkling-interp-data/expert-development-v1/frozen_spec.json": "853bbdfcd3b7148f5a89804f62ac627620cdd9adf48d140c1c06d62295138279",
+    "/home/ubuntu/inkling-interp-data/expert-development-v1/results.json": "dcab0e0d4f7033f827f4320d739e063e84085d88e39e45c57b2ce5db5bc03420",
+    "evidence/native_expert_inputs.json": "52d4fb021c5b2d977cff825e8a0200c8e604b9261b19f73d5f9a8e50e5415bef"
+  }
+}
