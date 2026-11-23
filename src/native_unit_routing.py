@@ -11,16 +11,26 @@ import torch
 
 
 class UnitControl:
-    def __init__(self,units,visits=(1,2,3),random_seed=None,direct=False):
+    def __init__(self,units,visits=(1,2,3),random_seed=None,direct=False,observe=False):
         self.units=units;self.visits=set(visits);self.random_seed=random_seed;self.direct=direct
-        self.calls=0;self.inner=False;self.audit=[]
+        self.calls=0;self.inner=False;self.audit=[];self.observe=observe;self.values=[]
 
     def begin(self,module,args):
         _,indices,weights=args
         self.group_ids,self.perm=indices.reshape(-1).sort()
+        self.tokens=self.perm//indices.shape[-1];self.route_weights=weights.reshape(-1)[self.perm]
         self.calls+=1
 
     def activation(self,module,args,output):
+        if self.observe and not self.inner:
+            assert len(output)==len(self.group_ids)
+            for expert,unit in self.units:
+                mask=self.group_ids==expert
+                if mask.any():
+                    self.values.append({'expert':expert,'unit':unit,'visit':self.calls,
+                        'positions':self.tokens[mask].detach().cpu().tolist(),
+                        'raw_activation':output[mask,unit].detach().float().cpu().tolist(),
+                        'weighted_activation':(output[mask,unit].float()*self.route_weights[mask]).detach().cpu().tolist()})
         if self.calls not in self.visits or not (self.inner or self.direct):return
         assert len(output)==len(self.group_ids),'Expected the pinned grouped expert backend'
         changed=output.clone()
@@ -104,7 +114,9 @@ def main():
     rows=[];controls=[]
     for doc,record in enumerate(inputs['records']):
         ids=torch.tensor([record['token_ids']],device='cuda')
-        baseline,reader,errors=run(model,ids);logp=baseline.log_softmax(-1);prob=logp.exp()
+        unit_observer=UnitControl([(45,1127),(3,664),(45,130),(105,156),(105,811)],visits=[],observe=True)
+        baseline,reader,errors=run(model,ids,unit_observer);logp=baseline.log_softmax(-1);prob=logp.exp()
+        (a.out/(record['id']+'-native_units.json')).write_text(json.dumps(unit_observer.values,indent=2)+'\n')
         if doc==0:
             untouched=model(input_ids=ids,use_cache=False).logits[0].float();assert torch.equal(untouched,baseline)
             for label,c in [('identity',UnitControl([])),('absent',UnitControl([(128,0)]))]:

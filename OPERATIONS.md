@@ -186,3 +186,59 @@ and raw examples are in `reports/SHARED_OPERATOR_DETAILS.md`. These drafts and
 their builder are preserved on local branch `review/shared-operator` and are not
 pushed. The report keeps the primary prediction test distinct from the post hoc
 native expert finding. The next research choice is recorded in `QUESTIONS.md`.
+## Autonomous native expert program, 2026-11-23
+
+The user authorized autonomous expert research and at most five GPU hours.
+`evidence/expert_program_budget.json` is the budget ledger. Refresh with
+`python src/expert_budget.py`. Count every allocated GPU, including loading.
+The earlier350-second pilot is counted conservatively. Submit one allocation
+at a time. Queue time does not count. Never touch another session's jobs.
+
+Primary text results and development findings are in
+`evidence/native_expert_screen_result.json`. Both prospective numeric-loss
+contrasts include zero despite replicated routing enrichment. Two failed
+stages preserved valid earlier outputs. The derivative range and grouped-unit
+observer were repaired with separate recorded plans and raw archives.
+
+The independent MMLU confirmation specification is frozen in
+`evidence/native_expert_confirmation_spec.json`. All16 conditions,128 questions,
+three order seeds and12 corrected primary intervals must remain fixed.
+The batched attempt failed on calibration before any test inference. Use only
+`src/native_expert_confirmation.py` with the serial plan. Do not inspect
+confirmation efficacy until all three fixed seeds complete. Progress logs,
+completion manifests and inference-validity checks may be monitored.
+
+Current and terminal job identities are in the ledger and `jobs.jsonl`.
+Query the scheduler, rather than inferring live state from this note.
+Remaining seed commands follow this template, replacing SEED with1 or2:
+
+```
+.venv/bin/python src/submit_stage.py --name expert-confirmation-sSEED --plan plans/native_expert_confirmation_serial.md --minutes 30 --partition devel python src/native_expert_confirmation.py --spec evidence/native_expert_confirmation_spec.json --inputs evidence/native_expert_inputs.json --out /work1/aviralkumar/geney/inkling-interp-data/runs/expert-confirmation-sSEED --seed SEED
+```
+
+A native unit-routing experiment is fully prepared. It may run between fixed
+seeds without reading their efficacy or changing their protocol:
+
+```
+.venv/bin/python src/submit_stage.py --name native-unit-routing-v1 --plan plans/native_unit_block_routing.md --minutes 10 --partition devel python src/native_unit_routing.py --inputs evidence/unit_routing_inputs.json --out /work1/aviralkumar/geney/inkling-interp-data/runs/native-unit-routing-v1
+```
+
+Read the unit-routing plan before interpreting it. It tests an actual Block2
+read weight, not a trained phase classifier or a global clock claim. Unit45:1127
+changes sign on1113/1318 paired fitting positions. Unit3:664 also rises late.
+Goodfire's existing block-tagging/outlier results are prior art. The new test
+targets specific native units with exact grouped-backend counterfactuals.
+
+After each job, record terminal state, update the budget and workstream, upload
+with `src/archive_stage.py`, and rsync raw outputs to the external data folder.
+For completed MMLU seeds, retain the blind until all three are complete. Then:
+
+```
+.venv/bin/python src/analyze_expert_confirmation.py --root /home/ubuntu/inkling-interp-data --spec evidence/native_expert_confirmation_spec.json --inputs evidence/native_expert_inputs.json --out /home/ubuntu/inkling-interp-data/expert-confirmation-analysis-v1
+.venv/bin/python src/analyze_unit_routing.py /home/ubuntu/inkling-interp-data/native-unit-routing-v1
+```
+
+Human reports remain local review drafts under ignored `reports/`. They must
+stand alone, state uncertainty, show raw examples and distinguish routing,
+readout and intervention. Preserve them on a local review branch. Do not push
+mentor-facing prose. Code/evidence backup is explicitly `HEAD:inkling-interp`.

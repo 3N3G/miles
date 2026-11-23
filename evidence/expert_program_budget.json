@@ -103,9 +103,15 @@
       "gpus": 1,
       "maximum_gpu_seconds": 1800,
       "status": "prepared"
+    },
+    {
+      "run_name": "native-unit-routing-v1",
+      "gpus": 1,
+      "maximum_gpu_seconds": 600,
+      "status": "prepared"
     }
   ],
-  "unreserved_gpu_seconds": 10898,
-  "reserved_gpu_seconds": 5400,
+  "unreserved_gpu_seconds": 10298,
+  "reserved_gpu_seconds": 6000,
   "observed_at": "2026-11-23T06:55:06.669648+00:00"
 }

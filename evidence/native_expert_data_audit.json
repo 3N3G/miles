@@ -1,0 +1,7 @@
+{
+  "unit_text_new_articles": 16,
+  "unit_text_overlap_first64_tokens_with_any_previous_paragraph": 0,
+  "mmlu_manifest_questions": 304,
+  "mmlu_exact_question_and_choices_duplicates": 0,
+  "note": "This does not establish absence from model pretraining. Article titles and raw-prefix identities are checked."
+}
