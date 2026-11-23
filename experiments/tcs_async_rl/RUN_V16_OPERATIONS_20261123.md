@@ -90,3 +90,53 @@ Always exclude the predecessor's unsaved updates 85–88 from this combined path
 The foreground disk alert is 85,000,000,000 free bytes. It requests inspection rather than changing the training protocol.
 One observed checkpoint plus 20 GiB workspace requires 82,052,199,083 bytes. Other users also write to this filesystem.
 The cost/deadline request thresholds above remain authoritative. `foreground-resource-guard.json` records the live guard.
+
+## Terminal budget stop and verified closure
+
+At 02:05:50 UTC, shared judge spend plus reservations reached $4.5033907.
+The one native checkpoint sentinel was written at **02:06:11 UTC**, after recording its intent and verifying ownership.
+New producer admissions were paused at 02:10 UTC. Existing groups continued, allowing the active update to finish.
+No model, prompt, data, reward or optimizer setting changed during this stop.
+
+The final tracker is **iteration 98**, containing **99 total saved updates**, with **14 new updates 85–98**.
+Its four model/optimizer files total **60,577,362,731 bytes**. Its ten rollout-state files total **49,819,659 bytes**.
+The source iteration-84 model remains intact at 60,577,362,603 bytes.
+The saved iteration's actual three-engine publication is verified at **02:14:42 UTC**.
+After these checks, only owned job 540286 was cancelled at **02:16:47 UTC**.
+Slurm reports `CANCELLED by 3414`, parent `0:0`, batch `0:15`.
+This was the planned cost stop, not an uncaught training exception.
+
+Charge 4,137 seconds conservatively, including batch termination. Combined charges are 12,344 seconds on eight GPUs,
+or **27.4311 GPU-hours**, below 32. The unused 2,056 seconds do not authorize a changed protocol or larger judge budget.
+The shared ledger ends with **3,189 settled calls, zero pending calls and $4.6894719** estimated spend.
+All controller, service, tunnel, metrics, telemetry and hourly-review processes are closed.
+The hourly reviewer was stopped only after the main supervisor completed its final upload.
+
+All **14 actual publications** agree across three engines. W&B has **14 unique points and 1,127 matching scalar values**.
+Its terminal state is `failed`, because the native adapter maps Slurm cancellation to failure.
+Its summary explicitly records the controlled budget stop and the saved/target counts.
+The original 20-update runtime acceptance remains false because only 14 were completed. Do not relabel it successful.
+
+The raw audit verifies all **448 answers and 21,182,426 response tokens** against immutable consumed batches and both judge receipts.
+The combined saved path includes only predecessor 65–84 and continuation 85–98: 34 groups, 1,088 answers, all 20 questions.
+Fourteen repeated-question means change from 5.066964 to 4.968750: six increase, seven decrease, one is unchanged.
+See the [standalone results](BOUNDED_CONTINUATION_RESULTS_20261123.md) for scientific limits and raw examples.
+
+Primary archive: **`2ea9cf54a7e52fb27ceb1a0e4c70c513dd0f999b`**, with seven exact immutable file readbacks.
+Diagnostic archive: **`6eb6ab1a9781ec1392d18cf6144e21401c93d5db`**.
+The VM run preserves `primary-archive-verification.json`, `diagnostic-archive-verification.json`,
+`terminal-supervision.json`, `terminal-native-wandb-all-scalars-verification.json`,
+`budget-stop-checkpoint-and-source-verification.json`, `budget-stop-saved-weight-publication.json` and `owned-process-closure.json`.
+
+## Reporting fixes found during the stop
+
+The short-lived W&B publisher let its server heartbeat expire during a long rollout gap, falsely displaying `crashed`.
+A serialized, no-history SDK refresh repaired the live status. The permanent two-minute refresh is in commit
+**`8508403ed04041cac1bdb6e0f0ad55feb8949c55`**, together with its delivery acknowledgement.
+It passed simulated delayed-update and lost-acknowledgement tests. The new periodic behavior still needs observation in a future live run.
+
+Actor timing metrics also arrived before the current transfer during checkpoint saving. They can describe the preceding transfer.
+The corrected reader waits for the driver's actual checksum publication event, rather than treating timing as proof of publication.
+All final counts above were independently checked against those actual events.
+All 111 TCS CPU tests pass, and Black, isort and Ruff checks pass.
+Training source and every used configuration remain frozen at their recorded revisions.

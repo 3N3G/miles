@@ -1,5 +1,15 @@
 # Open questions
 
+## 2026-11-23: Next stage after the bounded judge-repair continuation
+
+- Question: should the next stage first resolve human rubric labels, or extend training under a separately bounded plan?
+- Evidence: [the complete saved-path comparison](experiments/tcs_async_rl/BOUNDED_CONTINUATION_RESULTS_20261123.md) has 14 repeated questions averaging 5.067 → 4.969/7. Six rise, seven fall, and one is unchanged. An unchanged runtime proof receives 2 versus 7 between judge orders. Exact rational-arithmetic justification and implicit one-child recursion remain rubric boundaries.
+- Options: hand-label about ten saved cases and adjudicate these boundaries before another training variant; or approve an explicit training extension with a defined question, budget and checkpoint-storage plan.
+- Recommendation: resolve human calibration first. Current paired agreement does not measure mathematical accuracy. Keep used prompts, grades and all source checkpoints intact.
+- Resource record: the cost guard saved iteration 98, containing 99 total updates, then stopped. Shared estimated judge spend is $4.689/5. Another 60.6 GB checkpoint cannot fit the observed 23.3 GB free capacity while preserving its source. No new allocation was submitted after this stop.
+- Blocks: further research-design or reward changes and another GPU allocation. It does not block logging repairs, archival or prompt wording repairs already authorized by the user.
+- Status: needs the user's next research decision. No reliable reward increase has been established.
+
 ## 2026-11-22: Storage for a bounded continuation after the two-hour backfill slot
 
 - Question: may the replacement's intermediate checkpoint be removed only after a newer continuation checkpoint is atomically saved and verified?

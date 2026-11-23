@@ -261,6 +261,14 @@
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/blob/218aeda94982b27e7f88d38043854820c2e7980e/miles/easy-overfit-v9-sampled-entropy-20261121/REPORT.md",
       "label": "Immutable retrospective sampler entropy report and randomly selected raw pair"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/6eb6ab1a9781ec1392d18cf6144e21401c93d5db/miles/easy-overfit-v16-diagnostic-20261123",
+      "label": "Complete immutable continuation audit and plots"
+    },
+    {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261123-010857-293-native",
+      "label": "Verified 14-point native W&B history"
     }
   ],
   "evidence": [
@@ -795,6 +803,10 @@
     {
       "path": "experiments/tcs_async_rl/RUBRIC_CLARIFICATION_RESULTS_20261123.md",
       "label": "Preceding run results and residual judge ambiguities"
+    },
+    {
+      "path": "experiments/tcs_async_rl/BOUNDED_CONTINUATION_RESULTS_20261123.md",
+      "label": "Completed bounded continuation and complete saved-path comparison"
     }
   ],
   "jobs": [
@@ -2845,15 +2857,22 @@
       "actor": "codex",
       "summary": "RL job 540286 ended CANCELLED; acceptance False",
       "revision": 264
+    },
+    {
+      "id": "0a941b75-637f-499b-af3b-9ed676b2e9a4",
+      "at": "2026-11-23T02:29:35.344614Z",
+      "actor": "codex",
+      "summary": "The bounded run saved 99 total updates and closed at $4.689; fourteen matched questions average 5.067 to 4.969/7, without reliable improvement",
+      "revision": 265
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "RL job 540286 ended CANCELLED; acceptance False",
-  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
+  "state": "needs-you",
+  "summary": "The bounded run saved 99 total updates and closed at $4.689; fourteen matched questions average 5.067 to 4.969/7, without reliable improvement",
+  "nextAction": "Review the complete saved-path results and human rubric boundaries before choosing another research variant or training extension. Finish the manual closure snapshot readback.",
   "owner": "Codex",
-  "revision": 264,
-  "updatedAt": "2026-11-23T02:19:08.689438Z"
+  "revision": 265,
+  "updatedAt": "2026-11-23T02:29:35.344614Z"
 }

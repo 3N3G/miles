@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 540286 ended CANCELLED; acceptance False Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The bounded run saved 99 total updates and closed at $4.689; fourteen matched questions average 5.067 to 4.969/7, without reliable improvement Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
+  Next: Review the complete saved-path results and human rubric boundaries before choosing another research variant or training extension. Finish the manual closure snapshot readback.
 
 ## Finished
 
