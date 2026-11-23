@@ -2907,15 +2907,22 @@
       "actor": "codex",
       "summary": "Learning diagnosis recorded: one problem ×32 answers per update; a half-point near-ceiling grading dispute becomes −5.48 advantage under group normalization",
       "revision": 270
+    },
+    {
+      "id": "4aac88dc-00a1-4880-9968-c1139a749190",
+      "at": "2026-11-23T12:33:09.794021Z",
+      "actor": "codex",
+      "summary": "User approved the four-problem global-batch test; claim preparation and resource validation",
+      "revision": 271
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "needs-you",
-  "summary": "Learning diagnosis recorded: one problem ×32 answers per update; a half-point near-ceiling grading dispute becomes −5.48 advantage under group normalization",
-  "nextAction": "Use the recorded evidence to choose judge calibration and controlled tests of prompt-batch diversity, response length or sampler behavior. No new experiment or hyperparameter change has been made.",
+  "state": "running",
+  "summary": "Preparing the approved four-problem ×32-answer optimizer batch, preserving the latest checkpoint and all other research settings.",
+  "nextAction": "Validate the 128-answer batch and resume path. Check remaining compute/judge allowances and checkpoint storage before submitting.",
   "owner": "Codex",
-  "revision": 270,
-  "updatedAt": "2026-11-23T04:42:45.347904Z"
+  "revision": 271,
+  "updatedAt": "2026-11-23T12:33:09.794021Z"
 }

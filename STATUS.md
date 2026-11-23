@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Preparing the approved four-problem ×32-answer optimizer batch, preserving the latest checkpoint and all other research settings. Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
+  Next: Validate the 128-answer batch and resume path. Check remaining compute/judge allowances and checkpoint storage before submitting.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Learning diagnosis recorded: one problem ×32 answers per update; a half-point near-ceiling grading dispute becomes −5.48 advantage under group normalization Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Use the recorded evidence to choose judge calibration and controlled tests of prompt-batch diversity, response length or sampler behavior. No new experiment or hyperparameter chang
+- Nothing recorded.
 
 ## Finished
 
