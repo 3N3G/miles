@@ -159,5 +159,31 @@ class NativeExpertChecks(unittest.TestCase):
         self.assertLess(float(-epsilon*direct_grad),0)
         self.assertAlmostEqual(float(exact),float(-epsilon*grad),places=9)
 
+    def test_native_unit_atlas_recovers_known_radial_effect(self):
+        from types import SimpleNamespace
+        from native_unit_atlas import sensitivity,local_delta
+        class Experts(torch.nn.Module):
+            def __init__(self):super().__init__();self.act_fn=torch.nn.Identity()
+            def forward(self,x,indices,weights):
+                groups,perm=indices.reshape(-1).sort();h=self.act_fn(x[perm])
+                out=h[:,1127,None]*torch.tensor([1.,3.])
+                inverse=torch.empty_like(perm);inverse[perm]=torch.arange(len(perm))
+                return out[inverse]*weights
+        class Norm(torch.nn.Module):
+            eps=1e-6
+            def forward(self,x):return x*torch.rsqrt(x.square().mean(-1,keepdim=True)+self.eps)
+        expert=Experts();x=torch.zeros(32,1152);x[:,1127]=.01
+        indices=torch.full((32,1),45);weights=torch.ones(32,1);args=(x,indices,weights)
+        y=expert(*args);pre=torch.ones(1,32,2);block=pre+y.reshape_as(pre)
+        reader=SimpleNamespace(norm=Norm(),query=torch.tensor([1.,0.]))
+        layer=SimpleNamespace(mlp=SimpleNamespace(experts=expert),post_mlp_convolution=torch.nn.Identity())
+        capture=SimpleNamespace(expert_args=[args]*3,expert_out=[y]*3,pre=[pre]*3,attn=[torch.zeros_like(pre)]*3,
+                                reader=[(torch.zeros(1,32,1,2),block)]*3,conv_kwargs=[{}]*3)
+        full,dot=sensitivity(layer,reader,capture,1)
+        actual=local_delta(layer,reader,capture,1,[(45,1127)])
+        self.assertGreater(actual,0);self.assertGreater(full[45,1127],0);self.assertLess(dot[45,1127],0)
+        self.assertLess(abs(float(full[45,1127])-actual),1e-5)
+        self.assertEqual(int((full!=0).sum()),1)
+
 
 if __name__=='__main__':unittest.main()

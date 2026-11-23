@@ -18,5 +18,15 @@
     "title": "Interpreting Inkling2 Mini",
     "url": "https://www.goodfire.com/research/interpreting-inkling-2-mini/",
     "use": "Prior block-reader/writer alignment and loop-dependent outliers. Test specific native units causally rather than claim the outlier observation is new."
+  },
+  {
+    "title": "Incorporating Residual and Normalization Layers into Analysis of Masked Language Models",
+    "url": "https://aclanthology.org/2021.emnlp-main.373/",
+    "role": "Prior work incorporating residuals and normalization into attribution. The normalization principle itself is not new."
+  },
+  {
+    "title": "On the Expressivity Role of LayerNorm in Transformers Attention",
+    "url": "https://aclanthology.org/2023.findings-acl.895/",
+    "role": "Prior work on how normalization changes which keys attention can select."
   }
 ]

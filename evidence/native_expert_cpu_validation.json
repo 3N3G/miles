@@ -10,7 +10,7 @@
   "saved_tensor_derivative_exact": true,
   "native_router_replay_all_route_sets_exact": true,
   "native_router_max_weight_error": 2.0265579223632812e-06,
-  "analytic_teacher_tests_passed": 9,
+  "analytic_teacher_tests_passed": 11,
   "exact_branch_teacher": true,
   "norm_control_teacher": true,
   "native_neuron_observer_teacher": true,
@@ -20,5 +20,6 @@
   "native_block_reader_reconstruction_teacher": true,
   "rms_scale_invariance_teacher_passed": true,
   "normalization_direction_reversal_teacher_passed": true,
-  "native_edit_unit_tests_passed": 10
+  "native_edit_unit_tests_passed": 11,
+  "native_unit_atlas_radial_teacher_passed": true
 }
