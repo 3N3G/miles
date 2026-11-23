@@ -64,6 +64,10 @@ Also save full next-token loss, native-to-edited KL divergence, top-token
 agreement, all reader weights, BF16 dose errors and raw examples. Report one
 article nearest the median interaction, plus explicitly labeled extremes.
 Plot unit activities by pass and causal changes in the native Block2 weight.
+During clean forwards, also observe each selected unit's two linear inputs,
+the gate and up factors, before their native product. This adds no intervention.
+It can show whether the sign change comes from one factor or both. Treat this
+as a descriptive decomposition, with the exact softcap constants recorded.
 
 ## Allocation and order
 

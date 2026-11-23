@@ -27,10 +27,14 @@ class UnitControl:
             for expert,unit in self.units:
                 mask=self.group_ids==expert
                 if mask.any():
-                    self.values.append({'expert':expert,'unit':unit,'visit':self.calls,
+                    row={'expert':expert,'unit':unit,'visit':self.calls,
                         'positions':self.tokens[mask].detach().cpu().tolist(),
                         'raw_activation':output[mask,unit].detach().float().cpu().tolist(),
-                        'weighted_activation':(output[mask,unit].float()*self.route_weights[mask]).detach().cpu().tolist()})
+                        'weighted_activation':(output[mask,unit].float()*self.route_weights[mask]).detach().cpu().tolist()}
+                    if len(args)==2:
+                        row['raw_gate']=args[0][mask,unit].detach().float().cpu().tolist()
+                        row['raw_up']=args[1][mask,unit].detach().float().cpu().tolist()
+                    self.values.append(row)
         if self.calls not in self.visits or not (self.inner or self.direct):return
         assert len(output)==len(self.group_ids),'Expected the pinned grouped expert backend'
         changed=output.clone()
@@ -116,6 +120,7 @@ def main():
         ids=torch.tensor([record['token_ids']],device='cuda')
         unit_observer=UnitControl([(45,1127),(3,664),(45,130),(105,156),(105,811)],visits=[],observe=True)
         baseline,reader,errors=run(model,ids,unit_observer);logp=baseline.log_softmax(-1);prob=logp.exp()
+        assert all('raw_gate' in row and 'raw_up' in row for row in unit_observer.values)
         (a.out/(record['id']+'-native_units.json')).write_text(json.dumps(unit_observer.values,indent=2)+'\n')
         if doc==0:
             untouched=model(input_ids=ids,use_cache=False).logits[0].float();assert torch.equal(untouched,baseline)
@@ -146,7 +151,9 @@ def main():
         print(json.dumps({'event':'unit_routing_article','id':record['id'],'index':doc,'elapsed':time.time()-started}),flush=True)
     (a.out/'manifest.json').write_text(json.dumps({'status':'completed','model':MODEL,'revision':REVISION,
         'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
-        'wall_seconds':time.time()-started,'peak_gpu_bytes':torch.cuda.max_memory_allocated()},indent=2)+'\n')
+        'wall_seconds':time.time()-started,'peak_gpu_bytes':torch.cuda.max_memory_allocated(),
+        'gate_softcap':model.model.language_model.config.mlp_gate_softcap,
+        'up_softcap':model.model.language_model.config.mlp_up_softcap},indent=2)+'\n')
 
 
 if __name__=='__main__':main()

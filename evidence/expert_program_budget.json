@@ -83,13 +83,15 @@
       "gpus": 1,
       "maximum_allocation_seconds": 1800,
       "maximum_gpu_seconds": 1800,
-      "status": "RUNNING",
-      "reserved_gpu_seconds": 1800,
-      "observed_allocation_seconds": 260
+      "status": "COMPLETED",
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 260,
+      "actual_allocation_seconds": 1537,
+      "actual_gpu_seconds": 1537
     }
   ],
-  "used_gpu_seconds": 1702,
-  "remaining_gpu_seconds": 16298,
+  "used_gpu_seconds": 3239,
+  "remaining_gpu_seconds": 14761,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
   "pending_reservations": [
     {
@@ -111,7 +113,7 @@
       "status": "prepared"
     }
   ],
-  "unreserved_gpu_seconds": 10298,
-  "reserved_gpu_seconds": 6000,
+  "unreserved_gpu_seconds": 10561,
+  "reserved_gpu_seconds": 4200,
   "observed_at": "2026-11-23T06:55:06.669648+00:00"
 }

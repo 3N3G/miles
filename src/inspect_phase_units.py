@@ -42,7 +42,7 @@ def main():
         fig,ax=plt.subplots(figsize=(6.4,5.2));ax.scatter(data[:,0],data[:,1],s=9,alpha=.35,color='#0072B2',rasterized=True)
         ax.axvline(0,color='#777777',lw=.8);ax.axhline(0,color='#777777',lw=.8)
         ax.set(xlabel='Pass 1: routing-weighted unit activation',ylabel='Pass 3: routing-weighted unit activation',
-               title='The same native unit changes sign at the same word')
+               title='A native unit changes sign across loop passes')
         ax.text(.03,.97,f"{r['negative_to_positive']}/{r['paired_selected_positions']} positions: negative → positive\n{r['positive_to_negative']}/{r['paired_selected_positions']}: positive → negative",transform=ax.transAxes,va='top',fontsize=10)
         fig.subplots_adjust(bottom=.23)
         fig.text(.12,.035,'Inkling 2 Mini: layer 12, expert 45, unit 1127. Each point is one token.\nDescriptive fitting data: 128 paragraphs from 106 articles. No independence\nassumption across tokens. The causal routing test is separate.',fontsize=9)

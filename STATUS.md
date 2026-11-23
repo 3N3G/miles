@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Native single-prompt confirmation seed0 is running. Batched calibration failed before test questions. Two later seeds remain reserved. Native unit phase candidates are recorded. Jobs: hpcfund/541818 RUNNING
-  Next: Complete all three fixed seeds before efficacy analysis. Prepare a causal test of phase-correlated native units using independent text.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Confirmation seed0 completed. Its efficacy remains unread until seeds1/2 finish. A native unit-to-block routing test is ready on16 unseen articles. Jobs: hpcfund/541818 COMPLETED
+  Next: Run the fixed unit-routing test, then complete unchanged confirmation seeds1 and2. Used54 of300 GPU minutes.
 
 ## Next / blocked
 
