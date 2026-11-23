@@ -168,5 +168,8 @@ Four within the durable prefix decline by 0.453125. The human results and raw ex
 
 Primary final archive: `ebb7b87360ccb464f0e6368ed2431dc6d3de1075`. Diagnostic archive:
 `848b571b4f6b29c4dc7a2f21930dbe3d6c6082fa`. Exact readback receipts live in the VM run.
-A final closure snapshot will include the later manual scalar verification and archive-readback receipts.
+The final closure snapshot is **`e449c7f1c478df5751ec8587c36933ca34ffd7a4`**.
+Six exact immutable readbacks verify its terminal supervision, all-scalar W&B audit, checkpoint inventory,
+shared judge ledger and both earlier archive-verification receipts. The v16 run preserves
+`predecessor-final-archive-verification.json` as its submission prerequisite.
 The remaining bounded continuation uses [the source-preserving storage repair](CHECKPOINT_STORAGE_REPAIR_20261122.md).

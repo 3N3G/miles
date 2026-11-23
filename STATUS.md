@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 540286 is RUNNING Jobs: hpcfund/540286 RUNNING; hpcfund/539594 TIMEOUT
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 540286 restored exact saved weights and completed update 85; both optimizer ranks and all 79 W&B scalar values verified Jobs: hpcfund/540286 RUNNING; hpcfund/539594 TIMEOUT
+  Next: Inspect fresh versus restored rollouts, entropy/divergence and matched-question rewards; request one checkpoint by 02:34:51 UTC or $4.50 and supervise through full closure.
 
 ## Next / blocked
 

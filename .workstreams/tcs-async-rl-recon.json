@@ -787,6 +787,14 @@
     {
       "path": "experiments/tcs_async_rl/rl_easy_overfit_v11.json",
       "label": "Approved replacement restoring saved scheduler state"
+    },
+    {
+      "path": "experiments/tcs_async_rl/RUN_V16_OPERATIONS_20261123.md",
+      "label": "Active bounded continuation and verified startup"
+    },
+    {
+      "path": "experiments/tcs_async_rl/RUBRIC_CLARIFICATION_RESULTS_20261123.md",
+      "label": "Preceding run results and residual judge ambiguities"
     }
   ],
   "jobs": [
@@ -2809,15 +2817,22 @@
       "actor": "codex",
       "summary": "RL job 540286 is RUNNING",
       "revision": 260
+    },
+    {
+      "id": "2f812bc7-1044-4356-af5c-dae66fc792f5",
+      "at": "2026-11-23T01:25:52.553771Z",
+      "actor": "codex",
+      "summary": "AMD 540286 restored exact saved weights and completed update 85; both optimizer ranks and all 79 W&B scalar values verified",
+      "revision": 261
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 540286 is RUNNING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "AMD 540286 restored exact saved weights and completed update 85; both optimizer ranks and all 79 W&B scalar values verified",
+  "nextAction": "Inspect fresh versus restored rollouts, entropy/divergence and matched-question rewards; request one checkpoint by 02:34:51 UTC or $4.50 and supervise through full closure.",
   "owner": "Codex",
-  "revision": 260,
-  "updatedAt": "2026-11-23T01:08:48.673841Z"
+  "revision": 261,
+  "updatedAt": "2026-11-23T01:25:52.553771Z"
 }
