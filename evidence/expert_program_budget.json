@@ -7,5 +7,13 @@
   "jobs": [],
   "used_gpu_seconds": 350,
   "remaining_gpu_seconds": 17650,
-  "accounting": "One GPU at a time. Count completed allocation seconds, plus full remaining limits of submitted jobs. No unrelated jobs count."
+  "accounting": "One GPU at a time. Count completed allocation seconds, plus full remaining limits of submitted jobs. No unrelated jobs count.",
+  "pending_reservations": [
+    {
+      "run_name": "expert-calibration-v1",
+      "maximum_gpu_seconds": 1200,
+      "status": "prepared"
+    }
+  ],
+  "unreserved_gpu_seconds": 16450
 }

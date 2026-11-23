@@ -7,15 +7,6 @@
 - Recommendation: keep the internal interface flexible and wait for official details before packaging a submission.
 - Blocks: final challenge packaging only. It does not block model inspection.
 
-## 2026-11-23: next test after the shared-operator pilot
-
-- Question: Test native expert 105's causal role, or first scale the surrogate's text coverage?
-- Options: intervene on this exact expert in explicit-number and implicit-quantity tasks with matched controls; or collect more unlabeled states before fitting another surrogate.
-- Recommendation: test the exact expert. Its numeric-cue routing preference persists across all three passes, while the present sparse fit loses to ridge.
-- Evidence: `evidence/operator_pilot_result.json`; local `reports/SHARED_OPERATOR.md` and its details.
-- Limits: the expert was selected post hoc, and routing association does not establish numeric computation. Three development articles overlap fitting articles. The 32 final prediction articles are disjoint.
-- Blocks: a subsequent experiment only. The approved 30-minute pilot is complete, with 350 seconds actually allocated.
-
 ## Answered
 
 2026-11-21: Where should the work live and which compute is permitted?
@@ -56,3 +47,15 @@ Resolution: this supersedes the older lens-choice question. The new pilot alloca
 
 User answer on 2026-11-22: yes.
 Resolution: one MI210 job capped at 30 allocation minutes is approved.
+
+## 2026-11-23: next test after the shared-operator pilot
+
+- Question: Test native expert 105's causal role, or first scale the surrogate's text coverage?
+- Options: intervene on this exact expert in explicit-number and implicit-quantity tasks with matched controls; or collect more unlabeled states before fitting another surrogate.
+- Recommendation: test the exact expert. Its numeric-cue routing preference persists across all three passes, while the present sparse fit loses to ridge.
+- Evidence: `evidence/operator_pilot_result.json`; local `reports/SHARED_OPERATOR.md` and its details.
+- Limits: the expert was selected post hoc, and routing association does not establish numeric computation. Three development articles overlap fitting articles. The 32 final prediction articles are disjoint.
+- Blocks: a subsequent experiment only. The approved 30-minute pilot is complete, with 350 seconds actually allocated.
+
+User answer on 2026-11-23: continue autonomously to uncover more about the experts, with up to five GPU hours.
+Resolution: the autonomous native-expert program is approved within that cap.
