@@ -1,0 +1,1559 @@
+{
+  "scope": "Post hoc illustrations from existing experiments. No new model inference, fitting or statistical test.",
+  "physical_layer": 12,
+  "expert_and_unit_ids": "zero based",
+  "original_normalization_case": {
+    "article": "= Calvin McCarty =",
+    "input_id": "unit-routing-008",
+    "expert": 45,
+    "unit": 1127,
+    "selection": "Article nearest the median interaction with paired sign-change positions; token nearest its median activation change.",
+    "token": "C",
+    "context": " While K.C.",
+    "pass1": {
+      "raw_activation": -0.2890625,
+      "weighted_activation": -0.21957138180732727,
+      "raw_gate": -2.0,
+      "raw_up": 1.3125
+    },
+    "pass3": {
+      "raw_activation": 0.240234375,
+      "weighted_activation": 0.32403451204299927,
+      "raw_gate": -1.921875,
+      "raw_up": -1.0546875
+    },
+    "reader_effects": {
+      "1": {
+        "native_block2_weight": 0.7684160470962524,
+        "deleted_block2_weight": 0.7688101530075073
+      },
+      "3": {
+        "native_block2_weight": 0.9057110548019409,
+        "deleted_block2_weight": 0.9050770401954651
+      }
+    }
+  },
+  "gate_case": {
+    "article": "= Iguanodon =",
+    "input_id": "unit-atlas-test-012",
+    "expert": 52,
+    "unit": 585,
+    "selection": "Previously fixed median-gain article. Token nearest the median activity change among alphabetic negative-to-positive pieces selected on both passes.",
+    "example": {
+      "position": 65,
+      "token_id": 182269,
+      "token": " Formation",
+      "context": "Wadhurst Clay Formation , variously",
+      "pass1": {
+        "raw_activation": -0.81640625,
+        "weighted_activation": -1.1511586904525757,
+        "raw_gate": 1.375,
+        "raw_up": -0.7734375
+      },
+      "pass3": {
+        "raw_activation": 0.2431640625,
+        "weighted_activation": 0.1957903951406479,
+        "raw_gate": -1.9765625,
+        "raw_up": -1.09375
+      }
+    },
+    "reader": [
+      {
+        "visit": 1,
+        "native_block2_weight": 0.7150527238845825,
+        "actual_delta": 0.0006119917379692197,
+        "predicted_full": 0.0006184933590702713,
+        "predicted_dot_only": 0.0004208743921481073,
+        "random_deltas": [
+          -1.2068876458215527e-05,
+          -1.0543103599047754e-05,
+          1.545676241221372e-05
+        ]
+      },
+      {
+        "visit": 3,
+        "native_block2_weight": 0.8811702728271484,
+        "actual_delta": -0.00017751114501152188,
+        "predicted_full": -0.0001670442579779774,
+        "predicted_dot_only": -8.474025526084006e-05,
+        "random_deltas": [
+          -2.4177134037017822e-06,
+          -1.759933525136148e-06,
+          -1.138874495154596e-06
+        ]
+      }
+    ]
+  },
+  "opposite_activity_case": {
+    "article": "= Henry Ho\u02bbolulu Pitman =",
+    "input_id": "unit-atlas-test-013",
+    "expert": 83,
+    "unit": 1107,
+    "selection": "Article nearest the median pass3-minus-pass1 raw reader effect among articles with an alphabetic positive-to-negative paired piece. Token nearest median activity change within eligible pieces.",
+    "example": {
+      "position": 30,
+      "token_id": 992,
+      "token": "ous",
+      "context": " considered quite prosperous and were host",
+      "pass1": {
+        "raw_activation": 1.125,
+        "weighted_activation": 1.936728835105896,
+        "raw_gate": 0.72265625,
+        "raw_up": 2.34375
+      },
+      "pass3": {
+        "raw_activation": -0.33984375,
+        "weighted_activation": -0.718268632888794,
+        "raw_gate": -0.91796875,
+        "raw_up": 1.3203125
+      }
+    },
+    "reader": [
+      {
+        "visit": 1,
+        "native_block2_weight": 0.7131655812263489,
+        "actual_delta": 7.288796768989414e-05,
+        "predicted_full": 7.012742571532726e-05,
+        "predicted_dot_only": 4.198076203465462e-05,
+        "random_deltas": [
+          2.7301055069983704e-06,
+          8.7416601672885e-06,
+          -1.4518520401907153e-05
+        ]
+      },
+      {
+        "visit": 3,
+        "native_block2_weight": 0.8689783811569214,
+        "actual_delta": -2.9490995075320825e-05,
+        "predicted_full": -2.7922276785830036e-05,
+        "predicted_dot_only": -1.4536933122144546e-05,
+        "random_deltas": [
+          6.879014563310193e-06,
+          9.436692380404565e-06,
+          4.426709438121179e-06
+        ]
+      }
+    ]
+  },
+  "mixed_activity_case": {
+    "article": "= Stuart McCall =",
+    "input_id": "unit-atlas-test-030",
+    "expert": 44,
+    "unit": 492,
+    "selection": "Curated counterexample to a uniform token-level clock. Two readable positions in one paragraph with opposite activity-sign changes. No population claim is inferred from this curation.",
+    "examples": [
+      {
+        "position": 17,
+        "token_id": 150107,
+        "token": " number",
+        "context": " he made a number of summer sign",
+        "pass1": {
+          "raw_activation": -0.1669921875,
+          "weighted_activation": -0.23981422185897827,
+          "raw_gate": -0.546875,
+          "raw_up": 0.83984375
+        },
+        "pass3": {
+          "raw_activation": 0.609375,
+          "weighted_activation": 0.7953042387962341,
+          "raw_gate": 0.96875,
+          "raw_up": 0.8828125
+        }
+      },
+      {
+        "position": 51,
+        "token_id": 196988,
+        "token": " ,",
+        "context": "Barry Conlon , Guylain",
+        "pass1": {
+          "raw_activation": 0.0966796875,
+          "weighted_activation": 0.1023746132850647,
+          "raw_gate": -0.125,
+          "raw_up": -1.65625
+        },
+        "pass3": {
+          "raw_activation": -0.173828125,
+          "weighted_activation": -0.15219369530677795,
+          "raw_gate": 0.7734375,
+          "raw_up": -0.33203125
+        }
+      }
+    ],
+    "windows": [
+      {
+        "positions": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "highlight_position": 17,
+        "tokens": [
+          " a",
+          " number",
+          " of",
+          " summer",
+          " sign",
+          "ings",
+          " including",
+          " defender"
+        ],
+        "raw_activity": {
+          "1": [
+            null,
+            -0.1669921875,
+            0.28515625,
+            null,
+            null,
+            -0.515625,
+            0.1650390625,
+            null
+          ],
+          "3": [
+            0.00421142578125,
+            0.609375,
+            null,
+            null,
+            null,
+            0.43359375,
+            0.11279296875,
+            null
+          ]
+        },
+        "weighted_activity": {
+          "1": [
+            null,
+            -0.23981422185897827,
+            0.287977933883667,
+            null,
+            null,
+            -0.3615797758102417,
+            0.2181306928396225,
+            null
+          ],
+          "3": [
+            0.004085867665708065,
+            0.7953042387962341,
+            null,
+            null,
+            null,
+            0.398343563079834,
+            0.09036504477262497,
+            null
+          ]
+        }
+      },
+      {
+        "positions": [
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54
+        ],
+        "highlight_position": 51,
+        "tokens": [
+          " ",
+          "Barry",
+          " Con",
+          "lon",
+          " ,",
+          " Gu",
+          "yl",
+          "ain"
+        ],
+        "raw_activity": {
+          "1": [
+            -0.000415802001953125,
+            null,
+            0.2294921875,
+            null,
+            0.0966796875,
+            0.1884765625,
+            null,
+            null
+          ],
+          "3": [
+            null,
+            null,
+            null,
+            null,
+            -0.173828125,
+            null,
+            null,
+            null
+          ]
+        },
+        "weighted_activity": {
+          "1": [
+            -0.0004652726638596505,
+            null,
+            0.3243883550167084,
+            null,
+            0.1023746132850647,
+            0.14534148573875427,
+            null,
+            null
+          ],
+          "3": [
+            null,
+            null,
+            null,
+            null,
+            -0.15219369530677795,
+            null,
+            null,
+            null
+          ]
+        }
+      }
+    ],
+    "reader": [
+      {
+        "visit": 1,
+        "native_block2_weight": 0.7178126573562622,
+        "actual_delta": 0.00013618916273117065,
+        "predicted_full": 0.000133486493723467,
+        "predicted_dot_only": 0.00011634242400759831,
+        "random_deltas": [
+          -1.9140008589602076e-05,
+          -3.458932042121887e-06,
+          2.5348472263431177e-05
+        ]
+      },
+      {
+        "visit": 3,
+        "native_block2_weight": 0.8742300868034363,
+        "actual_delta": -0.00022400809393730015,
+        "predicted_full": -0.0002094563387800008,
+        "predicted_dot_only": -0.00017090498295146972,
+        "random_deltas": [
+          -2.2409218217944726e-05,
+          -1.6145408153533936e-05,
+          -3.591978020267561e-05
+        ]
+      }
+    ]
+  },
+  "normalization_decomposition": [
+    {
+      "condition": "unit45",
+      "visit": 1,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": 7.939453436327831e-05,
+        "descriptive_95_interval": [
+          2.47702792486442e-05,
+          0.00014857639949436165
+        ]
+      },
+      "numerator_contribution": {
+        "mean": -0.0002828754700853356,
+        "descriptive_95_interval": [
+          -0.0005489363875572703,
+          -6.749497240109901e-05
+        ]
+      },
+      "rms_contribution": {
+        "mean": 0.00036227000444861393,
+        "descriptive_95_interval": [
+          9.264512253659111e-05,
+          0.000694527374331041
+        ]
+      }
+    },
+    {
+      "condition": "unit45",
+      "visit": 3,
+      "articles": 16,
+      "delta_block2_weight": {
+        "mean": -0.00017851474694907665,
+        "descriptive_95_interval": [
+          -0.00033233115100301803,
+          -6.412148359231653e-05
+        ]
+      },
+      "numerator_contribution": {
+        "mean": 0.00014099851250648499,
+        "descriptive_95_interval": [
+          5.009247979614884e-05,
+          0.000258529553372812
+        ]
+      },
+      "rms_contribution": {
+        "mean": -0.00031951325945556164,
+        "descriptive_95_interval": [
+          -0.0005909160448936745,
+          -0.00011496236755712226
+        ]
+      }
+    }
+  ],
+  "activity_profiles": {
+    "status": "Descriptive state observations on the completed fixed test, not additional independent tests.",
+    "units": [
+      {
+        "expert": 83,
+        "unit": 1107,
+        "category": "phase",
+        "paired_positions": 200,
+        "paired_articles": 30,
+        "means_weighted_h_gate_up_per_pass": {
+          "1": [
+            0.45832796193100345,
+            0.3644862344078984,
+            1.2912517574662012
+          ],
+          "2": [
+            -0.10163813843225697,
+            -0.3350883205892586,
+            1.044651046938259
+          ],
+          "3": [
+            -0.17416478125399712,
+            -0.7504038473572394,
+            0.7813411674114189
+          ]
+        },
+        "paired_mean_early_late_h": [
+          0.567462859438674,
+          -0.24570624994761603
+        ],
+        "negative_to_positive": 6,
+        "positive_to_negative": 116,
+        "gate_sign_changes_among_output_flips": 115,
+        "up_sign_changes_among_output_flips": 7
+      },
+      {
+        "expert": 52,
+        "unit": 585,
+        "category": "phase",
+        "paired_positions": 70,
+        "paired_articles": 21,
+        "means_weighted_h_gate_up_per_pass": {
+          "1": [
+            -1.0048243567690094,
+            0.8735604208023822,
+            -1.389710473232582
+          ],
+          "2": [
+            0.1092046776539064,
+            -0.45867919921875,
+            -1.6379985809326172
+          ],
+          "3": [
+            0.36740734270156433,
+            -0.9673016151685393,
+            -1.6819368855337078
+          ]
+        },
+        "paired_mean_early_late_h": [
+          -1.14121291268883,
+          0.4773300758429936
+        ],
+        "negative_to_positive": 63,
+        "positive_to_negative": 0,
+        "gate_sign_changes_among_output_flips": 63,
+        "up_sign_changes_among_output_flips": 0
+      },
+      {
+        "expert": 58,
+        "unit": 285,
+        "category": "phase",
+        "paired_positions": 211,
+        "paired_articles": 32,
+        "means_weighted_h_gate_up_per_pass": {
+          "1": [
+            0.13426705736426836,
+            -0.3095703125,
+            -1.8715268039373378
+          ],
+          "2": [
+            -0.404804004738209,
+            0.05773803986698748,
+            -1.64663916898061
+          ],
+          "3": [
+            -0.748873567330573,
+            0.04010809740973908,
+            -1.555879241054498
+          ]
+        },
+        "paired_mean_early_late_h": [
+          0.23746814320340612,
+          -0.45077906223207104
+        ],
+        "negative_to_positive": 20,
+        "positive_to_negative": 32,
+        "gate_sign_changes_among_output_flips": 45,
+        "up_sign_changes_among_output_flips": 7
+      },
+      {
+        "expert": 44,
+        "unit": 492,
+        "category": "phase",
+        "paired_positions": 1070,
+        "paired_articles": 32,
+        "means_weighted_h_gate_up_per_pass": {
+          "1": [
+            -0.07948284694709577,
+            -0.03137192516349584,
+            -0.696899057710355
+          ],
+          "2": [
+            -0.15243016530714731,
+            0.5388855063140208,
+            -0.3073160439206843
+          ],
+          "3": [
+            0.5313408375563355,
+            0.8016258917914496,
+            0.4668882822107386
+          ]
+        },
+        "paired_mean_early_late_h": [
+          -0.0930771348909602,
+          0.3593862457902658
+        ],
+        "negative_to_positive": 348,
+        "positive_to_negative": 201,
+        "gate_sign_changes_among_output_flips": 169,
+        "up_sign_changes_among_output_flips": 380
+      },
+      {
+        "expert": 38,
+        "unit": 1033,
+        "category": "stable",
+        "paired_positions": 72,
+        "paired_articles": 26,
+        "means_weighted_h_gate_up_per_pass": {
+          "1": [
+            1.7821684293050661,
+            1.244580720600329,
+            1.5404422157689144
+          ],
+          "2": [
+            1.192560288809161,
+            0.8006941029723261,
+            1.3988587285431338
+          ],
+          "3": [
+            1.0417750750978787,
+            0.8734544118245443,
+            1.5022074381510417
+          ]
+        },
+        "paired_mean_early_late_h": [
+          2.379175955339128,
+          1.1990298271088653
+        ],
+        "negative_to_positive": 7,
+        "positive_to_negative": 2,
+        "gate_sign_changes_among_output_flips": 8,
+        "up_sign_changes_among_output_flips": 1
+      },
+      {
+        "expert": 111,
+        "unit": 310,
+        "category": "stable",
+        "paired_positions": 116,
+        "paired_articles": 13,
+        "means_weighted_h_gate_up_per_pass": {
+          "1": [
+            0.13600770527947412,
+            -0.3678740851963933,
+            1.5221627578433794
+          ],
+          "2": [
+            0.5152408267560138,
+            -0.2990386138091216,
+            1.5593740102407094
+          ],
+          "3": [
+            0.3537751932408355,
+            -0.10689989725748698,
+            1.5416466395060222
+          ]
+        },
+        "paired_mean_early_late_h": [
+          0.27765053167039977,
+          0.37789552406094773
+        ],
+        "negative_to_positive": 20,
+        "positive_to_negative": 14,
+        "gate_sign_changes_among_output_flips": 29,
+        "up_sign_changes_among_output_flips": 5
+      },
+      {
+        "expert": 45,
+        "unit": 1127,
+        "category": "known",
+        "paired_positions": 915,
+        "paired_articles": 24,
+        "means_weighted_h_gate_up_per_pass": {
+          "1": [
+            -0.3610711390863717,
+            -1.9867988105292793,
+            0.9873552030271238
+          ],
+          "2": [
+            -0.09545438038484369,
+            -1.9321159101711027,
+            0.2045309588936345
+          ],
+          "3": [
+            0.3520881126725322,
+            -1.9433160807291667,
+            -1.2793964301215277
+          ]
+        },
+        "paired_mean_early_late_h": [
+          -0.3995580001893314,
+          0.3815884996179486
+        ],
+        "negative_to_positive": 760,
+        "positive_to_negative": 4,
+        "gate_sign_changes_among_output_flips": 0,
+        "up_sign_changes_among_output_flips": 764
+      },
+      {
+        "expert": 3,
+        "unit": 664,
+        "category": "known",
+        "paired_positions": 380,
+        "paired_articles": 27,
+        "means_weighted_h_gate_up_per_pass": {
+          "1": [
+            0.038090667788877715,
+            -1.0249965477781178,
+            -0.1573305644435012
+          ],
+          "2": [
+            0.12239651192607791,
+            -1.077795562472148,
+            -0.5021420137130003
+          ],
+          "3": [
+            0.44511146113786887,
+            -1.2437665946118772,
+            -1.7988020601645907
+          ]
+        },
+        "paired_mean_early_late_h": [
+          0.03998518892524436,
+          0.49936902712736475
+        ],
+        "negative_to_positive": 164,
+        "positive_to_negative": 0,
+        "gate_sign_changes_among_output_flips": 9,
+        "up_sign_changes_among_output_flips": 155
+      }
+    ]
+  },
+  "fixed_test": {
+    "primary_forecast_contrasts": [
+      {
+        "contrast": "MAE_full_minus_dot_only",
+        "mean": -8.348011396003274e-05,
+        "interval": [
+          -0.00011104583939428037,
+          -5.860907353710251e-05
+        ],
+        "family_size": 2,
+        "sampling_unit": "article",
+        "articles": 32,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "contrast": "MAE_full_minus_zero",
+        "mean": -0.00012229315455147827,
+        "interval": [
+          -0.00013721425398020363,
+          -0.000107527401357764
+        ],
+        "family_size": 2,
+        "sampling_unit": "article",
+        "articles": 32,
+        "resamples": 10000,
+        "seed": 1729
+      }
+    ],
+    "passes_both_forecast_requirements": true,
+    "mae": {
+      "full": {
+        "mean": 6.983035609243321e-06,
+        "interval": [
+          6.124050972472657e-06,
+          7.915931709612678e-06
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 32,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "dot_only": {
+        "mean": 9.046314956927606e-05,
+        "interval": [
+          6.802986382951184e-05,
+          0.00011448092894897464
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 32,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "zero": {
+        "mean": 0.0001292761901607216,
+        "interval": [
+          0.00011609199630164893,
+          0.0001426964983439737
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 32,
+        "resamples": 10000,
+        "seed": 1729
+      }
+    },
+    "direction_accuracy_nonzero_effects": {
+      "full": 0.9488888888888889,
+      "dot_only": 0.7422222222222222
+    },
+    "nonzero_effect_cases": 450,
+    "total_unit_pass_article_cases": 512,
+    "per_unit": [
+      {
+        "expert": 83,
+        "unit": 1107,
+        "category": "phase",
+        "predicted_per_pass": [
+          0.00024163852503988892,
+          6.339412720990367e-06,
+          -4.3080104660475627e-05
+        ],
+        "raw_effects": [
+          {
+            "visit": 1,
+            "mean": 0.00010675755656364139,
+            "interval": [
+              5.9433922136653554e-05,
+              0.00016096576622816604
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": -4.541143850822493e-05,
+            "interval": [
+              -6.254327125851944e-05,
+              -2.9811596480744388e-05
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "adjusted_effects": [
+          {
+            "visit": 1,
+            "mean": 0.00010516544388187535,
+            "interval": [
+              4.545514736185678e-05,
+              0.00018308792303785927
+            ],
+            "family_size": 8,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": -4.4833364360845805e-05,
+            "interval": [
+              -7.006598992771119e-05,
+              -2.514621188253438e-05
+            ],
+            "family_size": 8,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "passes_sign_reversal_rule": true,
+        "is_primary_replication": true
+      },
+      {
+        "expert": 52,
+        "unit": 585,
+        "category": "phase",
+        "predicted_per_pass": [
+          0.00022232660558074713,
+          -1.4705464309372474e-05,
+          -5.312289431458339e-05
+        ],
+        "raw_effects": [
+          {
+            "visit": 1,
+            "mean": 0.00016641784733906206,
+            "interval": [
+              8.637416783727759e-05,
+              0.0002700542316539156
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": -5.569854478437719e-05,
+            "interval": [
+              -9.733289933997469e-05,
+              -2.9249670905429072e-05
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "adjusted_effects": [
+          {
+            "visit": 1,
+            "mean": 0.0001688060577647958,
+            "interval": [
+              6.434751636527717e-05,
+              0.0003253766771831226
+            ],
+            "family_size": 8,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": -5.4936235074594844e-05,
+            "interval": [
+              -0.00011681518477745764,
+              -2.4012631086034694e-05
+            ],
+            "family_size": 8,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "passes_sign_reversal_rule": true,
+        "is_primary_replication": true
+      },
+      {
+        "expert": 58,
+        "unit": 285,
+        "category": "phase",
+        "predicted_per_pass": [
+          -2.0250390662113205e-05,
+          7.166717841755599e-05,
+          0.00022751458163838834
+        ],
+        "raw_effects": [
+          {
+            "visit": 1,
+            "mean": -2.6541221636477985e-05,
+            "interval": [
+              -6.40647629744251e-05,
+              1.4651599779647015e-05
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": 0.0002194516281548431,
+            "interval": [
+              0.0001412714863580078,
+              0.0003030157523884469
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "adjusted_effects": [
+          {
+            "visit": 1,
+            "mean": -2.5741675667212416e-05,
+            "interval": [
+              -7.831381358708952e-05,
+              3.360213160983004e-05
+            ],
+            "family_size": 8,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": 0.00022855351035566684,
+            "interval": [
+              0.0001198505499414887,
+              0.0003505766745466992
+            ],
+            "family_size": 8,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "passes_sign_reversal_rule": false,
+        "is_primary_replication": true
+      },
+      {
+        "expert": 44,
+        "unit": 492,
+        "category": "phase",
+        "predicted_per_pass": [
+          0.0001253370865015313,
+          0.00020596665854100138,
+          -0.00012218246411066502
+        ],
+        "raw_effects": [
+          {
+            "visit": 1,
+            "mean": 0.00011471056848044725,
+            "interval": [
+              5.755316098161601e-05,
+              0.00017357246502540662
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": -0.0002368783216866177,
+            "interval": [
+              -0.00028279295217501497,
+              -0.00018907405532999635
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "adjusted_effects": [
+          {
+            "visit": 1,
+            "mean": 0.00011573579101176178,
+            "interval": [
+              3.700408214217104e-05,
+              0.0002020246692754148
+            ],
+            "family_size": 8,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": -0.00023297196675072426,
+            "interval": [
+              -0.00029398840353219943,
+              -0.0001677974228741607
+            ],
+            "family_size": 8,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "passes_sign_reversal_rule": true,
+        "is_primary_replication": true
+      },
+      {
+        "expert": 38,
+        "unit": 1033,
+        "category": "stable",
+        "predicted_per_pass": [
+          0.00022653101768810302,
+          0.00016336620319634676,
+          6.738172669429332e-05
+        ],
+        "raw_effects": [
+          {
+            "visit": 1,
+            "mean": 0.00041934118576136825,
+            "interval": [
+              0.0003434804298478866,
+              0.0004988478736265733
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": 8.251765808964251e-05,
+            "interval": [
+              6.248274577043133e-05,
+              0.00010336771839192238
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "adjusted_effects": [],
+        "passes_sign_reversal_rule": false,
+        "is_primary_replication": false
+      },
+      {
+        "expert": 111,
+        "unit": 310,
+        "category": "stable",
+        "predicted_per_pass": [
+          8.857088687364012e-05,
+          0.0001537932112114504,
+          0.0002013250777963549
+        ],
+        "raw_effects": [
+          {
+            "visit": 1,
+            "mean": -5.408406775764263e-07,
+            "interval": [
+              -4.273576072255647e-06,
+              2.297359147507282e-06
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": 3.851401420784661e-06,
+            "interval": [
+              -4.4996392727369995e-07,
+              1.1728645135322676e-05
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "adjusted_effects": [],
+        "passes_sign_reversal_rule": false,
+        "is_primary_replication": false
+      },
+      {
+        "expert": 45,
+        "unit": 1127,
+        "category": "known",
+        "raw_effects": [
+          {
+            "visit": 1,
+            "mean": 0.00014893253238845716,
+            "interval": [
+              8.787733686448363e-05,
+              0.0002137102643638311
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": -0.00024862547717319217,
+            "interval": [
+              -0.0003600590066458409,
+              -0.00014869752275057383
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "adjusted_effects": [
+          {
+            "visit": 1,
+            "mean": 0.00014825635065413012,
+            "interval": [
+              8.833778630125596e-05,
+              0.00021158471628736117
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": -0.0002472759963017731,
+            "interval": [
+              -0.0003573917588261533,
+              -0.00014813997385677757
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "passes_sign_reversal_rule": true,
+        "is_primary_replication": false
+      },
+      {
+        "expert": 3,
+        "unit": 664,
+        "category": "known",
+        "raw_effects": [
+          {
+            "visit": 1,
+            "mean": -8.193934038780437e-06,
+            "interval": [
+              -1.6624768399084445e-05,
+              -8.227855437970009e-07
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          },
+          {
+            "visit": 3,
+            "mean": -5.790536437855209e-05,
+            "interval": [
+              -8.222865116700451e-05,
+              -3.701426488720295e-05
+            ],
+            "family_size": 1,
+            "sampling_unit": "article",
+            "articles": 32,
+            "resamples": 10000,
+            "seed": 1729
+          }
+        ],
+        "adjusted_effects": [],
+        "passes_sign_reversal_rule": false,
+        "is_primary_replication": false
+      }
+    ],
+    "representative_example": {
+      "selection": "Article nearest the median dot-only-minus-full MAE. Unit/pass with largest error reduction within that article.",
+      "id": "unit-atlas-test-012",
+      "article": "= Iguanodon =",
+      "mean_absolute_error_full": 8.177842460099782e-06,
+      "mean_absolute_error_dot_only": 5.943484512727082e-05,
+      "case": {
+        "id": "unit-atlas-test-012",
+        "article": "= Iguanodon =",
+        "expert": 52,
+        "unit": 585,
+        "category": "phase",
+        "predicted_per_pass": [
+          0.00022232660558074713,
+          -1.4705464309372474e-05,
+          -5.312289431458339e-05
+        ],
+        "visit": 1,
+        "predicted_full": 0.0006184933590702713,
+        "predicted_dot_only": 0.0004208743921481073,
+        "actual_delta": 0.0006119917379692197,
+        "random_deltas": [
+          -1.2068876458215527e-05,
+          -1.0543103599047754e-05,
+          1.545676241221372e-05
+        ],
+        "random_audits": [
+          {
+            "visit": 1,
+            "intended_norm_sum": 21.981670379638672,
+            "actual_norm_sum": 22.080066680908203,
+            "nonzero_token_edits": 17,
+            "relative_norm_sum_error": 0.004476288799196482
+          },
+          {
+            "visit": 1,
+            "intended_norm_sum": 21.981670379638672,
+            "actual_norm_sum": 22.079437255859375,
+            "nonzero_token_edits": 17,
+            "relative_norm_sum_error": 0.004447654355317354
+          },
+          {
+            "visit": 1,
+            "intended_norm_sum": 21.981670379638672,
+            "actual_norm_sum": 22.087657928466797,
+            "nonzero_token_edits": 17,
+            "relative_norm_sum_error": 0.004821632988750935
+          }
+        ],
+        "native_block2_weight": 0.7150527238845825
+      }
+    },
+    "maximum_random_norm_sum_error": 0.05581245198845863,
+    "limits": [
+      "All identities were selected on development data. This tests the fixed eight units, not all native units.",
+      "The unit/pass cases are averaged within articles for primary forecasting inference.",
+      "Sign agreement is descriptive. The two forecasting intervals form a separate family from the eight new-unit phase intervals.",
+      "The measured endpoint is a local reader weight, not answer accuracy."
+    ]
+  },
+  "number_routing": [
+    {
+      "visit": 1,
+      "selected_numeric": 214,
+      "numeric_tokens": 287,
+      "selected_other": 1037,
+      "other_tokens": 5041,
+      "rate_ratio": 3.6246812199489953,
+      "family95_interval": [
+        2.8574527940706833,
+        4.881127302128179
+      ],
+      "article_count": 48
+    },
+    {
+      "visit": 2,
+      "selected_numeric": 202,
+      "numeric_tokens": 287,
+      "selected_other": 971,
+      "other_tokens": 5041,
+      "rate_ratio": 3.653986514854114,
+      "family95_interval": [
+        2.873111255980111,
+        4.859228581721505
+      ],
+      "article_count": 48
+    },
+    {
+      "visit": 3,
+      "selected_numeric": 215,
+      "numeric_tokens": 287,
+      "selected_other": 1134,
+      "other_tokens": 5041,
+      "rate_ratio": 3.3301224735603365,
+      "family95_interval": [
+        2.6593052578302565,
+        4.332762515287104
+      ],
+      "article_count": 48
+    }
+  ],
+  "number_text_example": {
+    "selection": "Article nearest median numeric-target-minus-other loss contrast among42 eligible articles. Cue target nearest its median cue loss change.",
+    "article": "= Hed PE =",
+    "id": "text-confirmation-025",
+    "article_mean_loss_change": -0.005475706752255425,
+    "article_numeric_target_minus_other_loss_contrast": -0.014881882778104018,
+    "prediction_position": 87,
+    "context": "ught and DJ Product \u00a9 196",
+    "target_token": "196",
+    "loss_change": 0.00576019287109375,
+    "target_is_numeric_cue": true
+  },
+  "number_name_case": {
+    "article": "= Hed PE =",
+    "input_id": "text-confirmation-025",
+    "selection": "Curated numerical string inside a musician stage name, from the existing text example.",
+    "context": "DJ Product \u00a9 1969",
+    "input_position": 88,
+    "input_piece": "196",
+    "expert105_selected_per_pass": [
+      true,
+      true,
+      true
+    ],
+    "next_target_position": 89,
+    "next_target_piece": "9",
+    "native_next_target_nll": 1.1162776947021484,
+    "deleted_next_target_nll": 1.0703386068344116,
+    "loss_change": -0.045939087867736816,
+    "native_probability": 0.32749657083248646,
+    "deleted_probability": 0.34289239205197825,
+    "intervention": "Expert105 removed at all routed positions on all three passes. The effect is not isolated to the displayed token."
+  },
+  "math_example": {
+    "selection": "Question nearest the median three-order loss change for L12-E105.",
+    "id": "elementary_mathematics-test-337",
+    "question": "What is a reasonable height for a doorway?",
+    "gold_answer_text": "2 m",
+    "seed0_gold": "C",
+    "mean_three_order_loss_change": -7.549899881572248e-07,
+    "seed0_predictions": {
+      "clean": "C",
+      "L12-E105-all": "C",
+      "L12-E105-random": "C"
+    },
+    "seed0_correct_choice_probabilities": {
+      "clean": 0.9999960660934448,
+      "L12-E105-all": 0.9999973773956299,
+      "L12-E105-random": 0.9999955892562866
+    }
+  },
+  "math_test": {
+    "primary": [
+      {
+        "name": "L12-E105",
+        "math_native_deletion_harm": {
+          "mean": -0.03006077823499266,
+          "interval": [
+            -0.10527681795346168,
+            0.030221913228864243
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "math_harm_above_random": {
+          "mean": -0.025445640324377038,
+          "interval": [
+            -0.08589015430923085,
+            0.0223973224236917
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "math_minus_biology_harm_above_random": {
+          "mean": -0.03196074175038563,
+          "interval": [
+            -0.10198547999197184,
+            0.025623367272042678
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "passes_all_three_preregistered_requirements": false
+      },
+      {
+        "name": "L11-E63",
+        "math_native_deletion_harm": {
+          "mean": 0.006204259293357775,
+          "interval": [
+            0.00045298555288705595,
+            0.016282409898742925
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "math_harm_above_random": {
+          "mean": -0.008512800264841872,
+          "interval": [
+            -0.03323956481776087,
+            0.008176893146005707
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "math_minus_biology_harm_above_random": {
+          "mean": -0.01145028599008491,
+          "interval": [
+            -0.04473934541357195,
+            0.02299950634849519
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "passes_all_three_preregistered_requirements": false
+      },
+      {
+        "name": "L7-E73",
+        "math_native_deletion_harm": {
+          "mean": -0.1320902728898452,
+          "interval": [
+            -0.42899505883795896,
+            0.15038146841230263
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "math_harm_above_random": {
+          "mean": -0.11539224825961324,
+          "interval": [
+            -0.42520837221377616,
+            0.209982983035788
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "math_minus_biology_harm_above_random": {
+          "mean": -0.10015555531163192,
+          "interval": [
+            -0.4377663537471613,
+            0.23753976037947708
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "passes_all_three_preregistered_requirements": false
+      },
+      {
+        "name": "numeric-family",
+        "math_native_deletion_harm": {
+          "mean": 0.2116604502336277,
+          "interval": [
+            -0.17897412151465192,
+            0.6734395018347675
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "math_harm_above_random": {
+          "mean": 0.04269765857998091,
+          "interval": [
+            -0.3108992740968002,
+            0.3996104261700595
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "math_minus_biology_harm_above_random": {
+          "mean": 0.04012139486775427,
+          "interval": [
+            -0.3185095758225575,
+            0.3953606886988992
+          ],
+          "interval_family_size": 12,
+          "resamples": 10000,
+          "seed": 1729,
+          "sampling_unit": "question after averaging three answer orders"
+        },
+        "passes_all_three_preregistered_requirements": false
+      }
+    ],
+    "unique_questions": 128,
+    "orders_per_question": 3
+  },
+  "source_sha256": {
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/frozen_inputs.json": "0ed9ab05c03a63069eda61c94db54df405e10d7a1784d11f3ea43721d535f19c",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/results.json": "43db1b8cd22edc97ee59f37a589e88acfefc731d20b494cf2167517fb80dce1a",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit_activity_profiles.json": "a92143ba6430d82d6ef229c2fd2301967c0ade832bb9dbc89887d5d47b837c6d",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/analysis.json": "747fb1c5e9b269c3ef978f4541b496578959962ac0e905551d3e4efe8ae0da4c",
+    "/home/ubuntu/inkling-interp-data/native-unit-routing-v1/representative_example.json": "967ce7ced330c67245ad928d17dc42cec9d06785071111fbffa47c29cb3228f2",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-012-units.json": "67bb9842e11c036a35566538ca88e75fafaae9ecd34a1aaac7b5cbcb925f2023",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-000-units.json": "031869b712533817fdd29de0283e0983eb9bdab40e395f72a57180edfc02369c",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-001-units.json": "ff4c0f9497f930aee856fa93a009c7d6ae213d965d2a4d53b95941e613c57756",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-002-units.json": "09f024f707d5f7576572d530927a38e86fd7912980c788069e49450d5acb3d2e",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-003-units.json": "5a016662b3c2244f4aac148e3da1d4cf4292680688436fcfb9072393d9c3e18e",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-004-units.json": "3fdf79edcd99178329212779908cc4b49b42af74fdda7caefda022d61bde7b6a",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-005-units.json": "5496f6247485ea462cbf79e2b9d9e4649b98ba730e694b535bcaa0af56f1d186",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-006-units.json": "d9593f031cde2cf4e793847099fe7f8d4025a9221fa177acf21eca7ce166f9b8",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-007-units.json": "9ecbf60150699cd39484300756952dc8bdd10aa78dd2e70289af8a2a0552682a",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-008-units.json": "46b3aa1a10c8677fadf9d24800ac1d756caf40221534b0d3f5a5bda3d2f670b2",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-009-units.json": "c69996228d856516a38b288af63c6c11b88ca44a7f7c23d62264b49703ef0590",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-010-units.json": "f068e739c255ede2499d10dae497287ce48b1f5f199b5bcf082eb5435b445d4c",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-011-units.json": "898dd60d3f868092983f9b9758ad659b1d3ef2c9085f8cb32c9facd37a379d31",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-013-units.json": "6a789f133c1df10db026f8a9048e84498441e68a0643f4eccbe5f10246796668",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-014-units.json": "0655ab6400aca64984fbc8766caa5f75f39a19e55e69e1efe745aae5ffc15fa7",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-015-units.json": "4a33b0bd11de4cef9eab23b35abff202de0f3223b96ec4b834f3c87d176aa4f8",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-016-units.json": "9a8ad1557d940a6ca0beea04c48fd3730e5e8c9e22df4e3162a806392a56ad64",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-017-units.json": "b0303970c31e64783f3729a06a655ee423370e33f94075ab7adce2f10a80be96",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-018-units.json": "0bb36652eb9ec79508e311da03c34abc9bdf4bc647919e6f831bfa4a7f1b82df",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-019-units.json": "b1b28a465c2c9872dae846d021a5f861612439de211b2301b41b1856d41d52e8",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-020-units.json": "97a71f0a9f2d05c39fd2af05bf32dc91bb7aaefcf63b1cd97798f1af828005c1",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-021-units.json": "1845b03e4004fcf55bb4112c04e54380ea257ddf08c6eac6c4e6cee4ef8922e7",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-022-units.json": "d50d6d3c7630b64f83d0a65b4d8d73b3a3b42fe8a71ef772239ec4cb48516c67",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-023-units.json": "bbdf4bb1b0353a434054d6567bd6a8ac9b10e0c8d0a9cfa4810b45d51b4222db",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-024-units.json": "bdc5637e147228a9e08bbb5b80684bacafb800f70ae05b1b1198219ea1d94508",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-025-units.json": "ad0375739fc6ed8c81ad955639d84a36c5f8c76710f23aa5cbe93cc7bcdfcf4a",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-026-units.json": "054f31fa539617dc75ef22920ea2625cf5b8399eff9625dfd2064cb81fe8b5cd",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-027-units.json": "7b2f98d1157ebd3750687f77cbf930b7fc3219046a294514d46538faed5088b1",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-028-units.json": "284d6e9b9259d2f18c8e2730a8fee401608069e7618b1202faa77e2d3d5f1dc3",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-029-units.json": "e0f14eceaf15161713affeab7e3a5acb08dec1d2c67952c166ca1026b402dc1e",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-030-units.json": "f1be235bcedcfcbe5bfa2a469637b1309b030bc63ee42831ee5cb6d475aedf64",
+    "/home/ubuntu/inkling-interp-data/native-unit-atlas-confirmation-v1/unit-atlas-test-031-units.json": "54ff980790db7f1fd18026185fa566e3a135d8127628b5f808f31ea6a3b8c854",
+    "evidence/native_unit_replay_result.json": "3451e6dc3047fa3a24ce77a718555b314d5e1ec101629076e69c995186f3c114",
+    "evidence/native_expert_text_example.json": "e0493695599c43e51630462cee3fdc012cf71ccf58a4e08cfa98fdb24c615fd6",
+    "evidence/native_expert_confirmation_example.json": "56f8f5ae26a07957c4c9c20d25df34b1b0bee54470bba0eea1f486adf074029d",
+    "evidence/native_expert_screen_result.json": "f50ff1b92574bb8a9d51e16bba2c75e3ba8119345d8a5913054b3a8b67399138",
+    "evidence/native_expert_confirmation_result.json": "b94abc2886ff1ecf1a1a2e6bb40717e8dba57b6ce0cc5acf77163579a0cd753f",
+    "evidence/native_expert_text.json": "c9d0f84ddb69977d105db6178c9ff3609256dd0b8f3c3b7ab1a195185f9ed6b7",
+    "/home/ubuntu/inkling-interp-data/expert-screen-v3/rank0/text-confirmation-025.npz": "8cdc95d8b6bff8d9a7ef2cf69f65b64fda7431ea4d75401d468db34389f6e28f",
+    "/home/ubuntu/inkling-interp-data/expert-screen-v3/rank0/text_results.json": "7ec096f26bcea86ea6f4edca671e4b0d4c50ef68f09727860635085a7f4d1a78"
+  },
+  "reading_sources": [
+    {
+      "title": "Interpreting Inkling 2 Mini",
+      "url": "https://www.goodfire.com/research/interpreting-inkling-2-mini/",
+      "role": "Prior block-routing and outlier results."
+    },
+    {
+      "title": "Under the Hood of a Reasoning Model",
+      "url": "https://www.goodfire.com/research/under-the-hood-of-a-reasoning-model",
+      "role": "Example-driven exposition, with observation, intervention and bounded interpretation."
+    },
+    {
+      "title": "Understanding and Steering Llama 3 with Sparse Autoencoders",
+      "url": "https://www.goodfire.com/research/understanding-and-steering-llama-3",
+      "role": "Structure connecting feature observations with causal interventions."
+    }
+  ]
+}

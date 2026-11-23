@@ -4,20 +4,20 @@
   "sources": [],
   "evidence": [
     {
-      "path": "evidence/native_unit_atlas_confirmation_result.json",
-      "label": "Fixed32-article forecast and native unit interventions"
+      "path": "evidence/expert_blog_examples.json",
+      "label": "Five concrete examples with selection rules and source hashes"
     },
     {
-      "path": "evidence/native_unit_atlas_activity.json",
-      "label": "Different gate and up sign mechanisms"
+      "path": "evidence/expert_blog_audit.json",
+      "label": "Displayed values and token offsets checked"
+    },
+    {
+      "path": "evidence/native_unit_atlas_confirmation_result.json",
+      "label": "Independent native unit intervention results"
     },
     {
       "path": "evidence/native_expert_confirmation_result.json",
-      "label": "Independent math test confirms0/4 candidates"
-    },
-    {
-      "path": "evidence/expert_program_budget.json",
-      "label": "6523/18000 GPU seconds used"
+      "label": "Independent expert necessity tests"
     }
   ],
   "jobs": [],
@@ -314,15 +314,22 @@
       "actor": "codex",
       "summary": "Start requested illustrated expert case studies using existing measurements",
       "revision": 40
+    },
+    {
+      "id": "c6424a95-4453-48f7-81ed-5618851d30b6",
+      "at": "2026-11-23T12:57:43.044894Z",
+      "actor": "codex",
+      "summary": "Complete five illustrated case studies and audit their numerical examples",
+      "revision": 41
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Writing five concrete expert case studies from completed native measurements, with token examples, causal controls and explanatory figures.",
-  "nextAction": "Extract auditable examples, write the illustrated local draft, and verify every displayed value.",
+  "summary": "Five illustrated native-expert case studies are written. Audited30 displayed values against45 source files, including gate/up factors and the autoregressive number example.",
+  "nextAction": "Archive the figure data and preserve the local review draft.",
   "owner": "Codex",
-  "revision": 40,
-  "updatedAt": "2026-11-23T12:42:10.542985Z"
+  "revision": 41,
+  "updatedAt": "2026-11-23T12:57:43.044894Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Writing five concrete expert case studies from completed native measurements, with token examples, causal controls and explanatory figures.
-  Next: Extract auditable examples, write the illustrated local draft, and verify every displayed value.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Five illustrated native-expert case studies are written. Audited30 displayed values against45 source files, including gate/up factors and the autoregressive number example.
+  Next: Archive the figure data and preserve the local review draft.
 
 ## Next / blocked
 

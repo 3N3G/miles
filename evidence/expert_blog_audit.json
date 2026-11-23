@@ -1,0 +1,172 @@
+{
+  "status": "passed",
+  "source_files_verified": 45,
+  "displayed_numbers_verified": [
+    {
+      "label": "native_reader_pass1",
+      "source_value": 76.84160470962524,
+      "display": "76.842"
+    },
+    {
+      "label": "deleted_reader_pass1",
+      "source_value": 76.88101530075073,
+      "display": "76.881"
+    },
+    {
+      "label": "reader_change_pass1",
+      "source_value": 0.03941059112548828,
+      "display": "+0.0394"
+    },
+    {
+      "label": "native_reader_pass3",
+      "source_value": 90.57110548019409,
+      "display": "90.571"
+    },
+    {
+      "label": "deleted_reader_pass3",
+      "source_value": 90.50770401954651,
+      "display": "90.508"
+    },
+    {
+      "label": "reader_change_pass3",
+      "source_value": -0.06340146064758301,
+      "display": "\u22120.0634"
+    },
+    {
+      "label": "gate_example_pass1_raw_gate",
+      "source_value": 1.375,
+      "display": "+1.375"
+    },
+    {
+      "label": "gate_example_pass1_raw_up",
+      "source_value": -0.7734375,
+      "display": "\u22120.773"
+    },
+    {
+      "label": "gate_example_pass1_raw_activation",
+      "source_value": -0.81640625,
+      "display": "\u22120.816"
+    },
+    {
+      "label": "gate_example_pass3_raw_gate",
+      "source_value": -1.9765625,
+      "display": "\u22121.977"
+    },
+    {
+      "label": "gate_example_pass3_raw_up",
+      "source_value": -1.09375,
+      "display": "\u22121.094"
+    },
+    {
+      "label": "gate_example_pass3_raw_activation",
+      "source_value": 0.2431640625,
+      "display": "+0.243"
+    },
+    {
+      "label": "opposite_pass1",
+      "source_value": 1.125,
+      "display": "+1.125"
+    },
+    {
+      "label": "opposite_pass3",
+      "source_value": -0.33984375,
+      "display": "\u22120.340"
+    },
+    {
+      "label": "mixed0_pass1",
+      "source_value": -0.1669921875,
+      "display": "\u22120.167"
+    },
+    {
+      "label": "mixed0_pass3",
+      "source_value": 0.609375,
+      "display": "+0.609"
+    },
+    {
+      "label": "mixed1_pass1",
+      "source_value": 0.0966796875,
+      "display": "+0.097"
+    },
+    {
+      "label": "mixed1_pass3",
+      "source_value": -0.173828125,
+      "display": "\u22120.174"
+    },
+    {
+      "label": "next_digit_native_probability",
+      "source_value": 32.74965708324864,
+      "display": "32.75"
+    },
+    {
+      "label": "next_digit_deleted_probability",
+      "source_value": 34.28923920519782,
+      "display": "34.29"
+    },
+    {
+      "label": "next_digit_loss_decrease",
+      "source_value": 0.045939087867736816,
+      "display": "0.04594"
+    },
+    {
+      "label": "forecast_mae_full",
+      "source_value": 0.0006983035609243321,
+      "display": "0.00070"
+    },
+    {
+      "label": "forecast_mae_dot_only",
+      "source_value": 0.009046314956927606,
+      "display": "0.00905"
+    },
+    {
+      "label": "forecast_mae_zero",
+      "source_value": 0.012927619016072159,
+      "display": "0.01293"
+    },
+    {
+      "label": "controlled_effect_83_pass1",
+      "source_value": 0.010516544388187535,
+      "display": "0.01052"
+    },
+    {
+      "label": "controlled_effect_83_pass3",
+      "source_value": 0.004483336436084581,
+      "display": "0.00448"
+    },
+    {
+      "label": "controlled_effect_52_pass1",
+      "source_value": 0.01688060577647958,
+      "display": "0.01688"
+    },
+    {
+      "label": "controlled_effect_52_pass3",
+      "source_value": 0.005493623507459485,
+      "display": "0.00549"
+    },
+    {
+      "label": "controlled_effect_44_pass1",
+      "source_value": 0.011573579101176177,
+      "display": "0.01157"
+    },
+    {
+      "label": "controlled_effect_44_pass3",
+      "source_value": 0.023297196675072428,
+      "display": "0.02330"
+    }
+  ],
+  "native_factor_equations_consistent_with_bf16_rounding": true,
+  "autoregressive_target_offset_verified": true,
+  "local_links_verified": [
+    "/home/ubuntu/inkling-interp/figures/native_unit45_normalization.png",
+    "/home/ubuntu/inkling-interp/figures/expert_cases/gate_and_up.png",
+    "/home/ubuntu/inkling-interp/figures/expert_cases/activity_and_routing.png",
+    "/home/ubuntu/inkling-interp/figures/expert_cases/mixed_token_responses.png",
+    "/home/ubuntu/inkling-interp/figures/expert_cases/number_routing_and_loss.png",
+    "/home/ubuntu/inkling-interp/evidence/expert_blog_examples.json",
+    "/home/ubuntu/inkling-interp/reports/NATIVE_UNIT_ATLAS_DETAILS.md",
+    "/home/ubuntu/inkling-interp/reports/NATIVE_UNIT_ROUTING_DETAILS.md",
+    "/home/ubuntu/inkling-interp/reports/NATIVE_EXPERT_TESTS.md"
+  ],
+  "article_sha256": "be0a298ad6ac16eb02648c769c0be2d99986c2fc837a0b7308eed92ac60cd201",
+  "example_data_sha256": "245c395bccc32b1a0277ced08c1dc4bf2def8c37ebdc8b9c4e2548860866ddb9",
+  "scope": "Presentation audit of existing measurements. No new experiment or hypothesis test."
+}
