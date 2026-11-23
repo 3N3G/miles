@@ -307,15 +307,22 @@
       "actor": "codex",
       "summary": "Finish the bounded expert study, private archives and seven standalone local reports",
       "revision": 39
+    },
+    {
+      "id": "c384bdaf-9790-480c-a62a-6aab6f239c46",
+      "at": "2026-11-23T12:42:10.542985Z",
+      "actor": "codex",
+      "summary": "Start requested illustrated expert case studies using existing measurements",
+      "revision": 40
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
-  "state": "finished",
-  "summary": "Validated a local unit lens on32 unused articles:13-fold lower eight-unit forecast error and3/4 new routing reversals. Independent math test confirmed0/4 expert candidates. Used6523/18000 GPU seconds.",
-  "nextAction": "Standalone local reports are ready for review. No job or GPU reservation remains.",
+  "state": "running",
+  "summary": "Writing five concrete expert case studies from completed native measurements, with token examples, causal controls and explanatory figures.",
+  "nextAction": "Extract auditable examples, write the illustrated local draft, and verify every displayed value.",
   "owner": "Codex",
-  "revision": 39,
-  "updatedAt": "2026-11-23T08:32:29.411575Z"
+  "revision": 40,
+  "updatedAt": "2026-11-23T12:42:10.542985Z"
 }
