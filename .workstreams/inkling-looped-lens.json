@@ -32,7 +32,7 @@
     {
       "id": "541303",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     }
   ],
   "sessions": [
@@ -181,15 +181,22 @@
       "actor": "codex",
       "summary": "Submitted approved MI210 job 541303 from pinned commit c6ea41d9",
       "revision": 19
+    },
+    {
+      "id": "6b7a3048-a595-44c6-ad6e-fc7c7b0866b2",
+      "at": "2026-11-23T04:45:59.009180Z",
+      "actor": "codex",
+      "summary": "Completed GPU execution and began source-backed analysis of prediction and native feature edits",
+      "revision": 20
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Test a compact surrogate for one tied Inkling sublayer across its three passes, then causally validate any reusable features.",
   "state": "running",
-  "summary": "The approved shared-operator pilot is running as MI210 job 541303, capped at 30 minutes. It checks native replay before fitting the fixed shared and pass-specific surrogates.",
-  "nextAction": "Monitor native controls, fitting and intervention stages. Preserve all artifacts and remain within the approved allocation cap.",
+  "summary": "Job 541303 completed successfully in 5m50s. Shared sparse fitting modestly beats separate fits, while ridge predicts better. Native replay and frozen-model checks pass. Analysis and private archival are in progress.",
+  "nextAction": "Inspect development examples and controls, validate the completed artifacts, archive them, and write the standalone user-review report.",
   "owner": "Codex",
-  "revision": 19,
-  "updatedAt": "2026-11-23T04:37:20.072479Z"
+  "revision": 20,
+  "updatedAt": "2026-11-23T04:45:59.009180Z"
 }
