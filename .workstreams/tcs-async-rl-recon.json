@@ -2871,15 +2871,22 @@
       "actor": "codex",
       "summary": "Verified closure: 99 updates saved, all archives and W&B match; fourteen comparable questions remain flat at 5.067 to 4.969/7",
       "revision": 266
+    },
+    {
+      "id": "cb13badc-b30d-4041-a691-7e66f7acfd8f",
+      "at": "2026-11-23T04:00:47.689299Z",
+      "actor": "codex",
+      "summary": "Inspect the exact AMD training launcher and repair W&B axes and key-metric sections at the user’s request",
+      "revision": 267
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "needs-you",
-  "summary": "Verified closure: 99 updates saved, all archives and W&B match; fourteen comparable questions remain flat at 5.067 to 4.969/7",
-  "nextAction": "Review the standalone results and human rubric boundaries in QUESTIONS.md before selecting another research variant or bounded training extension. No TCS job is active.",
+  "state": "running",
+  "summary": "Inspect the exact AMD training launcher and repair W&B axes and key-metric sections at the user’s request",
+  "nextAction": "Inspect native history and saved dashboard layouts, preserve the current view, then arrange return and core RL metrics with optimizer-step axes.",
   "owner": "Codex",
-  "revision": 266,
-  "updatedAt": "2026-11-23T02:32:25.484228Z"
+  "revision": 267,
+  "updatedAt": "2026-11-23T04:00:47.689299Z"
 }

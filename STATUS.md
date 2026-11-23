@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Inspect the exact AMD training launcher and repair W&B axes and key-metric sections at the user’s request Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
+  Next: Inspect native history and saved dashboard layouts, preserve the current view, then arrange return and core RL metrics with optimizer-step axes.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Verified closure: 99 updates saved, all archives and W&B match; fourteen comparable questions remain flat at 5.067 to 4.969/7 Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Review the standalone results and human rubric boundaries in QUESTIONS.md before selecting another research variant or bounded training extension. No TCS job is active.
+- Nothing recorded.
 
 ## Finished
 
