@@ -78,5 +78,27 @@ class NativeExpertChecks(unittest.TestCase):
         text,gold=render_question({'question':'Q','choices':['a','b','c','d'],'answer':2},[2,0,3,1])
         self.assertEqual(gold,'A');self.assertIn('A. c',text)
 
+    def test_grouped_native_observation_recovers_expert_token_mapping(self):
+        class Grouped(torch.nn.Module):
+            def __init__(self):super().__init__();self.act_fn=torch.nn.Identity()
+            def forward(self,x,indices,weights):
+                ids,perm=indices.reshape(-1).sort();token=perm//indices.shape[-1]
+                h=self.act_fn(x[token]*(ids[:,None]+1))
+                weighted=h*weights.reshape(-1)[perm,None]
+                inverse=torch.empty_like(perm);inverse[perm]=torch.arange(len(perm))
+                return weighted[inverse].reshape(*indices.shape,-1).sum(1)
+        m=Grouped();x=torch.arange(12,dtype=torch.float32).reshape(3,4)
+        ix=torch.tensor([[2,0],[1,2],[0,1]]);w=torch.tensor([[.2,.8],[.3,.7],[.4,.6]])
+        base=m(x,ix,w);o=NativeNeuronObserver([1]);handles=[m.register_forward_pre_hook(o.begin),
+            m.act_fn.register_forward_hook(o.activation),m.register_forward_hook(o.end)]
+        try:observed=m(x,ix,w)
+        finally:
+            for h in handles:h.remove()
+        self.assertTrue(torch.equal(base,observed));self.assertEqual(len(o.rows),1)
+        row=o.rows[0]
+        for i,pos in enumerate(row['positions']):
+            self.assertTrue(torch.equal(torch.from_numpy(row['activation'][i]),x[pos]*2))
+            self.assertAlmostEqual(float(row['weights'][i]),.3 if pos==1 else .6,places=6)
+
 
 if __name__=='__main__':unittest.main()

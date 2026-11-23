@@ -13,9 +13,25 @@ class NativeNeuronObserver:
     def begin(self,module,args):
         _,self.indices,self.weights=args
         self.order=sorted(e for e in self.indices.unique().tolist() if e<128)
+        self.group_ids,self.group_perm=torch.sort(self.indices.reshape(-1))
+        self.group_tokens=self.group_perm//self.indices.shape[-1]
+        self.group_weights=self.weights.reshape(-1)[self.group_perm]
         self.index=0;self.visit+=1
 
     def activation(self,module,args,output):
+        if output.shape[0]==self.indices.numel():
+            # The pinned runtime defaults to grouped_mm: one activation call
+            # contains every selected token/expert pair, sorted by expert ID.
+            assert self.index==0
+            for expert in sorted(self.experts):
+                mask=self.group_ids==expert
+                if mask.any():
+                    self.rows.append({'expert':expert,'visit':self.visit,
+                        'positions':self.group_tokens[mask].detach().cpu().numpy(),
+                        'weights':self.group_weights[mask].detach().cpu().numpy(),
+                        'activation':output[mask].detach().float().cpu().numpy()})
+            self.index=len(self.order)
+            return
         expert=self.order[self.index];self.index+=1
         token,slot=torch.where(self.indices==expert)
         assert output.shape[0]==len(token),(expert,output.shape,len(token))
@@ -72,3 +88,23 @@ def capture(model,records,out,experts=(105,45,3)):
     np.savez_compressed(out/'decoder_column_norms.npz',**norms)
     (out/'controls.json').write_text(json.dumps({'native_observation_logit_error':0,'visits':3,
         'layer_index':11,'experts':list(experts),'method':'Unchanged native forward, parent and activation observation hooks'},indent=2)+'\n')
+
+
+def main():
+    import argparse
+    import subprocess
+    import time
+    from transformers import AutoModelForImageTextToText
+    from pilot import MODEL,REVISION
+    p=argparse.ArgumentParser();p.add_argument('--inputs',type=Path,required=True);p.add_argument('--out',type=Path,required=True)
+    a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);started=time.time()
+    source=json.loads(a.inputs.read_text());records=[r for r in source['records'] if r['split'] in ['fit','validation']]
+    assert len(records)==144
+    model=AutoModelForImageTextToText.from_pretrained(MODEL,revision=REVISION,dtype=torch.bfloat16,device_map={'':'cuda:0'}).eval();model.requires_grad_(False)
+    capture(model,records,a.out/'native_neurons',experts=(105,45,3,89,41,90))
+    (a.out/'manifest.json').write_text(json.dumps({'status':'completed','model':MODEL,'revision':REVISION,
+        'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+        'wall_seconds':time.time()-started,'peak_gpu_bytes':torch.cuda.max_memory_allocated()},indent=2)+'\n')
+
+
+if __name__=='__main__':main()

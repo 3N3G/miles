@@ -1,0 +1,14 @@
+{
+  "job_id": "541723",
+  "elapsed_allocation_seconds": 414,
+  "completed": [
+    "32 native derivative questions",
+    "32 exact candidate intervention questions",
+    "unchanged native weights/logits checks",
+    "native edit equivalence checks"
+  ],
+  "failed_stage": "First native unit observation, before saving any paragraph",
+  "reason": "Observer assumed per-expert eager calls. Actual pinned backend uses grouped_mm and one512-row activation for64 tokens times8 selected experts.",
+  "repair": "Use the same sorted flattened expert/token permutation as the native grouped backend. Preserve the native forward.",
+  "plan": "plans/native_neuron_capture_repair.md"
+}

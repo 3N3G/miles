@@ -10,8 +10,10 @@
   "saved_tensor_derivative_exact": true,
   "native_router_replay_all_route_sets_exact": true,
   "native_router_max_weight_error": 2.0265579223632812e-06,
-  "analytic_teacher_tests_passed": 6,
+  "analytic_teacher_tests_passed": 7,
   "exact_branch_teacher": true,
   "norm_control_teacher": true,
-  "native_neuron_observer_teacher": true
+  "native_neuron_observer_teacher": true,
+  "grouped_native_observer_teacher": true,
+  "causal_padded_batch_readout_teacher": true
 }

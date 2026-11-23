@@ -47,16 +47,25 @@
       "gpus": 1,
       "maximum_allocation_seconds": 1200,
       "maximum_gpu_seconds": 1200,
-      "status": "RUNNING",
-      "reserved_gpu_seconds": 1200,
-      "observed_allocation_seconds": 61
+      "status": "FAILED",
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 61,
+      "actual_allocation_seconds": 414,
+      "actual_gpu_seconds": 414
     }
   ],
-  "used_gpu_seconds": 1067,
-  "remaining_gpu_seconds": 16933,
+  "used_gpu_seconds": 1481,
+  "remaining_gpu_seconds": 16519,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [],
-  "unreserved_gpu_seconds": 15733,
-  "reserved_gpu_seconds": 1200,
+  "pending_reservations": [
+    {
+      "run_name": "native-neurons-v2",
+      "gpus": 1,
+      "maximum_gpu_seconds": 600,
+      "status": "prepared"
+    }
+  ],
+  "unreserved_gpu_seconds": 15919,
+  "reserved_gpu_seconds": 600,
   "observed_at": "2026-11-23T06:29:58.696055+00:00"
 }
