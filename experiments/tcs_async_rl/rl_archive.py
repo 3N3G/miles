@@ -88,12 +88,41 @@ def upload_run(directory, *, log_name="upload.log", invoke=invoke_upload):
     return urls[-1]
 
 
-def archive_chunks(directory, *, invoke=invoke_upload):
+def verify_uploaded(directory, receipt, entries):
+    manifest = directory / "artifact-verification-request.json"
+    _atomic_bytes(manifest, (json.dumps(entries, indent=2) + "\n").encode())
+    result = subprocess.run(
+        [
+            "uv",
+            "run",
+            "--no-project",
+            "--with",
+            "huggingface_hub==2.2.0",
+            "python",
+            "-m",
+            "experiments.tcs_async_rl.hf_artifacts",
+            "--directory",
+            str(directory),
+            "--commit-url",
+            receipt,
+            "--manifest",
+            str(manifest),
+        ],
+        capture_output=True,
+        text=True,
+        timeout=180,
+    )
+    (directory / "artifact-verification.log").write_text(result.stdout + result.stderr)
+    result.check_returncode()
+
+
+def archive_chunks(directory, *, invoke=invoke_upload, verify=verify_uploaded):
     paths = trace_paths(directory)
     if not paths:
         return None
     entries = {str(p.relative_to(directory)): {"sha256": file_sha256(p), "bytes": p.stat().st_size} for p in paths}
     receipt = upload_run(directory, log_name="incremental-upload.log", invoke=invoke)
+    verify(directory, receipt, entries)
     index = read_index(directory)
     for name, entry in entries.items():
         index[name] = {**entry, "hf_commit_url": receipt}
@@ -118,7 +147,7 @@ def exclusion_file(directory):
 
 
 def copy_trace_batch(remote_directory, directory):
-    """Copy at most 64 MiB of new immutable traces, retaining one GiB VM margin."""
+    """Stage 64 MiB, or one larger atomic trace, retaining one GiB VM margin."""
     code = (
         "import json; from pathlib import Path; "
         f"root=Path({str(remote_directory)!r}); "
@@ -138,6 +167,12 @@ def copy_trace_batch(remote_directory, directory):
         path = Path(name)
         if path.is_absolute() or ".." in path.parts or path.parts[0] != "rollout_data":
             raise ValueError("Remote trace escaped its run directory")
+        # Larger optimizer batches can produce an atomic file over 64 MiB.
+        # Stage it alone, with the same free-space reserve, then archive it.
+        if not local and not selected and size > TRACE_BATCH_BYTES and size <= free - VM_RESERVE_BYTES:
+            selected.append(name)
+            total = size
+            break
         if total + size <= allowance:
             selected.append(name)
             total += size

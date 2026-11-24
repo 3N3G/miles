@@ -1,20 +1,5 @@
 # Open questions
 
-## 2026-11-23: Resources for the approved four-problem optimizer batch
-
-- Decision already made: the user approved four problem groups ×32 answers, global batch 128. Do not ask again about that batch change.
-- Plan: [the concrete run and qualification checks](experiments/tcs_async_rl/MULTIPROBLEM_BATCH_PLAN_20261123.md). Ten proposed updates consume the original pilot's 1,280-answer budget.
-- Budget question: approve a new four-hour allocation on eight MI350 GPUs (32 GPU-hours), with a new $5 judge allowance, or prepare without new spend?
-- Budget evidence: the old shared allowance has 2,056 eight-GPU allocation seconds (4.5689 GPU-hours) and $0.3105281 left. Its ledger remains unchanged.
-- Storage question: arrange at least 84 GB of extra free space while preserving all checkpoints, or explicitly permit removal of the superseded iteration-64 and iteration-84 checkpoint directories after checking retained original iteration 24 and latest iteration 98?
-- Exact deletion option: `/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v12/checkpoints` (60,935,586,232 bytes) and `/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v15/checkpoints` (61,012,021,875 bytes). Preserve every non-checkpoint result and all used configs. Nothing has been deleted.
-- Storage evidence: AMD has 7,597,572,096 free bytes. The unchanged preflight requires 90,696,450,048 bytes, a shortfall of 83,098,877,952 bytes. The whole TCS cache is only 2.9 GB.
-- Recommendation: approve the bounded new allowance and arrange sufficient storage while preserving checkpoints. The explicit deletion option is available if preserving those two intermediate states is unnecessary.
-- Blocks: only job submission and dependent provider spending. Config preparation, CPU tests and monitoring repairs continue.
-- Permission basis: the approved previous plans preserve source checkpoints, and global instructions reserve experiment budgets and destructive actions for the user. Batch approval does not silently reset a nearly spent ledger.
-- Status: awaiting the two resource decisions. No new GPU job or judge request.
-- Read-only evidence: [current scheduler, inventories and free space](experiments/tcs_async_rl/evidence/multiproblem_resources_20261123.json).
-
 ## 2026-11-22: Storage for a bounded continuation after the two-hour backfill slot
 
 - Question: may the replacement's intermediate checkpoint be removed only after a newer continuation checkpoint is atomically saved and verified?
@@ -239,3 +224,18 @@
 - Resource record: the cost guard saved iteration 98, containing 99 total updates, then stopped. Shared estimated judge spend is $4.689/5. Another 60.6 GB checkpoint cannot fit the observed 23.3 GB free capacity while preserving its source. No new allocation was submitted after this stop.
 - Blocks: further research-design or reward changes and another GPU allocation. It does not block logging repairs, archival or prompt wording repairs already authorized by the user.
 - Answer, 2026-11-23: the user said “Do it” after the proposal to use four problems ×32 answers per optimizer update. The batch change and its run are approved. A new compute/judge limit and safe storage remain to resolve. Human calibration remains pending, and no reliable reward increase has been established.
+
+## 2026-11-23: Resources for the approved four-problem optimizer batch
+
+- Decision already made: the user approved four problem groups ×32 answers, global batch 128. Do not ask again about that batch change.
+- Plan: [the concrete run and qualification checks](experiments/tcs_async_rl/MULTIPROBLEM_BATCH_PLAN_20261123.md). Ten proposed updates consume the original pilot's 1,280-answer budget.
+- Budget question: approve a new four-hour allocation on eight MI350 GPUs (32 GPU-hours), with a new $5 judge allowance, or prepare without new spend?
+- Budget evidence: the old shared allowance has 2,056 eight-GPU allocation seconds (4.5689 GPU-hours) and $0.3105281 left. Its ledger remains unchanged.
+- Storage question: arrange at least 84 GB of extra free space while preserving all checkpoints, or explicitly permit removal of the superseded iteration-64 and iteration-84 checkpoint directories after checking retained original iteration 24 and latest iteration 98?
+- Exact deletion option: `/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v12/checkpoints` (60,935,586,232 bytes) and `/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v15/checkpoints` (61,012,021,875 bytes). Preserve every non-checkpoint result and all used configs. Nothing has been deleted.
+- Storage evidence: AMD has 7,597,572,096 free bytes. The unchanged preflight requires 90,696,450,048 bytes, a shortfall of 83,098,877,952 bytes. The whole TCS cache is only 2.9 GB.
+- Recommendation: approve the bounded new allowance and arrange sufficient storage while preserving checkpoints. The explicit deletion option is available if preserving those two intermediate states is unnecessary.
+- Blocks: only job submission and dependent provider spending. Config preparation, CPU tests and monitoring repairs continue.
+- Permission basis: the approved previous plans preserve source checkpoints, and global instructions reserve experiment budgets and destructive actions for the user. Batch approval does not silently reset a nearly spent ledger.
+- Answer, 2026-11-23: the user said “these are approved implicitly when I say do it.” The concrete ten-update, four-hour, 32-GPU-hour run and new $5 cap are approved. A fresh AMD check reports 1.27 TB free, so no source checkpoint is deleted. The user also requested durable Hugging Face storage, with bounded VM staging. Existing private Hub authentication works, so no new key is needed.
+- Read-only evidence: [current scheduler, inventories and free space](experiments/tcs_async_rl/evidence/multiproblem_resources_20261123.json).

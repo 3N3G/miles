@@ -2947,15 +2947,22 @@
       "actor": "codex",
       "summary": "User confirms the discussed run and resource choices are approved; resume execution and private artifact staging",
       "revision": 274
+    },
+    {
+      "id": "e04510f2-f4a8-4fb7-a995-6de3b4e0d98d",
+      "at": "2026-11-24T01:14:01.257787Z",
+      "actor": "codex",
+      "summary": "Validate approved limits, restored storage and hash-verified private Hugging Face staging",
+      "revision": 275
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "User approved the concrete ten-update, four-hour batch128 run and discussed resource choices. Verifying Hugging Face storage and AMD space before launch.",
-  "nextAction": "Verify private archive access, resolve AMD space without losing retained checkpoints, freeze the approved config and submit once. Supervise the run and keep VM staging bounded.",
+  "summary": "Approved batch128 run is ready: 117 tests pass, private Hugging Face access works and AMD has 1.27 TB free. All source checkpoints remain preserved.",
+  "nextAction": "Freeze and submit the ten-update/four-hour run with its new $5 ledger. Verify the first four-problem update, supervise metrics and proofs, and archive through terminal state.",
   "owner": "Codex",
-  "revision": 274,
-  "updatedAt": "2026-11-24T01:08:04.488460Z"
+  "revision": 275,
+  "updatedAt": "2026-11-24T01:14:01.257787Z"
 }

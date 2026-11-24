@@ -6,9 +6,11 @@ The user approved changing each update from one problem to four on November 23.
 Keep 32 answers per problem and increase the global answer batch from 32 to 128.
 Resume the saved iteration 98 of Qwen3.5-4B. Preserve every used configuration and result.
 The proposed run has ten updates, consuming 1,280 answers, matching the original forty-update pilot's answer budget.
-The resource proposal is four hours on eight MI350 GPUs and a new $5 judge allowance.
-These new limits need confirmation. The previous allowance is nearly spent, and checkpoint storage is insufficient.
-The [draft configuration](rl_easy_overfit_v17.proposed.json) deliberately leaves resource limits unresolved and cannot render a Slurm job.
+The approved limit is four hours on eight MI350 GPUs and a separate new $5 judge allowance.
+The user confirmed that “Do it” approves the concrete run and resource choices already discussed.
+The [frozen active configuration](rl_easy_overfit_v17.json) resolves those limits.
+The [earlier draft](rl_easy_overfit_v17.proposed.json) remains unchanged.
+A fresh AMD check has 1.27 TB free, so every source checkpoint can remain preserved.
 
 ## Background / motivation
 
@@ -52,10 +54,10 @@ GPU loading and the first complete four-group update remain runtime qualificatio
   Existing human calibration and independent-provider checks remain unresolved. Scores are provisional training rewards.
   No provider fallback, rubric change, score correction or judge upgrade is part of this run.
   Reuse only verified controls from the same questions and exact judge configuration, with their provenance.
-- Limits: propose ten optimizer updates, global IDs 99–108, or the resource limit, whichever comes first.
+- Limits: run ten optimizer updates, global IDs 99–108, or the resource limit, whichever comes first.
   This is two nominal passes and 1,280 consumed answers. Async generation can produce unused answers beyond this count.
   All generated tokens, provider calls, reservations and unused samples count toward their resource allowances.
-  Four hours on eight GPUs is at most 32 GPU-hours. The proposed new judge ledger cap is $5.
+  Four hours on eight GPUs is at most 32 GPU-hours. The new judge ledger cap is $5.
   The old ledger remains unchanged. No resource extension or ledger reset is authorized merely by a timeout.
 - Metrics: retain per-question mean raw reward, zero/full-credit rates, within-problem reward variation,
   both full-policy and sampling entropy, sampled initial-policy and rollout divergence, gradient norms,
@@ -73,7 +75,10 @@ GPU loading and the first complete four-group update remain runtime qualificatio
 - Saving: use the existing single-checkpoint policy, writing to the fresh v17 directory.
   Preserve iteration 98 and all source checkpoints. Request a final or budget/deadline checkpoint once.
   The current storage guard requires 90,696,450,048 free bytes before submission and at allocation.
-  Do not submit until storage is safe. Deleting protected checkpoints requires a specific user exception.
+  Recheck storage before submission and at allocation. No checkpoint deletion is needed with current free space.
+  Request the one checkpoint if unfinished with 30 minutes left, or when judge spending plus reservations reaches $4.
+  Finish the active batch, verify the saved tracker and its weight publication, then stop only this owned allocation if it saved early.
+  The $1 judge reserve allows the larger pending batch to settle. A provider cap rejection remains an error, never a zero reward.
 - Logging and supervision: use the existing geney/tcs-async-rl W&B project with one VM-native history writer.
   Keep explicit optimizer coordinates and the separate Return, Policy health and Generation panels.
   Watch native training, judge/tunnel health, weight publication, monitor heartbeat and disk space through terminal state.
@@ -111,9 +116,21 @@ Reserved for the user after results. No learning or variance reduction has been 
 ## Next steps
 
 1. Finish CPU qualification and verify the preserved iteration-98 checkpoint inventory.
-2. Resolve the new resource cap and storage shortfall. Freeze the final configuration and source.
+2. Verify current resource availability and freeze the approved configuration and source.
 3. Submit once, verify the first complete 128-answer update, and supervise through terminal archival.
 
 ## Questions
 
-Resource and storage decisions are recorded in the repository-root `QUESTIONS.md`.
+The answered resource decision and approval wording are recorded in the repository-root `QUESTIONS.md`.
+
+## Artifact storage qualification
+
+Hugging Face is the durable private artifact store. Existing authentication has verified read and write access.
+The VM keeps small operational files and a bounded staging batch, rather than the durable rollout archive.
+One larger atomic optimizer trace can stage alone when it fits the one-GiB free-space reserve.
+The uploader verifies immutable Hub LFS SHA256 or Git blob hashes before recording eviction and removing a local staged trace.
+A failed upload or readback preserves the local file and AMD original. Model checkpoints remain on AMD.
+All 117 TCS CPU tests pass, including oversized transfer and failed-hash retention controls.
+The new readback helper also verifies an actual 26.9 MB archived trace against its immutable Hub SHA256.
+The 120 existing control receipts match the exact current model, effort, prompt, payload hashes and rubric outcomes.
+They can qualify all 60 question/control pairs without new judge calls. Their provenance is preserved in the new run.

@@ -1,6 +1,7 @@
 import asyncio
 import copy
 import gzip
+import hashlib
 import json
 import os
 import subprocess
@@ -12,6 +13,7 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from experiments.tcs_async_rl.grade_group import Budget, grade_one
+from experiments.tcs_async_rl.hf_artifacts import verify_files
 from experiments.tcs_async_rl.reward_hook import question_key
 from experiments.tcs_async_rl.reward_service import MultiScorer
 from experiments.tcs_async_rl.rl_archive import archive_chunks, copy_trace_batch, invoke_upload, read_index
@@ -386,6 +388,25 @@ class ArchiveTests(unittest.TestCase):
                     copy_trace_batch(Path("/remote"), root)
             self.assertEqual(invoke.call_count, 1)
 
+    def test_one_oversized_trace_is_staged_alone_and_keeps_the_vm_reserve(self):
+        for free, fits in [(2 * 2**30, True), (2**30 + 100 * 2**20, False)]:
+            with tempfile.TemporaryDirectory() as name:
+                root = Path(name)
+                files = [("rollout_data/rollout-99.jsonl.gz", 150 * 2**20)]
+                answers = [subprocess.CompletedProcess([], 0, json.dumps(files), "")]
+                if fits:
+                    answers.append(subprocess.CompletedProcess([], 0, "", ""))
+                with patch("experiments.tcs_async_rl.rl_archive.subprocess.run", side_effect=answers) as invoke, patch(
+                    "experiments.tcs_async_rl.rl_archive.shutil.disk_usage", return_value=SimpleNamespace(free=free)
+                ):
+                    if fits:
+                        self.assertEqual(copy_trace_batch(Path("/remote"), root), 0)
+                        self.assertEqual(invoke.call_count, 2)
+                    else:
+                        with self.assertRaisesRegex(RuntimeError, "Trace transfer deferred"):
+                            copy_trace_batch(Path("/remote"), root)
+                        self.assertEqual(invoke.call_count, 1)
+
     def test_checkpoint_retention_never_leaves_this_runs_directory(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
@@ -463,7 +484,7 @@ class ArchiveTests(unittest.TestCase):
                     [], 0, "url=https://huggingface.co/datasets/owner/data/commit/" + "a" * 40, " "
                 )
             )
-            archive_chunks(root, invoke=invoke)
+            archive_chunks(root, invoke=invoke, verify=Mock())
             self.assertFalse(path.exists())
             self.assertTrue(read_index(root))
             self.assertEqual(before, consumed_rollouts(root))
@@ -483,6 +504,45 @@ class ArchiveTests(unittest.TestCase):
                     archive_chunks(root, invoke=invoke)
                 self.assertTrue(path.exists())
                 self.assertFalse(read_index(root))
+
+    def test_failed_remote_hash_verification_keeps_the_local_trace(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            path = self.make_trace(root)
+            invoke = Mock(
+                return_value=subprocess.CompletedProcess(
+                    [], 0, "https://huggingface.co/datasets/owner/data/commit/" + "a" * 40, ""
+                )
+            )
+            with self.assertRaisesRegex(ValueError, "remote hash differs"):
+                archive_chunks(root, invoke=invoke, verify=Mock(side_effect=ValueError("remote hash differs")))
+            self.assertTrue(path.exists())
+            self.assertFalse(read_index(root))
+
+    def test_immutable_hub_lfs_and_git_hashes_are_checked_before_eviction(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            path = self.make_trace(root)
+            relative = str(path.relative_to(root))
+            entries = {relative: {"sha256": file_sha256(path), "bytes": path.stat().st_size}}
+            remote = SimpleNamespace(
+                path=f"miles/{root.name}/{relative}",
+                size=path.stat().st_size,
+                lfs=SimpleNamespace(sha256=file_sha256(path)),
+                blob_id=None,
+            )
+            self.assertEqual(len(verify_files(root, entries, [remote])), 1)
+            remote.lfs.sha256 = "0" * 64
+            with self.assertRaisesRegex(ValueError, "SHA256 differs"):
+                verify_files(root, entries, [remote])
+            with self.assertRaisesRegex(ValueError, "missing"):
+                verify_files(root, entries, [])
+            remote.lfs = None
+            remote.blob_id = hashlib.sha1(f"blob {path.stat().st_size}\0".encode() + path.read_bytes()).hexdigest()
+            self.assertEqual(len(verify_files(root, entries, [remote])), 1)
+            remote.blob_id = "0" * 40
+            with self.assertRaisesRegex(ValueError, "Git blob differs"):
+                verify_files(root, entries, [remote])
 
     @unittest.skipUnless(sys.platform == "linux", "Upload process groups require Linux")
     def test_upload_timeout_stops_client_descendants(self):

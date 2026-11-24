@@ -1,0 +1,28 @@
+{
+  "at_utc": "2026-11-24T01:14:01.175806+00:00",
+  "authorization": "User: these are approved implicitly when I say do it. Applies to the concrete batch128 ten-update/four-hour/new-$5 proposal.",
+  "config_sha256": "cf280ed7888390ee6ea958ac958b30c7afda711b4274991da001404401c3b667",
+  "private_hf_repo": "3N3G/internalization-runs",
+  "hf_read_and_write_auth": "verified as 3N3G without exposing credential values",
+  "vm_free_bytes": 9786167296,
+  "amd_available_bytes_observed": 1270029221888,
+  "required_amd_bytes": 90696450048,
+  "source_checkpoints_deleted": [],
+  "tests_passed": 117,
+  "actual_immutable_hash_control": "verified one 26,851,630-byte trace against Hub SHA256",
+  "control_provider_receipts_verified": 120,
+  "new_provider_calls": 0,
+  "new_gpu_jobs": 0,
+  "resource_limits": {
+    "partition": "mi3508x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 8,
+    "cpus_per_task": 64,
+    "walltime": "04:00:00"
+  },
+  "judge_usd_cap": 5,
+  "maximum_gpu_hours": 32,
+  "artifact_policy": "Private Hub is durable; stage a bounded batch or one oversized atomic trace, then verify immutable remote hashes before eviction."
+}
