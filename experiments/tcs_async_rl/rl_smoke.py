@@ -123,6 +123,36 @@ def native_argv(args):
     return argv
 
 
+def validate_judge_qualification(config, config_dir):
+    qualification = config["judge_qualification"]
+    runtime_file = config_dir / config["judge_config"]
+    runtime = json.loads(runtime_file.read_text())
+    for path, expected in (
+        (runtime_file, qualification["runtime_config_sha256"]),
+        (config_dir / config["training_config"], qualification["training_config_sha256"]),
+        (config_dir / runtime["prompt_file"], qualification["prompt_sha256"]),
+    ):
+        if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+            raise ValueError("Selected judge runtime differs from the frozen qualified recipe")
+    if runtime["grading_method"] != "reference_guided" or runtime["training_config"] != config["training_config"]:
+        raise ValueError("Training and scoring must use the same selected judge")
+    documents = {}
+    for name in ("selection", "comparison", "controls"):
+        item = qualification[name]
+        path = config_dir / item["file"]
+        if hashlib.sha256(path.read_bytes()).hexdigest() != item["sha256"]:
+            raise ValueError("Judge qualification differs from the approved frozen evidence")
+        documents[name] = json.loads(path.read_text())
+    selected = documents["selection"]["selected_method"]
+    if (
+        selected != "reference_guided"
+        or not documents["comparison"][selected]["passes_observed_gate"]
+        or documents["controls"]["failures"]
+    ):
+        raise ValueError("The selected judge did not pass its frozen agreement and control gates")
+    return config_dir / qualification["selection"]["file"]
+
+
 def wait_for_judge(url, expected_key, *, judge, seconds=600):
     health = url.rsplit("/", 1)[0] + "/health"
     deadline = time.monotonic() + seconds
@@ -196,31 +226,41 @@ def main():
         return
     if torch.cuda.device_count() != config["allocation"]["gpus"]:
         raise RuntimeError("Requires the approved GPU count before RL execution")
-    input_config, _ = load_configs(cli.config.parent / config["input_config"])
-    row = load_input(input_config, training)
-    gate_file = Path(config["gate_file"])
-    grades = json.loads(gate_file.read_text())
-    if grades.get("input_sha256") != input_config["input_sha256"]:
-        raise ValueError("Group gate is not tied to the approved private input hash")
-    sampling_args = {**training["miles_args"], **config["overrides"]}
-    expected_sampling = {
-        **sampling_parameters({"miles_args": sampling_args}),
-        "skip_special_tokens": sampling_args["rollout_skip_special_tokens"],
-    }
-    validate_group_gate(
-        grades,
-        training["miles_args"]["n_samples_per_prompt"],
-        expected_sampling=expected_sampling,
-        policy=config.get("diagnostic_gate_policy", "complete_only"),
-    )
+    row = None
+    if config.get("judge_qualification"):
+        gate_file = validate_judge_qualification(config, cli.config.parent)
+        if not config.get("dataset_file"):
+            raise ValueError("Selected-judge phases require a frozen dataset bundle")
+    else:
+        input_config, _ = load_configs(cli.config.parent / config["input_config"])
+        row = load_input(input_config, training)
+        gate_file = Path(config["gate_file"])
+        grades = json.loads(gate_file.read_text())
+        if grades.get("input_sha256") != input_config["input_sha256"]:
+            raise ValueError("Group gate is not tied to the approved private input hash")
+        sampling_args = {**training["miles_args"], **config["overrides"]}
+        expected_sampling = {
+            **sampling_parameters({"miles_args": sampling_args}),
+            "skip_special_tokens": sampling_args["rollout_skip_special_tokens"],
+        }
+        validate_group_gate(
+            grades,
+            training["miles_args"]["n_samples_per_prompt"],
+            expected_sampling=expected_sampling,
+            policy=config.get("diagnostic_gate_policy", "complete_only"),
+        )
     run_id = U.create_run_id()
     args, conversion_name = resolved_args(config, training, work_dir=cli.work_dir, run_dir=cli.run_dir, run_id=run_id)
     tokenizer = AutoTokenizer.from_pretrained(args["hf_checkpoint"], local_files_only=True)
-    rows, service_key = ([row], question_key(row))
+    rows, service_key = ([row], question_key(row)) if row else ([], None)
     if config.get("dataset_file"):
         rows, service_key = read_bundle(
-            Path(config["dataset_file"]), expected_sha256=config["dataset_sha256"], training=training
+            Path(config["dataset_file"]),
+            expected_sha256=config["dataset_sha256"],
+            training=training,
+            contract=config.get("dataset_contract"),
         )
+        (cli.run_dir / "input.json").write_bytes(Path(config["dataset_file"]).read_bytes())
     for item in rows:
         formatted = tokenizer.apply_chat_template(
             [{"role": "user", "content": item["problem"]}],
@@ -243,6 +283,8 @@ def main():
                 "gate_sha256": hashlib.sha256(gate_file.read_bytes()).hexdigest(),
                 "question_key": service_key,
                 "question_count": len(rows),
+                "dataset_sha256": config.get("dataset_sha256"),
+                "source_publication_file": config.get("source_publication_file"),
             },
             indent=2,
         )
@@ -313,7 +355,11 @@ def main():
             train_args=shlex.join(native_argv(args)),
             num_gpus_per_node=args["num_gpus_per_node"],
             megatron_model_type="qwen3.5-4B",
-            train_script="train_async.py",
+            train_script=(
+                "experiments/tcs_async_rl/checkpoint_screen.py"
+                if config.get("execution") == "checkpoint_screen"
+                else "train_async.py"
+            ),
             extra_env_vars=caches,
             job_lifetime="launcher",
         )

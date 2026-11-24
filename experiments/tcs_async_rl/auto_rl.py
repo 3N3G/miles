@@ -20,6 +20,7 @@ from urllib.parse import urlsplit
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.group_inference import sampling_parameters, validate_sampling_support_control
+from experiments.tcs_async_rl.judge_comparison import judge_settings
 from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, question_key
 from experiments.tcs_async_rl.rl_archive import VM_STARTUP_RESERVE_BYTES, require_vm_startup_space
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
@@ -185,12 +186,13 @@ def start_service(*, input_file, directory, port, training, python, judge_config
         stderr=subprocess.STDOUT,
     )
     log.close()
+    judge = judge_settings(judge_config, json.loads(judge_config.read_text())) if judge_config else training["judge"]
     expected = {
         "ready": True,
         "protocol_version": REWARD_PROTOCOL_VERSION,
         "question_key": service_identity(input_file),
-        "model": training["judge"]["primary_model"],
-        "reasoning_effort": training["judge"]["reasoning_effort"],
+        "model": judge["primary_model"],
+        "reasoning_effort": judge["reasoning_effort"],
     }
     try:
         deadline = time.monotonic() + 60
@@ -238,7 +240,8 @@ def service_controls(*, directory, input_file, port, key):
             with urllib.request.urlopen(request, timeout=1300) as response:
                 outputs[case] = json.load(response)
             save(directory / "online-controls.json", outputs)
-            if outputs[case]["scores"] != [score, score]:
+            presentations = outputs[case].get("judge_presentations", 2)
+            if outputs[case]["scores"] != [score] * presentations:
                 raise ValueError("Online reward controls failed before GPU submission")
 
 

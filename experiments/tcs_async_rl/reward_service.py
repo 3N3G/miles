@@ -12,6 +12,7 @@ from pathlib import Path
 from experiments.tcs_async_rl.grade_group import Budget, grade_one
 from experiments.tcs_async_rl.group_inference import final_answer
 from experiments.tcs_async_rl.judge_client import load_credentials
+from experiments.tcs_async_rl.judge_comparison import judge_settings
 from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, question_key
 from experiments.tcs_async_rl.rl_inputs import question_set_key
 
@@ -21,8 +22,7 @@ class Scorer:
         self.row = json.loads(input_file.read_text())
         self.question_key = question_key(self.row)
         self.config = json.loads(config_path.read_text())
-        training = json.loads((config_path.parent / self.config["training_config"]).read_text())
-        self.judge = training["judge"]
+        self.judge = judge_settings(config_path, self.config)
         self.prompt = (config_path.parent / self.config["prompt_file"]).read_text()
         self.directory = directory
         directory.mkdir(parents=True, exist_ok=True)
@@ -74,6 +74,10 @@ class Scorer:
             raise
 
     async def _score(self, identity, candidate):
+        method = self.config.get("grading_method", "anonymous_pair")
+        if method not in ("anonymous_pair", "reference_guided"):
+            raise ValueError("Unknown grading method")
+        orders = (False, True) if method == "anonymous_pair" else (False,)
         grades = await asyncio.gather(
             *(
                 grade_one(
@@ -89,23 +93,25 @@ class Scorer:
                     semaphore=self.semaphore,
                     directory=self.directory,
                 )
-                for swapped in (False, True)
+                for swapped in orders
             )
         )
         scores = [grade["candidate"]["score"] for grade in grades]
-        if not candidate and scores != [0, 0]:
+        if not candidate and scores != [0] * len(orders):
             raise ValueError("Empty-final rubric control failed; do not reward a truncated empty answer")
         result = {
             "reward": statistics.mean(scores),
-            "judge_order_gap": abs(scores[0] - scores[1]),
             "scores": scores,
             "identity": identity,
         }
+        if method == "anonymous_pair":
+            result["judge_order_gap"] = abs(scores[0] - scores[1])
+        else:
+            # A single reference-guided presentation has no measured order gap.
+            result.update(grading_method=method, judge_presentations=1)
         (self.directory / f"{identity}-score.json").write_text(json.dumps(result, indent=2) + "\n")
         print(
-            json.dumps(
-                {"identity": identity, "reward": result["reward"], "judge_order_gap": result["judge_order_gap"]}
-            ),
+            json.dumps({name: value for name, value in result.items() if name != "scores"}),
             flush=True,
         )
         return result
@@ -121,8 +127,7 @@ class MultiScorer:
         if self.question_key != bundle["question_set_key"]:
             raise ValueError("Reward question collection differs")
         config = json.loads(config_path.read_text())
-        training = json.loads((config_path.parent / config["training_config"]).read_text())
-        self.judge = training["judge"]
+        self.judge = judge_settings(config_path, config)
         directory.mkdir(parents=True, exist_ok=True)
         key = load_credentials(key_file)[self.judge["api_key_env"]]
         budget, semaphore = Budget(directory, config), asyncio.Semaphore(config["max_concurrency"])

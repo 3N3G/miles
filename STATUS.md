@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high matches36/40 total scores and96.79% items. All51 controls pass. Shared spending$0.5342506,536 settled calls. High evidence archive verifies250 artifacts. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Validate the single-reference high runtime, freeze six easy and six medium questions, then execute the approved checkpoint inference screen and twelve-hour continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): High judge and controls pass. Frozen screen: six easy and six medium questions on twelve papers,32 answers each, no updates. All130 CPU checks pass. No GPU job submitted yet. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Run all twelve runtime control triples, stage the committed screen on AMD, and supervise the approved two-hour allocation.
 
 ## Next / blocked
 

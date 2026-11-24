@@ -59,6 +59,19 @@ class RewardHookTests(unittest.TestCase):
             validate_reward({"reward": 1, "judge_order_gap": float("nan")})
         self.assertEqual(validate_reward({"reward": 0, "judge_order_gap": 1}), {"reward": 0.0, "judge_order_gap": 1.0})
 
+    def test_single_reference_has_one_score_and_no_fabricated_order_gap(self):
+        result = {"reward": 5, "scores": [5], "grading_method": "reference_guided", "judge_presentations": 1}
+        self.assertEqual(validate_reward(result), {"reward": 5.0, "judge_presentations": 1.0})
+        for change in (
+            {"judge_order_gap": 0},
+            {"scores": [5, 5]},
+            {"scores": [6]},
+            {"judge_presentations": True},
+            {"grading_method": "unknown"},
+        ):
+            with self.assertRaises(ValueError):
+                validate_reward({**result, **change})
+
 
 class RewardServiceTests(unittest.IsolatedAsyncioTestCase):
     def scorer(self, directory):
@@ -74,6 +87,29 @@ class RewardServiceTests(unittest.IsolatedAsyncioTestCase):
         scorer.semaphore = asyncio.Semaphore(4)
         scorer.in_flight = {}
         return scorer
+
+    async def test_reference_guided_cap_is_actually_judged_once(self):
+        with tempfile.TemporaryDirectory() as directory:
+            scorer = self.scorer(directory)
+            scorer.config = {"grading_method": "reference_guided"}
+            scorer.judge = {"reasoning_effort": "high"}
+
+            async def grade(**kwargs):
+                self.assertEqual(kwargs["candidate"], "")
+                self.assertFalse(kwargs["swapped"])
+                self.assertEqual(kwargs["judge"]["reasoning_effort"], "high")
+                return {"candidate": {"score": 0}, "reference": None}
+
+            with patch("experiments.tcs_async_rl.reward_service.grade_one", side_effect=grade) as mocked:
+                result = await scorer.score(
+                    {"question_key": scorer.question_key, "final_answer": "", "generator_truncated": True}
+                )
+            self.assertEqual(mocked.call_count, 1)
+            self.assertEqual(result["scores"], [0])
+            self.assertNotIn("judge_order_gap", result)
+            self.assertEqual(
+                validate_reward(result), {"reward": 0.0, "judge_presentations": 1.0, "generator_truncated": 1.0}
+            )
 
     async def test_final_only_transport_matches_legacy_grading_exactly(self):
         async def grade(**kwargs):

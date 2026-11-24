@@ -347,6 +347,9 @@ class RolloutExecutor(DedicatedRpcLoopWorker):
 
     # async but never awaits, for the same reason as save
     async def load(self, rollout_id: int, completed_rollout_ids: dict[str, int] | None = None) -> None:
+        if getattr(self.args, "reset_rollout_state", False):
+            logger.info("--reset-rollout-state: initialize fresh rollout state and preserve the restored trainer")
+            return
         if self.args.load is None:
             logger.warning("no --load: the rollout side starts fresh")
             return

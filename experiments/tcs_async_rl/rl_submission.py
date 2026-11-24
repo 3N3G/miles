@@ -18,7 +18,11 @@ from experiments.tcs_async_rl.checkpoint_policy import check_storage
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
 from experiments.tcs_async_rl.resource_estimate import model_inputs
 from experiments.tcs_async_rl.rl_inputs import read_bundle
-from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates, validate_group_gate
+from experiments.tcs_async_rl.rl_smoke import (
+    initial_optimizer_updates,
+    validate_group_gate,
+    validate_judge_qualification,
+)
 
 
 def submit_once(run_dir, job_file, *, invoke=subprocess.run):
@@ -59,20 +63,31 @@ def prepare(*, config_path, run_dir, work_dir, expected_commit):
     ):
         raise ValueError("RL source is not the requested clean frozen commit")
     config, training = load_configs(config_path)
-    input_config, _ = load_configs(config_path.parent / config["input_config"])
-    load_input(input_config, training)
-    grades = json.loads(Path(config["gate_file"]).read_text())
-    if grades.get("input_sha256") != input_config["input_sha256"]:
-        raise ValueError("RL gate input hash differs")
-    sampling = sampling_parameters({"miles_args": {**training["miles_args"], **config["overrides"]}})
-    validate_group_gate(
-        grades,
-        training["miles_args"]["n_samples_per_prompt"],
-        expected_sampling=sampling,
-        policy=config.get("diagnostic_gate_policy", "complete_only"),
-    )
+    if config.get("judge_qualification"):
+        gate_file = validate_judge_qualification(config, config_path.parent)
+        input_sha256 = config["dataset_sha256"]
+    else:
+        input_config, _ = load_configs(config_path.parent / config["input_config"])
+        load_input(input_config, training)
+        gate_file = Path(config["gate_file"])
+        input_sha256 = input_config["input_sha256"]
+        grades = json.loads(gate_file.read_text())
+        if grades.get("input_sha256") != input_sha256:
+            raise ValueError("RL gate input hash differs")
+        sampling = sampling_parameters({"miles_args": {**training["miles_args"], **config["overrides"]}})
+        validate_group_gate(
+            grades,
+            training["miles_args"]["n_samples_per_prompt"],
+            expected_sampling=sampling,
+            policy=config.get("diagnostic_gate_policy", "complete_only"),
+        )
     if config.get("dataset_file"):
-        read_bundle(Path(config["dataset_file"]), expected_sha256=config["dataset_sha256"], training=training)
+        read_bundle(
+            Path(config["dataset_file"]),
+            expected_sha256=config["dataset_sha256"],
+            training=training,
+            contract=config.get("dataset_contract"),
+        )
     if config.get("resume"):
         source = Path(config["resume"]["checkpoint_root"]).resolve()
         if source.name != "checkpoints" or not source.is_relative_to((work_dir / "runs").resolve()):
@@ -98,8 +113,8 @@ def prepare(*, config_path, run_dir, work_dir, expected_commit):
                     "source_commit": actual,
                     "config": str(config_path),
                     "allocation": config["allocation"],
-                    "gate_sha256": hashlib.sha256(Path(config["gate_file"]).read_bytes()).hexdigest(),
-                    "input_sha256": input_config["input_sha256"],
+                    "gate_sha256": hashlib.sha256(gate_file.read_bytes()).hexdigest(),
+                    "input_sha256": input_sha256,
                     "free_bytes": space["free_bytes"],
                     "required_bytes": space["required_bytes"],
                 },

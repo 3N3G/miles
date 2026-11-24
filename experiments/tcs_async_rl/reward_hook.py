@@ -38,10 +38,28 @@ def validate_reward(result):
         or not 0 <= value <= 7
     ):
         raise ValueError("Rubric service returned an invalid seven-point reward")
-    gap = result.get("judge_order_gap")
-    if isinstance(gap, bool) or not isinstance(gap, (int, float)) or not math.isfinite(gap) or not 0 <= gap <= 7:
-        raise ValueError("Rubric service returned an invalid answer-order gap")
-    output = {"reward": float(value), "judge_order_gap": float(gap)}
+    method = result.get("grading_method", "anonymous_pair")
+    output = {"reward": float(value)}
+    if method == "reference_guided":
+        scores = result.get("scores")
+        if (
+            type(result.get("judge_presentations")) is not int
+            or result["judge_presentations"] != 1
+            or not isinstance(scores, list)
+            or len(scores) != 1
+            or type(scores[0]) not in (int, float)
+            or scores[0] != value
+            or "judge_order_gap" in result
+        ):
+            raise ValueError("Invalid single-reference presentation contract")
+        output["judge_presentations"] = 1.0
+    elif method == "anonymous_pair":
+        gap = result.get("judge_order_gap")
+        if isinstance(gap, bool) or not isinstance(gap, (int, float)) or not math.isfinite(gap) or not 0 <= gap <= 7:
+            raise ValueError("Rubric service returned an invalid answer-order gap")
+        output["judge_order_gap"] = float(gap)
+    else:
+        raise ValueError("Unknown grading method in reward response")
     if "generator_truncated" in result:
         if type(result["generator_truncated"]) is not bool:
             raise ValueError("Rubric service returned an invalid generator finish classification")

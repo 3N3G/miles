@@ -16,16 +16,20 @@ def question_set_key(rows):
     return hashlib.sha256(json.dumps(keys, separators=(",", ":")).encode()).hexdigest()
 
 
-def read_bundle(path, *, expected_sha256, training):
+def read_bundle(path, *, expected_sha256, training, contract=None):
     if hashlib.sha256(path.read_bytes()).hexdigest() != expected_sha256:
         raise ValueError("Easy training bundle differs from the frozen input")
     bundle = json.loads(path.read_text())
     rows = bundle["questions"]
-    if len(rows) != 20 or bundle["dataset_revision"] != training["data"]["revision"]:
-        raise ValueError("Expected the approved 20-question dataset revision")
+    contract = contract or {"questions": 20, "difficulties": ["easy"]}
+    if len(rows) != contract["questions"] or bundle["dataset_revision"] != training["data"]["revision"]:
+        raise ValueError("Expected the approved question count and dataset revision")
     for row in rows:
-        if row["difficulty"] != "easy" or row["cohort"] not in training["data"]["eligible_configs"]:
-            raise ValueError("Easy training contains an ineligible question")
+        if (
+            row["difficulty"] not in contract["difficulties"]
+            or row["cohort"] not in training["data"]["eligible_configs"]
+        ):
+            raise ValueError("Training contains an ineligible question")
         rubric_items(row["rubric"])
     if question_set_key(rows) != bundle["question_set_key"]:
         raise ValueError("Training question-set identity differs")

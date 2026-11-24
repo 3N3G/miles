@@ -1,0 +1,116 @@
+{
+  "status": "approved_twelve_question_screen_high_20261124",
+  "mode": "rl_smoke",
+  "job_name": "tcs-screen-high-v1",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.luna_high_20261124.json",
+  "container_config": "qualification.proposed.json",
+  "allocation": {
+    "partition": "mi3508x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 8,
+    "cpus_per_task": 64,
+    "walltime": "02:00:00"
+  },
+  "overrides": {
+    "rollout_batch_size": 4,
+    "global_batch_size": 128,
+    "async_max_concurrent_samples": 96,
+    "rollout_skip_special_tokens": false,
+    "save_interval": 5,
+    "seed": 20261124,
+    "max_position_embeddings": 98304,
+    "custom_rm_path": "experiments.tcs_async_rl.reward_hook.reward",
+    "rm_url": "http://127.0.0.1:18500/score",
+    "use_wandb": false,
+    "wandb_mode": "offline",
+    "wandb_project": "tcs-async-rl",
+    "disable_wandb_random_suffix": true,
+    "wandb_always_use_train_step": true,
+    "use_tensorboard": false,
+    "check_weight_update_equal": true,
+    "wandb_team": "geney",
+    "custom_rollout_log_function_path": "experiments.tcs_async_rl.rl_artifacts.log_rollout",
+    "check_weight_update_skip_list": [
+      "visual."
+    ],
+    "observe_training_entropy": true,
+    "use_kl_loss": true,
+    "kl_loss_coef": 0.0,
+    "kl_loss_type": "low_var_kl",
+    "observe_update_direction_steps": [
+      65,
+      66,
+      70,
+      80,
+      90,
+      100
+    ],
+    "use_checkpoint_opt_param_scheduler": true,
+    "save_trigger_sentinel": "/work1/aviralkumar/geney/tcs-async-rl/runs/difficulty-screen-high-v1/checkpoint-request",
+    "single_checkpoint": false,
+    "rollout_seed": 20261124,
+    "reset_rollout_state": true,
+    "eval_interval": 1,
+    "eval_prompt_data": [
+      "difficulty_screen",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/difficulty-screen-high-v1/input.jsonl"
+    ],
+    "n_samples_per_eval_prompt": 32,
+    "eval_temperature": 1.0,
+    "eval_top_p": 0.95,
+    "eval_top_k": 20,
+    "eval_max_response_len": 90000,
+    "sglang_server_concurrency": 32,
+    "log_inference_engine_weight_checksums": true
+  },
+  "scope": {
+    "purpose": "Fixed six-easy and six-medium screen from saved checkpoint108 under the selected Luna-high judge, with no optimizer updates",
+    "prompt_count": 12,
+    "optimizer_updates": 0,
+    "heldout_reads": 0,
+    "maximum_gpu_hours": 16,
+    "judge_usd_cap": 25,
+    "retained_checkpoints": 0
+  },
+  "dataset_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/screen-12-bundle-high-v1.json",
+  "dataset_sha256": "4ecded3e9db2947b19eb13ca8f1589a239b206f6607c684eae88f04da8fbbea0",
+  "artifact_compression": "gzip",
+  "incremental_archive": true,
+  "judge_config": "judge_group_reference_high_20261124.json",
+  "resume": {
+    "checkpoint_root": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/checkpoints",
+    "iteration": 108,
+    "source_run": "easy-overfit-v17"
+  },
+  "wandb_metrics_source": "native_vm",
+  "archive_interval_seconds": 600,
+  "execution": "checkpoint_screen",
+  "dataset_contract": {
+    "questions": 12,
+    "difficulties": [
+      "easy",
+      "medium"
+    ]
+  },
+  "source_publication_file": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/events/main.jsonl",
+  "judge_qualification": {
+    "selection": {
+      "file": "evidence/judge_high_selection_20261124.json",
+      "sha256": "932ce4d6c0c480f64ae9ba3796e139c674525cfb41ef24a91fe937402d8604a6"
+    },
+    "comparison": {
+      "file": "evidence/judge_high_comparison_20261124.json",
+      "sha256": "192ab9bf3ef5c9dc07ef413ea21af618413e7310fb79185e3df2140e50354b52"
+    },
+    "controls": {
+      "file": "evidence/judge_high_controls_20261124.json",
+      "sha256": "b08b3f1705c8a39089a09770490298ce5bf42039fd0725b40a70f93681e15749"
+    },
+    "runtime_config_sha256": "9725961b96a0e04e01b8f2412b92268fddf10319d5e90a92d604a7f71811409e",
+    "training_config_sha256": "2344da3a1dc6b08dd73e9ac8be86ad092ab6a1417ba62ed073d47c2f3a177427",
+    "prompt_sha256": "527da9b5b47473fa1912dab4a6e21874053520c31259ba7dac55fefd45779e1a"
+  }
+}

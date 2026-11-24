@@ -121,12 +121,12 @@ def publication_checks(directory, rows, native):
         "concurrent_prompt_groups": args["async_max_concurrent_samples"] // args["n_samples_per_prompt"],
         "capped_with_positive_reward": sum(r["status"] == "truncated" and r["reward"] > 0 for r in rows),
         "capped_with_zero_reward": sum(r["status"] == "truncated" and r["reward"] == 0 for r in rows),
-        "judge_gap_at_least_2": sum(r["order_gap"] >= 2 for r in rows),
-        "judge_gap_at_least_3": sum(r["order_gap"] >= 3 for r in rows),
+        "judge_gap_at_least_2": sum(r["order_gap"] >= 2 for r in rows if r["order_gap"] is not None),
+        "judge_gap_at_least_3": sum(r["order_gap"] >= 3 for r in rows if r["order_gap"] is not None),
         "reference_below_seven_examples": [
             {k: r[k] for k in ["optimizer_step", "sample_index", "minimum_reference_score", "judge_identity"]}
             for r in rows
-            if r["minimum_reference_score"] < 7
+            if r["minimum_reference_score"] is not None and r["minimum_reference_score"] < 7
         ],
         "arguments": {name: args[name] for name in argument_names},
         "new_gpu_jobs": 0,
@@ -184,6 +184,25 @@ def judge_receipts(directory, question, sample):
     folder = directory / "judging" / sample["metadata"]["question_key"]
     identity = sample["judge_identity"]
     score = json.loads((folder / f"{identity}-score.json").read_text())
+    if score.get("grading_method") == "reference_guided":
+        receipt = completed_judge_receipt(folder, identity, 0)
+        request = json.loads(receipt["payload"]["messages"][1]["content"])
+        assert request == {
+            "problem": question["problem"],
+            "rubric": question["rubric"],
+            "reference_solution": question["answer"],
+            "candidate_solution": sample["final_answer"] or "",
+        }
+        grade = parse_grade(
+            receipt["body"]["choices"][0]["message"]["content"],
+            rubric_items(question["rubric"]),
+            answer_labels=("candidate",),
+        )["candidate"]
+        assert score["scores"] == [grade["score"]]
+        assert score["judge_presentations"] == sample["reward"]["judge_presentations"] == 1
+        assert grade["score"] == score["reward"] == sample["reward"]["reward"]
+        assert "judge_order_gap" not in score and "judge_order_gap" not in sample["reward"]
+        return {"order_scores": [grade["score"]], "reference_scores": [], "candidate_decisions": [grade["items"]]}
     orders, refs, decisions = [], [], []
     for order in (0, 1):
         receipt = completed_judge_receipt(folder, identity, order)
@@ -266,9 +285,13 @@ def read_samples(directory, traces, output, *, optimizer_steps):
                     "prompt_type": question["prompt_type"],
                     "reward": sample["reward"]["reward"],
                     "order0": judge["order_scores"][0],
-                    "order1": judge["order_scores"][1],
-                    "order_gap": abs(judge["order_scores"][0] - judge["order_scores"][1]),
-                    "minimum_reference_score": min(judge["reference_scores"]),
+                    "order1": judge["order_scores"][1] if len(judge["order_scores"]) == 2 else None,
+                    "order_gap": (
+                        abs(judge["order_scores"][0] - judge["order_scores"][1])
+                        if len(judge["order_scores"]) == 2
+                        else None
+                    ),
+                    "minimum_reference_score": min(judge["reference_scores"], default=None),
                     "status": sample["status"],
                     "judge_identity": sample["judge_identity"],
                     **trace_summary(sample),
@@ -306,13 +329,21 @@ def read_samples(directory, traces, output, *, optimizer_steps):
                 "full_credit_rate": scores.count(7) / len(group),
                 "cap_rate": sum(s["status"] == "truncated" for s in group) / len(group),
                 "mean_tokens": statistics.mean(s["response_tokens"] for s in group),
-                "mean_order_gap": statistics.mean(s["order_gap"] for s in group),
-                "order_disagreement_rate": sum(s["order_gap"] > 0 for s in group) / len(group),
+                "mean_order_gap": (
+                    statistics.mean(s["order_gap"] for s in group if s["order_gap"] is not None)
+                    if any(s["order_gap"] is not None for s in group)
+                    else None
+                ),
+                "order_disagreement_rate": (
+                    sum(s["order_gap"] > 0 for s in group if s["order_gap"] is not None) / len(group)
+                    if all(s["order_gap"] is not None for s in group)
+                    else None
+                ),
                 "example": examples[-1],
             }
         )
         print(
-            f"Validated group {step}: samples, both judge orders, log-probs, loss masks, support and versions",
+            f"Validated group {step}: samples, judge receipts, log-probs, loss masks, support and versions",
             flush=True,
         )
     return rows, groups
@@ -380,10 +411,17 @@ def analyze(directory, traces, output):
         ],
         "zero_answers": sum(r["reward"] == 0 for r in rows),
         "full_credit_answers": sum(r["reward"] == 7 for r in rows),
-        "judge_order_disagreements": sum(r["order_gap"] > 0 for r in rows),
-        "mean_judge_order_gap": statistics.mean(r["order_gap"] for r in rows),
-        "maximum_judge_order_gap": max(r["order_gap"] for r in rows),
-        "reference_below_full_credit": sum(r["minimum_reference_score"] < 7 for r in rows),
+        "judge_order_presentations_measured": sum(r["order_gap"] is not None for r in rows),
+        "judge_order_disagreements": sum(r["order_gap"] > 0 for r in rows if r["order_gap"] is not None),
+        "mean_judge_order_gap": (
+            statistics.mean(r["order_gap"] for r in rows if r["order_gap"] is not None)
+            if any(r["order_gap"] is not None for r in rows)
+            else None
+        ),
+        "maximum_judge_order_gap": max((r["order_gap"] for r in rows if r["order_gap"] is not None), default=None),
+        "reference_below_full_credit": sum(
+            r["minimum_reference_score"] < 7 for r in rows if r["minimum_reference_score"] is not None
+        ),
         "generated_tokens": tokens,
         "mean_tokens_per_answer": tokens / len(rows),
         "capped_answers": len(caps),

@@ -1,0 +1,19 @@
+{
+  "training_config": "config.luna_high_20261124.json",
+  "prompt_file": "rubric_judge_reference_v2.txt",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "max_concurrency": 8,
+  "max_attempts": 3,
+  "timeout_seconds": 600,
+  "usd_cap": 25,
+  "input_usd_per_million": 0.1,
+  "output_usd_per_million": 0.5,
+  "long_input_threshold_tokens": 272000,
+  "long_input_multiplier": 2,
+  "long_output_multiplier": 1.5,
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+  "grade_status": "passed_frozen_assistant_agreement_and_controls_high_20261124",
+  "answer_extraction": "Final answer only. A recorded empty model-token-cap is judged by the same rubric, with no substituted provider errors.",
+  "length_retry_max_completion_tokens": 32768,
+  "grading_method": "reference_guided"
+}

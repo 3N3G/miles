@@ -170,8 +170,11 @@ def main():
     args = parser.parse_args()
     args.run_dir.mkdir(parents=True, exist_ok=True)
     config, training = load_configs(args.config)
-    input_config, _ = load_configs(args.config.parent / config["input_config"])
-    expected_hash = config.get("dataset_sha256", input_config["input_sha256"])
+    if config.get("dataset_sha256"):
+        expected_hash = config["dataset_sha256"]
+    else:
+        input_config, _ = load_configs(args.config.parent / config["input_config"])
+        expected_hash = input_config["input_sha256"]
     if hashlib.sha256(args.input_file.read_bytes()).hexdigest() != expected_hash:
         raise ValueError("Tunnel input does not match the approved question")
     address = urlsplit(config["overrides"]["rm_url"])

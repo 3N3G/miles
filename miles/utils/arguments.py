@@ -1600,6 +1600,14 @@ def get_miles_extra_args_provider(add_custom_arguments=None):
                 "--ref-ckpt-step", type=int, default=None, help="The checkpoint step for reference model. "
             )
             reset_arg(parser, "--load", type=str, default=None)
+            parser.add_argument(
+                "--reset-rollout-state",
+                action="store_true",
+                help=(
+                    "Restore trainer state while initializing fresh rollout queues, data position and sampling state. "
+                    "Use when starting a new data or reward phase from an existing model checkpoint."
+                ),
+            )
             reset_arg(parser, "--save", type=str, default=None)
             reset_arg(parser, "--save-interval", type=int, default=None)
             reset_arg(parser, "--async-save", action="store_true")

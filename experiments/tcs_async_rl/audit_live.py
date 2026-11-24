@@ -82,9 +82,16 @@ def audit(directory, output, traces):
         "audited_optimizer_steps": sorted(group["optimizer_step"] for group in previous_groups),
         "answers": len(previous_rows),
         "response_tokens": sum(row["response_tokens"] for row in previous_rows),
-        "judge_order_disagreements": sum(row["order_gap"] > 0 for row in previous_rows),
-        "reference_scores_below_seven": sum(row["minimum_reference_score"] < 7 for row in previous_rows),
-        "maximum_order_gap": max((row["order_gap"] for row in previous_rows), default=None),
+        "judge_order_disagreements": sum(
+            row["order_gap"] > 0 for row in previous_rows if row["order_gap"] is not None
+        ),
+        "reference_scores_below_seven": sum(
+            row["minimum_reference_score"] < 7 for row in previous_rows if row["minimum_reference_score"] is not None
+        ),
+        "reference_scores_measured": sum(row["minimum_reference_score"] is not None for row in previous_rows),
+        "maximum_order_gap": max(
+            (row["order_gap"] for row in previous_rows if row["order_gap"] is not None), default=None
+        ),
         "new_inference_or_judge_calls": 0,
         "analysis_source_commit": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
     }
