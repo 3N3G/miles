@@ -1,0 +1,71 @@
+# Four-problem continuation: operations
+
+The user confirmed that “Do it” approves the concrete run and resource choices discussed.
+The approved run has ten new updates, four hours on eight MI350 GPUs, and a separate $5 judge ledger.
+The earlier ledger remains unchanged. All original checkpoints remain preserved because AMD now has sufficient space.
+
+## Submission and immutable source
+
+- AMD job: **544406**, `tcs-easy-overfit-v17`, user `geney`, allocation `k007-004`.
+- Submitted: **2026-11-24 01:15:23 UTC**. Started: **01:15:40 UTC**.
+- Source: **`ae2ba558539c15188c19b3c5c112acaffee4210f`**.
+- Configuration: `rl_easy_overfit_v17.json` at that source commit. The earlier proposed JSON remains unchanged.
+- Resume: v16 iteration **98**, containing 99 saved optimizer updates.
+- Target: global updates **99–108**, with four problem groups and 128 consumed answers per update.
+- Requeue is disabled after checking scheduler owner and job name.
+- No source checkpoint or old result was deleted.
+
+AMD run: `/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17`.
+AMD frozen checkout: `/work1/aviralkumar/geney/tcs-async-rl/checkouts/easy-overfit-v17`.
+VM run: `/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-overfit-v17`.
+VM controller checkout: `/home/ubuntu/.cache/miles/tcs-async-rl/checkouts/easy-overfit-controller-v17`.
+
+The normal `auto_rl` controller verified the unchanged diagnostic gate and all 60 question-specific controls.
+Its 120 cached provider receipts match exact payload hashes, judge model, effort, prompt and expected rubric outcomes.
+It made no new control requests. `control-cache-provenance.json` preserves the source receipts and hashes.
+
+## Durable artifacts and bounded staging
+
+The private Hugging Face dataset `3N3G/internalization-runs` owns durable artifacts.
+Existing authentication verifies both read and write access. No new key or credential transfer is needed.
+Raw outputs, consumed batches, grade receipts, metrics and plots use `push-run miles`.
+Checkpoints remain on AMD. The VM retains operational metadata and bounded temporary staging.
+
+The 128-answer batch can produce a compressed trace above the earlier 64-MiB transfer target.
+The transfer now permits one oversized atomic file at a time if it fits the one-GiB VM reserve.
+After upload, the verifier checks each immutable Hub LFS SHA256 or Git blob hash and file size.
+Only a verified trace is indexed and removed from VM staging. Upload or verification failure preserves both copies.
+All 117 TCS tests pass, including oversized transfer, wrong remote hashes and local-retention controls.
+The verifier also passed a real 26,851,630-byte trace readback.
+
+Preflight archive: **`b769323264180c4feac67b42380952f02d587d66`**, folder `miles/easy-overfit-v17-preflight`.
+Five immutable file readbacks verify its approved config, cached-control provenance, diagnostic gate,
+actual Hub-hash control and preparation receipt. The receipt remains under that preflight's `archive-readbacks/`.
+
+## Supervision
+
+Session UUID: `01a1ed24-1032-7731-910b-824f484f5f71`, VM `home`, original directory `/home/ubuntu/miles`.
+Owned VM process receipts record controller **1382535**, reward service **1382542**,
+metrics observer **1382881**, GPU telemetry **1382882**, and hourly review **1382883**.
+Verify the receipts and current process identity before managing a process.
+
+Watch through terminal scheduler state, checkpoint inspection, immutable uploads and W&B readback.
+Inspect optimizer progress, finite metrics, actual four-by-32 batch shape, within-problem reward variation,
+entropy, divergence, gradient norms, update direction, engine publications, policy lag, provider failures and both disks.
+Read actual proofs and both grading decisions at least hourly. A startup success does not finish supervision.
+
+Keep the single-checkpoint policy. If unfinished with 30 minutes left, or judge spend plus reservations reaches $4,
+record the intent and write this run's `checkpoint-request` sentinel once after owner/name validation.
+Finish the active batch, verify the checkpoint tracker/files and its actual three-engine weight publication,
+then stop only the owned allocation if the save was early. Never fabricate a reward after a budget rejection.
+The remaining dollar is reserved for larger pending batches. Do not reset the ledger or enlarge any limit.
+
+W&B uses one VM-native history writer in `geney/tcs-async-rl`, with explicit optimizer coordinates.
+The independent observer keeps metrics and no-history heartbeat refreshes moving during artifact uploads.
+Do not merge the separate AMD offline streams into that history.
+
+## Current qualification
+
+The allocation is running. Ray startup is recorded. Actual checkpoint restoration, first backward update,
+128-answer export, engine publication and native W&B point remain to verify.
+No learning or variance-reduction result is claimed at startup.

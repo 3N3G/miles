@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 544406 is RUNNING Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 544406 is running the approved four-problem batch128 continuation. Hub read/write access and five immutable preflight hashes pass; all checkpoints remain preserved. Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
+  Next: Verify restored iteration98, the first complete four-by-32 update and W&B metrics. Watch budgets, proofs and native engine publications through terminal archival.
 
 ## Next / blocked
 

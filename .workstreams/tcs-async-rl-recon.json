@@ -273,6 +273,14 @@
   ],
   "evidence": [
     {
+      "path": "experiments/tcs_async_rl/RUN_V17_OPERATIONS_20261123.md",
+      "label": "Actual batch128 submission, source, private artifacts and owned supervision"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/multiproblem_submission_preflight_20261123.json",
+      "label": "Approved resource limits, working Hub access, restored AMD storage and 117 passing tests"
+    },
+    {
       "path": "experiments/tcs_async_rl/MULTIPROBLEM_BATCH_PLAN_20261123.md",
       "label": "Approved batch change, proposed bounded run and resource decisions"
     },
@@ -2980,15 +2988,22 @@
       "actor": "codex",
       "summary": "RL job 544406 is RUNNING",
       "revision": 278
+    },
+    {
+      "id": "22adfaf3-b11f-412c-85e8-22790e8b9d94",
+      "at": "2026-11-24T01:17:58.707230Z",
+      "actor": "codex",
+      "summary": "Record actual running batch128 allocation and verified private artifact storage",
+      "revision": 279
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "RL job 544406 is RUNNING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "AMD 544406 is running the approved four-problem batch128 continuation. Hub read/write access and five immutable preflight hashes pass; all checkpoints remain preserved.",
+  "nextAction": "Verify restored iteration98, the first complete four-by-32 update and W&B metrics. Watch budgets, proofs and native engine publications through terminal archival.",
   "owner": "Codex",
-  "revision": 278,
-  "updatedAt": "2026-11-24T01:16:30.945691Z"
+  "revision": 279,
+  "updatedAt": "2026-11-24T01:17:58.707230Z"
 }
