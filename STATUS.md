@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 544406 ended COMPLETED; acceptance True Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Batch128 run complete and fully archived: ten saved updates, all811 W&B scalars verified; matched rewards change plus0.025/7 Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Review human calibration before choosing another bounded experiment. This run, checkpoint, private archives and process closure are verified.
 
 ## Finished
 
