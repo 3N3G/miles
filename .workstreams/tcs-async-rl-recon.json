@@ -3030,15 +3030,22 @@
       "actor": "codex",
       "summary": "Six batch128 updates pass all 768 answer/receipt/trace checks. Four repeated questions decline by 0.305/7; runtime health and cloud storage verify.",
       "revision": 284
+    },
+    {
+      "id": "61854384-61ca-492f-9a1d-b706a9c536ce",
+      "at": "2026-11-24T03:17:10.632655Z",
+      "actor": "codex",
+      "summary": "Second hourly review: eight finite batch128 updates and 1024 answers; eleven repeated questions average minus 0.121 reward points",
+      "revision": 285
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Six batch128 updates pass all 768 answer/receipt/trace checks. Four repeated questions decline by 0.305/7; runtime health and cloud storage verify.",
-  "nextAction": "Finish the bounded run, inspect later matched visits, then verify the single checkpoint, immutable archives and final W&B history.",
+  "summary": "Second hourly review: eight finite batch128 updates and 1024 answers; eleven repeated questions average minus 0.121 reward points",
+  "nextAction": "Finish within the four-hour/$5 limits, request the one checkpoint at its trigger, and verify saved updates, cloud artifacts and W&B closure.",
   "owner": "Codex",
-  "revision": 284,
-  "updatedAt": "2026-11-24T03:01:32.798641Z"
+  "revision": 285,
+  "updatedAt": "2026-11-24T03:17:10.632655Z"
 }

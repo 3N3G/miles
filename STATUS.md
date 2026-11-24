@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Six batch128 updates pass all 768 answer/receipt/trace checks. Four repeated questions decline by 0.305/7; runtime health and cloud storage verify. Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
-  Next: Finish the bounded run, inspect later matched visits, then verify the single checkpoint, immutable archives and final W&B history.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Second hourly review: eight finite batch128 updates and 1024 answers; eleven repeated questions average minus 0.121 reward points Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
+  Next: Finish within the four-hour/$5 limits, request the one checkpoint at its trigger, and verify saved updates, cloud artifacts and W&B closure.
 
 ## Next / blocked
 
