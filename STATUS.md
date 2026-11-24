@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved the concrete ten-update, four-hour batch128 run and discussed resource choices. Verifying Hugging Face storage and AMD space before launch. Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
+  Next: Verify private archive access, resolve AMD space without losing retained checkpoints, freeze the approved config and submit once. Supervise the run and keep VM staging bounded.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Four-problem ×32-answer batch prepared and 114 tests pass. Submission needs a new budget and 83.1 GB more free AMD storage. Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Resolve the new run budget and 83.1 GB storage shortfall. Then freeze the config, submit once, verify the 128-answer update, and supervise through terminal archival.
+- Nothing recorded.
 
 ## Finished
 
