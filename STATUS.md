@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 544406 Jobs: hpcfund/544406 SUBMITTED; hpcfund/540286 CANCELLED
-  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 544406 is PENDING Jobs: hpcfund/544406 PENDING; hpcfund/540286 CANCELLED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
