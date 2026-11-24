@@ -22,6 +22,8 @@ def summarize(directory):
         raise ValueError("Screen input changed")
     questions = {question_key(row): row for row in json.loads(input_file.read_text())["questions"]}
     config = json.loads((directory / "approved-config.json").read_text())
+    if complete["checkpoint_rollout_id"] != config["resume"]["iteration"]:
+        raise ValueError("Screen restored a different checkpoint iteration than its frozen plan")
     for key in questions:
         manifest = json.loads((directory / "judging" / key / "service-manifest.json").read_text())
         if (

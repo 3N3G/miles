@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD screen 546404 is PENDING; judge validation has thirteen verified W&B scalars Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
-  Next: Watch the approved checkpoint screen, audit its medium answers, and submit the frozen continuation under the shared resource limits.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD screen 546404 remains pending; four-question audit matches 128 prior answers and native batch means. Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
+  Next: Watch the approved screen, audit medium proofs, then freeze and submit the twelve-hour continuation within its shared limits.
 
 ## Next / blocked
 

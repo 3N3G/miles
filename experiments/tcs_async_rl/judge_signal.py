@@ -26,6 +26,8 @@ def summarize(samples):
             raise ValueError("Duplicate consumed answer")
         identities.add(identity)
         a, b = row["order0"], row["order1"]
+        if a is None or b is None:
+            raise ValueError("This diagnostic requires two measured judge presentations")
         if not all(math.isfinite(value) for value in (a, b, row["reward"])):
             raise ValueError("Nonfinite judge score")
         if (a + b) / 2 != row["reward"]:

@@ -8,7 +8,13 @@ import json
 import statistics
 from pathlib import Path
 
-from experiments.tcs_async_rl.diagnose_rl import describe, question_comparisons, save
+from experiments.tcs_async_rl.diagnose_rl import (
+    describe,
+    per_question_steps,
+    question_comparisons,
+    save,
+    validate_group_metrics,
+)
 from experiments.tcs_async_rl.native_metrics import read_native_metrics
 from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates
 
@@ -78,12 +84,10 @@ def summarize(directory, output):
     by_step = {row["optimizer_step"]: row for row in native}
     groups = json.loads((output / "groups.json").read_text())
     samples = json.loads((output / "samples.json").read_text())
-    for group in groups:
-        metrics = by_step[group["optimizer_step"]]
-        if group["mean_reward"] != metrics["rollout/episode_raw_reward"]:
-            raise ValueError("Audited group reward differs from native training")
+    validate_group_metrics(groups, native)
+    question_steps = per_question_steps(groups)
     visits = collections.defaultdict(list)
-    for group in groups:
+    for group in question_steps:
         visits[group["question_key"]].append(group)
     coverage = [
         {
@@ -98,11 +102,11 @@ def summarize(directory, output):
         for key, entries in visits.items()
     ]
     pairs = question_comparisons(groups)
-    groups_by_step = {group["optimizer_step"]: group for group in groups}
+    groups_by_step = {(group["optimizer_step"], group["question_key"]): group for group in question_steps}
     matched = {}
     for metric in ("full_credit_rate", "zero_rate", "mean_tokens", "cap_rate"):
-        first = [groups_by_step[pair["first_step"]][metric] for pair in pairs]
-        last = [groups_by_step[pair["last_step"]][metric] for pair in pairs]
+        first = [groups_by_step[(pair["first_step"], pair["question_key"])][metric] for pair in pairs]
+        last = [groups_by_step[(pair["last_step"], pair["question_key"])][metric] for pair in pairs]
         matched[metric] = {
             "questions": len(pairs),
             "first_mean": statistics.mean(first) if first else None,
@@ -142,9 +146,19 @@ def summarize(directory, output):
         "capped_token_fraction": sum(sample["response_tokens"] for sample in caps) / tokens,
         "tokens_with_singleton_support_fraction": sum(sample["tokens_with_support_size_one"] for sample in samples)
         / tokens,
-        "judge_order_disagreements": sum(sample["order_gap"] > 0 for sample in samples),
-        "maximum_judge_order_gap": max(sample["order_gap"] for sample in samples),
-        "reference_scores_below_seven": sum(sample["minimum_reference_score"] < 7 for sample in samples),
+        "judge_order_measurements": sum(sample["order_gap"] is not None for sample in samples),
+        "judge_order_disagreements": sum(
+            sample["order_gap"] > 0 for sample in samples if sample["order_gap"] is not None
+        ),
+        "maximum_judge_order_gap": max(
+            (sample["order_gap"] for sample in samples if sample["order_gap"] is not None), default=None
+        ),
+        "reference_scores_measured": sum(sample["minimum_reference_score"] is not None for sample in samples),
+        "reference_scores_below_seven": sum(
+            sample["minimum_reference_score"] < 7
+            for sample in samples
+            if sample["minimum_reference_score"] is not None
+        ),
         "judge_usd_spent_or_reserved": sum(json.loads(line)["usd_delta"] for line in budget.read_text().splitlines()),
         "native_metric_ranges": {
             key: describe([row[key] for row in native if key in row])

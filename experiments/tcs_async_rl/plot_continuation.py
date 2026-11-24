@@ -149,15 +149,26 @@ def plot(directory):
     finish(fig, "generation-cost.png")
 
     fig, ax = plt.subplots(figsize=(8, 4))
-    gaps = [sample["order_gap"] for sample in samples]
-    xs = sorted(set(gaps))
-    ax.bar(xs, [gaps.count(x) for x in xs], width=0.4, color=blue)
-    ax.set(
-        xlabel="Absolute rubric-point difference after swapping answer order",
-        ylabel="Consumed answers",
-        ylim=(0, None),
-        title=f"{sum(g > 0 for g in gaps)}/{len(gaps)} answers received different order scores",
-    )
+    gaps = [sample["order_gap"] for sample in samples if sample["order_gap"] is not None]
+    if gaps:
+        xs = sorted(set(gaps))
+        ax.bar(xs, [gaps.count(x) for x in xs], width=0.4, color=blue)
+        ax.set(
+            xlabel="Absolute rubric-point difference after swapping answer order",
+            ylabel="Consumed answers",
+            ylim=(0, None),
+            title=f"{sum(g > 0 for g in gaps)}/{len(gaps)} answers received different order scores",
+        )
+    else:
+        ax.text(
+            0.5,
+            0.5,
+            "Answer-order disagreement was not measured.\nThis recipe uses one labeled-reference presentation.",
+            ha="center",
+            va="center",
+            transform=ax.transAxes,
+        )
+        ax.set_axis_off()
     finish(fig, "judge-order-disagreement.png")
 
 

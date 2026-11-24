@@ -31,9 +31,59 @@ def describe(values):
     return {"n": len(values), "mean": statistics.mean(values), "min": min(values), "max": max(values)}
 
 
+def per_question_steps(groups):
+    """Combine repeated prompt groups at the same optimizer-update coordinate."""
+    grouped = collections.defaultdict(list)
+    for group in groups:
+        grouped[(group["optimizer_step"], group["question_key"])].append(group)
+    result = []
+    for members in grouped.values():
+        if len(members) == 1:
+            result.append(members[0])
+            continue
+        counts = [row.get("samples", 32) for row in members]
+        total = sum(counts)
+        merged = {
+            **members[0],
+            "samples": total,
+            "merged_prompt_groups": len(members),
+            "group_index": None,
+            "group_indices": [row.get("group_index") for row in members],
+        }
+        for key in ("mean_reward", "mean_tokens", "cap_rate", "full_credit_rate", "zero_rate"):
+            if all(key in row for row in members):
+                merged[key] = sum(count * row[key] for count, row in zip(counts, members, strict=True)) / total
+        if all("reward_std" in row for row in members):
+            square_sum = sum(
+                (count - 1) * row["reward_std"] ** 2 + count * (row["mean_reward"] - merged["mean_reward"]) ** 2
+                for count, row in zip(counts, members, strict=True)
+            )
+            merged["reward_std"] = math.sqrt(square_sum / (total - 1))
+            merged["conditional_answer_sampling_se"] = merged["reward_std"] / math.sqrt(total)
+        result.append(merged)
+    return result
+
+
+def validate_group_metrics(groups, native):
+    """Compare complete optimizer batches with their sample-weighted group summaries."""
+    by_step = {row["optimizer_step"]: row for row in native}
+    grouped = collections.defaultdict(list)
+    for group in groups:
+        grouped[group["optimizer_step"]].append(group)
+    for step, members in grouped.items():
+        total = sum(row["samples"] for row in members)
+        for group_key, native_key in (
+            ("mean_reward", "rollout/episode_raw_reward"),
+            ("mean_tokens", "rollout/response_lengths"),
+        ):
+            observed = sum(row["samples"] * row[group_key] for row in members) / total
+            if not math.isclose(observed, by_step[step][native_key], rel_tol=0, abs_tol=1e-8):
+                raise ValueError("Audited optimizer-batch means differ from native training metrics")
+
+
 def question_comparisons(groups):
     visits = collections.defaultdict(list)
-    for group in groups:
+    for group in per_question_steps(groups):
         visits[group["question_key"]].append(group)
     pairs = []
     for key, entries in visits.items():
@@ -266,17 +316,24 @@ def trace_summary(sample):
 def read_samples(directory, traces, output, *, optimizer_steps):
     questions = {question_key(q): q for q in json.loads((directory / "input.json").read_text())["questions"]}
     archive = json.loads((directory / "archive-index.json").read_text())
-    rows, groups, judge_cache, examples = [], [], {}, []
+    resolved = directory / "resolved-config.json"
+    args = json.loads(resolved.read_text())["args"] if resolved.exists() else {}
+    group_size, batch_size = args.get("n_samples_per_prompt", 32), args.get("global_batch_size", 32)
+    seed = args.get("seed", 20261118)
+    rows, groups, judge_cache = [], [], {}
     for step in optimizer_steps:
         name = f"rollout_data/rollout-{step}.jsonl.gz"
         path = traces / name
         assert file_sha256(path) == archive[name]["sha256"], name
-        group = []
-        selected = random.Random(20261118).randrange(32)
+        step_groups, examples = collections.defaultdict(list), {}
+        selected = random.Random(seed).randrange(group_size)
         with gzip.open(path, "rt") as stream:
-            for position, line in enumerate(stream):
+            for line in stream:
                 sample = json.loads(line)
                 assert sample["optimizer_rollout_id"] == step
+                group_index = sample["group_index"]
+                if batch_size > group_size and type(group_index) is not int:
+                    raise ValueError("Multi-question training requires recorded prompt-group identities")
                 key = sample["metadata"]["question_key"]
                 question = questions[key]
                 cache_key = (key, sample["judge_identity"])
@@ -287,9 +344,11 @@ def read_samples(directory, traces, output, *, optimizer_steps):
                 row = {
                     "optimizer_step": step,
                     "sample_index": sample["index"],
+                    "group_index": group_index,
                     "question_key": key,
                     "paper_id": question["paper_id"],
                     "prompt_type": question["prompt_type"],
+                    "difficulty": question.get("difficulty"),
                     "reward": sample["reward"]["reward"],
                     "order0": judge["order_scores"][0],
                     "order1": judge["order_scores"][1] if len(judge["order_scores"]) == 2 else None,
@@ -304,12 +363,13 @@ def read_samples(directory, traces, output, *, optimizer_steps):
                     **trace_summary(sample),
                 }
                 rows.append(row)
+                group = step_groups[group_index]
                 group.append(row)
-                if position == selected:
+                if len(group) - 1 == selected:
                     example = {
                         "optimizer_step": step,
                         "sample_index": sample["index"],
-                        "selection": "Random(20261118).randrange(32) within each group",
+                        "selection": f"Random({seed}).randrange({group_size}) within each group",
                         "question": question,
                         "response": sample["response"],
                         "final_answer": sample["final_answer"],
@@ -317,38 +377,44 @@ def read_samples(directory, traces, output, *, optimizer_steps):
                         "judge": judge,
                         "trace": row,
                     }
-                    target = output / f"example-step-{step}.json"
+                    suffix = f"-group-{group_index}" if batch_size > group_size else ""
+                    target = output / f"example-step-{step}{suffix}.json"
                     save(target, example)
-                    examples.append(target.name)
-        assert len(group) == 32 and len({s["question_key"] for s in group}) == 1
-        scores = [s["reward"] for s in group]
-        groups.append(
-            {
-                "optimizer_step": step,
-                "question_key": group[0]["question_key"],
-                "paper_id": group[0]["paper_id"],
-                "prompt_type": group[0]["prompt_type"],
-                "samples": len(group),
-                "mean_reward": statistics.mean(scores),
-                "reward_std": statistics.stdev(scores),
-                "conditional_answer_sampling_se": statistics.stdev(scores) / math.sqrt(len(group)),
-                "zero_rate": scores.count(0) / len(group),
-                "full_credit_rate": scores.count(7) / len(group),
-                "cap_rate": sum(s["status"] == "truncated" for s in group) / len(group),
-                "mean_tokens": statistics.mean(s["response_tokens"] for s in group),
-                "mean_order_gap": (
-                    statistics.mean(s["order_gap"] for s in group if s["order_gap"] is not None)
-                    if any(s["order_gap"] is not None for s in group)
-                    else None
-                ),
-                "order_disagreement_rate": (
-                    sum(s["order_gap"] > 0 for s in group if s["order_gap"] is not None) / len(group)
-                    if all(s["order_gap"] is not None for s in group)
-                    else None
-                ),
-                "example": examples[-1],
-            }
-        )
+                    examples[group_index] = target.name
+        assert sum(len(group) for group in step_groups.values()) == batch_size
+        for group_index, group in step_groups.items():
+            assert len(group) == group_size and len({s["question_key"] for s in group}) == 1
+            assert len({s["sample_index"] for s in group}) == group_size
+            scores = [s["reward"] for s in group]
+            groups.append(
+                {
+                    "optimizer_step": step,
+                    "group_index": group_index,
+                    "question_key": group[0]["question_key"],
+                    "paper_id": group[0]["paper_id"],
+                    "prompt_type": group[0]["prompt_type"],
+                    "difficulty": group[0]["difficulty"],
+                    "samples": len(group),
+                    "mean_reward": statistics.mean(scores),
+                    "reward_std": statistics.stdev(scores),
+                    "conditional_answer_sampling_se": statistics.stdev(scores) / math.sqrt(len(group)),
+                    "zero_rate": scores.count(0) / len(group),
+                    "full_credit_rate": scores.count(7) / len(group),
+                    "cap_rate": sum(s["status"] == "truncated" for s in group) / len(group),
+                    "mean_tokens": statistics.mean(s["response_tokens"] for s in group),
+                    "mean_order_gap": (
+                        statistics.mean(s["order_gap"] for s in group if s["order_gap"] is not None)
+                        if any(s["order_gap"] is not None for s in group)
+                        else None
+                    ),
+                    "order_disagreement_rate": (
+                        sum(s["order_gap"] > 0 for s in group if s["order_gap"] is not None) / len(group)
+                        if all(s["order_gap"] is not None for s in group)
+                        else None
+                    ),
+                    "example": examples[group_index],
+                }
+            )
         print(
             f"Validated group {step}: samples, judge receipts, log-probs, loss masks, support and versions",
             flush=True,
@@ -361,6 +427,8 @@ def analyze(directory, traces, output):
     native = read_native_metrics(directory)
     save(output / "native-metrics.json", native)
     rows, groups = read_samples(directory, traces, output, optimizer_steps=[row["optimizer_step"] for row in native])
+    if len(groups) != len(native):
+        raise ValueError("Use audit_live and summarize_continuation for multiple prompt groups per update")
     save(output / "samples.json", rows)
     save(output / "groups.json", groups)
     save(output / "source-checks.json", publication_checks(directory, rows, native))

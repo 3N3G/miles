@@ -13,7 +13,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from experiments.tcs_async_rl.diagnose_rl import read_samples, save
+from experiments.tcs_async_rl.diagnose_rl import read_samples, save, validate_group_metrics
 from experiments.tcs_async_rl.native_metrics import read_native_metrics
 
 
@@ -64,11 +64,7 @@ def audit(directory, output, traces):
         pending.append(step)
     if pending:
         rows, groups = read_samples(directory, traces, output, optimizer_steps=pending)
-        by_step = {row["optimizer_step"]: row for row in native}
-        for group in groups:
-            metrics = by_step[group["optimizer_step"]]
-            assert group["mean_reward"] == metrics["rollout/episode_raw_reward"]
-            assert group["mean_tokens"] == metrics["rollout/response_lengths"]
+        validate_group_metrics(groups, native)
         previous_rows.extend(rows)
         previous_groups.extend(groups)
         save(
@@ -79,7 +75,8 @@ def audit(directory, output, traces):
     result = {
         "at_utc": datetime.datetime.now(datetime.UTC).isoformat(),
         "newly_audited_optimizer_steps": pending,
-        "audited_optimizer_steps": sorted(group["optimizer_step"] for group in previous_groups),
+        "audited_optimizer_steps": sorted({group["optimizer_step"] for group in previous_groups}),
+        "audited_prompt_groups": len(previous_groups),
         "answers": len(previous_rows),
         "response_tokens": sum(row["response_tokens"] for row in previous_rows),
         "judge_order_disagreements": sum(

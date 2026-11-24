@@ -3245,15 +3245,22 @@
       "actor": "codex",
       "summary": "AMD screen 546404 is PENDING; judge validation has thirteen verified W&B scalars",
       "revision": 306
+    },
+    {
+      "id": "a272ec77-3095-441a-9bed-be20b80b1425",
+      "at": "2026-11-24T19:01:34.924951Z",
+      "actor": "codex",
+      "summary": "Validate the four-question continuation audit against 128 real answers and archive eight verified artifacts",
+      "revision": 307
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD screen 546404 is PENDING; judge validation has thirteen verified W&B scalars",
-  "nextAction": "Watch the approved checkpoint screen, audit its medium answers, and submit the frozen continuation under the shared resource limits.",
+  "summary": "AMD screen 546404 remains pending; four-question audit matches 128 prior answers and native batch means.",
+  "nextAction": "Watch the approved screen, audit medium proofs, then freeze and submit the twelve-hour continuation within its shared limits.",
   "owner": "Codex",
-  "revision": 306,
-  "updatedAt": "2026-11-24T18:33:15.414249Z"
+  "revision": 307,
+  "updatedAt": "2026-11-24T19:01:34.924951Z"
 }

@@ -149,3 +149,20 @@ No judge request or solver generation was repeated.
 Its five-file immutable readback package is
 `3N3G/internalization-runs@3eda898e389f3b317f8101374f92da27f712d10e/miles/judge-high-wandb-20261124`.
 All five artifacts passed exact hash verification.
+
+## Four-question audit validation
+
+The generic audit now separates all four prompt groups in each 128-answer optimizer batch.
+It compares their sample-weighted means with native optimizer metrics.
+Repeated appearances of one question within an update count as one visit when measuring learning.
+One seeded raw answer is retained per prompt group.
+The single-reference recipe leaves order disagreement unmeasured in summaries and plots.
+The old paired-judge signal estimator explicitly rejects missing second presentations.
+
+A replay of the real v17 update99 verified128 answers, four groups and all native batch means.
+It matched the prior independent audit, including eight per-answer trace metrics.
+No judge calls or GPU jobs were added.
+All138 TCS CPU tests passed. Eight render-only plot fixtures also completed.
+The fixtures are explicitly marked as old data and are not new experiment results.
+The eight-file replay package passed immutable hash readback at
+`3N3G/internalization-runs@d13ddcb920c0512e98c2ccb1990f387f3105f611/miles/multigroup-regression-20261124`.

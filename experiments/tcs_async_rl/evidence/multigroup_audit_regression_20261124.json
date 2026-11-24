@@ -1,0 +1,21 @@
+{
+  "source_run": "easy-overfit-v17",
+  "optimizer_step": 99,
+  "answers_verified": 128,
+  "groups_verified": 4,
+  "native_global_means_match": true,
+  "prior_independent_audit_matches": true,
+  "new_judge_calls": 0,
+  "new_gpu_jobs": 0,
+  "source_trace_sha256": "7157820e486cc5ed9cb9b8cc4c2d3d54ab27b17668d0a860696a4a3cf1c96b49",
+  "source_hf_commit": "299ba1ea7926f872456abad5bbb4e955e469f27c",
+  "analysis_files_sha256": {
+    "experiments/tcs_async_rl/diagnose_rl.py": "e562cca19f3c49e04b14c396db073cd4aaa0bd11600c3793d2c224360b66e7f3",
+    "experiments/tcs_async_rl/audit_live.py": "819efebaca570d4c8a0b2df3d6f1c2a25d381515d54a0b1637f59058d1730a1d",
+    "experiments/tcs_async_rl/summarize_continuation.py": "b1467bcbbfa012fa842e21111dd2aea0ff4efb747142782d814a91552390704c",
+    "experiments/tcs_async_rl/plot_continuation.py": "982643042178c3949d606278d3ce5d310c4b32cf39bc67f9ed8f3d37739e4fc1",
+    "experiments/tcs_async_rl/plot_rl_diagnostic.py": "3f51c258c071ebd6c3a0d1f697798a312832d2ca4ae9007f1eeef88e161c3019",
+    "experiments/tcs_async_rl/judge_signal.py": "ed6577f3f8d3235f0fad0bc4ee3da374f5ee775df34fc4ab6e197c6568a198f9",
+    "experiments/tcs_async_rl/screen_results.py": "de3d0466cf8b01685d5b093c4779895fce4500eb2b78869b7a154695cecf6b42"
+  }
+}

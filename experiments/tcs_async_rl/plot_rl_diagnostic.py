@@ -18,6 +18,8 @@ def plot(directory):
     samples = json.loads((directory / "samples.json").read_text())
     history = json.loads((directory / "wandb-full-history.json").read_text())["rows"]
     summary = json.loads((directory / "summary.json").read_text())
+    if len(groups) != len(native):
+        raise ValueError("Use plot_continuation for multiple prompt groups per optimizer update")
     steps = [row["optimizer_step"] for row in native]
     blue, orange, gray = "#0072B2", "#D55E00", "#666666"
 
@@ -103,17 +105,27 @@ def plot(directory):
     finish(fig, "generation-cost.png")
 
     fig, ax = plt.subplots(figsize=(7, 4))
-    gaps = [s["order_gap"] for s in samples]
-    xs = sorted(set(gaps))
-    ax.bar(xs, [gaps.count(x) for x in xs], width=0.6, color=blue)
-    disagreement = summary["judge_order_disagreements"]
-    ax.set(
-        xlabel="Absolute change in rubric points after swapping answer order",
-        ylabel="Consumed answers",
-        ylim=(0, None),
-        title=f"Judge scores differed between orders for {disagreement}/{len(samples)} answers "
-        f"({disagreement / len(samples):.1%})",
-    )
+    gaps = [s["order_gap"] for s in samples if s["order_gap"] is not None]
+    if gaps:
+        xs = sorted(set(gaps))
+        ax.bar(xs, [gaps.count(x) for x in xs], width=0.6, color=blue)
+        disagreement = sum(gap > 0 for gap in gaps)
+        ax.set(
+            xlabel="Absolute change in rubric points after swapping answer order",
+            ylabel="Consumed answers",
+            ylim=(0, None),
+            title=f"Judge scores differed between orders for {disagreement}/{len(gaps)} answers ({disagreement / len(gaps):.1%})",
+        )
+    else:
+        ax.text(
+            0.5,
+            0.5,
+            "Answer-order disagreement was not measured.\nThis recipe uses one labeled-reference presentation.",
+            ha="center",
+            va="center",
+            transform=ax.transAxes,
+        )
+        ax.set_axis_off()
     finish(fig, "judge-order-disagreement.png")
 
     fig, axes = plt.subplots(2, 1, figsize=(9, 6), sharex=True)
