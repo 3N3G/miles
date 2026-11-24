@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high passes36/40 exact scores and all87 controls across calibration and selected questions. AMD546404 is pending. Spending$0.5496883. All132 CPU checks pass. Jobs: hpcfund/546404 SUBMITTED; hpcfund/544406 COMPLETED
-  Next: Watch screen546404 through checkpoint restore and384 checked answers. Then audit raw proofs and execute the approved20/26-question twelve-hour continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high matches 36/40 exact scores and 96.8% of items. All controls pass. AMD 546404 is pending. Judge cost $0.55. Jobs: hpcfund/546404 SUBMITTED; hpcfund/544406 COMPLETED
+  Next: Watch the approved 12-question checkpoint screen. Audit its answers, then choose the frozen 20/26-question continuation by the approved rule.
 
 ## Next / blocked
 
