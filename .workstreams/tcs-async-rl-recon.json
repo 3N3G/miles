@@ -3117,15 +3117,22 @@
       "actor": "codex",
       "summary": "Freeze the approved comparison protocol and validate both grading schemas",
       "revision": 293
+    },
+    {
+      "id": "b5f9b70c-7ee0-486c-a6ac-e678fb7f28c8",
+      "at": "2026-11-24T06:03:06.501578Z",
+      "actor": "codex",
+      "summary": "Freeze all forty mathematical audits before any new judge output",
+      "revision": 294
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Comparison plan and labeled-reference recipe prepared; all 120 TCS CPU tests pass. Preparing a frozen 40-answer packet before any paid calls.",
-  "nextAction": "Audit and fingerprint all forty answers, compare both graders under the $2 phase cap, then apply the reliability gate before GPU screening.",
+  "summary": "All 40 saved answers have pre-call item labels and reasons, frozen at SHA256 b57788dfd09fd808ef7de51ceb54d26c894c065ef044b80703ee7b4495ea850e. The packet spans 17 questions and 176 rubric items. No new GPU or paid judge call yet.",
+  "nextAction": "Run both grading recipes on the frozen packet under the shared $2 comparison cap, inspect disagreements and controls, then apply the declared gate.",
   "owner": "Codex",
-  "revision": 293,
-  "updatedAt": "2026-11-24T05:51:36.999276Z"
+  "revision": 294,
+  "updatedAt": "2026-11-24T06:03:06.501578Z"
 }

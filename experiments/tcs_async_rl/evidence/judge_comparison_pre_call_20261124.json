@@ -1,0 +1,47 @@
+{
+  "at_utc": "2026-11-24T05:51:24.959452+00:00",
+  "packet_sha256": "793dc92214c2b67049c2bcf0a36067f552969ae39f52fc22d1f101c8d34918bd",
+  "cases": 40,
+  "easy_questions": 16,
+  "easy_answers": 32,
+  "medium_questions": 1,
+  "medium_answers": 8,
+  "new_solver_generations": 0,
+  "new_judge_calls": 0,
+  "heldout_reads": 0,
+  "audit_completed_at_utc": "2026-11-24T06:03:06.430177+00:00",
+  "label_kind": "assistant_not_human",
+  "labels_sha256": "b57788dfd09fd808ef7de51ceb54d26c894c065ef044b80703ee7b4495ea850e",
+  "rubric_items": 176,
+  "confidence_counts": {
+    "high": 24,
+    "medium": 16
+  },
+  "medium_all_eight_core_proofs_incorrect": true,
+  "label_ambiguity_cases": [
+    "case-03",
+    "case-04",
+    "case-06",
+    "case-07",
+    "case-10",
+    "case-13",
+    "case-15",
+    "case-18",
+    "case-20",
+    "case-21",
+    "case-25",
+    "case-26",
+    "case-29",
+    "case-32",
+    "case-38",
+    "case-39"
+  ],
+  "pre_call_new_api_calls": 0,
+  "notes": [
+    "Old judge results were absent from the labeling view.",
+    "Old reward strata were used only in prespecified packet selection.",
+    "Exact repeated lines were collapsed for the long communication-proof reading view; original candidate remains unchanged for both judges.",
+    "Labels are assistant mathematical audits, not human annotations.",
+    "All eight old medium answers fail to prove the essential block reduction; this is still one medium question."
+  ]
+}
