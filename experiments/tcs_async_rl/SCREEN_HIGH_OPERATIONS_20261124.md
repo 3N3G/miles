@@ -136,3 +136,16 @@ It still requires contiguous new updates, finite metrics, complete traces, norma
 and the checkpoint tracker matching the final completed update.
 A stale or missing final checkpoint fails acceptance even after a planned budget stop.
 W&B records the walltime, GPU-hour and judge caps alongside the actual training parameters.
+
+## Judge comparison logging
+
+W&B run`geney/tcs-async-rl/judge-high-20261124` finished with thirteen verified scalars,
+one forty-case score table, the comparison figure, one history row and zero optimizer updates.
+The first logging attempt missed Pillow and failed before sending any metric point.
+The owned empty run was recovered after installing that image dependency.
+Successful uploads indexed more slowly than the initial ten-second readback window.
+The repaired logger allows ninety seconds and verifies already uploaded metrics without adding another point.
+No judge request or solver generation was repeated.
+Its five-file immutable readback package is
+`3N3G/internalization-runs@3eda898e389f3b317f8101374f92da27f712d10e/miles/judge-high-wandb-20261124`.
+All five artifacts passed exact hash verification.

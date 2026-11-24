@@ -37,6 +37,9 @@ All 250 archived artifacts passed immutable hash verification in the
 [private evidence archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/79887438e9e3e313184aaf9969d4130604892d2f/miles/judge-comparison-high-20261124).
 The [comparison figure and interval values](https://huggingface.co/datasets/3N3G/internalization-runs/tree/0cfaaee404ade6d09f50b8e3f9150d961a00a2ad/miles/judge-high-figures-20261124)
 also passed immutable verification for all four artifacts.
+The [W&B comparison](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/judge-high-20261124)
+contains the forty-answer score table and figure. All thirteen scalars passed API readback verification.
+It records one comparison history row and zero optimizer updates.
 
 The selected recipe grades one candidate against an explicitly labeled reference, using Luna high.
 It has no measured answer-order gap.
