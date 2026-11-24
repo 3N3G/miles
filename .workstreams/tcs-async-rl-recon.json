@@ -3231,15 +3231,22 @@
       "actor": "codex",
       "summary": "All twelve input references checked; preserve the approved binary scoring and tracked queue supervision",
       "revision": 304
+    },
+    {
+      "id": "5eacfe78-14b9-4c13-b53d-a2ce4141aa31",
+      "at": "2026-11-24T18:21:16.477634Z",
+      "actor": "codex",
+      "summary": "Prepare tested resource-stop guards and terminal acceptance for the approved twelve-hour continuation",
+      "revision": 305
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Luna high matches 36/40 exact scores and 96.8% of items. All controls pass. AMD 546404 is pending. Judge cost $0.55.",
-  "nextAction": "Watch the approved 12-question checkpoint screen. Audit its answers, then choose the frozen 20/26-question continuation by the approved rule.",
+  "summary": "Luna high passes the observed gate. All 136 CPU checks pass, including resource guards. AMD screen 546404 remains pending. Recorded judge spending is $0.55.",
+  "nextAction": "Watch the 12-question screen, inspect medium proof quality, then freeze and submit the approved continuation with tracked budget/deadline guards.",
   "owner": "Codex",
-  "revision": 304,
-  "updatedAt": "2026-11-24T17:51:52.604388Z"
+  "revision": 305,
+  "updatedAt": "2026-11-24T18:21:16.477634Z"
 }

@@ -19,6 +19,7 @@ from collections import Counter
 from urllib.parse import urlsplit
 
 from experiments.tcs_async_rl.amd_preflight import load_configs
+from experiments.tcs_async_rl.resource_guard import validated_stop
 from experiments.tcs_async_rl.rl_archive import (
     archive_chunks,
     copy_trace_batch,
@@ -174,31 +175,43 @@ def acceptance(
     retained_checkpoints=None,
     initial_updates=0,
     expected_samples_per_update=32,
+    approved_stop=None,
 ):
     evidence = run_training_evidence(directory)
     groups = consumed_rollouts(directory)
     inventory = directory / "checkpoint-inventory.json"
     checkpoints = json.loads(inventory.read_text()) if inventory.exists() else {"tracker": None, "iterations": []}
+    accepted_updates = len(evidence["valid_updates"]) if approved_stop else expected_updates
     checks = {
         "scheduler_completed": scheduler["state"] == "COMPLETED" and scheduler.get("exit_code") == "0:0",
         "launcher_completed": (directory / "training-finished.json").exists(),
-        "optimizer_updates_recorded": len(evidence["valid_updates"]) == expected_updates,
+        "optimizer_updates_recorded": len(evidence["valid_updates"]) == accepted_updates,
         "no_skipped_updates": not evidence["skipped_or_discarded_updates"],
         "finite_step_metrics": bool(evidence["valid_updates"])
         and {x[0] for x in evidence["valid_updates"]} <= set(evidence["metrics"])
         and all(item["finite"] for item in evidence["metrics"].values()),
-        "consumed_groups_exported": len(groups) == expected_updates
+        "consumed_groups_exported": len(groups) == accepted_updates
         and all(g["samples"] == expected_samples_per_update for g in groups),
         "real_reward_variation_in_consumed_groups": sum(g["varied_rewards"] for g in groups)
-        >= (expected_updates if minimum_varied_groups is None else minimum_varied_groups),
+        >= (accepted_updates if minimum_varied_groups is None else minimum_varied_groups),
         "retained_checkpoints_exist": len([x for x in checkpoints["iterations"] if x["files"] and x["bytes"]])
-        >= (expected_updates if retained_checkpoints is None else retained_checkpoints),
-        "final_checkpoint_tracker": str(checkpoints["tracker"]) == str(initial_updates + expected_updates - 1),
+        >= (accepted_updates if retained_checkpoints is None else retained_checkpoints),
+        "final_checkpoint_tracker": str(checkpoints["tracker"]) == str(initial_updates + accepted_updates - 1),
     }
+    if approved_stop:
+        checks["resource_stop_updates_contiguous"] = accepted_updates > 0 and sorted(
+            x[0] for x in evidence["valid_updates"]
+        ) == list(range(initial_updates, initial_updates + accepted_updates))
     return {
         "runtime_acceptance_passed": all(checks.values()),
-        "stop_reason": "walltime_limit" if scheduler["state"] == "TIMEOUT" else scheduler["state"].lower(),
+        "stop_reason": (
+            approved_stop["reason"]
+            if approved_stop and checks["scheduler_completed"]
+            else "walltime_limit" if scheduler["state"] == "TIMEOUT" else scheduler["state"].lower()
+        ),
         "target_updates": expected_updates,
+        "accepted_update_target": accepted_updates,
+        "requested_resource_stop": approved_stop,
         "initial_optimizer_updates": initial_updates,
         "expected_samples_per_update": expected_samples_per_update,
         "completed_updates": len(evidence["valid_updates"]),
@@ -299,6 +312,9 @@ def finish(*, job_id, config_path, directory, remote_directory, checkout, schedu
             retained_checkpoints=config["scope"].get("retained_checkpoints"),
             initial_updates=initial_optimizer_updates(config),
             expected_samples_per_update=(training["miles_args"] | config["overrides"])["global_batch_size"],
+            approved_stop=(
+                validated_stop(directory, config_path, remote_directory) if config.get("resource_stop") else None
+            ),
         )
     except (OSError, ValueError, KeyError, TypeError) as error:
         result = {"runtime_acceptance_passed": False, "evidence_error_type": type(error).__name__}

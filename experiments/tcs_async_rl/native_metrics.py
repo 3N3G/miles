@@ -39,6 +39,9 @@ PUBLIC_TRAINING_ARGUMENTS = frozenset("""
 
 def training_log_config(directory, resolved):
     """Publish actual launcher settings through a positive list, never credentials."""
+    path = directory / "approved-config.json"
+    approved = json.loads(path.read_text()) if path.exists() else {}
+    scope = approved.get("scope", {})
     return {
         "native_metrics_source": "VM single writer",
         "training": {name: value for name, value in resolved["args"].items() if name in PUBLIC_TRAINING_ARGUMENTS},
@@ -48,6 +51,16 @@ def training_log_config(directory, resolved):
         "dataset_sha256": resolved.get("dataset_sha256"),
         "question_set_key": resolved.get("question_key"),
         "question_count": resolved.get("question_count"),
+        "run_limits": {
+            "walltime": approved.get("allocation", {}).get("walltime"),
+            "maximum_gpu_hours": scope.get("maximum_gpu_hours"),
+            "judge_usd_cap": scope.get("judge_usd_cap"),
+            **{
+                name: value
+                for name, value in approved.get("resource_stop", {}).items()
+                if name in ("walltime_margin_seconds", "judge_stop_usd")
+            },
+        },
         "gradient_accumulation": "Dynamic token batches; actual count is audit/train/num_microbatches per update",
     }
 

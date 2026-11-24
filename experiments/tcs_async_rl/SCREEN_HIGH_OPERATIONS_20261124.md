@@ -114,3 +114,25 @@ High matches all fourteen non-full-credit totals and denies full credit on four 
 All eight old medium candidates have zero-credit audits, so they do not calibrate correct medium candidate grading.
 Besides one seeded example per screen question, inspect distinct-score answers from any qualifying medium question.
 The two-question inclusion gate requires genuine mathematical reward variation, not merely differing judge numbers.
+
+## Resource guard for the later RL job
+
+The later frozen configuration must set `resource_stop` to
+`{"walltime_margin_seconds": 1800, "judge_stop_usd": 22}` and enable `stop_after_save_trigger`.
+Start `python -m experiments.tcs_async_rl.resource_guard` after recording the new submission.
+Pass its config, local directory, remote directory, job ID and this session UUID.
+The local submission receipt must contain that exact job ID and `session_uuid`.
+Launch the guard in an owned process session with a tracked PID, and check its heartbeat with the main monitor.
+No guard is active for the inference-only screen.
+
+The guard polls every thirty seconds. It checks elapsed allocation time, the shared spending ledger and AMD free space.
+Its storage threshold uses the same checkpoint peak estimate as submission preflight.
+It verifies live job ownership before touching that run's checkpoint sentinel.
+Transient SSH/filesystem errors retain a typed error heartbeat and retry.
+An intent records the crossed limit before the remote request. A matching receipt records a successful request.
+
+The terminal monitor accepts fewer updates than the upper target only with a validated resource-stop receipt.
+It still requires contiguous new updates, finite metrics, complete traces, normal scheduler/launcher completion,
+and the checkpoint tracker matching the final completed update.
+A stale or missing final checkpoint fails acceptance even after a planned budget stop.
+W&B records the walltime, GPU-hour and judge caps alongside the actual training parameters.

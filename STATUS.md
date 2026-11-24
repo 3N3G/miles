@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high matches 36/40 exact scores and 96.8% of items. All controls pass. AMD 546404 is pending. Judge cost $0.55. Jobs: hpcfund/546404 SUBMITTED; hpcfund/544406 COMPLETED
-  Next: Watch the approved 12-question checkpoint screen. Audit its answers, then choose the frozen 20/26-question continuation by the approved rule.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high passes the observed gate. All 136 CPU checks pass, including resource guards. AMD screen 546404 remains pending. Recorded judge spending is $0.55. Jobs: hpcfund/546404 SUBMITTED; hpcfund/544406 COMPLETED
+  Next: Watch the 12-question screen, inspect medium proof quality, then freeze and submit the approved continuation with tracked budget/deadline guards.
 
 ## Next / blocked
 
