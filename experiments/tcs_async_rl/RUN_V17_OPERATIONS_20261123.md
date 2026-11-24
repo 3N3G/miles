@@ -120,3 +120,38 @@ W&B stays `running` across the long gaps, validating the deployed no-history hea
 The review finds no missing entropy/divergence fields, nonpositive learning rates or negative observed surrogate gain.
 At 02:16 UTC, estimated judge spend plus reservations is approximately $1.79. No stop threshold is reached.
 The immutable traces for updates 99 and 100 are verified in the live archive index before VM eviction.
+
+## Consumed-trace audit after six updates
+
+Updates 99–104 contain 768 answers, 24 separate 32-answer groups and all 20 questions.
+All six immutable portable traces match their recorded SHA256 before this audit reads them.
+For every answer, both original judge request fingerprints, candidate/reference mappings and reward values match.
+Every trace also passes finite log-probability, sampled-support membership, loss-mask and version-span checks.
+The read-only scripts and outputs live in the private artifact staging directory
+`diagnostics/easy-overfit-v17-batch128`. They stage and remove one checksum-verified Hub trace at a time.
+These checks make no new sampling or judge calls and change no training reward.
+
+Of these answers, 508 receive full credit, 62 receive zero and 64 hit the output cap.
+Twenty-four capped answers have no extracted final answer. Judge orders disagree on 92 answers,
+including 31 gaps of at least two points. One supplied reference receives below seven in one order.
+Disagreement is not a measured judge-error rate. Human calibration remains incomplete.
+Two of the 24 groups have constant reward. Four have at least 31 full-credit answers.
+Singleton sampled support accounts for 55.90% of the 34,375,451 consumed response-token positions.
+That describes the configured conditional policy, not a new numerical failure.
+
+Only four questions repeat within this continuation so far.
+Their first-visit mean is 6.9296875 and latest-visit mean is 6.625, a change of −0.3046875/7.
+All four decline. This small descriptive comparison neither establishes improvement nor measures gradient-variance reduction.
+The actual policy weights and generation overlap differ between visits.
+
+Additional seeded examples include a correct single-edge matching witness and a correct auction surplus calculation.
+A capped rooted-forest sample has no final answer and receives zero in both orders.
+A recursion-depth answer receives 4/5 across orders. Its nonroot-support decrease is correct,
+but its rational-arithmetic accounting is incomplete. The orders differ on how much encoding-length detail is implicit.
+Separately, a seeded provider-file example for the near-zero question incorrectly equates a Turán extremal maximum
+with the typical remainder of random triangle deletion. Its 0/1 pair has a substantive mathematical objection.
+That provider-file sample is not represented as a uniform sample of the consumed batch.
+The exact assistant reviews remain separate from human labels and cause no rescoring.
+
+Observed tracebacks are caught optional environment-report or post-warmup housekeeping failures.
+They do not correspond to skipped training steps. Both actor ranks continue normally.
