@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved testing Luna high, followed by further prompt optimization if needed. Prior444 calls cost $0.4516942. The twelve-hour RL and difficulty screen remain approved and gated. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Test high effort on the frozen fresh40 plus controls, preserving its original labels and the same append-only spending ledger.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fresh grading gate fails: paired29/40 exact, repaired reference32/40. All controls pass. $0.4516942 spent,444 settled calls. Both archives verify. No new GPU job or solver answer. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Await Luna-high versus rubric-review decision. Twelve-hour RL remains approved, gated and unsubmitted.
+- Nothing recorded.
 
 ## Finished
 
