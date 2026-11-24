@@ -86,3 +86,11 @@ These changes do not alter the already frozen submitted screen checkout.
 The screen result validator checks all384 response identities and actual request receipts.
 It verifies model, effort and prompt fingerprints and writes one seeded raw example per question.
 Its proposed20/26-question choice remains provisional until the raw mathematical answers are inspected.
+
+Both conditional training bundles were frozen before any screen generation:
+
+- Twenty easy: SHA256`18ed636017d16c3af5c1448ee4967b4aa6b996037c73f5304bf4ce95469e5929`, identical to the previous bundle.
+- Twenty easy plus all six selected medium: SHA256`d9423181a9697c966a113db5db9c0d11df5e67fbdaae3086fc9add12b8db1a03`.
+
+The bundles are under the VM screen directory's`continuation-candidates/`.
+No outcome-dependent question selection or training has occurred.
