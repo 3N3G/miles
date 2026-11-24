@@ -6,6 +6,7 @@ from pathlib import Path
 from experiments.tcs_async_rl.grade_group import Budget, reserve_cost, usage_cost
 from experiments.tcs_async_rl.judge_client import load_credentials
 from experiments.tcs_async_rl.judge_comparison import comparison_metrics
+from experiments.tcs_async_rl.judge_comparison_checks import clustered_intervals
 from experiments.tcs_async_rl.rubric_judge import messages, parse_grade, rubric_items
 
 
@@ -88,6 +89,22 @@ class RubricJudgeTests(unittest.TestCase):
                 Budget(Path(directory), config).reserve(0.3, "second")
             budget.settle(0.8, 0.2, "first")
             self.assertAlmostEqual(Budget(Path(directory), config).total, 0.2)
+
+    def test_bootstrap_keeps_same_question_answers_in_one_cluster(self):
+        rows = [
+            {
+                "question_key": str(value),
+                "exact_score_match": bool(value),
+                "item_agreement": value,
+                "absolute_score_error": 1 - value,
+            }
+            for value in (0, 1)
+            for _ in range(8)
+        ]
+        result = clustered_intervals({"paired": {"cases": rows}, "single": {"cases": rows}}, repetitions=500)
+        self.assertEqual(result["question_clusters"], 2)
+        self.assertEqual(result["methods"]["paired"]["item_agreement"], [0, 1])
+        self.assertEqual(result["difference"]["intervals"]["item_agreement"], [0, 0])
 
     def test_price_arithmetic_and_conservative_reservation(self):
         config = json.loads(Path("experiments/tcs_async_rl/judge_group_v1.json").read_text())
