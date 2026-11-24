@@ -3131,6 +3131,13 @@
       "actor": "codex",
       "summary": "First grader comparison fails the exact-score gate; all controls pass; prepare the single authorized prompt repair",
       "revision": 295
+    },
+    {
+      "id": "149e331a-bb49-42a5-b18f-6e33a25d0280",
+      "at": "2026-11-24T06:12:56.946160Z",
+      "actor": "codex",
+      "summary": "Keep the generated status concise while fresh packet preparation continues",
+      "revision": 296
     }
   ],
   "projectId": "understanding",
@@ -3138,8 +3145,8 @@
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
   "summary": "Paired v3 matches 32/40 exact scores and 95.96% items; labeled-reference v1 matches 31/40 and 93.54%. All153 controls pass. Total new judge spend is $0.2522091. Original labels remain unchanged; two post-output audit corrections are separate.",
-  "nextAction": "Freeze fresh disjoint forty-answer labels, then compare unchanged paired v3 and repaired reference v2 using the same append-only $2 phase ledger. No GPU submission before the gate passes.",
+  "nextAction": "Audit forty disjoint answers, freeze labels, then compare paired v3 with reference v2. Keep the same $2 ledger and GPU gate.",
   "owner": "Codex",
-  "revision": 295,
-  "updatedAt": "2026-11-24T06:12:39.807822Z"
+  "revision": 296,
+  "updatedAt": "2026-11-24T06:12:56.946160Z"
 }

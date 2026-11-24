@@ -5,7 +5,7 @@
 ## Running
 
 - [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Paired v3 matches 32/40 exact scores and 95.96% items; labeled-reference v1 matches 31/40 and 93.54%. All153 controls pass. Total new judge spend is $0.2522091. Original labels remain unchanged; two p Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Freeze fresh disjoint forty-answer labels, then compare unchanged paired v3 and repaired reference v2 using the same append-only $2 phase ledger. No GPU submission before the gate 
+  Next: Audit forty disjoint answers, freeze labels, then compare paired v3 with reference v2. Keep the same $2 ledger and GPU gate.
 
 ## Next / blocked
 
