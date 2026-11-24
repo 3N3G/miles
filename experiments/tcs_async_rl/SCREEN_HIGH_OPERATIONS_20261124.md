@@ -108,3 +108,9 @@ All twelve input references have been read and checked in [the input audit](SCRE
 The three rollout engines receive distinct seeds derived from20261124 through`miles/ray/specs/inference.py`.
 When freezing the later RL configuration, place update-direction probes at109 onward.
 The old v17 probe list ends at100 and must not silently disable that observation in the continuation.
+
+The forty-answer high packet contains26 full-credit, ten zero-credit, and four partial-credit audit totals.
+High matches all fourteen non-full-credit totals and denies full credit on four complete audited proofs.
+All eight old medium candidates have zero-credit audits, so they do not calibrate correct medium candidate grading.
+Besides one seeded example per screen question, inspect distinct-score answers from any qualifying medium question.
+The two-question inclusion gate requires genuine mathematical reward variation, not merely differing judge numbers.

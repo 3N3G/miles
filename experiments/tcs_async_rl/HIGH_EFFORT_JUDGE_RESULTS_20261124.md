@@ -16,6 +16,9 @@ These are saved Qwen3.5-4B answers, not new solver generations.
 | Labeled reference, medium | 32/40 | 94.54% | 0.400 |
 | Labeled reference, high | 36/40 | 96.79% | 0.225 |
 
+Always awarding seven would match 26/40 audits (65%).
+High matches all fourteen non-full-credit audits and underscores four full-credit audits.
+
 One raw disagreement concerns a valid interval argument.
 The answer compares both endpoints with sqrt(2n), proving the interval empty.
 The audit awards seven. Luna high awards five because it requests a particular rearrangement from the rubric.
@@ -24,11 +27,12 @@ Their frozen labels remain unchanged. High made no clear false full-credit award
 
 The descriptive question-cluster bootstrap interval for high exact agreement is 79.4%–97.8%.
 There are seventeen question clusters and no independent human calibration.
+All eight medium audits score zero. Correct medium candidate answers still need direct inspection during screening.
 The assistant wrote the audits and prompt. Earlier failures informed the effort choice.
 Observed gate passage is therefore not a population-accuracy guarantee.
 
 The 92 new paid calls, including one unfinished-verdict expansion, cost $0.0825564.
-The shared experiment ledger now contains 536 settled calls, no pending reservations, and $0.5342506 total usage.
+The comparison ended with 536 settled ledger calls, no pending reservations, and $0.5342506 total recorded usage.
 All 250 archived artifacts passed immutable hash verification in the
 [private evidence archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/79887438e9e3e313184aaf9969d4130604892d2f/miles/judge-comparison-high-20261124).
 The [comparison figure and interval values](https://huggingface.co/datasets/3N3G/internalization-runs/tree/0cfaaee404ade6d09f50b8e3f9150d961a00a2ad/miles/judge-high-figures-20261124)
