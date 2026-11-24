@@ -77,5 +77,30 @@ The first live archive **`e3db6bf2b484490defd9c71e9c358db69e043336`** verifies 4
 Fourteen older duplicate v16 audit traces also passed immutable Hub-hash verification before VM-cache eviction.
 That freed 296,111,666 bytes. Their AMD originals and every checkpoint remain intact.
 
-The run is generating and grading answers. The first backward update, complete 128-answer export,
-post-update publication and native W&B point remain to verify. No learning or variance-reduction result is claimed.
+## First complete update
+
+Global update **99** completed normally at **2026-11-24 01:49:16 UTC**.
+The exact payload contains four separate 32-answer groups. All four have within-problem reward variation.
+Dynamic scheduling accumulated **66 microbatches** before one optimizer step.
+The three post-update engines agree, with **458 of 822** language-tensor checksums changed from the restored policy.
+
+Its raw mean reward is **6.359375/7**, with 127/128 nonzero answers and 72/128 full-credit answers.
+This first batch was generated entirely with restored weight version 99, before the new optimizer update.
+It is a startup baseline for this continuation, not an observed learning gain.
+Gradient norm is **0.0994657**, full-policy entropy **0.426614**, sampling entropy **0.354452**,
+sampled initial-policy divergence **0.00948196**, and rollout/trainer divergence **0.000256076**.
+Per-token effective sample ratio is **0.9994875**, clip fraction zero, and learning rate remains **1e-6**.
+All observed metrics are finite. These checks do not establish mathematical proof accuracy or reduced gradient variance.
+
+The [new W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261124-011641-925-native)
+has one unique history row at optimizer coordinate 99. All **80** scalar values match native logs by fresh API readback.
+The 78,627,642-byte consumed trace matches its immutable Hub SHA256 in
+**`299ba1ea7926f872456abad5bbb4e955e469f27c`** before VM staging eviction.
+`first-update-verification.json` and `first-update-all-wandb-scalars-verification.json` preserve these checks.
+
+Four seed-selected raw answers and both original grades are preserved for inspection.
+They include a valid cut-packing argument, an answer with incorrect clipping case equalities,
+a valid vacuous proof of the supplied graph statement, and a Newton-basis proof with unresolved rubric-boundary deductions.
+The assistant review is separate from human calibration and changes no reward.
+
+Training continues within the approved limits. The second 128-answer payload is ready.
