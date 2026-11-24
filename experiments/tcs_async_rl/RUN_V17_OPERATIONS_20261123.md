@@ -66,6 +66,16 @@ Do not merge the separate AMD offline streams into that history.
 
 ## Current qualification
 
-The allocation is running. Ray startup is recorded. Actual checkpoint restoration, first backward update,
-128-answer export, engine publication and native W&B point remain to verify.
-No learning or variance-reduction result is claimed at startup.
+The trainer loaded iteration 98. Both live optimizer ranks report scheduler counter 3,168 and constant learning rate 1e-6.
+All six loaded worker-module hashes match the frozen source. The restored initial three-engine publication
+matches all 822 language-tensor checksums of the saved v16 iteration-98 publication exactly.
+The observer uses Ray Client loopback after two external-driver node-discovery attempts failed.
+Those attempts and their logs remain preserved. The training process was unaffected.
+
+The first live archive **`e3db6bf2b484490defd9c71e9c358db69e043336`** verifies 42 generated-output files,
+17,338,368 bytes, before VM eviction. The live `archive-index.json` and per-commit `archive-readbacks/` own subsequent counts.
+Fourteen older duplicate v16 audit traces also passed immutable Hub-hash verification before VM-cache eviction.
+That freed 296,111,666 bytes. Their AMD originals and every checkpoint remain intact.
+
+The run is generating and grading answers. The first backward update, complete 128-answer export,
+post-update publication and native W&B point remain to verify. No learning or variance-reduction result is claimed.
