@@ -104,3 +104,19 @@ a valid vacuous proof of the supplied graph statement, and a Newton-basis proof 
 The assistant review is separate from human calibration and changes no reward.
 
 Training continues within the approved limits. The second 128-answer payload is ready.
+
+## First hourly review
+
+Updates **99–101** are complete, consuming 384 answers across 12 distinct questions.
+No question has a repeated visit within this continuation yet. Mixed-batch rewards are 6.359375, 5.160156 and 6.546875.
+The second batch includes a question scoring 0.140625/7 and another scoring 7/7, explaining much of the aggregate change.
+Do not treat the mixed-question sequence as a learning curve.
+
+At update 100, the fixed-batch surrogate gain is **+0.0000879313**.
+Positive-advantage mean log-probability change is **+0.0000418687** and negative-advantage change is **−0.0001149833**.
+This verifies the observed optimization direction, not improved future proofs.
+All **249** scalar values for three unique W&B points match native logs by fresh API readback.
+W&B stays `running` across the long gaps, validating the deployed no-history heartbeat refresh.
+The review finds no missing entropy/divergence fields, nonpositive learning rates or negative observed surrogate gain.
+At 02:16 UTC, estimated judge spend plus reservations is approximately $1.79. No stop threshold is reached.
+The immutable traces for updates 99 and 100 are verified in the live archive index before VM eviction.
