@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD screen 546404 is pending; both approved conditional training configs and batch128 audits are ready. Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
-  Next: Watch the screen, verify its proofs and rule, then submit exactly one prepared continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high passes 36/40; AMD screen546404 is queued. Both continuation configs and144 preflight artifacts are preserved. Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
+  Next: Watch screen546404 through completion, audit medium proofs, then select and run one approved continuation.
 
 ## Next / blocked
 

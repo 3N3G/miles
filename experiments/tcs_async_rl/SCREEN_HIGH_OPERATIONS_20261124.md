@@ -180,3 +180,9 @@ Both configurations request twelve hours, save every five updates, retain the la
 and stop after the forced deadline/budget save. The source checkpoint remains protected.
 CPU checks validated qualified judge hashes, actual bundle identities, all resolved arguments,
 the Slurm time request and the guard limits. No new allocation was requested.
+
+The screen preflight snapshot contains144 verified artifacts at
+`3N3G/internalization-runs@2c51568561070890708c88a06041ca7ea0f41038/miles/screen-high-preflight-20261124`.
+It preserves the twelve fixed inputs,36 runtime controls, exact incoming ledger history and both conditional training bundles.
+It contains no new solver answers or optimizer updates.
+The copied ledger is historical evidence, not another spending owner.
