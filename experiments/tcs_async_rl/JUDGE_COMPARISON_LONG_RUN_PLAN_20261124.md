@@ -114,9 +114,13 @@ Agreement with this assistant remains a diagnostic proxy, not human mathematical
 
 ## Results
 
-Not run. Read-only AMD checks show no current job for this user, a 96-hour partition maximum,
-and 1,095,083,216,896 bytes free at the latest check. The requested RL allocation remains capped at twelve hours.
-No new judge call or GPU submission has occurred at this plan's creation.
+The fixed-answer comparison and its one prompt repair have completed.
+The fresh packet gives 29/40 exact-score agreement for paired grading and 32/40 for repaired reference grading.
+Neither passes the predeclared gate. All reference/empty/irrelevant controls pass.
+Recorded usage costs total $0.4516942 across 444 settled calls, with no pending reservations.
+No GPU submission or new solver generation occurred. Screening and twelve-hour RL remain unrun.
+See [the standalone result](JUDGE_COMPARISON_RESULTS_20261124.md) and
+[the next-step options](JUDGE_NEXT_STEP_OPTIONS_20261124.md).
 
 ### Planned figures
 
@@ -132,9 +136,9 @@ Reserved for the user. An assistant-agreement winner is not an independently cal
 
 ## Next steps
 
-1. Freeze the comparison packet and assistant labels, implement both grading recipes, and validate CPU controls.
-2. Compare methods and apply the declared agreement gate. Preserve failures and any single repair round.
-3. Screen easy/medium questions, freeze the selected dataset and long-run configuration, then submit and supervise.
+1. Completed: freeze both packets and pre-call labels, implement both recipes and validate CPU checks.
+2. Completed: compare both recipes, preserve the failed gate and the single prompt-repair validation.
+3. Await the judge-effort or rubric-interpretation decision before GPU screening and training.
 
 ## Questions
 

@@ -1,0 +1,34 @@
+{
+  "at_utc": "2026-11-24T06:25:58.133813+00:00",
+  "new_gpu_jobs": 0,
+  "new_solver_generations": 0,
+  "heldout_reads": 0,
+  "phase_cap_usd": 2,
+  "approved_total_cap_usd": 25,
+  "actual_usage_usd": 0.4516942,
+  "reserved_calls": 444,
+  "settled_calls": 444,
+  "pending_calls": 0,
+  "first_controls_presentations": 153,
+  "validation_controls_presentations": 153,
+  "unchanged_control_presentations_reused": 102,
+  "control_failures": 0,
+  "fresh_validation_selected_method": null,
+  "new_training_config_logging_cpu_tests": 123,
+  "logging_gpu_validation": "not_run",
+  "reason_no_gpu_submission": "Both original recipes and the one repaired recipe failed the predeclared agreement gate.",
+  "archives": [
+    {
+      "revision": "c2b0d8f9c65b9162f7b316494132116a193ba4fd",
+      "folder": "miles/judge-comparison-v1-20261124",
+      "verified_files": 603
+    },
+    {
+      "revision": "05550135e6475e53c77ca409c4a9ea936a6e036e",
+      "folder": "miles/judge-comparison-v2-20261124",
+      "verified_files": 633
+    }
+  ],
+  "amd_squeue_at_utc": "2026-11-24T06:25:58Z",
+  "amd_own_jobs": []
+}

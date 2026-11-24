@@ -1,5 +1,14 @@
 # Open questions
 
+## 2026-11-24: Next judge step after the two failed comparison gates
+
+- Question: test the fixed repaired reference prompt with Luna high, or resolve the rubric interpretation on ten saved cases first?
+- Evidence: fresh pre-labeled answers give paired-medium 29/40 exact agreement and reference-medium 32/40. Both fall below the declared 90% gate. All controls pass. All 444 paid calls settle at $0.4516942, and no GPU job or new solver answer ran.
+- Options: [the concrete high-effort comparison](experiments/tcs_async_rl/JUDGE_NEXT_STEP_OPTIONS_20261124.md), bounded by the existing $2 comparison ledger within $25 total; or human review of the prepared interpretation packet without new compute.
+- Recommendation: test high effort if another automatic diagnostic is preferred. Otherwise resolve the literal-versus-equivalent-proof interpretation before further reward tuning. Do not claim assistant agreement is human accuracy.
+- Blocks: GPU screening and twelve-hour RL submission under the unsuccessful grading gate. The already approved resource limits remain valid and unused.
+- Permission basis: the user previously selected “Enable Qwen thinking; keep Luna medium.” The current plan fixes that effort and stops after one failed prompt repair. Prompt changes alone do not authorize a different judge effort.
+
 ## 2026-11-22: Storage for a bounded continuation after the two-hour backfill slot
 
 - Question: may the replacement's intermediate checkpoint be removed only after a newer continuation checkpoint is atomically saved and verified?

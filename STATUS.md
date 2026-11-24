@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fresh forty-answer validation labels are frozen at 63aba9a7b191f2386b57bdb758af12b17691768c223bb2c3f77a759f4cf46dba. No answer overlap. All603 first-phase artifacts verify on private HF. Spend remains Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Compare the repaired reference recipe with unchanged paired grading on the frozen fresh answers, then inspect controls and gate results.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fresh grading gate fails: paired29/40 exact, repaired reference32/40. All controls pass. $0.4516942 spent,444 settled calls. Both archives verify. No new GPU job or solver answer. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Await Luna-high versus rubric-review decision. Twelve-hour RL remains approved, gated and unsubmitted.
 
 ## Finished
 

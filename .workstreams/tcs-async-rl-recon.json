@@ -281,6 +281,14 @@
     {
       "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261124-011641-925-native",
       "label": "Finished batch128 run: ten unique points and all 811 scalars verified"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/c2b0d8f9c65b9162f7b316494132116a193ba4fd/miles/judge-comparison-v1-20261124",
+      "label": "Original40-answer grading comparison, all603 artifacts verified"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/05550135e6475e53c77ca409c4a9ea936a6e036e/miles/judge-comparison-v2-20261124",
+      "label": "Fresh40-answer repair validation, all633 artifacts verified, plus ten-case interpretation packet"
     }
   ],
   "evidence": [
@@ -859,6 +867,18 @@
     {
       "path": "experiments/tcs_async_rl/JUDGE_COMPARISON_LONG_RUN_PLAN_20261124.md",
       "label": "Approved grader comparison, broader screen and twelve-hour continuation"
+    },
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_COMPARISON_RESULTS_20261124.md",
+      "label": "Neither grading recipe passes after one prompt repair"
+    },
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_COMPARISON_OPERATIONS_20261124.md",
+      "label": "Exact frozen inputs,444 settled calls and verified artifact closure"
+    },
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_NEXT_STEP_OPTIONS_20261124.md",
+      "label": "Concrete higher-effort comparison or rubric-interpretation review"
     }
   ],
   "jobs": [
@@ -3145,15 +3165,22 @@
       "actor": "codex",
       "summary": "Freeze the fresh forty-answer validation labels and verify all first-phase artifacts",
       "revision": 297
+    },
+    {
+      "id": "8f6fb600-7e16-4a44-a1b6-ef62e5e90154",
+      "at": "2026-11-24T06:31:07.221639Z",
+      "actor": "codex",
+      "summary": "Close the unsuccessful grading comparison and request the research decision before GPU spending",
+      "revision": 298
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "Fresh forty-answer validation labels are frozen at 63aba9a7b191f2386b57bdb758af12b17691768c223bb2c3f77a759f4cf46dba. No answer overlap. All603 first-phase artifacts verify on private HF. Spend remains $0.2522091, with zero pending calls.",
-  "nextAction": "Compare the repaired reference recipe with unchanged paired grading on the frozen fresh answers, then inspect controls and gate results.",
+  "state": "needs-you",
+  "summary": "Fresh grading gate fails: paired29/40 exact, repaired reference32/40. All controls pass. $0.4516942 spent,444 settled calls. Both archives verify. No new GPU job or solver answer.",
+  "nextAction": "Await Luna-high versus rubric-review decision. Twelve-hour RL remains approved, gated and unsubmitted.",
   "owner": "Codex",
-  "revision": 297,
-  "updatedAt": "2026-11-24T06:18:32.737055Z"
+  "revision": 298,
+  "updatedAt": "2026-11-24T06:31:07.221639Z"
 }
