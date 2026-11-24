@@ -3044,15 +3044,22 @@
       "actor": "codex",
       "summary": "All ten required batch128 payloads are secured; pause new unused rollout admissions while the final update trains",
       "revision": 286
+    },
+    {
+      "id": "ece6b0b2-22f5-4b25-882d-967a31e0829d",
+      "at": "2026-11-24T03:30:15.483875Z",
+      "actor": "codex",
+      "summary": "Request the one approved checkpoint at the observed resource trigger; preserve all source checkpoints",
+      "revision": 287
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "All ten required batch128 payloads are secured; pause new unused rollout admissions while the final update trains",
-  "nextAction": "Verify the final optimizer update, its single durable checkpoint and three-engine publication, then archive and verify W&B closure.",
+  "summary": "Request the one approved checkpoint at the observed resource trigger; preserve all source checkpoints",
+  "nextAction": "Finish the active update, verify its saved files and actual three-engine publication, then close this owned allocation and verify archives.",
   "owner": "Codex",
-  "revision": 286,
-  "updatedAt": "2026-11-24T03:28:05.365904Z"
+  "revision": 287,
+  "updatedAt": "2026-11-24T03:30:15.483875Z"
 }

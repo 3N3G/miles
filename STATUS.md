@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): All ten required batch128 payloads are secured; pause new unused rollout admissions while the final update trains Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
-  Next: Verify the final optimizer update, its single durable checkpoint and three-engine publication, then archive and verify W&B closure.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Request the one approved checkpoint at the observed resource trigger; preserve all source checkpoints Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
+  Next: Finish the active update, verify its saved files and actual three-engine publication, then close this owned allocation and verify archives.
 
 ## Next / blocked
 
