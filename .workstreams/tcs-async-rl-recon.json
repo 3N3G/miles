@@ -269,13 +269,21 @@
     {
       "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261123-010857-293-native",
       "label": "Verified 14-point native W&B history"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/6f2dec9cbce6a5ee7c6da93be3617a9ca6d31cc1/miles/easy-overfit-v17",
+      "label": "Verified completed batch128 run and private durable artifacts"
+    },
+    {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/83b6d95ac83df247d9b50e5de0a7674d3378daf8/miles/easy-overfit-v17-batch128",
+      "label": "Verified full trace audits, raw proofs and matched-question plots"
+    },
+    {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261124-011641-925-native",
+      "label": "Finished batch128 run: ten unique points and all 811 scalars verified"
     }
   ],
   "evidence": [
-    {
-      "path": "experiments/tcs_async_rl/RUN_V17_OPERATIONS_20261123.md",
-      "label": "Actual batch128 submission, source, private artifacts and owned supervision"
-    },
     {
       "path": "experiments/tcs_async_rl/evidence/multiproblem_submission_preflight_20261123.json",
       "label": "Approved resource limits, working Hub access, restored AMD storage and 117 passing tests"
@@ -835,6 +843,18 @@
     {
       "path": "experiments/tcs_async_rl/evidence/learning_diagnosis_20261123.json",
       "label": "Verified 1×32 batching, normalization example and ranked learning hypotheses"
+    },
+    {
+      "path": "experiments/tcs_async_rl/FOUR_PROBLEM_BATCH_RESULTS_20261123.md",
+      "label": "Four-problem batch: standalone results"
+    },
+    {
+      "path": "experiments/tcs_async_rl/RUN_V17_OPERATIONS_20261123.md",
+      "label": "Run ownership, resource guards and terminal verification"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/multiproblem_final_verification_20261123.json",
+      "label": "Immutable archives, saved scheduler and all 811 W&B scalar checks"
     }
   ],
   "jobs": [
@@ -3072,15 +3092,22 @@
       "actor": "codex",
       "summary": "Batch128 run complete and fully archived: ten saved updates, all811 W&B scalars verified; matched rewards change plus0.025/7",
       "revision": 290
+    },
+    {
+      "id": "162c01ee-7798-4566-8c6f-28b1fdeb2674",
+      "at": "2026-11-24T03:50:48.728048Z",
+      "actor": "codex",
+      "summary": "Record the completed batch experiment and verified private artifact locations",
+      "revision": 291
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "needs-you",
-  "summary": "Batch128 run complete and fully archived: ten saved updates, all811 W&B scalars verified; matched rewards change plus0.025/7",
-  "nextAction": "Review human calibration before choosing another bounded experiment. This run, checkpoint, private archives and process closure are verified.",
+  "summary": "Four-problem run completed: 10 saved updates, 1,280 answers, $4.151, private archives and 811 W&B scalars verified. Matched reward change is +0.025/7.",
+  "nextAction": "Review human calibration before another bounded experiment. The approved run, checkpoint, cloud storage and process closure are complete.",
   "owner": "Codex",
-  "revision": 290,
-  "updatedAt": "2026-11-24T03:50:26.753754Z"
+  "revision": 291,
+  "updatedAt": "2026-11-24T03:50:48.728048Z"
 }

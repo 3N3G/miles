@@ -155,3 +155,59 @@ The exact assistant reviews remain separate from human labels and cause no resco
 
 Observed tracebacks are caught optional environment-report or post-warmup housekeeping failures.
 They do not correspond to skipped training steps. Both actor ranks continue normally.
+
+## Terminal verification
+
+Job **544406 completed normally**, exit code **0:0**, at **2026-11-24 03:38:31 UTC**.
+Elapsed allocation time is 8,571 seconds, or **19.0467 GPU-hours** on eight GPUs.
+All ten updates **99–108** are finite, consumed exactly **1,280 answers**, and published to all three engines.
+All three engines agree at each current-run publication. The final update changes 442 of 822 language-tensor checksums.
+The event file includes preserved historical publications. The final check selects the last restored-98 state and IDs 99–108 only.
+
+The native single checkpoint is **iteration 108**, containing 109 total historical optimizer updates.
+Its model/optimizer directory has four files totaling **60,577,362,731 bytes**.
+The tracker is 108. Reading only the 74,413-byte common-state entry verifies batch size 128,
+constant learning rate 1e-6, and scheduler counter **4,448 = 3,168 + 10 ×128**.
+The full new checkpoint has not been restored in a separate job.
+Its actual final three-engine publication and complete file inventory are verified.
+All prior source checkpoints remain preserved.
+
+The judge ledger has **2,754 settled calls**, no pending reservations, and estimated usage **$4.1508204**.
+The $4 checkpoint trigger was observed at **03:30:14 UTC**, with $4.0159242 spent or reserved.
+The owned sentinel was created at 03:30:17, while the final required batch was already training.
+The native save completed at 03:38:13. The run reached its ten-update target without an early cancellation.
+
+An optional attempt to pause new unused submissions failed during Ray Client initialization, before its pause RPC.
+The failure and command are preserved. No pause is claimed, and training was unaffected.
+The existing native buffer/admission limits and resource guards remained active.
+The controller, judge service, tunnel and independent metric/GPU observers have exited.
+After a final detailed review, the owned hourly observer was stopped. No owned process remains active.
+
+Runtime acceptance passes every check. W&B is `finished` with ten unique optimizer points.
+Fresh API readback verifies all **811** scalar values, with no added history writes.
+The observed full-policy entropy range is 0.4266–0.5334 nats/token.
+Gradient norms range from 0.08392 to 0.12577, clip fraction remains zero, and maximum observed lag is three updates.
+Sampled reference divergence ranges from 0.009299 to 0.014423 nats/token.
+These measurements come from changing training batches and are not a separate evaluation.
+Minute-level GPU telemetry observes a peak of **220.747 GiB** used on a 288-GiB card.
+It does not establish a continuous memory maximum.
+
+The terminal primary archive is
+**`b4fc291be880e5b1f837612d93dc6641edef1dcd`**, folder **`miles/easy-overfit-v17`**.
+Immutable Hub readback verifies all ten portable consumed traces, totaling **793,532,924 bytes**,
+plus the runtime acceptance, checkpoint inventory, frozen config and consumed-summary cache.
+The final diagnostic archive is **`83b6d95ac83df247d9b50e5de0a7674d3378daf8`**,
+folder **`miles/easy-overfit-v17-batch128`**. All 50 selected artifacts, totaling 4,229,823 bytes, pass hash verification.
+It contains 1,280 verified trace/receipt rows, forty seed-selected group examples, figures, tables and exact audit scripts.
+Checkpoints stay on AMD. Only bounded staging and small operational files stay on the VM.
+
+The post-closure snapshot **`6f2dec9cbce6a5ee7c6da93be3617a9ca6d31cc1`** uses the same primary folder.
+It includes the finished handoff, final verification receipts and standalone report.
+Immutable readback checks fourteen core files and all ten portable traces in that snapshot.
+[The final verification record](evidence/multiproblem_final_verification_20261123.json) preserves these hashes,
+the diagnostic readback, saved scheduler fields, protected-checkpoint checks and process closure.
+
+The [standalone result report](FOUR_PROBLEM_BATCH_RESULTS_20261123.md) owns the human-readable comparison.
+Nineteen repeated-question means change by +0.024671/7, with six increasing and thirteen decreasing.
+The largest gain coincides with fewer empty capped answers on the rooted-forest question.
+This does not establish reliable improvement or causal gradient-variance reduction.

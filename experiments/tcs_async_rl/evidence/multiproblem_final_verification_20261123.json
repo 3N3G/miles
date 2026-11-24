@@ -1,0 +1,448 @@
+{
+  "at_utc": "2026-11-24T03:50:01.104556+00:00",
+  "source_commit": "ae2ba558539c15188c19b3c5c112acaffee4210f",
+  "job_id": "544406",
+  "scheduler_state": "COMPLETED",
+  "exit_code": "0:0",
+  "runtime_acceptance_passed": true,
+  "primary_hf_revision": "6f2dec9cbce6a5ee7c6da93be3617a9ca6d31cc1",
+  "primary_metadata_hashes_verified": [
+    {
+      "path": "miles/easy-overfit-v17/handoff-state.json",
+      "bytes": 880,
+      "sha256": "a3a5ceb39e546d8c003e3559504efeebe1a8d8ac0a39b3accc66c7c97fb2b199"
+    },
+    {
+      "path": "miles/easy-overfit-v17/runtime-acceptance.json",
+      "bytes": 93609,
+      "sha256": "7143cf4385824520aa89a2bd2d0f791ea25c313463aca789d741e3ca115de4a4"
+    },
+    {
+      "path": "miles/easy-overfit-v17/checkpoint-inventory.json",
+      "bytes": 133,
+      "sha256": "f6eeffbdbff6c889249b0c8067a51f00c183b78ab5f23485909aa3d174f62551"
+    },
+    {
+      "path": "miles/easy-overfit-v17/checkpoint-scheduler-final-audit.json",
+      "bytes": 436,
+      "sha256": "f6a41e3eefa58dbb672e7ef4df121fdbe9916796ae478e1c232ad1b2be8fd50b"
+    },
+    {
+      "path": "miles/easy-overfit-v17/final-weight-publication-verification.json",
+      "bytes": 1455,
+      "sha256": "b2edf7633f406d03e3b9dc535ae4bd7ef3ab5478b640c7a80563ccecc6bb6e94"
+    },
+    {
+      "path": "miles/easy-overfit-v17/final-all-wandb-scalars-verification.json",
+      "bytes": 367,
+      "sha256": "ecd783019104c87ab01dc725d5e07327bac4560b3bf0f38571f5dfd5a91e706a"
+    },
+    {
+      "path": "miles/easy-overfit-v17/owned-process-closure.json",
+      "bytes": 702,
+      "sha256": "a28f87af4cf43b5959babfdf022d20c8fb417666a0c88df0a65ee4c478edb08d"
+    },
+    {
+      "path": "miles/easy-overfit-v17/final-result-report.md",
+      "bytes": 2482,
+      "sha256": "28e46829f723761dd89ee30743e47da0761cafa237ccf6fbf56675281b238ce4"
+    },
+    {
+      "path": "miles/easy-overfit-v17/final-operations-record.md",
+      "bytes": 15334,
+      "sha256": "a412961712d577b2ff5473cfe23de5207ce65b8dc202b598c28d7c69597fca92"
+    },
+    {
+      "path": "miles/easy-overfit-v17/final-diagnostic-readback.json",
+      "bytes": 9653,
+      "sha256": "bd61be28da2f450e6f00c0d5fb57c461cb890ac9aa9d6ddcb747e923a079f698"
+    },
+    {
+      "path": "miles/easy-overfit-v17/latest-detailed-review.json",
+      "bytes": 48200,
+      "sha256": "0bb1caaf891628f4422b3e0813f9600070dbd0285724d1a40d59fc68060a1b06"
+    },
+    {
+      "path": "miles/easy-overfit-v17/approved-config.json",
+      "bytes": 3768,
+      "sha256": "cc35caab68c9c66753fc6f51b4fb23dc06735ab9fd37dea0f6160400bfad66b1"
+    },
+    {
+      "path": "miles/easy-overfit-v17/archive-index.json",
+      "bytes": 509901,
+      "sha256": "ebbe507a3783d3ad256fe7bd2b7fd809bd11980104231001914aeb2283413201"
+    },
+    {
+      "path": "miles/easy-overfit-v17/judging/budget.jsonl",
+      "bytes": 1001772,
+      "sha256": "a6e3904daa6d0b7bdad6e536f3e6260d61a3580c242bbbc3b870c4101f6fbceb"
+    }
+  ],
+  "primary_portable_traces_verified": 10,
+  "primary_portable_trace_bytes": 793532924,
+  "diagnostic_hf_verification": {
+    "revision": "83b6d95ac83df247d9b50e5de0a7674d3378daf8",
+    "verified_files": 50,
+    "verified_bytes": 4229823,
+    "verified": [
+      {
+        "path": "miles/easy-overfit-v17-batch128/low-reward-question-assistant-spotcheck.json",
+        "bytes": 1146,
+        "sha256": "e741976c90c56697db94adbf70f647a9541e4e1a5f2f4dc87a76f687d29744c3"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/resource-final.json",
+        "bytes": 768,
+        "sha256": "02829bc9c315972e74d61fa3dbef10f066cb5f3cfdbc27eb42517b87c0a473ed"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-99.json",
+        "bytes": 120479,
+        "sha256": "76355ac3a558f380f64bdfe98f0fd6c826639f5488d99f1a05d6a0eaf7e1a9e9"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/audit_consumed.py",
+        "bytes": 4750,
+        "sha256": "0d4a0eed4927d245d8762753b4881e0c50a8aab0cd1fc6732f5e676f76835914"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/native-metrics.json",
+        "bytes": 39214,
+        "sha256": "5269254912684dc4757d3e4efd77a780ce3e69ee45c36ec0fe7be6a30d25f7f8"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/pairs.json",
+        "bytes": 7637,
+        "sha256": "98ce66a225b1ac1e8f79f65f38ae6f4540fd184e8f05f58d8a0c6f4749c707f2"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/approved-config.json",
+        "bytes": 3768,
+        "sha256": "cc35caab68c9c66753fc6f51b4fb23dc06735ab9fd37dea0f6160400bfad66b1"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-100.json",
+        "bytes": 117961,
+        "sha256": "2aa04c7564634978862df4200472f87792c9415766c5d7bf8c7676d43854e388"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-99.json",
+        "bytes": 164442,
+        "sha256": "f819513cbce1ff36f4bc95393e46ce7e201e13db3a40225672029fb63d91a826"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-101.json",
+        "bytes": 61875,
+        "sha256": "43d96d96aee5b0f975ecb4470aa227351550b3787a130f551927944dd1fb34a9"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-105.json",
+        "bytes": 127217,
+        "sha256": "cdc61e39e042608b57e30e3b89777885a003920f9a3a660dfc3466b2774db8c3"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/assistant-seeded-proof-review.json",
+        "bytes": 3249,
+        "sha256": "2be84783a3149c9bdb747044ca5f842e72ca3fa7a061c70043b411930da283e5"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/checkpoint-inventory.json",
+        "bytes": 133,
+        "sha256": "f6eeffbdbff6c889249b0c8067a51f00c183b78ab5f23485909aa3d174f62551"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/policy-entropy.png",
+        "bytes": 61754,
+        "sha256": "817051f4be658463f8b604ebe49a0b81d275ba350eb052fd96b9b0764a14f568"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/terminal-hf-primary-readback.json",
+        "bytes": 889,
+        "sha256": "cfac55c079952ab101ca91c0fb930dcea48d20bb06e944d68f5dfe35506ae2f4"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/policy-lag.png",
+        "bytes": 57442,
+        "sha256": "4b8f9bc2069aba0e6e8bac7768e99802e93a20dc820906949cb6ac980bdbf512"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-108.json",
+        "bytes": 57308,
+        "sha256": "e35ee1f10449f232a86564ff381d34b3c493eb6f84b5573e371f9e27be5b6502"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/gradient-norm.png",
+        "bytes": 46960,
+        "sha256": "494d210e6223cf20f578f0f3fd3e453c13f3e768b74e84b7d2ac459a1e3c7ac1"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/final-all-wandb-scalars-verification.json",
+        "bytes": 367,
+        "sha256": "ecd783019104c87ab01dc725d5e07327bac4560b3bf0f38571f5dfd5a91e706a"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-102.json",
+        "bytes": 125594,
+        "sha256": "9112f916ca0625f1f53c16d65b9a0f17e2c757d965fb897fe911dedc269e79cd"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/question-visits-by-consumed-answers.png",
+        "bytes": 198940,
+        "sha256": "a5a5df45a9643aada5a4b9e365c9bf3067dd4c4b73190f8acc517ff544d1767f"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-104.json",
+        "bytes": 59371,
+        "sha256": "e2b38cebe7204d04c9f05ed1ca39147ddff147b7da1f8b4914faf2236e29d263"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/judge-budget.png",
+        "bytes": 59459,
+        "sha256": "300ed7d8afab4bccb6ab7ceb51a64f9295c0fe2458e8fe725580335094c22dbb"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/judge-order-disagreement.png",
+        "bytes": 41819,
+        "sha256": "93a00c4a07a3d8b5b1778beeddfb675f36ca79955f886655659dd8df816720ae"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/final-weight-publication-verification.json",
+        "bytes": 1455,
+        "sha256": "b2edf7633f406d03e3b9dc535ae4bd7ef3ab5478b640c7a80563ccecc6bb6e94"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-103.json",
+        "bytes": 62369,
+        "sha256": "bd810724996be273b27132898810e7bff59f96ea251839447e6f1bbc0640c1eb"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-103.json",
+        "bytes": 126284,
+        "sha256": "6a915cffce0043655614950f245082ab7716d165564ac7e93014475ba01ca4c1"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/per-question-visits.csv",
+        "bytes": 10313,
+        "sha256": "fe789879347a1cdf2b0f2cd8c353168733c18a03cec40087e34715a68bd393bb"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-104.json",
+        "bytes": 122971,
+        "sha256": "08605a8123a6464f09cb0d551b026feec7f6e1691159437c37d31d5ee4435cbe"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-107.json",
+        "bytes": 120868,
+        "sha256": "2e8be8e4a89303ec13392e008d07e62886476be795f3567e8f3bf00d46d61980"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/response-length.png",
+        "bytes": 50876,
+        "sha256": "e13533279865c67a8f81d5ddeb3ea73c7b70350af6c5bfcee2a09995195fcbc8"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/owned-process-closure.json",
+        "bytes": 702,
+        "sha256": "a28f87af4cf43b5959babfdf022d20c8fb417666a0c88df0a65ee4c478edb08d"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/checkpoint-scheduler-final-audit.json",
+        "bytes": 436,
+        "sha256": "f6a41e3eefa58dbb672e7ef4df121fdbe9916796ae478e1c232ad1b2be8fd50b"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-106.json",
+        "bytes": 118295,
+        "sha256": "bd28690b0c4127b623acbc5e6e519c47fbe43bf95fc293f94a41ca53d196b92e"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/summarize_audit.py",
+        "bytes": 11114,
+        "sha256": "fa74adb11d1ceff8c2ae7ca8c5b0861ebf509ddaa7194117d439540c80125776"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/summary.json",
+        "bytes": 965,
+        "sha256": "d8e05a36a30e7aa31668b0f77e67e56653d6d4cfaf89f7fb3a3ab8fb002c39b6"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-101.json",
+        "bytes": 120162,
+        "sha256": "0544a4d42ba76a920a8994e660e78e6e0476ba404f6da22f6d2486bb2e1153e8"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/policy-divergence.png",
+        "bytes": 71049,
+        "sha256": "95354146022c5f844afb3a401089151ce50ea0febcca47bf00f85a5ab2e6ff69"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-107.json",
+        "bytes": 72147,
+        "sha256": "30b1fc7cf0285bdb0eb9509eed123b5e782cbd04f28314886155e592962a61d9"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/sample-audit-108.json",
+        "bytes": 123111,
+        "sha256": "6294aac355ef5f7713444355aeb8e44ce09b683909691d678d963aaf79cd9e3b"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-100.json",
+        "bytes": 69378,
+        "sha256": "8d3d46cfc022cae43dd01ec459cd9ecfe6a8c548c846b00d951729bc22ef7831"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/actor-wait.png",
+        "bytes": 51334,
+        "sha256": "07b868dd4eb63dd70051d538dbaf6a083fa2b9ea5551d607fdec8498ec4bb70f"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/cap-fraction.png",
+        "bytes": 52187,
+        "sha256": "2a4cc319fbb3a3ee634056c824039b05ec081c54b0587d03533409cc57d35978"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/matched-question-rewards.png",
+        "bytes": 210736,
+        "sha256": "29e084c67ed28fedaa8f5613853e19267beee32cca02017ecce1df2be1cd15b1"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-106.json",
+        "bytes": 90449,
+        "sha256": "dca7f037ee3617966157f69642c3636c32516d047745f3bba71bd204b22cc7c9"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-105.json",
+        "bytes": 58689,
+        "sha256": "536871f31401e9fae974dcd6fc04f41f22ea60cca2b4144c065afcfea1221e8c"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/runtime-acceptance.json",
+        "bytes": 93609,
+        "sha256": "7143cf4385824520aa89a2bd2d0f791ea25c313463aca789d741e3ca115de4a4"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/seeded-proofs-102.json",
+        "bytes": 60007,
+        "sha256": "ded3c444e9dd8b5a248fb3f7acb489f0d3b6110ed385b77b46cdb8f927c274b3"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/samples.json",
+        "bytes": 1139620,
+        "sha256": "04075897dada05029a77d8e56b582e8ee9b642fc48ef3613f2bbc75a0bfedf65"
+      },
+      {
+        "path": "miles/easy-overfit-v17-batch128/groups.json",
+        "bytes": 28155,
+        "sha256": "1791e5fad8eec31a9011d45fac2221b35f128e79b9d117198c5445c5290c80d3"
+      }
+    ]
+  },
+  "checkpoint": {
+    "iteration": 108,
+    "scheduler": {
+      "max_lr": 1e-06,
+      "lr_warmup_steps": 0,
+      "num_steps": 4448,
+      "lr_decay_style": "constant",
+      "lr_decay_steps": 1280,
+      "min_lr": 0.0,
+      "start_wd": 0.1,
+      "end_wd": 0.1,
+      "wd_incr_style": "constant",
+      "wd_incr_steps": 1280
+    },
+    "saved_global_batch_size": 128,
+    "read_bytes": 74413,
+    "checkpoint_key": "common_state/shard_0_1",
+    "expected_scheduler_counter": 4448
+  },
+  "protected_checkpoints": {
+    "at_utc": "2026-11-24T03:49:25.684223+00:00",
+    "checkpoints": [
+      {
+        "run": "easy-overfit-v9",
+        "iteration": 24,
+        "exists": true,
+        "files": 4
+      },
+      {
+        "run": "easy-overfit-v12",
+        "iteration": 64,
+        "exists": true,
+        "files": 4
+      },
+      {
+        "run": "easy-overfit-v15",
+        "iteration": 84,
+        "exists": true,
+        "files": 4
+      },
+      {
+        "run": "easy-overfit-v16",
+        "iteration": 98,
+        "exists": true,
+        "files": 4
+      },
+      {
+        "run": "easy-overfit-v17",
+        "iteration": 108,
+        "exists": true,
+        "files": 4
+      }
+    ]
+  },
+  "wandb": {
+    "at_utc": "2026-11-24T03:42:48.869357+00:00",
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261124-011641-925-native",
+    "state": "finished",
+    "optimizer_steps": [
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108
+    ],
+    "history_rows": 10,
+    "scalar_values_verified": 811,
+    "new_history_writes": 0
+  },
+  "process_closure": {
+    "at_utc": "2026-11-24T03:45:18.617998+00:00",
+    "hourly_observer_stop_sent": true,
+    "processes": [
+      {
+        "receipt": "controller-process.json",
+        "pid": 1382535,
+        "active": false
+      },
+      {
+        "receipt": "reward-service-process.json",
+        "pid": 1382542,
+        "active": false
+      },
+      {
+        "receipt": "metrics-observer-process.json",
+        "pid": 1382881,
+        "active": false
+      },
+      {
+        "receipt": "gpu-telemetry-process.json",
+        "pid": 1382882,
+        "active": false
+      },
+      {
+        "receipt": "hourly-review-process.json",
+        "pid": 1382883,
+        "active": false
+      }
+    ],
+    "judge_total_usd": 4.1508204,
+    "final_review_completed_updates": 10
+  },
+  "remaining_scientific_limit": "One continuation with provisional rubric scores. Human agreement and an independent-provider audit are unmeasured."
+}

@@ -1,5 +1,14 @@
 # Open questions
 
+## 2026-11-23: Next step after the four-problem batch test
+
+- Question: prioritize human rubric calibration, a frozen-checkpoint comparison, or a further bounded training continuation?
+- Evidence: [the completed four-problem test](experiments/tcs_async_rl/FOUR_PROBLEM_BATCH_RESULTS_20261123.md) has 19 repeated questions averaging 5.752 → 5.776/7. Six rise and thirteen fall. The largest rise coincides with fewer empty capped answers. Judge orders disagree on 177/1,280 answers. This does not measure their mathematical error rate.
+- Options: label the existing ten-example blinded packet without new compute; specify a bounded frozen-checkpoint comparison; or specify another bounded training continuation.
+- Recommendation: complete human calibration before treating these provisional reward differences as proof improvement. All current-run code, grades and checkpoints remain preserved.
+- Blocks: the next research design and spending beyond the completed ten-update, four-hour/$5 plan. It does not block the completed batch change, private artifact storage or routine diagnostic repairs.
+- Approval handling: the user's “Do it” approved the concrete four-problem run and its discussed resource choices. Do not request that approval again.
+
 ## 2026-11-22: Storage for a bounded continuation after the two-hour backfill slot
 
 - Question: may the replacement's intermediate checkpoint be removed only after a newer continuation checkpoint is atomically saved and verified?

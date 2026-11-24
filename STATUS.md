@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Batch128 run complete and fully archived: ten saved updates, all811 W&B scalars verified; matched rewards change plus0.025/7 Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Review human calibration before choosing another bounded experiment. This run, checkpoint, private archives and process closure are verified.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Four-problem run completed: 10 saved updates, 1,280 answers, $4.151, private archives and 811 W&B scalars verified. Matched reward change is +0.025/7. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Review human calibration before another bounded experiment. The approved run, checkpoint, cloud storage and process closure are complete.
 
 ## Finished
 
