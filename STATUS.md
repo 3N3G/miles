@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 544406 restored iteration98 and both optimizer counters; private live artifacts verify before VM eviction Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
-  Next: Verify the first complete four-problem backward update, its engine publication and W&B point. Continue foreground supervision through terminal archival.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 544406 completed its first 128-answer update with 66 microbatches; all 80 W&B scalars and three-engine weights verify Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
+  Next: Continue through the bounded run, inspect the update100 fixed-batch direction check, monitor judge and disk budgets, and verify checkpoint/archive closure.
 
 ## Next / blocked
 

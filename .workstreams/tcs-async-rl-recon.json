@@ -3002,15 +3002,22 @@
       "actor": "codex",
       "summary": "AMD 544406 restored iteration98 and both optimizer counters; private live artifacts verify before VM eviction",
       "revision": 280
+    },
+    {
+      "id": "abf7ac80-c081-4d25-9a84-d6f2ec4c1d89",
+      "at": "2026-11-24T01:54:54.496890Z",
+      "actor": "codex",
+      "summary": "AMD 544406 completed its first 128-answer update with 66 microbatches; all 80 W&B scalars and three-engine weights verify",
+      "revision": 281
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 544406 restored iteration98 and both optimizer counters; private live artifacts verify before VM eviction",
-  "nextAction": "Verify the first complete four-problem backward update, its engine publication and W&B point. Continue foreground supervision through terminal archival.",
+  "summary": "AMD 544406 completed its first 128-answer update with 66 microbatches; all 80 W&B scalars and three-engine weights verify",
+  "nextAction": "Continue through the bounded run, inspect the update100 fixed-batch direction check, monitor judge and disk budgets, and verify checkpoint/archive closure.",
   "owner": "Codex",
-  "revision": 280,
-  "updatedAt": "2026-11-24T01:31:45.039731Z"
+  "revision": 281,
+  "updatedAt": "2026-11-24T01:54:54.496890Z"
 }
