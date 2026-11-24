@@ -897,7 +897,7 @@
     {
       "id": "546404",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "PENDING"
     },
     {
       "id": "544406",
@@ -3238,15 +3238,22 @@
       "actor": "codex",
       "summary": "Prepare tested resource-stop guards and terminal acceptance for the approved twelve-hour continuation",
       "revision": 305
+    },
+    {
+      "id": "36e1a79b-ae06-4fb9-a0d2-343bac93f373",
+      "at": "2026-11-24T18:33:15.414249Z",
+      "actor": "codex",
+      "summary": "AMD screen 546404 is PENDING; judge validation has thirteen verified W&B scalars",
+      "revision": 306
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Luna high passes the observed gate. All 136 CPU checks pass, including resource guards. AMD screen 546404 remains pending. Recorded judge spending is $0.55.",
-  "nextAction": "Watch the 12-question screen, inspect medium proof quality, then freeze and submit the approved continuation with tracked budget/deadline guards.",
+  "summary": "AMD screen 546404 is PENDING; judge validation has thirteen verified W&B scalars",
+  "nextAction": "Watch the approved checkpoint screen, audit its medium answers, and submit the frozen continuation under the shared resource limits.",
   "owner": "Codex",
-  "revision": 305,
-  "updatedAt": "2026-11-24T18:21:16.477634Z"
+  "revision": 306,
+  "updatedAt": "2026-11-24T18:33:15.414249Z"
 }

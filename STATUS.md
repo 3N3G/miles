@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high passes the observed gate. All 136 CPU checks pass, including resource guards. AMD screen 546404 remains pending. Recorded judge spending is $0.55. Jobs: hpcfund/546404 SUBMITTED; hpcfund/544406 COMPLETED
-  Next: Watch the 12-question screen, inspect medium proof quality, then freeze and submit the approved continuation with tracked budget/deadline guards.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD screen 546404 is PENDING; judge validation has thirteen verified W&B scalars Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
+  Next: Watch the approved checkpoint screen, audit its medium answers, and submit the frozen continuation under the shared resource limits.
 
 ## Next / blocked
 
