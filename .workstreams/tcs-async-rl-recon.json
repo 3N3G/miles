@@ -3138,15 +3138,22 @@
       "actor": "codex",
       "summary": "Keep the generated status concise while fresh packet preparation continues",
       "revision": 296
+    },
+    {
+      "id": "799f410e-aa25-4f02-8cf8-e7aa34ec9d31",
+      "at": "2026-11-24T06:18:32.737055Z",
+      "actor": "codex",
+      "summary": "Freeze the fresh forty-answer validation labels and verify all first-phase artifacts",
+      "revision": 297
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Paired v3 matches 32/40 exact scores and 95.96% items; labeled-reference v1 matches 31/40 and 93.54%. All153 controls pass. Total new judge spend is $0.2522091. Original labels remain unchanged; two post-output audit corrections are separate.",
-  "nextAction": "Audit forty disjoint answers, freeze labels, then compare paired v3 with reference v2. Keep the same $2 ledger and GPU gate.",
+  "summary": "Fresh forty-answer validation labels are frozen at 63aba9a7b191f2386b57bdb758af12b17691768c223bb2c3f77a759f4cf46dba. No answer overlap. All603 first-phase artifacts verify on private HF. Spend remains $0.2522091, with zero pending calls.",
+  "nextAction": "Compare the repaired reference recipe with unchanged paired grading on the frozen fresh answers, then inspect controls and gate results.",
   "owner": "Codex",
-  "revision": 296,
-  "updatedAt": "2026-11-24T06:12:56.946160Z"
+  "revision": 297,
+  "updatedAt": "2026-11-24T06:18:32.737055Z"
 }

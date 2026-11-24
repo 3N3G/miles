@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Paired v3 matches 32/40 exact scores and 95.96% items; labeled-reference v1 matches 31/40 and 93.54%. All153 controls pass. Total new judge spend is $0.2522091. Original labels remain unchanged; two p Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Audit forty disjoint answers, freeze labels, then compare paired v3 with reference v2. Keep the same $2 ledger and GPU gate.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Fresh forty-answer validation labels are frozen at 63aba9a7b191f2386b57bdb758af12b17691768c223bb2c3f77a759f4cf46dba. No answer overlap. All603 first-phase artifacts verify on private HF. Spend remains Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Compare the repaired reference recipe with unchanged paired grading on the frozen fresh answers, then inspect controls and gate results.
 
 ## Next / blocked
 

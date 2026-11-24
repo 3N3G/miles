@@ -1,0 +1,31 @@
+{
+  "at_utc": "2026-11-24T06:13:02.265163+00:00",
+  "packet_sha256": "888fc0f8f27146e1e25addc0862396ca499c2dd286e89e33dc2e798fe6770a30",
+  "cases": 40,
+  "easy_questions": 16,
+  "easy_answers": 32,
+  "medium_questions": 1,
+  "medium_answers": 8,
+  "new_solver_generations": 0,
+  "new_judge_calls": 0,
+  "heldout_reads": 0,
+  "excluded_packet_sha256": [
+    "793dc92214c2b67049c2bcf0a36067f552969ae39f52fc22d1f101c8d34918bd"
+  ],
+  "labels_sha256": "63aba9a7b191f2386b57bdb758af12b17691768c223bb2c3f77a759f4cf46dba",
+  "audit_completed_at_utc": "2026-11-24T06:18:32.663129+00:00",
+  "label_kind": "assistant_not_human",
+  "new_comparison_calls_before_label_freeze": 0,
+  "answer_text_overlap_with_first_packet": 0,
+  "questions_overlap_with_first_packet": 17,
+  "question_generalization_measured": false,
+  "phase_ledger": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-v1/budget.jsonl",
+  "prior_settled_calls": 273,
+  "prior_spend_usd": 0.2522091,
+  "prior_pending_calls": 0,
+  "phase_cap_usd": 2,
+  "all_stages_cap_usd": 25,
+  "prior_artifact_commit": "c2b0d8f9c65b9162f7b316494132116a193ba4fd",
+  "prior_verified_artifacts": 603,
+  "preparation_failure": "First invocation used a nonexistent medium-directory spelling and stopped before writing any case. Corrected to the verified medium-check-v15-mi350 directory. No solver or judge call was made by preparation."
+}
