@@ -9,6 +9,30 @@ from pathlib import Path
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
 
 
+def verify(directory, path, metrics, packet_sha256):
+    import wandb
+
+    for attempt in range(30):
+        remote = wandb.Api().run(path)
+        summary = dict(remote.summary)
+        if remote.state == "finished" and all(
+            key in summary and math.isclose(summary[key], value, rel_tol=0, abs_tol=1e-6)
+            for key, value in metrics.items()
+        ):
+            output = {
+                "url": remote.url,
+                "state": remote.state,
+                "verified_scalars": len(metrics),
+                "packet_sha256": packet_sha256,
+                "optimizer_updates": 0,
+            }
+            _atomic_bytes(directory / "wandb-judge-comparison.json", (json.dumps(output, indent=2) + "\n").encode())
+            return output
+        if attempt < 29:
+            time.sleep(3)
+    raise RuntimeError("W&B comparison metrics failed readback; retain the run and retry verification")
+
+
 def publish(directory, session_uuid):
     # Authentication remains inside the already configured local SDK.
     import wandb
@@ -66,16 +90,16 @@ def publish(directory, session_uuid):
     }
     client = directory.parent / ".wandb-clients" / "judge-high-20261124"
     client.mkdir(parents=True, exist_ok=True)
-    figure = directory.parent / "judge-high-figures-20261124/judge-effort-comparison.png"
-    image = wandb.Image(str(figure))  # Validate image dependencies before creating a remote run.
     owner_file = directory / "wandb-judge-started.json"
     if owner_file.exists():
         owner = json.loads(owner_file.read_text())
         if owner["session_uuid"] != session_uuid or owner["packet_sha256"] != freeze["packet_sha256"]:
             raise ValueError("The existing comparison run belongs to a different session or packet")
         existing = wandb.Api().run("geney/tcs-async-rl/judge-high-20261124")
-        if any(key in existing.summary for key in metrics):
-            raise RuntimeError("Existing comparison points need readback recovery, not another log call")
+        if any(key in dict(existing.summary) for key in metrics):
+            return verify(directory, "geney/tcs-async-rl/judge-high-20261124", metrics, freeze["packet_sha256"])
+    figure = directory.parent / "judge-high-figures-20261124/judge-effort-comparison.png"
+    image = wandb.Image(str(figure))  # Validate image dependencies before creating a remote run.
     run = wandb.init(
         entity="geney",
         project="tcs-async-rl",
@@ -86,7 +110,7 @@ def publish(directory, session_uuid):
         config=config,
         dir=str(client),
         resume="must" if owner_file.exists() else "never",
-        settings=wandb.Settings(mode="online"),
+        settings=wandb.Settings(mode="online", x_update_finish_state=True),
     )
     path = "/".join((run.entity, run.project, run.id))
     _atomic_bytes(
@@ -102,28 +126,8 @@ def publish(directory, session_uuid):
     for index, row in enumerate(methods["reference_high"]["cases"]):
         table.add_data(row["case"], row["audit_score"], *[data["cases"][index]["reward"] for data in methods.values()])
     run.log({**metrics, "judge/comparison_table": table, "judge/comparison_figure": image})
-    url = run.url
     run.finish()
-    for attempt in range(6):
-        remote = wandb.Api().run(path)
-        summary = dict(remote.summary)
-        if remote.state == "finished" and all(
-            key in summary and math.isclose(summary[key], value, rel_tol=0, abs_tol=1e-6)
-            for key, value in metrics.items()
-        ):
-            break
-        if attempt == 5:
-            raise RuntimeError("W&B comparison metrics failed readback")
-        time.sleep(2)
-    output = {
-        "url": url,
-        "state": remote.state,
-        "verified_scalars": len(metrics),
-        "packet_sha256": freeze["packet_sha256"],
-        "optimizer_updates": 0,
-    }
-    _atomic_bytes(receipt, (json.dumps(output, indent=2) + "\n").encode())
-    return output
+    return verify(directory, path, metrics, freeze["packet_sha256"])
 
 
 if __name__ == "__main__":
