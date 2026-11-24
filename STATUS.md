@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Request the one approved checkpoint at the observed resource trigger; preserve all source checkpoints Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
-  Next: Finish the active update, verify its saved files and actual three-engine publication, then close this owned allocation and verify archives.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 544406 is COMPLETED Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 

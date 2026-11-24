@@ -841,7 +841,7 @@
     {
       "id": "544406",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "540286",
@@ -3051,15 +3051,22 @@
       "actor": "codex",
       "summary": "Request the one approved checkpoint at the observed resource trigger; preserve all source checkpoints",
       "revision": 287
+    },
+    {
+      "id": "40c48796-1e0a-41a2-bf44-426c08191f9c",
+      "at": "2026-11-24T03:39:18.568727Z",
+      "actor": "codex",
+      "summary": "RL job 544406 is COMPLETED",
+      "revision": 288
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Request the one approved checkpoint at the observed resource trigger; preserve all source checkpoints",
-  "nextAction": "Finish the active update, verify its saved files and actual three-engine publication, then close this owned allocation and verify archives.",
+  "summary": "RL job 544406 is COMPLETED",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 287,
-  "updatedAt": "2026-11-24T03:30:15.483875Z"
+  "revision": 288,
+  "updatedAt": "2026-11-24T03:39:18.568727Z"
 }
