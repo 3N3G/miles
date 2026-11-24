@@ -9,7 +9,7 @@ from pathlib import Path
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
 
 
-def publish(directory):
+def publish(directory, session_uuid):
     # Authentication remains inside the already configured local SDK.
     import wandb
 
@@ -66,6 +66,16 @@ def publish(directory):
     }
     client = directory.parent / ".wandb-clients" / "judge-high-20261124"
     client.mkdir(parents=True, exist_ok=True)
+    figure = directory.parent / "judge-high-figures-20261124/judge-effort-comparison.png"
+    image = wandb.Image(str(figure))  # Validate image dependencies before creating a remote run.
+    owner_file = directory / "wandb-judge-started.json"
+    if owner_file.exists():
+        owner = json.loads(owner_file.read_text())
+        if owner["session_uuid"] != session_uuid or owner["packet_sha256"] != freeze["packet_sha256"]:
+            raise ValueError("The existing comparison run belongs to a different session or packet")
+        existing = wandb.Api().run("geney/tcs-async-rl/judge-high-20261124")
+        if any(key in existing.summary for key in metrics):
+            raise RuntimeError("Existing comparison points need readback recovery, not another log call")
     run = wandb.init(
         entity="geney",
         project="tcs-async-rl",
@@ -75,15 +85,23 @@ def publish(directory):
         job_type="judge-validation",
         config=config,
         dir=str(client),
-        resume="never",
+        resume="must" if owner_file.exists() else "never",
         settings=wandb.Settings(mode="online"),
     )
     path = "/".join((run.entity, run.project, run.id))
+    _atomic_bytes(
+        owner_file,
+        (
+            json.dumps(
+                {"session_uuid": session_uuid, "packet_sha256": freeze["packet_sha256"], "url": run.url}, indent=2
+            )
+            + "\n"
+        ).encode(),
+    )
     table = wandb.Table(columns=["case", "assistant_audit", *methods])
     for index, row in enumerate(methods["reference_high"]["cases"]):
         table.add_data(row["case"], row["audit_score"], *[data["cases"][index]["reward"] for data in methods.values()])
-    figure = directory.parent / "judge-high-figures-20261124/judge-effort-comparison.png"
-    run.log({**metrics, "judge/comparison_table": table, "judge/comparison_figure": wandb.Image(str(figure))})
+    run.log({**metrics, "judge/comparison_table": table, "judge/comparison_figure": image})
     url = run.url
     run.finish()
     for attempt in range(6):
@@ -111,4 +129,6 @@ def publish(directory):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--directory", type=Path, required=True)
-    print(json.dumps(publish(parser.parse_args().directory), indent=2))
+    parser.add_argument("--session-uuid", required=True)
+    cli = parser.parse_args()
+    print(json.dumps(publish(cli.directory, cli.session_uuid), indent=2))
