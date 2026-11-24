@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted approved twelve-question checkpoint screen 546404 Jobs: hpcfund/546404 SUBMITTED; hpcfund/544406 COMPLETED
-  Next: Supervise the no-update screen, confirm exact384 answers, audit grades and apply the approved medium inclusion rule.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high passes36/40 exact scores and all87 controls across calibration and selected questions. AMD546404 is pending. Spending$0.5496883. All132 CPU checks pass. Jobs: hpcfund/546404 SUBMITTED; hpcfund/544406 COMPLETED
+  Next: Watch screen546404 through checkpoint restore and384 checked answers. Then audit raw proofs and execute the approved20/26-question twelve-hour continuation.
 
 ## Next / blocked
 

@@ -3205,15 +3205,22 @@
       "actor": "codex",
       "summary": "Submitted approved twelve-question checkpoint screen 546404",
       "revision": 302
+    },
+    {
+      "id": "87dd7a59-d16c-4c06-8409-b016d9248884",
+      "at": "2026-11-24T17:26:59.389897Z",
+      "actor": "codex",
+      "summary": "Prepare graceful final-save stopping and receipt-checked screen analysis while the approved AMD job waits",
+      "revision": 303
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Submitted approved twelve-question checkpoint screen 546404",
-  "nextAction": "Supervise the no-update screen, confirm exact384 answers, audit grades and apply the approved medium inclusion rule.",
+  "summary": "Luna high passes36/40 exact scores and all87 controls across calibration and selected questions. AMD546404 is pending. Spending$0.5496883. All132 CPU checks pass.",
+  "nextAction": "Watch screen546404 through checkpoint restore and384 checked answers. Then audit raw proofs and execute the approved20/26-question twelve-hour continuation.",
   "owner": "Codex",
-  "revision": 302,
-  "updatedAt": "2026-11-24T17:20:04.994865Z"
+  "revision": 303,
+  "updatedAt": "2026-11-24T17:26:59.389897Z"
 }

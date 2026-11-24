@@ -30,9 +30,9 @@ PUBLIC_TRAINING_ARGUMENTS = frozenset("""
     recompute_granularity recompute_method recompute_num_layers rollout_batch_size
     rollout_max_context_len rollout_max_response_len rollout_num_gpus rollout_num_gpus_per_engine
     rollout_shuffle rollout_skip_special_tokens rollout_temperature rollout_top_k rollout_top_p
-    save_interval seed seq_length sequence_parallel sglang_context_length sglang_max_running_requests
+    reset_rollout_state rollout_seed save_interval seed seq_length sequence_parallel sglang_context_length sglang_max_running_requests
     sglang_mem_fraction_static single_checkpoint skip_actor_forward_only tensor_model_parallel_size
-    train_backend use_checkpoint_opt_param_scheduler use_distributed_optimizer use_dynamic_batch_size
+    stop_after_save_trigger train_backend use_checkpoint_opt_param_scheduler use_distributed_optimizer use_dynamic_batch_size
     use_kl_loss use_rollout_logprobs weight_decay
     """.split())
 
@@ -43,6 +43,11 @@ def training_log_config(directory, resolved):
         "native_metrics_source": "VM single writer",
         "training": {name: value for name, value in resolved["args"].items() if name in PUBLIC_TRAINING_ARGUMENTS},
         "resolved_config_sha256": hashlib.sha256((directory / "resolved-config.json").read_bytes()).hexdigest(),
+        "judge": resolved.get("judge"),
+        "judge_prompt_sha256": resolved.get("judge_prompt_sha256"),
+        "dataset_sha256": resolved.get("dataset_sha256"),
+        "question_set_key": resolved.get("question_key"),
+        "question_count": resolved.get("question_count"),
         "gradient_accumulation": "Dynamic token batches; actual count is audit/train/num_microbatches per update",
     }
 

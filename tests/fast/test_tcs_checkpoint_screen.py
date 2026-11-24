@@ -1,8 +1,12 @@
+import ast
+import asyncio
 import hashlib
 import json
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import Mock
 
 from experiments.tcs_async_rl.checkpoint_screen import verify_publication
 from experiments.tcs_async_rl.rl_inputs import question_set_key, read_bundle
@@ -10,6 +14,31 @@ from experiments.tcs_async_rl.screen_inputs import select_questions
 
 
 class CheckpointScreenTests(unittest.TestCase):
+    def test_fresh_phase_does_not_read_old_queues_but_default_restore_still_requires_them(self):
+        source = ast.parse(Path("miles/ray/rollout/rollout_executor.py").read_text())
+        method = next(
+            node for node in ast.walk(source) if isinstance(node, ast.AsyncFunctionDef) and node.name == "load"
+        )
+        with tempfile.TemporaryDirectory() as name:
+            old_directory = Path(name) / "old-rollout"
+            locate = Mock(return_value=old_directory)
+            namespace = {"logger": Mock(), "compute_rollout_checkpoint_dir": locate}
+            exec(
+                compile(
+                    ast.fix_missing_locations(ast.Module(body=[method], type_ignores=[])),
+                    "actual-rollout-restore",
+                    "exec",
+                ),
+                namespace,
+            )
+            actor = SimpleNamespace(args=SimpleNamespace(reset_rollout_state=True, load="protected-source"))
+            asyncio.run(namespace["load"](actor, 108))
+            locate.assert_not_called()
+            actor.args.reset_rollout_state = False
+            with self.assertRaises(AssertionError):
+                asyncio.run(namespace["load"](actor, 108))
+            locate.assert_called_once()
+
     def test_selection_is_seeded_and_uses_both_strata_and_distinct_papers(self):
         rows = [
             {"difficulty": level, "cohort": "SODA_2023", "paper_id": f"{level}-{index}", "node_id": index}

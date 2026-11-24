@@ -65,3 +65,24 @@ Monitor scheduler state, native logs, engine identity, service/tunnel health, ge
 After completion, inspect one seeded raw answer per question and its item decisions.
 Upload results with `push-run miles`, verify immutable hashes, and record the receipt in the job registry.
 Apply the approved medium inclusion rule without choosing only successful questions.
+
+## Submitted screen and continuation closure repair
+
+Screen job546404 was submitted at2026-11-24 17:20:04 UTC from commit`3f36652fdad5103bc8c266a1b750682beea372bd`.
+All36 runtime controls pass. The exact carried ledger now has572 settled calls, no pending reservations,
+and$0.5496883 recorded usage. The VM service is PID1471075, bound only to loopback port18500.
+The tunnel controller owns only this job's SSH child.
+Slurm's17:21 UTC estimate was2026-11-25 02:09 UTC, or9:09 p.m. Eastern on November24.
+This is a queue estimate, not a confirmed start time.
+
+The subsequent RL driver adds `--stop-after-save-trigger` for graceful budget/deadline closure.
+It saves synchronously, publishes that saved model, then exits before another optimizer update.
+Periodic saves keep their normal cadence. The default remains to continue after a save request.
+A CPU test executes the actual complete async driver with stand-in workers.
+It requests a checkpoint away from the normal publication cadence and verifies the final save/publication ordering.
+Another test executes the actual rollout restore method, proving fresh-phase mode does not read old queues.
+These changes do not alter the already frozen submitted screen checkout.
+
+The screen result validator checks all384 response identities and actual request receipts.
+It verifies model, effort and prompt fingerprints and writes one seeded raw example per question.
+Its proposed20/26-question choice remains provisional until the raw mathematical answers are inspected.

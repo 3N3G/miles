@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import patch
+from unittest.mock import AsyncMock, Mock, patch
 
 from experiments.tcs_async_rl.amd_preflight import check_container_storage, load_configs
 from experiments.tcs_async_rl.checkpoint_policy import check_storage, single_checkpoint, storage_required
@@ -17,6 +17,87 @@ from miles.utils.checkpoint_policy import should_save_checkpoint
 
 
 class CheckpointPolicyTests(unittest.TestCase):
+    def test_requested_final_save_exits_after_publication_without_another_update(self):
+        source = ast.parse(Path("train_async.py").read_text())
+        function = next(
+            node for node in source.body if isinstance(node, ast.AsyncFunctionDef) and node.name == "train"
+        )
+        function = copy.deepcopy(function)
+        # Optional distributed imports stay outside this test. Execute the
+        # complete actual orchestration with stand-in workers and real files.
+        function.args.kwonlyargs[0].annotation = None
+
+        async def simulate(stop):
+            with tempfile.TemporaryDirectory() as name:
+                sentinel = Path(name) / "request"
+                args = SimpleNamespace(
+                    colocate=False,
+                    fully_async=True,
+                    offload_rollout=False,
+                    offload_train=False,
+                    use_critic=False,
+                    eval_interval=None,
+                    start_rollout_id=0,
+                    num_rollout=10,
+                    update_weights_interval=2,
+                    save_trigger_sentinel=str(sentinel),
+                    stop_after_save_trigger=stop,
+                    save_interval=5,
+                    single_checkpoint=False,
+                    debug_exit_after_rollout=None,
+                )
+                events = []
+
+                async def train(step, data):
+                    events.append(("train", step))
+                    if step == 2:
+                        sentinel.touch()
+
+                async def save_model(step, *, force_sync):
+                    events.append(("save", step, force_sync))
+
+                async def publish(*unused, rollout_id=None):
+                    events.append(("publish", rollout_id))
+
+                actor = SimpleNamespace(train=train, save_model=save_model)
+                executor = SimpleNamespace(get=AsyncMock(return_value=None), save=AsyncMock())
+                controller = SimpleNamespace(prepare_rollout=AsyncMock())
+                namespace = dict(
+                    asyncio=asyncio,
+                    os=os,
+                    partial=__import__("functools").partial,
+                    logger=Mock(),
+                    validate_async_off_policy_correction=Mock(),
+                    init_orchestration_script=Mock(),
+                    create_rollout_components=AsyncMock(return_value=(controller, executor, 20)),
+                    create_training_models=AsyncMock(return_value=(actor, None)),
+                    maybe_start_api_server=Mock(),
+                    maybe_start_mini_ft_controller=Mock(),
+                    update_weights=publish,
+                    check_initial_weight_update=AsyncMock(),
+                    EvalDispatcher=Mock(),
+                    eager_create_task=AsyncMock(side_effect=lambda coro: asyncio.create_task(coro)),
+                    remove_rollout_data_refs=Mock(),
+                    should_save_checkpoint=should_save_checkpoint,
+                    should_run_periodic_action=lambda step, interval, *other: interval is not None
+                    and (step + 1) % interval == 0,
+                )
+                exec(
+                    compile(
+                        ast.fix_missing_locations(ast.Module(body=[function], type_ignores=[])),
+                        "actual-async-driver",
+                        "exec",
+                    ),
+                    namespace,
+                )
+                await namespace["train"](args, disposer=Mock())
+                return events
+
+        events = asyncio.run(simulate(True))
+        self.assertEqual([step for kind, step, *other in events if kind == "train"], [0, 1, 2])
+        self.assertEqual(events[-2:], [("save", 2, True), ("publish", 2)])
+        self.assertEqual(len([event for event in asyncio.run(simulate(False)) if event[0] == "train"]), 10)
+
     def test_cached_rl_image_uses_checkpoint_guard_without_relaxing_image_provisioning(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

@@ -1610,6 +1610,11 @@ def get_miles_extra_args_provider(add_custom_arguments=None):
             )
             reset_arg(parser, "--save", type=str, default=None)
             reset_arg(parser, "--save-interval", type=int, default=None)
+            parser.add_argument(
+                "--stop-after-save-trigger",
+                action="store_true",
+                help="Exit train_async.py after a requested synchronous checkpoint and its weight publication.",
+            )
             reset_arg(parser, "--async-save", action="store_true")
             parser.add_argument(
                 "--streaming-model-checkpoint-save",
@@ -3765,6 +3770,9 @@ def miles_validate_args(args):
 
     if args.save_trigger_sentinel is not None:
         assert args.save is not None, "'--save' is required when save_trigger_sentinel is set."
+
+    if args.stop_after_save_trigger:
+        assert args.save_trigger_sentinel is not None, "--stop-after-save-trigger requires --save-trigger-sentinel."
 
     if args.single_checkpoint:
         assert args.train_backend == "megatron", "Single-checkpoint mode currently supports Megatron only."

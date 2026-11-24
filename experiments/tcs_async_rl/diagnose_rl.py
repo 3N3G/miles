@@ -149,6 +149,13 @@ def completed_judge_receipt(folder, identity, order):
             raise ValueError("Judge receipt does not match its request fingerprint")
         if receipt["http_status"] != 200 or receipt["identity"] != identity or receipt["swapped"] != bool(order):
             raise ValueError("Judge receipt has a different identity or presentation order")
+        payload = receipt["payload"]
+        if (
+            payload["model"] != manifest["judge"]["primary_model"]
+            or payload["reasoning_effort"] != manifest["judge"]["reasoning_effort"]
+            or hashlib.sha256(payload["messages"][0]["content"].encode()).hexdigest() != manifest["prompt_sha256"]
+        ):
+            raise ValueError("Judge receipt differs from the frozen model, effort or prompt")
         receipts.append((path, receipt))
     receipts.sort(key=lambda entry: entry[1]["payload"]["max_completion_tokens"])
     if receipts[0][1]["payload"]["max_completion_tokens"] != base_tokens:

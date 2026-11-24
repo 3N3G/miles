@@ -136,25 +136,30 @@ async def train(args, *, disposer: Disposer):
                 await save_training_model(critic_model, rollout_id, force_sync)
             if external_save:
                 os.remove(args.save_trigger_sentinel)
+        stop_after_save = external_save and getattr(args, "stop_after_save_trigger", False)
 
         if args.colocate:
             await offload_train()
             if args.offload_rollout:
                 await inference_controller.onload_weights()
-        if weight_update_due:
+        if weight_update_due or stop_after_save:
             if not args.fully_async:
                 # sync generate before update weights to prevent update weight in the middle of generation
                 rollout_data_curr_ref = (await x) if (x := rollout_data_next_future) is not None else None
                 rollout_data_next_future = None
             await update_weights(args, actor_model, rollout_executor, inference_controller, rollout_id=rollout_id)
-            if defer_next_drain and not args.colocate:
+            if defer_next_drain and not args.colocate and not stop_after_save:
                 rollout_data_next_future = await eager_create_task(prepare_and_generate(rollout_id + 1))
         if args.colocate:
             if args.offload_rollout:
                 await inference_controller.onload_kv()
             await inference_controller.continue_generation()
-            if rollout_id + 1 < args.num_rollout:
+            if rollout_id + 1 < args.num_rollout and not stop_after_save:
                 rollout_data_next_future = await eager_create_task(prepare_and_generate(rollout_id + 1))
+
+        if stop_after_save:
+            logger.info("Requested checkpoint saved and published at rollout_id=%d, exiting", rollout_id)
+            break
 
         if should_run_periodic_action(rollout_id, args.eval_interval, num_rollout_per_epoch, args.num_rollout):
             await inference_controller.prepare_eval()

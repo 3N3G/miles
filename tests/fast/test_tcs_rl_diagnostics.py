@@ -51,14 +51,23 @@ class DiagnosticTests(unittest.TestCase):
                 (folder / "service-manifest.json").write_text(
                     json.dumps(
                         {
-                            "judge": {"max_completion_tokens": 8},
+                            "judge": {"max_completion_tokens": 8, "primary_model": "test", "reasoning_effort": "high"},
                             "judge_config": {"length_retry_max_completion_tokens": 32},
+                            "prompt_sha256": hashlib.sha256(b"fixed prompt").hexdigest(),
                         }
                     )
                 )
 
                 def receipt(tokens, finish, message="same scoring request", root=folder):
-                    payload = {"max_completion_tokens": tokens, "messages": [message]}
+                    payload = {
+                        "max_completion_tokens": tokens,
+                        "model": "test",
+                        "reasoning_effort": "high",
+                        "messages": [
+                            {"role": "system", "content": "fixed prompt"},
+                            {"role": "user", "content": message},
+                        ],
+                    }
                     digest = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
                     path = root / f"online-example-order1-{digest[:12]}.json"
                     value = {

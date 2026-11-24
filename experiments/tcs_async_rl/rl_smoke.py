@@ -19,6 +19,7 @@ from types import SimpleNamespace
 from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.checkpoint_policy import check_storage
 from experiments.tcs_async_rl.group_inference import load_input, sampling_parameters
+from experiments.tcs_async_rl.judge_comparison import judge_settings
 from experiments.tcs_async_rl.resource_estimate import model_inputs
 from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, prepare_smoke_row, question_key
 from experiments.tcs_async_rl.rl_artifacts import export_rollouts
@@ -275,6 +276,12 @@ def main():
     )
     (cli.run_dir / "formatted-prompt.txt").write_text(rows[0]["formatted_prompt"])
     (cli.run_dir / "rollout_data").mkdir(exist_ok=True)
+    judge_config = (
+        json.loads((cli.config.parent / config["judge_config"]).read_text()) if config.get("judge_config") else None
+    )
+    judge = (
+        judge_settings(cli.config.parent / config["judge_config"], judge_config) if judge_config else training["judge"]
+    )
     (cli.run_dir / "resolved-config.json").write_text(
         json.dumps(
             {
@@ -285,12 +292,20 @@ def main():
                 "question_count": len(rows),
                 "dataset_sha256": config.get("dataset_sha256"),
                 "source_publication_file": config.get("source_publication_file"),
+                "judge": {
+                    name: judge[name] for name in ("primary_model", "reasoning_effort", "max_completion_tokens")
+                },
+                "judge_prompt_sha256": (
+                    hashlib.sha256((cli.config.parent / judge_config["prompt_file"]).read_bytes()).hexdigest()
+                    if judge_config
+                    else None
+                ),
             },
             indent=2,
         )
         + "\n"
     )
-    wait_for_judge(args["rm_url"], service_key, judge=training["judge"])
+    wait_for_judge(args["rm_url"], service_key, judge=judge)
     os.environ.update(
         NCCL_NVLS_ENABLE="0",
         RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES="1",
