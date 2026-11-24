@@ -94,3 +94,17 @@ Both conditional training bundles were frozen before any screen generation:
 
 The bundles are under the VM screen directory's`continuation-candidates/`.
 No outcome-dependent question selection or training has occurred.
+
+The first tunnel CLI ended during the queue wait without a terminal scheduler state.
+The reward service remained healthy. The foreground wait helper also exited with signal status143.
+The tunnel now runs in its own tracked process session, PID1473827, with output in`tunnel-controller.log`.
+Its saved identity is`tunnel-controller-process.json`. Direct foreground checks continue from the VM.
+
+A read-only `sbatch --test-only --partition=mi3008x` check gave a later start estimate than MI350.
+Its printed placeholder ID546431 is not a submitted GPU job. The only real submission remains546404.
+No allocation type or experiment limit changed.
+
+All twelve input references have been read and checked in [the input audit](SCREEN_INPUT_AUDIT_20261124.md).
+The three rollout engines receive distinct seeds derived from20261124 through`miles/ray/specs/inference.py`.
+When freezing the later RL configuration, place update-direction probes at109 onward.
+The old v17 probe list ends at100 and must not silently disable that observation in the continuation.
