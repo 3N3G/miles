@@ -3009,15 +3009,22 @@
       "actor": "codex",
       "summary": "AMD 544406 completed its first 128-answer update with 66 microbatches; all 80 W&B scalars and three-engine weights verify",
       "revision": 281
+    },
+    {
+      "id": "61c9a9a5-585f-46e3-bccc-0cb33b9a9acb",
+      "at": "2026-11-24T02:19:16.792952Z",
+      "actor": "codex",
+      "summary": "First hourly review: three batch128 updates, 249 verified W&B scalars and positive fixed-batch direction; no new repeated questions yet",
+      "revision": 282
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD 544406 completed its first 128-answer update with 66 microbatches; all 80 W&B scalars and three-engine weights verify",
-  "nextAction": "Continue through the bounded run, inspect the update100 fixed-batch direction check, monitor judge and disk budgets, and verify checkpoint/archive closure.",
+  "summary": "First hourly review: three batch128 updates, 249 verified W&B scalars and positive fixed-batch direction; no new repeated questions yet",
+  "nextAction": "Continue collecting comparable question visits, inspect every metric and seeded proof, and preserve the four-hour/$5 limits through checkpoint/archive closure.",
   "owner": "Codex",
-  "revision": 281,
-  "updatedAt": "2026-11-24T01:54:54.496890Z"
+  "revision": 282,
+  "updatedAt": "2026-11-24T02:19:16.792952Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD 544406 completed its first 128-answer update with 66 microbatches; all 80 W&B scalars and three-engine weights verify Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
-  Next: Continue through the bounded run, inspect the update100 fixed-batch direction check, monitor judge and disk budgets, and verify checkpoint/archive closure.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First hourly review: three batch128 updates, 249 verified W&B scalars and positive fixed-batch direction; no new repeated questions yet Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
+  Next: Continue collecting comparable question visits, inspect every metric and seeded proof, and preserve the four-hour/$5 limits through checkpoint/archive closure.
 
 ## Next / blocked
 
