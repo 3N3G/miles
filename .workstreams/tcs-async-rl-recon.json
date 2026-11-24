@@ -3266,15 +3266,22 @@
       "actor": "codex",
       "summary": "Archive and verify all 144 screen-preflight artifacts while AMD waits",
       "revision": 309
+    },
+    {
+      "id": "ca25ab67-dd1b-40ed-9b58-ac42c0d54958",
+      "at": "2026-11-24T21:32:54.278807Z",
+      "actor": "codex",
+      "summary": "Prepare validated fixed-question screen comparisons while AMD remains queued",
+      "revision": 310
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Luna high passes 36/40; AMD screen546404 is queued. Both continuation configs and144 preflight artifacts are preserved.",
-  "nextAction": "Watch screen546404 through completion, audit medium proofs, then select and run one approved continuation.",
+  "summary": "AMD screen546404 remains queued. Luna high passes, conditional runs are frozen, and141 CPU tests pass.",
+  "nextAction": "Supervise the screen, audit raw medium proofs, then run the selected approved continuation and matched final screen.",
   "owner": "Codex",
-  "revision": 309,
-  "updatedAt": "2026-11-24T19:15:47.536114Z"
+  "revision": 310,
+  "updatedAt": "2026-11-24T21:32:54.278807Z"
 }

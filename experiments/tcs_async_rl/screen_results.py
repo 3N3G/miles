@@ -22,6 +22,23 @@ def summarize(directory):
         raise ValueError("Screen input changed")
     questions = {question_key(row): row for row in json.loads(input_file.read_text())["questions"]}
     config = json.loads((directory / "approved-config.json").read_text())
+    args = json.loads((directory / "resolved-config.json").read_text())["args"]
+    sampling_keys = (
+        "seed",
+        "rollout_seed",
+        "eval_temperature",
+        "eval_top_p",
+        "eval_top_k",
+        "eval_max_response_len",
+        "rollout_max_context_len",
+        "sglang_context_length",
+        "apply_chat_template_kwargs",
+        "rollout_skip_special_tokens",
+        "n_samples_per_eval_prompt",
+    )
+    sampling = {key: args[key] for key in sampling_keys}
+    if any(sampling[key] != value for key, value in config["overrides"].items() if key in sampling):
+        raise ValueError("Screen sampling differs from the frozen configuration")
     if complete["checkpoint_rollout_id"] != config["resume"]["iteration"]:
         raise ValueError("Screen restored a different checkpoint iteration than its frozen plan")
     for key in questions:
@@ -82,6 +99,7 @@ def summarize(directory):
             {
                 "question_key": key,
                 "paper_id": question["paper_id"],
+                "prompt_type": question["prompt_type"],
                 "difficulty": question["difficulty"],
                 "answers": len(group),
                 "reward_counts": dict(sorted(collections.Counter(scores).items())),
@@ -99,6 +117,12 @@ def summarize(directory):
     medium = [row for row in rows if row["difficulty"] == "medium"]
     qualifying = sum(row["varied_with_positive"] for row in medium)
     result = {
+        "checkpoint_rollout_id": complete["checkpoint_rollout_id"],
+        "dataset_sha256": complete["dataset_sha256"],
+        "responses_sha256": complete["responses_sha256"],
+        "judge_prompt_sha256": config["judge_qualification"]["prompt_sha256"],
+        "judge_config_sha256": config["judge_qualification"]["runtime_config_sha256"],
+        "sampling": sampling,
         "questions": rows,
         "answers": len(indices),
         "optimizer_updates": 0,

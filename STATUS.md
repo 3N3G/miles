@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high passes 36/40; AMD screen546404 is queued. Both continuation configs and144 preflight artifacts are preserved. Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
-  Next: Watch screen546404 through completion, audit medium proofs, then select and run one approved continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD screen546404 remains queued. Luna high passes, conditional runs are frozen, and141 CPU tests pass. Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
+  Next: Supervise the screen, audit raw medium proofs, then run the selected approved continuation and matched final screen.
 
 ## Next / blocked
 

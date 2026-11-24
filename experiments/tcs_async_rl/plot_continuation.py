@@ -9,6 +9,8 @@ import json
 import textwrap
 from pathlib import Path
 
+from experiments.tcs_async_rl.diagnose_rl import per_question_steps
+
 
 def plot(directory):
     # Optional plotting dependencies stay outside the GPU training environment.
@@ -36,10 +38,11 @@ def plot(directory):
         points = [(row["optimizer_step"], row[key]) for row in native if key in row]
         ax.plot([x for x, _ in points], [y for _, y in points], "o-", color=color, label=label, markersize=3)
 
-    questions = list(dict.fromkeys(group["question_key"] for group in groups))
+    question_steps = per_question_steps(groups)
+    questions = list(dict.fromkeys(group["question_key"] for group in question_steps))
     fig, axes = plt.subplots((len(questions) + 3) // 4, 4, figsize=(14, 3 * ((len(questions) + 3) // 4)))
     for ax, key in zip(axes.flat, questions, strict=False):
-        visits = [group for group in groups if group["question_key"] == key]
+        visits = [group for group in question_steps if group["question_key"] == key]
         ax.plot([g["optimizer_step"] for g in visits], [g["mean_reward"] for g in visits], "o-", color=blue)
         title = visits[0]["paper_id"].replace("_", " ")
         ax.set_title("\n".join(textwrap.wrap(title, 34)) + "\n" + visits[0]["prompt_type"], fontsize=8)
@@ -71,7 +74,7 @@ def plot(directory):
         ax.set(
             yticks=range(len(pairs)),
             yticklabels=labels,
-            xlabel="Mean rubric points (32 answers per training visit)",
+            xlabel="Mean rubric points at the first/latest optimizer update",
             xlim=(0, 7.15),
             title=f"{len(pairs)} repeated questions; descriptive visits from one training seed",
         )

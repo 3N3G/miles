@@ -186,3 +186,20 @@ The screen preflight snapshot contains144 verified artifacts at
 It preserves the twelve fixed inputs,36 runtime controls, exact incoming ledger history and both conditional training bundles.
 It contains no new solver answers or optimizer updates.
 The copied ledger is historical evidence, not another spending owner.
+
+## Fixed-screen comparison outputs
+
+`screen_results` records the actual evaluation sampling recipe, checkpoint, data, response and judge fingerprints.
+It rejects a resolved sampling override that differs from the frozen configuration.
+`compare_screens` pairs question identities and rejects changed data, prompts, grader settings or sampling.
+It also rejects incomplete groups, inconsistent score histograms and a non-later after checkpoint.
+It writes per-question numeric values, copied seeded examples, a short report and four separate figure types.
+The figure types are mean score, full-credit count, cap count and response length.
+PNG and SVG exports passed sixteen render-only fixture checks.
+The fixture used artificial values, remains under`/tmp`, and is not uploaded as research evidence.
+All141 TCS CPU tests passed. Formatting and Ruff checks passed.
+Training-visit plots now pool repeat groups within an update, consistent with the numeric comparison.
+
+After a validated screen, run`python -m experiments.tcs_async_rl.compare_screens --before <screen-dir> --output <report-dir>`.
+After final evaluation, add`--after <final-screen-dir>` with a fresh output directory.
+These are descriptive one-seed observations. Questions may enter training and are not a held-out test.
