@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): High judge and controls pass. Frozen screen: six easy and six medium questions on twelve papers,32 answers each, no updates. All130 CPU checks pass. No GPU job submitted yet. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Run all twelve runtime control triples, stage the committed screen on AMD, and supervise the approved two-hour allocation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted approved twelve-question checkpoint screen 546404 Jobs: hpcfund/546404 SUBMITTED; hpcfund/544406 COMPLETED
+  Next: Supervise the no-update screen, confirm exact384 answers, audit grades and apply the approved medium inclusion rule.
 
 ## Next / blocked
 
