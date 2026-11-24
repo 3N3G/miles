@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Second hourly review: eight finite batch128 updates and 1024 answers; eleven repeated questions average minus 0.121 reward points Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
-  Next: Finish within the four-hour/$5 limits, request the one checkpoint at its trigger, and verify saved updates, cloud artifacts and W&B closure.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): All ten required batch128 payloads are secured; pause new unused rollout admissions while the final update trains Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
+  Next: Verify the final optimizer update, its single durable checkpoint and three-engine publication, then archive and verify W&B closure.
 
 ## Next / blocked
 
