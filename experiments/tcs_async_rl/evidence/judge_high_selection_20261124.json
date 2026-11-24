@@ -1,0 +1,6 @@
+{
+  "selected_method": "reference_guided",
+  "selection_rule": "Exact score agreement, then lower absolute error, then lower actual cost; observed gate required.",
+  "labels_sha256": "63aba9a7b191f2386b57bdb758af12b17691768c223bb2c3f77a759f4cf46dba",
+  "human_calibration": false
+}

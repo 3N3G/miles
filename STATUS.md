@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved testing Luna high, followed by further prompt optimization if needed. Prior444 calls cost $0.4516942. The twelve-hour RL and difficulty screen remain approved and gated. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Test high effort on the frozen fresh40 plus controls, preserving its original labels and the same append-only spending ledger.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Luna high matches36/40 total scores and96.79% items. All51 controls pass. Shared spending$0.5342506,536 settled calls. High evidence archive verifies250 artifacts. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Validate the single-reference high runtime, freeze six easy and six medium questions, then execute the approved checkpoint inference screen and twelve-hour continuation.
 
 ## Next / blocked
 

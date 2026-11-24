@@ -3179,15 +3179,22 @@
       "actor": "codex",
       "summary": "User approves Luna high and further prompt optimization if needed; resume the existing workstream",
       "revision": 299
+    },
+    {
+      "id": "5732632f-1c20-4742-bbb1-ff4f4ddc9fdb",
+      "at": "2026-11-24T17:09:52.261294Z",
+      "actor": "codex",
+      "summary": "Luna high passes the frozen-answer gate and all controls; archive 250 verified artifacts and wire the selected recipe into runtime",
+      "revision": 300
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "User approved testing Luna high, followed by further prompt optimization if needed. Prior444 calls cost $0.4516942. The twelve-hour RL and difficulty screen remain approved and gated.",
-  "nextAction": "Test high effort on the frozen fresh40 plus controls, preserving its original labels and the same append-only spending ledger.",
+  "summary": "Luna high matches36/40 total scores and96.79% items. All51 controls pass. Shared spending$0.5342506,536 settled calls. High evidence archive verifies250 artifacts.",
+  "nextAction": "Validate the single-reference high runtime, freeze six easy and six medium questions, then execute the approved checkpoint inference screen and twelve-hour continuation.",
   "owner": "Codex",
-  "revision": 299,
-  "updatedAt": "2026-11-24T16:57:57.633576Z"
+  "revision": 300,
+  "updatedAt": "2026-11-24T17:09:52.261294Z"
 }

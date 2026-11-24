@@ -59,7 +59,11 @@ If no recipe passes or the comparison cap prevents validation, preserve the evid
 
 ## Results
 
-Not yet run. No GPU stage is implied by preparing these configurations.
+Completed: high effort matches 36/40 total scores and 96.79% of items.
+All 51 controls pass. The observed gate passes, so further prompt optimization is unnecessary in this round.
+The four remaining disagreements and immutable evidence are in
+[the standalone results](HIGH_EFFORT_JUDGE_RESULTS_20261124.md).
+No GPU stage has yet run.
 
 ### Planned figures
 

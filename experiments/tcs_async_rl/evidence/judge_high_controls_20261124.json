@@ -1,0 +1,1913 @@
+{
+  "questions": 17,
+  "presentations": 51,
+  "results": [
+    {
+      "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Comparing the endpoints gives n/√d ≤ √(δn); squaring and rearranging yields d ≥ n/δ."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "Combining d ≥ n/δ with d ≤ n/2 forces δ ≥ 2, impossible for δ < 1."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "The choice δ₀ = 1 leaves no admissible parameters for any positive n, so the claimed probability statement holds vacuously."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f/reference_guided/reference-order0-87148362ff30.json"
+    },
+    {
+      "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The candidate supplies no comparison of the interval endpoints or derivation of d≥n/δ."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It does not combine the parameter bounds to show they are incompatible for small δ."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It gives no choice of δ₀ or vacuity argument."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f/reference_guided/empty-order0-3aa13d933c76.json"
+    },
+    {
+      "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The candidate gives no comparison of the interval endpoints or derivation of d≥n/δ."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It does not combine the bounds on d or establish that the parameter restrictions are incompatible."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It supplies no choice of δ₀ or vacuity argument."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f/reference_guided/irrelevant-order0-7959af833b63.json"
+    },
+    {
+      "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "It identifies that a large coefficient norm for one basis is insufficient: every deletion must remain a basis and have the required norm."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "It gives the explicit construction with rows the coordinate vectors and the all-ones vector, together with their full-rank dependence."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "The unique dependence has no zero coefficient, so a dependence among the rows remaining after any deletion would contradict uniqueness and full support."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Solving the dependence for any omitted row gives coefficients of absolute value one; basis uniqueness identifies them with the representation coefficients, whose norm is therefore √d."
+          },
+          {
+            "item": 5,
+            "satisfied": true,
+            "reason": "It orders the construction, deletion-independence, and coefficient calculation coherently, and concludes that this example rules out a guarantee strictly below √d."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b/reference_guided/reference-order0-b4b5bb9fa263.json"
+    },
+    {
+      "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No discussion of the need for the norm and invertibility conditions to hold for every selection."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No construction or realizable construction principle is provided."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No argument that every selected square matrix is invertible."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No representation coefficients or calculation of their norms are given."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "No ordered proof strategy or explanation of the resulting uniform lower-bound obstruction is provided."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b/reference_guided/empty-order0-726b2c0423c9.json"
+    },
+    {
+      "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "Does not identify the need to control every selection; it only gives “42.”"
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "Provides no row configuration or realizable construction principle."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "Gives no argument that every selected matrix is invertible."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "Does not identify any representation coefficients or establish their norm."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "Provides no ordered proof strategy or explanation of the resulting lower bound."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b/reference_guided/irrelevant-order0-5cf722962127.json"
+    },
+    {
+      "question_key": "87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Identifies the exponential candidate count and notes that feasibility events for different assignments are dependent."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "For a fixed assignment, computes each normalized projection as standard normal and uses independence of rows to obtain feasibility probability $(1-\\Phi(\\kappa))^M$."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "Counts solutions and applies linearity of expectation to get $2^N(1-\\Phi(\\kappa))^M$, without assuming independence across assignments."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Uses the strict density inequality and $M/N\\to\\alpha$ to make the exponent's bracket uniformly negative for all sufficiently large $N$."
+          },
+          {
+            "item": 5,
+            "satisfied": true,
+            "reason": "Applies Markov's inequality to the nonnegative integer solution count, yielding the required exponential bound on nonemptiness."
+          },
+          {
+            "item": 6,
+            "satisfied": true,
+            "reason": "Presents the steps coherently and correctly limits the conclusion to an upper bound if a sharp threshold exists, without asserting its existence or feasibility below the bound."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c/reference_guided/reference-order0-84a8487b33bf.json"
+    },
+    {
+      "question_key": "87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No discussion of the candidate-space growth or dependence between assignment events is provided."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No fixed-assignment projection distribution, row independence, or feasibility probability is established."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No solution count, expectation, or union bound is given."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No exponential-rate calculation using the density assumption is provided."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "No inequality converts a counting estimate into the requested probability bound."
+          },
+          {
+            "item": 6,
+            "satisfied": false,
+            "reason": "The candidate supplies no proof strategy or discussion of the claim's scope."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c/reference_guided/empty-order0-b245afcee7cc.json"
+    },
+    {
+      "question_key": "87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response does not identify the candidate-counting obstacle or dependence between assignment events."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It gives no fixed-assignment projection distribution, row-independence argument, or feasibility probability."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It introduces neither a solution count nor a union bound over the $2^N$ assignments."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It does not analyze the exponential rate or use the strict density inequality."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "It provides no probability bound converting a counting estimate into exponential infeasibility."
+          },
+          {
+            "item": 6,
+            "satisfied": false,
+            "reason": "It presents no proof strategy or discussion of the claim's scope."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c/reference_guided/irrelevant-order0-7b34a50da5dc.json"
+    },
+    {
+      "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "For ε=99/100, ε²⁰≥4/5, so the cutoff 1/ε²⁰≤5/4 permits only templates with at most one vertex, none of which can contain an edge when k=2."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "For F=C₁₀₃, ρ_F=102/101. A proper subgraph with t≥2 edges and c components has v=t+c, so ρ_G=(t−1)/(t+c−2)≤1<ρ_F."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "All permitted templates have at most one vertex and no edges. Their extension counts equal h exactly: n for one unrooted vertex and 1 for rooted or empty templates. Thus (P1)–(P3) hold, and the only cases with h≤1 have zero free vertices, giving the (P4) bound 1."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Here k−1/ρ=103/102 and 103/102+ε⁵<2. Hence K_{n/2,n/2}, with n²/4 edges, meets the initial-density bound for all sufficiently large even n."
+          },
+          {
+            "item": 5,
+            "satisfied": true,
+            "reason": "The host is bipartite, so it contains no C₁₀₃ and R=n²/4 deterministically. Since k−1/ρ+ε=2−1/5100, this exceeds the asserted upper bound for n>4⁵¹⁰⁰. For any proposed δ₀, choose δ<min{δ₀,1}; arbitrarily large even n then violate the conclusion, defeating every proposed n₀."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92/reference_guided/reference-order0-d38cc577852b.json"
+    },
+    {
+      "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The solution does not identify the large-ε template-size obstruction."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It gives no choice of F or verification of strict balance."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It provides no extension-count calculations or checks of (P1)–(P4)."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It does not verify the initial-density condition for any host graph."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "It supplies no counterexample or argument contradicting the conclusion and its quantifiers."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92/reference_guided/empty-order0-cc33de91beaf.json"
+    },
+    {
+      "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response does not identify that ε=99/100 makes the template-size cutoff less than two."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It gives no example of F and no strict-balance verification."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It checks no template extension counts or pseudorandomness conditions."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It gives no host graph or initial-density calculation."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "It provides no contradiction to the conclusion or discussion of the quantifiers."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92/reference_guided/irrelevant-order0-aac2a4a1a8f6.json"
+    },
+    {
+      "question_key": "e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Chooses the fixed explicit family Q_m=P_m and gives a deterministic algorithm that computes the encoding, queries the oracle, and tests the result."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "The query has arity m=s(n), and the formulation's coordinate-length bound directly ensures it meets the oracle's admissibility condition."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "The oracle returns P_{s(n)}(φ_n(x)); the algorithm accepts exactly when this value is nonzero, matching the formulation's equivalence."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Preprocessing and query preparation take O(t(n)); the oracle charge is s(n)≤t(n). The coefficient, monomial-count, degree, and coordinate bounds give returned-value bit length O(1+log m+b(m))=O(m), so the zero test also fits O(t(n))."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f/reference_guided/reference-order0-ec010553dd4a.json"
+    },
+    {
+      "question_key": "e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No fixed oracle family or deterministic oracle algorithm is given."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No query arity or coordinate-length admissibility is addressed."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No acceptance rule or correctness argument is provided."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No preprocessing, oracle-charge, or returned-integer time analysis is provided."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f/reference_guided/empty-order0-b3c32f14997a.json"
+    },
+    {
+      "question_key": "e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No fixed oracle family or deterministic decision algorithm is given."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "The response does not address query arity or coordinate-length admissibility."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It gives no correctness argument relating an oracle answer to the formulation."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It provides no preprocessing, oracle-charge, or answer-processing time analysis."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f/reference_guided/irrelevant-order0-9d4bf1decb74.json"
+    },
+    {
+      "question_key": "610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "It distinguishes fixed-pair universality from the global failure event and notes that collision events may be dependent."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "It characterizes failure by an unordered colliding pair in S and counts the possible witnesses."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "It sums the pair indicators’ expectations to obtain the bound binom(|S|,2)·2^{-r}, without assuming independence."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Markov’s inequality converts the collision-count expectation to a failure bound, and the size restriction makes it at most 1/2."
+          },
+          {
+            "item": 5,
+            "satisfied": true,
+            "reason": "The strategy proceeds coherently from witnesses to aggregation, probability conversion, and the final size substitution."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497/reference_guided/reference-order0-e7e5a92ec2c5.json"
+    },
+    {
+      "question_key": "610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No strategy is provided to distinguish fixed-pair bounds from the global failure event."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No witness count or equivalent decomposition of the failure event is given."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No aggregation of the pairwise collision bounds is provided."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No probability conversion or use of the size bound is given."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "The candidate is empty and provides no proof strategy."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497/reference_guided/empty-order0-33d6e5d5df00.json"
+    },
+    {
+      "question_key": "610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response identifies no obstacle or distinction between fixed-pair guarantees and the global failure event."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It provides no witness decomposition or alternative event/count."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It gives no aggregation of pairwise collision bounds."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It makes no probability conversion or use of the size bound."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "The response contains no proof strategy establishing the assertion."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497/reference_guided/irrelevant-order0-1dd5d6323055.json"
+    },
+    {
+      "question_key": "b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Constructs A by stacking the standard basis rows with the all-ones row and verifies the required cases."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "Shows the identity rows are independent when the all-ones row is omitted, and proves independence for every omitted basis row using coordinates."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "When the all-ones row is omitted, A_S=I_d and the coefficient vector is u, with squared norm d."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "For each omitted e_j, gives e_j=u−∑_{k≠j}e_k, identifies its coefficients as A_S^{-T}e_j, and computes squared norm (d−1)+1=d."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2/reference_guided/reference-order0-e8fe18bf11c0.json"
+    },
+    {
+      "question_key": "b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No construction is provided."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No argument establishes that every selection of d rows is invertible."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "The omitted-additional-row case is not addressed."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No coefficient calculation or norm verification for the other omissions is provided."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2/reference_guided/empty-order0-0e5b95ad6c7c.json"
+    },
+    {
+      "question_key": "b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response gives no matrix construction or justification."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It does not establish that every selection of d rows is invertible."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It does not compute the coefficient vector or its norm when the additional row is omitted."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It does not analyze the other possible omitted rows or establish their coefficient norms."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2/reference_guided/irrelevant-order0-2aa74965a166.json"
+    },
+    {
+      "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "For k=1 and r=2, the constraints hold for every n≥16: 2k=r≤n/8."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "The singleton hypergraph has m=n, and setting x_i=b_{\\{i\\}} gives ψ(x)=n^{-1}∑_i b_{\\{i\\}}²=1 for every sign realization."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "The threshold is 256C√(2n) log n, which is less than m=n for all sufficiently large n for any fixed C>0."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Since the claimed bound ψ(x)≤1/4 is false for every sign realization, soundness precludes certifying it; the certification probability is zero, contradicting the required high-probability guarantee."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931/reference_guided/reference-order0-835cc66ba619.json"
+    },
+    {
+      "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No parameter choice or admissibility check is provided."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No unary hypergraph or assignment attaining objective value 1 is constructed."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No substitution into the density threshold or proof that it holds for large n is given."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No contradiction to the sound-certification guarantee is established."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931/reference_guided/empty-order0-b1007dbf5629.json"
+    },
+    {
+      "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response does not select or verify any admissible parameters."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It constructs no hypergraph or assignment and does not establish the unary objective value."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It does not substitute into or verify the density threshold."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It gives no argument contradicting sound certification."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931/reference_guided/irrelevant-order0-f92fd4b5d808.json"
+    },
+    {
+      "question_key": "441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Chooses the allowed sequence p_n=1, for which G_n is deterministically K_n."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "For n≥4, K_n has minimum degree n−1≥3, so its entire graph is its 2-core and every core vertex has degree at least 3."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "K_n is not a cycle component. With no degree-2 vertices, a bare path between distinct endpoints can only be a single edge, unique by simplicity; a closed bare path would require degree-2 internal vertices, so none of the listed path exceptions applies."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "The transposition of vertices 1 and 2 is an automorphism of K_n and moves core vertices; since none of the listed generators applies, it is not in A(C)."
+          },
+          {
+            "item": 5,
+            "satisfied": true,
+            "reason": "The event fails deterministically for every n≥4 under this sequence, so its probability is 0 rather than tending to 1."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843/reference_guided/reference-order0-4c3c216f6844.json"
+    },
+    {
+      "question_key": "441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No density sequence is selected."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No claim about the 2-core or its degrees is given."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No listed exception is analyzed."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No forbidden automorphism is exhibited."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "No probabilistic failure is concluded."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843/reference_guided/empty-order0-4870a101d9ed.json"
+    },
+    {
+      "question_key": "441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "Does not select an allowed density sequence or identify a deterministic graph."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "Does not establish the 2-core or its vertex degrees."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "Does not check whether any listed exceptions apply."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "Does not exhibit or verify a forbidden automorphism."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "Does not derive failure of the probabilistic conclusion."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843/reference_guided/irrelevant-order0-7a28ede42d19.json"
+    },
+    {
+      "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "It identifies that capacity constraints bound aggregate weighted edge use, not every supported tree’s cut intersection, and that unequal weights require weight-sensitive averaging."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "It samples with probability proportional to weight and uses feasibility to bound the expected intersection by |C|/W; the double-counting identity gives the same bound."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "It combines |C|≤βλ, W≥τ/(1+ε), and the stated Nash–Williams bound τ≥λ/2 in the correct directions to obtain 2(1+ε)β."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "It uses integer-valuedness: if every supported tree exceeded the floor, each count would be at least the floor plus one, contradicting the expectation bound."
+          },
+          {
+            "item": 5,
+            "satisfied": true,
+            "reason": "The strategy fixes a cut and packing, derives the average bound, and extracts a witness for that cut without claiming one tree works for all cuts."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a/reference_guided/reference-order0-6fbfceb42b0f.json"
+    },
+    {
+      "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No response identifies the gap between aggregate edge capacities and an individual tree's cut intersection."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No weighted averaging or equivalent construction is given to bound the intersection count."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No composition of the cut, packing, and spanning-tree-packing bounds is provided."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No supported tree is extracted, and the integer-valued floor argument is absent."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "No proof strategy or cut-dependent quantifier distinction is provided."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a/reference_guided/empty-order0-effa30a18860.json"
+    },
+    {
+      "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response does not identify the aggregate-to-individual obstacle or address unequal weights."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It gives no weighted averaging construction or bound on the average intersection count."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It does not combine the cut, packing, and connectivity bounds to obtain the stated threshold."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It supplies no supported-tree witness or integer-valued floor argument."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "It presents no proof strategy or cut-dependent existential argument."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a/reference_guided/irrelevant-order0-644074dbe3b3.json"
+    },
+    {
+      "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "It identifies that agreement is with an arbitrary received symbol, not necessarily zero, and calls for removing the common affine offset."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "It constructs the span of anchor differences and explains that differences of vertices lie in W and map to zero at coordinate i by linearity and common agreement."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "It gives the affine-hull translation identity, so the direction space has dimension exactly the hyperedge's affine dimension."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "It orders the local construction, dimension comparison, and summation coherently, and notes that no independence across coordinates is needed."
+          },
+          {
+            "item": 5,
+            "satisfied": true,
+            "reason": "It handles empty and singleton edges and uses an arbitrary anchor and received symbol, without requiring the zero vertex or special code properties."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40/reference_guided/reference-order0-ba2da1ee361b.json"
+    },
+    {
+      "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No solution is provided, so it does not identify the mismatch between agreement with the received symbol and membership in the zero-symbol kernel."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No kernel-related construction or justification is given."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No intermediate claim connecting a constructed direction space or fiber to affine dimension is stated."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No coordinatewise argument or summation strategy is provided."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "No treatment of empty or singleton hyperedges, arbitrary received symbols, or omitted zero vertices is provided."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40/reference_guided/empty-order0-cbee9b340fd7.json"
+    },
+    {
+      "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response does not address the nonzero received-symbol offset or explain why agreement is not kernel membership."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It gives no construction of a direction space or fiber related to both W and H_i∩W."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It states no dimension comparison connecting an affine hyperedge to a linear subspace."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It provides no coordinatewise argument or summation establishing the target inequality."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "It does not discuss empty or singleton hyperedges or the generality of the hypotheses."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40/reference_guided/irrelevant-order0-fcc29a06f274.json"
+    },
+    {
+      "question_key": "976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "The solution orients an optimal T-rooted forest away from T and deletes the unique incoming edge of each vertex in A, giving the stated modified forest."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "It proves acyclicity and uses indegrees within each tree component to show there is exactly one zero-indegree vertex, hence exactly one root in T∪A."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "The edge-cost deletion bound yields a fractional-cover inequality; scaling μ by 1/(1−γ) handles γ<1 using only the marginals, while monotonicity handles γ≥1. No independence is assumed."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12/reference_guided/reference-order0-27dd5c169c39.json"
+    },
+    {
+      "question_key": "976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No candidate argument is provided to choose an optimal forest or construct a deletion rule."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No modified forest or rooted-component invariant is established."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No cost inequality or averaging argument using the marginal probabilities is provided."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12/reference_guided/empty-order0-249dd1fd8b9a.json"
+    },
+    {
+      "question_key": "976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response gives no forest construction or deletion rule."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It does not establish that any modified forest spans all vertices or has exactly one root per component."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It provides no cost inequality or averaging argument using the marginal probabilities."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12/reference_guided/irrelevant-order0-005c1e33c054.json"
+    },
+    {
+      "question_key": "5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Identifies the need to connect squared-loss improvement to correlation while bounding the predictor, and highlights the quadratic remainder."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "Uses pointwise projection onto [0,1] to show clipping cannot increase distance to either binary label; this preserves the improvement and gives g in [-1,1]."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "Gives the correct identity: correlation equals twice the clipped loss improvement plus (1/2)E[g²]. The remainder is nonnegative, yielding the required factor 2."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Orders clipping, the quantitative identity, and discarding the nonnegative remainder to derive the target."
+          },
+          {
+            "item": 5,
+            "satisfied": true,
+            "reason": "Uses the specified unnormalized signed-label product and states the reasoning holds for arbitrary joint distributions, without balance or independence assumptions."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178/reference_guided/reference-order0-03ef0cc2b6ef.json"
+    },
+    {
+      "question_key": "5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No solution is provided, so it does not identify the obstacle of relating squared-loss improvement to bounded signed-label correlation."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No clipping argument is given to show that projection onto [0,1] preserves the loss guarantee or yields the required output range."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No quantitative identity or inequality connecting clipped loss improvement to correlation is supplied."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No sequence of subgoals or derivation of the target guarantee is provided."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "The response does not address signed-label correlation or distributional assumptions."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178/reference_guided/empty-order0-460e7ccf1179.json"
+    },
+    {
+      "question_key": "5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response gives no proof strategy and does not identify the quadratic-loss versus bounded-correlation obstacle."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It provides no clipping argument or explanation that clipping preserves the loss improvement and bounds the output."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It states no identity or inequality connecting the clipped loss improvement to signed-label correlation."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It gives no ordered subgoals or derivation of the target guarantee."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "It says nothing about signed-label correlation or distributional assumptions."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178/reference_guided/irrelevant-order0-f1feb6096fdf.json"
+    },
+    {
+      "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Identifies that Alice's selectors are private while Bob holds the candidate inputs, so the simulation must address their information mismatch."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "For each fixed selector vector, Alice locally extracts the x-coordinates and Bob extracts the selected y-coordinates; the coordinatewise outputs of f^l then equal the required interlaced outputs."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "Encodes the entire selector vector injectively in a fixed length of ceil(log2(kappa^l)) = ceil(l log2 kappa), avoiding separate rounding and any delimiter cost."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "After the encoding, each player can locally form its input to f^l and simulate its deterministic protocol messages from its original input and transcript; the output is correct and the depths add."
+          },
+          {
+            "item": 5,
+            "satisfied": true,
+            "reason": "Orders the reduction, encoding, and protocol composition coherently, and explicitly gives the unique selector vector an empty encoding when kappa=1."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e/reference_guided/reference-order0-544b6065ccc8.json"
+    },
+    {
+      "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No information-access obstacle or selector-knowledge mismatch is identified."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No locally implementable reduction or coordinatewise correctness claim is given."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No collective selector encoding or exact overhead analysis is provided."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No legal simulation of a protocol for $f^l$ or composition of communication costs is described."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "There is no proof organization, and the case $\\kappa=1$ is not handled."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e/reference_guided/empty-order0-77d225b29988.json"
+    },
+    {
+      "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No information-access obstacle is identified; the response provides no explanation of how Alice's selectors become available to Bob."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No local reduction or coordinatewise correctness claim is given."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No collective encoding or overhead bound is described."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No protocol simulation, correctness argument, or communication-cost composition is provided."
+          },
+          {
+            "item": 5,
+            "satisfied": false,
+            "reason": "There is no organized proof strategy or handling of the case κ=1."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e/reference_guided/irrelevant-order0-881c2c9891c5.json"
+    },
+    {
+      "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Inductively decomposes H'_{N/2} and H'_{N/4}; after regrouping corresponding coordinates in the two copies, each pair of H_{a_i} blocks becomes [[H_{a_i},H_{a_i}],[H_{a_i},-H_{a_i}]]=H_{2a_i}. It verifies N=1 and N=2 and that the block sizes sum to N."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "The block dimensions sum to N, and independent evaluation after free coordinate permutations gives T_{H'}(N) ≤ ∑_i T_H(m_i)."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "For fixed ε, it applies the little-o estimate only to blocks m_i≥M and bounds the finitely many smaller sizes by C_ε m_i, yielding T_{H'}(N) ≤ C_εN+εN log N without assuming monotonicity."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "After division by N log N, the bound is C_ε/log N+ε; taking the limit superior and then ε→0 proves the conclusion."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831/reference_guided/reference-order0-fae771e1987b.json"
+    },
+    {
+      "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No recursive block decomposition, coordinate regrouping, or verification of the base cases is provided."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No block-size cost bound or argument about arithmetic-free coordinate permutations is provided."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No uniform estimate separating small block sizes from those covered by the little-o hypothesis is provided."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No normalization or limiting argument establishing the little-o conclusion is provided."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831/reference_guided/empty-order0-f66c84066423.json"
+    },
+    {
+      "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The response gives no decomposition or proof of the coupled-block regrouping."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It does not establish the block-cost bound or account for coordinate permutations."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It provides no uniform estimate over small and large block sizes."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It does not normalize a bound or derive the little-o conclusion."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831/reference_guided/irrelevant-order0-ea4110f818cf.json"
+    },
+    {
+      "question_key": "b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Uses two vertices joined by two parallel edges and swaps unit weight between them, giving distinct valid inputs that support the lower bound."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "Each input's output weight is the indicator that its unit-weight edge is selected, so the approximation guarantee gives p₁,p₂ ≥ α."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "For every coupling, the distance is pointwise 1_{e₁∈M₁}+1_{e₂∈M₂}; its expectation is p₁+p₂ ≥ 2α, independently of the coupling."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "The input distance is 2, so the ratio is at least α and hence L(A) ≥ α."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6/reference_guided/reference-order0-4ac109352de6.json"
+    },
+    {
+      "question_key": "b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No graph or pair of weight vectors is constructed."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No approximation constraint is derived."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No lower bound for couplings or the earth mover distance is proved."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No input-distance normalization or conclusion about L(A) is provided."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6/reference_guided/empty-order0-0c78ff9cc559.json"
+    },
+    {
+      "question_key": "b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No graph or pair of weight vectors is constructed."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No approximation guarantee is converted into constraints on output probabilities or expectations."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No lower bound for every coupling is established."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No input-distance calculation or conclusion about L(A) is given."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6/reference_guided/irrelevant-order0-ed72d3895bdf.json"
+    },
+    {
+      "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+      "control": "reference",
+      "expected": 7,
+      "method": "reference_guided",
+      "identity": "reference",
+      "swapped": false,
+      "candidate": {
+        "score": 7.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": true,
+            "reason": "The measure counts nonroot vertices with positive current penalty. The recursion guard \u001b[?]ρ′ ≠ ρ\u001b[?] implies some vertex in K had positive penalty and is reset to zero; zero penalties never become positive, so the measure strictly decreases, even if K also contains zero-penalty vertices."
+          },
+          {
+            "item": 2,
+            "satisfied": true,
+            "reason": "The measure starts at most |V|−1, giving at most |V|−1 transitions. Each invocation has at most one recursive child, so the entire execution is a single chain of at most |V| invocations."
+          },
+          {
+            "item": 3,
+            "satisfied": true,
+            "reason": "Recursive penalties remain original penalties or zero. Scaling by fixed rational β occurs only in the temporary input to A, so it adds only a constant number of bits per penalty and does not accumulate across recursive inputs."
+          },
+          {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Each invocation performs polynomial-time routine calls and polynomial-time construction and comparison work. The candidate costs are sums of polynomially many input rationals with polynomial total bit length; multiplying by at most |V| invocations preserves a polynomial total running time."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4/reference_guided/reference-order0-6a4133d0d616.json"
+    },
+    {
+      "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+      "control": "empty",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "empty",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "No progress measure or strict-decrease argument is provided."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "No bound on recursive transitions, invocations, or total calls is established."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "No argument controls recursive penalty values or their encoding lengths."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "No per-invocation work or overall polynomial running-time bound is established."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4/reference_guided/empty-order0-5ad89cf191e9.json"
+    },
+    {
+      "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+      "control": "irrelevant",
+      "expected": 0,
+      "method": "reference_guided",
+      "identity": "irrelevant",
+      "swapped": false,
+      "candidate": {
+        "score": 0.0,
+        "items": [
+          {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The candidate gives no progress measure or argument that recursive transitions strictly decrease one."
+          },
+          {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It does not bound the number of recursive transitions or account for the recursion's call structure."
+          },
+          {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It gives no argument controlling penalty values or their binary encoding lengths."
+          },
+          {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It provides no running-time analysis of the invocations, subroutine calls, or candidate-cost comparisons."
+          }
+        ]
+      },
+      "reference": null,
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-20261124/judgments-high-v1/controls/ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4/reference_guided/irrelevant-order0-69184761d931.json"
+    }
+  ],
+  "failures": [],
+  "spent_plus_reserved_usd": 0.5342506
+}
