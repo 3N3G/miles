@@ -34,6 +34,22 @@ def prompt_files(config):
     return config.get("prompt_files", DEFAULT_PROMPT_FILES)
 
 
+def requested_methods(config):
+    methods = tuple(config.get("methods", DEFAULT_PROMPT_FILES))
+    if not methods or len(set(methods)) != len(methods) or set(methods) - DEFAULT_PROMPT_FILES.keys():
+        raise ValueError("Comparison methods must be a nonempty unique subset of the two grading recipes")
+    return methods
+
+
+def judge_settings(config_path, config):
+    judge = json.loads((config_path.parent / config["training_config"]).read_text())["judge"]
+    if "judge_reasoning_effort" in config:
+        # The separately approved comparison config owns its trial's effort.
+        # Preserve the frozen training recipe and cached medium-effort baseline.
+        judge = {**judge, "reasoning_effort": config["judge_reasoning_effort"]}
+    return judge
+
+
 def save(path, value):
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False, allow_nan=False) + "\n")
 
@@ -244,8 +260,24 @@ async def compare(cli):
         assert all(type(x["satisfied"]) is bool and x["reason"] for x in label["candidate_items"])
     cli.output.mkdir(parents=True, exist_ok=True)
     config = json.loads(cli.config.read_text())
-    training = json.loads((cli.config.parent / config["training_config"]).read_text())
-    judge = training["judge"]
+    methods = requested_methods(config)
+    judge = judge_settings(cli.config, config)
+    baseline = None
+    if set(methods) != set(DEFAULT_PROMPT_FILES):
+        if cli.baseline_results is None:
+            raise ValueError("A partial comparison needs the frozen same-packet baseline")
+        baseline_freeze = json.loads((cli.baseline_results / "pre-call-label-freeze.json").read_text())
+        if baseline_freeze["packet_sha256"] != digest(cli.packet / "packet.json"):
+            raise ValueError("Baseline answers differ from this frozen packet")
+        if baseline_freeze["labels_sha256"] != cli.labels_sha256:
+            raise ValueError("Baseline audit labels differ from this comparison")
+        for method in set(DEFAULT_PROMPT_FILES) - set(methods):
+            name = prompt_files(config)[method]
+            if baseline_freeze["prompt_sha256"][name] != digest(cli.config.parent / name):
+                raise ValueError("Reused baseline prompt differs")
+        baseline = json.loads((cli.baseline_results / "verdicts.json").read_text())
+        if set(baseline) != {c["case"] for c in packet["cases"]}:
+            raise ValueError("Baseline case identities differ")
     shared = Budget(cli.budget_directory or cli.output, config)
     semaphore = asyncio.Semaphore(config["max_concurrency"])
     key = load_credentials(Path.home() / ".config/api-keys.env")[judge["api_key_env"]]
@@ -256,6 +288,11 @@ async def compare(cli):
         "config_sha256": digest(cli.config),
         "prompt_sha256": {name: digest(cli.config.parent / name) for name in prompt_files(config).values()},
     }
+    if "judge_reasoning_effort" in config or baseline:
+        freeze.update(
+            resolved_judge=judge,
+            baseline_results_sha256=digest(cli.baseline_results / "verdicts.json") if baseline else None,
+        )
     if freeze_path.exists():
         old = json.loads(freeze_path.read_text())
         if any(old[k] != v for k, v in freeze.items()):
@@ -284,11 +321,16 @@ async def compare(cli):
     tasks = [
         (case, method, swapped)
         for case in packet["cases"]
-        for method in ("anonymous_pair", "reference_guided")
+        for method in methods
         for swapped in ((False, True) if method == "anonymous_pair" else (False,))
     ]
     grades = await asyncio.gather(*(one(*task) for task in tasks))
-    results = {c["case"]: {"anonymous_pair": [], "reference_guided": []} for c in packet["cases"]}
+    results = {
+        c["case"]: {
+            method: [] if method in methods else baseline[c["case"]][method] for method in DEFAULT_PROMPT_FILES
+        }
+        for c in packet["cases"]
+    }
     for (case, method, _), grade in zip(tasks, grades, strict=True):
         results[case["case"]][method].append(grade)
     save(cli.output / "verdicts.json", results)
@@ -298,6 +340,11 @@ async def compare(cli):
         metrics[method]["actual_usage_usd"] = sum(
             usage_cost(r["body"]["usage"], config) for r in receipts if r.get("body", {}).get("usage") is not None
         )
+        metrics[method]["new_usage_usd"] = metrics[method]["actual_usage_usd"]
+        if method not in methods:
+            previous = json.loads((cli.baseline_results / "comparison.json").read_text())
+            metrics[method]["actual_usage_usd"] = previous[method]["actual_usage_usd"]
+            metrics[method]["source"] = str(cli.baseline_results)
     candidates = [name for name in metrics if metrics[name]["passes_observed_gate"]]
     selected = (
         min(
@@ -336,6 +383,7 @@ def main():
         run.add_argument("--" + name, type=Path, required=True)
     run.add_argument("--labels-sha256", required=True)
     run.add_argument("--budget-directory", type=Path)
+    run.add_argument("--baseline-results", type=Path)
     cli = parser.parse_args()
     print(json.dumps(prepare(cli) if cli.command == "prepare" else asyncio.run(compare(cli)), indent=2))
 

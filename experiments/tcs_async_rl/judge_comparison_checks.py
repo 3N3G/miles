@@ -9,7 +9,14 @@ from pathlib import Path
 
 from experiments.tcs_async_rl.grade_group import Budget, grade_one
 from experiments.tcs_async_rl.judge_client import load_credentials
-from experiments.tcs_async_rl.judge_comparison import SEED, digest, prompt_files, save
+from experiments.tcs_async_rl.judge_comparison import (
+    SEED,
+    digest,
+    judge_settings,
+    prompt_files,
+    requested_methods,
+    save,
+)
 from experiments.tcs_async_rl.reward_hook import question_key
 
 
@@ -67,7 +74,7 @@ async def controls(cli):
     )
     questions = {question_key(case["question"]): case["question"] for case in packet["cases"]}
     config = json.loads(cli.config.read_text())
-    judge = json.loads((cli.config.parent / config["training_config"]).read_text())["judge"]
+    judge = judge_settings(cli.config, config)
     key = load_credentials(Path.home() / ".config/api-keys.env")[judge["api_key_env"]]
     # Use the comparison's ledger directly. No second allowance is created.
     budget = Budget(cli.budget_directory or cli.output, config)
@@ -96,7 +103,7 @@ async def controls(cli):
         one(identity, row, name, text, expected, method, swapped)
         for identity, row in questions.items()
         for name, text, expected in (("reference", row["answer"], 7), ("empty", "", 0), ("irrelevant", "42", 0))
-        for method in ("anonymous_pair", "reference_guided")
+        for method in requested_methods(config)
         for swapped in ((False, True) if method == "anonymous_pair" else (False,))
     ]
     results = await asyncio.gather(*tasks)

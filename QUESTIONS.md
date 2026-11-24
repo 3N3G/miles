@@ -1,14 +1,5 @@
 # Open questions
 
-## 2026-11-24: Next judge step after the two failed comparison gates
-
-- Question: test the fixed repaired reference prompt with Luna high, or resolve the rubric interpretation on ten saved cases first?
-- Evidence: fresh pre-labeled answers give paired-medium 29/40 exact agreement and reference-medium 32/40. Both fall below the declared 90% gate. All controls pass. All 444 paid calls settle at $0.4516942, and no GPU job or new solver answer ran.
-- Options: [the concrete high-effort comparison](experiments/tcs_async_rl/JUDGE_NEXT_STEP_OPTIONS_20261124.md), bounded by the existing $2 comparison ledger within $25 total; or human review of the prepared interpretation packet without new compute.
-- Recommendation: test high effort if another automatic diagnostic is preferred. Otherwise resolve the literal-versus-equivalent-proof interpretation before further reward tuning. Do not claim assistant agreement is human accuracy.
-- Blocks: GPU screening and twelve-hour RL submission under the unsuccessful grading gate. The already approved resource limits remain valid and unused.
-- Permission basis: the user previously selected “Enable Qwen thinking; keep Luna medium.” The current plan fixes that effort and stops after one failed prompt repair. Prompt changes alone do not authorize a different judge effort.
-
 ## 2026-11-22: Storage for a bounded continuation after the two-hour backfill slot
 
 - Question: may the replacement's intermediate checkpoint be removed only after a newer continuation checkpoint is atomically saved and verified?
@@ -258,3 +249,13 @@
 - Blocks: the next research design and spending beyond the completed ten-update, four-hour/$5 plan. It does not block the completed batch change, private artifact storage or routine diagnostic repairs.
 - Approval handling: the user's “Do it” approved the concrete four-problem run and its discussed resource choices. Do not request that approval again.
 - Answer, 2026-11-24: compare the anonymous two-order recipe with labeled-reference grading by agreement on pre-labeled saved answers. Then screen six easy and six medium questions, followed by up to twelve hours of RL with screening extra. The shared new paid-judge cap is $25. The user delegated agreement thresholds. The [approved plan](experiments/tcs_async_rl/JUDGE_COMPARISON_LONG_RUN_PLAN_20261124.md) owns the exact gates and resource limits.
+
+## 2026-11-24: Next judge step after the two failed comparison gates
+
+- Question: test the fixed repaired reference prompt with Luna high, or resolve the rubric interpretation on ten saved cases first?
+- Evidence: fresh pre-labeled answers give paired-medium 29/40 exact agreement and reference-medium 32/40. Both fall below the declared 90% gate. All controls pass. All 444 paid calls settle at $0.4516942, and no GPU job or new solver answer ran.
+- Options: [the concrete high-effort comparison](experiments/tcs_async_rl/JUDGE_NEXT_STEP_OPTIONS_20261124.md), bounded by the existing $2 comparison ledger within $25 total; or human review of the prepared interpretation packet without new compute.
+- Recommendation: test high effort if another automatic diagnostic is preferred. Otherwise resolve the literal-versus-equivalent-proof interpretation before further reward tuning. Do not claim assistant agreement is human accuracy.
+- Blocks: GPU screening and twelve-hour RL submission under the unsuccessful grading gate. The already approved resource limits remain valid and unused.
+- Permission basis: the user previously selected “Enable Qwen thinking; keep Luna medium.” The current plan fixes that effort and stops after one failed prompt repair. Prompt changes alone do not authorize a different judge effort.
+- Answer, 2026-11-24: “Ok try luna high. If that doesn’t work do some more prompt optimization.” This approves high effort and further prompt repair, superseding the old medium-only and one-repair constraints. The [current protocol](experiments/tcs_async_rl/HIGH_EFFORT_JUDGE_PLAN_20261124.md) preserves the existing budget and fresh-validation requirements.

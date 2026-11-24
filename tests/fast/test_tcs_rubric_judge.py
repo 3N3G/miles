@@ -1,17 +1,78 @@
+import asyncio
+import hashlib
 import json
 import random
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch
 
 from experiments.tcs_async_rl.grade_group import Budget, reserve_cost, usage_cost
 from experiments.tcs_async_rl.judge_client import load_credentials
-from experiments.tcs_async_rl.judge_comparison import choose_easy, comparison_metrics
+from experiments.tcs_async_rl.judge_comparison import (
+    choose_easy,
+    compare,
+    comparison_metrics,
+    judge_settings,
+    requested_methods,
+)
 from experiments.tcs_async_rl.judge_comparison_checks import clustered_intervals
 from experiments.tcs_async_rl.rubric_judge import messages, parse_grade, rubric_items
 
 
 class RubricJudgeTests(unittest.TestCase):
+    def test_high_effort_trial_preserves_the_frozen_training_recipe(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            original = json.dumps({"judge": {"primary_model": "model", "reasoning_effort": "medium"}})
+            (root / "training.json").write_text(original)
+            config = {"training_config": "training.json", "judge_reasoning_effort": "high"}
+            result = judge_settings(root / "trial.json", config)
+            self.assertEqual(result["reasoning_effort"], "high")
+            self.assertEqual((root / "training.json").read_text(), original)
+        self.assertEqual(requested_methods({"methods": ["reference_guided"]}), ("reference_guided",))
+        with self.assertRaises(ValueError):
+            requested_methods({"methods": ["unknown"]})
+
+    def test_reused_baseline_must_match_frozen_answers_before_loading_credentials(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            packet = root / "packet"
+            baseline = root / "baseline"
+            packet.mkdir()
+            baseline.mkdir()
+            case = {"case": "case-01", "candidate": "proof", "question": {"rubric": "1. [7 pt] X"}}
+            (packet / "packet.json").write_text(json.dumps({"cases": [case]}))
+            packet_sha = hashlib.sha256((packet / "packet.json").read_bytes()).hexdigest()
+            (packet / "packet-freeze.json").write_text(json.dumps({"packet_sha256": packet_sha}))
+            label = {
+                "case": "case-01",
+                "candidate_sha256": hashlib.sha256(b"proof").hexdigest(),
+                "candidate_items": [{"item": 1, "satisfied": True, "reason": "established"}],
+            }
+            labels = root / "labels.json"
+            labels.write_text(json.dumps({"cases": [label]}))
+            label_sha = hashlib.sha256(labels.read_bytes()).hexdigest()
+            (baseline / "pre-call-label-freeze.json").write_text(
+                json.dumps({"packet_sha256": "different answers", "labels_sha256": label_sha})
+            )
+            (root / "training.json").write_text(json.dumps({"judge": {"reasoning_effort": "medium"}}))
+            config = root / "trial.json"
+            config.write_text(json.dumps({"training_config": "training.json", "methods": ["reference_guided"]}))
+            cli = SimpleNamespace(
+                packet=packet,
+                labels=labels,
+                labels_sha256=label_sha,
+                config=config,
+                baseline_results=baseline,
+                output=root / "output",
+            )
+            with patch("experiments.tcs_async_rl.judge_comparison.load_credentials") as load:
+                with self.assertRaisesRegex(ValueError, "Baseline answers differ"):
+                    asyncio.run(compare(cli))
+                load.assert_not_called()
+
     def test_supplied_weights_and_zero_credit_examples(self):
         rubric = "Total: 7 points\n1. [2 pt] A\n2. [5 pt] B\nZero-credit items:\n1. A mistake."
         items = rubric_items(rubric)
