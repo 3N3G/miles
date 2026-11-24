@@ -1058,7 +1058,7 @@
     }
   ],
   "workspace": {
-    "machine": "home",
+    "machine": "vm",
     "directory": "/home/ubuntu/miles"
   },
   "createdAt": "2026-11-18T17:51:14.141180Z",
@@ -3099,15 +3099,22 @@
       "actor": "codex",
       "summary": "Record the completed batch experiment and verified private artifact locations",
       "revision": 291
+    },
+    {
+      "id": "e670ad98-102c-48cf-ab7b-77b5b2a41c81",
+      "at": "2026-11-24T05:38:21.166017Z",
+      "actor": "codex",
+      "summary": "Claim the approved judge comparison, broader difficulty screen and twelve-hour continuation",
+      "revision": 292
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "needs-you",
-  "summary": "Four-problem run completed: 10 saved updates, 1,280 answers, $4.151, private archives and 811 W&B scalars verified. Matched reward change is +0.025/7.",
-  "nextAction": "Review human calibration before another bounded experiment. The approved run, checkpoint, cloud storage and process closure are complete.",
+  "state": "running",
+  "summary": "User approved a fixed-answer judge comparison, broader easy/medium screen, then 12 hours of RL with a $25 total judge cap. Claim preparation and validation.",
+  "nextAction": "Freeze the comparison and screening plan, pre-label 40 fresh saved answers, compare graders, and qualify the longer AMD run.",
   "owner": "Codex",
-  "revision": 291,
-  "updatedAt": "2026-11-24T03:50:48.728048Z"
+  "revision": 292,
+  "updatedAt": "2026-11-24T05:38:21.166017Z"
 }

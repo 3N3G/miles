@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved a fixed-answer judge comparison, broader easy/medium screen, then 12 hours of RL with a $25 total judge cap. Claim preparation and validation. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Freeze the comparison and screening plan, pre-label 40 fresh saved answers, compare graders, and qualify the longer AMD run.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Four-problem run completed: 10 saved updates, 1,280 answers, $4.151, private archives and 811 W&B scalars verified. Matched reward change is +0.025/7. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Review human calibration before another bounded experiment. The approved run, checkpoint, cloud storage and process closure are complete.
+- Nothing recorded.
 
 ## Finished
 
