@@ -166,3 +166,17 @@ All138 TCS CPU tests passed. Eight render-only plot fixtures also completed.
 The fixtures are explicitly marked as old data and are not new experiment results.
 The eight-file replay package passed immutable hash readback at
 `3N3G/internalization-runs@d13ddcb920c0512e98c2ccb1990f387f3105f611/miles/multigroup-regression-20261124`.
+
+## Conditional twelve-hour configurations
+
+Both continuation candidates are prepared before screening outcomes:
+`rl_long_high_easy_v1.json` and `rl_long_high_mixed_v1.json`.
+Neither has been submitted. Select exactly one after the declared inclusion rule and raw-proof audit.
+The two candidates use their respective frozen20/26 bundles and separate new output directories.
+Both preserve the source108 checkpoint, optimizer recipe, topology and batch128.
+They reset only rollout sampling/queues, select Luna high, and place update-direction probes at109 onward.
+The nominal10000-update target is an upper bound. Resource guards enforce the approved stop.
+Both configurations request twelve hours, save every five updates, retain the latest new checkpoint,
+and stop after the forced deadline/budget save. The source checkpoint remains protected.
+CPU checks validated qualified judge hashes, actual bundle identities, all resolved arguments,
+the Slurm time request and the guard limits. No new allocation was requested.

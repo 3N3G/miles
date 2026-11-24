@@ -1,0 +1,126 @@
+{
+  "status": "approved_conditional_continuation_20261124_not_submitted",
+  "mode": "rl_smoke",
+  "job_name": "tcs-long-high-easy-v1",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.luna_high_20261124.json",
+  "container_config": "qualification.proposed.json",
+  "allocation": {
+    "partition": "mi3508x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 8,
+    "cpus_per_task": 64,
+    "walltime": "12:00:00"
+  },
+  "overrides": {
+    "rollout_batch_size": 4,
+    "global_batch_size": 128,
+    "async_max_concurrent_samples": 96,
+    "rollout_skip_special_tokens": false,
+    "save_interval": 5,
+    "seed": 20261124,
+    "max_position_embeddings": 98304,
+    "custom_rm_path": "experiments.tcs_async_rl.reward_hook.reward",
+    "rm_url": "http://127.0.0.1:18500/score",
+    "use_wandb": true,
+    "wandb_mode": "offline",
+    "wandb_project": "tcs-async-rl",
+    "disable_wandb_random_suffix": true,
+    "wandb_always_use_train_step": true,
+    "use_tensorboard": true,
+    "check_weight_update_equal": true,
+    "wandb_team": "geney",
+    "custom_rollout_log_function_path": "experiments.tcs_async_rl.rl_artifacts.log_rollout",
+    "custom_megatron_post_save_hook_path": "experiments.tcs_async_rl.rl_artifacts.retain_latest_checkpoint",
+    "check_weight_update_skip_list": [
+      "visual."
+    ],
+    "observe_training_entropy": true,
+    "use_kl_loss": true,
+    "kl_loss_coef": 0.0,
+    "kl_loss_type": "low_var_kl",
+    "observe_update_direction_steps": [
+      109,
+      110,
+      115,
+      120,
+      130,
+      140,
+      150,
+      160,
+      180,
+      200,
+      240,
+      280,
+      320,
+      400,
+      500,
+      750,
+      1000,
+      2000,
+      5000,
+      10000
+    ],
+    "use_checkpoint_opt_param_scheduler": true,
+    "save_trigger_sentinel": "/work1/aviralkumar/geney/tcs-async-rl/runs/long-high-easy-v1/checkpoint-request",
+    "single_checkpoint": false,
+    "rollout_seed": 20261124,
+    "reset_rollout_state": true,
+    "stop_after_save_trigger": true,
+    "log_inference_engine_weight_checksums": true
+  },
+  "scope": {
+    "purpose": "Continue checkpoint108 with the selected fixed Luna-high grader after the predeclared screen rule",
+    "prompt_count": 20,
+    "optimizer_updates": 10000,
+    "heldout_reads": 0,
+    "maximum_gpu_hours": 96,
+    "judge_usd_cap": 25,
+    "judge_location": "VM loopback service through SSH; provider credentials remain on VM",
+    "interpretation": "One seed. The update target is only an upper bound. Stop within twelve allocated hours, at the shared judge threshold, or if another checkpoint cannot safely fit. This config may run only if selected by the declared screen rule and raw-proof audit.",
+    "minimum_varied_groups": 1,
+    "retained_checkpoints": 1
+  },
+  "dataset_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/training-20-bundle-high-v1.json",
+  "dataset_sha256": "18ed636017d16c3af5c1448ee4967b4aa6b996037c73f5304bf4ce95469e5929",
+  "artifact_compression": "gzip",
+  "incremental_archive": true,
+  "judge_config": "judge_group_reference_high_20261124.json",
+  "resume": {
+    "checkpoint_root": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/checkpoints",
+    "iteration": 108,
+    "source_run": "easy-overfit-v17"
+  },
+  "wandb_metrics_source": "native_vm",
+  "archive_interval_seconds": 600,
+  "judge_qualification": {
+    "selection": {
+      "file": "evidence/judge_high_selection_20261124.json",
+      "sha256": "932ce4d6c0c480f64ae9ba3796e139c674525cfb41ef24a91fe937402d8604a6"
+    },
+    "comparison": {
+      "file": "evidence/judge_high_comparison_20261124.json",
+      "sha256": "192ab9bf3ef5c9dc07ef413ea21af618413e7310fb79185e3df2140e50354b52"
+    },
+    "controls": {
+      "file": "evidence/judge_high_controls_20261124.json",
+      "sha256": "b08b3f1705c8a39089a09770490298ce5bf42039fd0725b40a70f93681e15749"
+    },
+    "runtime_config_sha256": "9725961b96a0e04e01b8f2412b92268fddf10319d5e90a92d604a7f71811409e",
+    "training_config_sha256": "2344da3a1dc6b08dd73e9ac8be86ad092ab6a1417ba62ed073d47c2f3a177427",
+    "prompt_sha256": "527da9b5b47473fa1912dab4a6e21874053520c31259ba7dac55fefd45779e1a"
+  },
+  "source_publication_file": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-overfit-v17/events/main.jsonl",
+  "resource_stop": {
+    "walltime_margin_seconds": 1800,
+    "judge_stop_usd": 22
+  },
+  "dataset_contract": {
+    "questions": 20,
+    "difficulties": [
+      "easy"
+    ]
+  }
+}

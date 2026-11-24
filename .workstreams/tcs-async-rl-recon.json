@@ -3252,15 +3252,22 @@
       "actor": "codex",
       "summary": "Validate the four-question continuation audit against 128 real answers and archive eight verified artifacts",
       "revision": 307
+    },
+    {
+      "id": "caee3926-7577-4520-9b06-ab7a55aa4e3e",
+      "at": "2026-11-24T19:03:16.855886Z",
+      "actor": "codex",
+      "summary": "Prepare both conditional twelve-hour configurations without submitting before screen results",
+      "revision": 308
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD screen 546404 remains pending; four-question audit matches 128 prior answers and native batch means.",
-  "nextAction": "Watch the approved screen, audit medium proofs, then freeze and submit the twelve-hour continuation within its shared limits.",
+  "summary": "AMD screen 546404 is pending; both approved conditional training configs and batch128 audits are ready.",
+  "nextAction": "Watch the screen, verify its proofs and rule, then submit exactly one prepared continuation.",
   "owner": "Codex",
-  "revision": 307,
-  "updatedAt": "2026-11-24T19:01:34.924951Z"
+  "revision": 308,
+  "updatedAt": "2026-11-24T19:03:16.855886Z"
 }

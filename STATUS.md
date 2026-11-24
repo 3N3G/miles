@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD screen 546404 remains pending; four-question audit matches 128 prior answers and native batch means. Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
-  Next: Watch the approved screen, audit medium proofs, then freeze and submit the twelve-hour continuation within its shared limits.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD screen 546404 is pending; both approved conditional training configs and batch128 audits are ready. Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
+  Next: Watch the screen, verify its proofs and rule, then submit exactly one prepared continuation.
 
 ## Next / blocked
 
