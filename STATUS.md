@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First hourly review: three batch128 updates, 249 verified W&B scalars and positive fixed-batch direction; no new repeated questions yet Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
-  Next: Continue collecting comparable question visits, inspect every metric and seeded proof, and preserve the four-hour/$5 limits through checkpoint/archive closure.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Batch128 halfway review: five finite updates and 640 answers, 19 questions, five verified W&B points; one repeat does not establish learning Jobs: hpcfund/544406 RUNNING; hpcfund/540286 CANCELLED
+  Next: Complete the second nominal pass within the four-hour/$5 limits. Compare matched question visits and inspect raw grades, then verify checkpoint and cloud archive closure.
 
 ## Next / blocked
 

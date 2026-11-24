@@ -3016,15 +3016,22 @@
       "actor": "codex",
       "summary": "First hourly review: three batch128 updates, 249 verified W&B scalars and positive fixed-batch direction; no new repeated questions yet",
       "revision": 282
+    },
+    {
+      "id": "7eff10c7-ef68-49c5-85a7-29f963765284",
+      "at": "2026-11-24T02:44:30.909488Z",
+      "actor": "codex",
+      "summary": "Batch128 halfway review: five finite updates and 640 answers, 19 questions, five verified W&B points; one repeat does not establish learning",
+      "revision": 283
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "First hourly review: three batch128 updates, 249 verified W&B scalars and positive fixed-batch direction; no new repeated questions yet",
-  "nextAction": "Continue collecting comparable question visits, inspect every metric and seeded proof, and preserve the four-hour/$5 limits through checkpoint/archive closure.",
+  "summary": "Batch128 halfway review: five finite updates and 640 answers, 19 questions, five verified W&B points; one repeat does not establish learning",
+  "nextAction": "Complete the second nominal pass within the four-hour/$5 limits. Compare matched question visits and inspect raw grades, then verify checkpoint and cloud archive closure.",
   "owner": "Codex",
-  "revision": 282,
-  "updatedAt": "2026-11-24T02:19:16.792952Z"
+  "revision": 283,
+  "updatedAt": "2026-11-24T02:44:30.909488Z"
 }
