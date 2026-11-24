@@ -68,6 +68,15 @@ For these configurations, do not also sync the independent AMD offline histories
 Keep those files in the private result archive. The monitor handles active and terminal publication automatically.
 The observer adds no provider credentials to AMD. Transient W&B client files stay outside each result directory.
 
+The online client's Config includes `training` with the actual safe launcher arguments and a resolved-config SHA256.
+This includes learning rate, optimizer settings, global batch, answers per problem and dynamic token-batch settings.
+`native_metrics.training_log_config` owns the positive list. Authentication fields and service URLs are excluded.
+This publication does not rewrite historical run configurations.
+
+New trainer processes emit `train/num_microbatches` from the actual schedule for each optimizer update.
+The single writer publishes it as `audit/train/num_microbatches` on `audit/optimizer_step`.
+With dynamic token batching, this is the accumulation count. Config does not invent one fixed count for the run.
+
 ## Key charts and summary status
 
 The selected [personal workspace](https://forge.coreweave.com/wandb/geney/tcs-async-rl/workspace) now opens these sections:

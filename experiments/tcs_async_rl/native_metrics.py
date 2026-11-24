@@ -16,6 +16,36 @@ from pathlib import Path
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
 from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates
 
+PUBLIC_TRAINING_ARGUMENTS = frozenset("""
+    accumulate_allreduce_grads_in_fp32 actor_num_gpus_per_node actor_num_nodes
+    adam_beta1 adam_beta2 advantage_estimator apply_chat_template apply_chat_template_kwargs
+    async_data_buffer_capacity_factor async_max_concurrent_samples async_unused_samples_handler
+    attention_backend attention_dropout balance_data bf16 ckpt_format context_parallel_size
+    enable_mtp_training eps_clip eps_clip_high fully_async global_batch_size group_rm
+    hidden_dropout kl_loss_coef kl_loss_type linear_attention_backend log_probs_backend
+    log_probs_chunk_size lr lr_decay_style max_position_embeddings max_tokens_per_gpu
+    max_weight_staleness mtp_loss_scaling_factor mtp_num_layers n_samples_per_prompt
+    num_gpus_per_node num_rollout observe_training_entropy observe_update_direction_steps
+    optimizer pause_generation_mode pipeline_model_parallel_size policy_loss_type
+    recompute_granularity recompute_method recompute_num_layers rollout_batch_size
+    rollout_max_context_len rollout_max_response_len rollout_num_gpus rollout_num_gpus_per_engine
+    rollout_shuffle rollout_skip_special_tokens rollout_temperature rollout_top_k rollout_top_p
+    save_interval seed seq_length sequence_parallel sglang_context_length sglang_max_running_requests
+    sglang_mem_fraction_static single_checkpoint skip_actor_forward_only tensor_model_parallel_size
+    train_backend use_checkpoint_opt_param_scheduler use_distributed_optimizer use_dynamic_batch_size
+    use_kl_loss use_rollout_logprobs weight_decay
+    """.split())
+
+
+def training_log_config(directory, resolved):
+    """Publish actual launcher settings through a positive list, never credentials."""
+    return {
+        "native_metrics_source": "VM single writer",
+        "training": {name: value for name, value in resolved["args"].items() if name in PUBLIC_TRAINING_ARGUMENTS},
+        "resolved_config_sha256": hashlib.sha256((directory / "resolved-config.json").read_bytes()).hexdigest(),
+        "gradient_accumulation": "Dynamic token batches; actual count is audit/train/num_microbatches per update",
+    }
+
 
 def published_optimizer_steps(directory, *, allow_pending):
     path = directory / "events/main.jsonl"
@@ -231,10 +261,7 @@ def sync_live_audit(directory, output, scheduler_state):
                 id=online_id,
                 resume="allow",
                 dir=str(client_directory),
-                config={
-                    "native_metrics_source": "VM single writer",
-                    "approved_config": str(directory / "approved-config.json"),
-                },
+                config=training_log_config(directory, config),
                 settings=wandb.Settings(mode="online", x_update_finish_state=terminal),
             )
             if (previous or submitted) and not run.resumed:

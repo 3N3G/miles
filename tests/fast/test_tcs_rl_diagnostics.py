@@ -14,12 +14,36 @@ from experiments.tcs_async_rl.native_metrics import (
     read_native_metrics,
     sync_live_audit,
     sync_terminal_audit,
+    training_log_config,
 )
 from experiments.tcs_async_rl.optimizer_probe import change_producer_state, read_optimizer_snapshot
 from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_sampled_entropy
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_training_config_logs_actual_values_without_authentication_fields(self):
+        resolved = {
+            "args": {
+                "lr": 1e-6,
+                "global_batch_size": 128,
+                "n_samples_per_prompt": 32,
+                "use_dynamic_batch_size": True,
+                "max_tokens_per_gpu": 98304,
+                "wandb_key": "test-only-secret",
+                "api_key": "test-only-secret",
+                "rm_url": "https://example.invalid/private-query",
+            }
+        }
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "resolved-config.json").write_text(json.dumps(resolved))
+            result = training_log_config(root, resolved)
+        self.assertEqual(result["training"]["lr"], 1e-6)
+        self.assertEqual(result["training"]["global_batch_size"], 128)
+        self.assertTrue(result["training"]["use_dynamic_batch_size"])
+        self.assertNotIn("test-only-secret", json.dumps(result))
+        self.assertNotIn("private-query", json.dumps(result))
+
     def test_audit_follows_only_recorded_unfinished_judge_budget_retries(self):
         for invalid in (None, "valid_regraded", "changed_payload", "missing_link", "unfinished_only"):
             with self.subTest(invalid=invalid), tempfile.TemporaryDirectory() as name:
