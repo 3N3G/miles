@@ -1,14 +1,5 @@
 # Open questions
 
-## 2026-11-23: Next step after the four-problem batch test
-
-- Question: prioritize human rubric calibration, a frozen-checkpoint comparison, or a further bounded training continuation?
-- Evidence: [the completed four-problem test](experiments/tcs_async_rl/FOUR_PROBLEM_BATCH_RESULTS_20261123.md) has 19 repeated questions averaging 5.752 → 5.776/7. Six rise and thirteen fall. The largest rise coincides with fewer empty capped answers. Judge orders disagree on 177/1,280 answers. This does not measure their mathematical error rate.
-- Options: label the existing ten-example blinded packet without new compute; specify a bounded frozen-checkpoint comparison; or specify another bounded training continuation.
-- Recommendation: complete human calibration before treating these provisional reward differences as proof improvement. All current-run code, grades and checkpoints remain preserved.
-- Blocks: the next research design and spending beyond the completed ten-update, four-hour/$5 plan. It does not block the completed batch change, private artifact storage or routine diagnostic repairs.
-- Approval handling: the user's “Do it” approved the concrete four-problem run and its discussed resource choices. Do not request that approval again.
-
 ## 2026-11-22: Storage for a bounded continuation after the two-hour backfill slot
 
 - Question: may the replacement's intermediate checkpoint be removed only after a newer continuation checkpoint is atomically saved and verified?
@@ -248,3 +239,13 @@
 - Permission basis: the approved previous plans preserve source checkpoints, and global instructions reserve experiment budgets and destructive actions for the user. Batch approval does not silently reset a nearly spent ledger.
 - Answer, 2026-11-23: the user said “these are approved implicitly when I say do it.” The concrete ten-update, four-hour, 32-GPU-hour run and new $5 cap are approved. A fresh AMD check reports 1.27 TB free, so no source checkpoint is deleted. The user also requested durable Hugging Face storage, with bounded VM staging. Existing private Hub authentication works, so no new key is needed.
 - Read-only evidence: [current scheduler, inventories and free space](experiments/tcs_async_rl/evidence/multiproblem_resources_20261123.json).
+
+## 2026-11-23: Next step after the four-problem batch test
+
+- Question: prioritize human rubric calibration, a frozen-checkpoint comparison, or a further bounded training continuation?
+- Evidence: [the completed four-problem test](experiments/tcs_async_rl/FOUR_PROBLEM_BATCH_RESULTS_20261123.md) has 19 repeated questions averaging 5.752 → 5.776/7. Six rise and thirteen fall. The largest rise coincides with fewer empty capped answers. Judge orders disagree on 177/1,280 answers. This does not measure their mathematical error rate.
+- Options: label the existing ten-example blinded packet without new compute; specify a bounded frozen-checkpoint comparison; or specify another bounded training continuation.
+- Recommendation: complete human calibration before treating these provisional reward differences as proof improvement. All current-run code, grades and checkpoints remain preserved.
+- Blocks: the next research design and spending beyond the completed ten-update, four-hour/$5 plan. It does not block the completed batch change, private artifact storage or routine diagnostic repairs.
+- Approval handling: the user's “Do it” approved the concrete four-problem run and its discussed resource choices. Do not request that approval again.
+- Answer, 2026-11-24: compare the anonymous two-order recipe with labeled-reference grading by agreement on pre-labeled saved answers. Then screen six easy and six medium questions, followed by up to twelve hours of RL with screening extra. The shared new paid-judge cap is $25. The user delegated agreement thresholds. The [approved plan](experiments/tcs_async_rl/JUDGE_COMPARISON_LONG_RUN_PLAN_20261124.md) owns the exact gates and resource limits.

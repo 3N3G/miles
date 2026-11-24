@@ -1,11 +1,12 @@
 import json
+import random
 import tempfile
 import unittest
 from pathlib import Path
 
 from experiments.tcs_async_rl.grade_group import Budget, reserve_cost, usage_cost
 from experiments.tcs_async_rl.judge_client import load_credentials
-from experiments.tcs_async_rl.judge_comparison import comparison_metrics
+from experiments.tcs_async_rl.judge_comparison import choose_easy, comparison_metrics
 from experiments.tcs_async_rl.judge_comparison_checks import clustered_intervals
 from experiments.tcs_async_rl.rubric_judge import messages, parse_grade, rubric_items
 
@@ -105,6 +106,26 @@ class RubricJudgeTests(unittest.TestCase):
         self.assertEqual(result["question_clusters"], 2)
         self.assertEqual(result["methods"]["paired"]["item_agreement"], [0, 1])
         self.assertEqual(result["difference"]["intervals"]["item_agreement"], [0, 0])
+
+    def test_fresh_packet_excludes_previously_selected_answer_identities(self):
+        rows = [
+            {
+                "question_key": str(q),
+                "judge_identity": str(i),
+                "final_characters": 100,
+                "reward": 7 if i % 2 else 0,
+            }
+            for q in range(16)
+            for i in range(4)
+        ]
+        excluded = {(str(q), "0") for q in range(16)}
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "sample-audit-1.json").write_text(json.dumps({"rows": rows}))
+            selected = choose_easy(root, random.Random(42), excluded)
+        identities = {(r["question_key"], r["judge_identity"]) for r in selected}
+        self.assertEqual(len(identities), 32)
+        self.assertFalse(identities & excluded)
 
     def test_price_arithmetic_and_conservative_reservation(self):
         config = json.loads(Path("experiments/tcs_async_rl/judge_group_v1.json").read_text())

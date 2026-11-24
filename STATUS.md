@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): All 40 saved answers have pre-call item labels and reasons, frozen at SHA256 b57788dfd09fd808ef7de51ceb54d26c894c065ef044b80703ee7b4495ea850e. The packet spans 17 questions and 176 rubric items. No ne Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Run both grading recipes on the frozen packet under the shared $2 comparison cap, inspect disagreements and controls, then apply the declared gate.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Paired v3 matches 32/40 exact scores and 95.96% items; labeled-reference v1 matches 31/40 and 93.54%. All153 controls pass. Total new judge spend is $0.2522091. Original labels remain unchanged; two p Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Freeze fresh disjoint forty-answer labels, then compare unchanged paired v3 and repaired reference v2 using the same append-only $2 phase ledger. No GPU submission before the gate 
 
 ## Next / blocked
 

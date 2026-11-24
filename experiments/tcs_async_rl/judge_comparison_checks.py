@@ -9,7 +9,7 @@ from pathlib import Path
 
 from experiments.tcs_async_rl.grade_group import Budget, grade_one
 from experiments.tcs_async_rl.judge_client import load_credentials
-from experiments.tcs_async_rl.judge_comparison import SEED, digest, save
+from experiments.tcs_async_rl.judge_comparison import SEED, digest, prompt_files, save
 from experiments.tcs_async_rl.reward_hook import question_key
 
 
@@ -70,13 +70,13 @@ async def controls(cli):
     judge = json.loads((cli.config.parent / config["training_config"]).read_text())["judge"]
     key = load_credentials(Path.home() / ".config/api-keys.env")[judge["api_key_env"]]
     # Use the comparison's ledger directly. No second allowance is created.
-    budget = Budget(cli.output, config)
+    budget = Budget(cli.budget_directory or cli.output, config)
     semaphore = asyncio.Semaphore(config["max_concurrency"])
 
     async def one(identity, row, name, text, expected, method, swapped):
         directory = cli.output / "controls" / identity / method
         directory.mkdir(parents=True, exist_ok=True)
-        prompt_file = "rubric_judge_prompt_v3.txt" if method == "anonymous_pair" else "rubric_judge_reference_v1.txt"
+        prompt_file = prompt_files(config)[method]
         verdict = await grade_one(
             identity=name,
             candidate=text,
@@ -117,6 +117,7 @@ def main():
     parser.add_argument("--packet", type=Path, required=True)
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--budget-directory", type=Path)
     cli = parser.parse_args()
     if cli.command == "controls":
         print(json.dumps(asyncio.run(controls(cli)), indent=2))

@@ -1,0 +1,1104 @@
+{
+  "anonymous_pair": {
+    "answers": 40,
+    "exact_score_agreement": 0.8,
+    "case_balanced_item_agreement": 0.9595833333333333,
+    "mean_absolute_score_error": 0.275,
+    "clear_false_full_credit": 0,
+    "passes_observed_gate": false,
+    "cases": [
+      {
+        "case": "case-01",
+        "question_key": "976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-02",
+        "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-03",
+        "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-04",
+        "question_key": "b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6",
+        "audit_score": 4.0,
+        "judge_scores": [
+          7.0,
+          4.0
+        ],
+        "reward": 5.5,
+        "exact_score_match": false,
+        "absolute_score_error": 1.5,
+        "item_agreement": 0.875,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-05",
+        "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+        "audit_score": 6.0,
+        "judge_scores": [
+          6.0,
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-06",
+        "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-07",
+        "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+        "audit_score": 7.0,
+        "judge_scores": [
+          5.0,
+          5.0
+        ],
+        "reward": 5.0,
+        "exact_score_match": false,
+        "absolute_score_error": 2.0,
+        "item_agreement": 0.75,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-08",
+        "question_key": "b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-09",
+        "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+        "audit_score": 7.0,
+        "judge_scores": [
+          6.0,
+          7.0
+        ],
+        "reward": 6.5,
+        "exact_score_match": false,
+        "absolute_score_error": 0.5,
+        "item_agreement": 0.9,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-10",
+        "question_key": "5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178",
+        "audit_score": 7.0,
+        "judge_scores": [
+          6.0,
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": false,
+        "absolute_score_error": 1.0,
+        "item_agreement": 0.8,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-11",
+        "question_key": "610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-12",
+        "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-13",
+        "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-14",
+        "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-15",
+        "question_key": "87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c",
+        "audit_score": 7.0,
+        "judge_scores": [
+          6.0,
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": false,
+        "absolute_score_error": 1.0,
+        "item_agreement": 0.8333333333333334,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-16",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-17",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-18",
+        "question_key": "441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843",
+        "audit_score": 5.0,
+        "judge_scores": [
+          4.0,
+          3.0
+        ],
+        "reward": 3.5,
+        "exact_score_match": false,
+        "absolute_score_error": 1.5,
+        "item_agreement": 0.7,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-19",
+        "question_key": "441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-20",
+        "question_key": "976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-21",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-22",
+        "question_key": "5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178",
+        "audit_score": 7.0,
+        "judge_scores": [
+          6.0,
+          7.0
+        ],
+        "reward": 6.5,
+        "exact_score_match": false,
+        "absolute_score_error": 0.5,
+        "item_agreement": 0.9,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-23",
+        "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-24",
+        "question_key": "b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-25",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-26",
+        "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+        "audit_score": 6.0,
+        "judge_scores": [
+          2.0,
+          4.0
+        ],
+        "reward": 3.0,
+        "exact_score_match": false,
+        "absolute_score_error": 3.0,
+        "item_agreement": 0.625,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-27",
+        "question_key": "87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-28",
+        "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-29",
+        "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-30",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-31",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-32",
+        "question_key": "e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-33",
+        "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-34",
+        "question_key": "b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-35",
+        "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-36",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-37",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0,
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-38",
+        "question_key": "e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-39",
+        "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-40",
+        "question_key": "610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0,
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      }
+    ],
+    "actual_usage_usd": 0.1182456
+  },
+  "reference_guided": {
+    "answers": 40,
+    "exact_score_agreement": 0.775,
+    "case_balanced_item_agreement": 0.9354166666666667,
+    "mean_absolute_score_error": 0.4,
+    "clear_false_full_credit": 0,
+    "passes_observed_gate": false,
+    "cases": [
+      {
+        "case": "case-01",
+        "question_key": "976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-02",
+        "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-03",
+        "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-04",
+        "question_key": "b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6",
+        "audit_score": 4.0,
+        "judge_scores": [
+          4.0
+        ],
+        "reward": 4.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-05",
+        "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+        "audit_score": 6.0,
+        "judge_scores": [
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-06",
+        "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+        "audit_score": 7.0,
+        "judge_scores": [
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": false,
+        "absolute_score_error": 1.0,
+        "item_agreement": 0.8,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-07",
+        "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+        "audit_score": 7.0,
+        "judge_scores": [
+          3.0
+        ],
+        "reward": 3.0,
+        "exact_score_match": false,
+        "absolute_score_error": 4.0,
+        "item_agreement": 0.5,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-08",
+        "question_key": "b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-09",
+        "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+        "audit_score": 7.0,
+        "judge_scores": [
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": false,
+        "absolute_score_error": 1.0,
+        "item_agreement": 0.8,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-10",
+        "question_key": "5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178",
+        "audit_score": 7.0,
+        "judge_scores": [
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": false,
+        "absolute_score_error": 1.0,
+        "item_agreement": 0.8,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-11",
+        "question_key": "610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-12",
+        "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-13",
+        "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+        "audit_score": 7.0,
+        "judge_scores": [
+          4.0
+        ],
+        "reward": 4.0,
+        "exact_score_match": false,
+        "absolute_score_error": 3.0,
+        "item_agreement": 0.5,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-14",
+        "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-15",
+        "question_key": "87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c",
+        "audit_score": 7.0,
+        "judge_scores": [
+          5.0
+        ],
+        "reward": 5.0,
+        "exact_score_match": false,
+        "absolute_score_error": 2.0,
+        "item_agreement": 0.6666666666666666,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-16",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-17",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-18",
+        "question_key": "441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843",
+        "audit_score": 5.0,
+        "judge_scores": [
+          5.0
+        ],
+        "reward": 5.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-19",
+        "question_key": "441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-20",
+        "question_key": "976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-21",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-22",
+        "question_key": "5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178",
+        "audit_score": 7.0,
+        "judge_scores": [
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": false,
+        "absolute_score_error": 1.0,
+        "item_agreement": 0.8,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-23",
+        "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-24",
+        "question_key": "b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-25",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-26",
+        "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+        "audit_score": 6.0,
+        "judge_scores": [
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-27",
+        "question_key": "87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-28",
+        "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-29",
+        "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+        "audit_score": 7.0,
+        "judge_scores": [
+          6.0
+        ],
+        "reward": 6.0,
+        "exact_score_match": false,
+        "absolute_score_error": 1.0,
+        "item_agreement": 0.8,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-30",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-31",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-32",
+        "question_key": "e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f",
+        "audit_score": 7.0,
+        "judge_scores": [
+          5.0
+        ],
+        "reward": 5.0,
+        "exact_score_match": false,
+        "absolute_score_error": 2.0,
+        "item_agreement": 0.75,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-33",
+        "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-34",
+        "question_key": "b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-35",
+        "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-36",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-37",
+        "question_key": "cd2b94e6ba97ffbc022b24701ad00fe0167478b084f37f2b1337322cf2f9c831",
+        "audit_score": 0.0,
+        "judge_scores": [
+          0.0
+        ],
+        "reward": 0.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-38",
+        "question_key": "e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-39",
+        "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      },
+      {
+        "case": "case-40",
+        "question_key": "610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497",
+        "audit_score": 7.0,
+        "judge_scores": [
+          7.0
+        ],
+        "reward": 7.0,
+        "exact_score_match": true,
+        "absolute_score_error": 0.0,
+        "item_agreement": 1,
+        "clear_false_full_credit": false
+      }
+    ],
+    "actual_usage_usd": 0.04406
+  }
+}

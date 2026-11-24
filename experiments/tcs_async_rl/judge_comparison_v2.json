@@ -1,0 +1,21 @@
+{
+  "training_config": "config.proposed.json",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "max_concurrency": 8,
+  "max_attempts": 3,
+  "timeout_seconds": 600,
+  "usd_cap": 2,
+  "approved_all_stages_usd_cap": 25,
+  "input_usd_per_million": 0.1,
+  "output_usd_per_million": 0.5,
+  "long_input_threshold_tokens": 272000,
+  "long_input_multiplier": 2,
+  "long_output_multiplier": 1.5,
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+  "length_retry_max_completion_tokens": 32768,
+  "grade_status": "one_prompt_repair_fresh_disjoint_validation",
+  "prompt_files": {
+    "anonymous_pair": "rubric_judge_prompt_v3.txt",
+    "reference_guided": "rubric_judge_reference_v2.txt"
+  }
+}

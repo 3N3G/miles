@@ -1,0 +1,30 @@
+{
+  "recorded_at_utc": "2026-11-24T06:10:50.687107+00:00",
+  "original_labels_sha256": "b57788dfd09fd808ef7de51ceb54d26c894c065ef044b80703ee7b4495ea850e",
+  "original_labels_and_comparison_unchanged": true,
+  "post_unblinding_corrections": [
+    {
+      "case": "case-04",
+      "item": 3,
+      "original": false,
+      "corrected": true,
+      "reason": "The candidate explicitly says any coupling must transport at least alpha mass from the first edge, at cost at least one per unit. This supplies the valid weaker bound EM >= alpha and a universal constant 1/2, although its stronger 2 alpha claim and some table entries are wrong. The audit overlooked that sufficient weaker argument.",
+      "original_score": 4,
+      "corrected_score": 7
+    },
+    {
+      "case": "case-15",
+      "item": 6,
+      "original": true,
+      "corrected": false,
+      "reason": "The final threshold statement says the true threshold must occur, without keeping the conditional existence qualification. The rubric explicitly tests this scope restriction.",
+      "original_score": 7,
+      "corrected_score": 6
+    }
+  ],
+  "limits": [
+    "These corrections occurred after judge outputs were visible. They are not independent validation.",
+    "The primary method comparison continues to use the pre-call labels. Neither method meets its original gate.",
+    "Fresh validation labels will be frozen before new outputs."
+  ]
+}

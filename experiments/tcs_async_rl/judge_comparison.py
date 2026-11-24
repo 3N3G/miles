@@ -23,6 +23,15 @@ from experiments.tcs_async_rl.reward_hook import question_key
 from experiments.tcs_async_rl.rubric_judge import rubric_items
 
 SEED = 20261124
+DEFAULT_PROMPT_FILES = {
+    "anonymous_pair": "rubric_judge_prompt_v3.txt",
+    "reference_guided": "rubric_judge_reference_v1.txt",
+}
+
+
+def prompt_files(config):
+    # Preserve already-frozen v1 configurations that predate selectable prompts.
+    return config.get("prompt_files", DEFAULT_PROMPT_FILES)
 
 
 def save(path, value):
@@ -34,12 +43,13 @@ def digest(path):
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
-def choose_easy(audit, rng):
+def choose_easy(audit, rng, extra_excluded=()):
     excluded = {
         (row["question_key"], row["judge_identity"])
         for path in audit.glob("seeded-proofs-*.json")
         for row in json.loads(path.read_text()).values()
     }
+    excluded.update(extra_excluded)
     by_question = collections.defaultdict(list)
     for path in sorted(audit.glob("sample-audit-*.json")):
         for row in json.loads(path.read_text())["rows"]:
@@ -101,13 +111,20 @@ def fetch_easy(run, selected, staging):
 
 
 def prepare(cli):
-    cli.output.mkdir(parents=True, exist_ok=False)
-    rng = random.Random(SEED)
-    selected = choose_easy(cli.audit, rng)
-    cases = fetch_easy(cli.run, selected, cli.staging)
     medium = json.loads((cli.medium / "input.json").read_text())
     responses = [json.loads(line) for line in (cli.medium / "responses.jsonl").read_text().splitlines()]
-    eligible = [r for r in responses if r["final_answer"] and r["sample_index"] != 13]
+    cli.output.mkdir(parents=True, exist_ok=False)
+    rng = random.Random(SEED)
+    previous = [
+        row
+        for directory in cli.exclude_packet
+        for row in json.loads((directory / "selection-provenance-not-for-labeling.json").read_text())
+    ]
+    excluded = {(r["question_key"], r["judge_identity"]) for r in previous if r["kind"] == "easy"}
+    selected = choose_easy(cli.audit, rng, excluded)
+    cases = fetch_easy(cli.run, selected, cli.staging)
+    excluded_medium = {13} | {r["sample_index"] for r in previous if r["kind"] == "medium"}
+    eligible = [r for r in responses if r["final_answer"] and r["sample_index"] not in excluded_medium]
     for row in rng.sample(eligible, 8):
         cases.append(
             {
@@ -155,6 +172,7 @@ def prepare(cli):
             "new_solver_generations": 0,
             "new_judge_calls": 0,
             "heldout_reads": 0,
+            "excluded_packet_sha256": [digest(path / "packet.json") for path in cli.exclude_packet],
         },
     )
     return {"cases": len(cases), "packet_sha256": digest(cli.output / "packet.json")}
@@ -228,7 +246,7 @@ async def compare(cli):
     config = json.loads(cli.config.read_text())
     training = json.loads((cli.config.parent / config["training_config"]).read_text())
     judge = training["judge"]
-    shared = Budget(cli.output, config)
+    shared = Budget(cli.budget_directory or cli.output, config)
     semaphore = asyncio.Semaphore(config["max_concurrency"])
     key = load_credentials(Path.home() / ".config/api-keys.env")[judge["api_key_env"]]
     freeze_path = cli.output / "pre-call-label-freeze.json"
@@ -236,10 +254,7 @@ async def compare(cli):
         "labels_sha256": cli.labels_sha256,
         "packet_sha256": digest(cli.packet / "packet.json"),
         "config_sha256": digest(cli.config),
-        "prompt_sha256": {
-            name: digest(cli.config.parent / name)
-            for name in ("rubric_judge_prompt_v3.txt", "rubric_judge_reference_v1.txt")
-        },
+        "prompt_sha256": {name: digest(cli.config.parent / name) for name in prompt_files(config).values()},
     }
     if freeze_path.exists():
         old = json.loads(freeze_path.read_text())
@@ -251,7 +266,7 @@ async def compare(cli):
     async def one(case, method, swapped):
         folder = cli.output / case["case"] / method
         folder.mkdir(parents=True, exist_ok=True)
-        prompt_file = "rubric_judge_prompt_v3.txt" if method == "anonymous_pair" else "rubric_judge_reference_v1.txt"
+        prompt_file = prompt_files(config)[method]
         return await grade_one(
             identity=case["case"],
             candidate=case["candidate"],
@@ -315,10 +330,12 @@ def main():
     prep = commands.add_parser("prepare")
     for name in ("run", "audit", "medium", "staging", "output"):
         prep.add_argument("--" + name, type=Path, required=True)
+    prep.add_argument("--exclude-packet", type=Path, action="append", default=[])
     run = commands.add_parser("compare")
     for name in ("packet", "labels", "config", "output"):
         run.add_argument("--" + name, type=Path, required=True)
     run.add_argument("--labels-sha256", required=True)
+    run.add_argument("--budget-directory", type=Path)
     cli = parser.parse_args()
     print(json.dumps(prepare(cli) if cli.command == "prepare" else asyncio.run(compare(cli)), indent=2))
 
