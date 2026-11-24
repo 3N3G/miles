@@ -75,7 +75,7 @@ def publish(directory):
         job_type="judge-validation",
         config=config,
         dir=str(client),
-        resume="allow",
+        resume="never",
         settings=wandb.Settings(mode="online"),
     )
     path = "/".join((run.entity, run.project, run.id))
