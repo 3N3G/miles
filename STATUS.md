@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Approved batch128 run is ready: 117 tests pass, private Hugging Face access works and AMD has 1.27 TB free. All source checkpoints remain preserved. Jobs: hpcfund/540286 CANCELLED; hpcfund/539594 TIMEOUT
-  Next: Freeze and submit the ten-update/four-hour run with its new $5 ledger. Verify the first four-problem update, supervise metrics and proofs, and archive through terminal state.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Automatically submitted approved RL job 544406 Jobs: hpcfund/544406 SUBMITTED; hpcfund/540286 CANCELLED
+  Next: Monitor the owned RL job, reward tunnel, optimizer updates and saving.
 
 ## Next / blocked
 
