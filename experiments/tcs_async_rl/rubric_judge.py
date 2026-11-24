@@ -16,7 +16,22 @@ def rubric_items(rubric):
     return items
 
 
-def messages(row, candidate, *, swapped, system_prompt):
+def messages(row, candidate, *, swapped, system_prompt, grading_method="anonymous_pair"):
+    if grading_method == "reference_guided":
+        if swapped:
+            raise ValueError("A labeled single-candidate request has no swapped presentation")
+        data = {
+            "problem": row["problem"],
+            "rubric": row["rubric"],
+            "reference_solution": row["answer"],
+            "candidate_solution": candidate,
+        }
+        return [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": json.dumps(data, ensure_ascii=False)},
+        ]
+    if grading_method != "anonymous_pair":
+        raise ValueError("Unknown grading method")
     answers = {"A": row["answer"], "B": candidate} if swapped else {"A": candidate, "B": row["answer"]}
     return [
         {"role": "system", "content": system_prompt},
@@ -29,12 +44,14 @@ def messages(row, candidate, *, swapped, system_prompt):
     ]
 
 
-def parse_grade(content, items):
+def parse_grade(content, items, *, answer_labels=("A", "B")):
     value = json.loads(content)
-    if not isinstance(value, dict) or set(value) != {"A", "B"}:
-        raise ValueError("Judge must return both anonymous answers")
+    if not answer_labels or len(set(answer_labels)) != len(answer_labels):
+        raise ValueError("Expected distinct nonempty answer labels")
+    if not isinstance(value, dict) or set(value) != set(answer_labels):
+        raise ValueError("Judge must return exactly the requested answer labels")
     output = {}
-    for answer in ("A", "B"):
+    for answer in answer_labels:
         decisions = value[answer]
         if not isinstance(decisions, list) or len(decisions) != len(items):
             raise ValueError("Judge returned wrong item count")

@@ -72,12 +72,13 @@ class Budget:
 
 
 async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt, key, budget, semaphore, directory):
+    method = config.get("grading_method", "anonymous_pair")
     payload = {
         "model": judge["primary_model"],
         "reasoning_effort": judge["reasoning_effort"],
         "max_completion_tokens": judge["max_completion_tokens"],
         "response_format": {"type": "json_object"},
-        "messages": messages(row, candidate, swapped=swapped, system_prompt=prompt),
+        "messages": messages(row, candidate, swapped=swapped, system_prompt=prompt, grading_method=method),
     }
     fingerprint = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
     output = directory / f"{identity}-order{int(swapped)}-{fingerprint[:12]}.json"
@@ -134,12 +135,13 @@ async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt,
         )
     if choice.get("finish_reason") != "stop":
         raise ValueError("Judge did not finish its verdict; not a zero score")
-    grade = parse_grade(choice["message"]["content"], rubric_items(row["rubric"]))
+    labels = ("candidate",) if method == "reference_guided" else ("A", "B")
+    grade = parse_grade(choice["message"]["content"], rubric_items(row["rubric"]), answer_labels=labels)
     return {
         "identity": identity,
         "swapped": swapped,
-        "candidate": grade["B" if swapped else "A"],
-        "reference": grade["A" if swapped else "B"],
+        "candidate": grade["candidate"] if method == "reference_guided" else grade["B" if swapped else "A"],
+        "reference": None if method == "reference_guided" else grade["A" if swapped else "B"],
         "receipt": str(output),
     }
 

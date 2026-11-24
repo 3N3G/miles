@@ -855,6 +855,10 @@
     {
       "path": "experiments/tcs_async_rl/evidence/multiproblem_final_verification_20261123.json",
       "label": "Immutable archives, saved scheduler and all 811 W&B scalar checks"
+    },
+    {
+      "path": "experiments/tcs_async_rl/JUDGE_COMPARISON_LONG_RUN_PLAN_20261124.md",
+      "label": "Approved grader comparison, broader screen and twelve-hour continuation"
     }
   ],
   "jobs": [
@@ -3106,15 +3110,22 @@
       "actor": "codex",
       "summary": "Claim the approved judge comparison, broader difficulty screen and twelve-hour continuation",
       "revision": 292
+    },
+    {
+      "id": "3f5a4c63-0c4c-4a92-b832-850af58b9297",
+      "at": "2026-11-24T05:51:36.999276Z",
+      "actor": "codex",
+      "summary": "Freeze the approved comparison protocol and validate both grading schemas",
+      "revision": 293
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "User approved a fixed-answer judge comparison, broader easy/medium screen, then 12 hours of RL with a $25 total judge cap. Claim preparation and validation.",
-  "nextAction": "Freeze the comparison and screening plan, pre-label 40 fresh saved answers, compare graders, and qualify the longer AMD run.",
+  "summary": "Comparison plan and labeled-reference recipe prepared; all 120 TCS CPU tests pass. Preparing a frozen 40-answer packet before any paid calls.",
+  "nextAction": "Audit and fingerprint all forty answers, compare both graders under the $2 phase cap, then apply the reliability gate before GPU screening.",
   "owner": "Codex",
-  "revision": 292,
-  "updatedAt": "2026-11-24T05:38:21.166017Z"
+  "revision": 293,
+  "updatedAt": "2026-11-24T05:51:36.999276Z"
 }

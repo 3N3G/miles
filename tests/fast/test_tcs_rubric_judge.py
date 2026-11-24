@@ -5,6 +5,7 @@ from pathlib import Path
 
 from experiments.tcs_async_rl.grade_group import Budget, reserve_cost, usage_cost
 from experiments.tcs_async_rl.judge_client import load_credentials
+from experiments.tcs_async_rl.judge_comparison import comparison_metrics
 from experiments.tcs_async_rl.rubric_judge import messages, parse_grade, rubric_items
 
 
@@ -33,6 +34,50 @@ class RubricJudgeTests(unittest.TestCase):
         second = json.loads(messages(row, "candidate text", swapped=True, system_prompt="judge")[1]["content"])
         self.assertEqual(first["answers"]["A"], second["answers"]["B"])
         self.assertEqual(set(first), {"problem", "rubric", "answers"})
+
+    def test_reference_guided_request_identifies_roles_and_rejects_swapping(self):
+        row = {"problem": "problem", "rubric": "rubric", "answer": "reference text"}
+        request = messages(
+            row, "candidate text", swapped=False, system_prompt="judge", grading_method="reference_guided"
+        )
+        body = json.loads(request[1]["content"])
+        self.assertEqual(body["reference_solution"], "reference text")
+        self.assertEqual(body["candidate_solution"], "candidate text")
+        self.assertNotIn("answers", body)
+        with self.assertRaises(ValueError):
+            messages(row, "candidate text", swapped=True, system_prompt="judge", grading_method="reference_guided")
+
+    def test_single_candidate_parser_keeps_binary_weighted_scoring(self):
+        items = [(1, 2), (2, 5)]
+        decisions = [
+            {"item": 1, "satisfied": True, "reason": "established"},
+            {"item": 2, "satisfied": False, "reason": "missing"},
+        ]
+        parsed = parse_grade(json.dumps({"candidate": decisions}), items, answer_labels=("candidate",))
+        self.assertEqual(parsed["candidate"]["score"], 2)
+        with self.assertRaises(ValueError):
+            parse_grade(json.dumps({"A": decisions, "B": decisions}), items, answer_labels=("candidate",))
+
+    def test_comparison_counts_one_answer_and_averages_presentation_scores(self):
+        case = {"case": "case-01", "question": {"problem": "P", "answer": "R", "rubric": "1. [2 pt] X\n2. [5 pt] Y"}}
+        correct = [{"item": 1, "satisfied": True}, {"item": 2, "satisfied": False}]
+        incorrect = [{"item": 1, "satisfied": False}, {"item": 2, "satisfied": False}]
+        labels = {"cases": [{"case": "case-01", "candidate_items": correct}]}
+        results = {
+            "case-01": {
+                "anonymous_pair": [
+                    {"candidate": {"score": 2, "items": correct}},
+                    {"candidate": {"score": 0, "items": incorrect}},
+                ],
+                "reference_guided": [{"candidate": {"score": 2, "items": correct}}],
+            }
+        }
+        result = comparison_metrics([case], labels, results)
+        self.assertEqual(result["anonymous_pair"]["answers"], 1)
+        self.assertEqual(result["anonymous_pair"]["cases"][0]["reward"], 1)
+        self.assertEqual(result["anonymous_pair"]["case_balanced_item_agreement"], 0.75)
+        self.assertFalse(result["anonymous_pair"]["passes_observed_gate"])
+        self.assertTrue(result["reference_guided"]["passes_observed_gate"])
 
     def test_budget_reservations_survive_restart(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User approved a fixed-answer judge comparison, broader easy/medium screen, then 12 hours of RL with a $25 total judge cap. Claim preparation and validation. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
-  Next: Freeze the comparison and screening plan, pre-label 40 fresh saved answers, compare graders, and qualify the longer AMD run.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Comparison plan and labeled-reference recipe prepared; all 120 TCS CPU tests pass. Preparing a frozen 40-answer packet before any paid calls. Jobs: hpcfund/544406 COMPLETED; hpcfund/540286 CANCELLED
+  Next: Audit and fingerprint all forty answers, compare both graders under the $2 phase cap, then apply the reliability gate before GPU screening.
 
 ## Next / blocked
 
