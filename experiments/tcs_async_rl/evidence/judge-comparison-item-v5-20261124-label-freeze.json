@@ -1,0 +1,9 @@
+{
+  "packet.json": "d6f3df5dc72b4e4007ccab06d56c6665c263f09e4db239a1d336fde57a3fb16d",
+  "labels.json": "2b4d1966b295b332d4447fe53f423f3b83ba45839dd2f69b3385811d16ecf277",
+  "packet-freeze.json": "79a00cdb93535a342853410cc6f621fbf700b0a431cc090d66e34f96d55d5cf3",
+  "cases": 40,
+  "labels_frozen_before_new_calls": true,
+  "prior_verdicts_hidden": true,
+  "assistant_labels_not_human_ground_truth": true
+}
