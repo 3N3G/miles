@@ -11,6 +11,29 @@ from experiments.tcs_async_rl.reward_hook import question_key
 
 
 class ComponentPacketTests(unittest.TestCase):
+    def test_offline_regrading_preserves_all_generation_fields_and_exact_counts(self):
+        from experiments.tcs_async_rl.screen_results import verify_preserved_samples
+
+        with tempfile.TemporaryDirectory() as name:
+            before, after = (Path(name) / value for value in ("before.gz", "after.gz"))
+            original = {"response": "proof", "tokens": [1, 2], "weight_versions": [108], "reward": {"reward": 3}}
+            replacement = {**original, "reward": {"reward": 1}}
+
+            def write(path, rows):
+                with gzip.open(path, "wt") as stream:
+                    stream.write("\n".join(json.dumps(row) for row in rows) + "\n")
+
+            write(before, [original])
+            write(after, [replacement])
+            self.assertEqual(verify_preserved_samples(before, after), 1)
+            for field, changed in (("response", "different"), ("tokens", [2, 1]), ("weight_versions", [109])):
+                write(after, [{**replacement, field: changed}])
+                with self.assertRaisesRegex(ValueError, "generated sample"):
+                    verify_preserved_samples(before, after)
+            write(after, [replacement, replacement])
+            with self.assertRaises(ValueError):
+                verify_preserved_samples(before, after)
+
     def test_two_reference_recipes_keep_the_same_agreement_gate_and_require_complete_labels(self):
         from experiments.tcs_async_rl.compare_reference_prompts import validate_labels
         from experiments.tcs_async_rl.judge_comparison import comparison_metrics

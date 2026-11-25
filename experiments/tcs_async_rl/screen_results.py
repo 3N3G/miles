@@ -11,6 +11,21 @@ from pathlib import Path
 from experiments.tcs_async_rl.diagnose_rl import judge_receipts
 from experiments.tcs_async_rl.reward_hook import question_key
 from experiments.tcs_async_rl.rl_artifacts import file_sha256
+from experiments.tcs_async_rl.rl_smoke import validate_judge_qualification
+
+
+def verify_preserved_samples(original, regraded):
+    """Only the reward may change. Preserve text, tokens, masks and weight versions."""
+    count = 0
+    with gzip.open(original, "rt") as before, gzip.open(regraded, "rt") as after:
+        for old_line, new_line in zip(before, after, strict=True):
+            old, new = json.loads(old_line), json.loads(new_line)
+            old.pop("reward")
+            new.pop("reward")
+            if old != new:
+                raise ValueError("Regrading changed a generated sample")
+            count += 1
+    return count
 
 
 def summarize(directory):
@@ -22,6 +37,15 @@ def summarize(directory):
         raise ValueError("Screen input changed")
     questions = {question_key(row): row for row in json.loads(input_file.read_text())["questions"]}
     config = json.loads((directory / "approved-config.json").read_text())
+    qualification = config["judge_qualification"]
+    regrade_file = directory / "regrade-manifest.json"
+    regrade = json.loads(regrade_file.read_text()) if regrade_file.exists() else None
+    if regrade is not None:
+        for name, expected in regrade["generation_file_sha256"].items():
+            if file_sha256(directory / name) != expected:
+                raise ValueError("Offline regrading changed the original generation metadata")
+        validate_judge_qualification(regrade["grading_config"], Path(__file__).parent)
+        qualification = regrade["grading_config"]["judge_qualification"]
     args = json.loads((directory / "resolved-config.json").read_text())["args"]
     sampling_keys = (
         "seed",
@@ -47,12 +71,19 @@ def summarize(directory):
             manifest["judge"]["primary_model"] != "gpt-6-luna"
             or manifest["judge"]["reasoning_effort"] != "high"
             or manifest["judge_config"]["grading_method"] != "reference_guided"
-            or manifest["prompt_sha256"] != config["judge_qualification"]["prompt_sha256"]
+            or manifest["prompt_sha256"] != qualification["prompt_sha256"]
         ):
             raise ValueError("Screen used a different grading recipe")
     source = directory / "rollout_data" / Path(complete["responses"]).name
     if file_sha256(source) != complete["responses_sha256"]:
         raise ValueError("Screen response checksum differs")
+    if regrade is not None:
+        original = source
+        source = directory / "rollout_data" / regrade["responses_file"]
+        if file_sha256(source) != regrade["responses_sha256"]:
+            raise ValueError("Regraded response checksum differs")
+        if verify_preserved_samples(original, source) != complete["answers"]:
+            raise ValueError("Regraded screen has an incomplete sample count")
     samples = collections.defaultdict(list)
     indices, cache = set(), {}
     with gzip.open(source, "rt") as stream:
@@ -119,9 +150,9 @@ def summarize(directory):
     result = {
         "checkpoint_rollout_id": complete["checkpoint_rollout_id"],
         "dataset_sha256": complete["dataset_sha256"],
-        "responses_sha256": complete["responses_sha256"],
-        "judge_prompt_sha256": config["judge_qualification"]["prompt_sha256"],
-        "judge_config_sha256": config["judge_qualification"]["runtime_config_sha256"],
+        "responses_sha256": file_sha256(source),
+        "judge_prompt_sha256": qualification["prompt_sha256"],
+        "judge_config_sha256": qualification["runtime_config_sha256"],
         "sampling": sampling,
         "questions": rows,
         "answers": len(indices),
@@ -133,6 +164,11 @@ def summarize(directory):
         "judge_reasoning_effort": "high",
         "limits": "One checkpoint and one sampling run. Assistant-audited grader, no independent human calibration. Easy questions were previously trained.",
     }
+    if regrade is not None:
+        result["source_responses_sha256"] = complete["responses_sha256"]
+        result["grading_provenance"] = (
+            "Offline regrade of unchanged saved answers. Original GPU configuration preserved."
+        )
     (directory / "screen-summary.json").write_text(json.dumps(result, indent=2) + "\n")
     return result
 
