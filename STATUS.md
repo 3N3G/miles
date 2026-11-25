@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted AMD552495: bounded5-hour continuation124 after validated judge schema repair Jobs: hpcfund/552495 SUBMITTED; hpcfund/549728 FAILED
-  Next: Supervise all updates, checkpoints, shared budget, raw proofs and W&B/HF closure, then the approved fixed12-question screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 552495 is PENDING Jobs: hpcfund/552495 PENDING; hpcfund/549728 FAILED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 

@@ -949,7 +949,7 @@
     {
       "id": "552495",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "PENDING"
     },
     {
       "id": "549728",
@@ -3772,15 +3772,22 @@
       "actor": "codex",
       "summary": "Submitted AMD552495: bounded5-hour continuation124 after validated judge schema repair",
       "revision": 371
+    },
+    {
+      "id": "613c3682-4aed-4a92-b21d-0ee3a8af813c",
+      "at": "2026-11-25T20:46:31.237838Z",
+      "actor": "codex",
+      "summary": "RL job 552495 is PENDING",
+      "revision": 372
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Submitted AMD552495: bounded5-hour continuation124 after validated judge schema repair",
-  "nextAction": "Supervise all updates, checkpoints, shared budget, raw proofs and W&B/HF closure, then the approved fixed12-question screen.",
+  "summary": "RL job 552495 is PENDING",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 371,
-  "updatedAt": "2026-11-25T20:45:54.765373Z"
+  "revision": 372,
+  "updatedAt": "2026-11-25T20:46:31.237838Z"
 }
