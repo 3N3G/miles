@@ -1,0 +1,210 @@
+{
+  "at_utc": "2026-11-25T18:06:26.435452+00:00",
+  "job_id": "549728",
+  "audited_optimizer_steps": [
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119
+  ],
+  "audited_answers": 1408,
+  "distinct_question_rows": 44,
+  "distinct_paper_node_pairs": 40,
+  "papers": 38,
+  "full_credit": 417,
+  "zero": 463,
+  "capped": 484,
+  "capped_empty_final": 316,
+  "constant_groups": 6,
+  "by_difficulty": {
+    "easy": {
+      "answers": 128,
+      "question_rows": 4,
+      "mean_score": 6.796875,
+      "full_credit": 119,
+      "zero": 1,
+      "capped": 3
+    },
+    "medium": {
+      "answers": 1280,
+      "question_rows": 40,
+      "mean_score": 2.9,
+      "full_credit": 298,
+      "zero": 462,
+      "capped": 481
+    }
+  },
+  "proof_review": {
+    "reviewed_at_utc": "2026-11-25T18:06:26.435452+00:00",
+    "selection_file": "hour05-review-selection.json",
+    "cases": [
+      {
+        "kind": "routine_proof_writing",
+        "file": "example-step-117-group-34.json",
+        "score": 5.0,
+        "optimizer_step": 117,
+        "sample_index": 1099,
+        "final_characters": 4381,
+        "selection": "Random(20261129), uniform among seeded examples in the completed117\u2013118 audit, one per prompt format; all eight questions are medium",
+        "assistant_score_under_current_prompt": 5,
+        "reason": "The recursive forest answer establishes positive-penalty support descent, at most n-squared calls, a single explicit recursive sequence, and polynomial rational bit lengths. It assumes the local routine B is polynomial without bounding its merges, deactivations, or iteration count. The two-point B item is unsupported.",
+        "uncertainty": null
+      },
+      {
+        "kind": "routine_proof_strategy",
+        "file": "example-step-118-group-37.json",
+        "score": 0.0,
+        "optimizer_step": 118,
+        "sample_index": 1195,
+        "final_characters": 0,
+        "selection": "Random(20261129), uniform among seeded examples in the completed117\u2013118 audit, one per prompt format; all eight questions are medium",
+        "assistant_score_under_current_prompt": 0,
+        "reason": "No final answer was emitted at the 90000-token cap. The inspected beginning and ending of thinking do not give the required arbitrary-probe-distribution reduction or lower bound. The tail incorrectly transfers a per-key first-probe event to a small maximum and then begins correcting that claim before the cap.",
+        "uncertainty": "Only the first and last3000 characters of thinking were read. This does not judge every intermediate thought."
+      },
+      {
+        "kind": "nonempty_partial",
+        "file": "hour05-nonempty_partial.json",
+        "optimizer_step": 118,
+        "sample_index": 1274,
+        "score": 4.0,
+        "final_characters": 6412,
+        "selection": "Random(20261129), uniform within the named diagnostic category after routine samples",
+        "assistant_score_under_current_prompt": 4,
+        "reason": "The IPCSF answer establishes positive support descent, the single-child recurrence, and a polynomial bound on support size in explicit encoding length. It does not establish the bit cost of exact tests and cost comparisons, or count post-return comparison work. The first three rubric items earn four points.",
+        "uncertainty": "Its false n=1 aside is unnecessary: support size is bounded by the explicit encoding without that aside."
+      },
+      {
+        "kind": "zero_completed",
+        "file": "hour05-zero_completed.json",
+        "optimizer_step": 118,
+        "sample_index": 1188,
+        "score": 0.0,
+        "final_characters": 9511,
+        "selection": "Random(20261129), uniform within the named diagnostic category after routine samples",
+        "assistant_score_under_current_prompt": 0,
+        "reason": "The completed hashing answer relies on an unsupported heuristic probability for a small maximum in an adaptive allocation with arbitrary correlated probe sequences. It does not supply the unconditional allocation reduction, fallback, compression lower bound, or bounded-load bridge. The claimed probability bound and event directions do not establish any complete rubric item.",
+        "uncertainty": null
+      }
+    ],
+    "limits": "Post-grade assistant diagnostics, not independent human calibration or an unbiased agreement sample. All original verdicts and the accepted prompt remain unchanged.",
+    "new_inference_calls": 0,
+    "new_judge_calls": 0,
+    "order_comparison_cases_measured": 0,
+    "reference_scores_measured_in_training_grades": 0
+  },
+  "flags_to_inspect": {
+    "negative_observed_surrogate_gain": [],
+    "nonpositive_learning_rate": [],
+    "missing_diagnostics": {
+      "109": [],
+      "110": [],
+      "111": [],
+      "112": [],
+      "113": [],
+      "114": [],
+      "115": [],
+      "116": [],
+      "117": [],
+      "118": [],
+      "119": []
+    }
+  },
+  "within_continuation_matched_visits": {
+    "questions": 0,
+    "mean_change": null,
+    "increased": 0,
+    "decreased": 0,
+    "pairs": []
+  },
+  "local_update_direction": {
+    "train/update_direction/negative_advantage_mean_logprob_change": {
+      "points": 3,
+      "first": -6.321649270072764e-05,
+      "last": -2.887195183529336e-05,
+      "min": -7.947878623326687e-05,
+      "max": -2.887195183529336e-05,
+      "last_step": 115
+    },
+    "train/update_direction/negative_advantage_samples": {
+      "points": 3,
+      "first": 36,
+      "last": 79,
+      "min": 22,
+      "max": 79,
+      "last_step": 115
+    },
+    "train/update_direction/positive_advantage_mean_logprob_change": {
+      "points": 3,
+      "first": 6.193686989111788e-05,
+      "last": 5.1205394020236816e-05,
+      "min": 4.0212806815410706e-05,
+      "max": 6.193686989111788e-05,
+      "last_step": 115
+    },
+    "train/update_direction/positive_advantage_samples": {
+      "points": 3,
+      "first": 60,
+      "last": 49,
+      "min": 49,
+      "max": 74,
+      "last_step": 115
+    },
+    "train/update_direction/samples": {
+      "points": 3,
+      "first": 128,
+      "last": 128,
+      "min": 128,
+      "max": 128,
+      "last_step": 115
+    },
+    "train/update_direction/surrogate_gain": {
+      "points": 3,
+      "first": 4.863162716617353e-05,
+      "last": 3.469936188338352e-05,
+      "min": 3.469936188338352e-05,
+      "max": 4.9429182968907526e-05,
+      "last_step": 115
+    }
+  },
+  "support_diagnostic": {
+    "source_commit": "dcc7553bc2e1ead90cf9e6778ef3adc5115308ba",
+    "source_module_sha256": "b449b3333bface2736fb8089524d3b3f89e2ede2bf5fba038c627353b3ad260b",
+    "answers": 256,
+    "steps": [
+      117,
+      118
+    ],
+    "final_decile_single_choice_fraction": {
+      "capped_with_answer": 0.6208148148148148,
+      "capped_without_answer": 0.6169074074074075,
+      "completed": 0.6289692592654119
+    },
+    "finding": "No distinct late-position singleton-shortlist increase in empty caps compared with completed answers. These token-weighted sampling-support summaries are not full-policy entropy or causal comparisons.",
+    "empty_caps_never_admitting_closing_thinking_token": 32,
+    "empty_caps": 42
+  },
+  "wandb_readback": {
+    "at_utc": "2026-11-25T17:45:54.683521+00:00",
+    "state": "running",
+    "verified_optimizer_rows": 11,
+    "history_rows": 11,
+    "verified_scalars": 1031,
+    "training_config_matches": true,
+    "operational_save_reserve_seconds": 2700,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261125-132805-437-native"
+  },
+  "checkpoint119": {
+    "tracker": 119,
+    "new_checkpoint_bytes": 60577362797,
+    "protected_source108_exists": true,
+    "verification": "Fresh AMD filesystem read on2026-11-25; exact four file sizes recorded in checkpoint119-direct-verification.json."
+  }
+}
