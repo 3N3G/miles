@@ -1,0 +1,45 @@
+{
+  "vm-miles-revision-cache-eviction.json": {
+    "at_utc": "2026-11-25T18:08:31.786049+00:00",
+    "verified_files": 285,
+    "verified_revisions": 50,
+    "verification_receipt": "vm-miles-revision-cache-verification.json",
+    "dry_run_receipt": "vm-miles-revision-cache-dry-run.json",
+    "cli_exit_code": 0,
+    "all_selected_cached_revisions_absent": true,
+    "free_after": 5510815744,
+    "receipt_note": "Deletion succeeded. The post-command receipt writer expected the dry-run JSON schema and raised KeyError. This recovery verified all50 selected revision directories are absent.",
+    "scope": "Only local cached Miles-only snapshot revisions were removed after fresh remote immutable hash verification. Other project cached paths, model cache, auth files, AMD results and server objects remain unchanged."
+  },
+  "hour05-replay-cache-eviction.json": {
+    "at_utc": "2026-11-25T18:07:35.669157+00:00",
+    "reason": "Replay audit109\u2013119 and hour05-support source117\u2013118 completed. Preserve parsed rows, seeded examples and analysis sources.",
+    "verified_staged_copies": [
+      {
+        "path": "/home/ubuntu/.cache/miles/tcs-async-rl/diagnostics/easy-medium-236-v1-traces/rollout_data/rollout-117.jsonl.gz",
+        "archive_path": "rollout_data/rollout-117.jsonl.gz",
+        "sha256": "b3c8f413f29ce06286e2e1dde1238e27e938bcd0cf92ae45d299e7efb97292fb",
+        "bytes": 105026479,
+        "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/786e7989ab6f17f1c07b77f985e83b3612c72be2"
+      },
+      {
+        "path": "/home/ubuntu/.cache/miles/tcs-async-rl/diagnostics/easy-medium-236-v1-traces/rollout_data/rollout-118.jsonl.gz",
+        "archive_path": "rollout_data/rollout-118.jsonl.gz",
+        "sha256": "ca5445b06cef85615b1d3adcc34a06534ff2feb212f18c842fd03c4d1161c3b4",
+        "bytes": 96570812,
+        "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/0994bfe14679148bc4b5d4794e12c38e79ce1dbe"
+      },
+      {
+        "path": "/home/ubuntu/.cache/miles/tcs-async-rl/diagnostics/easy-medium-236-v1-traces/rollout_data/rollout-119.jsonl.gz",
+        "archive_path": "rollout_data/rollout-119.jsonl.gz",
+        "sha256": "450f709c066361d0af951d0238aba807f86d355dafacea4d64ac70a73d0067dc",
+        "bytes": 116713172,
+        "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/a4aa19b54ceb07602a9500e3c165cd1ddb4db3a2"
+      }
+    ],
+    "staged_bytes": 318310463,
+    "scoped_cache": "/home/ubuntu/.cache/miles/tcs-async-rl/diagnostics/easy-medium-236-v1-hf-cache",
+    "free_before": 3822878720,
+    "free_after": 4459614208
+  }
+}
