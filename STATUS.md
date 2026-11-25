@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Recover1.50GiB of verified old TCS cache copies while the nine-update run remains healthy Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Continue foreground supervision and hourly proof/metric reviews, monitor both guard and storage, verify checkpoint119 next, and finish with the approved fixed12-question final scre
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Ten finite updates. Prepared a tested diagnostic of token choices through long completed and capped responses. It reads saved traces only. The frozen model, judge and training recipe remain unchanged. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Verify checkpoint119, run the saved-support diagnostic on the next archived batches, and complete the next hourly proof/metric review before continuing supervision through terminal
 
 ## Next / blocked
 

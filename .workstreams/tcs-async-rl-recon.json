@@ -3669,15 +3669,22 @@
       "actor": "codex",
       "summary": "Recover1.50GiB of verified old TCS cache copies while the nine-update run remains healthy",
       "revision": 357
+    },
+    {
+      "id": "e3a17706-20c7-4424-b17e-950d4089ee3e",
+      "at": "2026-11-25T17:35:01.937704Z",
+      "actor": "codex",
+      "summary": "Add a tested saved-token support diagnostic for long capped responses",
+      "revision": 358
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Recover1.50GiB of verified old TCS cache copies while the nine-update run remains healthy",
-  "nextAction": "Continue foreground supervision and hourly proof/metric reviews, monitor both guard and storage, verify checkpoint119 next, and finish with the approved fixed12-question final screen.",
+  "summary": "Ten finite updates. Prepared a tested diagnostic of token choices through long completed and capped responses. It reads saved traces only. The frozen model, judge and training recipe remain unchanged.",
+  "nextAction": "Verify checkpoint119, run the saved-support diagnostic on the next archived batches, and complete the next hourly proof/metric review before continuing supervision through terminal closure.",
   "owner": "Codex",
-  "revision": 357,
-  "updatedAt": "2026-11-25T17:20:47.117650Z"
+  "revision": 358,
+  "updatedAt": "2026-11-25T17:35:01.937704Z"
 }
