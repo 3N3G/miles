@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-11-25T18:41:49.212396+00:00",
+  "verified_files": 24703,
+  "verified_content_bytes": 580547341,
+  "manifest": "vm-old-judge-receipt-verification.json",
+  "manifest_sha256": "7fa6d05dbe0ff05b4d82f6bf083116121a94e65d286e89c438920d54285c5d20",
+  "fresh_scheduler_states": {
+    "536360": "TIMEOUT",
+    "538154": "COMPLETED",
+    "539594": "TIMEOUT",
+    "540286": "CANCELLED by 3414",
+    "544406": "COMPLETED"
+  },
+  "immutable_revisions_by_run": {
+    "easy-overfit-v9": "cba0155025d88f28599475e31152ad791c8e62a8",
+    "easy-overfit-v12": "e0929a55ece4dd3890ff588ec0a6f7300c2d8aef",
+    "easy-overfit-v15": "ebb7b87360ccb464f0e6368ed2431dc6d3de1075",
+    "easy-overfit-v16": "2ea9cf54a7e52fb27ceb1a0e4c70c513dd0f999b",
+    "easy-overfit-v17": "b4fc291be880e5b1f837612d93dc6641edef1dcd"
+  },
+  "free_before": 5041340416,
+  "free_after": 5672775680,
+  "scope": "Old completed runs, raw judge order/attempt receipt JSON only. Preserve scores, shared ledgers, question and service manifests, configs, summaries, plots and seeded raw examples. Restore the exact immutable receipts before reusing an evicted diagnostic."
+}
