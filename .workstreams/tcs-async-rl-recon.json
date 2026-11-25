@@ -3718,15 +3718,22 @@
       "actor": "codex",
       "summary": "Eighteen finite updates; remove obsolete screening-selection wording and reclaim package cache",
       "revision": 364
+    },
+    {
+      "id": "c5bd0f81-343a-48ec-92b1-2e50e9d1eb6a",
+      "at": "2026-11-25T20:22:43.266923Z",
+      "actor": "codex",
+      "summary": "Eighth review verifies2304 answers and distinguishes proof quality, stopping and repetition",
+      "revision": 365
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Eighteen finite updates; remove obsolete screening-selection wording and reclaim package cache",
-  "nextAction": "Complete the next raw-proof and metric review by20:30Z, then continue through the final save, terminal verification and approved fixed12-question after screen.",
+  "summary": "Eighth review verifies2304 answers and distinguishes proof quality, stopping and repetition",
+  "nextAction": "Continue supervision and review new batches by21:20Z. Add a full-response repetition check to the saved-trace diagnostics, then finish the approved final-save and fixed-screen comparison.",
   "owner": "Codex",
-  "revision": 364,
-  "updatedAt": "2026-11-25T20:12:35.858462Z"
+  "revision": 365,
+  "updatedAt": "2026-11-25T20:22:43.266923Z"
 }

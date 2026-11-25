@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eighteen finite updates; remove obsolete screening-selection wording and reclaim package cache Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Complete the next raw-proof and metric review by20:30Z, then continue through the final save, terminal verification and approved fixed12-question after screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eighth review verifies2304 answers and distinguishes proof quality, stopping and repetition Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Continue supervision and review new batches by21:20Z. Add a full-response repetition check to the saved-trace diagnostics, then finish the approved final-save and fixed-screen comp
 
 ## Next / blocked
 
