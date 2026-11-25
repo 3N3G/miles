@@ -9,12 +9,40 @@ from types import SimpleNamespace
 from unittest.mock import Mock
 
 from experiments.tcs_async_rl.checkpoint_screen import verify_publication
+from experiments.tcs_async_rl.regrade_live_screen import fingerprint, validation_receipts
 from experiments.tcs_async_rl.rl_inputs import question_set_key, read_bundle
 from experiments.tcs_async_rl.rl_smoke import validate_judge_qualification
 from experiments.tcs_async_rl.screen_inputs import select_questions
 
 
 class CheckpointScreenTests(unittest.TestCase):
+    def test_baseline_reuse_rejects_changed_or_unfinished_requests(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            path = root / "original-case-order0.json"
+            payload = {"model": "judge", "messages": [{"content": "frozen input"}]}
+            receipt = {
+                "payload": payload,
+                "request_sha256": fingerprint(payload),
+                "http_status": 200,
+                "swapped": False,
+                "body": {"choices": [{"finish_reason": "stop"}]},
+            }
+            path.write_text(json.dumps(receipt))
+            (root / "verdicts.json").write_text(
+                json.dumps({"case-01": {"reference_v5": [{"receipt": str(path)}]}})
+            )
+            self.assertEqual(validation_receipts(root), {fingerprint(payload): path})
+            receipt["payload"]["messages"][0]["content"] = "different input"
+            path.write_text(json.dumps(receipt))
+            with self.assertRaisesRegex(ValueError, "changed request"):
+                validation_receipts(root)
+            receipt["request_sha256"] = fingerprint(receipt["payload"])
+            receipt["body"]["choices"][0]["finish_reason"] = "length"
+            path.write_text(json.dumps(receipt))
+            with self.assertRaisesRegex(ValueError, "incomplete"):
+                validation_receipts(root)
+
     def test_failed_observed_gate_needs_exact_scoped_user_acceptance(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
@@ -75,7 +103,9 @@ class CheckpointScreenTests(unittest.TestCase):
     def test_fresh_phase_does_not_read_old_queues_but_default_restore_still_requires_them(self):
         source = ast.parse(Path("miles/ray/rollout/rollout_executor.py").read_text())
         method = next(
-            node for node in ast.walk(source) if isinstance(node, ast.AsyncFunctionDef) and node.name == "load"
+            node
+            for node in ast.walk(source)
+            if isinstance(node, ast.AsyncFunctionDef) and node.name == "load"
         )
         with tempfile.TemporaryDirectory() as name:
             old_directory = Path(name) / "old-rollout"
@@ -122,14 +152,21 @@ class CheckpointScreenTests(unittest.TestCase):
             path = Path(name) / "bundle.json"
             path.write_text(
                 json.dumps(
-                    {"questions": [row], "dataset_revision": "revision", "question_set_key": question_set_key([row])}
+                    {
+                        "questions": [row],
+                        "dataset_revision": "revision",
+                        "question_set_key": question_set_key([row]),
+                    }
                 )
             )
             digest = hashlib.sha256(path.read_bytes()).hexdigest()
             with self.assertRaises(ValueError):
                 read_bundle(path, expected_sha256=digest, training=training)
             rows, _ = read_bundle(
-                path, expected_sha256=digest, training=training, contract={"questions": 1, "difficulties": ["medium"]}
+                path,
+                expected_sha256=digest,
+                training=training,
+                contract={"questions": 1, "difficulties": ["medium"]},
             )
             self.assertEqual(rows, [row])
 
@@ -147,20 +184,28 @@ class CheckpointScreenTests(unittest.TestCase):
             source.write_text(json.dumps(event) + "\n")
             current.write_text(json.dumps(event) + "\n")
             self.assertTrue(
-                verify_publication(source, current, rollout_id=108, restored_events=restored, expected_publications=1)[
-                    "matches_source"
-                ]
+                verify_publication(
+                    source, current, rollout_id=108, restored_events=restored, expected_publications=1
+                )["matches_source"]
             )
             event["engine_checksums"] = [{"weight": 2}] * 3
             current.write_text(json.dumps(event) + "\n")
             with self.assertRaisesRegex(ValueError, "differ"):
-                verify_publication(source, current, rollout_id=108, restored_events=restored, expected_publications=1)
+                verify_publication(
+                    source, current, rollout_id=108, restored_events=restored, expected_publications=1
+                )
 
     def test_resume_verifies_both_transfers_and_excludes_inherited_publications(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
-            source, current, restored = (root / name for name in ("source.jsonl", "current.jsonl", "restored.jsonl"))
-            event = {"type": "inference_engine_weight_checksum", "rollout_id": 108, "engine_checksums": [{"w": 1}] * 3}
+            source, current, restored = (
+                root / name for name in ("source.jsonl", "current.jsonl", "restored.jsonl")
+            )
+            event = {
+                "type": "inference_engine_weight_checksum",
+                "rollout_id": 108,
+                "engine_checksums": [{"w": 1}] * 3,
+            }
             inherited = {**event, "rollout_id": 107}
             prefix = json.dumps(inherited) + "\n"
             restored.write_text(prefix)
@@ -174,7 +219,11 @@ class CheckpointScreenTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "count"):
                     verify_publication(source, current, **options)
             current.write_text(
-                prefix + json.dumps(event) + "\n" + json.dumps({**event, "engine_checksums": [{"w": 2}] * 3}) + "\n"
+                prefix
+                + json.dumps(event)
+                + "\n"
+                + json.dumps({**event, "engine_checksums": [{"w": 2}] * 3})
+                + "\n"
             )
             with self.assertRaisesRegex(ValueError, "differ"):
                 verify_publication(source, current, **options)

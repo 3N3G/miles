@@ -1,0 +1,18 @@
+{
+  "at_utc": "2026-11-25T13:40:28.768156+00:00",
+  "authorization": "The approved all236 plan permits regrading the saved384-answer checkpoint108 screen with unchanged v5 before the same-question final screen.",
+  "source_run": "difficulty-screen-high-v3",
+  "source_archive": "3N3G/internalization-runs@7a258e0947401b05d2207f63592bea799e9284bd/miles/difficulty-screen-high-v3",
+  "source_responses_sha256": "09353bd02edb159e11ea8ceb58c9dbe304ff03b83e13a8ce05985b99185e8936",
+  "source_checkpoint": 108,
+  "solver_generations": 0,
+  "new_gpu_jobs": 0,
+  "judge_config": "judge_reference_v5_20261125.json",
+  "service_owner": "easy-medium-236-v1",
+  "shared_usd_cap": 25,
+  "client_concurrency": 2,
+  "reuse": "Exact completed v5 validation payloads reuse their original receipts and scores. Copy receipts byte-for-byte with original identities. Do not reroll a valid grade.",
+  "preservation": "Store grades separately. Copy original input/approved/resolved/completion metadata byte-for-byte. Preserve original sampling, token traces and weight versions in the immutable source archive.",
+  "checks": "30 CPU tests passed, including changed and unfinished cached-request rejection. Original12 questions match the live236 corpus exactly. All40 completed v5 validation requests are uniquely indexed.",
+  "limit": "This is a descriptive fixed-question baseline on training-eligible questions, not held-out generalization or independent human calibration."
+}
