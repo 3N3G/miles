@@ -947,6 +947,11 @@
   ],
   "jobs": [
     {
+      "id": "552495",
+      "cluster": "hpcfund",
+      "status": "SUBMITTED"
+    },
+    {
       "id": "549728",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -3760,15 +3765,22 @@
       "actor": "codex",
       "summary": "Validated failed-request-only judge clarification in CPU tests; preparing bounded5-hour resume124 with original scoring and corpus",
       "revision": 370
+    },
+    {
+      "id": "abe30275-9664-4ad3-bd9e-717e0f5483d1",
+      "at": "2026-11-25T20:45:54.765373Z",
+      "actor": "codex",
+      "summary": "Submitted AMD552495: bounded5-hour continuation124 after validated judge schema repair",
+      "revision": 371
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "First allocation failed after6h59m on seven judge decisions for a six-item rubric. Checkpoint124 preserves16 updates. Retry repair passes targeted tests.",
-  "nextAction": "Validate the two failed candidates without rerolling valid grades. Resume checkpoint124 for at most5 hours, then complete the approved fixed-question comparison.",
+  "summary": "Submitted AMD552495: bounded5-hour continuation124 after validated judge schema repair",
+  "nextAction": "Supervise all updates, checkpoints, shared budget, raw proofs and W&B/HF closure, then the approved fixed12-question screen.",
   "owner": "Codex",
-  "revision": 370,
-  "updatedAt": "2026-11-25T20:43:08.164636Z"
+  "revision": 371,
+  "updatedAt": "2026-11-25T20:45:54.765373Z"
 }

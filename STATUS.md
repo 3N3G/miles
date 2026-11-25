@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First allocation failed after6h59m on seven judge decisions for a six-item rubric. Checkpoint124 preserves16 updates. Retry repair passes targeted tests. Jobs: hpcfund/549728 FAILED; hpcfund/548575 COMPLETED
-  Next: Validate the two failed candidates without rerolling valid grades. Resume checkpoint124 for at most5 hours, then complete the approved fixed-question comparison.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted AMD552495: bounded5-hour continuation124 after validated judge schema repair Jobs: hpcfund/552495 SUBMITTED; hpcfund/549728 FAILED
+  Next: Supervise all updates, checkpoints, shared budget, raw proofs and W&B/HF closure, then the approved fixed12-question screen.
 
 ## Next / blocked
 
