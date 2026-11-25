@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Repaired screen548575 is RUNNING; malformed-verdict recovery passed the actual failed request. Jobs: hpcfund/548575 RUNNING; hpcfund/548472 FAILED
-  Next: Check source weights, screen384 answers, audit medium score contrasts and supervise the approved RL continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Preserved all160 generated answers from failed screen548472 in981 hash-verified private artifacts. Jobs: hpcfund/548472 FAILED; hpcfund/548575 RUNNING
+  Next: Continue supervising active replacement548575; do not pool failed partial answers into its fixed baseline.
 
 ## Next / blocked
 

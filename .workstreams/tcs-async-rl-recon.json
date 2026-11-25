@@ -895,14 +895,14 @@
   ],
   "jobs": [
     {
-      "id": "548575",
-      "cluster": "hpcfund",
-      "status": "RUNNING"
-    },
-    {
       "id": "548472",
       "cluster": "hpcfund",
       "status": "FAILED"
+    },
+    {
+      "id": "548575",
+      "cluster": "hpcfund",
+      "status": "RUNNING"
     },
     {
       "id": "546404",
@@ -3367,15 +3367,22 @@
       "actor": "codex",
       "summary": "Repaired screen548575 is RUNNING; malformed-verdict recovery passed the actual failed request.",
       "revision": 322
+    },
+    {
+      "id": "a396a346-d5a1-424e-b73e-ee54d725a60e",
+      "at": "2026-11-25T03:04:30.253991Z",
+      "actor": "codex",
+      "summary": "Preserved all160 generated answers from failed screen548472 in981 hash-verified private artifacts.",
+      "revision": 323
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Repaired screen548575 is RUNNING; malformed-verdict recovery passed the actual failed request.",
-  "nextAction": "Check source weights, screen384 answers, audit medium score contrasts and supervise the approved RL continuation.",
+  "summary": "Preserved all160 generated answers from failed screen548472 in981 hash-verified private artifacts.",
+  "nextAction": "Continue supervising active replacement548575; do not pool failed partial answers into its fixed baseline.",
   "owner": "Codex",
-  "revision": 322,
-  "updatedAt": "2026-11-25T03:03:14.242346Z"
+  "revision": 323,
+  "updatedAt": "2026-11-25T03:04:30.253991Z"
 }
