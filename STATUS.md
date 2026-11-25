@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Both startup transfers match checkpoint108. The repaired checker passes142 tests; a115-minute replacement stays within16 screen GPU-hours. Jobs: hpcfund/546404 FAILED; hpcfund/544406 COMPLETED
-  Next: Close the old service, carry its exact ledger, and submit the approved inference repair with the frozen inputs.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted repaired checkpoint screen 548472 within remaining compute Jobs: hpcfund/548472 PENDING; hpcfund/546404 FAILED
+  Next: Verify both source-matching startup transfers, complete the pinned screen and audit medium proofs before RL.
 
 ## Next / blocked
 
