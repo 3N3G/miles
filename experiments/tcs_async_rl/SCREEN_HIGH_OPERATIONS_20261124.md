@@ -226,3 +226,13 @@ The exact repair, actual-event validation and remaining compute bound are in
 [the publication repair record](SCREEN_PUBLICATION_REPAIR_20261124.md).
 The replacement uses`checkpoint_screen_high_v2.json` and a fresh output directory.
 The original used configuration remains unchanged.
+
+Replacement job548472 was submitted at02:22:19 UTC on November25 from
+`49f6a87eb8a7a6447f24e4a3ac7728a6a167ad12`. Its current state is PENDING.
+The saved v1 failure archive contains189 verified files,134823089 bytes, at
+`3N3G/internalization-runs@152c0fd627f8c47bb9c2475aa661e672cbdd79a8/miles/difficulty-screen-high-v1`.
+The exact shared ledger moved after closing the old service, with572 settled calls and no pending reservations.
+Its SHA256 is`01bc0f2de8c3a63e86398c1966c90ad43ff9fbff7dcc4721b55f5d88b2a9e7c6`.
+The new service is PID1517313. Its36 cached control checks passed without another provider call.
+The new detached tunnel controller is PID1517458 and targets only job548472.
+Both live helpers record the same session UUID as this workstream.
