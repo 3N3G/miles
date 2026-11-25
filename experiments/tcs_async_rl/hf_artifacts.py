@@ -7,9 +7,9 @@ import re
 from pathlib import Path
 
 
-def verify_files(directory, entries, remote_files):
+def verify_files(directory, entries, remote_files, *, prefix=None):
     remote = {item.path: item for item in remote_files}
-    prefix = f"miles/{directory.name}/"
+    prefix = prefix if prefix is not None else f"miles/{directory.name}/"
     checked = []
     for name, expected in entries.items():
         relative = Path(name)

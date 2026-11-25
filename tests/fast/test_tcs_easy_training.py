@@ -764,6 +764,11 @@ class ArchiveTests(unittest.TestCase):
                 blob_id=None,
             )
             self.assertEqual(len(verify_files(root, entries, [remote])), 1)
+            remote.path = "another-project/snapshot/" + relative
+            self.assertEqual(len(verify_files(root, entries, [remote], prefix="another-project/snapshot/")), 1)
+            with self.assertRaises(ValueError):
+                verify_files(root, entries, [remote])
+            remote.path = f"miles/{root.name}/{relative}"
             remote.lfs.sha256 = "0" * 64
             with self.assertRaisesRegex(ValueError, "SHA256 differs"):
                 verify_files(root, entries, [remote])
