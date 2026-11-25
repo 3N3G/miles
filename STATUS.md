@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User accepts the remaining judge disagreements; expose the final prompt and prepare complete W&B run provenance. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Show the unchanged v5 prompt and concrete judge/training setup. Add exact prompt, safe hyperparameters, provenance and a graded-example link to W&B without changing old history.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final prompt and planned setup are visible in W&B Config, Logs and Files; all artifacts verified privately in HF. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Use the accepted unchanged v5 recipe to regrade the384 saved screen answers, apply the declared20/26-question rule, and bind fresh execution snapshots before the approved12-hour co
 
 ## Next / blocked
 

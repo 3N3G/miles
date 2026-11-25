@@ -3496,15 +3496,22 @@
       "actor": "codex",
       "summary": "User accepts the remaining judge disagreements; expose the final prompt and prepare complete W&B run provenance.",
       "revision": 337
+    },
+    {
+      "id": "b1a6f9d5-2ff5-4d17-a691-96614a89e906",
+      "at": "2026-11-25T10:40:36.211187Z",
+      "actor": "codex",
+      "summary": "Final prompt and planned setup are visible in W&B Config, Logs and Files; all artifacts verified privately in HF.",
+      "revision": 338
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "User accepts the remaining judge disagreements; expose the final prompt and prepare complete W&B run provenance.",
-  "nextAction": "Show the unchanged v5 prompt and concrete judge/training setup. Add exact prompt, safe hyperparameters, provenance and a graded-example link to W&B without changing old history.",
+  "summary": "Final prompt and planned setup are visible in W&B Config, Logs and Files; all artifacts verified privately in HF.",
+  "nextAction": "Use the accepted unchanged v5 recipe to regrade the384 saved screen answers, apply the declared20/26-question rule, and bind fresh execution snapshots before the approved12-hour continuation.",
   "owner": "Codex",
-  "revision": 337,
-  "updatedAt": "2026-11-25T10:25:23.049119Z"
+  "revision": 338,
+  "updatedAt": "2026-11-25T10:40:36.211187Z"
 }
