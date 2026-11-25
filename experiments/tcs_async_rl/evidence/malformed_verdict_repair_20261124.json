@@ -1,0 +1,40 @@
+{
+  "original_attempt_preserved": true,
+  "unchanged_request_sha256": "db9b633a839a7a9882e606369155ce35e4a285acd17a6b07d352fa512eb1b3ba",
+  "result": {
+    "identity": "online-029ffd957dec36ab53112267",
+    "swapped": false,
+    "candidate": {
+      "score": 6.0,
+      "items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "The candidate identifies that Bob needs Alice\u2019s selectors to choose his relevant candidates, and has Alice communicate them before the simulation."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "After the selectors are known, Alice uses (x_i) and Bob locally forms (y_{i,u_i}); the candidate verifies coordinatewise that f(x_i,y_{i,u_i}) is the required output."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "It encodes the selector vector collectively using a fixed-length code of ceil(log\u2082(\u03ba^l)) bits, avoiding separate rounding and any delimiter cost. The displayed base-\u03ba formula has an indexing slip, but the stated enumeration of the \u03ba^l possibilities gives the required code."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "The parties simulate an optimal protocol for f^l on their locally available transformed inputs, so the continuation is legal, correct, and costs at most D(f^l); the costs are added without a direct-sum assumption."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "The construction is organized coherently, but it does not explicitly handle \u03ba=1, as required by this item."
+        }
+      ]
+    },
+    "reference": null,
+    "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/difficulty-screen-high-v3/judging/8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e/online-029ffd957dec36ab53112267-order0-db9b633a839a.json"
+  }
+}

@@ -254,6 +254,86 @@ class EasyDataTests(unittest.TestCase):
 
 
 class MultiQuestionTests(unittest.IsolatedAsyncioTestCase):
+    async def test_malformed_verdict_retries_same_request_without_regrading_valid_score(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            config = json.loads((BASE / "judge_group_v2_inference_repair.json").read_text())
+            config["grading_method"] = "reference_guided"
+            verdict = {"candidate": [{"item": 1, "satisfied": True, "reason": "proved"}]}
+            calls = []
+
+            def receipt(payload, **kwargs):
+                calls.append(payload)
+                return {
+                    "http_status": 200,
+                    "body": {
+                        "usage": {"prompt_tokens": 50, "completion_tokens": 10},
+                        "choices": [
+                            {
+                                "finish_reason": "stop",
+                                "message": {"content": json.dumps({"candidate": []} if len(calls) == 1 else verdict)},
+                            }
+                        ],
+                    },
+                }
+
+            kwargs = dict(
+                identity="malformed",
+                candidate="answer",
+                row=question(0),
+                swapped=False,
+                judge={"primary_model": "dummy", "reasoning_effort": "high", "max_completion_tokens": 8192},
+                config=config,
+                prompt="judge",
+                key="dummy",
+                budget=Budget(root, config),
+                semaphore=asyncio.Semaphore(1),
+                directory=root,
+            )
+            with patch("experiments.tcs_async_rl.grade_group.request_chat", side_effect=receipt):
+                result = await grade_one(**kwargs)
+                self.assertEqual(result["candidate"]["score"], 7)
+                await grade_one(**kwargs)
+                # A crash after the paid attempt but before canonical cache
+                # publication must reuse the preserved attempt without billing.
+                next(root.glob("malformed-order0-????????????.json")).unlink()
+                await grade_one(**kwargs)
+            self.assertEqual(len(calls), 2)
+            self.assertEqual(calls[0], calls[1])
+            self.assertEqual(len(list(root.glob("*-attempt*.json"))), 2)
+            self.assertEqual(len((root / "malformed-verdict-retries.jsonl").read_text().splitlines()), 1)
+
+    async def test_malformed_verdict_retries_are_bounded_and_never_return_zero(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            config = json.loads((BASE / "judge_group_v2_inference_repair.json").read_text())
+            config["grading_method"] = "reference_guided"
+            receipt = {
+                "http_status": 200,
+                "body": {
+                    "usage": {"prompt_tokens": 1, "completion_tokens": 1},
+                    "choices": [{"finish_reason": "stop", "message": {"content": '{"candidate":[]}'}}],
+                },
+            }
+            with patch("experiments.tcs_async_rl.grade_group.request_chat", return_value=receipt) as client:
+                with self.assertRaisesRegex(RuntimeError, "Malformed judge verdict retries exhausted"):
+                    await grade_one(
+                        identity="bad",
+                        candidate="answer",
+                        row=question(0),
+                        swapped=False,
+                        judge={"primary_model": "dummy", "reasoning_effort": "high", "max_completion_tokens": 8192},
+                        config=config,
+                        prompt="judge",
+                        key="dummy",
+                        budget=Budget(root, config),
+                        semaphore=asyncio.Semaphore(1),
+                        directory=root,
+                    )
+            self.assertEqual(client.call_count, config["max_attempts"])
+            self.assertEqual(len(list(root.glob("*-attempt*.json"))), config["max_attempts"])
+            self.assertFalse(list(root.glob("bad-order0-????????????.json")))
+
     async def test_only_unfinished_judge_verdicts_get_bounded_token_retries(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

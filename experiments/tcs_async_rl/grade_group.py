@@ -88,20 +88,55 @@ async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt,
         async with semaphore:
             for attempt in range(config["max_attempts"]):
                 call_id = f"{identity}-{int(swapped)}-{fingerprint[:12]}-{attempt}"
-                reservation = reserve_cost(payload, config)
-                budget.reserve(reservation, call_id)
-                receipt = await asyncio.to_thread(
-                    request_chat, payload, key=key, endpoint=config["endpoint"], timeout=config["timeout_seconds"]
-                )
-                receipt.update(
-                    identity=identity, swapped=swapped, request_sha256=fingerprint, attempt=attempt, payload=payload
-                )
-                usage = receipt.get("body", {}).get("usage")
-                if usage is not None:
-                    budget.settle(reservation, usage_cost(usage, config), call_id)
                 attempt_name = f"{identity}-order{int(swapped)}-{fingerprint[:12]}-attempt{attempt}.json"
-                (directory / attempt_name).write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
+                attempt_file = directory / attempt_name
+                if attempt_file.exists():
+                    receipt = json.loads(attempt_file.read_text())
+                    if receipt.get("request_sha256") != fingerprint or receipt.get("payload") != payload:
+                        raise ValueError("Cached judge attempt differs from the requested payload")
+                else:
+                    reservation = reserve_cost(payload, config)
+                    budget.reserve(reservation, call_id)
+                    receipt = await asyncio.to_thread(
+                        request_chat, payload, key=key, endpoint=config["endpoint"], timeout=config["timeout_seconds"]
+                    )
+                    receipt.update(
+                        identity=identity,
+                        swapped=swapped,
+                        request_sha256=fingerprint,
+                        attempt=attempt,
+                        payload=payload,
+                    )
+                    usage = receipt.get("body", {}).get("usage")
+                    if usage is not None:
+                        budget.settle(reservation, usage_cost(usage, config), call_id)
+                    attempt_file.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
                 if receipt.get("http_status") == 200:
+                    choice = receipt["body"]["choices"][0]
+                    if choice.get("finish_reason") == "stop":
+                        labels = ("candidate",) if method == "reference_guided" else ("A", "B")
+                        try:
+                            parse_grade(
+                                choice["message"]["content"], rubric_items(row["rubric"]), answer_labels=labels
+                            )
+                        except (ValueError, TypeError, AttributeError):
+                            # Retry only an unusable schema, never a valid grade.
+                            # The paid raw attempt and unchanged request remain auditable.
+                            retry_file = directory / "malformed-verdict-retries.jsonl"
+                            event = {"receipt": attempt_name, "request_sha256": fingerprint, "attempt": attempt}
+                            previous = (
+                                [json.loads(line) for line in retry_file.read_text().splitlines()]
+                                if retry_file.exists()
+                                else []
+                            )
+                            if event not in previous:
+                                _append_json(retry_file, event)
+                            if attempt + 1 == config["max_attempts"]:
+                                raise RuntimeError(
+                                    "Malformed judge verdict retries exhausted; no zero substituted"
+                                ) from None
+                            await asyncio.sleep(min(2**attempt, 30))
+                            continue
                     output.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n")
                     break
                 status = receipt.get("http_status")
