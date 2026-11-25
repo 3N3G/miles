@@ -10,6 +10,7 @@ from experiments.tcs_async_rl.diagnose_rl import completed_judge_receipt, questi
 from experiments.tcs_async_rl.live_review import build_review
 from experiments.tcs_async_rl.native_metrics import (
     compare_wandb,
+    diagnostic_rollout_metrics,
     publish_audit,
     read_native_metrics,
     sync_live_audit,
@@ -22,6 +23,34 @@ from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_samp
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_difficulty_returns_and_constant_groups_do_not_confuse_question_mix_with_signal(self):
+        cache = {
+            "a": {
+                "summary": {
+                    "rollout_ids": [109],
+                    "by_question": {
+                        "easy": {"scores": [7, 7], "capped": 0},
+                        "medium": {"scores": [0, 0], "capped": 1},
+                    },
+                    "prompt_groups": [{"varied_rewards": False}, {"varied_rewards": False}],
+                }
+            },
+            "b": {
+                "summary": {
+                    "rollout_ids": [110],
+                    "by_question": {"medium": {"scores": [0, 4], "capped": 0}},
+                    "prompt_groups": [{"varied_rewards": True}],
+                }
+            },
+        }
+        result = diagnostic_rollout_metrics(cache, {"easy": "easy", "medium": "medium", "unseen": "medium"})
+        self.assertEqual(result[109]["rollout/by_difficulty/easy/raw_reward"], 7)
+        self.assertEqual(result[109]["rollout/by_difficulty/medium/raw_reward"], 0)
+        self.assertEqual(result[109]["rollout/constant_reward_group_fraction"], 1)
+        self.assertEqual(result[110]["rollout/by_difficulty/medium/raw_reward"], 2)
+        self.assertEqual(result[110]["rollout/constant_reward_group_fraction"], 0)
+        self.assertEqual(result[109]["rollout/corpus_coverage_fraction"], 2 / 3)
+
     def test_exact_prompt_is_frozen_and_tampering_is_rejected(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

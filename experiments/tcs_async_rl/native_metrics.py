@@ -14,6 +14,7 @@ import time
 from pathlib import Path
 
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
+from experiments.tcs_async_rl.reward_hook import question_key
 from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates
 from experiments.tcs_async_rl.run_setup import provenance_config, publish_run_setup
 
@@ -153,7 +154,64 @@ def read_native_metrics(directory, *, allow_pending=False, require_publication=F
             raise ValueError(f"Missing optimizer or rollout metrics at step {step}")
         if step not in published:
             raise ValueError(f"Missing actual weight publication at step {step}")
+    cache, inputs = directory / "consumed-summary-cache.json", directory / "input.json"
+    require_trace = config_path.exists() and json.loads(config_path.read_text()).get(
+        "require_consumed_trace_for_metrics", False
+    )
+    if require_trace and not (cache.exists() and inputs.exists()):
+        if allow_pending:
+            return []
+        raise ValueError("Native metrics require verified consumed traces before publication")
+    if cache.exists() and inputs.exists():
+        bundle = json.loads(inputs.read_text())
+        difficulties = {question_key(row): row["difficulty"] for row in bundle.get("questions", [])}
+        extra = diagnostic_rollout_metrics(json.loads(cache.read_text()), difficulties)
+        if require_trace:
+            ready = []
+            for step in observed:
+                if step not in extra:
+                    if not allow_pending:
+                        raise ValueError("Native metrics are missing a verified consumed trace")
+                    break
+                ready.append(step)
+            observed = ready
+        for step in observed:
+            rows[step].update(extra.get(step, {}))
     return [rows[step] for step in observed]
+
+
+def diagnostic_rollout_metrics(cache, difficulties):
+    """Separate difficulty mix and within-group variation using verified consumed traces."""
+    output, seen = {}, set()
+    summaries = sorted((value["summary"] for value in cache.values()), key=lambda r: r["rollout_ids"][0])
+    for summary in summaries:
+        step = summary["rollout_ids"][0]
+        metrics = {}
+        for level in sorted(set(difficulties.values())):
+            questions = [value for key, value in summary["by_question"].items() if difficulties.get(key) == level]
+            scores = [score for value in questions for score in value["scores"]]
+            if scores:
+                prefix = f"rollout/by_difficulty/{level}"
+                metrics.update(
+                    {
+                        f"{prefix}/raw_reward": sum(scores) / len(scores),
+                        f"{prefix}/samples": len(scores),
+                        f"{prefix}/full_credit_fraction": scores.count(7) / len(scores),
+                        f"{prefix}/zero_fraction": scores.count(0) / len(scores),
+                        f"{prefix}/cap_fraction": sum(value["capped"] for value in questions) / len(scores),
+                    }
+                )
+        groups = summary.get("prompt_groups", [])
+        if groups:
+            metrics["rollout/constant_reward_group_fraction"] = sum(not row["varied_rewards"] for row in groups) / len(
+                groups
+            )
+        seen.update(summary["by_question"])
+        metrics["rollout/unique_questions_seen"] = len(seen)
+        if difficulties:
+            metrics["rollout/corpus_coverage_fraction"] = len(seen) / len(difficulties)
+        output[step] = metrics
+    return output
 
 
 def compare_wandb(native, history, *, metric, step_key):
