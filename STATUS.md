@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User requests broader problem coverage; distinguish the small pilot from all236 easy/medium and2519 eligible questions. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Record the data-scope question and clarify the existing counts. Prepare broader training only after the user selects easy+medium or all difficulties.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The old20/26 limit was a pilot choice, not dataset capacity. Broader corpus choice is236 easy+medium or2519 all eligible. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Await the difficulty-scope choice, then freeze the broader data manifest and fresh execution snapshot. Keep the accepted v5 judge, existing budgets and sealed FOCS/STOC2026 split.
 
 ## Finished
 

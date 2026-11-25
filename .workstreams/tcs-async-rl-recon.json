@@ -3510,15 +3510,22 @@
       "actor": "codex",
       "summary": "User requests broader problem coverage; distinguish the small pilot from all236 easy/medium and2519 eligible questions.",
       "revision": 339
+    },
+    {
+      "id": "39a54be0-b513-4ee0-a51c-01e6cae0be21",
+      "at": "2026-11-25T13:08:30.436298Z",
+      "actor": "codex",
+      "summary": "The old20/26 limit was a pilot choice, not dataset capacity. Broader corpus choice is236 easy+medium or2519 all eligible.",
+      "revision": 340
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "User requests broader problem coverage; distinguish the small pilot from all236 easy/medium and2519 eligible questions.",
-  "nextAction": "Record the data-scope question and clarify the existing counts. Prepare broader training only after the user selects easy+medium or all difficulties.",
+  "state": "needs-you",
+  "summary": "The old20/26 limit was a pilot choice, not dataset capacity. Broader corpus choice is236 easy+medium or2519 all eligible.",
+  "nextAction": "Await the difficulty-scope choice, then freeze the broader data manifest and fresh execution snapshot. Keep the accepted v5 judge, existing budgets and sealed FOCS/STOC2026 split.",
   "owner": "Codex",
-  "revision": 339,
-  "updatedAt": "2026-11-25T13:07:40.725713Z"
+  "revision": 340,
+  "updatedAt": "2026-11-25T13:08:30.436298Z"
 }
