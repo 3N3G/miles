@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Seventh review verifies2048 answers, checkpoint124 and1491 W&B scalars Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Continue through the approved deadline and complete another raw-proof and native-metric review by20:30Z. Finish with exact final-checkpoint evaluation, immutable archives and W&B v
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eighteen finite updates; remove obsolete screening-selection wording and reclaim package cache Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Complete the next raw-proof and metric review by20:30Z, then continue through the final save, terminal verification and approved fixed12-question after screen.
 
 ## Next / blocked
 

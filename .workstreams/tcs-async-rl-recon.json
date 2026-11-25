@@ -3711,15 +3711,22 @@
       "actor": "codex",
       "summary": "Seventh review verifies2048 answers, checkpoint124 and1491 W&B scalars",
       "revision": 363
+    },
+    {
+      "id": "066b2283-664f-4617-a790-8e9a81a3d8ba",
+      "at": "2026-11-25T20:12:35.858462Z",
+      "actor": "codex",
+      "summary": "Eighteen finite updates; remove obsolete screening-selection wording and reclaim package cache",
+      "revision": 364
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Seventh review verifies2048 answers, checkpoint124 and1491 W&B scalars",
-  "nextAction": "Continue through the approved deadline and complete another raw-proof and native-metric review by20:30Z. Finish with exact final-checkpoint evaluation, immutable archives and W&B verification.",
+  "summary": "Eighteen finite updates; remove obsolete screening-selection wording and reclaim package cache",
+  "nextAction": "Complete the next raw-proof and metric review by20:30Z, then continue through the final save, terminal verification and approved fixed12-question after screen.",
   "owner": "Codex",
-  "revision": 363,
-  "updatedAt": "2026-11-25T19:31:47.869470Z"
+  "revision": 364,
+  "updatedAt": "2026-11-25T20:12:35.858462Z"
 }
