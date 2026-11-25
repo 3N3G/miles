@@ -1,0 +1,366 @@
+{
+  "at_utc": "2026-11-25T20:21:58.250632+00:00",
+  "job_id": "549728",
+  "audited_optimizer_steps": [
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126
+  ],
+  "audited_answers": 2304,
+  "distinct_question_rows": 72,
+  "distinct_paper_node_pairs": 63,
+  "papers": 60,
+  "full_credit": 609,
+  "zero": 816,
+  "capped": 802,
+  "capped_empty_final": 494,
+  "constant_groups": 9,
+  "by_difficulty": {
+    "easy": {
+      "answers": 320,
+      "question_rows": 10,
+      "mean_score": 5.625,
+      "full_credit": 217,
+      "zero": 36,
+      "capped": 42
+    },
+    "medium": {
+      "answers": 1984,
+      "question_rows": 62,
+      "mean_score": 2.6265120967741935,
+      "full_credit": 392,
+      "zero": 780,
+      "capped": 760
+    }
+  },
+  "proof_review": {
+    "reviewed_at_utc": "2026-11-25T20:21:58.250632+00:00",
+    "selection_files": [
+      "hour08-review-selection.json",
+      "hour08-stop-status-selection.json"
+    ],
+    "source_steps": [
+      125,
+      126
+    ],
+    "cases": [
+      {
+        "kind": "routine_easy",
+        "file": "example-step-126-group-71.json",
+        "optimizer_step": 126,
+        "sample_index": 2283,
+        "score": 7.0,
+        "final_characters": 69754,
+        "selection": "Random(20261202), uniform among seeded exported examples at this difficulty in completed125\u2013126",
+        "assistant_score_under_current_prompt": 7,
+        "reason": "The single-edge unit-versus-zero witness gives OPT1, selection probability at least alpha, and pointwise distance equal to the positive-weight selection indicator for every coupling. Unit input distance proves L at least alpha. A complete correct proof appears near the beginning. Later incorrect parallel-edge remarks are unused. The final answer then repeatedly promises to output the proof until the90000-token cap.",
+        "uncertainty": "The raw beginning and ending and every unique line were read after mechanical exact-line deduplication. Repeated lines were not individually reread.",
+        "generator_finish_status": "truncated"
+      },
+      {
+        "kind": "routine_medium",
+        "file": "example-step-126-group-68.json",
+        "optimizer_step": 126,
+        "sample_index": 2187,
+        "score": 1.0,
+        "final_characters": 7911,
+        "selection": "Random(20261202), uniform among seeded exported examples at this difficulty in completed125\u2013126",
+        "assistant_score_under_current_prompt": 1,
+        "reason": "Canonical-implementation correctness earns one point. The proposed distinguisher unjustifiably recovers the circuit f from an implementation instead of using classical advice. The answer never supplies the required composed adversary and replaces the security transfer with circular claims that obfuscation preserves security.",
+        "uncertainty": null,
+        "generator_finish_status": "completed"
+      },
+      {
+        "kind": "nonempty_partial",
+        "file": "hour08-nonempty_partial.json",
+        "optimizer_step": 125,
+        "sample_index": 2159,
+        "score": 3.0,
+        "final_characters": 13731,
+        "selection": "Random(20261202), uniform within named diagnostic category excluding already selected answers",
+        "assistant_score_under_current_prompt": 3,
+        "reason": "The interpolation weights and corrected penalty cancellation are valid, as are the conversion prerequisites. Input-dependent tau does not give a uniform polynomial algorithm. The substitution u=2a loses the factor1/2 in the denominator, so its claimed numerical bound is false. The first two items correctly earn three points.",
+        "uncertainty": null,
+        "generator_finish_status": "completed"
+      },
+      {
+        "kind": "nonempty_zero",
+        "file": "hour08-zero_completed.json",
+        "optimizer_step": 125,
+        "sample_index": 2057,
+        "score": 0.0,
+        "final_characters": 922,
+        "selection": "Random(20261202), uniform within named diagnostic category excluding already selected answers",
+        "assistant_score_under_current_prompt": 0,
+        "reason": "The final answer is only922 characters at the model cap. It gives a calibration preliminary but neither universal lift bound, realization, nor extremum construction. No complete scored item is established.",
+        "uncertainty": null,
+        "generator_finish_status": "truncated",
+        "kind_in_selection_file": "zero_completed"
+      },
+      {
+        "kind": "zero_with_model_stop",
+        "file": "hour08-zero_with_model_stop.json",
+        "optimizer_step": 125,
+        "sample_index": 2125,
+        "score": 0.0,
+        "final_characters": 6074,
+        "generator_finish_status": "completed",
+        "selection": "Random(20261203), uniform among the completed125\u2013126 zero-score answers excluding the four prior cases. Added to distinguish valid model stopping from a nonempty final truncated at the cap.",
+        "assistant_score_under_current_prompt": 0,
+        "reason": "This model-stopped answer uses disjoint blocks without witness containment and can violate the strict local-length requirement. It omits the dynamic-state initialization/update/query accounting and incorrectly treats the generator overhead as the full cost. It also fails the k-at-least-m case and duplicate-aware progression enumeration. No complete scored item is established.",
+        "uncertainty": null
+      }
+    ],
+    "limits": "Five post-grade assistant diagnostics, not independent human calibration or an unbiased agreement sample. Original scores remain unchanged. Generator completion is now explicit in every case.",
+    "new_inference_calls": 0,
+    "new_judge_calls": 0
+  },
+  "stop_token_check": {
+    "answers": 256,
+    "completed": 171,
+    "completed_ending_expected_token": 171,
+    "capped": 85,
+    "caps_containing_im_end": 0,
+    "caps_containing_endoftext": 0,
+    "empty_caps": 43,
+    "empty_caps_with_closing_think": 0
+  },
+  "repetition": {
+    "metric": "1 minus distinct20-word windows divided by all20-word windows in final text. None when fewer than20 words. Exact text windows, no semantic deduplication.",
+    "new_answers": 256,
+    "completed": 171,
+    "capped_nonempty": 42,
+    "capped_empty": 43,
+    "full_credit_caps": 6,
+    "final_repetition_above_half": 3,
+    "model_stopped_repetition_above_half": 0,
+    "selected_easy_case": {
+      "optimizer_step": 126,
+      "sample_index": 2283,
+      "status": "truncated",
+      "score": 7.0,
+      "final_characters": 69754,
+      "final_answer_label_count": 15,
+      "repeated20word_window_fraction": 0.2743046695585608,
+      "max_identical_paragraph_count": 1,
+      "im_end_count": 0,
+      "endoftext_count": 0,
+      "closing_think_count": 1,
+      "last_token_id": 40
+    },
+    "limit": "Final-text repetition only. Empty caps have no measured final repetition. These categories involve different questions and do not identify a causal training effect."
+  },
+  "audit_label_corrections": {
+    "at_utc": "2026-11-25T20:18:59.703063+00:00",
+    "corrections": [
+      {
+        "hour": 3,
+        "file": "hour03-zero_completed.json",
+        "sample_index": 620,
+        "generator_finish_status": "completed",
+        "response_tokens": 25926,
+        "final_characters": 6711,
+        "original_category": "zero_completed",
+        "actual_selection_predicate": "Nonempty final text with zero reward, regardless of model stop versus cap",
+        "correct_label": "nonempty_zero"
+      },
+      {
+        "hour": 5,
+        "file": "hour05-zero_completed.json",
+        "sample_index": 1188,
+        "generator_finish_status": "completed",
+        "response_tokens": 84697,
+        "final_characters": 9511,
+        "original_category": "zero_completed",
+        "actual_selection_predicate": "Nonempty final text with zero reward, regardless of model stop versus cap",
+        "correct_label": "nonempty_zero"
+      },
+      {
+        "hour": 6,
+        "file": "hour06-zero_completed.json",
+        "sample_index": 1591,
+        "generator_finish_status": "truncated",
+        "response_tokens": 90000,
+        "final_characters": 15078,
+        "original_category": "zero_completed",
+        "actual_selection_predicate": "Nonempty final text with zero reward, regardless of model stop versus cap",
+        "correct_label": "nonempty_zero"
+      },
+      {
+        "hour": 8,
+        "file": "hour08-zero_completed.json",
+        "sample_index": 2057,
+        "generator_finish_status": "truncated",
+        "response_tokens": 90000,
+        "final_characters": 922,
+        "original_category": "zero_completed",
+        "actual_selection_predicate": "Nonempty final text with zero reward, regardless of model stop versus cap",
+        "correct_label": "nonempty_zero"
+      }
+    ],
+    "effect": "Diagnostic category naming only. Original model outputs, model finish statuses, grades, configs, sampling, aggregate counts and archived snapshots remain unchanged. Future cases distinguish a nonempty final from generator completion."
+  },
+  "flags_to_inspect": {
+    "negative_observed_surrogate_gain": [],
+    "nonpositive_learning_rate": [],
+    "missing_diagnostics": {
+      "109": [],
+      "110": [],
+      "111": [],
+      "112": [],
+      "113": [],
+      "114": [],
+      "115": [],
+      "116": [],
+      "117": [],
+      "118": [],
+      "119": [],
+      "120": [],
+      "121": [],
+      "122": [],
+      "123": [],
+      "124": [],
+      "125": [],
+      "126": []
+    }
+  },
+  "within_continuation_matched_visits": {
+    "questions": 0,
+    "mean_change": null,
+    "increased": 0,
+    "decreased": 0,
+    "pairs": []
+  },
+  "local_update_direction": {
+    "train/update_direction/negative_advantage_mean_logprob_change": {
+      "points": 4,
+      "first": -6.321649270072764e-05,
+      "last": -4.027876639582928e-05,
+      "min": -7.947878623326687e-05,
+      "max": -2.887195183529336e-05,
+      "last_step": 120
+    },
+    "train/update_direction/negative_advantage_samples": {
+      "points": 4,
+      "first": 36,
+      "last": 80,
+      "min": 22,
+      "max": 80,
+      "last_step": 120
+    },
+    "train/update_direction/positive_advantage_mean_logprob_change": {
+      "points": 4,
+      "first": 6.193686989111788e-05,
+      "last": 6.275500367773172e-05,
+      "min": 4.0212806815410706e-05,
+      "max": 6.275500367773172e-05,
+      "last_step": 120
+    },
+    "train/update_direction/positive_advantage_samples": {
+      "points": 4,
+      "first": 60,
+      "last": 48,
+      "min": 48,
+      "max": 74,
+      "last_step": 120
+    },
+    "train/update_direction/samples": {
+      "points": 4,
+      "first": 128,
+      "last": 128,
+      "min": 128,
+      "max": 128,
+      "last_step": 120
+    },
+    "train/update_direction/surrogate_gain": {
+      "points": 4,
+      "first": 4.863162716617353e-05,
+      "last": 4.8547008077548526e-05,
+      "min": 3.469936188338352e-05,
+      "max": 4.9429182968907526e-05,
+      "last_step": 120
+    }
+  },
+  "wandb_readback": {
+    "at_utc": "2026-11-25T20:13:11.360154+00:00",
+    "state": "running",
+    "last_verified_optimizer_step": 126,
+    "verified_optimizer_rows": 18,
+    "history_rows": 18,
+    "verified_scalars": 1674,
+    "training_config_matches": true,
+    "operational_save_reserve_seconds": 2700,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261125-132805-437-native"
+  },
+  "reference_identity": "The fixed reference is the original pinned HF model conversion, not the resumed checkpoint108. Its exact path is in validated-native-arguments.json:validated.ref_load.",
+  "interpretation_limit": "The accepted rubric can award7 to a correct proof prefix even when generation later repeats until its cap. The repetition evidence is descriptive and does not justify changing the frozen reward or infer that every cap is repetitive.",
+  "gpu_snapshot": {
+    "at_utc": "2026-11-25T20:21:58.830826+00:00",
+    "job_id": "549728",
+    "devices": [
+      {
+        "device": "card0",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 218119229440
+      },
+      {
+        "device": "card8",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 217355833344
+      },
+      {
+        "device": "card16",
+        "gpu_busy_percent": 0,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 196236439552
+      },
+      {
+        "device": "card24",
+        "gpu_busy_percent": 0,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 196219645952
+      },
+      {
+        "device": "card32",
+        "gpu_busy_percent": 0,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 197790400512
+      },
+      {
+        "device": "card40",
+        "gpu_busy_percent": 0,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 197815566336
+      },
+      {
+        "device": "card48",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 197914193920
+      },
+      {
+        "device": "card56",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 197939363840
+      }
+    ]
+  }
+}
