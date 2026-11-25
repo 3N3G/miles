@@ -15,25 +15,27 @@ from pathlib import Path
 
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
 from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates
+from experiments.tcs_async_rl.run_setup import provenance_config, publish_run_setup
 
 PUBLIC_TRAINING_ARGUMENTS = frozenset("""
     accumulate_allreduce_grads_in_fp32 actor_num_gpus_per_node actor_num_nodes
     adam_beta1 adam_beta2 advantage_estimator apply_chat_template apply_chat_template_kwargs
     async_data_buffer_capacity_factor async_max_concurrent_samples async_unused_samples_handler
-    attention_backend attention_dropout balance_data bf16 ckpt_format context_parallel_size
-    enable_mtp_training eps_clip eps_clip_high fully_async global_batch_size group_rm
-    hidden_dropout kl_loss_coef kl_loss_type linear_attention_backend log_probs_backend
+    attention_backend attention_dropout balance_data bf16 ckpt_format clip_grad context_parallel_size
+    enable_mtp_training entropy_coef eps_clip eps_clip_high fully_async global_batch_size group_rm grpo_std_normalization
+    hidden_dropout kl_coef kl_loss_coef kl_loss_type linear_attention_backend log_probs_backend
     log_probs_chunk_size lr lr_decay_style max_position_embeddings max_tokens_per_gpu
-    max_weight_staleness mtp_loss_scaling_factor mtp_num_layers n_samples_per_prompt
+    max_weight_staleness mtp_detach_heads mtp_loss_scaling_factor mtp_num_layers n_samples_per_prompt normalize_advantages
     num_gpus_per_node num_rollout observe_training_entropy observe_update_direction_steps
     optimizer pause_generation_mode pipeline_model_parallel_size policy_loss_type
     recompute_granularity recompute_method recompute_num_layers rollout_batch_size
     rollout_max_context_len rollout_max_response_len rollout_num_gpus rollout_num_gpus_per_engine
     rollout_shuffle rollout_skip_special_tokens rollout_temperature rollout_top_k rollout_top_p
-    reset_rollout_state rollout_seed save_interval seed seq_length sequence_parallel sglang_context_length sglang_max_running_requests
+    reset_rollout_state rewards_normalization rollout_seed save_interval seed seq_length sequence_parallel
+    sglang_context_length sglang_enable_prefill_weight_versions sglang_max_running_requests
     sglang_mem_fraction_static single_checkpoint skip_actor_forward_only tensor_model_parallel_size
     stop_after_save_trigger train_backend use_checkpoint_opt_param_scheduler use_distributed_optimizer use_dynamic_batch_size
-    use_kl_loss use_rollout_logprobs weight_decay
+    use_kl_loss use_rollout_logprobs use_sampling_support_replay weight_decay
     """.split())
 
 
@@ -42,11 +44,20 @@ def training_log_config(directory, resolved):
     path = directory / "approved-config.json"
     approved = json.loads(path.read_text()) if path.exists() else {}
     scope = approved.get("scope", {})
+    validated = directory / "validated-native-arguments.json"
+    arguments = json.loads(validated.read_text())["validated"] if validated.exists() else resolved["args"]
     return {
+        **provenance_config(directory, resolved, approved),
         "native_metrics_source": "VM single writer",
-        "training": {name: value for name, value in resolved["args"].items() if name in PUBLIC_TRAINING_ARGUMENTS},
+        "training": {name: value for name, value in arguments.items() if name in PUBLIC_TRAINING_ARGUMENTS},
+        "training_arguments_source": (
+            "validated-native-arguments.json:validated" if validated.exists() else "resolved-config.json:args"
+        ),
         "resolved_config_sha256": hashlib.sha256((directory / "resolved-config.json").read_bytes()).hexdigest(),
-        "judge": resolved.get("judge"),
+        "judge": {
+            key: resolved.get("judge", {}).get(key)
+            for key in ("primary_model", "reasoning_effort", "max_completion_tokens")
+        },
         "judge_prompt_sha256": resolved.get("judge_prompt_sha256"),
         "dataset_sha256": resolved.get("dataset_sha256"),
         "question_set_key": resolved.get("question_key"),
@@ -286,6 +297,7 @@ def sync_live_audit(directory, output, scheduler_state):
                 run.finish(exit_code=1)
                 raise RuntimeError("Live metric publication did not resume its existing run")
             try:
+                publish_run_setup(run, directory, training_log_config(directory, config))
                 publish_audit(pending, run)
                 run.summary["monitor/slurm_state"] = scheduler_state
                 run.summary["monitor/completed_updates"] = len(native)

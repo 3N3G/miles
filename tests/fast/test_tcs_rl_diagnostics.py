@@ -17,10 +17,55 @@ from experiments.tcs_async_rl.native_metrics import (
     training_log_config,
 )
 from experiments.tcs_async_rl.optimizer_probe import change_producer_state, read_optimizer_snapshot
+from experiments.tcs_async_rl.run_setup import freeze_judge_setup, publish_run_setup
 from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_sampled_entropy
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_exact_prompt_is_frozen_and_tampering_is_rejected(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            prompt = "Grade the original rubric.\nUnicode: γ.\n"
+            (root / "prompt.txt").write_text(prompt)
+            config = {"prompt_file": "prompt.txt", "grading_method": "reference_guided", "api_key": "test-secret"}
+            public = freeze_judge_setup(root, root / "judge.json", config)
+            resolved = {
+                "args": {"lr": 1e-6},
+                "judge_prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
+                "judge": {"primary_model": "test-judge", "api_key": "test-secret"},
+                "judge_runtime": public,
+            }
+            (root / "resolved-config.json").write_text(json.dumps(resolved))
+            logged = training_log_config(root, resolved)
+            self.assertEqual(logged["judge_system_prompt"], prompt)
+            self.assertNotIn("test-secret", json.dumps(logged))
+            template = json.loads((root / "judge-request-template.json").read_text())
+            self.assertEqual(json.loads(template[1]["content"])["reference_solution"], "{{reference_solution}}")
+            (root / "judge-system-prompt.txt").write_text("changed")
+            with self.assertRaisesRegex(ValueError, "prompt hash"):
+                training_log_config(root, resolved)
+
+    def test_setup_files_and_console_do_not_add_history_or_repeat_on_heartbeat(self):
+        config = {
+            "resolved_config_sha256": "resolved",
+            "judge_prompt_sha256": "prompt",
+            "judge_system_prompt": "Actual prompt\n",
+            "training": {"global_batch_size": 128},
+        }
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            run = Mock()
+            with patch("builtins.print") as printed:
+                publish_run_setup(run, root, config)
+                publish_run_setup(run, root, config)
+            printed.assert_called_once()
+            run.log.assert_not_called()
+            self.assertEqual(run.save.call_count, 2)
+            saved = json.loads((root / "setup/training-hyperparameters.json").read_text())
+            self.assertEqual(saved, config)
+            with self.assertRaisesRegex(ValueError, "changed"):
+                publish_run_setup(run, root, {**config, "judge_prompt_sha256": "other"})
+
     def test_training_config_logs_actual_values_without_authentication_fields(self):
         resolved = {
             "args": {
@@ -43,6 +88,20 @@ class DiagnosticTests(unittest.TestCase):
         self.assertTrue(result["training"]["use_dynamic_batch_size"])
         self.assertNotIn("test-only-secret", json.dumps(result))
         self.assertNotIn("private-query", json.dumps(result))
+
+    def test_training_config_includes_validated_parser_defaults(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            resolved = {"args": {"lr": 1e-6}}
+            (root / "resolved-config.json").write_text(json.dumps(resolved))
+            (root / "validated-native-arguments.json").write_text(
+                json.dumps({"validated": {"lr": 1e-6, "clip_grad": 1.0, "entropy_coef": 0, "api_key": "test-secret"}})
+            )
+            result = training_log_config(root, resolved)
+            self.assertEqual(result["training"]["clip_grad"], 1)
+            self.assertEqual(result["training"]["entropy_coef"], 0)
+            self.assertEqual(result["training_arguments_source"], "validated-native-arguments.json:validated")
+            self.assertNotIn("test-secret", json.dumps(result))
 
     def test_audit_follows_only_recorded_unfinished_judge_budget_retries(self):
         for invalid in (None, "valid_regraded", "changed_payload", "missing_link", "unfinished_only"):

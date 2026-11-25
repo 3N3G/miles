@@ -6,6 +6,7 @@ checkpoint conversion and Ray. This module never transfers API credentials.
 
 import argparse
 import hashlib
+import importlib.metadata
 import json
 import os
 import shlex
@@ -24,6 +25,7 @@ from experiments.tcs_async_rl.resource_estimate import model_inputs
 from experiments.tcs_async_rl.reward_hook import REWARD_PROTOCOL_VERSION, prepare_smoke_row, question_key
 from experiments.tcs_async_rl.rl_artifacts import export_rollouts
 from experiments.tcs_async_rl.rl_inputs import read_bundle
+from experiments.tcs_async_rl.run_setup import freeze_judge_setup
 
 
 def validate_group_gate(grades, expected_samples, *, expected_sampling=None, policy="complete_only"):
@@ -282,6 +284,17 @@ def main():
     judge = (
         judge_settings(cli.config.parent / config["judge_config"], judge_config) if judge_config else training["judge"]
     )
+    judge_runtime = (
+        freeze_judge_setup(cli.run_dir, cli.config.parent / config["judge_config"], judge_config)
+        if judge_config
+        else {}
+    )
+    runtime_versions = {"torch": torch.__version__, "rocm": torch.version.hip}
+    for package in ("transformers", "ray", "sglang", "megatron-core"):
+        try:
+            runtime_versions[package] = importlib.metadata.version(package)
+        except importlib.metadata.PackageNotFoundError:
+            runtime_versions[package] = "source checkout; see container URI and code commit"
     (cli.run_dir / "resolved-config.json").write_text(
         json.dumps(
             {
@@ -295,6 +308,8 @@ def main():
                 "judge": {
                     name: judge[name] for name in ("primary_model", "reasoning_effort", "max_completion_tokens")
                 },
+                "judge_runtime": judge_runtime,
+                "runtime_versions": runtime_versions,
                 "judge_prompt_sha256": (
                     hashlib.sha256((cli.config.parent / judge_config["prompt_file"]).read_bytes()).hexdigest()
                     if judge_config

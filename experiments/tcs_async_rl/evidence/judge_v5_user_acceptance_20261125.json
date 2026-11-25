@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-25",
+  "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "prompt_file": "rubric_judge_reference_v5.txt",
+  "judge_model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "user_statement": "oh i think thats fine actually show me the final prompt and setup and then maybe include that in the wandb print logs (alongside the training config and hyperparameters - am i missing anything else? maybe one example of a graded transcript or maybe those can all get saved in huggingface)",
+  "decision": "Accept the recorded remaining judge disagreements and keep the final v5 prompt unchanged for the setup review.",
+  "observed_exact_agreement": 0.85,
+  "original_numeric_gate_passed": false,
+  "original_metrics_and_labels_preserved": true,
+  "changes_in_this_step": "Logging, provenance and setup review only. No judge calls, solver generations, training submission or hyperparameter changes."
+}

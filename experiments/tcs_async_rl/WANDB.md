@@ -73,6 +73,19 @@ This includes learning rate, optimizer settings, global batch, answers per probl
 `native_metrics.training_log_config` owns the positive list. Authentication fields and service URLs are excluded.
 This publication does not rewrite historical run configurations.
 
+New runs also freeze `judge-system-prompt.txt` and `judge-request-template.json` before training.
+The online Config contains that exact prompt, checked against the resolved SHA256.
+It includes model/data revisions, held-out cohorts, source checkpoint, code/container identity and runtime versions.
+Safe parser-validated arguments include defaults such as gradient clipping and entropy coefficients.
+`training_arguments_source` names the argument snapshot. Older runs without it use their resolved launcher arguments.
+`run_setup.publish_run_setup` prints the full setup once to the online client's console.
+It attaches `setup/RUN_SETUP.md`, `setup/training-hyperparameters.json` and the two judge files to W&B Files.
+It never adds metric history. Heartbeats do not repeat the printout or file publication.
+Full generated answers, extracted finals, per-item judge decisions and provider receipts remain in the private HF run archive.
+
+The [review card](FINAL_JUDGE_SETUP_20261125.md) shows the accepted final prompt and planned continuation settings.
+It distinguishes the completed judge validation from the not-yet-submitted training continuation.
+
 New trainer processes emit `train/num_microbatches` from the actual schedule for each optimizer update.
 The single writer publishes it as `audit/train/num_microbatches` on `audit/optimizer_step`.
 With dynamic token batching, this is the accumulation count. Config does not invent one fixed count for the run.
