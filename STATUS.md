@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Approved: diagnose the flat reward traces, then launch the236-question easy+medium continuation with the accepted Luna-high judge. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Freeze all236 eligible questions, record the metric diagnosis and accepted judge qualification, validate resource guards and submit one12-hour AMD job. Supervise through final chec
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted AMD job549728: all236 easy/medium questions, checkpoint108, fixed Luna/high v5,12-hour cap. Jobs: hpcfund/549728 SUBMITTED; hpcfund/548575 COMPLETED
+  Next: Attach the owned supervisor and resource guards, verify checkpoint restoration and first128-answer update, then supervise through terminal checkpoint and archive verification.
 
 ## Next / blocked
 
