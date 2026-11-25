@@ -895,14 +895,14 @@
   ],
   "jobs": [
     {
-      "id": "548472",
-      "cluster": "hpcfund",
-      "status": "FAILED"
-    },
-    {
       "id": "548575",
       "cluster": "hpcfund",
       "status": "RUNNING"
+    },
+    {
+      "id": "548472",
+      "cluster": "hpcfund",
+      "status": "FAILED"
     },
     {
       "id": "546404",
@@ -3374,15 +3374,22 @@
       "actor": "codex",
       "summary": "Preserved all160 generated answers from failed screen548472 in981 hash-verified private artifacts.",
       "revision": 323
+    },
+    {
+      "id": "dd987e3f-fbce-49c1-a40e-280fcd7cff84",
+      "at": "2026-11-25T03:07:39.833588Z",
+      "actor": "codex",
+      "summary": "Screen548575 passed both source-weight checks and is generating with the repaired judge transport.",
+      "revision": 324
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Preserved all160 generated answers from failed screen548472 in981 hash-verified private artifacts.",
-  "nextAction": "Continue supervising active replacement548575; do not pool failed partial answers into its fixed baseline.",
+  "summary": "Screen548575 passed both source-weight checks and is generating with the repaired judge transport.",
+  "nextAction": "Finish384 answers, audit all12 seeded proofs and medium score contrasts, then select the approved20/26-question continuation.",
   "owner": "Codex",
-  "revision": 323,
-  "updatedAt": "2026-11-25T03:04:30.253991Z"
+  "revision": 324,
+  "updatedAt": "2026-11-25T03:07:39.833588Z"
 }

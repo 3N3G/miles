@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Preserved all160 generated answers from failed screen548472 in981 hash-verified private artifacts. Jobs: hpcfund/548472 FAILED; hpcfund/548575 RUNNING
-  Next: Continue supervising active replacement548575; do not pool failed partial answers into its fixed baseline.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen548575 passed both source-weight checks and is generating with the repaired judge transport. Jobs: hpcfund/548575 RUNNING; hpcfund/548472 FAILED
+  Next: Finish384 answers, audit all12 seeded proofs and medium score contrasts, then select the approved20/26-question continuation.
 
 ## Next / blocked
 
