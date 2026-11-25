@@ -1,0 +1,180 @@
+{
+  "at_utc": "2026-11-25T20:49:20.295712+00:00",
+  "source_job": "549728",
+  "optimizer_step": 127,
+  "durable": false,
+  "reason": "Update127 was published but not saved before failure. Resume124 discards it.",
+  "answers": 128,
+  "all_judge_trace_support_and_version_checks_passed": true,
+  "mean_raw_reward": 1.9296875,
+  "full_credit": 12,
+  "zero": 68,
+  "capped": 27,
+  "capped_empty_final": 11,
+  "per_question": [
+    {
+      "optimizer_step": 127,
+      "group_index": 72,
+      "question_key": "b8c676f6aea92f0cb2d219932a3314eef33f0e858ed2ff00c00ed571ca469da4",
+      "paper_id": "An_improved_approximation_guarantee_for_Prize-Collecting_TSP",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.90625,
+      "reward_std": 0.8929608234732722,
+      "conditional_answer_sampling_se": 0.15785466340296858,
+      "zero_rate": 0.40625,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.09375,
+      "mean_tokens": 75918.96875,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-127-group-72.json"
+    },
+    {
+      "optimizer_step": 127,
+      "group_index": 73,
+      "question_key": "9d28865312b595b5db1bbac854474f9f5cbe31535e4286718250b5e60c926987",
+      "paper_id": "Simple_and_Optimal_Algorithms_for_Heavy_Hitters_and_Frequency_Moments_in_Distributed_Models",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 6.3125,
+      "reward_std": 0.592289162160598,
+      "conditional_answer_sampling_se": 0.10470292074676438,
+      "zero_rate": 0.0,
+      "full_credit_rate": 0.375,
+      "cap_rate": 0.03125,
+      "mean_tokens": 35052.8125,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-127-group-73.json"
+    },
+    {
+      "optimizer_step": 127,
+      "group_index": 74,
+      "question_key": "69536705745fe428b8baa008724a249ac91f1df5ccd847c7f25b9bc4135b23ab",
+      "paper_id": "Structural_Complexities_of_Matching_Mechanisms",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.0625,
+      "reward_std": 0.3535533905932738,
+      "conditional_answer_sampling_se": 0.0625,
+      "zero_rate": 0.96875,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.4375,
+      "mean_tokens": 78403.5625,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-127-group-74.json"
+    },
+    {
+      "optimizer_step": 127,
+      "group_index": 75,
+      "question_key": "76e8e3acd8327ffc8dcdb54865bba10d99d79b1d4c8d8ed5bbf2929669f56002",
+      "paper_id": "Smoothed_analysis_for_graph_isomorphism",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.4375,
+      "reward_std": 0.87758833761769,
+      "conditional_answer_sampling_se": 0.15513716615492446,
+      "zero_rate": 0.75,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.28125,
+      "mean_tokens": 78276.84375,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-127-group-75.json"
+    }
+  ],
+  "surface_repetition": {
+    "at_utc": "2026-11-25T20:48:01.956736+00:00",
+    "sources": [
+      {
+        "optimizer_step": 127,
+        "sha256": "fb589b2c7b8c2657f04056bcf3f08c9e3091c6c927f5b396c9b84a8a696cffd7",
+        "bytes": 113375729,
+        "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5aa7b1fb5722cd35de7ec2182d6c3bad95f53c84"
+      }
+    ],
+    "window_words": 20,
+    "definition": "1 minus the number of distinct exact word windows divided by all word windows",
+    "answers": 128,
+    "by_completion_outcome": {
+      "capped_empty_final": {
+        "answers": 11,
+        "full_credit": 0,
+        "full_response": {
+          "measured_answers": 11,
+          "median_repeated_fraction": 0.00016483969339819993,
+          "answers_above_half": 0
+        },
+        "final_answer": {
+          "measured_answers": 0,
+          "median_repeated_fraction": null,
+          "answers_above_half": 0
+        }
+      },
+      "capped_nonempty_final": {
+        "answers": 16,
+        "full_credit": 0,
+        "full_response": {
+          "measured_answers": 16,
+          "median_repeated_fraction": 0.00019452284890847382,
+          "answers_above_half": 0
+        },
+        "final_answer": {
+          "measured_answers": 16,
+          "median_repeated_fraction": 0.0,
+          "answers_above_half": 0
+        }
+      },
+      "completed": {
+        "answers": 101,
+        "full_credit": 12,
+        "full_response": {
+          "measured_answers": 101,
+          "median_repeated_fraction": 0.00019626314963105962,
+          "answers_above_half": 0
+        },
+        "final_answer": {
+          "measured_answers": 101,
+          "median_repeated_fraction": 0.0,
+          "answers_above_half": 0
+        }
+      }
+    },
+    "limits": "Surface repetition, not policy entropy or a causal comparison. Questions differ between outcomes.",
+    "new_inference_or_judge_calls": 0,
+    "analysis_source_commit": "0e8a9a399f174d30b9772b9193853114f3ee11d8",
+    "analysis_module_sha256": "2542990313aa8c742483cb32e2dbafb7a1c82c9c2de01bd1464294dc0dfacca4"
+  },
+  "largest_final_repeated_20word_fraction": 0.4308742004264392,
+  "manual_reviews": [
+    {
+      "sample_index": 2315,
+      "judge": 0,
+      "assessment": "False assertion that every feasible prize-collecting TSP LP solution is an integral cycle. Missing valid decomposition; no degenerate-tour handling."
+    },
+    {
+      "sample_index": 2347,
+      "judge": 6,
+      "assessment": "Correct inverse-probability decoder, variance and communication. The required zero-total-moment Chebyshev edge case is missing."
+    },
+    {
+      "sample_index": 2379,
+      "judge": 0,
+      "generator_status": "truncated",
+      "assessment": "Counts individual matching executions instead of the whole counterfactual menu function. Assumes nested menus without proving the coupling. Final includes5095 repeated quad lines. All unique lines inspected; full original preserved."
+    },
+    {
+      "sample_index": 2411,
+      "judge": 1,
+      "assessment": "Correct subset mass identity and conditional composition. Exact biased Littlewood-Offord comparison is restated without an allowed proof mechanism. Uniform small-n estimate missing."
+    }
+  ],
+  "review_limit": "Assistant diagnostic after grading, not independent human calibration or an agreement estimate.",
+  "new_inference_or_judge_calls": 0
+}

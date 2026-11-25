@@ -1,0 +1,10 @@
+{
+  "at_utc": "2026-11-25T20:45:33.661957+00:00",
+  "source_archive_revision": "1e1d18a3613dcb38557b34921d7381115480c285",
+  "verified_files": 6354,
+  "evicted_content_bytes": 191526753,
+  "restore_manifest": "vm-terminal-cache-eviction-request.json",
+  "preserved": "Scores, ledgers, manifests, raw examples and immutable remote receipts. New continuation has its own exact copied receipt cache.",
+  "free_bytes_after": 5719707648,
+  "uv_prune": "Official uv cache prune --ci removed296.4MiB without --force. Active service environment preserved."
+}
