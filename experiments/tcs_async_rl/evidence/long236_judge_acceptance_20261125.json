@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-25",
+  "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "decision": "approved_launch_with_observed_judge_limitations",
+  "user_statement": "Try all easy and medium. Think about why the current plots show reward flat. Then launch I give you permission",
+  "prior_acceptance": "oh i think thats fine actually show me the final prompt and setup",
+  "questions": 236,
+  "easy": 20,
+  "medium": 216,
+  "judge_model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "prompt_sha256": "8a3f737f10d43655d2cf6b64b7990d3841b75b0d5f8b6ad88971a3c351610926",
+  "original_numeric_gate_passed": false,
+  "original_metrics_preserved": true
+}

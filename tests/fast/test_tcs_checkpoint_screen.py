@@ -10,10 +10,65 @@ from unittest.mock import Mock
 
 from experiments.tcs_async_rl.checkpoint_screen import verify_publication
 from experiments.tcs_async_rl.rl_inputs import question_set_key, read_bundle
+from experiments.tcs_async_rl.rl_smoke import validate_judge_qualification
 from experiments.tcs_async_rl.screen_inputs import select_questions
 
 
 class CheckpointScreenTests(unittest.TestCase):
+    def test_failed_observed_gate_needs_exact_scoped_user_acceptance(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            values = {
+                "runtime.json": {
+                    "grading_method": "reference_guided",
+                    "training_config": "training.json",
+                    "prompt_file": "prompt.txt",
+                },
+                "training.json": {},
+                "selection.json": {"selected_method": "reference_guided"},
+                "comparison.json": {"reference_guided": {"passes_observed_gate": False}},
+                "controls.json": {"failures": []},
+            }
+            for file, value in values.items():
+                (root / file).write_text(json.dumps(value))
+            (root / "prompt.txt").write_text("fixed prompt")
+            digest = lambda file: hashlib.sha256((root / file).read_bytes()).hexdigest()
+            q = {
+                key: {"file": key + ".json", "sha256": digest(key + ".json")}
+                for key in ("selection", "comparison", "controls")
+            }
+            q.update(
+                runtime_config_sha256=digest("runtime.json"),
+                training_config_sha256=digest("training.json"),
+                prompt_sha256=digest("prompt.txt"),
+            )
+            config = {
+                "judge_config": "runtime.json",
+                "training_config": "training.json",
+                "scope": {"prompt_count": 236},
+                "judge_qualification": q,
+            }
+            with self.assertRaises(ValueError):
+                validate_judge_qualification(config, root)
+            acceptance = {
+                "decision": "approved_launch_with_observed_judge_limitations",
+                "prompt_sha256": digest("prompt.txt"),
+                "judge_model": "gpt-6-luna",
+                "reasoning_effort": "high",
+                "questions": 236,
+                "user_statement": "Then launch I give you permission",
+            }
+            (root / "acceptance.json").write_text(json.dumps(acceptance))
+            q["user_acceptance"] = {"file": "acceptance.json", "sha256": digest("acceptance.json")}
+            self.assertEqual(validate_judge_qualification(config, root), root / "selection.json")
+            config["scope"]["prompt_count"] = 20
+            with self.assertRaisesRegex(ValueError, "scope"):
+                validate_judge_qualification(config, root)
+            config["scope"]["prompt_count"] = 236
+            (root / "prompt.txt").write_text("changed prompt")
+            with self.assertRaises(ValueError):
+                validate_judge_qualification(config, root)
+
     def test_fresh_phase_does_not_read_old_queues_but_default_restore_still_requires_them(self):
         source = ast.parse(Path("miles/ray/rollout/rollout_executor.py").read_text())
         method = next(

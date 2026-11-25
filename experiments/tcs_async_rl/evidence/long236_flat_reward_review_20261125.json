@@ -1,0 +1,87 @@
+{
+  "source": "3N3G/internalization-runs@83b6d95ac83df247d9b50e5de0a7674d3378daf8/miles/easy-overfit-v17-batch128",
+  "summary": {
+    "completed_updates": 10,
+    "consumed_answers": 1280,
+    "questions": 20,
+    "raw_mean_reward": 5.804296875,
+    "full_credit_answers": 793,
+    "zero_answers": 110,
+    "capped_answers": 106,
+    "capped_without_final": 38,
+    "judge_order_disagreements": 177,
+    "judge_order_gap_at_least_2": 72,
+    "reference_below_7": 1,
+    "response_tokens": 57424620,
+    "mean_response_tokens": 44862.984375,
+    "singleton_support_token_fraction": 0.5553682897683955,
+    "constant_reward_groups": 3,
+    "near_ceiling_groups_at_least_31_full_credit": 5,
+    "matched_questions": 19,
+    "matched_mean_change": 0.024671052631578948,
+    "matched_first_mean": 5.751644736842105,
+    "matched_latest_mean": 5.776315789473684,
+    "matched_increased": 6,
+    "matched_decreased": 13,
+    "actor_wait_fraction_of_summed_step_time": 0.18454519300078873,
+    "limit": "One continuation, changing policies and asynchronous training visits. No frozen-policy evaluation, human agreement or seed-level uncertainty."
+  },
+  "metrics": {
+    "rollout/rewards": {
+      "first": -6.05359673500061e-09,
+      "last": 5.3551048040390015e-09,
+      "min": -6.05359673500061e-09,
+      "max": 8.381903171539307e-09
+    },
+    "rollout/episode_raw_reward": {
+      "first": 6.359375,
+      "last": 5.921875,
+      "min": 4.6484375,
+      "max": 6.79296875
+    },
+    "train/full_policy_entropy": {
+      "first": 0.4266137182712555,
+      "last": 0.478496253490448,
+      "min": 0.4266137182712555,
+      "max": 0.5334416627883911
+    },
+    "train/sampling_entropy": {
+      "first": 0.35445186495780945,
+      "last": 0.3973274230957031,
+      "min": 0.35445186495780945,
+      "max": 0.44348573684692383
+    },
+    "train/kl_loss": {
+      "first": 0.00948195531964302,
+      "last": 0.01442345418035984,
+      "min": 0.009298775345087051,
+      "max": 0.01442345418035984
+    },
+    "train/grad_norm": {
+      "first": 0.0994657352566719,
+      "last": 0.08514989167451859,
+      "min": 0.08392148464918137,
+      "max": 0.12576964497566223
+    },
+    "train/ess_ratio": {
+      "first": 0.9994875192642212,
+      "last": 0.9994029998779297,
+      "min": 0.9993300437927246,
+      "max": 0.9994875192642212
+    },
+    "train/pg_clipfrac": {
+      "first": 0.0,
+      "last": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "train/train_rollout_kl": {
+      "first": 0.0002560762222856283,
+      "last": 0.0002982475853059441,
+      "min": 0.0002560762222856283,
+      "max": 0.00033545694896019995
+    }
+  },
+  "near_ceiling_groups_mean_at_least6": 29,
+  "diagnosis": "Normalized reward is centered near0 by construction. Raw matched-question reward is also nearly flat. Old judging variation, easy near-ceiling saturation and long capped answers are supported concerns. Finite updates, positive loss-direction probes and matching publications do not establish a causal explanation. Keep optimizer hyperparameters fixed; measure broader data and the accepted fixed judge."
+}

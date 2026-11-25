@@ -1,0 +1,9 @@
+{
+  "questions": 236,
+  "question_set_key": "3c6a5a7320e4c68929c7fe4e17516305aadc7697a09a06ef7aaa1dab8607c9d4",
+  "bundle_sha256": "d4b0169b64874a4cfd2389fc57575fff9787ffe5d7f9d76ed03906dd75f23631",
+  "max_prompt_tokens": 1099,
+  "heldout_reads": 0,
+  "model_generations": 0,
+  "optimizer_updates": 0
+}

@@ -1,6 +1,7 @@
 """Prepare and validate the user-selected easy subset without reading held-out shards."""
 
 import argparse
+import collections
 import hashlib
 import json
 from pathlib import Path
@@ -28,9 +29,15 @@ def read_bundle(path, *, expected_sha256, training, contract=None):
         if (
             row["difficulty"] not in contract["difficulties"]
             or row["cohort"] not in training["data"]["eligible_configs"]
+            or row["cohort"] in training["data"].get("held_out_configs", [])
         ):
             raise ValueError("Training contains an ineligible question")
         rubric_items(row["rubric"])
+    if (
+        contract.get("difficulty_counts")
+        and dict(collections.Counter(row["difficulty"] for row in rows)) != contract["difficulty_counts"]
+    ):
+        raise ValueError("Training difficulty counts differ from the approved corpus")
     if question_set_key(rows) != bundle["question_set_key"]:
         raise ValueError("Training question-set identity differs")
     return rows, bundle["question_set_key"]
@@ -41,7 +48,9 @@ def service_identity(path):
     return question_set_key(value["questions"]) if "questions" in value else question_key(value)
 
 
-def prepare(*, source_dir, manifest_file, training_file, tokenizer_dir, output):
+def prepare(*, source_dir, manifest_file, training_file, tokenizer_dir, output, difficulties=("easy",)):
+    if set(difficulties) not in ({"easy"}, {"easy", "medium"}):
+        raise ValueError("Expected the approved easy-only or full easy+medium corpus")
     # These are preparation-only dependencies. Runtime validation uses the standard library.
     import pyarrow.parquet as pq
     from transformers import AutoTokenizer
@@ -60,7 +69,7 @@ def prepare(*, source_dir, manifest_file, training_file, tokenizer_dir, output):
         if hashlib.sha256(source.read_bytes()).hexdigest() != hashes[cohort]:
             raise ValueError("Eligible Parquet checksum differs")
         for index, data in enumerate(pq.read_table(source).to_pylist()):
-            if data["difficulty"] != "easy":
+            if data["difficulty"] not in difficulties:
                 continue
             if (cohort, index) not in selected:
                 raise ValueError("Easy source differs from the frozen identity manifest")
@@ -79,15 +88,16 @@ def prepare(*, source_dir, manifest_file, training_file, tokenizer_dir, output):
                 raise ValueError("An easy prompt exceeds the approved context budget")
             rubric_items(row["rubric"])
             rows.append(row)
-    if len(rows) != 20 or {(r["cohort"], r["row"]) for r in rows} != selected:
-        raise ValueError("The easy subset is incomplete")
+    expected = 236 if set(difficulties) == {"easy", "medium"} else 20
+    if len(rows) != expected or {(r["cohort"], r["row"]) for r in rows} != selected:
+        raise ValueError("The approved difficulty subset is incomplete")
     output.mkdir(parents=True, exist_ok=True)
     bundle = {
         "dataset_revision": training["data"]["revision"],
         "question_set_key": question_set_key(rows),
         "questions": rows,
     }
-    bundle_file = output / "easy-20-bundle.json"
+    bundle_file = output / ("easy-medium-236-bundle.json" if expected == 236 else "easy-20-bundle.json")
     bundle_file.write_text(json.dumps(bundle, ensure_ascii=False, indent=2) + "\n")
     (output / "miles-train.jsonl").write_text(
         "\n".join(json.dumps(prepare_smoke_row(row), ensure_ascii=False) for row in rows) + "\n"
@@ -109,6 +119,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("source-dir", "manifest-file", "training-file", "tokenizer-dir", "output"):
         parser.add_argument("--" + name, type=Path, required=True)
+    parser.add_argument("--difficulties", nargs="+", choices=("easy", "medium"), default=["easy"])
     print(json.dumps(prepare(**vars(parser.parse_args()))))
 
 

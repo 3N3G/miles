@@ -1,0 +1,6 @@
+{
+  "selected_method": "reference_guided",
+  "selected_recipe": "reference_v5",
+  "basis": "User accepts the recorded disagreement and explicitly authorizes the236-question launch. Observed numeric gate remains failed.",
+  "prompt_sha256": "8a3f737f10d43655d2cf6b64b7990d3841b75b0d5f8b6ad88971a3c351610926"
+}

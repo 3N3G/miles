@@ -147,9 +147,26 @@ def validate_judge_qualification(config, config_dir):
             raise ValueError("Judge qualification differs from the approved frozen evidence")
         documents[name] = json.loads(path.read_text())
     selected = documents["selection"]["selected_method"]
+    accepted = False
+    if "user_acceptance" in qualification:
+        evidence = qualification["user_acceptance"]
+        path = config_dir / evidence["file"]
+        if hashlib.sha256(path.read_bytes()).hexdigest() != evidence["sha256"]:
+            raise ValueError("Judge acceptance differs from the frozen user decision")
+        decision = json.loads(path.read_text())
+        accepted = (
+            decision.get("decision") == "approved_launch_with_observed_judge_limitations"
+            and decision.get("prompt_sha256") == qualification["prompt_sha256"]
+            and decision.get("judge_model") == "gpt-6-luna"
+            and decision.get("reasoning_effort") == "high"
+            and decision.get("questions") == config["scope"]["prompt_count"]
+            and bool(decision.get("user_statement"))
+        )
+        if not accepted:
+            raise ValueError("User acceptance does not match this prompt and training scope")
     if (
         selected != "reference_guided"
-        or not documents["comparison"][selected]["passes_observed_gate"]
+        or not (documents["comparison"][selected]["passes_observed_gate"] or accepted)
         or documents["controls"]["failures"]
     ):
         raise ValueError("The selected judge did not pass its frozen agreement and control gates")
