@@ -3416,15 +3416,22 @@
       "actor": "codex",
       "summary": "The fresh prompt comparison fails on a false-full runtime proof; all384 screen answers and prior comparison artifacts have verified private archives.",
       "revision": 329
+    },
+    {
+      "id": "90e5512c-132e-4e61-8b24-1a3e32001f85",
+      "at": "2026-11-25T04:17:34.135100Z",
+      "actor": "codex",
+      "summary": "Another40 disjoint audits are frozen; the resource-bound prompt comparison is running with uncertainty recorded before calls.",
+      "revision": 330
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "The fresh prompt comparison fails on a false-full runtime proof; all384 screen answers and prior comparison artifacts have verified private archives.",
-  "nextAction": "Validate the documented asymptotic-bound prompt on a new disjoint40-answer blind packet. Preserve the12-hour continuation until the judge gate passes.",
+  "summary": "Another40 disjoint audits are frozen; the resource-bound prompt comparison is running with uncertainty recorded before calls.",
+  "nextAction": "Finish both prompts and controls, inspect disagreements without altering frozen labels, then qualify and regrade the saved screen if the gate passes.",
   "owner": "Codex",
-  "revision": 329,
-  "updatedAt": "2026-11-25T04:09:25.746771Z"
+  "revision": 330,
+  "updatedAt": "2026-11-25T04:17:34.135100Z"
 }

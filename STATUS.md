@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The fresh prompt comparison fails on a false-full runtime proof; all384 screen answers and prior comparison artifacts have verified private archives. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Validate the documented asymptotic-bound prompt on a new disjoint40-answer blind packet. Preserve the12-hour continuation until the judge gate passes.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Another40 disjoint audits are frozen; the resource-bound prompt comparison is running with uncertainty recorded before calls. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Finish both prompts and controls, inspect disagreements without altering frozen labels, then qualify and regrade the saved screen if the gate passes.
 
 ## Next / blocked
 
