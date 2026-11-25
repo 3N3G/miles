@@ -949,7 +949,7 @@
     {
       "id": "549728",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "FAILED"
     },
     {
       "id": "548575",
@@ -3732,15 +3732,22 @@
       "actor": "codex",
       "summary": "Add a tested offline measure of full-response and final-answer repetition",
       "revision": 366
+    },
+    {
+      "id": "9bd051c7-fb7b-4689-a869-025134fe2753",
+      "at": "2026-11-25T20:28:12.191490Z",
+      "actor": "codex",
+      "summary": "RL job 549728 is FAILED",
+      "revision": 367
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Eighteen finite updates and72 audited questions. Added a tested offline repetition measure that keeps full responses, final answers and generator finish statuses separate.",
-  "nextAction": "Apply the new saved-trace diagnostic during the next hourly proof and metric review by21:20Z. Continue through the final save and approved unchanged12-question after screen.",
+  "summary": "RL job 549728 is FAILED",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 366,
-  "updatedAt": "2026-11-25T20:25:14.261151Z"
+  "revision": 367,
+  "updatedAt": "2026-11-25T20:28:12.191490Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eighteen finite updates and72 audited questions. Added a tested offline repetition measure that keeps full responses, final answers and generator finish statuses separate. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Apply the new saved-trace diagnostic during the next hourly proof and metric review by21:20Z. Continue through the final save and approved unchanged12-question after screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 549728 is FAILED Jobs: hpcfund/549728 FAILED; hpcfund/548575 COMPLETED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
