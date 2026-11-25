@@ -10,6 +10,7 @@ from unittest.mock import Mock, patch
 from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.resource_guard import (
     duration_seconds,
+    operational_limits,
     resource_limits,
     stop_reason,
     validated_stop,
@@ -19,6 +20,33 @@ from experiments.tcs_async_rl.watch_rl import acceptance
 
 
 class ResourceGuardTests(unittest.TestCase):
+    def test_operational_reserve_can_only_save_earlier_for_the_same_frozen_run(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "approved-config.json").write_text("{}")
+            (root / "submission.json").write_text(json.dumps({"job_id": "123", "session_uuid": "session"}))
+            config = {
+                "allocation": {"walltime": "12:00:00"},
+                "resource_stop": {"walltime_margin_seconds": 1800},
+            }
+            limits = {"elapsed_seconds": 41400, "spent_reserved_usd": 22, "free_bytes": 100}
+            policy = {
+                "job_id": "123",
+                "session_uuid": "session",
+                "approved_config_sha256": hashlib.sha256(b"{}").hexdigest(),
+                "walltime_save_reserve_seconds": 2700,
+                "reason": "A measured update exceeds the original save reserve",
+            }
+            for change in ({}, {"walltime_save_reserve_seconds": 900}, {"session_uuid": "other"}):
+                (root / "operational-save-reserve.json").write_text(json.dumps({**policy, **change}))
+                if change:
+                    with self.assertRaises(ValueError):
+                        operational_limits(root, config, limits)
+                else:
+                    self.assertEqual(
+                        operational_limits(root, config, limits), {**limits, "elapsed_seconds": 40500}
+                    )
+
     def test_guard_cannot_touch_an_allocation_with_a_different_owner(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
@@ -36,7 +64,8 @@ class ResourceGuardTests(unittest.TestCase):
             limits = {"elapsed_seconds": 41400, "spent_reserved_usd": 22, "free_bytes": 100}
             transport = Mock(return_value=SimpleNamespace(stdout="Avail\n1000\n"))
             with patch(
-                "experiments.tcs_async_rl.resource_guard.load_configs", return_value=({"job_name": "owned"}, {})
+                "experiments.tcs_async_rl.resource_guard.load_configs",
+                return_value=({"job_name": "owned"}, {}),
             ), patch("experiments.tcs_async_rl.resource_guard.resource_limits", return_value=limits), patch(
                 "experiments.tcs_async_rl.resource_guard.subprocess.check_output", return_value="user owner\n"
             ), patch(
@@ -62,7 +91,9 @@ class ResourceGuardTests(unittest.TestCase):
         )
         config["allocation"]["walltime"] = "12:00:00"
         config["overrides"].update(
-            stop_after_save_trigger=True, single_checkpoint=False, save_trigger_sentinel="/work/run/checkpoint-request"
+            stop_after_save_trigger=True,
+            single_checkpoint=False,
+            save_trigger_sentinel="/work/run/checkpoint-request",
         )
         limits = resource_limits(config, training, base, Path("/work/run"))
         self.assertEqual(limits["elapsed_seconds"], 41400)
@@ -77,7 +108,8 @@ class ResourceGuardTests(unittest.TestCase):
         ):
             self.assertEqual(
                 stop_reason(
-                    limits, dict(zip(("elapsed_seconds", "spent_reserved_usd", "free_bytes"), values, strict=True))
+                    limits,
+                    dict(zip(("elapsed_seconds", "spent_reserved_usd", "free_bytes"), values, strict=True)),
                 ),
                 reason,
             )
@@ -111,7 +143,8 @@ class ResourceGuardTests(unittest.TestCase):
                             validated_stop(root, root / "config.json", Path("/remote"))
                     else:
                         self.assertEqual(
-                            validated_stop(root, root / "config.json", Path("/remote"))["reason"], "judge_budget"
+                            validated_stop(root, root / "config.json", Path("/remote"))["reason"],
+                            "judge_budget",
                         )
 
     def test_a_planned_stop_requires_all_completed_steps_and_their_final_checkpoint(self):
@@ -127,9 +160,9 @@ class ResourceGuardTests(unittest.TestCase):
                 "metrics": {109: {"finite": True}, 110: {"finite": True}},
             }
             groups = [{"samples": 128, "varied_rewards": True}] * 2
-            with patch("experiments.tcs_async_rl.watch_rl.run_training_evidence", return_value=evidence), patch(
-                "experiments.tcs_async_rl.watch_rl.consumed_rollouts", return_value=groups
-            ):
+            with patch(
+                "experiments.tcs_async_rl.watch_rl.run_training_evidence", return_value=evidence
+            ), patch("experiments.tcs_async_rl.watch_rl.consumed_rollouts", return_value=groups):
                 kwargs = dict(
                     minimum_varied_groups=1,
                     retained_checkpoints=1,

@@ -3634,15 +3634,22 @@
       "actor": "codex",
       "summary": "Third deep review verifies768 answers and a zero-versus-seven proof pair on one medium question",
       "revision": 352
+    },
+    {
+      "id": "125c84c3-65b6-4b55-9870-89e5b88a2436",
+      "at": "2026-11-25T16:36:28.302361Z",
+      "actor": "codex",
+      "summary": "Protect the final checkpoint after measuring a32-minute diagnostic update",
+      "revision": 353
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Six updates,768 audited answers and24 distinct questions. Four raw proofs reviewed in the third deep review.169/243 zeros are capped without a final answer. No repeated questions yet, so no measured training trend.",
-  "nextAction": "Continue foreground monitoring and hourly proof/metric reviews. Verify the next update-direction probe and later checkpoint. Finish with the approved same12-question final screen and immutable archive checks.",
+  "summary": "Seven finite optimizer updates. The latest local direction probe is positive. A32.3-minute update exceeds the original30-minute shutdown reserve. A tested operational policy reserves45 minutes within the same12-hour limit while preserving the submitted config and running scorer.",
+  "nextAction": "Reload the VM monitor and guard by adopting the existing scorer and tunnel, verify health and the earlier final-save deadline, then continue hourly deep reviews.",
   "owner": "Codex",
-  "revision": 352,
-  "updatedAt": "2026-11-25T16:19:25.793374Z"
+  "revision": 353,
+  "updatedAt": "2026-11-25T16:36:28.302361Z"
 }

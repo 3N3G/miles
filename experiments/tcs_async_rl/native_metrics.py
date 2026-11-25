@@ -310,6 +310,16 @@ def live_status_summary(directory, native, scheduler_state):
     saves = _complete_rows(directory / "checkpoint-retention.jsonl")
     latest = max([initial - 1, *(row["rollout_id"] for row in saves)])
     calls = _shared_judge_calls(directory)
+    reserve_path = directory / "operational-save-reserve.json"
+    reserve = (
+        {
+            "monitor/operational_walltime_save_reserve_seconds": json.loads(reserve_path.read_text())[
+                "walltime_save_reserve_seconds"
+            ]
+        }
+        if reserve_path.exists()
+        else {}
+    )
     return {
         "monitor/slurm_state": scheduler_state,
         "monitor/completed_updates": len(native),
@@ -318,6 +328,7 @@ def live_status_summary(directory, native, scheduler_state):
         "monitor/shared_judge_settled_usd": sum(call["usd"] for call in calls.values() if call["settled"]),
         "monitor/shared_judge_spent_reserved_usd": sum(call["usd"] for call in calls.values()),
         "monitor/shared_judge_pending_calls": sum(not call["settled"] for call in calls.values()),
+        **reserve,
     }
 
 

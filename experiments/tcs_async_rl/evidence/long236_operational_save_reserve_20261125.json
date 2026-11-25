@@ -1,0 +1,20 @@
+{
+  "created_at_utc": "2026-11-25T16:36:28.224412+00:00",
+  "job_id": "549728",
+  "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "approved_config_sha256": "7c70c16d6b881b62e4a663786ae5a31e096a16177349e515e085d1fadf640fd5",
+  "walltime_save_reserve_seconds": 2700,
+  "original_save_reserve_seconds": 1800,
+  "reason": "Update115 took1938.07 seconds of trainer time plus64.46 seconds waiting. The original1800-second final-save reserve can expire during one such update. Reserve45 minutes within the unchanged12-hour allocation. Preserve the submitted configuration and running scorer.",
+  "measured_update": {
+    "optimizer_step": 115,
+    "perf/train_time": 1938.0691967010498,
+    "perf/train_wait_time": 64.45897769927979,
+    "perf/ref_log_probs_time": 220.2613444328308,
+    "perf/log_probs_time": 452.1703636646271,
+    "perf/actor_train_time": 1263.836933851242,
+    "train/num_microbatches": 127,
+    "rollout/response_lengths": 85256.734375
+  },
+  "scope": "Operational checkpoint protection only. No new GPU job, larger allocation, model/data/prompt/reward/optimizer/sampling change, or budget reset."
+}

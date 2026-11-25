@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Six updates,768 audited answers and24 distinct questions. Four raw proofs reviewed in the third deep review.169/243 zeros are capped without a final answer. No repeated questions yet, so no measured t Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Continue foreground monitoring and hourly proof/metric reviews. Verify the next update-direction probe and later checkpoint. Finish with the approved same12-question final screen a
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Seven finite optimizer updates. The latest local direction probe is positive. A32.3-minute update exceeds the original30-minute shutdown reserve. A tested operational policy reserves45 minutes within  Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Reload the VM monitor and guard by adopting the existing scorer and tunnel, verify health and the earlier final-save deadline, then continue hourly deep reviews.
 
 ## Next / blocked
 

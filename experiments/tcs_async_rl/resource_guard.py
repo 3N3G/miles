@@ -44,13 +44,20 @@ def resource_limits(config, training, config_dir, remote_directory):
     return {
         "elapsed_seconds": maximum - margin,
         "spent_reserved_usd": settings["judge_stop_usd"],
-        "free_bytes": storage_required(config, remote_directory, inputs["text_parameters"] + inputs["mtp_parameters"]),
+        "free_bytes": storage_required(
+            config, remote_directory, inputs["text_parameters"] + inputs["mtp_parameters"]
+        ),
     }
 
 
 def stop_reason(limits, observed):
     for value in [*limits.values(), *observed.values()]:
-        if isinstance(value, bool) or not isinstance(value, (float, int)) or not math.isfinite(value) or value < 0:
+        if (
+            isinstance(value, bool)
+            or not isinstance(value, (float, int))
+            or not math.isfinite(value)
+            or value < 0
+        ):
             raise ValueError("Resource observations must be finite and nonnegative")
     if observed["spent_reserved_usd"] >= limits["spent_reserved_usd"]:
         return "judge_budget"
@@ -61,6 +68,29 @@ def stop_reason(limits, observed):
     return None
 
 
+def operational_limits(directory, config, limits):
+    """Allow a documented earlier save, without editing the submitted recipe."""
+    path = directory / "operational-save-reserve.json"
+    if not path.exists():
+        return limits
+    policy = json.loads(path.read_text())
+    receipt = json.loads((directory / "submission.json").read_text())
+    reserve = policy["walltime_save_reserve_seconds"]
+    maximum = duration_seconds(config["allocation"]["walltime"])
+    approved = config["resource_stop"]["walltime_margin_seconds"]
+    if (
+        policy["job_id"] != receipt["job_id"]
+        or policy["session_uuid"] != receipt["session_uuid"]
+        or policy["approved_config_sha256"]
+        != hashlib.sha256((directory / "approved-config.json").read_bytes()).hexdigest()
+        or type(reserve) is not int
+        or not approved <= reserve < maximum
+        or not policy.get("reason")
+    ):
+        raise ValueError("Operational save reserve must preserve ownership and only shorten the allocation")
+    return {**limits, "elapsed_seconds": maximum - reserve}
+
+
 def validated_stop(directory, config_path, remote_directory):
     path = directory / "resource-stop-request.json"
     if not path.exists():
@@ -68,7 +98,9 @@ def validated_stop(directory, config_path, remote_directory):
     config, training = load_configs(config_path)
     marker = json.loads(path.read_text())
     receipt = json.loads((directory / "submission.json").read_text())
-    limits = resource_limits(config, training, config_path.parent, remote_directory)
+    limits = operational_limits(
+        directory, config, resource_limits(config, training, config_path.parent, remote_directory)
+    )
     if (
         marker["job_id"] != receipt["job_id"]
         or marker["session_uuid"] != receipt["session_uuid"]
@@ -84,7 +116,9 @@ def validated_stop(directory, config_path, remote_directory):
 
 def watch(cli):
     config, training = load_configs(cli.config)
-    limits = resource_limits(config, training, cli.config.parent, cli.remote_directory)
+    limits = operational_limits(
+        cli.directory, config, resource_limits(config, training, cli.config.parent, cli.remote_directory)
+    )
     receipt = json.loads((cli.directory / "submission.json").read_text())
     if receipt["job_id"] != cli.job_id or receipt["session_uuid"] != cli.session_uuid:
         raise ValueError("Refuse to request a save for a job outside this session")

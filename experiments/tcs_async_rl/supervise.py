@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from experiments.tcs_async_rl.adopt_process import adopt_helpers
 from experiments.tcs_async_rl.amd_preflight import load_configs
 from experiments.tcs_async_rl.auto_rl import ROOT, save, start_service
 from experiments.tcs_async_rl.watch_rl import watch
@@ -19,20 +20,30 @@ def supervise(cli):
     config, training = load_configs(cli.config)
     if receipt["session_uuid"] != cli.session_uuid:
         raise ValueError("Only this session's recorded job may be supervised")
-    if json.loads((cli.directory / "approved-config.json").read_text()) != config or not config.get("resource_stop"):
+    if json.loads((cli.directory / "approved-config.json").read_text()) != config or not config.get(
+        "resource_stop"
+    ):
         raise ValueError("Expected the frozen approved configuration with resource guards")
     port = urlsplit(config["overrides"]["rm_url"]).port
-    children = []
-    try:
-        service, _ = start_service(
-            input_file=cli.directory / "input.json",
-            directory=cli.directory,
-            port=port,
-            training=training,
-            python=Path(sys.executable),
-            judge_config=cli.config.parent / config["judge_config"],
+    adoption = getattr(cli, "adopt_manifest", None)
+    children = (
+        adopt_helpers(
+            adoption, directory=cli.directory, job_id=receipt["job_id"], session_uuid=cli.session_uuid
         )
-        children.append(service)
+        if adoption
+        else []
+    )
+    try:
+        if not adoption:
+            service, _ = start_service(
+                input_file=cli.directory / "input.json",
+                directory=cli.directory,
+                port=port,
+                training=training,
+                python=Path(sys.executable),
+                judge_config=cli.config.parent / config["judge_config"],
+            )
+            children.append(service)
         for module, arguments, log_name in (
             (
                 "reward_tunnel",
@@ -52,6 +63,8 @@ def supervise(cli):
                 "resource-guard.log",
             ),
         ):
+            if adoption and module == "reward_tunnel":
+                continue
             argv = [
                 sys.executable,
                 "-m",
@@ -105,6 +118,7 @@ if __name__ == "__main__":
     for name in ("config", "directory", "remote-directory", "checkout", "state-repo"):
         parser.add_argument("--" + name, type=Path, required=True)
     parser.add_argument("--session-uuid", required=True)
+    parser.add_argument("--adopt-manifest", type=Path)
     cli = parser.parse_args()
     with (cli.directory / "supervisor.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
