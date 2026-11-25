@@ -1,0 +1,28 @@
+{
+  "at_utc": "2026-11-25T13:43:01.170521+00:00",
+  "job_id": "549728",
+  "gpu_busy_percent": [
+    0,
+    0,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "gpu_vram_used_bytes": [
+    48447307776,
+    47172149248,
+    199677239296,
+    199660441600,
+    198339940352,
+    198365106176,
+    199170969600,
+    199196139520
+  ],
+  "gpu_vram_total_bytes": 309220868096,
+  "limits": "One sysfs snapshot, not an interval average. Two devices are idle before first backward update. The six rollout devices are fully busy.",
+  "new_gpu_allocations": 0,
+  "probe": "One read-only srun --overlap step within549728. Host /opt/rocm/bin/rocm-smi was absent, so sysfs was used."
+}
