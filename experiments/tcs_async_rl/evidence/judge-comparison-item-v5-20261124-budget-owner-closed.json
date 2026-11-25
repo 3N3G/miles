@@ -1,0 +1,10 @@
+{
+  "at_utc": "2026-11-25T04:38:38.110895+00:00",
+  "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "closed": true,
+  "reason": "All final-comparison calls and controls settled; no qualifying prompt, no next scoring stage.",
+  "ledger_sha256": "f2928c3bf07de09296440f2dbcf7f92ad3dfe68e1515c53f3cc9c4fe2a7c558c",
+  "spent_usd": 1.7725486,
+  "settled_calls": 1661,
+  "pending_calls": 0
+}

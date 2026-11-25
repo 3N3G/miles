@@ -1,5 +1,15 @@
 # Open questions
 
+## 2026-11-24: Judge decision after the final Luna-high prompt validation
+
+- Question: resolve the remaining rubric boundaries by human review, or test a different judge before the approved long run?
+- Evidence: the final Luna-high prompt matches 34/40 totals and 96.17% of items. All 132 controls pass. Six total scores disagree, four on audits marked uncertain before calls. The declared 90% total-score gate fails. No labels changed after verdicts.
+- Options: review the six saved disagreements with their original rubric items, approve a specified stronger judge and fresh validation, or explicitly revise the reward/qualification protocol before a new experiment.
+- Recommendation: human review first. Some discrepancies may be assistant audit errors. Do not lower the gate after observing this packet or use it as fresh validation again.
+- Blocks: qualification of a new screen grader, the easy/medium inclusion decision, and the twelve-hour RL submission. Those compute permissions remain approved and unused for RL.
+- Completed independent work: 384 screening answers are generated and privately archived. All final-comparison calls are settled at $1.7725486 across the shared $25 budget. All source checkpoints, used prompts and configs remain preserved.
+- Details: [standalone findings](experiments/tcs_async_rl/FINAL_LUNA_HIGH_VALIDATION_20261124.md) and [operational evidence](experiments/tcs_async_rl/FINAL_LUNA_HIGH_OPERATIONS_20261124.md).
+
 ## 2026-11-24: Implicit monotonicity in an auction proof
 
 - Question: does the auction payment item require an explicit single-bidder monotonicity argument when the candidate states the correct formula?

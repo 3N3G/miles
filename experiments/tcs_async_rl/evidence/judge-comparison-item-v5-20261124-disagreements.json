@@ -1,0 +1,462 @@
+{
+  "reference_v4": [
+    {
+      "case": "case-07",
+      "question_key": "441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843",
+      "audit_score": 7.0,
+      "judge_scores": [
+        4.0
+      ],
+      "reward": 4.0,
+      "exact_score_match": false,
+      "absolute_score_error": 3.0,
+      "item_agreement": 0.6,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "The no-bare-path phrase overlooks single edges, whose exchanges are immediately trivial by simplicity. The incorrect final aside about all sequences in (0,1) is unused. The actual p=1 counterexample mechanism is valid.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 3,
+            "satisfied": true,
+            "reason": "Uses absence of degree2 internal vertices and cycle components. In this simple graph the remaining single-edge bare paths have no nontrivial fixed-endpoint exchange."
+          },
+          "judge": {
+            "item": 3,
+            "satisfied": false,
+            "reason": "It incorrectly rules out all bare paths from the absence of degree-2 vertices. A single edge has no internal vertices and is a bare path; the needed argument is that simplicity gives only one such path between each endpoint pair."
+          }
+        },
+        {
+          "audit": {
+            "item": 5,
+            "satisfied": true,
+            "reason": "Concludes the event has probability0 for every sufficiently large n."
+          },
+          "judge": {
+            "item": 5,
+            "satisfied": false,
+            "reason": "The claimed probability-zero conclusion relies on A(K_n) being trivial, but the candidate has not validly excluded the type-3 generators, so its counterexample contradiction is not established."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-10",
+      "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+      "audit_score": 7.0,
+      "judge_scores": [
+        6.0
+      ],
+      "reward": 6.0,
+      "exact_score_match": false,
+      "absolute_score_error": 1.0,
+      "item_agreement": 0.8,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "high",
+      "audit_ambiguity": "The written cases emphasize empty fibers, but the remaining empty-edge case is immediate from the stated dimension convention. No additional mathematical claim is required.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 5,
+            "satisfied": true,
+            "reason": "The empty-set geometric-dimension convention and nonnegative kernel dimension settle empty edges, including those with nonempty containing fibers. Nonempty singleton and zero-omitting edges follow from the same affine containment."
+          },
+          "judge": {
+            "item": 5,
+            "satisfied": false,
+            "reason": "The empty-hyperedge case is incomplete: e_i can be empty even when its containing fiber A_i is nonempty. In that case the argument invokes aff(e_i), which is not defined under the stated convention, instead of directly using gdim(e_i)=0. The singleton case and arbitrary received-symbol setup are otherwise covered."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-20",
+      "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+      "audit_score": 7.0,
+      "judge_scores": [
+        3.0
+      ],
+      "reward": 3.0,
+      "exact_score_match": false,
+      "absolute_score_error": 4.0,
+      "item_agreement": 0.5,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "The original-or-zero invariant and single-child fact follow directly from its explicit step list rather than a separately named lemma. Its stated n-1 depth counts transitions, with n invocations in the final sum.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 2,
+            "satisfied": true,
+            "reason": "Describes successive penalty vectors in a chain and a single optional recursive call per invocation, giving at most n-1 transitions and n invocations."
+          },
+          "judge": {
+            "item": 2,
+            "satisfied": false,
+            "reason": "The candidate bounds recursion depth and infers a call bound from it, but does not account for why depth bounds the total number of calls: each invocation has at most one recursive child. It also does not clearly distinguish the transition bound from the total-invocation bound."
+          }
+        },
+        {
+          "audit": {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Bounds subroutine inputs, vector construction and rational cost evaluations/comparisons by polynomial work per call, then sums over at most n calls."
+          },
+          "judge": {
+            "item": 4,
+            "satisfied": false,
+            "reason": "It describes polynomial work per invocation, including constructing inputs and evaluating candidate costs, but its total-time conclusion relies on the unestablished bound on the number of invocations."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-22",
+      "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+      "audit_score": 2.0,
+      "judge_scores": [
+        4.0
+      ],
+      "reward": 4.0,
+      "exact_score_match": false,
+      "absolute_score_error": 2.0,
+      "item_agreement": 0.75,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "high",
+      "audit_ambiguity": "The soundness implication conditional on an admissible unary instance is correct. The final contradiction item is withheld because the proof does not supply such an instance or its quantitative density verification.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 4,
+            "satisfied": false,
+            "reason": "Although the unary uniform bound is false, the candidate never establishes an instance inside the asserted density-and-r domain, so the final counterexample contradiction is incomplete."
+          },
+          "judge": {
+            "item": 4,
+            "satisfied": true,
+            "reason": "It shows that for every sign realization the uniform bound fails, so soundness forces failure to certify and the certification probability is zero, contradicting a positive guarantee if the instance meets the hypotheses."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-29",
+      "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+      "audit_score": 7.0,
+      "judge_scores": [
+        5.0
+      ],
+      "reward": 5.0,
+      "exact_score_match": false,
+      "absolute_score_error": 2.0,
+      "item_agreement": 0.6666666666666666,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "Extensive repetitive unfinished reasoning contains false unused assertions about other parameter ranges and an interpretation typo. The complete correct vacuity argument is repeatedly stated and never depends on them.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Repeatedly compares the stated interval endpoints, using d<=n/2 to bound the lower endpoint by sqrt(2n). This is the same feasibility calculation, and the displayed squared comparison gives delta>=2."
+          },
+          "judge": {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The candidate compares a weaker bound, obtaining \u03b4\u22651 from n/\u221ad\u2265\u221an, but does not derive the required necessary condition d\u2265n/\u03b4 by comparing the stated interval endpoints."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-32",
+      "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+      "audit_score": 5.0,
+      "judge_scores": [
+        7.0
+      ],
+      "reward": 7.0,
+      "exact_score_match": false,
+      "absolute_score_error": 2.0,
+      "item_agreement": 0.75,
+      "audit_false_full_credit": true,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "The algorithm has a single named child and the proof writes a support sequence. A reader could infer the chain, but the rubric specifically asks for explicit accounting. The stated bound by L rather than O(L) after fixed scaling is a harmless constant-size slip.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 2,
+            "satisfied": false,
+            "reason": "Bounds the recursion depth by n but does not explicitly account for one recursive child to bound the entire execution, as this item expressly requests."
+          },
+          "judge": {
+            "item": 2,
+            "satisfied": true,
+            "reason": "It bounds recursive transitions by n\u22121 and invocation depth by n. The specified procedure has only the single recursive continuation on \u03c1^K, which the candidate treats as a sequence, so this also bounds total invocations by n."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-34",
+      "question_key": "816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354",
+      "audit_score": 7.0,
+      "judge_scores": [
+        6.0
+      ],
+      "reward": 6.0,
+      "exact_score_match": false,
+      "absolute_score_error": 1.0,
+      "item_agreement": 0.8333333333333334,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "The candidate repeatedly confuses its own already-valid alternating snake and later loosely says every triple has the same orientation. Its explicit corrected sequence and edge checks establish the construction. The missing parity sentence is unnecessary because either fixed layer at the final lower vertex closes correctly.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 2,
+            "satisfied": true,
+            "reason": "Justifies fixed-to-free fiber edges, preservation of lower-dimensional cover edges in fixed layers, and vertex-only neighbors of the empty face."
+          },
+          "judge": {
+            "item": 2,
+            "satisfied": false,
+            "reason": "The candidate verifies particular lifted and vertical cover edges and identifies the neighbors of \u2205, but does not establish the precise characterization of all nonempty-face adjacencies."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-37",
+      "question_key": "e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3",
+      "audit_score": 1.0,
+      "judge_scores": [
+        0.0
+      ],
+      "reward": 0.0,
+      "exact_score_match": false,
+      "absolute_score_error": 1.0,
+      "item_agreement": 0.8333333333333334,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "Confuses the empty free-coordinate set with the unpinned chain in an aside. Its actual size-one base and uniform intended subgoal are still usable for positive sizes, so item2 is credited independently.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 2,
+            "satisfied": true,
+            "reason": "States the desired uniform size-dependent gap bound over feasible pinnings and correctly proves the size-one base directly from P."
+          },
+          "judge": {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It proposes bounds for all pinnings, but does not give the required fully pinned base case. Its stated one-free-coordinate base case does not supply that base for the proposed recursive argument."
+          }
+        }
+      ]
+    }
+  ],
+  "reference_v5": [
+    {
+      "case": "case-22",
+      "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+      "audit_score": 2.0,
+      "judge_scores": [
+        4.0
+      ],
+      "reward": 4.0,
+      "exact_score_match": false,
+      "absolute_score_error": 2.0,
+      "item_agreement": 0.75,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "high",
+      "audit_ambiguity": "The soundness implication conditional on an admissible unary instance is correct. The final contradiction item is withheld because the proof does not supply such an instance or its quantitative density verification.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 4,
+            "satisfied": false,
+            "reason": "Although the unary uniform bound is false, the candidate never establishes an instance inside the asserted density-and-r domain, so the final counterexample contradiction is incomplete."
+          },
+          "judge": {
+            "item": 4,
+            "satisfied": true,
+            "reason": "It correctly explains that the bound is false for every sign realization and that soundness therefore precludes certification. This establishes the contradiction logic whenever the density hypothesis applies, though item 3 does not establish that hypothesis."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-29",
+      "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+      "audit_score": 7.0,
+      "judge_scores": [
+        5.0
+      ],
+      "reward": 5.0,
+      "exact_score_match": false,
+      "absolute_score_error": 2.0,
+      "item_agreement": 0.6666666666666666,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "Extensive repetitive unfinished reasoning contains false unused assertions about other parameter ranges and an interpretation typo. The complete correct vacuity argument is repeatedly stated and never depends on them.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Repeatedly compares the stated interval endpoints, using d<=n/2 to bound the lower endpoint by sqrt(2n). This is the same feasibility calculation, and the displayed squared comparison gives delta>=2."
+          },
+          "judge": {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The candidate uses d\u2264n/2 to bound n/\u221ad from below, but never compares the interval endpoints to derive the required condition d\u2265n/\u03b4."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-32",
+      "question_key": "ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4",
+      "audit_score": 5.0,
+      "judge_scores": [
+        3.0
+      ],
+      "reward": 3.0,
+      "exact_score_match": false,
+      "absolute_score_error": 2.0,
+      "item_agreement": 0.75,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "The algorithm has a single named child and the proof writes a support sequence. A reader could infer the chain, but the rubric specifically asks for explicit accounting. The stated bound by L rather than O(L) after fixed scaling is a harmless constant-size slip.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 4,
+            "satisfied": true,
+            "reason": "Gives polynomial bounds for constructions, rational cost computation, A and S, then combines with n steps. Exact rational summation has polynomial bit cost under the established input-length bound."
+          },
+          "judge": {
+            "item": 4,
+            "satisfied": false,
+            "reason": "The candidate gives polynomial per-invocation work, including candidate-cost calculations, but its total-time bound multiplies by the depth without establishing a bound on the total number of invocations."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-33",
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "audit_score": 3.0,
+      "judge_scores": [
+        1.0
+      ],
+      "reward": 1.0,
+      "exact_score_match": false,
+      "absolute_score_error": 2.0,
+      "item_agreement": 0.8,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "high",
+      "audit_ambiguity": "The argument approaches a valid connected-domain proof repeatedly, but does not establish that mechanism and ends with another unresolved question. Do not supply it for the candidate.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Fixes two parallel edges and positive competing-weight families that permit small perturbations, with forced opposite regions."
+          },
+          "judge": {
+            "item": 1,
+            "satisfied": false,
+            "reason": "The two-parallel-edge graph is suitable, but the candidate does not establish a weight family with an arbitrarily close actual output change for every algorithm."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-34",
+      "question_key": "816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354",
+      "audit_score": 7.0,
+      "judge_scores": [
+        5.0
+      ],
+      "reward": 5.0,
+      "exact_score_match": false,
+      "absolute_score_error": 2.0,
+      "item_agreement": 0.6666666666666666,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "The candidate repeatedly confuses its own already-valid alternating snake and later loosely says every triple has the same orientation. Its explicit corrected sequence and edge checks establish the construction. The missing parity sentence is unnecessary because either fixed layer at the final lower vertex closes correctly.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 1,
+            "satisfied": true,
+            "reason": "Describes each nonempty face as one of three distinct last-coordinate extensions of a lower-dimensional face, recursively giving the coordinate representation."
+          },
+          "judge": {
+            "item": 1,
+            "satisfied": false,
+            "reason": "It asserts a last-coordinate decomposition of faces, but does not derive from the defining maximization that faces are exactly products of the three coordinate factors or establish that representation from the definition."
+          }
+        },
+        {
+          "audit": {
+            "item": 2,
+            "satisfied": true,
+            "reason": "Justifies fixed-to-free fiber edges, preservation of lower-dimensional cover edges in fixed layers, and vertex-only neighbors of the empty face."
+          },
+          "judge": {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It verifies several transitions used in its construction and identifies empty-face neighbors, but does not establish the claimed precise characterization of all nonempty-face covers as single-coordinate changes."
+          }
+        }
+      ]
+    },
+    {
+      "case": "case-37",
+      "question_key": "e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3",
+      "audit_score": 1.0,
+      "judge_scores": [
+        0.0
+      ],
+      "reward": 0.0,
+      "exact_score_match": false,
+      "absolute_score_error": 1.0,
+      "item_agreement": 0.8333333333333334,
+      "audit_false_full_credit": false,
+      "clear_false_full_credit": false,
+      "audit_confidence": "medium",
+      "audit_ambiguity": "Confuses the empty free-coordinate set with the unpinned chain in an aside. Its actual size-one base and uniform intended subgoal are still usable for positive sizes, so item2 is credited independently.",
+      "item_disagreements": [
+        {
+          "audit": {
+            "item": 2,
+            "satisfied": true,
+            "reason": "States the desired uniform size-dependent gap bound over feasible pinnings and correctly proves the size-one base directly from P."
+          },
+          "judge": {
+            "item": 2,
+            "satisfied": false,
+            "reason": "It proposes a uniform bound over pinnings, but does not give the required fully pinned base case; its stated base is k=1."
+          }
+        }
+      ]
+    }
+  ]
+}

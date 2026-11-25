@@ -1,0 +1,73 @@
+{
+  "recipes": {
+    "reference_v4": {
+      "answers": 40,
+      "exact_score_agreement": 0.8,
+      "case_balanced_item_agreement": 0.9433333333333334,
+      "mean_absolute_score_error": 0.4,
+      "clear_false_full_credit": 0,
+      "audit_false_full_credit": 1,
+      "passes_observed_gate": false,
+      "actual_usage_usd": 0.0684623
+    },
+    "reference_v5": {
+      "answers": 40,
+      "exact_score_agreement": 0.85,
+      "case_balanced_item_agreement": 0.9616666666666667,
+      "mean_absolute_score_error": 0.275,
+      "clear_false_full_credit": 0,
+      "audit_false_full_credit": 0,
+      "passes_observed_gate": false,
+      "actual_usage_usd": 0.0730322
+    }
+  },
+  "controls": {
+    "count": 132,
+    "failures": []
+  },
+  "settled_usd": 1.7725486,
+  "settled_calls": 1661,
+  "pending_calls": 0,
+  "new_comparison_usd": 0.2007948,
+  "all_stages_cap_usd": 25,
+  "new_gpu_jobs_for_final_comparison": 0,
+  "new_optimizer_updates": 0,
+  "heldout_reads": 0,
+  "selected_recipe": null,
+  "decision": "Neither final candidate qualifies. Do not regrade the screen or submit RL under the failed qualification. Request the next research decision after preserving evidence.",
+  "labels_are": "Assistant audits, not independent human calibration.",
+  "confidence_subsets": {
+    "reference_v4": {
+      "high": {
+        "answers": 21,
+        "exact_matches": 19
+      },
+      "medium": {
+        "answers": 19,
+        "exact_matches": 13
+      }
+    },
+    "reference_v5": {
+      "high": {
+        "answers": 21,
+        "exact_matches": 19
+      },
+      "medium": {
+        "answers": 19,
+        "exact_matches": 15
+      }
+    }
+  },
+  "absolute_phase_ceiling_usd": 2.6787322,
+  "incoming_ledger_settled_calls": 1448,
+  "historical_transfer_metadata_count_correction": {
+    "recorded_settled_calls": 1382,
+    "actual_settled_calls": 1448,
+    "delta_calls": 66,
+    "actual_spent_usd": 1.5717538,
+    "cost_and_ledger_prefix_unchanged": true
+  },
+  "comparison_subtotal_conservative_usd": 1.0938164,
+  "comparison_subcap_usd": 2,
+  "non_comparison_prefix_usd": 0.6787322
+}

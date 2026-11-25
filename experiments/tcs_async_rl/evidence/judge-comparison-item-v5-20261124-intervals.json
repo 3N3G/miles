@@ -1,0 +1,54 @@
+{
+  "kind": "descriptive_95_percent_question_cluster_percentile_bootstrap",
+  "question_clusters": 22,
+  "repetitions": 5000,
+  "seed": 20261124,
+  "methods": {
+    "reference_v4": {
+      "exact_score_match": [
+        0.65,
+        0.925
+      ],
+      "item_agreement": [
+        0.8951219512195122,
+        0.9808333333333333
+      ],
+      "absolute_score_error": [
+        0.125,
+        0.775
+      ]
+    },
+    "reference_v5": {
+      "exact_score_match": [
+        0.7222222222222222,
+        0.9512195121951219
+      ],
+      "item_agreement": [
+        0.9290598290598291,
+        0.9866666666666667
+      ],
+      "absolute_score_error": [
+        0.09523809523809523,
+        0.5
+      ]
+    }
+  },
+  "difference": {
+    "direction": "reference_v5 minus reference_v4",
+    "intervals": {
+      "exact_score_match": [
+        -0.05128205128205121,
+        0.14634146341463417
+      ],
+      "item_agreement": [
+        -0.013157894736842146,
+        0.05447154471544713
+      ],
+      "absolute_score_error": [
+        -0.4102564102564103,
+        0.12195121951219512
+      ]
+    }
+  },
+  "limits": "Diagnostic stratified sample and assistant labels. Not human accuracy or a significance test."
+}

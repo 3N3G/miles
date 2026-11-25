@@ -1,0 +1,926 @@
+[
+  {
+    "identity": "control-5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-5aa5553d1b24ed495fb5b76d7359c1b6efa0d4742dda0dc5f30ec4b063c49178-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b50f9aeefaa6bd7017afd864e9037a76a50e81b4ceaa1290bdbff07644b4fdf2-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-441ae72670f3b7bf168fa0704f21be86851336ff00ee945f7b6049d9ef5dd843-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-976b9fc29d1ce691fadd08bd6e49ff95f59e5ddc6a19c2c85453ad3c13212a12-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-610686fe7b5e61cb0b06e5f9ed2f980d5cf7581d510b86d4eec4e532a28ce497-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e32340470885ccf3f4535f292597570751ea057f012d0be7e2435930f7ba634f-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ca496fcd86d689885af6921d7abaa7d826402296309b5adfa814e297665a5bf4-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-87a4555982c3f891b06d1dca6873fe79d1e081641c5d99f82f11c61edd6baa6c-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512-reference",
+    "recipe": "reference_v4",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512-empty",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512-irrelevant",
+    "recipe": "reference_v4",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512-reference",
+    "recipe": "reference_v5",
+    "expected": 7,
+    "score": 7.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512-empty",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  },
+  {
+    "identity": "control-ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512-irrelevant",
+    "recipe": "reference_v5",
+    "expected": 0,
+    "score": 0.0,
+    "passed": true
+  }
+]
