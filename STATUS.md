@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Failed screen546404 has189 verified archived artifacts; replacement548472 is queued Jobs: hpcfund/546404 FAILED; hpcfund/548472 PENDING
-  Next: Watch the repaired screen548472 through evaluation and audit the resulting proof grades before training.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Repaired checkpoint screen 548472 is RUNNING Jobs: hpcfund/548472 RUNNING; hpcfund/546404 FAILED
+  Next: Verify both source-matching weight transfers, complete384 pinned answers and audit genuine medium reward variation.
 
 ## Next / blocked
 
