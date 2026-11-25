@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final prompt and planned setup are visible in W&B Config, Logs and Files; all artifacts verified privately in HF. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Use the accepted unchanged v5 recipe to regrade the384 saved screen answers, apply the declared20/26-question rule, and bind fresh execution snapshots before the approved12-hour co
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User requests broader problem coverage; distinguish the small pilot from all236 easy/medium and2519 eligible questions. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Record the data-scope question and clarify the existing counts. Prepare broader training only after the user selects easy+medium or all difficulties.
 
 ## Next / blocked
 

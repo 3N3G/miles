@@ -3503,15 +3503,22 @@
       "actor": "codex",
       "summary": "Final prompt and planned setup are visible in W&B Config, Logs and Files; all artifacts verified privately in HF.",
       "revision": 338
+    },
+    {
+      "id": "84821760-b394-4e0a-8124-14df4171293c",
+      "at": "2026-11-25T13:07:40.725713Z",
+      "actor": "codex",
+      "summary": "User requests broader problem coverage; distinguish the small pilot from all236 easy/medium and2519 eligible questions.",
+      "revision": 339
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Final prompt and planned setup are visible in W&B Config, Logs and Files; all artifacts verified privately in HF.",
-  "nextAction": "Use the accepted unchanged v5 recipe to regrade the384 saved screen answers, apply the declared20/26-question rule, and bind fresh execution snapshots before the approved12-hour continuation.",
+  "summary": "User requests broader problem coverage; distinguish the small pilot from all236 easy/medium and2519 eligible questions.",
+  "nextAction": "Record the data-scope question and clarify the existing counts. Prepare broader training only after the user selects easy+medium or all difficulties.",
   "owner": "Codex",
-  "revision": 338,
-  "updatedAt": "2026-11-25T10:40:36.211187Z"
+  "revision": 339,
+  "updatedAt": "2026-11-25T13:07:40.725713Z"
 }
