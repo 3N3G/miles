@@ -1,0 +1,182 @@
+{
+  "at_utc": "2026-11-25T16:55:40.062321+00:00",
+  "job_id": "549728",
+  "audited_optimizer_steps": [
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116
+  ],
+  "audited_answers": 1024,
+  "distinct_question_rows": 32,
+  "distinct_paper_node_pairs": 30,
+  "papers": 29,
+  "full_credit": 277,
+  "zero": 348,
+  "capped": 390,
+  "capped_empty_final": 259,
+  "constant_groups": 5,
+  "by_difficulty": {
+    "easy": {
+      "answers": 128,
+      "question_rows": 4,
+      "mean_score": 6.796875,
+      "full_credit": 119,
+      "zero": 1,
+      "capped": 3
+    },
+    "medium": {
+      "answers": 896,
+      "question_rows": 28,
+      "mean_score": 2.489955357142857,
+      "full_credit": 158,
+      "zero": 347,
+      "capped": 387
+    }
+  },
+  "pool_structure": {
+    "question_rows": 236,
+    "distinct_problem_texts": 236,
+    "paper_node_pairs": 178,
+    "papers": 146,
+    "prompt_types": {
+      "proof_writing": 115,
+      "proof_strategy": 121
+    },
+    "interpretation": "Uniform input sampling is over question rows. Proof-writing and strategy variants of one source proof remain different tasks and rubrics. Do not pool them as matched reward visits."
+  },
+  "empty_cap_format_check": {
+    "empty_cap_count": 90,
+    "caps_with_closing_think": 0,
+    "caps_ending_im_end": 0,
+    "new_judge_calls": 0
+  },
+  "proof_review": {
+    "reviewed_at_utc": "2026-11-25T16:55:40.062321+00:00",
+    "selection_file": "hour04-review-selection.json",
+    "cases": [
+      {
+        "kind": "routine_easy",
+        "file": "example-step-116-group-32.json",
+        "score": 7.0,
+        "optimizer_step": 116,
+        "sample_index": 1035,
+        "final_characters": 6624,
+        "selection": "Random(20261128), uniform among seeded exported examples for updates115\u2013116 at this difficulty",
+        "assistant_score_under_current_prompt": 7,
+        "reason": "The standard-basis-plus-sum construction works. The proof establishes every deletion is a basis, identifies inverse-transpose coordinates, and computes squared norm d in both cases including d=1.",
+        "uncertainty": null
+      },
+      {
+        "kind": "routine_medium",
+        "file": "example-step-115-group-24.json",
+        "score": 0.0,
+        "optimizer_step": 115,
+        "sample_index": 779,
+        "final_characters": 0,
+        "selection": "Random(20261128), uniform among seeded exported examples for updates115\u2013116 at this difficulty",
+        "assistant_score_under_current_prompt": 0,
+        "reason": "No final answer was emitted at90000 tokens. The inspected first and last6000 characters show unresolved, repetitive reasoning about poset chains, including repeated invalid proposals to return a linear extension or a singleton. No closing thinking marker was present. This is a legitimate model cap, not lost final-answer extraction.",
+        "uncertainty": "Only the beginning and end of the thinking transcript were read; this does not label every intermediate thought or establish that no useful argument occurred elsewhere."
+      },
+      {
+        "kind": "nonempty_partial",
+        "file": "hour04-nonempty_partial.json",
+        "optimizer_step": 115,
+        "sample_index": 817,
+        "score": 1.0,
+        "final_characters": 11426,
+        "selection": "Random(20261128), uniform within the named diagnostic category after routine samples",
+        "assistant_score_under_current_prompt": 1,
+        "reason": "The exact-residency-one cache construction permits arbitrarily small fractional loading before an integral fault and can require illegal proactive integral loads. Its capacity observation does not prove factor-k coupling or per-page charging. The obstacle item is supported. The other five complete items are not established.",
+        "uncertainty": null
+      },
+      {
+        "kind": "high_score_medium",
+        "file": "hour04-high_score_medium.json",
+        "optimizer_step": 115,
+        "sample_index": 838,
+        "score": 7.0,
+        "final_characters": 21526,
+        "selection": "Random(20261128), uniform within the named diagnostic category after routine samples",
+        "assistant_score_under_current_prompt": 6,
+        "reason": "The initial calculation gives a valid mean shift and covariance correction. Centering makes the problematic integrated cubic term identically zero, so its stated conditional-mean justification can be repaired by elementary algebra. Conditional iteration establishes the finite-horizon formula. However, item6 asks for the scope of backward estimates: the answer does not explain that an upper bound propagated backward also needs control of the accumulated corrections. It mainly repeats a forward expected covariance bound and vacillates about pathwise decrease. I would withhold that one point.",
+        "uncertainty": "A real item-ownership disagreement with the saved7/7 verdict. The main identities are established in the prefix despite later matrix-order confusion and truncation. This diagnostic audit is not independent human ground truth; the accepted frozen grader and original verdict remain unchanged."
+      }
+    ],
+    "limits": "Post-grade assistant diagnostics, not independent human calibration or an unbiased agreement sample. One one-point scope disagreement is retained. No valid verdict was rerolled and the accepted fixed prompt did not change.",
+    "new_inference_calls": 0,
+    "new_judge_calls": 0,
+    "order_comparison_cases_measured": 0,
+    "reference_scores_measured_in_training_grades": 0
+  },
+  "flags_to_inspect": {
+    "negative_observed_surrogate_gain": [],
+    "nonpositive_learning_rate": [],
+    "missing_diagnostics": {
+      "109": [],
+      "110": [],
+      "111": [],
+      "112": [],
+      "113": [],
+      "114": [],
+      "115": [],
+      "116": []
+    }
+  },
+  "local_update_direction": {
+    "train/update_direction/negative_advantage_mean_logprob_change": {
+      "points": 3,
+      "first": -6.321649270072764e-05,
+      "last": -2.887195183529336e-05,
+      "min": -7.947878623326687e-05,
+      "max": -2.887195183529336e-05,
+      "last_step": 115
+    },
+    "train/update_direction/negative_advantage_samples": {
+      "points": 3,
+      "first": 36,
+      "last": 79,
+      "min": 22,
+      "max": 79,
+      "last_step": 115
+    },
+    "train/update_direction/positive_advantage_mean_logprob_change": {
+      "points": 3,
+      "first": 6.193686989111788e-05,
+      "last": 5.1205394020236816e-05,
+      "min": 4.0212806815410706e-05,
+      "max": 6.193686989111788e-05,
+      "last_step": 115
+    },
+    "train/update_direction/positive_advantage_samples": {
+      "points": 3,
+      "first": 60,
+      "last": 49,
+      "min": 49,
+      "max": 74,
+      "last_step": 115
+    },
+    "train/update_direction/samples": {
+      "points": 3,
+      "first": 128,
+      "last": 128,
+      "min": 128,
+      "max": 128,
+      "last_step": 115
+    },
+    "train/update_direction/surrogate_gain": {
+      "points": 3,
+      "first": 4.863162716617353e-05,
+      "last": 3.469936188338352e-05,
+      "min": 3.469936188338352e-05,
+      "max": 4.9429182968907526e-05,
+      "last_step": 115
+    }
+  },
+  "operational_reserve_evidence": "long236_operational_save_reserve_20261125.json"
+}
