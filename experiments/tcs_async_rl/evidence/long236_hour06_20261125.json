@@ -1,0 +1,255 @@
+{
+  "at_utc": "2026-11-25T18:39:11.427740+00:00",
+  "job_id": "549728",
+  "audited_optimizer_steps": [
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121
+  ],
+  "audited_answers": 1664,
+  "distinct_question_rows": 52,
+  "distinct_paper_node_pairs": 47,
+  "papers": 45,
+  "full_credit": 418,
+  "zero": 624,
+  "capped": 628,
+  "capped_empty_final": 406,
+  "constant_groups": 7,
+  "by_difficulty": {
+    "easy": {
+      "answers": 160,
+      "question_rows": 5,
+      "mean_score": 6.625,
+      "full_credit": 119,
+      "zero": 1,
+      "capped": 3
+    },
+    "medium": {
+      "answers": 1504,
+      "question_rows": 47,
+      "mean_score": 2.5824468085106385,
+      "full_credit": 299,
+      "zero": 623,
+      "capped": 625
+    }
+  },
+  "proof_review": {
+    "reviewed_at_utc": "2026-11-25T18:39:11.427740+00:00",
+    "selection_file": "hour06-review-selection.json",
+    "cases": [
+      {
+        "kind": "routine_easy",
+        "file": "example-step-121-group-50.json",
+        "optimizer_step": 121,
+        "sample_index": 1611,
+        "score": 6.0,
+        "final_characters": 6916,
+        "selection": "Random(20261130), uniform among seeded exported examples for completed120\u2013121 at this difficulty",
+        "assistant_score_under_current_prompt": 6,
+        "reason": "The collective selector encoding and local f-to-the-l simulation establish the first four items. The required explicit kappa=1 check is absent, so the one-point final item fails. Its bijection-to-all-binary-strings phrase is false for nonpowers of two, but the alternative base-kappa integer construction clearly supplies the needed injection.",
+        "uncertainty": null
+      },
+      {
+        "kind": "routine_medium",
+        "file": "example-step-121-group-48.json",
+        "optimizer_step": 121,
+        "sample_index": 1547,
+        "score": 0.0,
+        "final_characters": 0,
+        "selection": "Random(20261130), uniform among seeded exported examples for completed120\u2013121 at this difficulty",
+        "assistant_score_under_current_prompt": 0,
+        "reason": "The model reaches its90000-token limit without a final answer or closing thinking marker. The inspected first and last3000 characters repeatedly confuse fixed triangle counting with variable-pattern counting and never finish a valid family/reduction. The empty-final rubric score is correctly zero.",
+        "uncertainty": "Only the transcript beginning and end were read; no claim about every intermediate thought."
+      },
+      {
+        "kind": "nonempty_partial",
+        "file": "hour06-nonempty_partial.json",
+        "optimizer_step": 120,
+        "sample_index": 1421,
+        "score": 2.0,
+        "final_characters": 9224,
+        "selection": "Random(20261130), uniform within diagnostic category after routine cases",
+        "assistant_score_under_current_prompt": 3,
+        "reason": "The mean-displacement calculation earns two points. Integrability is circularly asserted and the covariance identity is not proved beyond a Gaussian heuristic. The later tower-property and telescoping calculation is formally correct from the asserted one-step identity. Under the prompt instruction to assign missing work to its own item, I would award the separate one-point recursion item.",
+        "uncertainty": "Item ownership is ambiguous: a stricter reading of valid conditional expectations requires established integrability before awarding the recursion item, supporting the saved2/7. This is a one-point diagnostic disagreement, not an independently calibrated label. The original score remains2."
+      },
+      {
+        "kind": "zero_completed",
+        "file": "hour06-zero_completed.json",
+        "optimizer_step": 121,
+        "sample_index": 1591,
+        "score": 0.0,
+        "final_characters": 15078,
+        "selection": "Random(20261130), uniform within diagnostic category after routine cases",
+        "assistant_score_under_current_prompt": 0,
+        "reason": "The cube change of variables and Parseval formula are correct preliminaries, but they establish none of the four complete scored items. The answer repeatedly assumes the crucial unweighted quadruple bound and fails to handle arbitrary coefficients or prove an effective auxiliary contraction/invariant. Its final constant therefore has no valid derivation.",
+        "uncertainty": null
+      }
+    ],
+    "limits": "Post-grade assistant diagnostics, not independent human calibration or unbiased agreement. One one-point ownership ambiguity is recorded. All saved verdicts and the accepted grading prompt remain unchanged.",
+    "new_inference_calls": 0,
+    "new_judge_calls": 0
+  },
+  "empty_cap_format_check": {
+    "at_utc": "2026-11-25T18:38:25.537482+00:00",
+    "steps": [
+      120,
+      121
+    ],
+    "empty_cap_count": 90,
+    "caps_with_closing_think": 0,
+    "caps_ending_im_end": 0,
+    "new_inference_or_judge_calls": 0
+  },
+  "flags_to_inspect": {
+    "negative_observed_surrogate_gain": [],
+    "nonpositive_learning_rate": [],
+    "missing_diagnostics": {
+      "109": [],
+      "110": [],
+      "111": [],
+      "112": [],
+      "113": [],
+      "114": [],
+      "115": [],
+      "116": [],
+      "117": [],
+      "118": [],
+      "119": [],
+      "120": [],
+      "121": []
+    }
+  },
+  "within_continuation_matched_visits": {
+    "questions": 0,
+    "mean_change": null,
+    "increased": 0,
+    "decreased": 0,
+    "pairs": []
+  },
+  "local_update_direction": {
+    "train/update_direction/negative_advantage_mean_logprob_change": {
+      "points": 4,
+      "first": -6.321649270072764e-05,
+      "last": -4.027876639582928e-05,
+      "min": -7.947878623326687e-05,
+      "max": -2.887195183529336e-05,
+      "last_step": 120
+    },
+    "train/update_direction/negative_advantage_samples": {
+      "points": 4,
+      "first": 36,
+      "last": 80,
+      "min": 22,
+      "max": 80,
+      "last_step": 120
+    },
+    "train/update_direction/positive_advantage_mean_logprob_change": {
+      "points": 4,
+      "first": 6.193686989111788e-05,
+      "last": 6.275500367773172e-05,
+      "min": 4.0212806815410706e-05,
+      "max": 6.275500367773172e-05,
+      "last_step": 120
+    },
+    "train/update_direction/positive_advantage_samples": {
+      "points": 4,
+      "first": 60,
+      "last": 48,
+      "min": 48,
+      "max": 74,
+      "last_step": 120
+    },
+    "train/update_direction/samples": {
+      "points": 4,
+      "first": 128,
+      "last": 128,
+      "min": 128,
+      "max": 128,
+      "last_step": 120
+    },
+    "train/update_direction/surrogate_gain": {
+      "points": 4,
+      "first": 4.863162716617353e-05,
+      "last": 4.8547008077548526e-05,
+      "min": 3.469936188338352e-05,
+      "max": 4.9429182968907526e-05,
+      "last_step": 120
+    }
+  },
+  "wandb_readback": {
+    "at_utc": "2026-11-25T18:35:38.840419+00:00",
+    "state": "running",
+    "verified_optimizer_rows": 13,
+    "history_rows": 13,
+    "verified_scalars": 1211,
+    "training_config_matches": true,
+    "operational_save_reserve_seconds": 2700,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261125-132805-437-native"
+  },
+  "gpu_snapshot": {
+    "at_utc": "2026-11-25T18:34:30.063508+00:00",
+    "job_id": "549728",
+    "devices": [
+      {
+        "device": "card0",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 218118860800
+      },
+      {
+        "device": "card8",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 217355464704
+      },
+      {
+        "device": "card16",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 196185890816
+      },
+      {
+        "device": "card24",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 196169097216
+      },
+      {
+        "device": "card32",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 197899251712
+      },
+      {
+        "device": "card40",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 197924417536
+      },
+      {
+        "device": "card48",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 197750415360
+      },
+      {
+        "device": "card56",
+        "gpu_busy_percent": 100,
+        "mem_info_vram_total": 309220868096,
+        "mem_info_vram_used": 197775585280
+      }
+    ]
+  },
+  "interpretation_limit": "No repeated exact question/rubric visits yet. Different-question rewards are not a learning curve. The source policy is already trained on the easy questions. The final fixed checkpoint screen remains required."
+}
