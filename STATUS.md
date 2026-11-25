@@ -12,8 +12,8 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final Luna-high prompt matched34/40 and failed qualification; evidence and W&B are verified, with no RL queued. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Decide human review of six rubric disagreements or a specified stronger-judge validation. Preserve the384 saved screen answers and approved12-hour RL allowance until a grader quali
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final Luna-high prompt matched 34/40 and failed qualification. Archive and W&B are verified. No RL is queued. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Decide human review of six rubric disagreements or a specified stronger-judge validation. Preserve the 384 screen answers and approved 12-hour RL allowance until a grader qualifies
 
 ## Finished
 

@@ -24,4 +24,10 @@
   [Comparison run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/judge-item-v5-20261124).
 - A first W&B client invocation failed before importing the repo. The corrected invocation supplied the repository on`PYTHONPATH`.
   No remote run or judge call was created by that import failure.
-- Final archive and W&B readback receipts follow after verification.
+- W&B finished. All 15 reported scalars passed API readback.
+- Independent history readback found exactly one validation row at`_step=0`, with85% agreement and zero optimizer updates.
+  The [history receipt](evidence/judge-comparison-item-v5-20261124-wandb-history.json) records that distinction from training progress.
+- The final private archive is`3N3G/internalization-runs@d4d68e07f0de4ebe2c91597d8eff2b51d608a75c/miles/judge-comparison-item-v5-20261124`.
+  Every one of its 511 manifested files, totaling 13,229,492 bytes, passed immutable hash verification.
+  The [receipt](evidence/judge-comparison-item-v5-20261124-archive.json) records the exact commit.
+  The archived report predates this receipt paragraph. No local artifact was evicted.

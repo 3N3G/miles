@@ -3,6 +3,14 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/d4d68e07f0de4ebe2c91597d8eff2b51d608a75c/miles/judge-comparison-item-v5-20261124",
+      "label": "Final Luna-high validation: all511 artifacts checksum-verified;34/40 exact,96.17% item, failed gate"
+    },
+    {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/judge-item-v5-20261124",
+      "label": "Final judge validation:15 scalars and one zero-update history row verified"
+    },
+    {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/5e04681b64bccd11e840eac5e8e8d2545e1f6eb4/miles/easy-overfit-v14-additional-proof-audit-20261122",
       "label": "Verified additional eight proofs, pre-call labels and all sixteen judge receipts"
     },
@@ -292,6 +300,22 @@
     }
   ],
   "evidence": [
+    {
+      "path": "experiments/tcs_async_rl/FINAL_LUNA_HIGH_VALIDATION_20261124.md",
+      "label": "Standalone final prompt findings and mathematical examples"
+    },
+    {
+      "path": "experiments/tcs_async_rl/FINAL_LUNA_HIGH_OPERATIONS_20261124.md",
+      "label": "Final comparison owner, exact costs, archive and W&B verification"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/judge-comparison-item-v5-20261124-final-validation-summary.json",
+      "label": "Failed final gate, confidence subsets and settled shared budget"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/judge-comparison-item-v5-20261124-archive.json",
+      "label": "Immutable511-file archive verification receipt"
+    },
     {
       "path": "experiments/tcs_async_rl/evidence/multiproblem_submission_preflight_20261123.json",
       "label": "Approved resource limits, working Hub access, restored AMD storage and 117 passing tests"
@@ -3444,15 +3468,22 @@
       "actor": "codex",
       "summary": "Final Luna-high prompt matched34/40 and failed qualification; evidence and W&B are verified, with no RL queued.",
       "revision": 333
+    },
+    {
+      "id": "b1ab6a6e-f777-489f-9d0c-f36a739b9404",
+      "at": "2026-11-25T04:44:28.276087Z",
+      "actor": "codex",
+      "summary": "Link verified final validation evidence and the remaining grading decision",
+      "revision": 334
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "needs-you",
-  "summary": "Final Luna-high prompt matched34/40 and failed qualification; evidence and W&B are verified, with no RL queued.",
-  "nextAction": "Decide human review of six rubric disagreements or a specified stronger-judge validation. Preserve the384 saved screen answers and approved12-hour RL allowance until a grader qualifies.",
+  "summary": "Final Luna-high prompt matched 34/40 and failed qualification. Archive and W&B are verified. No RL is queued.",
+  "nextAction": "Decide human review of six rubric disagreements or a specified stronger-judge validation. Preserve the 384 screen answers and approved 12-hour RL allowance until a grader qualifies.",
   "owner": "Codex",
-  "revision": 333,
-  "updatedAt": "2026-11-25T04:43:52.734172Z"
+  "revision": 334,
+  "updatedAt": "2026-11-25T04:44:28.276087Z"
 }

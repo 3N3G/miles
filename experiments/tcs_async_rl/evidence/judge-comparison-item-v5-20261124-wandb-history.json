@@ -1,0 +1,13 @@
+{
+  "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/judge-item-v5-20261124",
+  "state": "finished",
+  "history_points": 1,
+  "history": [
+    {
+      "_step": 0,
+      "agreement/reference_v5/exact_score_agreement": 0.85,
+      "comparison/optimizer_updates": 0
+    }
+  ],
+  "kind": "judge_validation_no_training_updates"
+}
