@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Review the proposed lower-score uncertainty rule against the six saved final-prompt disagreements. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Check score directions, returned verdict evidence and rubric dependencies without changing frozen labels or submitting jobs.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final Luna-high prompt matched 34/40 and failed qualification. Archive and W&B are verified. No RL is queued. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Decide human review of six rubric disagreements or a specified stronger-judge validation. Preserve the 384 screen answers and approved 12-hour RL allowance until a grader qualifies
+- Nothing recorded.
 
 ## Finished
 

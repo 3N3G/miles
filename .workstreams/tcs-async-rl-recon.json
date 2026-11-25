@@ -3475,15 +3475,22 @@
       "actor": "codex",
       "summary": "Link verified final validation evidence and the remaining grading decision",
       "revision": 334
+    },
+    {
+      "id": "c49de3f4-cc05-425a-9c78-4b1f082fbc68",
+      "at": "2026-11-25T10:11:32.517328Z",
+      "actor": "codex",
+      "summary": "Review the proposed lower-score uncertainty rule against the six saved final-prompt disagreements.",
+      "revision": 335
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "needs-you",
-  "summary": "Final Luna-high prompt matched 34/40 and failed qualification. Archive and W&B are verified. No RL is queued.",
-  "nextAction": "Decide human review of six rubric disagreements or a specified stronger-judge validation. Preserve the 384 screen answers and approved 12-hour RL allowance until a grader qualifies.",
+  "state": "running",
+  "summary": "Review the proposed lower-score uncertainty rule against the six saved final-prompt disagreements.",
+  "nextAction": "Check score directions, returned verdict evidence and rubric dependencies without changing frozen labels or submitting jobs.",
   "owner": "Codex",
-  "revision": 334,
-  "updatedAt": "2026-11-25T04:44:28.276087Z"
+  "revision": 335,
+  "updatedAt": "2026-11-25T10:11:32.517328Z"
 }
