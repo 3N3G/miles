@@ -895,14 +895,14 @@
   ],
   "jobs": [
     {
-      "id": "548472",
-      "cluster": "hpcfund",
-      "status": "PENDING"
-    },
-    {
       "id": "546404",
       "cluster": "hpcfund",
       "status": "FAILED"
+    },
+    {
+      "id": "548472",
+      "cluster": "hpcfund",
+      "status": "PENDING"
     },
     {
       "id": "544406",
@@ -3313,15 +3313,22 @@
       "actor": "codex",
       "summary": "Submitted repaired checkpoint screen 548472 within remaining compute",
       "revision": 315
+    },
+    {
+      "id": "7269ba8e-66ce-4708-b1f4-d4406e8594cc",
+      "at": "2026-11-25T02:25:34.343471Z",
+      "actor": "codex",
+      "summary": "Failed screen546404 has189 verified archived artifacts; replacement548472 is queued",
+      "revision": 316
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Submitted repaired checkpoint screen 548472 within remaining compute",
-  "nextAction": "Verify both source-matching startup transfers, complete the pinned screen and audit medium proofs before RL.",
+  "summary": "Failed screen546404 has189 verified archived artifacts; replacement548472 is queued",
+  "nextAction": "Watch the repaired screen548472 through evaluation and audit the resulting proof grades before training.",
   "owner": "Codex",
-  "revision": 315,
-  "updatedAt": "2026-11-25T02:22:48.576388Z"
+  "revision": 316,
+  "updatedAt": "2026-11-25T02:25:34.343471Z"
 }
