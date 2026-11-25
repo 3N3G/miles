@@ -1,5 +1,6 @@
 import hashlib
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -11,6 +12,7 @@ from experiments.tcs_async_rl.live_review import build_review
 from experiments.tcs_async_rl.native_metrics import (
     compare_wandb,
     diagnostic_rollout_metrics,
+    judge_finalization_status,
     live_status_summary,
     publish_audit,
     read_native_metrics,
@@ -24,6 +26,68 @@ from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_samp
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_finalization_waits_for_attempt_receipts_and_quiet_retry_interval_without_releasing_cost(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "judging").mkdir()
+            ledger = root / "judging/budget.jsonl"
+            call_id = "online-answer-0-abcdef012345-0"
+            ledger.write_text(json.dumps({"event": "reserved", "call_id": call_id, "usd_delta": 0.02}) + "\n")
+            os.utime(ledger, (100, 100))
+            with patch("experiments.tcs_async_rl.native_metrics.time.time", return_value=200):
+                self.assertTrue(judge_finalization_status(root)["finalization_pending"])
+                (root / "judging/online-answer-order0-abcdef012345-attempt0.json").write_text(
+                    json.dumps(
+                        {
+                            "identity": "online-answer",
+                            "swapped": False,
+                            "request_sha256": "abcdef012345",
+                            "attempt": 0,
+                        }
+                    )
+                )
+                self.assertFalse(judge_finalization_status(root)["finalization_pending"])
+                # A completed transport failure has no measured usage. Keep its
+                # reservation in cost even after its receipt permits shutdown.
+                self.assertEqual(
+                    live_status_summary(root, [], "COMPLETED")["monitor/shared_judge_spent_reserved_usd"],
+                    0.02,
+                )
+                os.utime(ledger, (190, 190))
+                self.assertTrue(judge_finalization_status(root)["finalization_pending"])
+
+    def test_terminal_publisher_keeps_scorer_alive_until_judging_drains(self):
+        native = [{"optimizer_step": 25, "rollout/episode_raw_reward": 3.0, "train/pg_loss": 0.1}]
+        remote = Mock(state="running", url="https://wandb.example/run")
+        remote.scan_history.return_value = [
+            {"audit/optimizer_step": 25, "audit/rollout/episode_raw_reward": 3.0}
+        ]
+        sdk = Mock()
+        sdk.Api.return_value.run.return_value = remote
+        sdk.init.return_value.resumed = True
+        sdk.init.return_value.summary = {}
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name) / "run"
+            root.mkdir()
+            (root / "resolved-config.json").write_text(
+                json.dumps({"args": {"wandb_team": "team", "wandb_project": "project"}, "run_id": "id"})
+            )
+            with patch.dict("sys.modules", {"wandb": sdk}), patch(
+                "experiments.tcs_async_rl.native_metrics.read_native_metrics", return_value=native
+            ), patch("experiments.tcs_async_rl.native_metrics.judge_finalization_status") as drain:
+                drain.return_value = {"finalization_pending": True}
+                pending = sync_live_audit(root, root, "COMPLETED")
+                self.assertTrue(pending["finalization_pending"])
+                self.assertFalse(sdk.Settings.call_args.kwargs["x_update_finish_state"])
+                self.assertEqual(pending["phase"], "waiting_for_judge_receipts")
+                logged = sdk.init.return_value.log.call_count
+                drain.return_value = {"finalization_pending": False}
+                remote.state = "finished"
+                complete = sync_live_audit(root, root, "COMPLETED")
+                self.assertFalse(complete["finalization_pending"])
+                self.assertTrue(sdk.Settings.call_args.kwargs["x_update_finish_state"])
+                self.assertEqual(sdk.init.return_value.log.call_count, logged)
+
     def test_status_cards_distinguish_restored_updates_and_unsettled_reservations(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

@@ -35,3 +35,5 @@ These are assistant diagnostic reviews, not independent human calibration or pro
 Minute-level checks cover both job and supervisor, actual updates, finite metrics, publications, service health and space.
 Foreground supervision continues through terminal state, checkpoint inspection and immutable HF/W&B verification.
 The12-hour cap may permit fewer than236 distinct questions to be consumed. Report actual coverage separately from prepared corpus size.
+
+Finalization repair,2026-11-25: the VM publisher now waits for outstanding judge attempt receipts and60 seconds of ledger quiet before closing W&B. The supervisor retries while retaining its scorer. Completed provider failures retain conservative cost reservations. This reporting change does not restart the live service, alter the frozen GPU checkout, or change grading. Behavioral tests cover pending calls, completed failure receipts, retry quiet time, and closure without duplicate optimizer rows.

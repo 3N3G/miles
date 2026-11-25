@@ -10,6 +10,7 @@ import fcntl
 import hashlib
 import json
 import math
+import sys
 import time
 from pathlib import Path
 
@@ -248,6 +249,55 @@ def publish_audit(native, run):
         run.log({"audit/" + key: value for key, value in row.items()})
 
 
+def _complete_rows(path):
+    return (
+        [json.loads(line) for line in path.read_text().splitlines(keepends=True) if line.endswith("\n")]
+        if path.exists()
+        else []
+    )
+
+
+def _shared_judge_calls(directory):
+    calls = {}
+    for row in _complete_rows(directory / "judging/budget.jsonl"):
+        call = calls.setdefault(row["call_id"], {"usd": 0, "settled": False})
+        call["usd"] += row["usd_delta"]
+        call["settled"] |= row["event"] == "settled"
+    return calls
+
+
+def judge_finalization_status(directory):
+    """Keep the scorer alive until paid attempts and their receipts have drained.
+
+    An HTTP failure without usage can retain its reservation permanently. Its
+    completed attempt receipt proves it is no longer in flight, without releasing
+    that conservative spending reservation. The quiet interval covers retry gaps
+    (at most 30 seconds) and writes immediately after budget settlement.
+    """
+    ledger = directory / "judging/budget.jsonl"
+    if not ledger.exists():
+        return {"finalization_pending": False}
+    outstanding = {key for key, call in _shared_judge_calls(directory).items() if not call["settled"]}
+    if outstanding:
+        for path in (directory / "judging").rglob("*-attempt*.json"):
+            try:
+                receipt = json.loads(path.read_text())
+            except json.JSONDecodeError:
+                # The service may still be writing this attempt.
+                continue
+            identity = (
+                f"{receipt['identity']}-{int(receipt['swapped'])}-"
+                f"{receipt['request_sha256'][:12]}-{receipt['attempt']}"
+            )
+            outstanding.discard(identity)
+    quiet_seconds = max(0, time.time() - ledger.stat().st_mtime)
+    return {
+        "finalization_pending": bool(outstanding) or quiet_seconds < 60,
+        "judge_attempts_without_receipts": len(outstanding),
+        "judge_ledger_quiet_seconds": quiet_seconds,
+    }
+
+
 def live_status_summary(directory, native, scheduler_state):
     """Derive status cards from completed save receipts and the shared ledger.
 
@@ -257,20 +307,9 @@ def live_status_summary(directory, native, scheduler_state):
     approved = directory / "approved-config.json"
     initial = initial_optimizer_updates(json.loads(approved.read_text())) if approved.exists() else 0
 
-    def complete_rows(path):
-        return (
-            [json.loads(line) for line in path.read_text().splitlines(keepends=True) if line.endswith("\n")]
-            if path.exists()
-            else []
-        )
-
-    saves = complete_rows(directory / "checkpoint-retention.jsonl")
+    saves = _complete_rows(directory / "checkpoint-retention.jsonl")
     latest = max([initial - 1, *(row["rollout_id"] for row in saves)])
-    calls = {}
-    for row in complete_rows(directory / "judging/budget.jsonl"):
-        call = calls.setdefault(row["call_id"], {"usd": 0, "settled": False})
-        call["usd"] += row["usd_delta"]
-        call["settled"] |= row["event"] == "settled"
+    calls = _shared_judge_calls(directory)
     return {
         "monitor/slurm_state": scheduler_state,
         "monitor/completed_updates": len(native),
@@ -364,9 +403,11 @@ def sync_live_audit(directory, output, scheduler_state):
 
     config_path = directory / "resolved-config.json"
     terminal = scheduler_state not in ("RUNNING", "PENDING", "CONFIGURING", "COMPLETING", "UNKNOWN")
+    drain = judge_finalization_status(directory) if terminal else {"finalization_pending": False}
+    close_run = terminal and not drain["finalization_pending"]
     native = read_native_metrics(directory, allow_pending=True, require_publication=not terminal)
     if not config_path.exists() or not native:
-        return {"phase": "waiting_for_first_complete_update", "verified_points": 0}
+        return {"phase": "waiting_for_first_complete_update", "verified_points": 0, **drain}
     config = json.loads(config_path.read_text())
     args = config["args"]
     # Keep the single online writer separate from AMD's offline producer IDs.
@@ -396,7 +437,7 @@ def sync_live_audit(directory, output, scheduler_state):
                 resume="allow",
                 dir=str(client_directory),
                 config=training_log_config(directory, config),
-                settings=wandb.Settings(mode="online", x_update_finish_state=terminal),
+                settings=wandb.Settings(mode="online", x_update_finish_state=close_run),
             )
             if (previous or submitted) and not run.resumed:
                 run.finish(exit_code=1)
@@ -405,8 +446,9 @@ def sync_live_audit(directory, output, scheduler_state):
                 publish_run_setup(run, directory, training_log_config(directory, config))
                 publish_audit(pending, run)
                 run.summary.update(live_status_summary(directory, native, scheduler_state))
+                run.summary["monitor/finalization_pending"] = drain["finalization_pending"]
             finally:
-                run.finish(exit_code=0 if not terminal or scheduler_state == "COMPLETED" else 1)
+                run.finish(exit_code=0 if not close_run or scheduler_state == "COMPLETED" else 1)
             # SDK success and API verification are separate acknowledgements.
             # Persist delivery before waiting for indexing, so monitor retries
             # do not resend a successful upload whose readback was delayed.
@@ -424,7 +466,7 @@ def sync_live_audit(directory, output, scheduler_state):
             )
         expected = [(row["optimizer_step"], row["rollout/episode_raw_reward"]) for row in native]
         expected_state = (
-            ("finished" if scheduler_state == "COMPLETED" else "failed") if terminal else "running"
+            ("finished" if scheduler_state == "COMPLETED" else "failed") if close_run else "running"
         )
         # The server's history index can lag SDK upload by tens of seconds.
         # Keep one upload and retry reads instead of republishing its points.
@@ -455,7 +497,7 @@ def sync_live_audit(directory, output, scheduler_state):
         else:
             indexed = sorted(observed_values.items())
             if (
-                not terminal
+                not close_run
                 and remote.state == expected_state
                 and indexed == expected[: len(indexed)]
                 and len(indexed) >= previous.get("verified_points", 0)
@@ -471,6 +513,7 @@ def sync_live_audit(directory, output, scheduler_state):
                     "expected_points": len(expected),
                     "wandb_state": remote.state,
                     "url": remote.url,
+                    **drain,
                 }
             raise RuntimeError(
                 f"Live W&B readback failed: {len(observed_values)}/{len(expected)} steps, "
@@ -484,7 +527,10 @@ def sync_live_audit(directory, output, scheduler_state):
             "scheduler_state": scheduler_state,
             "wandb_state": remote.state,
             "native_metrics_sha256": hashlib.sha256(json.dumps(native, sort_keys=True).encode()).hexdigest(),
+            **drain,
         }
+        if drain["finalization_pending"]:
+            receipt["phase"] = "waiting_for_judge_receipts"
         _atomic_bytes(receipt_path, (json.dumps(receipt, indent=2) + "\n").encode())
         return receipt
 
@@ -502,6 +548,10 @@ def main():
         else sync_terminal_audit(cli.run_directory, cli.output)
     )
     print(json.dumps(result, indent=2))
+    if result.get("finalization_pending"):
+        # The owning supervisor retries finalization, retaining its scorer and
+        # tunnel children. A successful return would let it terminate them.
+        sys.exit(75)
 
 
 if __name__ == "__main__":

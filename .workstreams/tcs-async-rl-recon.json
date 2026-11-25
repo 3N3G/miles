@@ -3613,15 +3613,22 @@
       "actor": "codex",
       "summary": "Two-hour audit verifies512 answers,16 questions and four native W&B points",
       "revision": 349
+    },
+    {
+      "id": "dacaf4ec-ecb2-4d4d-900c-d2161f3488e5",
+      "at": "2026-11-25T15:47:32.166581Z",
+      "actor": "codex",
+      "summary": "Preserve pending paid judge receipts during finalization without restarting the active run",
+      "revision": 350
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "AMD549728 has four finite published updates and512 consumed answers across16 distinct questions. W&B has four matching points. Two hourly proof reviews are preserved. Of143 zero scores,109 were capped without a final answer.",
-  "nextAction": "Continue hourly metric and proof reviews within the12-hour cap. Inspect the next scheduled checkpoint, preserve the fixed grader, then run the approved final same-question screen.",
+  "summary": "Five verified optimizer updates on AMD549728. Added tested finalization drain so pending judge receipts survive service shutdown. Hourly deep review continues.",
+  "nextAction": "Verify checkpoint114 at the next scheduled save, then complete hourly proof and metric reviews through terminal state, final checkpoint, archive and W&B verification.",
   "owner": "Codex",
-  "revision": 349,
-  "updatedAt": "2026-11-25T15:31:35.599151Z"
+  "revision": 350,
+  "updatedAt": "2026-11-25T15:47:32.166581Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD549728 has four finite published updates and512 consumed answers across16 distinct questions. W&B has four matching points. Two hourly proof reviews are preserved. Of143 zero scores,109 were capped Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Continue hourly metric and proof reviews within the12-hour cap. Inspect the next scheduled checkpoint, preserve the fixed grader, then run the approved final same-question screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Five verified optimizer updates on AMD549728. Added tested finalization drain so pending judge receipts survive service shutdown. Hourly deep review continues. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Verify checkpoint114 at the next scheduled save, then complete hourly proof and metric reviews through terminal state, final checkpoint, archive and W&B verification.
 
 ## Next / blocked
 
