@@ -1,0 +1,34 @@
+{
+  "at_utc": "2026-11-25T16:00:55.014375+00:00",
+  "job_id": "549728",
+  "scheduler_state": "RUNNING",
+  "completed_updates": 6,
+  "optimizer_steps": [
+    109,
+    110,
+    111,
+    112,
+    113,
+    114
+  ],
+  "consumed_answers": 768,
+  "distinct_questions": 24,
+  "checkpoint_tracker": 114,
+  "checkpoint_total_bytes": 60577362797,
+  "checkpoint_files": 4,
+  "kept_iteration": 114,
+  "removed_new_iteration": 109,
+  "protected_source108_exists": true,
+  "all_three_engines_agree": true,
+  "wandb_readback": {
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261125-132805-437-native",
+    "verified_points": 6,
+    "history_rows": 6,
+    "last_verified_optimizer_step": 114,
+    "scheduler_state": "RUNNING",
+    "wandb_state": "running",
+    "native_metrics_sha256": "83718d6df5f608911d46e3ea3a620a1889a5f970991be274b984673f578e679b",
+    "finalization_pending": false
+  },
+  "limit": "Checkpoint files inspected by size and tracker, not a fresh model restore. Periodic checkpoint retention is approved."
+}
