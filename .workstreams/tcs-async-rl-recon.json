@@ -895,6 +895,11 @@
   ],
   "jobs": [
     {
+      "id": "548575",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
       "id": "548472",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -3348,15 +3353,22 @@
       "actor": "codex",
       "summary": "Screen548472 failed on a malformed judge verdict after157 answers, with zero optimizer updates.",
       "revision": 320
+    },
+    {
+      "id": "087ec554-9604-4c06-936b-101fe9a835a3",
+      "at": "2026-11-25T03:02:49.565200Z",
+      "actor": "codex",
+      "summary": "Submitted repaired screen548575 within the original16 GPU-hour screen cap.",
+      "revision": 321
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Screen548472 failed on a malformed judge verdict after157 answers, with zero optimizer updates.",
-  "nextAction": "Preserve outputs, validate bounded structural-verdict retries, and complete the same approved screen within its remaining compute budget.",
+  "summary": "Submitted repaired screen548575 within the original16 GPU-hour screen cap.",
+  "nextAction": "Supervise the same384-answer screen, audit medium proofs, then run the selected approved twelve-hour continuation.",
   "owner": "Codex",
-  "revision": 320,
-  "updatedAt": "2026-11-25T02:58:44.099606Z"
+  "revision": 321,
+  "updatedAt": "2026-11-25T03:02:49.565200Z"
 }

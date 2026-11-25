@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen548472 failed on a malformed judge verdict after157 answers, with zero optimizer updates. Jobs: hpcfund/548472 FAILED; hpcfund/546404 FAILED
-  Next: Preserve outputs, validate bounded structural-verdict retries, and complete the same approved screen within its remaining compute budget.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted repaired screen548575 within the original16 GPU-hour screen cap. Jobs: hpcfund/548575 PENDING; hpcfund/548472 FAILED
+  Next: Supervise the same384-answer screen, audit medium proofs, then run the selected approved twelve-hour continuation.
 
 ## Next / blocked
 
