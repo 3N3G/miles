@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 552495 is PENDING Jobs: hpcfund/552495 PENDING; hpcfund/549728 FAILED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Job552495 remains queued for the bounded5-hour resume124. Recovered3.09GiB of verified old temporary copies, leaving7.4GiB VM space. Jobs: hpcfund/552495 PENDING; hpcfund/549728 FAILED
+  Next: Continue foreground checks through startup, all RL updates and verified closure. Then run the approved same12-question checkpoint screen within its separate2-hour cap.
 
 ## Next / blocked
 
