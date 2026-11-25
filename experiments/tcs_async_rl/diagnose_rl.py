@@ -66,7 +66,7 @@ def original_scoring_payload(folder, receipt, manifest, previous):
             or attempt["swapped"] != receipt["swapped"]
         ):
             raise ValueError("Format repair source differs from the original scoring request")
-        if attempt["http_status"] == 200:
+        if attempt.get("http_status") == 200:
             choice = attempt["body"]["choices"][0]
             if choice["finish_reason"] != "stop":
                 raise ValueError("An unfinished verdict needs a length retry, not a format repair")

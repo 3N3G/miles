@@ -472,6 +472,13 @@ class MultiQuestionTests(unittest.IsolatedAsyncioTestCase):
                 )
                 source = root / json.loads((root / "format-retries.jsonl").read_text())["invalid_attempt_receipts"][0]
                 modified = json.loads(source.read_text())
+                original = copy.deepcopy(modified)
+                modified.pop("http_status")
+                modified.pop("body")
+                modified["error_type"] = "TimeoutError"
+                source.write_text(json.dumps(modified))
+                completed_judge_receipt(root, "format", 0)
+                modified = original
                 modified["body"]["choices"][0]["message"]["content"] = json.dumps(
                     {"candidate": [{"item": 1, "satisfied": True, "reason": "valid"}]}
                 )
