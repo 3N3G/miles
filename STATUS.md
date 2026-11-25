@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen548575 passed both source-weight checks and is generating with the repaired judge transport. Jobs: hpcfund/548575 RUNNING; hpcfund/548472 FAILED
-  Next: Finish384 answers, audit all12 seeded proofs and medium score contrasts, then select the approved20/26-question continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen548575 continues; medium audits exposed inconsistent component credit, so RL waits for a fresh prompt validation. Jobs: hpcfund/548575 RUNNING; hpcfund/548472 FAILED
+  Next: Complete the fixed screen, label a disjoint40-answer packet without judge outputs, and compare the documented general prompt repair before RL.
 
 ## Next / blocked
 

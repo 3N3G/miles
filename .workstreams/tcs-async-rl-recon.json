@@ -3381,15 +3381,22 @@
       "actor": "codex",
       "summary": "Screen548575 passed both source-weight checks and is generating with the repaired judge transport.",
       "revision": 324
+    },
+    {
+      "id": "919f7078-42d9-4092-8c0c-b81610dc67e2",
+      "at": "2026-11-25T03:29:47.012099Z",
+      "actor": "codex",
+      "summary": "Screen548575 continues; medium audits exposed inconsistent component credit, so RL waits for a fresh prompt validation.",
+      "revision": 325
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Screen548575 passed both source-weight checks and is generating with the repaired judge transport.",
-  "nextAction": "Finish384 answers, audit all12 seeded proofs and medium score contrasts, then select the approved20/26-question continuation.",
+  "summary": "Screen548575 continues; medium audits exposed inconsistent component credit, so RL waits for a fresh prompt validation.",
+  "nextAction": "Complete the fixed screen, label a disjoint40-answer packet without judge outputs, and compare the documented general prompt repair before RL.",
   "owner": "Codex",
-  "revision": 324,
-  "updatedAt": "2026-11-25T03:07:39.833588Z"
+  "revision": 325,
+  "updatedAt": "2026-11-25T03:29:47.012099Z"
 }
