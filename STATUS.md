@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Twelve native W&B points and four positive local update-direction probes verified Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Continue foreground supervision and hourly raw-proof reviews. Complete the fixed before/after screen after the final saved checkpoint under the unchanged approved budget.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Sixth deep review verifies1664 answers, all eight active GPUs and1211 W&B scalars Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Continue the approved run and review the next archived batches within one hour. Preserve the saved judge totals while recording component-credit ambiguity, then evaluate the final 
 
 ## Next / blocked
 
