@@ -3402,15 +3402,22 @@
       "actor": "codex",
       "summary": "Screen548575 completed384 answers normally with zero optimizer updates.",
       "revision": 327
+    },
+    {
+      "id": "cca69248-d4d9-4e9e-8575-e25849c290d5",
+      "at": "2026-11-25T04:03:48.568046Z",
+      "actor": "codex",
+      "summary": "Forty blind audits are frozen; Luna-high original and clarified prompts are being compared without rerolling valid medium verdicts.",
+      "revision": 328
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Screen548575 completed384 answers normally with zero optimizer updates.",
-  "nextAction": "Verify and archive the full screen, finish8 blind medium labels, and validate the documented prompt clarification before the approved RL continuation.",
+  "summary": "Forty blind audits are frozen; Luna-high original and clarified prompts are being compared without rerolling valid medium verdicts.",
+  "nextAction": "Complete controls and agreement checks, verify the completed screen archive, then use the declared medium rule before the approved continuation.",
   "owner": "Codex",
-  "revision": 327,
-  "updatedAt": "2026-11-25T03:53:47.815315Z"
+  "revision": 328,
+  "updatedAt": "2026-11-25T04:03:48.568046Z"
 }

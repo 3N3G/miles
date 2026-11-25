@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen548575 completed384 answers normally with zero optimizer updates. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Verify and archive the full screen, finish8 blind medium labels, and validate the documented prompt clarification before the approved RL continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Forty blind audits are frozen; Luna-high original and clarified prompts are being compared without rerolling valid medium verdicts. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Complete controls and agreement checks, verify the completed screen archive, then use the declared medium rule before the approved continuation.
 
 ## Next / blocked
 
