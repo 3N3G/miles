@@ -1,0 +1,295 @@
+{
+  "finished_at_utc": "2026-11-25T14:27:18.186642+00:00",
+  "checkpoint": 108,
+  "new_solver_generations": 0,
+  "new_gpu_jobs": 0,
+  "new_optimizer_updates": 0,
+  "answers": 384,
+  "grading_model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "prompt_sha256": "8a3f737f10d43655d2cf6b64b7990d3841b75b0d5f8b6ad88971a3c351610926",
+  "reuse_exact_validation_grades": 7,
+  "by_difficulty": {
+    "easy": {
+      "questions": 6,
+      "answers": 192,
+      "mean_reward": 5.760416666666667,
+      "full_credit": 127,
+      "zero": 16,
+      "capped": 4,
+      "varied_positive": 4
+    },
+    "medium": {
+      "questions": 6,
+      "answers": 192,
+      "mean_reward": 1.9947916666666667,
+      "full_credit": 34,
+      "zero": 101,
+      "capped": 103,
+      "varied_positive": 6
+    }
+  },
+  "questions": [
+    {
+      "question_key": "773de4e3025c45202c9d38314e2abbe4381fe6c2c2cb9f819e0941771e44266f",
+      "paper_id": "Multi-Parameter_Mechanisms_for_Consumer_Surplus_Maximization",
+      "prompt_type": "proof_writing",
+      "difficulty": "easy",
+      "answers": 32,
+      "reward_counts": {
+        "7.0": 32
+      },
+      "mean_reward": 7.0,
+      "reward_std": 0.0,
+      "positive": 32,
+      "zero": 0,
+      "full_credit": 32,
+      "capped": 0,
+      "mean_response_tokens": 41769,
+      "varied_with_positive": false,
+      "seeded_example": "seeded-examples/773de4e3025c45202c9d38314e2abbe4381fe6c2c2cb9f819e0941771e44266f.json"
+    },
+    {
+      "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+      "paper_id": "New_Subset_Selection_Algorithms_for_Low_Rank_Approximation_Offline_and_Online",
+      "prompt_type": "proof_strategy",
+      "difficulty": "easy",
+      "answers": 32,
+      "reward_counts": {
+        "7.0": 32
+      },
+      "mean_reward": 7.0,
+      "reward_std": 0.0,
+      "positive": 32,
+      "zero": 0,
+      "full_credit": 32,
+      "capped": 1,
+      "mean_response_tokens": 36920.65625,
+      "varied_with_positive": false,
+      "seeded_example": "seeded-examples/ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b.json"
+    },
+    {
+      "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+      "paper_id": "Deterministic_and_Exact_Fully-dynamic_Minimum_Cut_of_Superpolylogarithmic_Size_in_Subpolynomial_Time",
+      "prompt_type": "proof_strategy",
+      "difficulty": "easy",
+      "answers": 32,
+      "reward_counts": {
+        "5.0": 1,
+        "7.0": 31
+      },
+      "mean_reward": 6.9375,
+      "reward_std": 0.3535533905932738,
+      "positive": 32,
+      "zero": 0,
+      "full_credit": 31,
+      "capped": 0,
+      "mean_response_tokens": 55392.5625,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a.json"
+    },
+    {
+      "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+      "paper_id": "The_hypergraph_removal_process",
+      "prompt_type": "proof_writing",
+      "difficulty": "easy",
+      "answers": 32,
+      "reward_counts": {
+        "0.0": 16,
+        "1.0": 13,
+        "2.0": 2,
+        "3.0": 1
+      },
+      "mean_reward": 0.625,
+      "reward_std": 0.7513428837969107,
+      "positive": 16,
+      "zero": 16,
+      "full_credit": 0,
+      "capped": 2,
+      "mean_response_tokens": 61340.5,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92.json"
+    },
+    {
+      "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+      "paper_id": "Explicit_Folded_Reed-Solomon_and_Multiplicity_Codes_Achieve_Relaxed_Generalized_Singleton_Bounds",
+      "prompt_type": "proof_strategy",
+      "difficulty": "easy",
+      "answers": 32,
+      "reward_counts": {
+        "6.0": 3,
+        "7.0": 29
+      },
+      "mean_reward": 6.90625,
+      "reward_std": 0.296144581080299,
+      "positive": 32,
+      "zero": 0,
+      "full_credit": 29,
+      "capped": 0,
+      "mean_response_tokens": 30674.40625,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40.json"
+    },
+    {
+      "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+      "paper_id": "Refuting_the_Direct_Sum_Conjecture_for_Total_Functions_in_Deterministic_Communication_Complexity",
+      "prompt_type": "proof_strategy",
+      "difficulty": "easy",
+      "answers": 32,
+      "reward_counts": {
+        "6.0": 29,
+        "7.0": 3
+      },
+      "mean_reward": 6.09375,
+      "reward_std": 0.296144581080299,
+      "positive": 32,
+      "zero": 0,
+      "full_credit": 3,
+      "capped": 1,
+      "mean_response_tokens": 38391.875,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e.json"
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "paper_id": "Lipschitz_Continuous_Algorithms_for_Graph_Problems",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "answers": 32,
+      "reward_counts": {
+        "0.0": 3,
+        "1.0": 7,
+        "2.0": 1,
+        "3.0": 10,
+        "4.0": 9,
+        "7.0": 2
+      },
+      "mean_reward": 2.78125,
+      "reward_std": 1.754889482780666,
+      "positive": 29,
+      "zero": 3,
+      "full_credit": 2,
+      "capped": 10,
+      "mean_response_tokens": 76363.90625,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b.json"
+    },
+    {
+      "question_key": "816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354",
+      "paper_id": "Listing_faces_of_polytopes",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "answers": 32,
+      "reward_counts": {
+        "0.0": 22,
+        "1.0": 3,
+        "2.0": 4,
+        "5.0": 1,
+        "6.0": 2
+      },
+      "mean_reward": 0.875,
+      "reward_std": 1.7180258738522556,
+      "positive": 10,
+      "zero": 22,
+      "full_credit": 0,
+      "capped": 22,
+      "mean_response_tokens": 87369.75,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354.json"
+    },
+    {
+      "question_key": "ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512",
+      "paper_id": "PageRank_Centrality_in_Directed_Graphs_with_Bounded_In-Degree",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "answers": 32,
+      "reward_counts": {
+        "0.0": 18,
+        "1.0": 5,
+        "2.0": 7,
+        "4.0": 2
+      },
+      "mean_reward": 0.84375,
+      "reward_std": 1.1670026397957816,
+      "positive": 14,
+      "zero": 18,
+      "full_credit": 0,
+      "capped": 25,
+      "mean_response_tokens": 86434.1875,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512.json"
+    },
+    {
+      "question_key": "e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3",
+      "paper_id": "Faster_Mixing_of_the_Jerrum-Sinclair_Chain",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "answers": 32,
+      "reward_counts": {
+        "0.0": 28,
+        "1.0": 1,
+        "4.0": 2,
+        "7.0": 1
+      },
+      "mean_reward": 0.5,
+      "reward_std": 1.545023227719748,
+      "positive": 4,
+      "zero": 28,
+      "full_credit": 1,
+      "capped": 26,
+      "mean_response_tokens": 88644.5625,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3.json"
+    },
+    {
+      "question_key": "b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7",
+      "paper_id": "Fast_and_Simple_Sorting_Using_Partial_Information",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "answers": 32,
+      "reward_counts": {
+        "0.0": 29,
+        "2.0": 3
+      },
+      "mean_reward": 0.1875,
+      "reward_std": 0.592289162160598,
+      "positive": 3,
+      "zero": 29,
+      "full_credit": 0,
+      "capped": 19,
+      "mean_response_tokens": 81923.96875,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7.json"
+    },
+    {
+      "question_key": "979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5",
+      "paper_id": "How_Global_Calibration_Strengthens_Multiaccuracy",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "answers": 32,
+      "reward_counts": {
+        "0.0": 1,
+        "7.0": 31
+      },
+      "mean_reward": 6.78125,
+      "reward_std": 1.2374368670764582,
+      "positive": 31,
+      "zero": 1,
+      "full_credit": 31,
+      "capped": 1,
+      "mean_response_tokens": 44263.375,
+      "varied_with_positive": true,
+      "seeded_example": "seeded-examples/979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5.json"
+    }
+  ],
+  "archive": {
+    "repo": "3N3G/internalization-runs",
+    "revision": "664372cffe49cec49011cfed617f059484175858",
+    "prefix": "miles/checkpoint108-screen-v5-baseline",
+    "verified_files": 1051,
+    "verified_bytes": 23098011,
+    "hf_results": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/664372cffe49cec49011cfed617f059484175858/miles/checkpoint108-screen-v5-baseline",
+    "manifest_sha256": "38dc44c903332396ce44c70454ad3bd7a1a738eed88832eca1f1da9db5d1385b"
+  },
+  "limits": "Saved checkpoint108 answers regraded with the accepted v5 prompt. One generation per checkpoint, training-eligible questions, no held-out generalization or human calibration claim."
+}
