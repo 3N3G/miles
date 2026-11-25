@@ -1,0 +1,49 @@
+{
+  "unused_cache": {
+    "at_utc": "2026-11-25T20:11:12.164124+00:00",
+    "command": [
+      "uv",
+      "cache",
+      "prune"
+    ],
+    "force": false,
+    "lock_timeout_seconds": 5,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Pruning cache at: /home/ubuntu/.cache/uv\nRemoved 147030 files (354.4MiB)\n",
+    "free_before": 4358488064,
+    "free_after": 4797980672,
+    "documentation_url": "https://docs.astral.sh/uv/concepts/cache/",
+    "scope": "Use the package manager unused-cache cleanup and its in-use lock. Do not remove caches manually, force past locks, or modify project results or jobs."
+  },
+  "prebuilt_wheel_cache": {
+    "at_utc": "2026-11-25T20:11:47.755644+00:00",
+    "command": [
+      "uv",
+      "cache",
+      "prune",
+      "--ci"
+    ],
+    "force": false,
+    "lock_timeout_seconds": 5,
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Pruning cache at: /home/ubuntu/.cache/uv\nRemoved 62786 files (1.2GiB)\n",
+    "free_before": 4797562880,
+    "free_after": 6128349184,
+    "documentation_url": "https://docs.astral.sh/uv/concepts/cache/",
+    "scope": "Use the documented prebuilt-wheel cleanup through uv, preserving its in-use locks and project results. Running owned service packages use regular hardlinks in their external virtual environment."
+  },
+  "report_change": "Remove obsolete20-versus26 selection fields from future checkpoint-screen summaries. The training configuration remains the single owner of the236-question dataset. Existing baseline outputs are preserved.",
+  "validation": {
+    "cpu_tests": 10,
+    "pytest_command": "uv run --no-project --with pytest python -m pytest --confcutdir=tests/fast tests/fast/test_tcs_checkpoint_screen.py tests/fast/test_tcs_screen_comparison.py -q",
+    "formatters": [
+      "Black24.3.0",
+      "isort5.13.2",
+      "Ruff0.14.7"
+    ],
+    "all_passed": true,
+    "note": "The initial unrestricted pytest invocation loaded unrelated GPU fixtures and lacked numpy; the isolated CPU test suite passed."
+  }
+}
