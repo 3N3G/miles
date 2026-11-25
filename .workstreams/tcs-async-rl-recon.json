@@ -3662,15 +3662,22 @@
       "actor": "codex",
       "summary": "Fourth deep review checks1024 answers, cap extraction and one remaining rubric-scope disagreement",
       "revision": 356
+    },
+    {
+      "id": "5fe0d15a-f0f4-4e50-8916-3dab2c921d2c",
+      "at": "2026-11-25T17:20:47.117650Z",
+      "actor": "codex",
+      "summary": "Recover1.50GiB of verified old TCS cache copies while the nine-update run remains healthy",
+      "revision": 357
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Eight finite updates and1024 audited answers across32 question rows /30 source proof nodes.259/348 zeros lack a final answer at the token cap. The fourth proof review retains one7-versus6 scope disagreement. The accepted grader remains fixed.",
-  "nextAction": "Continue foreground monitoring and hourly proof/metric reviews through the45-minute final-save reserve, then verify the final checkpoint, all archives and W&B and run the approved fixed12-question final screen.",
+  "summary": "Recover1.50GiB of verified old TCS cache copies while the nine-update run remains healthy",
+  "nextAction": "Continue foreground supervision and hourly proof/metric reviews, monitor both guard and storage, verify checkpoint119 next, and finish with the approved fixed12-question final screen.",
   "owner": "Codex",
-  "revision": 356,
-  "updatedAt": "2026-11-25T16:56:14.602956Z"
+  "revision": 357,
+  "updatedAt": "2026-11-25T17:20:47.117650Z"
 }

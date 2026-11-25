@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eight finite updates and1024 audited answers across32 question rows /30 source proof nodes.259/348 zeros lack a final answer at the token cap. The fourth proof review retains one7-versus6 scope disagr Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Continue foreground monitoring and hourly proof/metric reviews through the45-minute final-save reserve, then verify the final checkpoint, all archives and W&B and run the approved 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Recover1.50GiB of verified old TCS cache copies while the nine-update run remains healthy Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Continue foreground supervision and hourly proof/metric reviews, monitor both guard and storage, verify checkpoint119 next, and finish with the approved fixed12-question final scre
 
 ## Next / blocked
 
