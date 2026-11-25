@@ -3648,15 +3648,22 @@
       "actor": "codex",
       "summary": "RL job 549728 is RUNNING",
       "revision": 354
+    },
+    {
+      "id": "3178aa79-f851-4e41-9749-036c0ec5262b",
+      "at": "2026-11-25T16:39:32.736858Z",
+      "actor": "codex",
+      "summary": "Verified the earlier final-save guard without restarting training or the paid judge service",
+      "revision": 355
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "RL job 549728 is RUNNING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "Verified the earlier final-save guard without restarting training or the paid judge service",
+  "nextAction": "Continue foreground job checks and hourly proof/metric reviews through the earlier final save, terminal checkpoint and archive verification, then run the approved fixed12-question final screen.",
   "owner": "Codex",
-  "revision": 354,
-  "updatedAt": "2026-11-25T16:37:27.558689Z"
+  "revision": 355,
+  "updatedAt": "2026-11-25T16:39:32.736858Z"
 }

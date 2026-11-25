@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 549728 is RUNNING Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Verified the earlier final-save guard without restarting training or the paid judge service Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Continue foreground job checks and hourly proof/metric reviews through the earlier final save, terminal checkpoint and archive verification, then run the approved fixed12-question 
 
 ## Next / blocked
 
