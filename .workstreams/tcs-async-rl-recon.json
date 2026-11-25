@@ -3430,15 +3430,22 @@
       "actor": "codex",
       "summary": "The resource-bound prompt failed its fresh gate; prepare the third and final candidate, with documented judge and audit ambiguities.",
       "revision": 331
+    },
+    {
+      "id": "aa022d96-81f6-4ab2-9823-1cf6d691a0a2",
+      "at": "2026-11-25T04:33:45.261242Z",
+      "actor": "codex",
+      "summary": "Frozen forty blind labels; final Luna-high prompt comparison is running.",
+      "revision": 332
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "The resource-bound prompt failed its fresh gate; prepare the third and final candidate, with documented judge and audit ambiguities.",
-  "nextAction": "Freeze40 more disjoint labels, validate the final prompt and controls, then either qualify the saved screen regrade or report the failed gate before GPU spending.",
+  "summary": "Frozen forty blind labels; final Luna-high prompt comparison is running.",
+  "nextAction": "Finish both prompt verdicts and all controls, audit disagreements, archive results, then qualify a saved-answer regrade only if the declared gate passes.",
   "owner": "Codex",
-  "revision": 331,
-  "updatedAt": "2026-11-25T04:21:52.720629Z"
+  "revision": 332,
+  "updatedAt": "2026-11-25T04:33:45.261242Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The resource-bound prompt failed its fresh gate; prepare the third and final candidate, with documented judge and audit ambiguities. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Freeze40 more disjoint labels, validate the final prompt and controls, then either qualify the saved screen regrade or report the failed gate before GPU spending.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Frozen forty blind labels; final Luna-high prompt comparison is running. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Finish both prompt verdicts and all controls, audit disagreements, archive results, then qualify a saved-answer regrade only if the declared gate passes.
 
 ## Next / blocked
 
