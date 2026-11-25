@@ -3543,15 +3543,22 @@
       "actor": "codex",
       "summary": "RL job 549728 is RUNNING",
       "revision": 343
+    },
+    {
+      "id": "476b1732-c792-4abf-91e6-a3af55ee1ace",
+      "at": "2026-11-25T13:36:38.891328Z",
+      "actor": "codex",
+      "summary": "Verify both startup publications against checkpoint108 and prepare separate difficulty-return panels",
+      "revision": 344
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
-  "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
+  "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "RL job 549728 is RUNNING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "AMD549728 is generating on all20 easy and216 medium questions. Both startup publications exactly match source checkpoint108 on all three engines.",
+  "nextAction": "Verify the first128-answer optimizer update, its save and publication, then supervise policy metrics and raw proofs through the12-hour limit.",
   "owner": "Codex",
-  "revision": 343,
-  "updatedAt": "2026-11-25T13:27:17.228000Z"
+  "revision": 344,
+  "updatedAt": "2026-11-25T13:36:38.891328Z"
 }

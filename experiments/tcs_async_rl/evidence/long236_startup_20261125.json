@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-11-25T13:36:27.084309+00:00",
+  "job_id": "549728",
+  "source_commit": "6f9279f25b19eb47f0ddd435859b279cc88fc17c",
+  "source_iteration": 108,
+  "new_publications": [
+    {
+      "at_utc": "2026-11-25T13:31:24.736087Z",
+      "rollout_id": 108,
+      "engines": 3
+    },
+    {
+      "at_utc": "2026-11-25T13:31:26.822032Z",
+      "rollout_id": 108,
+      "engines": 3
+    }
+  ],
+  "all_three_engines_equal_source": true,
+  "verification": "Read AMD source easy-overfit-v17/events/main.jsonl iteration108 and compared every engine checksum in both new publications. Source had one publication at108.",
+  "resolved_question_count": 236,
+  "optimizer_updates_verified": 0,
+  "limits": "Startup verification only. Generation has begun. No backward update or learning claim."
+}

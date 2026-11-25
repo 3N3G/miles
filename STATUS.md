@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 549728 is RUNNING Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD549728 is generating on all20 easy and216 medium questions. Both startup publications exactly match source checkpoint108 on all three engines. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Verify the first128-answer optimizer update, its save and publication, then supervise policy metrics and raw proofs through the12-hour limit.
 
 ## Next / blocked
 

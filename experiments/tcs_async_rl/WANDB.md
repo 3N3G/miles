@@ -122,3 +122,8 @@ Inspect `view-before.json`, `spec-proposed.json` and `proposal-verification.json
 Repeat with `--apply` and the same directory. A concurrent workspace edit blocks an outdated proposal.
 The helper checks saved layout readback, aligned chart data, unchanged run history and unchanged terminal state.
 It never calls `wandb.init`, publishes a metric or submits a training job.
+
+For the all236-question continuation, add `--difficulty-breakdown` to the proposal and apply commands.
+This adds separate easy/medium raw returns, corpus coverage and constant-reward group plots.
+Wait until both difficulties have verified optimizer points before applying that proposal.
+Sparse difficulty series contain points only when an update consumed that difficulty.

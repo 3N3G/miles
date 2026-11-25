@@ -31,7 +31,9 @@ query DashboardViews($entity: String!, $project: String!) {
 
 def read_view(api, entity, project, name):
     result = execute_graphql(api, VIEW_QUERY, {"entity": entity, "project": project})
-    matches = [edge["node"] for edge in result["project"]["allViews"]["edges"] if edge["node"]["name"] == name]
+    matches = [
+        edge["node"] for edge in result["project"]["allViews"]["edges"] if edge["node"]["name"] == name
+    ]
     if len(matches) != 1:
         raise ValueError("Expected exactly one existing workspace with the requested name")
     return matches[0]
@@ -51,11 +53,18 @@ def line(title, metrics, unit, limits=(None, None)):
     )
 
 
-def key_sections():
+def key_sections(*, difficulty_breakdown=False):
     definitions = [
         (
             "Return",
-            [line("Mean return — raw rubric reward", ["audit/rollout/episode_raw_reward"], "Points (0–7)", (0, 7))],
+            [
+                line(
+                    "Mean return — raw rubric reward",
+                    ["audit/rollout/episode_raw_reward"],
+                    "Points (0–7)",
+                    (0, 7),
+                )
+            ],
             1,
         ),
         (
@@ -83,20 +92,55 @@ def key_sections():
         (
             "Run status",
             [
-                panels.ScalarChart(title="Total saved updates", metric="monitor/saved_total_optimizer_updates"),
+                panels.ScalarChart(
+                    title="Total saved updates", metric="monitor/saved_total_optimizer_updates"
+                ),
                 panels.ScalarChart(title="New saved updates", metric="monitor/new_durable_updates"),
-                panels.ScalarChart(title="Shared judge spend (USD)", metric="monitor/shared_judge_settled_usd"),
+                panels.ScalarChart(
+                    title="Shared judge spend (USD)", metric="monitor/shared_judge_settled_usd"
+                ),
             ],
             3,
         ),
     ]
+    if difficulty_breakdown:
+        definitions[0][1].append(
+            line(
+                "Raw return by question difficulty",
+                [f"audit/rollout/by_difficulty/{level}/raw_reward" for level in ("easy", "medium")],
+                "Points (0–7)",
+                (0, 7),
+            )
+        )
+        definitions.append(
+            (
+                "Training coverage",
+                [
+                    line(
+                        "Fraction of questions consumed",
+                        ["audit/rollout/corpus_coverage_fraction"],
+                        "Fraction",
+                        (0, 1),
+                    ),
+                    line(
+                        "Groups with constant reward",
+                        ["audit/rollout/constant_reward_group_fraction"],
+                        "Fraction",
+                        (0, 1),
+                    ),
+                ],
+                2,
+            )
+        )
     return [
         ws.Section(
             name=name,
             panels=charts,
             is_open=True,
             pinned=name == "Return",
-            layout_settings=ws.SectionLayoutSettings(columns=columns, rows=1 if name == "Return" else 2),
+            layout_settings=ws.SectionLayoutSettings(
+                columns=columns, rows=(2 if difficulty_breakdown else 1) if name == "Return" else 2
+            ),
             panel_settings=ws.SectionPanelSettings(x_axis=AXIS),
         )
         ._to_model()
@@ -105,13 +149,15 @@ def key_sections():
     ]
 
 
-def updated_spec(original):
+def updated_spec(original, *, difficulty_breakdown=False):
     spec = copy.deepcopy(original)
     old = spec["section"]["panelBankConfig"]["sections"]
     by_name = {section["name"]: section for section in old}
-    selected = key_sections()
+    selected = key_sections(difficulty_breakdown=difficulty_breakdown)
     for section in selected:
-        previous = by_name.get(section["name"], by_name.get("monitor", {}) if section["name"] == "Run status" else {})
+        previous = by_name.get(
+            section["name"], by_name.get("monitor", {}) if section["name"] == "Run status" else {}
+        )
         if "__id__" in previous:
             section["__id__"] = previous["__id__"]
         section["isPanelsAuto"] = False
@@ -163,6 +209,7 @@ def main():
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--apply", action="store_true")
+    parser.add_argument("--difficulty-breakdown", action="store_true")
     cli = parser.parse_args()
     cli.output.mkdir(parents=True, exist_ok=True)
     api = wandb.Api()
@@ -175,7 +222,9 @@ def main():
     else:
         save_json(before, view)
     if not proposed.exists():
-        save_json(proposed, updated_spec(json.loads(view["spec"])))
+        save_json(
+            proposed, updated_spec(json.loads(view["spec"]), difficulty_breakdown=cli.difficulty_breakdown)
+        )
     spec = json.loads(proposed.read_text())
     run_path = f"{cli.entity}/{cli.project}/{cli.run_id}"
     run = api.run(run_path)
