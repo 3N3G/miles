@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen 548472 passed both exact source-weight checks and began generation Jobs: hpcfund/548472 RUNNING; hpcfund/546404 FAILED
-  Next: Watch all384 answers, inspect actual Luna-high grades and audit the medium inclusion rule before training.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen 548472 is generating with verified weights. Two audited answers are valid 7/7; one 5/7 grade remains ambiguous. Jobs: hpcfund/548472 RUNNING; hpcfund/546404 FAILED
+  Next: Complete the screen and require genuine mathematical contrasts before including medium questions in the approved RL run.
 
 ## Next / blocked
 

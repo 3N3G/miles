@@ -1,5 +1,14 @@
 # Open questions
 
+## 2026-11-24: Implicit monotonicity in an auction proof
+
+- Question: does the auction payment item require an explicit single-bidder monotonicity argument when the candidate states the correct formula?
+- Evidence: live answer`online-60c80dfdae4e9ed725022908` receives5/7. Its payment formulas and final cancellation are correct. It omits the monotonicity explanation and makes an unused false claim that every valid allocation covers all items.
+- Options: accept the formula as a direct elementary consequence of the supplied assumptions, or require the named monotonicity step for this two-point item.
+- Recommendation: mark this case ambiguous. The qualified prompt accepts direct elementary consequences, while the original rubric names the monotonicity step. Preserve its actual grade and do not count it alone as genuine mathematical variation.
+- Blocks: interpreting this particular two-point score difference as a proof-quality difference. It does not block the approved fixed-grader screen or an inclusion decision supported by unambiguous medium examples.
+- Permission handling: prompt wording changes remain authorized, but one ambiguous example does not itself invalidate the passing frozen-answer gate. Keep the current recipe fixed while the full screen is inspected.
+
 ## 2026-11-22: Storage for a bounded continuation after the two-hour backfill slot
 
 - Question: may the replacement's intermediate checkpoint be removed only after a newer continuation checkpoint is atomically saved and verified?

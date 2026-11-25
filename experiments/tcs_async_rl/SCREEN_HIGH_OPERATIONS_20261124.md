@@ -236,3 +236,10 @@ Its SHA256 is`01bc0f2de8c3a63e86398c1966c90ad43ff9fbff7dcc4721b55f5d88b2a9e7c6`.
 The new service is PID1517313. Its36 cached control checks passed without another provider call.
 The new detached tunnel controller is PID1517458 and targets only job548472.
 Both live helpers record the same session UUID as this workstream.
+
+The replacement passed both source publication checks on the GPU and began native evaluation.
+Two seeded selections from the first nine completed unique candidates give valid positive/negative all-ones row constructions, both7/7.
+A targeted5/7 auction answer has an implicit-monotonicity rubric ambiguity, recorded in`QUESTIONS.md`.
+These are post-judgment assistant spot-checks, not independent human calibration.
+The raw review record is`evidence/screen_early_proof_reviews_20261124.jsonl`.
+No grade, prompt, weight or sampling setting changed after these reviews.

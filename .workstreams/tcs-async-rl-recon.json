@@ -3334,15 +3334,22 @@
       "actor": "codex",
       "summary": "Screen 548472 passed both exact source-weight checks and began generation",
       "revision": 318
+    },
+    {
+      "id": "484ebeff-426a-4b66-887e-d6e1e966f37b",
+      "at": "2026-11-25T02:48:58.510114Z",
+      "actor": "codex",
+      "summary": "Audit early real screen answers and preserve the implicit-monotonicity grading ambiguity",
+      "revision": 319
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Screen 548472 passed both exact source-weight checks and began generation",
-  "nextAction": "Watch all384 answers, inspect actual Luna-high grades and audit the medium inclusion rule before training.",
+  "summary": "Screen 548472 is generating with verified weights. Two audited answers are valid 7/7; one 5/7 grade remains ambiguous.",
+  "nextAction": "Complete the screen and require genuine mathematical contrasts before including medium questions in the approved RL run.",
   "owner": "Codex",
-  "revision": 318,
-  "updatedAt": "2026-11-25T02:40:28.663114Z"
+  "revision": 319,
+  "updatedAt": "2026-11-25T02:48:58.510114Z"
 }
