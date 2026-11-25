@@ -74,6 +74,8 @@ def complete(root, *, screen, excluded):
     review = json.loads(excluded.read_text())
     blocked = {(review["question_key"], row["identity"]) for row in review["audits"]}
     blocked.add((review["question_key"], review["additional_7_point_case"]["identity"]))
+    exposed_file = Path(__file__).parent / "evidence/component_repair_exposed_grades_20261124.json"
+    blocked.update((row["question_key"], row["identity"]) for row in json.loads(exposed_file.read_text())["excluded"])
     groups = {key: [] for key in questions}
     with gzip.open(source, "rt") as stream:
         for line in stream:
@@ -127,6 +129,7 @@ def complete(root, *, screen, excluded):
             "medium_answers": 8,
             "medium_questions": len({key for key, _ in chosen}),
             "screen_responses_sha256": complete["responses_sha256"],
+            "excluded_seen_grade_sha256": digest(exposed_file),
             "heldout_reads": 0,
             "new_solver_generations": 0,
             "new_judge_calls": 0,

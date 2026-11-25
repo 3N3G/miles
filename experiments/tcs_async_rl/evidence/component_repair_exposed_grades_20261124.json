@@ -1,0 +1,41 @@
+{
+  "reason": "Exclude all candidate identities whose old score was displayed in live diagnostics, including those not mathematically audited. Do not use their old scores as validation labels.",
+  "excluded": [
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "identity": "online-1265d9fe9b487d9493d3b53f"
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "identity": "online-5c1d2e0e51822e134b86c3a1"
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "identity": "online-63a3dc166d3242d792bb30a5"
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "identity": "online-6740ee6532f788371f4098a2"
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "identity": "online-6ded61513fd9a0373160f5d3"
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "identity": "online-7e3e08dcc30e266a8acc7000"
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "identity": "online-9f469de8463af13ad82e1cbd"
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "identity": "online-eb71f0273a730311285b217c"
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "identity": "online-8022bdb37d337c8bedf6a0b9"
+    }
+  ]
+}
