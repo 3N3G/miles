@@ -79,6 +79,8 @@ class CheckpointScreenTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
             source, current = root / "source.jsonl", root / "current.jsonl"
+            restored = root / "restored.jsonl"
+            restored.write_text("")
             event = {
                 "type": "inference_engine_weight_checksum",
                 "rollout_id": 108,
@@ -86,11 +88,41 @@ class CheckpointScreenTests(unittest.TestCase):
             }
             source.write_text(json.dumps(event) + "\n")
             current.write_text(json.dumps(event) + "\n")
-            self.assertTrue(verify_publication(source, current, rollout_id=108)["matches_source"])
+            self.assertTrue(
+                verify_publication(source, current, rollout_id=108, restored_events=restored, expected_publications=1)[
+                    "matches_source"
+                ]
+            )
             event["engine_checksums"] = [{"weight": 2}] * 3
             current.write_text(json.dumps(event) + "\n")
             with self.assertRaisesRegex(ValueError, "differ"):
-                verify_publication(source, current, rollout_id=108)
+                verify_publication(source, current, rollout_id=108, restored_events=restored, expected_publications=1)
+
+    def test_resume_verifies_both_transfers_and_excludes_inherited_publications(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            source, current, restored = (root / name for name in ("source.jsonl", "current.jsonl", "restored.jsonl"))
+            event = {"type": "inference_engine_weight_checksum", "rollout_id": 108, "engine_checksums": [{"w": 1}] * 3}
+            inherited = {**event, "rollout_id": 107}
+            prefix = json.dumps(inherited) + "\n"
+            restored.write_text(prefix)
+            source.write_text(prefix + json.dumps(event) + "\n")
+            current.write_text(prefix + (json.dumps(event) + "\n") * 2)
+            options = {"rollout_id": 108, "restored_events": restored, "expected_publications": 2}
+            result = verify_publication(source, current, **options)
+            self.assertEqual(result["new_publications_verified"], 2)
+            for count in (1, 3):
+                current.write_text(prefix + (json.dumps(event) + "\n") * count)
+                with self.assertRaisesRegex(ValueError, "count"):
+                    verify_publication(source, current, **options)
+            current.write_text(
+                prefix + json.dumps(event) + "\n" + json.dumps({**event, "engine_checksums": [{"w": 2}] * 3}) + "\n"
+            )
+            with self.assertRaisesRegex(ValueError, "differ"):
+                verify_publication(source, current, **options)
+            current.write_text((json.dumps(event) + "\n") * 2)
+            with self.assertRaisesRegex(ValueError, "history"):
+                verify_publication(source, current, **options)
 
 
 if __name__ == "__main__":

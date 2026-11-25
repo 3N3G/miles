@@ -1,0 +1,26 @@
+{
+  "rollout_id": 108,
+  "engines": 3,
+  "matches_source": true,
+  "checked_tensor_records_per_engine": 1416,
+  "new_publications_verified": 2,
+  "restored_event_prefix_bytes": 34630358,
+  "source_job": "546404",
+  "optimizer_updates": 0,
+  "solver_answers": 0,
+  "new_judge_calls": 0,
+  "inputs": {
+    "publication-repair/source-events.jsonl": {
+      "sha256": "e5d39c8defd39978d855b838dc6bec26ee1931b40bd9f9a98b7e2b0dc166a576",
+      "bytes": 34906026
+    },
+    "events/main.jsonl": {
+      "sha256": "29a78547f1f253c0619d38f4874e5a3086e54ae9d93d3d90f1624c46411fd8ea",
+      "bytes": 35454366
+    },
+    "publication-repair/restored-events.jsonl": {
+      "sha256": "825e659a7e5fbbe4165feb6a8c474662ad170aefdd236d53ac56977d02f44e08",
+      "bytes": 34630358
+    }
+  }
+}

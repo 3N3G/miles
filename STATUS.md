@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen546404 failed before generation in the checkpoint publication validator Jobs: hpcfund/546404 FAILED; hpcfund/544406 COMPLETED
-  Next: Verify appended startup publications against checkpoint108, repair the validator, and rerun within the remaining sixteen GPU-hours.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Both startup transfers match checkpoint108. The repaired checker passes142 tests; a115-minute replacement stays within16 screen GPU-hours. Jobs: hpcfund/546404 FAILED; hpcfund/544406 COMPLETED
+  Next: Close the old service, carry its exact ledger, and submit the approved inference repair with the frozen inputs.
 
 ## Next / blocked
 

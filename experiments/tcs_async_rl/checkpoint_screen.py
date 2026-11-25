@@ -10,23 +10,37 @@ from pathlib import Path
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes, file_sha256, portable_sample
 
 
-def verify_publication(source, current, *, rollout_id):
-    def publications(path):
+def verify_publication(source, current, *, rollout_id, restored_events, expected_publications):
+    def publications(data):
         return [
             row
-            for line in path.read_text().splitlines()
+            for line in data.splitlines()
             if (row := json.loads(line))["type"] == "inference_engine_weight_checksum"
-            and row["rollout_id"] == rollout_id
         ]
 
-    old, new = publications(source), publications(current)
-    if not old or len(new) != 1:
-        raise ValueError("Missing or duplicate restored policy publication")
+    old = [row for row in publications(source.read_bytes()) if row["rollout_id"] == rollout_id]
+    inherited, actual = restored_events.read_bytes(), current.read_bytes()
+    if not actual.startswith(inherited):
+        raise ValueError("Screen event history differs from the restored checkpoint snapshot")
+    new = publications(actual[len(inherited) :])
+    if not old or len(new) != expected_publications or any(row["rollout_id"] != rollout_id for row in new):
+        raise ValueError("Unexpected restored policy publication count or identity")
     expected = old[-1]["engine_checksums"][0]
-    engines = new[0]["engine_checksums"]
-    if len(engines) != 3 or any(engine != expected for engine in engines):
+    if len(old[-1]["engine_checksums"]) != 3 or any(engine != expected for engine in old[-1]["engine_checksums"]):
+        raise ValueError("Saved source engines disagree")
+    if any(
+        len(row["engine_checksums"]) != 3 or any(engine != expected for engine in row["engine_checksums"])
+        for row in new
+    ):
         raise ValueError("Screen engines differ from the saved source policy")
-    return {"rollout_id": rollout_id, "engines": 3, "matches_source": True, "language_tensors": len(expected)}
+    return {
+        "rollout_id": rollout_id,
+        "engines": 3,
+        "matches_source": True,
+        "checked_tensor_records_per_engine": len(expected),
+        "new_publications_verified": len(new),
+        "restored_event_prefix_bytes": len(inherited),
+    }
 
 
 def export_screen(args):
@@ -90,6 +104,8 @@ async def screen(args, *, disposer):
         Path(resolved["source_publication_file"]),
         root / "events/main.jsonl",
         rollout_id=args.start_rollout_id - 1,
+        restored_events=Path(args.load) / "rollout" / str(args.start_rollout_id - 1) / "debug_events/main.jsonl",
+        expected_publications=2 if args.check_weight_update_equal else 1,
     )
     _atomic_bytes(root / "resolved-config.json", (json.dumps(resolved, indent=2) + "\n").encode())
     await controller.prepare_eval()

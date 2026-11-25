@@ -216,3 +216,13 @@ The five-file eviction record passed exact hash readback at
 `3N3G/internalization-runs@6bc5d6bd75072cb21ac75073af88b42678f952e9/miles/vm-cache-recovery-20261124`.
 The per-file receipt is`evidence/vm_cache_eviction_20261124.json`.
 AMD screen546404 remains pending, with no new GPU time or paid judge calls.
+
+## First GPU attempt and replacement
+
+Job546404 ran from02:10:15 to02:14:47 UTC on November25 and ended FAILED.
+The startup's two valid weight transfers failed a one-transfer assumption in the screen validator.
+The source weights matched in both transfers. No generation, judging or optimizer update occurred.
+The exact repair, actual-event validation and remaining compute bound are in
+[the publication repair record](SCREEN_PUBLICATION_REPAIR_20261124.md).
+The replacement uses`checkpoint_screen_high_v2.json` and a fresh output directory.
+The original used configuration remains unchanged.

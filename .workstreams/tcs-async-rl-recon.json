@@ -3294,15 +3294,22 @@
       "actor": "codex",
       "summary": "Screen546404 failed before generation in the checkpoint publication validator",
       "revision": 313
+    },
+    {
+      "id": "40cdd713-d62f-4969-b07f-75d958fb8946",
+      "at": "2026-11-25T02:20:22.258438Z",
+      "actor": "codex",
+      "summary": "Validate the two-publication repair on actual failed-run events and bound the replacement to remaining compute",
+      "revision": 314
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Screen546404 failed before generation in the checkpoint publication validator",
-  "nextAction": "Verify appended startup publications against checkpoint108, repair the validator, and rerun within the remaining sixteen GPU-hours.",
+  "summary": "Both startup transfers match checkpoint108. The repaired checker passes142 tests; a115-minute replacement stays within16 screen GPU-hours.",
+  "nextAction": "Close the old service, carry its exact ledger, and submit the approved inference repair with the frozen inputs.",
   "owner": "Codex",
-  "revision": 313,
-  "updatedAt": "2026-11-25T02:15:57.127025Z"
+  "revision": 314,
+  "updatedAt": "2026-11-25T02:20:22.258438Z"
 }
