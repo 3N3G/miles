@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD549728 is training its first128-answer batch. All eight GPUs are99–100% busy. Both startup weight publications matched checkpoint108. Baseline regrading continues through the shared judge. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Verify finite gradients, actual microbatches, first checkpoint and post-update publication, then check native W&B coordinates and difficulty panels.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD549728 completed and saved update109. All three engines match. All103 W&B scalars and the exact console prompt are verified. The fixed384-answer baseline is regraded: easy5.760/7, medium1.995/7. Th Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Finish immutable baseline archival and hourly proof/metric review. Supervise the12-hour job through final checkpoint and same-question post-training screen.
 
 ## Next / blocked
 

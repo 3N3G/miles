@@ -1,0 +1,17 @@
+{
+  "checked_at_utc": "2026-11-25T14:24:09.373309+00:00",
+  "job_id": "549728",
+  "source_commit": "6f9279f25b19eb47f0ddd435859b279cc88fc17c",
+  "optimizer_step": 109,
+  "new_completed_updates": 1,
+  "source_saved_updates": 109,
+  "total_saved_updates": 110,
+  "samples": 128,
+  "gradient_accumulation_microbatches": 100,
+  "all_three_engines_match": true,
+  "changed_language_tensors": 456,
+  "language_tensors_compared": 822,
+  "checkpoint": "iter_0000109",
+  "checkpoint_files_bytes": 60577362797,
+  "limits": "One successful optimizer update. Positive fixed-batch surrogate gain validates local update direction, not improved proof quality or held-out generalization."
+}
