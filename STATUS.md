@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Thirteen finite updates and52 audited questions. Sixth review includes one component-credit ambiguity. Verified and evicted24,703 raw older receipt copies, preserving scores and immutable archives. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Continue foreground supervision. Review new proofs and all native metrics by19:38Z, then verify the final checkpoint, archives, W&B and unchanged12-question after screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Seventh review verifies2048 answers, checkpoint124 and1491 W&B scalars Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Continue through the approved deadline and complete another raw-proof and native-metric review by20:30Z. Finish with exact final-checkpoint evaluation, immutable archives and W&B v
 
 ## Next / blocked
 
