@@ -1,0 +1,121 @@
+{
+  "at_utc": "2026-11-25T21:36:01.471633+00:00",
+  "snapshots": [
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-04/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "3d68cc27b2707b26baadc29d2d9377145837de1b",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 284854724,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 666
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-05/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "bfb5a2df927b14ead1e728cfce6ca3a9a905d412",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 289199303,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 722
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-06/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "eacc0ce5766a15d240f37e081a655ed03751aba0",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 295195271,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 765
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-07/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "09966ba81cf69fe32f927e0e03f81207922f6932",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 296264003,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 842
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-08/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "c18422d7121683b0c3bf4c5d58fd251c0d131474",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 304473581,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 900
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-09/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "ea99b26ea093e0c3542f59669ef1d8c4cbf667be",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 315752823,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 991
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-10/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "e2416649d95961355d2a4b4b5acf0f9bcd7d1c46",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 332939142,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 1069
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-11/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "9ef6f67162ab1913747f2e9c84c1574a6378ecf5",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 391657326,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 1290
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-12/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "0f26e10fb6d8056840d7fcb18bc97270703f259b",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 395124246,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 1366
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-13/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "5f948fa22a9c302df287bccd2608dcb003743ebc",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 415438484,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 1452
+    }
+  ],
+  "evicted_files": 10063,
+  "evicted_content_bytes": 3320898903,
+  "complete_restore_manifest": "vm-shared-staging-verification.json",
+  "before_free_bytes": 4619149312,
+  "after_free_bytes": 7960092672,
+  "preserved": "Canonical project repo, recent snapshots14\u201316, all unmatched files, environments, processes and every immutable remote object. No messages sent to the other task."
+}
