@@ -3620,15 +3620,22 @@
       "actor": "codex",
       "summary": "Preserve pending paid judge receipts during finalization without restarting the active run",
       "revision": 350
+    },
+    {
+      "id": "04a7a50b-f8f2-4638-b24a-11fa5bafaf3a",
+      "at": "2026-11-25T16:00:55.133049Z",
+      "actor": "codex",
+      "summary": "Six finite updates and checkpoint114 verified on all236 training continuation",
+      "revision": 351
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Five verified optimizer updates on AMD549728. Added tested finalization drain so pending judge receipts survive service shutdown. Hourly deep review continues.",
-  "nextAction": "Verify checkpoint114 at the next scheduled save, then complete hourly proof and metric reviews through terminal state, final checkpoint, archive and W&B verification.",
+  "summary": "Six finite updates and checkpoint114 verified on all236 training continuation",
+  "nextAction": "Continue hourly proof and metric reviews, then verify final checkpoint, immutable archive and W&B before the approved fixed-question final screen.",
   "owner": "Codex",
-  "revision": 350,
-  "updatedAt": "2026-11-25T15:47:32.166581Z"
+  "revision": 351,
+  "updatedAt": "2026-11-25T16:00:55.133049Z"
 }

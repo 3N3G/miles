@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Five verified optimizer updates on AMD549728. Added tested finalization drain so pending judge receipts survive service shutdown. Hourly deep review continues. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Verify checkpoint114 at the next scheduled save, then complete hourly proof and metric reviews through terminal state, final checkpoint, archive and W&B verification.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Six finite updates and checkpoint114 verified on all236 training continuation Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Continue hourly proof and metric reviews, then verify final checkpoint, immutable archive and W&B before the approved fixed-question final screen.
 
 ## Next / blocked
 
