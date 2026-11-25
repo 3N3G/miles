@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Seven finite optimizer updates. The latest local direction probe is positive. A32.3-minute update exceeds the original30-minute shutdown reserve. A tested operational policy reserves45 minutes within  Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Reload the VM monitor and guard by adopting the existing scorer and tunnel, verify health and the earlier final-save deadline, then continue hourly deep reviews.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 549728 is RUNNING Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
