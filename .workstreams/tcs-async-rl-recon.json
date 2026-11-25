@@ -3517,15 +3517,22 @@
       "actor": "codex",
       "summary": "The old20/26 limit was a pilot choice, not dataset capacity. Broader corpus choice is236 easy+medium or2519 all eligible.",
       "revision": 340
+    },
+    {
+      "id": "e45d09a5-6726-4aec-ac0a-0b9c4324df73",
+      "at": "2026-11-25T13:13:03.446626Z",
+      "actor": "codex",
+      "summary": "Approved: diagnose the flat reward traces, then launch the236-question easy+medium continuation with the accepted Luna-high judge.",
+      "revision": 341
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "needs-you",
-  "summary": "The old20/26 limit was a pilot choice, not dataset capacity. Broader corpus choice is236 easy+medium or2519 all eligible.",
-  "nextAction": "Await the difficulty-scope choice, then freeze the broader data manifest and fresh execution snapshot. Keep the accepted v5 judge, existing budgets and sealed FOCS/STOC2026 split.",
+  "state": "running",
+  "summary": "Approved: diagnose the flat reward traces, then launch the236-question easy+medium continuation with the accepted Luna-high judge.",
+  "nextAction": "Freeze all236 eligible questions, record the metric diagnosis and accepted judge qualification, validate resource guards and submit one12-hour AMD job. Supervise through final checkpoint, HF archive and W&B verification.",
   "owner": "Codex",
-  "revision": 340,
-  "updatedAt": "2026-11-25T13:08:30.436298Z"
+  "revision": 341,
+  "updatedAt": "2026-11-25T13:13:03.446626Z"
 }

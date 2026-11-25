@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Approved: diagnose the flat reward traces, then launch the236-question easy+medium continuation with the accepted Luna-high judge. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Freeze all236 eligible questions, record the metric diagnosis and accepted judge qualification, validate resource guards and submit one12-hour AMD job. Supervise through final chec
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The old20/26 limit was a pilot choice, not dataset capacity. Broader corpus choice is236 easy+medium or2519 all eligible. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Await the difficulty-scope choice, then freeze the broader data manifest and fresh execution snapshot. Keep the accepted v5 judge, existing budgets and sealed FOCS/STOC2026 split.
+- Nothing recorded.
 
 ## Finished
 
