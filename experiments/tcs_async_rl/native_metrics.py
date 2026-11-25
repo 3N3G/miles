@@ -453,6 +453,25 @@ def sync_live_audit(directory, output, scheduler_state):
             if attempt < 11:
                 time.sleep(3)
         else:
+            indexed = sorted(observed_values.items())
+            if (
+                not terminal
+                and remote.state == expected_state
+                and indexed == expected[: len(indexed)]
+                and len(indexed) >= previous.get("verified_points", 0)
+            ):
+                # A delivered new row may take longer than this bounded read
+                # window to enter the server's index. Keep its delivery receipt
+                # and the old verified cursor. The next poll verifies it without
+                # sending it again. Terminal closure still requires every row.
+                return {
+                    "phase": "waiting_for_history_index",
+                    "verified_points": previous.get("verified_points", 0),
+                    "indexed_points": len(indexed),
+                    "expected_points": len(expected),
+                    "wandb_state": remote.state,
+                    "url": remote.url,
+                }
             raise RuntimeError(
                 f"Live W&B readback failed: {len(observed_values)}/{len(expected)} steps, "
                 f"state {remote.state!r}, expected {expected_state!r}"

@@ -426,7 +426,14 @@ class DiagnosticTests(unittest.TestCase):
                 "experiments.tcs_async_rl.native_metrics.read_native_metrics", return_value=native
             ), patch("experiments.tcs_async_rl.native_metrics.time.sleep"):
                 remote.scan_history.return_value = []
-                with self.assertRaisesRegex(RuntimeError, "0/1 steps"):
+                pending = sync_live_audit(root, root, "RUNNING")
+                self.assertEqual(pending["phase"], "waiting_for_history_index")
+                self.assertEqual(pending["verified_points"], 0)
+                self.assertFalse((root / "wandb-live-metrics.json").exists())
+                remote.scan_history.return_value = [
+                    {"audit/optimizer_step": 25, "audit/rollout/episode_raw_reward": 6.0}
+                ]
+                with self.assertRaisesRegex(RuntimeError, "readback failed"):
                     sync_live_audit(root, root, "RUNNING")
                 remote.scan_history.return_value = [
                     {"audit/optimizer_step": 25, "audit/rollout/episode_raw_reward": 3.0}
@@ -435,6 +442,20 @@ class DiagnosticTests(unittest.TestCase):
                 self.assertEqual(receipt["verified_points"], 1)
                 self.assertEqual(sdk.init.call_count, 1)
                 sdk.init.return_value.log.assert_called_once()
+                sdk.init.return_value.resumed = True
+                remote.scan_history.return_value = []
+                sent = json.loads((root / "wandb-submitted-metrics.json").read_text())
+                with patch(
+                    "experiments.tcs_async_rl.native_metrics.time.time",
+                    return_value=sent["last_heartbeat_unix"] + 121,
+                ), self.assertRaisesRegex(RuntimeError, "0/1 steps"):
+                    sync_live_audit(root, root, "RUNNING")
+                remote.state = "failed"
+                remote.scan_history.return_value = []
+                sdk.init.return_value.resumed = True
+                with self.assertRaisesRegex(RuntimeError, "0/1 steps"):
+                    sync_live_audit(root, root, "TIMEOUT")
+                self.assertEqual(sdk.init.return_value.log.call_count, 1)
 
     def test_native_events_recover_reward_axis_after_offline_writer_collision(self):
         with tempfile.TemporaryDirectory() as name:

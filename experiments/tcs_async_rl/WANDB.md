@@ -64,6 +64,11 @@ History indexing can lag a successful SDK upload. Reads bypass the SDK history c
 The client records upload acknowledgement separately from verified history. Monitor retries do not resend acknowledged points.
 After a lost acknowledgement, an identical repeated point is accepted. Conflicting values at one step are errors.
 
+During an active job, an acknowledged row can remain unindexed beyond one bounded readback window.
+The publisher reports `waiting_for_history_index` when indexed rows form the expected prefix and all previously verified rows remain.
+It retains the delivery receipt and verified cursor, then checks again on the next poll without resending the row.
+Conflicting values, loss of previously verified rows and incomplete terminal history remain errors.
+
 For these configurations, do not also sync the independent AMD offline histories into the online run.
 Keep those files in the private result archive. The monitor handles active and terminal publication automatically.
 The observer adds no provider credentials to AMD. Transient W&B client files stay outside each result directory.
