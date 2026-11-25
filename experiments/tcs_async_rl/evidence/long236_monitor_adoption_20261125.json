@@ -1,0 +1,25 @@
+{
+  "at_utc": "2026-11-25T16:39:32.616112+00:00",
+  "job_id": "549728",
+  "new_supervisor_pid": 1611347,
+  "children": [
+    1578964,
+    1579205,
+    1611348
+  ],
+  "retired_supervisor_pid": 1578963,
+  "retired_guard_pid": 1579206,
+  "same_scorer_and_tunnel": true,
+  "budget_prefix_preserved": true,
+  "approved_config_sha256": "7c70c16d6b881b62e4a663786ae5a31e096a16177349e515e085d1fadf640fd5",
+  "submitted_source_config_sha256": "0da5837864baaa6cde00a2b3c436094fefaf6cf1fc6c8bb56a663e229a5dbe49",
+  "effective_guard_limits": {
+    "elapsed_seconds": 40500,
+    "spent_reserved_usd": 22,
+    "free_bytes": 151265361920
+  },
+  "operational_policy_sha256": "a617017d6141ff81145a6fead7b9141de1236030bb229a0cc82c0ee1fbb089e4",
+  "gpu_restarts": 0,
+  "new_gpu_jobs": 0,
+  "verification": "Live scorer health identical, original ledger prefix retained, same scorer/tunnel PIDs, new monitor and guard receipts and40500-second trigger verified. Source config equals frozen6f9279f2 bytes; approved resolved config equals its expanded container configuration."
+}

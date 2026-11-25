@@ -12,7 +12,7 @@ This file records execution. The [approved plan](EASY_MEDIUM_236_PLAN_20261125.m
 - VM run`/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-medium-236-v1`.
 - AMD run`/work1/aviralkumar/geney/tcs-async-rl/runs/easy-medium-236-v1`.
 - Detached AMD checkout`/work1/aviralkumar/geney/tcs-async-rl/checkouts/easy-medium-236-v1`.
-- VM supervisor PID1578963. Session`01a1ed24-1032-7731-910b-824f484f5f71`.
+- Initial VM supervisor PID1578963. The current identity is in`supervisor-process.json`. Session`01a1ed24-1032-7731-910b-824f484f5f71`.
 - Supervisor owns the reward service, tunnel and resource guard. Its process receipts list exact child identities.
 - Online W&B ID`261125-132805-437-native`, created after the first verified complete optimizer row.
 - Expected [W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261125-132805-437-native).
