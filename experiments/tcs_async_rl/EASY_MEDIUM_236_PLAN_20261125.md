@@ -65,6 +65,14 @@ Exact sources are in [the metric review](evidence/long236_flat_reward_review_202
 
 Pending. No training result is claimed by data preparation or judging controls.
 
+Preflight controls completed708 presentations. All472 empty/irrelevant controls score zero.
+232/236 supplied references score7. Four score6,3,6,4 and were read against their premises before launch.
+They contain genuine missing reductions or unsupported assumptions, so forcing them to7 would be incorrect.
+The [review](evidence/long236_corpus_control_review_20261125.json) preserves their exact scores and mathematical reasons.
+Keep all236 original questions and the unchanged reward. These four references are not full-credit positive controls as written.
+The66 unchanged-v5 validation controls on22 questions remain valid positive/negative controls and all pass.
+No valid verdict was rerolled. This is an assistant review, not independent human calibration.
+
 Planned plots: raw return by difficulty and matched question against optimizer step, coverage and zero-variance groups,
 entropy/reference divergence, response length/cap rate, gradient/ESS/clipping, throughput/staleness and actual paid usage.
 Use one claim per plot and include seeded raw examples. Report whether completion or proof quality changed.

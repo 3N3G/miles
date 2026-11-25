@@ -1,0 +1,32 @@
+{
+  "at_utc": "2026-11-25T13:25:37.994801+00:00",
+  "controls_sha256": "5afe9b7bc08c4f7372e05b39c7bf3c9cf3e6d15a90434babf7e28f5c8259c059",
+  "reference_full_credit": 232,
+  "reference_deductions": 4,
+  "negative_controls_passed": 472,
+  "negative_control_failures": 0,
+  "review_kind": "Assistant mathematical audit; no independent human accuracy claim",
+  "reference_deductions_review": [
+    {
+      "question_key": "f354127376f29f3c28a8ea18f787430020d02f2f35a0865ed842dc84b484e10f",
+      "score": 6,
+      "audit": "The supplied estimate concerns uniform variables. The reference applies it to arbitrary possibly atomic D without the quantile coupling reduction. The missing concentration justification is real."
+    },
+    {
+      "question_key": "a8d568680db2a8b6b034db885d7f2ff6206224553426550389e422deb0858357",
+      "score": 3,
+      "audit": "The packing primitive returns objective at least P(H)/2, not h/2. A cycle disproves P(H)>=h. The claimed16-crossing witness and dependent exactness are not established."
+    },
+    {
+      "question_key": "b3260905afc5880e677a966d3207be00ba7da71a4d2850b6fa7eaf90cae458ff",
+      "score": 6,
+      "audit": "The reference assumes surviving-component identifiers that the problem expressly does not supply. It does not recover them from the distributed edge log."
+    },
+    {
+      "question_key": "7d53100f4f0b353031d64eef2e71d2eacd1a7880bca8537656ed6509a4a81878",
+      "score": 4,
+      "audit": "A bounded query family closed under coordinate relabeling does not make each query invariant. A further invariance argument is needed, so the distinguishing-query contradiction is not proved."
+    }
+  ],
+  "decision": "Retain all236 original questions, references and rubrics. Keep actual scores. These references are not valid full-credit positive controls as written. Do not force7, reroll valid verdicts, remove questions, or change rewards. The unchanged-v5 validation positives and all new-corpus negatives pass."
+}
