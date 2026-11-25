@@ -3437,15 +3437,22 @@
       "actor": "codex",
       "summary": "Frozen forty blind labels; final Luna-high prompt comparison is running.",
       "revision": 332
+    },
+    {
+      "id": "e4927566-741a-4ae6-b8a3-c0c5074fcfe6",
+      "at": "2026-11-25T04:43:52.734172Z",
+      "actor": "codex",
+      "summary": "Final Luna-high prompt matched34/40 and failed qualification; evidence and W&B are verified, with no RL queued.",
+      "revision": 333
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "Frozen forty blind labels; final Luna-high prompt comparison is running.",
-  "nextAction": "Finish both prompt verdicts and all controls, audit disagreements, archive results, then qualify a saved-answer regrade only if the declared gate passes.",
+  "state": "needs-you",
+  "summary": "Final Luna-high prompt matched34/40 and failed qualification; evidence and W&B are verified, with no RL queued.",
+  "nextAction": "Decide human review of six rubric disagreements or a specified stronger-judge validation. Preserve the384 saved screen answers and approved12-hour RL allowance until a grader qualifies.",
   "owner": "Codex",
-  "revision": 332,
-  "updatedAt": "2026-11-25T04:33:45.261242Z"
+  "revision": 333,
+  "updatedAt": "2026-11-25T04:43:52.734172Z"
 }

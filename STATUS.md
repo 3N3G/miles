@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Frozen forty blind labels; final Luna-high prompt comparison is running. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Finish both prompt verdicts and all controls, audit disagreements, archive results, then qualify a saved-answer regrade only if the declared gate passes.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final Luna-high prompt matched34/40 and failed qualification; evidence and W&B are verified, with no RL queued. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Decide human review of six rubric disagreements or a specified stronger-judge validation. Preserve the384 saved screen answers and approved12-hour RL allowance until a grader quali
 
 ## Finished
 
