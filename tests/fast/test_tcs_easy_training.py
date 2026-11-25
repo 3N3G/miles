@@ -38,6 +38,41 @@ def question(index):
 
 
 class EasyDataTests(unittest.TestCase):
+    def test_supervisor_owns_three_helpers_and_never_submits(self):
+        from experiments.tcs_async_rl.supervise import supervise
+
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            config = BASE / "rl_long_high_easy_v1.json"
+            (root / "approved-config.json").write_bytes(config.read_bytes())
+            (root / "submission.json").write_text(json.dumps({"job_id": "999", "session_uuid": "own"}))
+            cli = SimpleNamespace(
+                directory=root,
+                config=config,
+                session_uuid="own",
+                remote_directory=Path("/remote/run"),
+                checkout=Path("/remote/code"),
+                state_repo=root,
+            )
+            children = [Mock(pid=index, **{"poll.return_value": None}) for index in (1, 2, 3)]
+            with patch("experiments.tcs_async_rl.supervise.start_service", return_value=(children[0], {})), patch(
+                "experiments.tcs_async_rl.supervise.subprocess.Popen", side_effect=children[1:]
+            ) as popen, patch("experiments.tcs_async_rl.supervise.watch") as watcher:
+                supervise(cli)
+            self.assertEqual(watcher.call_args.kwargs["children"], children)
+            self.assertEqual(watcher.call_args.kwargs["job_id"], "999")
+            self.assertEqual(
+                [call.args[0][2] for call in popen.call_args_list],
+                ["experiments.tcs_async_rl.reward_tunnel", "experiments.tcs_async_rl.resource_guard"],
+            )
+            for child in children:
+                child.terminate.assert_called_once()
+            cli.session_uuid = "different"
+            with patch("experiments.tcs_async_rl.supervise.start_service") as service:
+                with self.assertRaisesRegex(ValueError, "Only this session"):
+                    supervise(cli)
+                service.assert_not_called()
+
     def test_live_archive_rate_does_not_reduce_metric_or_terminal_checks(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

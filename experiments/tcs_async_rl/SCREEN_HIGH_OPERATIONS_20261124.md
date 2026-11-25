@@ -137,6 +137,15 @@ and the checkpoint tracker matching the final completed update.
 A stale or missing final checkpoint fails acceptance even after a planned budget stop.
 W&B records the walltime, GPU-hour and judge caps alongside the actual training parameters.
 
+For the selected continuation, attach `python -m experiments.tcs_async_rl.supervise`
+after recording its submission and transferring the settled ledger.
+Supply the frozen config, local directory, remote directory, remote checkout, state repository and session UUID.
+Run this wrapper in a tracked detached process session, then keep foreground diagnosis here.
+It cannot submit jobs. It checks the receipt owner and frozen configuration before starting helpers.
+It owns the reward server, tunnel and resource guard, and invokes the existing terminal/archive/W&B monitor.
+Its lock prevents duplicate supervisors. Its process receipt lists its owned child PIDs.
+The foreground agent still checks both monitor and guard heartbeats and diagnoses failures.
+
 ## Judge comparison logging
 
 W&B run`geney/tcs-async-rl/judge-high-20261124` finished with thirteen verified scalars,
