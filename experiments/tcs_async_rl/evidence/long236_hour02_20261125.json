@@ -1,0 +1,41 @@
+{
+  "at_utc": "2026-11-25T15:30:10.916136+00:00",
+  "updates": 4,
+  "answers": 512,
+  "distinct_questions": 16,
+  "within_continuation_repeated_questions": 0,
+  "raw_mean": 3.671875,
+  "full_credit": 175,
+  "zero": 143,
+  "capped": 165,
+  "capped_empty_final": 109,
+  "constant_reward_groups": 3,
+  "groups": 16,
+  "by_difficulty": {
+    "easy": {
+      "answers": 64,
+      "questions": 2,
+      "mean_reward": 6.703125,
+      "full_credit": 56,
+      "capped": 0
+    },
+    "medium": {
+      "answers": 448,
+      "questions": 14,
+      "mean_reward": 3.2388392857142856,
+      "full_credit": 119,
+      "capped": 165
+    }
+  },
+  "flags": {
+    "negative_observed_surrogate_gain": [],
+    "nonpositive_learning_rate": [],
+    "missing_diagnostics": {
+      "109": [],
+      "110": [],
+      "111": [],
+      "112": []
+    }
+  },
+  "limits": "Four changing-question training batches, not a frozen-policy improvement estimate. All16 questions are distinct. One partial-credit item has an assistant-audit interpretation ambiguity; no grader change or reroll was made."
+}

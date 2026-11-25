@@ -3606,15 +3606,22 @@
       "actor": "codex",
       "summary": "Link the approved broader plan, live training run and immutable fixed baseline",
       "revision": 348
+    },
+    {
+      "id": "555b59ca-925c-4be4-891e-71fbfba3834c",
+      "at": "2026-11-25T15:31:35.599151Z",
+      "actor": "codex",
+      "summary": "Two-hour audit verifies512 answers,16 questions and four native W&B points",
+      "revision": 349
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "First update109 saved and published; fixed384-answer baseline and first hourly proof review verified.",
-  "nextAction": "Supervise the remaining approved RL time, inspect updates and proofs hourly, then run the same-question final screen within its separate cap.",
+  "summary": "AMD549728 has four finite published updates and512 consumed answers across16 distinct questions. W&B has four matching points. Two hourly proof reviews are preserved. Of143 zero scores,109 were capped without a final answer.",
+  "nextAction": "Continue hourly metric and proof reviews within the12-hour cap. Inspect the next scheduled checkpoint, preserve the fixed grader, then run the approved final same-question screen.",
   "owner": "Codex",
-  "revision": 348,
-  "updatedAt": "2026-11-25T14:34:10.817499Z"
+  "revision": 349,
+  "updatedAt": "2026-11-25T15:31:35.599151Z"
 }
