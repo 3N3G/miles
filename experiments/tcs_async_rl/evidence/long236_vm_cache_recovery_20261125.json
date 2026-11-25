@@ -1,0 +1,19 @@
+{
+  "at_utc": "2026-11-25T17:20:47.000049+00:00",
+  "job_id": "549728",
+  "evicted_log_event_files": 37,
+  "evicted_old_audit_trace_copies": 24,
+  "evicted_same_project_download_blobs": 24,
+  "evicted_content_bytes": 1613087773,
+  "evicted_gib": 1.5023050578311086,
+  "vm_free_bytes_after": 5230346240,
+  "proof": "Every removed copy matched an immutable private HF object. Source Slurm states were freshly checked terminal. The HF CLI removed only11 revisions containing v15 paths. Blobs with other snapshot references were retained.",
+  "runtime_receipts": [
+    "vm-old-log-cache-eviction.json",
+    "vm-v15-audit-cache-eviction.json",
+    "vm-v15-shared-cache-eviction.json",
+    "vm-old-training-log-eviction.json"
+  ],
+  "training_changes": 0,
+  "new_gpu_jobs": 0
+}
