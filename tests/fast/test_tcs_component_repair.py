@@ -11,6 +11,39 @@ from experiments.tcs_async_rl.reward_hook import question_key
 
 
 class ComponentPacketTests(unittest.TestCase):
+    def test_two_reference_recipes_keep_the_same_agreement_gate_and_require_complete_labels(self):
+        from experiments.tcs_async_rl.compare_reference_prompts import validate_labels
+        from experiments.tcs_async_rl.judge_comparison import comparison_metrics
+
+        question = {"problem": "problem", "answer": "reference", "rubric": "1. [7 pt] valid"}
+        cases = [{"case": f"case-{i:02d}", "question": question, "candidate": str(i)} for i in range(40)]
+        labels = {
+            "cases": [
+                {
+                    "case": row["case"],
+                    "candidate_sha256": hashlib.sha256(row["candidate"].encode()).hexdigest(),
+                    "candidate_items": [{"item": 1, "satisfied": True, "reason": "valid"}],
+                }
+                for row in cases
+            ]
+        }
+        validate_labels({"cases": cases}, labels)
+        results = {
+            row["case"]: {
+                name: [{"candidate": {"score": 7 * ok, "items": [{"item": 1, "satisfied": ok}]}}]
+                for name, ok in (("reference_v2", True), ("reference_v3", False))
+            }
+            for row in cases
+        }
+        metrics = comparison_metrics(cases, labels, results)
+        self.assertTrue(metrics["reference_v2"]["passes_observed_gate"])
+        self.assertFalse(metrics["reference_v3"]["passes_observed_gate"])
+        with self.assertRaises(ValueError):
+            validate_labels({"cases": cases[:-1]}, labels)
+        labels["cases"][0]["candidate_items"][0]["satisfied"] = None
+        with self.assertRaises(ValueError):
+            validate_labels({"cases": cases}, labels)
+
     def test_frozen_packet_covers_available_medium_questions_and_excludes_reviewed_answers(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)

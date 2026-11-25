@@ -197,7 +197,7 @@ def prepare(cli):
 def comparison_metrics(cases, labels, results):
     expected = {r["case"]: r for r in labels["cases"]}
     output = {}
-    for method in ("anonymous_pair", "reference_guided"):
+    for method in results[cases[0]["case"]]:
         rows = []
         for case in cases:
             identity = case["case"]
