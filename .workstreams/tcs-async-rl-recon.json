@@ -3,6 +3,14 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/664372cffe49cec49011cfed617f059484175858/miles/checkpoint108-screen-v5-baseline",
+      "label": "Fixed v5 baseline:384 unchanged answers and1051 verified artifacts"
+    },
+    {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261125-132805-437-native",
+      "label": "Live236-question continuation, native optimizer coordinates and exact setup"
+    },
+    {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/d4d68e07f0de4ebe2c91597d8eff2b51d608a75c/miles/judge-comparison-item-v5-20261124",
       "label": "Final Luna-high validation: all511 artifacts checksum-verified;34/40 exact,96.17% item, failed gate"
     },
@@ -300,6 +308,26 @@
     }
   ],
   "evidence": [
+    {
+      "path": "experiments/tcs_async_rl/EASY_MEDIUM_236_PLAN_20261125.md",
+      "label": "Approved all236-question continuation and fixed grader"
+    },
+    {
+      "path": "experiments/tcs_async_rl/EASY_MEDIUM_236_OPERATIONS_20261125.md",
+      "label": "Live run paths, exact source and resource caps"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/long236_first_update_20261125.json",
+      "label": "First saved and published update109, finite metrics"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/long236_fixed_baseline_20261125.json",
+      "label": "All384 unchanged baseline answers, v5 scores and immutable verification"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/long236_flat_reward_review_20261125.json",
+      "label": "Full prior-run metric diagnosis and its limits"
+    },
     {
       "path": "experiments/tcs_async_rl/FINAL_LUNA_HIGH_VALIDATION_20261124.md",
       "label": "Standalone final prompt findings and mathematical examples"
@@ -3571,6 +3599,13 @@
       "actor": "codex",
       "summary": "First update109 saved and published; fixed384-answer baseline and first hourly proof review verified.",
       "revision": 347
+    },
+    {
+      "id": "622a27b9-9756-4948-b080-1f88da8811f6",
+      "at": "2026-11-25T14:34:10.817499Z",
+      "actor": "codex",
+      "summary": "Link the approved broader plan, live training run and immutable fixed baseline",
+      "revision": 348
     }
   ],
   "projectId": "understanding",
@@ -3580,6 +3615,6 @@
   "summary": "First update109 saved and published; fixed384-answer baseline and first hourly proof review verified.",
   "nextAction": "Supervise the remaining approved RL time, inspect updates and proofs hourly, then run the same-question final screen within its separate cap.",
   "owner": "Codex",
-  "revision": 347,
-  "updatedAt": "2026-11-25T14:33:45.397309Z"
+  "revision": 348,
+  "updatedAt": "2026-11-25T14:34:10.817499Z"
 }
