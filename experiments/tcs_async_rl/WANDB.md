@@ -105,6 +105,9 @@ The original workspace filters, run selections and unrelated panel definitions a
 
 `monitor/*` contains final/current summary values, not optimizer history. Automatic line plots of those fields have no points,
 including when `_step` is selected. Summary cards read these fields directly.
+The sole live writer derives saved-update cards from completed checkpoint-retention receipts.
+It separates settled judge charges from pending reservations in the shared ledger.
+These status updates append no optimizer history rows.
 `_step` exists for training history, but counts publisher rows; optimizer updates are the research coordinate.
 The raw rubric reward is the displayed return. Group-centered GRPO rewards/advantages average near zero and are unsuitable for this chart.
 See [W&B's custom-axis documentation](https://docs.coreweave.com/products/wandb/track/log/customize-logging-axes).

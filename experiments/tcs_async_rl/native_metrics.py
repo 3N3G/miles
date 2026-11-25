@@ -13,8 +13,8 @@ import math
 import time
 from pathlib import Path
 
-from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
 from experiments.tcs_async_rl.reward_hook import question_key
+from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
 from experiments.tcs_async_rl.rl_smoke import initial_optimizer_updates
 from experiments.tcs_async_rl.run_setup import provenance_config, publish_run_setup
 
@@ -54,7 +54,9 @@ def training_log_config(directory, resolved):
         "training_arguments_source": (
             "validated-native-arguments.json:validated" if validated.exists() else "resolved-config.json:args"
         ),
-        "resolved_config_sha256": hashlib.sha256((directory / "resolved-config.json").read_bytes()).hexdigest(),
+        "resolved_config_sha256": hashlib.sha256(
+            (directory / "resolved-config.json").read_bytes()
+        ).hexdigest(),
         "judge": {
             key: resolved.get("judge", {}).get(key)
             for key in ("primary_model", "reasoning_effort", "max_completion_tokens")
@@ -133,7 +135,9 @@ def read_native_metrics(directory, *, allow_pending=False, require_publication=F
                 row[key] = value
     observed = sorted(rows)
     published = (
-        published_optimizer_steps(directory, allow_pending=allow_pending) if require_publication else set(observed)
+        published_optimizer_steps(directory, allow_pending=allow_pending)
+        if require_publication
+        else set(observed)
     )
     if allow_pending:
         complete = []
@@ -188,7 +192,9 @@ def diagnostic_rollout_metrics(cache, difficulties):
         step = summary["rollout_ids"][0]
         metrics = {}
         for level in sorted(set(difficulties.values())):
-            questions = [value for key, value in summary["by_question"].items() if difficulties.get(key) == level]
+            questions = [
+                value for key, value in summary["by_question"].items() if difficulties.get(key) == level
+            ]
             scores = [score for value in questions for score in value["scores"]]
             if scores:
                 prefix = f"rollout/by_difficulty/{level}"
@@ -203,9 +209,9 @@ def diagnostic_rollout_metrics(cache, difficulties):
                 )
         groups = summary.get("prompt_groups", [])
         if groups:
-            metrics["rollout/constant_reward_group_fraction"] = sum(not row["varied_rewards"] for row in groups) / len(
-                groups
-            )
+            metrics["rollout/constant_reward_group_fraction"] = sum(
+                not row["varied_rewards"] for row in groups
+            ) / len(groups)
         seen.update(summary["by_question"])
         metrics["rollout/unique_questions_seen"] = len(seen)
         if difficulties:
@@ -242,6 +248,40 @@ def publish_audit(native, run):
         run.log({"audit/" + key: value for key, value in row.items()})
 
 
+def live_status_summary(directory, native, scheduler_state):
+    """Derive status cards from completed save receipts and the shared ledger.
+
+    Status belongs in summary, not in extra optimizer history rows. A reservation
+    is not settled spending. An inherited checkpoint is not a new saved update.
+    """
+    approved = directory / "approved-config.json"
+    initial = initial_optimizer_updates(json.loads(approved.read_text())) if approved.exists() else 0
+
+    def complete_rows(path):
+        return (
+            [json.loads(line) for line in path.read_text().splitlines(keepends=True) if line.endswith("\n")]
+            if path.exists()
+            else []
+        )
+
+    saves = complete_rows(directory / "checkpoint-retention.jsonl")
+    latest = max([initial - 1, *(row["rollout_id"] for row in saves)])
+    calls = {}
+    for row in complete_rows(directory / "judging/budget.jsonl"):
+        call = calls.setdefault(row["call_id"], {"usd": 0, "settled": False})
+        call["usd"] += row["usd_delta"]
+        call["settled"] |= row["event"] == "settled"
+    return {
+        "monitor/slurm_state": scheduler_state,
+        "monitor/completed_updates": len(native),
+        "monitor/saved_total_optimizer_updates": latest + 1,
+        "monitor/new_durable_updates": latest + 1 - initial,
+        "monitor/shared_judge_settled_usd": sum(call["usd"] for call in calls.values() if call["settled"]),
+        "monitor/shared_judge_spent_reserved_usd": sum(call["usd"] for call in calls.values()),
+        "monitor/shared_judge_pending_calls": sum(not call["settled"] for call in calls.values()),
+    }
+
+
 def sync_terminal_audit(directory, output):
     # W&B is optional for local evidence reads and CPU tests. Only this VM
     # publishing command loads the SDK and its normal existing authentication.
@@ -252,7 +292,9 @@ def sync_terminal_audit(directory, output):
     run_path = f"{args['wandb_team']}/{args['wandb_project']}/{config['run_id']}"
     before = wandb.Api().run(run_path)
     if before.state not in ("failed", "finished"):
-        raise ValueError("This recovery command requires a failed or finished W&B run whose state it can preserve")
+        raise ValueError(
+            "This recovery command requires a failed or finished W&B run whose state it can preserve"
+        )
     native = read_native_metrics(directory)
     digest = hashlib.sha256(json.dumps(native, sort_keys=True).encode()).hexdigest()
     if before.summary.get("audit/native_metrics_sha256") != digest:
@@ -271,7 +313,9 @@ def sync_terminal_audit(directory, output):
         try:
             publish_audit(native, run)
             run.summary["audit/native_metrics_sha256"] = digest
-            run.summary["audit/source"] = "Native event JSON, joined by optimizer rollout ID through one VM writer"
+            run.summary["audit/source"] = (
+                "Native event JSON, joined by optimizer rollout ID through one VM writer"
+            )
         finally:
             run.finish(exit_code=0 if before.state == "finished" else 1)
     expected = [(row["optimizer_step"], row["rollout/episode_raw_reward"]) for row in native]
@@ -280,12 +324,15 @@ def sync_terminal_audit(directory, output):
         # without resending points or declaring an unverified upload successful.
         after = wandb.Api().run(run_path)
         observed = list(
-            after.scan_history(keys=["audit/optimizer_step", "audit/rollout/episode_raw_reward"], use_cache=False)
+            after.scan_history(
+                keys=["audit/optimizer_step", "audit/rollout/episode_raw_reward"], use_cache=False
+            )
         )
         actual = [
             (row["audit/optimizer_step"], row["audit/rollout/episode_raw_reward"])
             for row in observed
-            if row.get("audit/optimizer_step") is not None and row.get("audit/rollout/episode_raw_reward") is not None
+            if row.get("audit/optimizer_step") is not None
+            and row.get("audit/rollout/episode_raw_reward") is not None
         ]
         if actual == expected and after.state == before.state:
             break
@@ -357,8 +404,7 @@ def sync_live_audit(directory, output, scheduler_state):
             try:
                 publish_run_setup(run, directory, training_log_config(directory, config))
                 publish_audit(pending, run)
-                run.summary["monitor/slurm_state"] = scheduler_state
-                run.summary["monitor/completed_updates"] = len(native)
+                run.summary.update(live_status_summary(directory, native, scheduler_state))
             finally:
                 run.finish(exit_code=0 if not terminal or scheduler_state == "COMPLETED" else 1)
             # SDK success and API verification are separate acknowledgements.
@@ -377,13 +423,17 @@ def sync_live_audit(directory, output, scheduler_state):
                 ).encode(),
             )
         expected = [(row["optimizer_step"], row["rollout/episode_raw_reward"]) for row in native]
-        expected_state = ("finished" if scheduler_state == "COMPLETED" else "failed") if terminal else "running"
+        expected_state = (
+            ("finished" if scheduler_state == "COMPLETED" else "failed") if terminal else "running"
+        )
         # The server's history index can lag SDK upload by tens of seconds.
         # Keep one upload and retry reads instead of republishing its points.
         for attempt in range(12):
             remote = wandb.Api().run(path)
             observed = list(
-                remote.scan_history(keys=["audit/optimizer_step", "audit/rollout/episode_raw_reward"], use_cache=False)
+                remote.scan_history(
+                    keys=["audit/optimizer_step", "audit/rollout/episode_raw_reward"], use_cache=False
+                )
             )
             actual = [
                 (row["audit/optimizer_step"], row["audit/rollout/episode_raw_reward"])

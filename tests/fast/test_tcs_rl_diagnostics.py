@@ -11,6 +11,7 @@ from experiments.tcs_async_rl.live_review import build_review
 from experiments.tcs_async_rl.native_metrics import (
     compare_wandb,
     diagnostic_rollout_metrics,
+    live_status_summary,
     publish_audit,
     read_native_metrics,
     sync_live_audit,
@@ -23,6 +24,27 @@ from experiments.tcs_async_rl.sampled_entropy import summarize as summarize_samp
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_status_cards_distinguish_restored_updates_and_unsettled_reservations(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root / "approved-config.json").write_text(json.dumps({"resume": {"iteration": 108}}))
+            (root / "checkpoint-retention.jsonl").write_text(json.dumps({"rollout_id": 109}) + "\n")
+            (root / "judging").mkdir()
+            entries = [
+                {"event": "reserved", "call_id": "done", "usd_delta": 0.02},
+                {"event": "settled", "call_id": "done", "usd_delta": -0.018},
+                {"event": "reserved", "call_id": "pending", "usd_delta": 0.03},
+            ]
+            (root / "judging/budget.jsonl").write_text(
+                "".join(json.dumps(row) + "\n" for row in entries) + '{"partial'
+            )
+            result = live_status_summary(root, [{"optimizer_step": 109}], "RUNNING")
+            self.assertEqual(result["monitor/saved_total_optimizer_updates"], 110)
+            self.assertEqual(result["monitor/new_durable_updates"], 1)
+            self.assertAlmostEqual(result["monitor/shared_judge_settled_usd"], 0.002)
+            self.assertAlmostEqual(result["monitor/shared_judge_spent_reserved_usd"], 0.032)
+            self.assertEqual(result["monitor/shared_judge_pending_calls"], 1)
+
     def test_difficulty_returns_and_constant_groups_do_not_confuse_question_mix_with_signal(self):
         cache = {
             "a": {
@@ -56,7 +78,11 @@ class DiagnosticTests(unittest.TestCase):
             root = Path(name)
             prompt = "Grade the original rubric.\nUnicode: γ.\n"
             (root / "prompt.txt").write_text(prompt)
-            config = {"prompt_file": "prompt.txt", "grading_method": "reference_guided", "api_key": "test-secret"}
+            config = {
+                "prompt_file": "prompt.txt",
+                "grading_method": "reference_guided",
+                "api_key": "test-secret",
+            }
             public = freeze_judge_setup(root, root / "judge.json", config)
             resolved = {
                 "args": {"lr": 1e-6},
@@ -69,7 +95,9 @@ class DiagnosticTests(unittest.TestCase):
             self.assertEqual(logged["judge_system_prompt"], prompt)
             self.assertNotIn("test-secret", json.dumps(logged))
             template = json.loads((root / "judge-request-template.json").read_text())
-            self.assertEqual(json.loads(template[1]["content"])["reference_solution"], "{{reference_solution}}")
+            self.assertEqual(
+                json.loads(template[1]["content"])["reference_solution"], "{{reference_solution}}"
+            )
             (root / "judge-system-prompt.txt").write_text("changed")
             with self.assertRaisesRegex(ValueError, "prompt hash"):
                 training_log_config(root, resolved)
@@ -124,7 +152,9 @@ class DiagnosticTests(unittest.TestCase):
             resolved = {"args": {"lr": 1e-6}}
             (root / "resolved-config.json").write_text(json.dumps(resolved))
             (root / "validated-native-arguments.json").write_text(
-                json.dumps({"validated": {"lr": 1e-6, "clip_grad": 1.0, "entropy_coef": 0, "api_key": "test-secret"}})
+                json.dumps(
+                    {"validated": {"lr": 1e-6, "clip_grad": 1.0, "entropy_coef": 0, "api_key": "test-secret"}}
+                )
             )
             result = training_log_config(root, resolved)
             self.assertEqual(result["training"]["clip_grad"], 1)
@@ -139,7 +169,11 @@ class DiagnosticTests(unittest.TestCase):
                 (folder / "service-manifest.json").write_text(
                     json.dumps(
                         {
-                            "judge": {"max_completion_tokens": 8, "primary_model": "test", "reasoning_effort": "high"},
+                            "judge": {
+                                "max_completion_tokens": 8,
+                                "primary_model": "test",
+                                "reasoning_effort": "high",
+                            },
                             "judge_config": {"length_retry_max_completion_tokens": 32},
                             "prompt_sha256": hashlib.sha256(b"fixed prompt").hexdigest(),
                         }
@@ -172,7 +206,9 @@ class DiagnosticTests(unittest.TestCase):
                 first, _ = receipt(8, "stop" if invalid == "valid_regraded" else "length")
                 if invalid != "unfinished_only":
                     _, final = receipt(
-                        16, "stop", "changed request" if invalid == "changed_payload" else "same scoring request"
+                        16,
+                        "stop",
+                        "changed request" if invalid == "changed_payload" else "same scoring request",
                     )
                 if invalid != "missing_link":
                     (folder / "length-retries.jsonl").write_text(
@@ -209,10 +245,15 @@ class DiagnosticTests(unittest.TestCase):
         )
         actor = SimpleNamespace(
             optimizer=optimizer,
-            opt_param_scheduler=SimpleNamespace(num_steps=800, lr_decay_steps=1280, lr_decay_style="constant"),
+            opt_param_scheduler=SimpleNamespace(
+                num_steps=800, lr_decay_steps=1280, lr_decay_style="constant"
+            ),
             _rank=0,
             args=SimpleNamespace(
-                wandb_run_id="id", use_checkpoint_opt_param_scheduler=True, single_checkpoint=True, save_interval=105
+                wandb_run_id="id",
+                use_checkpoint_opt_param_scheduler=True,
+                single_checkpoint=True,
+                save_interval=105,
             ),
             _active_model_tag="actor",
         )
@@ -254,7 +295,9 @@ class DiagnosticTests(unittest.TestCase):
                 ("actor_cell00000_rank00000.jsonl", "train/pg_loss"),
                 ("rollout_executor.jsonl", "rollout/episode_raw_reward"),
             ]:
-                events = [{"type": "metric", "rollout_id": step, "metrics": {metric: 1.0}} for step in [0, 24, 25]]
+                events = [
+                    {"type": "metric", "rollout_id": step, "metrics": {metric: 1.0}} for step in [0, 24, 25]
+                ]
                 (root / "events" / source).write_text("\n".join(json.dumps(e) for e in events))
             self.assertEqual([r["optimizer_step"] for r in read_native_metrics(root)], [25])
 
@@ -269,7 +312,12 @@ class DiagnosticTests(unittest.TestCase):
                 tokens_with_support_size_one=0,
                 reward=1,
             )
-            for step, question, surprisal, tokens in [(0, "a", 1, 1), (0, "a", 3, 3), (1, "b", 8, 1), (2, "a", 2.5, 1)]
+            for step, question, surprisal, tokens in [
+                (0, "a", 1, 1),
+                (0, "a", 3, 3),
+                (1, "b", 8, 1),
+                (2, "a", 2.5, 1),
+            ]
         ]
         result = summarize_sampled_entropy(rows)
         self.assertEqual(result["groups"][0]["answer_mean_sampled_surprisal_nats"], 2)
@@ -284,7 +332,9 @@ class DiagnosticTests(unittest.TestCase):
             actor = root / "events/actor_cell00000_rank00000.jsonl"
             rollout = root / "events/rollout_executor.jsonl"
             actor.write_text(
-                json.dumps({"type": "metric", "rollout_id": 25, "metrics": {"train/step": 25, "train/pg_loss": 0.1}})
+                json.dumps(
+                    {"type": "metric", "rollout_id": 25, "metrics": {"train/step": 25, "train/pg_loss": 0.1}}
+                )
                 + "\n"
             )
             rollout.write_text(
@@ -300,7 +350,9 @@ class DiagnosticTests(unittest.TestCase):
             self.assertEqual(read_native_metrics(root, allow_pending=True, require_publication=True), [])
             with actor.open("a") as stream:
                 stream.write(
-                    json.dumps({"type": "metric", "rollout_id": 25, "metrics": {"perf/update_weights_time": 0.1}})
+                    json.dumps(
+                        {"type": "metric", "rollout_id": 25, "metrics": {"perf/update_weights_time": 0.1}}
+                    )
                     + "\n"
                 )
                 stream.write('{"incomplete":')
@@ -316,7 +368,9 @@ class DiagnosticTests(unittest.TestCase):
     def test_live_publisher_keeps_running_then_closes_failed_and_does_not_resend_verified_steps(self):
         native = [{"optimizer_step": 25, "rollout/episode_raw_reward": 3.0, "train/pg_loss": 0.1}]
         remote = Mock(state="running", url="https://wandb.example/run")
-        remote.scan_history.return_value = [{"audit/optimizer_step": 25, "audit/rollout/episode_raw_reward": 3.0}]
+        remote.scan_history.return_value = [
+            {"audit/optimizer_step": 25, "audit/rollout/episode_raw_reward": 3.0}
+        ]
         sdk = Mock()
         sdk.Api.return_value.run.return_value = remote
         sdk.init.return_value.resumed = True
@@ -390,7 +444,11 @@ class DiagnosticTests(unittest.TestCase):
             for step, reward in enumerate([1.0, 6.0]):
                 actor.extend(
                     [
-                        {"type": "metric", "rollout_id": step, "metrics": {"train/step": step, "train/pg_loss": 0.1}},
+                        {
+                            "type": "metric",
+                            "rollout_id": step,
+                            "metrics": {"train/step": step, "train/pg_loss": 0.1},
+                        },
                         {
                             "type": "metric",
                             "rollout_id": step,
@@ -414,7 +472,9 @@ class DiagnosticTests(unittest.TestCase):
                 {"rollout/step": 0, "rollout/episode_raw_reward": 1.0},
                 {"rollout/step": 0, "rollout/episode_raw_reward": 6.0},
             ]
-            audit = compare_wandb(native, history, metric="rollout/episode_raw_reward", step_key="rollout/step")
+            audit = compare_wandb(
+                native, history, metric="rollout/episode_raw_reward", step_key="rollout/step"
+            )
             self.assertEqual(audit["missing_or_misassigned_native_steps"], [1])
             self.assertEqual(native[1]["rollout/episode_raw_reward"], 6.0)
             rollout[1]["metrics"]["rollout/step"] = 0
@@ -471,7 +531,9 @@ class DiagnosticTests(unittest.TestCase):
         delayed = Mock(state="failed")
         delayed.scan_history.return_value = [{"audit/optimizer_step": None}]
         indexed = Mock(state="failed", url="https://wandb.example/run")
-        indexed.scan_history.return_value = [{"audit/optimizer_step": 0, "audit/rollout/episode_raw_reward": 2.0}]
+        indexed.scan_history.return_value = [
+            {"audit/optimizer_step": 0, "audit/rollout/episode_raw_reward": 2.0}
+        ]
         sdk = Mock()
         sdk.Api.return_value.run.side_effect = [before, delayed, indexed]
         with tempfile.TemporaryDirectory() as name:
