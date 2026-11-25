@@ -3423,15 +3423,22 @@
       "actor": "codex",
       "summary": "Another40 disjoint audits are frozen; the resource-bound prompt comparison is running with uncertainty recorded before calls.",
       "revision": 330
+    },
+    {
+      "id": "762bd382-bd10-4e18-9cc0-d0a0a8e884c0",
+      "at": "2026-11-25T04:21:52.720629Z",
+      "actor": "codex",
+      "summary": "The resource-bound prompt failed its fresh gate; prepare the third and final candidate, with documented judge and audit ambiguities.",
+      "revision": 331
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Another40 disjoint audits are frozen; the resource-bound prompt comparison is running with uncertainty recorded before calls.",
-  "nextAction": "Finish both prompts and controls, inspect disagreements without altering frozen labels, then qualify and regrade the saved screen if the gate passes.",
+  "summary": "The resource-bound prompt failed its fresh gate; prepare the third and final candidate, with documented judge and audit ambiguities.",
+  "nextAction": "Freeze40 more disjoint labels, validate the final prompt and controls, then either qualify the saved screen regrade or report the failed gate before GPU spending.",
   "owner": "Codex",
-  "revision": 330,
-  "updatedAt": "2026-11-25T04:17:34.135100Z"
+  "revision": 331,
+  "updatedAt": "2026-11-25T04:21:52.720629Z"
 }

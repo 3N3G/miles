@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Another40 disjoint audits are frozen; the resource-bound prompt comparison is running with uncertainty recorded before calls. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Finish both prompts and controls, inspect disagreements without altering frozen labels, then qualify and regrade the saved screen if the gate passes.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The resource-bound prompt failed its fresh gate; prepare the third and final candidate, with documented judge and audit ambiguities. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Freeze40 more disjoint labels, validate the final prompt and controls, then either qualify the saved screen regrade or report the failed gate before GPU spending.
 
 ## Next / blocked
 
