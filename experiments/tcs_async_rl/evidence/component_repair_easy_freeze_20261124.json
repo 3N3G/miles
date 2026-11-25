@@ -1,0 +1,7 @@
+{
+  "easy_packet_sha256": "f331406f02b398f44fcfe321101f9e17b70e8643434419879662480ae95a015d",
+  "easy_labels_sha256": "3d1d4056857edaab616fcbc90a9471d6fded15d1cc983e8a4da0f83d2636ac0f",
+  "cases": 32,
+  "new_prompt_calls": 0,
+  "remaining_cases": "Eight medium saved answers from the complete fixed screen, selected before labeling."
+}
