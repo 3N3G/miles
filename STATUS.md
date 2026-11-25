@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen 548472 is generating with verified weights. Two audited answers are valid 7/7; one 5/7 grade remains ambiguous. Jobs: hpcfund/548472 RUNNING; hpcfund/546404 FAILED
-  Next: Complete the screen and require genuine mathematical contrasts before including medium questions in the approved RL run.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen548472 failed on a malformed judge verdict after157 answers, with zero optimizer updates. Jobs: hpcfund/548472 FAILED; hpcfund/546404 FAILED
+  Next: Preserve outputs, validate bounded structural-verdict retries, and complete the same approved screen within its remaining compute budget.
 
 ## Next / blocked
 

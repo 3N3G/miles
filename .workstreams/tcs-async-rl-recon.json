@@ -897,7 +897,7 @@
     {
       "id": "548472",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "FAILED"
     },
     {
       "id": "546404",
@@ -3341,15 +3341,22 @@
       "actor": "codex",
       "summary": "Audit early real screen answers and preserve the implicit-monotonicity grading ambiguity",
       "revision": 319
+    },
+    {
+      "id": "0f69274e-5646-4d83-9165-c39af53194da",
+      "at": "2026-11-25T02:58:44.099606Z",
+      "actor": "codex",
+      "summary": "Screen548472 failed on a malformed judge verdict after157 answers, with zero optimizer updates.",
+      "revision": 320
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Screen 548472 is generating with verified weights. Two audited answers are valid 7/7; one 5/7 grade remains ambiguous.",
-  "nextAction": "Complete the screen and require genuine mathematical contrasts before including medium questions in the approved RL run.",
+  "summary": "Screen548472 failed on a malformed judge verdict after157 answers, with zero optimizer updates.",
+  "nextAction": "Preserve outputs, validate bounded structural-verdict retries, and complete the same approved screen within its remaining compute budget.",
   "owner": "Codex",
-  "revision": 319,
-  "updatedAt": "2026-11-25T02:48:58.510114Z"
+  "revision": 320,
+  "updatedAt": "2026-11-25T02:58:44.099606Z"
 }
