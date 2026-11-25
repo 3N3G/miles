@@ -389,9 +389,95 @@ class MultiQuestionTests(unittest.IsolatedAsyncioTestCase):
                         semaphore=asyncio.Semaphore(1),
                         directory=root,
                     )
-            self.assertEqual(client.call_count, config["max_attempts"])
-            self.assertEqual(len(list(root.glob("*-attempt*.json"))), config["max_attempts"])
+            self.assertEqual(client.call_count, 2 * config["max_attempts"])
+            self.assertEqual(len(list(root.glob("*-attempt*.json"))), 2 * config["max_attempts"])
             self.assertFalse(list(root.glob("bad-order0-????????????.json")))
+
+    async def test_failed_format_clarification_preserves_cache_and_verified_retry_provenance(self):
+        from experiments.tcs_async_rl.diagnose_rl import completed_judge_receipt
+
+        for expand_before_repair in (False, True):
+            with self.subTest(expand_before_repair=expand_before_repair), tempfile.TemporaryDirectory() as name:
+                root = Path(name)
+                config = json.loads((BASE / "judge_group_v2_inference_repair.json").read_text())
+                config["grading_method"] = "reference_guided"
+                judge = {"primary_model": "dummy", "reasoning_effort": "high", "max_completion_tokens": 8192}
+                (root / "service-manifest.json").write_text(
+                    json.dumps(
+                        {
+                            "judge_config": config,
+                            "judge": judge,
+                            "prompt_sha256": hashlib.sha256(b"judge").hexdigest(),
+                        }
+                    )
+                )
+                calls = []
+
+                def receipt(payload, *, calls=calls, expand_before_repair=expand_before_repair, **kwargs):
+                    calls.append(copy.deepcopy(payload))
+                    repaired = "output_contract" in json.loads(payload["messages"][1]["content"])
+                    capped = payload["max_completion_tokens"] == 8192 and (expand_before_repair or repaired)
+                    content = (
+                        {"candidate": [{"item": 1, "satisfied": True, "reason": "proved"}]}
+                        if repaired
+                        else {"candidate": []}
+                    )
+                    return {
+                        "http_status": 200,
+                        "body": {
+                            "usage": {"prompt_tokens": 50, "completion_tokens": 10},
+                            "choices": [
+                                {
+                                    "finish_reason": "length" if capped else "stop",
+                                    "message": {"content": json.dumps(content)},
+                                }
+                            ],
+                        },
+                    }
+
+                kwargs = dict(
+                    identity="format",
+                    candidate="answer",
+                    row=question(0),
+                    swapped=False,
+                    judge=judge,
+                    config=config,
+                    prompt="judge",
+                    key="dummy",
+                    budget=Budget(root, config),
+                    semaphore=asyncio.Semaphore(1),
+                    directory=root,
+                )
+                with patch("experiments.tcs_async_rl.grade_group.request_chat", side_effect=receipt), patch(
+                    "experiments.tcs_async_rl.grade_group.asyncio.sleep"
+                ):
+                    result = await asyncio.wait_for(grade_one(**kwargs), timeout=5)
+                    self.assertEqual(result["candidate"]["score"], 7)
+                    budget_bytes = (root / "budget.jsonl").read_bytes()
+                    await asyncio.wait_for(grade_one(**kwargs), timeout=5)
+                    self.assertEqual((root / "budget.jsonl").read_bytes(), budget_bytes)
+                self.assertEqual(len(calls), config["max_attempts"] + 2)
+                self.assertEqual(len((root / "format-retries.jsonl").read_text().splitlines()), 1)
+                final = completed_judge_receipt(root, "format", 0)
+                self.assertEqual(final["payload"]["max_completion_tokens"], 16384)
+                first = calls[0]
+                self.assertEqual(
+                    json.loads(first["messages"][1]["content"]),
+                    {
+                        "problem": question(0)["problem"],
+                        "rubric": question(0)["rubric"],
+                        "reference_solution": "reference",
+                        "candidate_solution": "answer",
+                    },
+                )
+                source = root / json.loads((root / "format-retries.jsonl").read_text())["invalid_attempt_receipts"][0]
+                modified = json.loads(source.read_text())
+                modified["body"]["choices"][0]["message"]["content"] = json.dumps(
+                    {"candidate": [{"item": 1, "satisfied": True, "reason": "valid"}]}
+                )
+                source.write_text(json.dumps(modified))
+                with self.assertRaisesRegex(ValueError, "valid judge verdict was rerolled"):
+                    completed_judge_receipt(root, "format", 0)
 
     async def test_only_unfinished_judge_verdicts_get_bounded_token_retries(self):
         with tempfile.TemporaryDirectory() as name:

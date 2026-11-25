@@ -45,3 +45,32 @@ Saved-support diagnostic: `rollout_support` reads already archived consumed batc
 VM cache recovery,18:42Z:24,703 raw order/attempt receipt copies from five terminal older runs were removed after fresh immutable HF hash verification. The original remote objects, local scores, ledgers, inputs, manifests and seeded examples remain. Each old judging directory now has a restoration marker. Restore exact receipts before reusing those old diagnostics. See[evidence](evidence/long236_vm_old_judge_cache_20261125.json). The active service cache and protected AMD checkpoints were not evicted.
 
 Repetition diagnostic: `rollout_repetition` verifies immutable trace hashes and separately measures exact20-word window repetition in the full response and extracted final answer. It distinguishes model stopping, caps with final text, and caps without final text. A hand-computed three-answer fixture validates the denominators and separation of thinking from final text. This is an offline descriptive check with no new generation or judging.
+
+## Bounded inference repair after the first allocation failed
+
+Job549728 ended FAILED1:0 at20:25:55Z after25,143 allocation seconds. All19 observed updates109–127 were finite.
+Checkpoint124 preserves16 updates. Unsaved125–127 remain failed-attempt evidence and are excluded from the durable lineage.
+W&B readback verified19 rows and1762 exact scalar values. The archive is
+`3N3G/internalization-runs@1e1d18a3613dcb38557b34921d7381115480c285/miles/easy-medium-236-v1`.
+
+The failed question has seven problem tasks but six weighted rubric items. Luna split the final rubric item into two decisions.
+Three malformed replies exhausted the parser retries. The service returned502 and terminated the async producer.
+The affected identities are`online-5e6e89467583f8516b866293` and`online-6d22296e0d3e1a0d9bbf8cf5`.
+Question key:`fd32b919a83950d5b7358c6a4864a3725d7d8283c8b08c04e059c5240b49e040`.
+
+Repair the inference output format only after the original three attempts are unusable.
+Append an`output_contract` to the existing user JSON. It lists original rubric item IDs and weights and says:
+“Return exactly one candidate decision for each scored rubric item listed here. Numbered tasks in the problem are not additional scored rubric items.”
+Keep the v5 system prompt, original problem, reference, candidate, rubric, weights, model and reasoning effort unchanged.
+Allow at most three additional attempts. Preserve raw replies and both request fingerprints.
+Never alter malformed verdicts into scores, substitute zero, or retry an existing valid grade.
+Validate the two failed candidates and reuse a valid cached control without a new request before submission.
+The auditor verifies every failed attempt and the exact clarification before accepting its provenance.
+CPU tests pass for both format/length retry orders, a one-permit semaphore, cache reuse and bounded exhaustion.
+
+Resume iteration124 in a new`easy-medium-236-v2` run. Restore saved rollout/data state because the corpus is unchanged.
+The checkpoint contains data-source, fully asynchronous queue and executor state. Preserve source checkpoints108 and124.
+Use a05:00:00 allocation:18,000 seconds plus25,143 already used is43,143 seconds, below the43,200-second limit.
+All scientific hyperparameters remain unchanged. Save every update for recovery, retain one new checkpoint and reserve45 minutes for final saving.
+Transfer the exact settled/reserved shared ledger only after the old supervisor and scorer exit. Do not reset the$25 cap.
+Continue the original minute checks and hourly proof reviews through finalization, then the approved same12-question final screen.

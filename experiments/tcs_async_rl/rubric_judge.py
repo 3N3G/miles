@@ -16,7 +16,17 @@ def rubric_items(rubric):
     return items
 
 
-def messages(row, candidate, *, swapped, system_prompt, grading_method="anonymous_pair"):
+def rubric_output_contract(items):
+    return {
+        "items": [{"item": index, "weight": weight} for index, weight in items],
+        "instruction": (
+            "Return exactly one candidate decision for each scored rubric item listed here. "
+            "Numbered tasks in the problem are not additional scored rubric items."
+        ),
+    }
+
+
+def messages(row, candidate, *, swapped, system_prompt, grading_method="anonymous_pair", clarify_items=False):
     if grading_method == "reference_guided":
         if swapped:
             raise ValueError("A labeled single-candidate request has no swapped presentation")
@@ -26,6 +36,8 @@ def messages(row, candidate, *, swapped, system_prompt, grading_method="anonymou
             "reference_solution": row["answer"],
             "candidate_solution": candidate,
         }
+        if clarify_items:
+            data["output_contract"] = rubric_output_contract(rubric_items(row["rubric"]))
         return [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": json.dumps(data, ensure_ascii=False)},

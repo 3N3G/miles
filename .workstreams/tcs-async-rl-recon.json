@@ -3753,15 +3753,22 @@
       "actor": "codex",
       "summary": "RL job 549728 ended FAILED; acceptance False",
       "revision": 369
+    },
+    {
+      "id": "dd5ca462-e654-4549-9f2c-2bedbaacccf5",
+      "at": "2026-11-25T20:43:08.164636Z",
+      "actor": "codex",
+      "summary": "Validated failed-request-only judge clarification in CPU tests; preparing bounded5-hour resume124 with original scoring and corpus",
+      "revision": 370
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "RL job 549728 ended FAILED; acceptance False",
-  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
+  "summary": "First allocation failed after6h59m on seven judge decisions for a six-item rubric. Checkpoint124 preserves16 updates. Retry repair passes targeted tests.",
+  "nextAction": "Validate the two failed candidates without rerolling valid grades. Resume checkpoint124 for at most5 hours, then complete the approved fixed-question comparison.",
   "owner": "Codex",
-  "revision": 369,
-  "updatedAt": "2026-11-25T20:34:10.663954Z"
+  "revision": 370,
+  "updatedAt": "2026-11-25T20:43:08.164636Z"
 }

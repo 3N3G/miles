@@ -1,0 +1,149 @@
+{
+  "status": "user_approved_all_easy_medium236_failure_repair_20261125",
+  "mode": "rl_smoke",
+  "job_name": "tcs-easy-medium236-v2",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.luna_high_20261124.json",
+  "container_config": "qualification.proposed.json",
+  "allocation": {
+    "partition": "mi3508x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 8,
+    "cpus_per_task": 64,
+    "walltime": "05:00:00"
+  },
+  "overrides": {
+    "rollout_batch_size": 4,
+    "global_batch_size": 128,
+    "async_max_concurrent_samples": 96,
+    "rollout_skip_special_tokens": false,
+    "save_interval": 1,
+    "seed": 20261124,
+    "max_position_embeddings": 98304,
+    "custom_rm_path": "experiments.tcs_async_rl.reward_hook.reward",
+    "rm_url": "http://127.0.0.1:18500/score",
+    "use_wandb": true,
+    "wandb_mode": "offline",
+    "wandb_project": "tcs-async-rl",
+    "disable_wandb_random_suffix": true,
+    "wandb_always_use_train_step": true,
+    "use_tensorboard": true,
+    "check_weight_update_equal": true,
+    "wandb_team": "geney",
+    "custom_rollout_log_function_path": "experiments.tcs_async_rl.rl_artifacts.log_rollout",
+    "custom_megatron_post_save_hook_path": "experiments.tcs_async_rl.rl_artifacts.retain_latest_checkpoint",
+    "check_weight_update_skip_list": [
+      "visual."
+    ],
+    "observe_training_entropy": true,
+    "use_kl_loss": true,
+    "kl_loss_coef": 0.0,
+    "kl_loss_type": "low_var_kl",
+    "observe_update_direction_steps": [
+      109,
+      110,
+      115,
+      120,
+      130,
+      140,
+      150,
+      160,
+      180,
+      200,
+      240,
+      280,
+      320,
+      400,
+      500,
+      750,
+      1000,
+      2000,
+      5000,
+      10000
+    ],
+    "use_checkpoint_opt_param_scheduler": true,
+    "save_trigger_sentinel": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-medium-236-v2/checkpoint-request",
+    "single_checkpoint": false,
+    "rollout_seed": 20261124,
+    "reset_rollout_state": false,
+    "stop_after_save_trigger": true,
+    "log_inference_engine_weight_checksums": true
+  },
+  "scope": {
+    "purpose": "Train on all20 easy and216 medium questions with the accepted unchanged Luna/high reference prompt v5",
+    "prompt_count": 236,
+    "optimizer_updates": 10000,
+    "heldout_reads": 0,
+    "maximum_gpu_hours": 40,
+    "judge_usd_cap": 25,
+    "judge_location": "VM loopback service through SSH; provider credentials remain on VM",
+    "interpretation": "Same236-question continuation after a malformed judge verdict ended the first allocation. Restore checkpoint124 and rollout/data state. One seed, no filtering, maximum5 allocation-hours, combined below12 hours. Unsaved first-attempt125\u2013127 excluded from durable lineage.",
+    "minimum_varied_groups": 1,
+    "retained_checkpoints": 1
+  },
+  "dataset_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/easy-medium-236-bundle-v1.json",
+  "dataset_sha256": "d4b0169b64874a4cfd2389fc57575fff9787ffe5d7f9d76ed03906dd75f23631",
+  "artifact_compression": "gzip",
+  "incremental_archive": true,
+  "judge_config": "judge_reference_v5_20261125.json",
+  "resume": {
+    "checkpoint_root": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-medium-236-v1/checkpoints",
+    "iteration": 124,
+    "source_run": "easy-medium-236-v1"
+  },
+  "wandb_metrics_source": "native_vm",
+  "archive_interval_seconds": 600,
+  "judge_qualification": {
+    "selection": {
+      "file": "evidence/long236_judge_selection_20261125.json",
+      "sha256": "0d72c85b0d81799d22641f2c365c1c845272224b2c18979c6cff7ed859abb4c8"
+    },
+    "comparison": {
+      "file": "evidence/long236_judge_comparison_20261125.json",
+      "sha256": "588332738a41584c7ca66b0f3790236dccd45e6ae3660dfa7e8a04bacb4e981b"
+    },
+    "controls": {
+      "file": "evidence/long236_judge_controls_20261125.json",
+      "sha256": "4ce3adb7856fab1ef33bdbbd362617bcbf51fe9a23a9fd32a10ffc70622fe35f"
+    },
+    "user_acceptance": {
+      "file": "evidence/long236_judge_acceptance_20261125.json",
+      "sha256": "847906a3a6eab5810c54f46f8ec19f36b750b017e73e607c115664680b93761f"
+    },
+    "runtime_config_sha256": "2b6e8a85b0b083cf2f872fe23775ddd8fdbffb16716ac7503ae96d8dbb9154a4",
+    "training_config_sha256": "2344da3a1dc6b08dd73e9ac8be86ad092ab6a1417ba62ed073d47c2f3a177427",
+    "prompt_sha256": "8a3f737f10d43655d2cf6b64b7990d3841b75b0d5f8b6ad88971a3c351610926"
+  },
+  "source_publication_file": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-medium-236-v1/events/main.jsonl",
+  "resource_stop": {
+    "walltime_margin_seconds": 2700,
+    "judge_stop_usd": 22
+  },
+  "dataset_contract": {
+    "questions": 236,
+    "difficulties": [
+      "easy",
+      "medium"
+    ],
+    "difficulty_counts": {
+      "easy": 20,
+      "medium": 216
+    }
+  },
+  "require_consumed_trace_for_metrics": true,
+  "inference_repair": {
+    "failure": "Luna returned7 decisions for6 scored rubric items after3 unusable replies. HTTP502 terminated the async producer.",
+    "change": "After3 unusable replies only, append exact original item IDs/weights to user JSON, with at most3 further attempts. Preserve every valid grade and the frozen scoring criteria.",
+    "durable_source_iteration": 124,
+    "source_unsaved_optimizer_coordinates": [
+      125,
+      126,
+      127
+    ],
+    "allocation_seconds_previously_used": 25143,
+    "allocation_seconds_total_limit": 43200,
+    "validation_file": "format-repair-validation.json"
+  }
+}

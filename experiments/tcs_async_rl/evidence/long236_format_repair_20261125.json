@@ -1,0 +1,113 @@
+{
+  "at_utc": "2026-11-25T20:43:44.878819+00:00",
+  "repaired": [
+    {
+      "identity": "online-5e6e89467583f8516b866293",
+      "score": 2.0,
+      "items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "The k-SUM records encode each list index and value, and the verifier uses only the selected records to check the sum. The dummy record supplies a nonmember; for positive fixed k, both witness counts are positive."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "The k-SUM encoding enforces one selected value from each list, and the point witnesses are checked for pairwise distinctness and collinearity. Both verifiers use only their selected records."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "The verifier is supposed to test edge and nonedge membership in S, but it receives no access to S and has no selected adjacency records certifying those tests. Thus induced-copy soundness is not established."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "It reuses the invalid induced-pattern membership tests and does not give a fixed witness format with padding for patterns of differing sizes; the empty-family case is also not handled."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "The proposed verifier searches S for edges and the threshold after receiving only vertex records. It does not locally authenticate the required weighted-edge records or threshold record."
+        },
+        {
+          "item": 6,
+          "satisfied": false,
+          "reason": "The weighted induced-pattern verifiers likewise rely on accessing S rather than receiving records that certify the weights, threshold, and induced nonedges. In particular, they do not distinguish a missing adjacency from a missing weight-specific record."
+        }
+      ],
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-medium-236-v2/judging/fd32b919a83950d5b7358c6a4864a3725d7d8283c8b08c04e059c5240b49e040/online-5e6e89467583f8516b866293-order0-3e8f17d65eb2.json",
+      "candidate_sha256": "5e6e89467583f8516b86629342ac92c0f3b45fe991534e5c5e865011cc8977bd"
+    },
+    {
+      "identity": "online-6d22296e0d3e1a0d9bbf8cf5",
+      "score": 2.0,
+      "items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "The universe has polynomially many short (list-index, value) records, and S directly encodes the lists. The verifier checks one record from each list and their sum, with fixed positive witness counts and a dummy complement record."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Coordinate records directly encode the points; the verifier requires three distinct points and checks collinearity from their coordinates. This is a local polynomial-time check (for example, by the determinant test), with fixed positive witness counts and a dummy complement record."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "The witness supplies only vertex records, but the verifier tries to query S or the graph for adjacency. It receives neither, and no edge/nonedge records are supplied to establish an induced copy locally."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "As in item 3, the verifier's induced-copy test consults S or the graph rather than supplied records. The max-size witness description also does not handle an empty family or explain padding for differing pattern sizes."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "The witness contains only vertex records, so the verifier cannot authenticate clique edges or their weights from its inputs. It also consults the graph and W, neither of which is available to the local verifier as described."
+        },
+        {
+          "item": 6,
+          "satisfied": false,
+          "reason": "For edge weights, the witness supplies no weighted-edge or adjacency/nonadjacency records; for vertex weights, it supplies no adjacency/nonadjacency or threshold record. The proposed checks therefore rely on the unavailable graph or W and do not locally establish the required induced copy and weight bound."
+        }
+      ],
+      "receipt": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-medium-236-v2/judging/fd32b919a83950d5b7358c6a4864a3725d7d8283c8b08c04e059c5240b49e040/online-6d22296e0d3e1a0d9bbf8cf5-order0-eb0f6f34d421.json",
+      "candidate_sha256": "6d22296e0d3e1a0d9bbf8cf5ffd80dbcabdaa39976f0c0f5759e693b0035868a"
+    }
+  ],
+  "valid_cached_control": {
+    "identity": "online-23e574cb88b22f6235cb7321",
+    "score": 0.0,
+    "new_calls": 0
+  },
+  "shared_spent_plus_reserved_usd": 7.9864998,
+  "cap_usd": 25,
+  "validation_scope": "Two previously unusable saved candidates. Three new paid calls total. Original invalid replies and failures preserved. No valid verdict rerolled. Cached valid control used zero calls.",
+  "cpu_checks": {
+    "passed": 52,
+    "files": [
+      "tests/fast/test_tcs_easy_training.py",
+      "tests/fast/test_tcs_rl_diagnostics.py",
+      "tests/fast/test_tcs_multigroup_audit.py"
+    ]
+  },
+  "budget_transfer": {
+    "at_utc": "2026-11-25T20:41:55.712035+00:00",
+    "source_run": "easy-medium-236-v1",
+    "source_phase": "finished",
+    "source_scheduler_state": "FAILED",
+    "source_owners_exited": [
+      1611347,
+      1578964
+    ],
+    "ledger_sha256": "e54b189b56653c22c66db806e1966a979a95ca805566b2c865ba2205fb8f4392",
+    "ledger_bytes": 1762201,
+    "inherited_spent_plus_reserved_usd": 7.978077,
+    "cap_usd": 25,
+    "source_archive": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1e1d18a3613dcb38557b34921d7381115480c285/miles/easy-medium-236-v1"
+  },
+  "config_sha256": "f995638ef5cde45a112518713ebfc337a6afac62f8dc4943f75ad9b4973a3186"
+}

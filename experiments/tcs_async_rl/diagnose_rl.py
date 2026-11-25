@@ -20,7 +20,62 @@ from pathlib import Path
 from experiments.tcs_async_rl.native_metrics import compare_wandb, read_native_metrics
 from experiments.tcs_async_rl.reward_hook import question_key
 from experiments.tcs_async_rl.rl_artifacts import file_sha256
-from experiments.tcs_async_rl.rubric_judge import parse_grade, rubric_items
+from experiments.tcs_async_rl.rubric_judge import parse_grade, rubric_items, rubric_output_contract
+
+
+def original_scoring_payload(folder, receipt, manifest, previous):
+    """Verify failure-only clarification provenance before comparing length retries."""
+    payload = receipt["payload"]
+    if manifest["judge_config"].get("grading_method") != "reference_guided":
+        return payload
+    data = json.loads(payload["messages"][1]["content"])
+    if "output_contract" not in data:
+        return payload
+    contract = data.pop("output_contract")
+    if contract != rubric_output_contract(rubric_items(data["rubric"])):
+        raise ValueError("Format clarification changed the original rubric items")
+    original = {**payload, "messages": [dict(message) for message in payload["messages"]]}
+    original["messages"][1]["content"] = json.dumps(data, ensure_ascii=False)
+    source_digest = hashlib.sha256(json.dumps(original, sort_keys=True).encode()).hexdigest()
+    path = folder / "format-retries.jsonl"
+    links = [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
+    links = [link for link in links if link["repaired_request_sha256"] == receipt["request_sha256"]]
+    if not links:
+        # A larger-budget retry can inherit an already verified clarification.
+        if previous is None or "output_contract" not in json.loads(previous["payload"]["messages"][1]["content"]):
+            raise ValueError("Judge format repair has no failed-request provenance")
+        before = previous["payload"]
+        if {k: v for k, v in before.items() if k != "max_completion_tokens"} != {
+            k: v for k, v in payload.items() if k != "max_completion_tokens"
+        }:
+            raise ValueError("Judge retry changed its verified format clarification")
+        return original
+    names = [
+        f"{receipt['identity']}-order{int(receipt['swapped'])}-{source_digest[:12]}-attempt{number}.json"
+        for number in range(manifest["judge_config"]["max_attempts"])
+    ]
+    for link in links:
+        if link["source_request_sha256"] != source_digest or link["invalid_attempt_receipts"] != names:
+            raise ValueError("Judge format repair has inconsistent source attempts")
+    for name in names:
+        attempt = json.loads((folder / name).read_text())
+        if (
+            attempt["request_sha256"] != source_digest
+            or attempt["payload"] != original
+            or attempt["identity"] != receipt["identity"]
+            or attempt["swapped"] != receipt["swapped"]
+        ):
+            raise ValueError("Format repair source differs from the original scoring request")
+        if attempt["http_status"] == 200:
+            choice = attempt["body"]["choices"][0]
+            if choice["finish_reason"] != "stop":
+                raise ValueError("An unfinished verdict needs a length retry, not a format repair")
+            try:
+                parse_grade(choice["message"]["content"], rubric_items(data["rubric"]), answer_labels=("candidate",))
+            except (ValueError, TypeError, AttributeError):
+                continue
+            raise ValueError("A valid judge verdict was rerolled through format repair")
+    return original
 
 
 def save(path, value):
@@ -208,14 +263,18 @@ def completed_judge_receipt(folder, identity, order):
             raise ValueError("Judge receipt differs from the frozen model, effort or prompt")
         receipts.append((path, receipt))
     receipts.sort(key=lambda entry: entry[1]["payload"]["max_completion_tokens"])
+    originals = [
+        original_scoring_payload(folder, receipt, manifest, receipts[index - 1][1] if index else None)
+        for index, (_, receipt) in enumerate(receipts)
+    ]
     if receipts[0][1]["payload"]["max_completion_tokens"] != base_tokens:
         raise ValueError("Judge retry is missing its original request")
     if receipts[-1][1]["payload"]["max_completion_tokens"] > maximum_tokens:
         raise ValueError("Judge retry exceeds its recorded inference budget")
     retry_file = folder / "length-retries.jsonl"
     links = [json.loads(line) for line in retry_file.read_text().splitlines()] if retry_file.exists() else []
-    for (path, previous), (_, current) in zip(receipts, receipts[1:], strict=False):
-        before, after = previous["payload"], current["payload"]
+    for index, ((path, previous), _) in enumerate(zip(receipts, receipts[1:], strict=False)):
+        before, after = originals[index], originals[index + 1]
         if previous["body"]["choices"][0]["finish_reason"] != "length":
             raise ValueError("A completed valid judge verdict was regraded")
         if {k: v for k, v in before.items() if k != "max_completion_tokens"} != {
@@ -244,6 +303,7 @@ def judge_receipts(directory, question, sample):
     if score.get("grading_method") == "reference_guided":
         receipt = completed_judge_receipt(folder, identity, 0)
         request = json.loads(receipt["payload"]["messages"][1]["content"])
+        request.pop("output_contract", None)  # Provenance and exact contract checked above.
         assert request == {
             "problem": question["problem"],
             "rubric": question["rubric"],

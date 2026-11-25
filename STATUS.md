@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 549728 ended FAILED; acceptance False Jobs: hpcfund/549728 FAILED; hpcfund/548575 COMPLETED
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First allocation failed after6h59m on seven judge decisions for a six-item rubric. Checkpoint124 preserves16 updates. Retry repair passes targeted tests. Jobs: hpcfund/549728 FAILED; hpcfund/548575 COMPLETED
+  Next: Validate the two failed candidates without rerolling valid grades. Resume checkpoint124 for at most5 hours, then complete the approved fixed-question comparison.
 
 ## Next / blocked
 

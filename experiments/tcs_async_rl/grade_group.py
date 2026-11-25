@@ -71,17 +71,22 @@ class Budget:
             )
 
 
-async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt, key, budget, semaphore, directory):
+async def grade_one(
+    *, identity, candidate, row, swapped, judge, config, prompt, key, budget, semaphore, directory, clarify_items=False
+):
     method = config.get("grading_method", "anonymous_pair")
     payload = {
         "model": judge["primary_model"],
         "reasoning_effort": judge["reasoning_effort"],
         "max_completion_tokens": judge["max_completion_tokens"],
         "response_format": {"type": "json_object"},
-        "messages": messages(row, candidate, swapped=swapped, system_prompt=prompt, grading_method=method),
+        "messages": messages(
+            row, candidate, swapped=swapped, system_prompt=prompt, grading_method=method, clarify_items=clarify_items
+        ),
     }
     fingerprint = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
     output = directory / f"{identity}-order{int(swapped)}-{fingerprint[:12]}.json"
+    needs_format_repair = False
     if output.exists():
         receipt = json.loads(output.read_text())
     else:
@@ -132,6 +137,9 @@ async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt,
                             if event not in previous:
                                 _append_json(retry_file, event)
                             if attempt + 1 == config["max_attempts"]:
+                                if method == "reference_guided" and not clarify_items:
+                                    needs_format_repair = True
+                                    break
                                 raise RuntimeError(
                                     "Malformed judge verdict retries exhausted; no zero substituted"
                                 ) from None
@@ -145,6 +153,43 @@ async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt,
                 if attempt + 1 == config["max_attempts"]:
                     raise RuntimeError("Judge retries exhausted; no zero score substituted")
                 await asyncio.sleep(min(2**attempt, 30))
+    if needs_format_repair:
+        # Release the concurrency permit before the bounded failure-only retry.
+        # Ordinary requests and every valid cached grade retain their exact bytes.
+        repaired_payload = {
+            **payload,
+            "messages": messages(
+                row, candidate, swapped=swapped, system_prompt=prompt, grading_method=method, clarify_items=True
+            ),
+        }
+        retry_file = directory / "format-retries.jsonl"
+        event = {
+            "source_request_sha256": fingerprint,
+            "repaired_request_sha256": hashlib.sha256(
+                json.dumps(repaired_payload, sort_keys=True).encode()
+            ).hexdigest(),
+            "invalid_attempt_receipts": [
+                f"{identity}-order{int(swapped)}-{fingerprint[:12]}-attempt{number}.json"
+                for number in range(config["max_attempts"])
+            ],
+        }
+        previous = [json.loads(line) for line in retry_file.read_text().splitlines()] if retry_file.exists() else []
+        if event not in previous:
+            _append_json(retry_file, event)
+        return await grade_one(
+            identity=identity,
+            candidate=candidate,
+            row=row,
+            swapped=swapped,
+            judge=judge,
+            config=config,
+            prompt=prompt,
+            key=key,
+            budget=budget,
+            semaphore=semaphore,
+            directory=directory,
+            clarify_items=True,
+        )
     choice = receipt["body"]["choices"][0]
     retry_limit = config.get("length_retry_max_completion_tokens", judge["max_completion_tokens"])
     if choice.get("finish_reason") == "length" and judge["max_completion_tokens"] < retry_limit:
@@ -167,6 +212,7 @@ async def grade_one(*, identity, candidate, row, swapped, judge, config, prompt,
             budget=budget,
             semaphore=semaphore,
             directory=directory,
+            clarify_items=clarify_items,
         )
     if choice.get("finish_reason") != "stop":
         raise ValueError("Judge did not finish its verdict; not a zero score")

@@ -4,7 +4,7 @@ import hashlib
 import json
 
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes
-from experiments.tcs_async_rl.rubric_judge import messages
+from experiments.tcs_async_rl.rubric_judge import messages, rubric_output_contract
 
 PUBLIC_JUDGE_FIELDS = (
     "grading_method",
@@ -57,6 +57,12 @@ def provenance_config(directory, resolved, approved):
         "artifact_policy": "Full generation, final-answer extraction and judge receipts in private HF; no checkpoints uploaded.",
     }
     prompt_path = directory / "judge-system-prompt.txt"
+    if approved.get("inference_repair"):
+        result["inference_repair"] = {
+            **approved["inference_repair"],
+            "format_clarification_instruction": rubric_output_contract([])["instruction"],
+            "format_clarification_items": "Original rubric item IDs and weights, derived separately for each question.",
+        }
     if prompt_path.exists():
         prompt = prompt_path.read_bytes()
         if hashlib.sha256(prompt).hexdigest() != resolved.get("judge_prompt_sha256"):
