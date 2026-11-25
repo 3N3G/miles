@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Frozen32 unseen easy-answer audits before prompt calls; screen548575 has345/384 completed answers. Jobs: hpcfund/548575 RUNNING; hpcfund/548472 FAILED
-  Next: Finish the screen, select and label8 fresh medium answers blind, then compare v2/high with the documented v3/high clarification within the shared budget.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen548575 completed384 answers normally with zero optimizer updates. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Verify and archive the full screen, finish8 blind medium labels, and validate the documented prompt clarification before the approved RL continuation.
 
 ## Next / blocked
 

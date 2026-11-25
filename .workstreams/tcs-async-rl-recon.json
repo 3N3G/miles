@@ -897,7 +897,7 @@
     {
       "id": "548575",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "548472",
@@ -3395,15 +3395,22 @@
       "actor": "codex",
       "summary": "Frozen32 unseen easy-answer audits before prompt calls; screen548575 has345/384 completed answers.",
       "revision": 326
+    },
+    {
+      "id": "ce59b3e7-459b-43af-93c2-18f51b9527a6",
+      "at": "2026-11-25T03:53:47.815315Z",
+      "actor": "codex",
+      "summary": "Screen548575 completed384 answers normally with zero optimizer updates.",
+      "revision": 327
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Frozen32 unseen easy-answer audits before prompt calls; screen548575 has345/384 completed answers.",
-  "nextAction": "Finish the screen, select and label8 fresh medium answers blind, then compare v2/high with the documented v3/high clarification within the shared budget.",
+  "summary": "Screen548575 completed384 answers normally with zero optimizer updates.",
+  "nextAction": "Verify and archive the full screen, finish8 blind medium labels, and validate the documented prompt clarification before the approved RL continuation.",
   "owner": "Codex",
-  "revision": 326,
-  "updatedAt": "2026-11-25T03:47:36.903889Z"
+  "revision": 327,
+  "updatedAt": "2026-11-25T03:53:47.815315Z"
 }
