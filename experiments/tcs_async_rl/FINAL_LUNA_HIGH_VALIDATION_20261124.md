@@ -40,3 +40,5 @@ Human review is the draft recommendation. Further tuning against this consumed p
 
 The [private archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/d4d68e07f0de4ebe2c91597d8eff2b51d608a75c/miles/judge-comparison-item-v5-20261124) preserves every answer, label and verdict.
 [The execution record](FINAL_LUNA_HIGH_OPERATIONS_20261124.md) links verification receipts and W&B.
+
+The [November25 follow-up](UNCERTAINTY_RULE_REVIEW_20261125.md) checks the proposed lower-score uncertainty rule against all six disagreements.
