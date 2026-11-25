@@ -74,3 +74,18 @@ Use a05:00:00 allocation:18,000 seconds plus25,143 already used is43,143 seconds
 All scientific hyperparameters remain unchanged. Save every update for recovery, retain one new checkpoint and reserve45 minutes for final saving.
 Transfer the exact settled/reserved shared ledger only after the old supervisor and scorer exit. Do not reset the$25 cap.
 Continue the original minute checks and hourly proof reviews through finalization, then the approved same12-question final screen.
+
+The repair passed52 CPU checks. Both failed saved candidates then produced six-item grades, each scoring2/7.
+Validation used three new paid calls. A previously valid cached grade used zero calls.
+The exact shared ledger increased from$7.978077 to$7.9864998. See[validation](evidence/long236_format_repair_20261125.json).
+
+Submitted replacement job552495 at20:45:35Z from`f3d6c81a2b10e13b6d50dcfd6ca0862570e1f37d`.
+Frozen config:`rl_easy_medium_236_v2.json`. The run and checkout use the`easy-medium-236-v2` suffix on VM and AMD.
+Supervisor1650306 owns scorer1650307, tunnel1650544 and guard1650545.
+The initial supervisor exited before starting helpers because its VM config lacked normalized container settings.
+Loading that copy through`load_configs` repaired the mismatch without changing the submitted config or job.
+All four helpers subsequently passed health checks. The full236-question service identity remained unchanged.
+
+At20:48Z Slurm reported PENDING/Priority, with all four partition nodes allocated.
+Its provisional start estimate was2026-11-26T01:05:51-06:00, or02:05:51 Eastern. Queue estimates can change.
+Pending time consumes no GPU allocation time. Keep foreground checks active through startup and final closure.
