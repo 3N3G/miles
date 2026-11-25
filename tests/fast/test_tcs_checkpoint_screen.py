@@ -24,7 +24,7 @@ class CheckpointScreenTests(unittest.TestCase):
                     "training_config": "training.json",
                     "prompt_file": "prompt.txt",
                 },
-                "training.json": {},
+                "training.json": {"judge": {"primary_model": "gpt-6-luna", "reasoning_effort": "high"}},
                 "selection.json": {"selected_method": "reference_guided"},
                 "comparison.json": {"reference_guided": {"passes_observed_gate": False}},
                 "controls.json": {"failures": []},
@@ -32,7 +32,10 @@ class CheckpointScreenTests(unittest.TestCase):
             for file, value in values.items():
                 (root / file).write_text(json.dumps(value))
             (root / "prompt.txt").write_text("fixed prompt")
-            digest = lambda file: hashlib.sha256((root / file).read_bytes()).hexdigest()
+
+            def digest(file):
+                return hashlib.sha256((root / file).read_bytes()).hexdigest()
+
             q = {
                 key: {"file": key + ".json", "sha256": digest(key + ".json")}
                 for key in ("selection", "comparison", "controls")

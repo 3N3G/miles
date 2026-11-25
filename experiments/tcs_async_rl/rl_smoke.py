@@ -154,11 +154,12 @@ def validate_judge_qualification(config, config_dir):
         if hashlib.sha256(path.read_bytes()).hexdigest() != evidence["sha256"]:
             raise ValueError("Judge acceptance differs from the frozen user decision")
         decision = json.loads(path.read_text())
+        runtime_judge = judge_settings(runtime_file, runtime)
         accepted = (
             decision.get("decision") == "approved_launch_with_observed_judge_limitations"
             and decision.get("prompt_sha256") == qualification["prompt_sha256"]
-            and decision.get("judge_model") == "gpt-6-luna"
-            and decision.get("reasoning_effort") == "high"
+            and decision.get("judge_model") == runtime_judge["primary_model"]
+            and decision.get("reasoning_effort") == runtime_judge["reasoning_effort"]
             and decision.get("questions") == config["scope"]["prompt_count"]
             and bool(decision.get("user_statement"))
         )
