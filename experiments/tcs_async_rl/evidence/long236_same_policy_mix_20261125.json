@@ -1,0 +1,28 @@
+{
+  "at_utc": "2026-11-25T14:39:27.894736+00:00",
+  "optimizer_batches": [
+    109,
+    110
+  ],
+  "same_generation_weight_version": 109,
+  "decode_tokens_by_batch": {
+    "109": {
+      "109": 8873544
+    },
+    "110": {
+      "109": 6300670
+    }
+  },
+  "raw_returns": {
+    "109": 3.109375,
+    "110": 5.2578125
+  },
+  "return_difference": 2.1484375,
+  "distinct_questions": 8,
+  "questions_per_batch": 4,
+  "explanation": "All generated tokens in both batches use identical source-policy version109. The2.1484375-point raw-return difference occurred without a generator-policy change. Different questions, solver draws and per-answer judging can move this mixed curve. It is not an estimate of learned improvement.",
+  "second_update_finite": true,
+  "second_update_microbatches": 71,
+  "second_update_main_gradient_norm": 0.0791403278708458,
+  "limits": "Two changing-question batches only. No estimate of a learning trend, population judging accuracy or relative contributions of question mix, sampling and judging noise."
+}
