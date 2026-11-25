@@ -3273,15 +3273,22 @@
       "actor": "codex",
       "summary": "Prepare validated fixed-question screen comparisons while AMD remains queued",
       "revision": 310
+    },
+    {
+      "id": "f2fedd7c-f91a-4dc0-b844-74f66cf53d93",
+      "at": "2026-11-25T00:05:20.472904Z",
+      "actor": "codex",
+      "summary": "Recover 0.65 GiB of verified replay-cache duplicates while keeping the queued screen ready",
+      "revision": 311
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD screen546404 remains queued. Luna high passes, conditional runs are frozen, and141 CPU tests pass.",
-  "nextAction": "Supervise the screen, audit raw medium proofs, then run the selected approved continuation and matched final screen.",
+  "summary": "AMD screen546404 is queued; Luna high passes36/40. Verified replay-cache cleanup restores8.0 GiB free on the VM.",
+  "nextAction": "Watch the approved screen, inspect its mathematical answers, and execute the selected bounded continuation.",
   "owner": "Codex",
-  "revision": 310,
-  "updatedAt": "2026-11-24T21:32:54.278807Z"
+  "revision": 311,
+  "updatedAt": "2026-11-25T00:05:20.472904Z"
 }

@@ -1,0 +1,258 @@
+{
+  "at_utc": "2026-11-25T00:04:03.803121+00:00",
+  "verified_duplicate_files": 41,
+  "bytes": 696730562,
+  "files": [
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-25.jsonl.gz",
+      "bytes": 8310639,
+      "sha256": "eada7a35b9ae98b2bbf037cf71d9190108b27bb208193aa173274ed4ee7c3821",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/4d90c54afd37ba496b7c592f31d9f40d4a2766bc"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-51.jsonl.gz",
+      "bytes": 11089554,
+      "sha256": "457089ad1601d5dbf8945b333917e2e14d4f55d6e531ed2164605b77b4585b83",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/7221979e6ed442d94856c276fdf045a9c044a9c2"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-42.jsonl.gz",
+      "bytes": 22382313,
+      "sha256": "3ddb88900c4a77f7a88b069ff8ef3ee72b2c4fb3d6a3328463d71cedcfe8e037",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-29.jsonl.gz",
+      "bytes": 8952449,
+      "sha256": "d18f0c61175c9c6cda1f5b9042e1af05066718f9dc26b1d87bb5249ac082d2ce",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/525a29cf19bc880516743e62d26ad7adafc4fa79"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-38.jsonl.gz",
+      "bytes": 6171065,
+      "sha256": "6d90342724217e3e4e769bfc6e4579d2afb38db919111256d8f74fd8c9939a1e",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-30.jsonl.gz",
+      "bytes": 7545631,
+      "sha256": "211a979f1c2927156edfcc758e9df7e944988022a32349a948e707bba024a674",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/e09e05ce61df93c616a69c5e9f001cab66c20978"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-49.jsonl.gz",
+      "bytes": 13702724,
+      "sha256": "a233940cc2fa8e2ce4f48742a5599ac313ea4028ff56d37e328efa795d65b1ca",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/7221979e6ed442d94856c276fdf045a9c044a9c2"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-44.jsonl.gz",
+      "bytes": 7974257,
+      "sha256": "89edc7d354ad0c0f52d6984325389b567de28b14c83c90fe27c276e0686c16db",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-32.jsonl.gz",
+      "bytes": 14627935,
+      "sha256": "f417797e6ca6313c3f4918eedfd7c96f3ccb826e6546c456506105dbe26025bb",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/08f0423685e2e1b811f6f9d71a18151cc740d26f"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-31.jsonl.gz",
+      "bytes": 14552124,
+      "sha256": "79d075400ec9ffae10dd6854956c1d552c73b4b5646bca1217999a482ca88318",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/988b5c08f9ea078cffeb96f257919a5e785f75b5"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-54.jsonl.gz",
+      "bytes": 32730535,
+      "sha256": "e7dd306d3506afb9b478aaecdfee05ec0f1ac9e6f158607ab6f51e43b882bd44",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/24062585e293c3273b164f7be07334d97bb87852"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-34.jsonl.gz",
+      "bytes": 13658057,
+      "sha256": "01836c87af4f0b7c87d86c54081d62556c5984ebf78e050fb5baccaaf300b975",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-26.jsonl.gz",
+      "bytes": 9546261,
+      "sha256": "c183df209b8a20d9a06bf176ddce7d5383ea910657d1e1b5cfca109b006e3c8e",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/b90c866c60fe52c54fd24a905851783b8427f19a"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-40.jsonl.gz",
+      "bytes": 21209889,
+      "sha256": "5760a2eff7c25a25b897961caadf99b25ff4df1553a86e11c767f3ab4385f005",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-27.jsonl.gz",
+      "bytes": 23654844,
+      "sha256": "32d3cd7d7c4837567029dc79cbdc9a3d6dffbc0ae93879a2cb2fd8d16560f90e",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/6544e477c62a7f12faca523e85dc6630db42becc"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-52.jsonl.gz",
+      "bytes": 27200194,
+      "sha256": "28feacc620f63c9c9bb939f7e334cfc90d1de6945c98a2b0fca134985591b9df",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/b6dbe3761a0ce0413d9e56bccd9841cbf505689e"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-43.jsonl.gz",
+      "bytes": 13791121,
+      "sha256": "7f0a3638511f266e1528d70a27f6ae06bad7bc950d7ab4d92e7469626954cd96",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-33.jsonl.gz",
+      "bytes": 23301826,
+      "sha256": "82d6590b4a2ffea9b7d57482e89078a5260d7bdd9bbcddc66bbc42d96d71c506",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-56.jsonl.gz",
+      "bytes": 11678910,
+      "sha256": "2b93e969ecccfa64e0f7a7aafde7a229eaa5ed2b4a2691180099dc2cbde21e33",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5607502997d1f34e5da7abcaf126fa67284c6f17"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-37.jsonl.gz",
+      "bytes": 20060559,
+      "sha256": "fe510c20a4798e3b5de76775502d74cfcb179d43e028013c104799cbc09e7245",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-46.jsonl.gz",
+      "bytes": 16170817,
+      "sha256": "2faee480ecbee38443b7106c9e9826c1531bc31d7a6f6634a54239394e640019",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-57.jsonl.gz",
+      "bytes": 16945719,
+      "sha256": "a48f865e1b96486e03280f73c559dde68452c6ab4fd2c9ce4ca51619800e2a16",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5607502997d1f34e5da7abcaf126fa67284c6f17"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-63.jsonl.gz",
+      "bytes": 8052283,
+      "sha256": "bea1149537bd28664c30f79ac1790c8ac1055160807b56beac4447d802a9ffcd",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/83541838ff39a39880f3fdd2e3a126cdfa586586"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-28.jsonl.gz",
+      "bytes": 19223929,
+      "sha256": "e8cabbbd68b91b73d037bb45459b1302f2054f673014c4871e78dbda1143aa90",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/d97593ea625907cba91bdf4269a0f0cb6073f03b"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-58.jsonl.gz",
+      "bytes": 11647414,
+      "sha256": "7de6a9ad302a5a3629fe3fd7a345bb8ba129544d71196c6560b7ba42dfc8d857",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5607502997d1f34e5da7abcaf126fa67284c6f17"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-35.jsonl.gz",
+      "bytes": 10915165,
+      "sha256": "9176a68da6eddbaaf51da3029154bb63f4e69740a0b4dc8bbf87acc2884cd375",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-48.jsonl.gz",
+      "bytes": 10902597,
+      "sha256": "46cb1efc86f6f397031a066b28307ee21347e2f58e68cde46c405fdf231d7c5b",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-64.jsonl.gz",
+      "bytes": 12139129,
+      "sha256": "364c5bac1d74cf248ac12dc2a4f1d8d2353138acc2252d2a9ff1368cefb530b0",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/83541838ff39a39880f3fdd2e3a126cdfa586586"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-61.jsonl.gz",
+      "bytes": 11477548,
+      "sha256": "737f20f6d0180f564a958b53114feca23939cbddaf547ad4a80191cf72b91efd",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/e2deb8177c99e8fd41f1dca30735392de2143896"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-50.jsonl.gz",
+      "bytes": 15372703,
+      "sha256": "e301b489d8e99678e3a8e4168532b1b923573ef4cfbd3e61febefa67b4ff6d99",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/7221979e6ed442d94856c276fdf045a9c044a9c2"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-41.jsonl.gz",
+      "bytes": 16472167,
+      "sha256": "65970ac12c6ca65584e185429e8c334ab502dc7d0fff5337da2111549c72ee97",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-36.jsonl.gz",
+      "bytes": 13613510,
+      "sha256": "315bd080213f1d4c266bd9a18ca7938c5356fe219b3de50bfd97c2d4470b28b7",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-59.jsonl.gz",
+      "bytes": 20858622,
+      "sha256": "8a1174786b418e6733e01bf4f7d9db19938ca87f7f80bea52159df24d25cc580",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/e13eb44045931013dbc6ebdd4c7182bb1c57f5ef"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-53.jsonl.gz",
+      "bytes": 35720174,
+      "sha256": "58ca540e54ee964eff2ab1ab4720234509dda44d0f53870df8fb056a81e02ead",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/080beca40f5be5af19b250d4527ecf3081a23e0f"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-60.jsonl.gz",
+      "bytes": 11496525,
+      "sha256": "c20539ba9a9f1a4dcd96e98aa7774625d062c079e768ef20527392ff88871c69",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/e13eb44045931013dbc6ebdd4c7182bb1c57f5ef"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-39.jsonl.gz",
+      "bytes": 10540956,
+      "sha256": "3ce47c53cf33b4d52d75ef35a5cc67f31912d5fe0e3aeac897940282e533f08e",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-47.jsonl.gz",
+      "bytes": 6667274,
+      "sha256": "9ba482221d98245dab9b98aab552e63fa1bb899e1429bbda4b034bb0b9c5ba09",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-62.jsonl.gz",
+      "bytes": 14268620,
+      "sha256": "2acbf08f517616f694119f77312c4f01a8e29397a3c23db2ab20d6214b0005ec",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/83541838ff39a39880f3fdd2e3a126cdfa586586"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-55.jsonl.gz",
+      "bytes": 20977201,
+      "sha256": "6583e779b56be1834113a078c3e5532fb61525e2a1eb5f4724455698f08ce54b",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/c7fcbadab6d60f47e97bb2503bd77f98705a0a7c"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/tmp/v12-audit-traces/rollout_data/rollout-45.jsonl.gz",
+      "bytes": 22499680,
+      "sha256": "00043c331f5b46b3770f050898a99e1ba26a9a15de6e6a522087204588e2800d",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/5597f043bebc1bdac88e42e4a79fe84b8f22ce47"
+    },
+    {
+      "path": "/home/ubuntu/.cache/miles/tcs-async-rl/diagnostics/multigroup-regression-20261124-traces/miles/easy-overfit-v17/rollout_data/rollout-99.jsonl.gz",
+      "bytes": 78627642,
+      "sha256": "7157820e486cc5ed9cb9b8cc4c2d3d54ab27b17668d0a860696a4a3cf1c96b49",
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/299ba1ea7926f872456abad5bbb4e955e469f27c"
+    }
+  ],
+  "free_before_bytes": 7893983232,
+  "removed": true,
+  "free_after_bytes": 8590778368,
+  "eviction_record_hf_commit": "6bc5d6bd75072cb21ac75073af88b42678f952e9",
+  "eviction_record_verified_files": 5
+}

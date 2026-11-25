@@ -203,3 +203,16 @@ Training-visit plots now pool repeat groups within an update, consistent with th
 After a validated screen, run`python -m experiments.tcs_async_rl.compare_screens --before <screen-dir> --output <report-dir>`.
 After final evaluation, add`--after <final-screen-dir>` with a fresh output directory.
 These are descriptive one-seed observations. Questions may enter training and are not a held-out test.
+
+## VM replay-cache recovery during the queue wait
+
+At23:59 UTC, VM free space was7.35 GiB. The live screen directory used2.7 MB.
+The largest recent unrelated result write was728 MiB. No continuous growth rate was established.
+Fresh readback verified41 duplicate trace files against19 immutable private HF commits and local SHA256 values.
+Only those replay-cache copies were evicted:696730562 bytes, raising measured free space to8.0 GiB.
+Forty files were the old v12 audit replay. One was the completed v17 audit regression replay.
+Original run archives remain at their recorded immutable commits. No process was stopped.
+The five-file eviction record passed exact hash readback at
+`3N3G/internalization-runs@6bc5d6bd75072cb21ac75073af88b42678f952e9/miles/vm-cache-recovery-20261124`.
+The per-file receipt is`evidence/vm_cache_eviction_20261124.json`.
+AMD screen546404 remains pending, with no new GPU time or paid judge calls.
