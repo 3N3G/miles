@@ -3683,15 +3683,22 @@
       "actor": "codex",
       "summary": "Fifth deep review verifies1408 answers, checkpoint119 and1031 W&B scalars",
       "revision": 359
+    },
+    {
+      "id": "ee50b018-bcaa-44e3-87ef-df79a39528fe",
+      "at": "2026-11-25T18:14:42.834831Z",
+      "actor": "codex",
+      "summary": "Twelve native W&B points and four positive local update-direction probes verified",
+      "revision": 360
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Fifth deep review verifies1408 answers, checkpoint119 and1031 W&B scalars",
-  "nextAction": "Continue the approved run through final save and terminal verification. Review the next update-direction probe and complete the unchanged final12-question comparison.",
+  "summary": "Twelve native W&B points and four positive local update-direction probes verified",
+  "nextAction": "Continue foreground supervision and hourly raw-proof reviews. Complete the fixed before/after screen after the final saved checkpoint under the unchanged approved budget.",
   "owner": "Codex",
-  "revision": 359,
-  "updatedAt": "2026-11-25T18:06:57.867599Z"
+  "revision": 360,
+  "updatedAt": "2026-11-25T18:14:42.834831Z"
 }
