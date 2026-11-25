@@ -38,6 +38,29 @@ def question(index):
 
 
 class EasyDataTests(unittest.TestCase):
+    def test_output_sync_preserves_session_receipt_while_copying_native_evidence(self):
+        from experiments.tcs_async_rl.watch_rl import sync_outputs
+
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            source, destination = root / "remote", root / "vm"
+            source.mkdir()
+            destination.mkdir()
+            owner = b'{"job_id":"999","session_uuid":"own"}\n'
+            (destination / "submission.json").write_bytes(owner)
+            (source / "submission.json").write_text('{"job_id":"999"}')
+            (source / "rl-smoke.log").write_text("native optimizer evidence\n")
+            run = subprocess.run
+
+            def local_transport(argv, **kwargs):
+                self.assertEqual(argv[-2], "amd:/remote/run/")
+                return run([*argv[:-2], str(source) + "/", argv[-1]], **kwargs)
+
+            with patch("experiments.tcs_async_rl.watch_rl.subprocess.run", side_effect=local_transport):
+                sync_outputs(Path("/remote/run"), destination)
+            self.assertEqual((destination / "submission.json").read_bytes(), owner)
+            self.assertEqual((destination / "rl-smoke.log").read_bytes(), (source / "rl-smoke.log").read_bytes())
+
     def test_supervisor_owns_three_helpers_and_never_submits(self):
         from experiments.tcs_async_rl.amd_preflight import load_configs
         from experiments.tcs_async_rl.supervise import supervise

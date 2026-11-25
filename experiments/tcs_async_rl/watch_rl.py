@@ -230,6 +230,9 @@ def sync_outputs(remote_directory, directory, *, bounded=False):
         [
             "rsync",
             "-a",
+            # The VM receipt owns session identity. Slurm's minimal receipt
+            # must not erase it before resource-stop validation.
+            "--exclude=/submission.json",
             "--exclude=checkpoints/",
             "--exclude=ray/",
             "--exclude=dashboard_columns/",
