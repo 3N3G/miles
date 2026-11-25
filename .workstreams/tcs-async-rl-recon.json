@@ -897,7 +897,7 @@
     {
       "id": "548575",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "548472",
@@ -3360,15 +3360,22 @@
       "actor": "codex",
       "summary": "Submitted repaired screen548575 within the original16 GPU-hour screen cap.",
       "revision": 321
+    },
+    {
+      "id": "6eafd62c-f647-4e7f-9416-f9cc2b2eec89",
+      "at": "2026-11-25T03:03:14.242346Z",
+      "actor": "codex",
+      "summary": "Repaired screen548575 is RUNNING; malformed-verdict recovery passed the actual failed request.",
+      "revision": 322
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Submitted repaired screen548575 within the original16 GPU-hour screen cap.",
-  "nextAction": "Supervise the same384-answer screen, audit medium proofs, then run the selected approved twelve-hour continuation.",
+  "summary": "Repaired screen548575 is RUNNING; malformed-verdict recovery passed the actual failed request.",
+  "nextAction": "Check source weights, screen384 answers, audit medium score contrasts and supervise the approved RL continuation.",
   "owner": "Codex",
-  "revision": 321,
-  "updatedAt": "2026-11-25T03:02:49.565200Z"
+  "revision": 322,
+  "updatedAt": "2026-11-25T03:03:14.242346Z"
 }

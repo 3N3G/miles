@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted repaired screen548575 within the original16 GPU-hour screen cap. Jobs: hpcfund/548575 PENDING; hpcfund/548472 FAILED
-  Next: Supervise the same384-answer screen, audit medium proofs, then run the selected approved twelve-hour continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Repaired screen548575 is RUNNING; malformed-verdict recovery passed the actual failed request. Jobs: hpcfund/548575 RUNNING; hpcfund/548472 FAILED
+  Next: Check source weights, screen384 answers, audit medium score contrasts and supervise the approved RL continuation.
 
 ## Next / blocked
 
