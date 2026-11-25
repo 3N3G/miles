@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Six finite updates and checkpoint114 verified on all236 training continuation Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Continue hourly proof and metric reviews, then verify final checkpoint, immutable archive and W&B before the approved fixed-question final screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Six updates,768 audited answers and24 distinct questions. Four raw proofs reviewed in the third deep review.169/243 zeros are capped without a final answer. No repeated questions yet, so no measured t Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Continue foreground monitoring and hourly proof/metric reviews. Verify the next update-direction probe and later checkpoint. Finish with the approved same12-question final screen a
 
 ## Next / blocked
 

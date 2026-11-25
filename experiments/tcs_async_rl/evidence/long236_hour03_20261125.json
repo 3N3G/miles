@@ -1,0 +1,219 @@
+{
+  "at_utc": "2026-11-25T16:19:02.369601+00:00",
+  "job_id": "549728",
+  "metric_updates": 6,
+  "audited_steps": [
+    109,
+    110,
+    111,
+    112,
+    113,
+    114
+  ],
+  "audited_answers": 768,
+  "distinct_questions": 24,
+  "full_credit": 209,
+  "zero": 243,
+  "capped": 260,
+  "capped_empty_final": 169,
+  "mixed_mean_score": 3.1145833333333335,
+  "constant_groups": 4,
+  "by_difficulty": {
+    "easy": {
+      "answers": 96,
+      "questions": 3,
+      "mean_score": 6.802083333333333,
+      "full_credit": 88,
+      "zero": 0,
+      "capped": 0
+    },
+    "medium": {
+      "answers": 672,
+      "questions": 21,
+      "mean_score": 2.587797619047619,
+      "full_credit": 121,
+      "zero": 243,
+      "capped": 260
+    }
+  },
+  "limit": "No repeated question visits yet. These changing-question means do not estimate a learning effect.",
+  "metrics": {
+    "train/full_policy_entropy": {
+      "points": 6,
+      "first": 0.48149701952934265,
+      "last": 0.43003496527671814,
+      "min": 0.3805599510669708,
+      "max": 0.48149701952934265,
+      "last_step": 114
+    },
+    "train/sampling_entropy": {
+      "points": 6,
+      "first": 0.4002723693847656,
+      "last": 0.3581550419330597,
+      "min": 0.31613072752952576,
+      "max": 0.4002723693847656,
+      "last_step": 114
+    },
+    "train/kl_loss": {
+      "points": 6,
+      "first": 0.009979860857129097,
+      "last": 0.009730661287903786,
+      "min": 0.008591599762439728,
+      "max": 0.009979860857129097,
+      "last_step": 114
+    },
+    "train/train_rollout_kl": {
+      "points": 6,
+      "first": 0.0002833160979207605,
+      "last": 0.00026410334976390004,
+      "min": 0.00023946618603076786,
+      "max": 0.0002833160979207605,
+      "last_step": 114
+    },
+    "train/grad_norm": {
+      "points": 6,
+      "first": 0.0809895321726799,
+      "last": 0.06772155314683914,
+      "min": 0.05848782882094383,
+      "max": 0.10246127098798752,
+      "last_step": 114
+    },
+    "train/num_microbatches": {
+      "points": 6,
+      "first": 100,
+      "last": 113,
+      "min": 71,
+      "max": 124,
+      "last_step": 114
+    },
+    "train/pg_clipfrac": {
+      "points": 6,
+      "first": 0.0,
+      "last": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "last_step": 114
+    },
+    "train/ess_ratio": {
+      "points": 6,
+      "first": 0.999433159828186,
+      "last": 0.999471127986908,
+      "min": 0.999433159828186,
+      "max": 0.9995207190513611,
+      "last_step": 114
+    },
+    "perf/train_wait_time": {
+      "points": 6,
+      "first": 1522.86545419693,
+      "last": 22.247795343399048,
+      "min": 18.548620462417603,
+      "max": 1522.86545419693,
+      "last_step": 114
+    },
+    "perf/train_time": {
+      "points": 6,
+      "first": 1494.1168413162231,
+      "last": 1186.4281997680664,
+      "min": 958.4949910640717,
+      "max": 1494.1168413162231,
+      "last_step": 114
+    },
+    "rollout/fully_async/token_weighted_staleness": {
+      "points": 6,
+      "first": 0.0,
+      "last": 1.8736706254922673,
+      "min": 0.0,
+      "max": 1.9638711063433378,
+      "last_step": 114
+    }
+  },
+  "flags_to_inspect": {
+    "negative_observed_surrogate_gain": [],
+    "nonpositive_learning_rate": [],
+    "missing_diagnostics": {
+      "109": [],
+      "110": [],
+      "111": [],
+      "112": [],
+      "113": [],
+      "114": []
+    }
+  },
+  "within_continuation_matched_visits": {
+    "questions": 0,
+    "mean_change": null,
+    "increased": 0,
+    "decreased": 0,
+    "pairs": []
+  },
+  "proof_review": {
+    "reviewed_at_utc": "2026-11-25T16:19:02.369601+00:00",
+    "selection_file": "hour03-review-selection.json",
+    "cases": [
+      {
+        "kind": "routine_easy",
+        "file": "example-step-114-group-20.json",
+        "score": 7.0,
+        "optimizer_step": 114,
+        "sample_index": 651,
+        "final_characters": 4521,
+        "selection": "Random(20261127), uniform among seeded exported examples for updates113\u2013114 at this difficulty",
+        "assistant_score_under_current_prompt": 7,
+        "reason": "Correct weighted double-counting on the supplied tree packing. The floor discussion self-corrects and establishes floor(A)+1>A, including integer A. The stated fractional packing bound tau\u2265lambda/2 is sufficient and permitted. The fixed-cut contradiction gives a supported tree.",
+        "uncertainty": "The initial floor statement is false but explicitly corrected before the proof uses it."
+      },
+      {
+        "kind": "routine_medium",
+        "file": "example-step-114-group-21.json",
+        "score": 4.0,
+        "optimizer_step": 114,
+        "sample_index": 683,
+        "final_characters": 7478,
+        "selection": "Random(20261127), uniform among seeded exported examples for updates113\u2013114 at this difficulty",
+        "assistant_score_under_current_prompt": 4,
+        "reason": "The fixed parallel-edge graph and nonconstant behavior argument are valid. Connectedness supplies nearby differing outputs. The claimed switch near arbitrarily large equal weights and the scaling of an arbitrary algorithm\u2019s boundary are unsupported, so the weighted numerator lower bound and final composition fail.",
+        "uncertainty": "An explicit segment between forced positive-weight instances could repair the proof, but the submitted answer instead relies on unproved diagonal and scaling claims."
+      },
+      {
+        "kind": "zero_completed",
+        "file": "hour03-zero_completed.json",
+        "optimizer_step": 113,
+        "sample_index": 620,
+        "score": 0.0,
+        "final_characters": 6711,
+        "selection": "Random(20261127), uniform within the named diagnostic category after routine samples",
+        "assistant_score_under_current_prompt": 0,
+        "reason": "The candidate makes the exact prohibited selection-bias mistake: it infers law(X|no abort)=mu_v from pathwise agreement and an unconditional exact law. It supplies no faithful adaptive-prefix construction. The valid failure-symbol lower bound does not complete the conjunctive sharpness-and-composition item without a valid upper bound.",
+        "uncertainty": null
+      },
+      {
+        "kind": "high_score_medium",
+        "file": "hour03-high_score_medium.json",
+        "optimizer_step": 113,
+        "sample_index": 632,
+        "score": 7.0,
+        "final_characters": 7379,
+        "selection": "Random(20261127), uniform within the named diagnostic category after routine samples",
+        "assistant_score_under_current_prompt": 7,
+        "reason": "The common complete execution history includes randomized outcomes. Both algorithms follow the same randomized steps and boundary logic until the sole guard modification. The proof keeps Pr[X in B and A] joint, derives the unconditional upper bound, and attains it at the failure symbol. It does not assume success is independent of X.",
+        "uncertainty": "One side note equates actual abort to a total-query threshold without fully restating guard timing. The main argument uses the stated actual abort event and does not need that side identification."
+      }
+    ],
+    "limits": "Post-grade assistant mathematical diagnostics, not independent human calibration or an unbiased judge agreement sample. The zero and seven targeted medium answers happen to solve the same question. No verdict was rerolled.",
+    "new_inference_calls": 0,
+    "new_judge_calls": 0,
+    "order_comparison_cases_measured": 0,
+    "reference_scores_measured_in_training_grades": 0
+  },
+  "checkpoint_evidence": "long236_checkpoint114_20261125.json",
+  "wandb_full_readback": {
+    "at_utc": "2026-11-25T16:01:44.695984+00:00",
+    "state": "running",
+    "verified_optimizer_rows": 6,
+    "history_rows": 6,
+    "verified_scalars": 570,
+    "training_config_matches": true,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261125-132805-437-native"
+  },
+  "operational_limit": "Snapshots are descriptive. A fixed final-policy screen is still required. No model, reward, training hyperparameter or used config changed."
+}

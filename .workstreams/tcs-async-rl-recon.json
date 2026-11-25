@@ -3627,15 +3627,22 @@
       "actor": "codex",
       "summary": "Six finite updates and checkpoint114 verified on all236 training continuation",
       "revision": 351
+    },
+    {
+      "id": "8b065f90-7b88-4acf-a1d8-243cf29a1ce2",
+      "at": "2026-11-25T16:19:25.793374Z",
+      "actor": "codex",
+      "summary": "Third deep review verifies768 answers and a zero-versus-seven proof pair on one medium question",
+      "revision": 352
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Six finite updates and checkpoint114 verified on all236 training continuation",
-  "nextAction": "Continue hourly proof and metric reviews, then verify final checkpoint, immutable archive and W&B before the approved fixed-question final screen.",
+  "summary": "Six updates,768 audited answers and24 distinct questions. Four raw proofs reviewed in the third deep review.169/243 zeros are capped without a final answer. No repeated questions yet, so no measured training trend.",
+  "nextAction": "Continue foreground monitoring and hourly proof/metric reviews. Verify the next update-direction probe and later checkpoint. Finish with the approved same12-question final screen and immutable archive checks.",
   "owner": "Codex",
-  "revision": 351,
-  "updatedAt": "2026-11-25T16:00:55.133049Z"
+  "revision": 352,
+  "updatedAt": "2026-11-25T16:19:25.793374Z"
 }
