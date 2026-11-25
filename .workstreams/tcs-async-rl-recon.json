@@ -3327,15 +3327,22 @@
       "actor": "codex",
       "summary": "Repaired checkpoint screen 548472 is RUNNING",
       "revision": 317
+    },
+    {
+      "id": "1c544a75-1319-4f14-aa8e-7dc308f12fc6",
+      "at": "2026-11-25T02:40:28.663114Z",
+      "actor": "codex",
+      "summary": "Screen 548472 passed both exact source-weight checks and began generation",
+      "revision": 318
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Repaired checkpoint screen 548472 is RUNNING",
-  "nextAction": "Verify both source-matching weight transfers, complete384 pinned answers and audit genuine medium reward variation.",
+  "summary": "Screen 548472 passed both exact source-weight checks and began generation",
+  "nextAction": "Watch all384 answers, inspect actual Luna-high grades and audit the medium inclusion rule before training.",
   "owner": "Codex",
-  "revision": 317,
-  "updatedAt": "2026-11-25T02:35:09.952318Z"
+  "revision": 318,
+  "updatedAt": "2026-11-25T02:40:28.663114Z"
 }

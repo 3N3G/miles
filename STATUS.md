@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Repaired checkpoint screen 548472 is RUNNING Jobs: hpcfund/548472 RUNNING; hpcfund/546404 FAILED
-  Next: Verify both source-matching weight transfers, complete384 pinned answers and audit genuine medium reward variation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen 548472 passed both exact source-weight checks and began generation Jobs: hpcfund/548472 RUNNING; hpcfund/546404 FAILED
+  Next: Watch all384 answers, inspect actual Luna-high grades and audit the medium inclusion rule before training.
 
 ## Next / blocked
 
