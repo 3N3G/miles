@@ -1,0 +1,15 @@
+{
+  "command": "python3 -m unittest tests.fast.test_tcs_rl_diagnostics -q",
+  "passed_tests": 18,
+  "black": "passed",
+  "isort": "passed",
+  "ruff": "passed",
+  "covers": [
+    "exact prompt bytes and hash mismatch rejection",
+    "credential exclusion including unexpected judge fields",
+    "validated parser defaults in config",
+    "no extra history from setup publication",
+    "no repeated printing on heartbeat"
+  ],
+  "not_run": "GPU training was not run for this logging-only change. Pytest collection needs additional VM dependencies; the unittest module runs the same18 tests without repository GPU fixtures."
+}

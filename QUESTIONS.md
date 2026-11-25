@@ -1,15 +1,5 @@
 # Open questions
 
-## 2026-11-24: Judge decision after the final Luna-high prompt validation
-
-- Question: resolve the remaining rubric boundaries by human review, or test a different judge before the approved long run?
-- Evidence: the final Luna-high prompt matches 34/40 totals and 96.17% of items. All 132 controls pass. Six total scores disagree, four on audits marked uncertain before calls. The declared 90% total-score gate fails. No labels changed after verdicts.
-- Options: review the six saved disagreements with their original rubric items, approve a specified stronger judge and fresh validation, or explicitly revise the reward/qualification protocol before a new experiment.
-- Recommendation: human review first. Some discrepancies may be assistant audit errors. Do not lower the gate after observing this packet or use it as fresh validation again.
-- Blocks: qualification of a new screen grader, the easy/medium inclusion decision, and the twelve-hour RL submission. Those compute permissions remain approved and unused for RL.
-- Completed independent work: 384 screening answers are generated and privately archived. All final-comparison calls are settled at $1.7725486 across the shared $25 budget. All source checkpoints, used prompts and configs remain preserved.
-- Details: [standalone findings](experiments/tcs_async_rl/FINAL_LUNA_HIGH_VALIDATION_20261124.md) and [operational evidence](experiments/tcs_async_rl/FINAL_LUNA_HIGH_OPERATIONS_20261124.md).
-
 ## 2026-11-24: Implicit monotonicity in an auction proof
 
 - Question: does the auction payment item require an explicit single-bidder monotonicity argument when the candidate states the correct formula?
@@ -278,3 +268,14 @@
 - Blocks: GPU screening and twelve-hour RL submission under the unsuccessful grading gate. The already approved resource limits remain valid and unused.
 - Permission basis: the user previously selected “Enable Qwen thinking; keep Luna medium.” The current plan fixes that effort and stops after one failed prompt repair. Prompt changes alone do not authorize a different judge effort.
 - Answer, 2026-11-24: “Ok try luna high. If that doesn’t work do some more prompt optimization.” This approves high effort and further prompt repair, superseding the old medium-only and one-repair constraints. The [current protocol](experiments/tcs_async_rl/HIGH_EFFORT_JUDGE_PLAN_20261124.md) preserves the existing budget and fresh-validation requirements.
+
+## 2026-11-24: Judge decision after the final Luna-high prompt validation
+
+- Question: resolve the remaining rubric boundaries by human review, or test a different judge before the approved long run?
+- Evidence: the final Luna-high prompt matches 34/40 totals and 96.17% of items. All 132 controls pass. Six total scores disagree, four on audits marked uncertain before calls. The declared 90% total-score gate fails. No labels changed after verdicts.
+- Options: review the six saved disagreements with their original rubric items, approve a specified stronger judge and fresh validation, or explicitly revise the reward/qualification protocol before a new experiment.
+- Recommendation: human review first. Some discrepancies may be assistant audit errors. Do not lower the gate after observing this packet or use it as fresh validation again.
+- Blocks: qualification of a new screen grader, the easy/medium inclusion decision, and the twelve-hour RL submission. Those compute permissions remain approved and unused for RL.
+- Completed independent work: 384 screening answers are generated and privately archived. All final-comparison calls are settled at $1.7725486 across the shared $25 budget. All source checkpoints, used prompts and configs remain preserved.
+- Details: [standalone findings](experiments/tcs_async_rl/FINAL_LUNA_HIGH_VALIDATION_20261124.md) and [operational evidence](experiments/tcs_async_rl/FINAL_LUNA_HIGH_OPERATIONS_20261124.md).
+- Answer, 2026-11-25: the user said “oh i think thats fine actually” and requested the final prompt/setup plus W&B logging and durable transcripts. Keep Luna high and unchanged prompt v5 for review. Preserve its measured 85% agreement and the original failed numeric gate. The current step adds provenance and logging, without new inference or a GPU submission.

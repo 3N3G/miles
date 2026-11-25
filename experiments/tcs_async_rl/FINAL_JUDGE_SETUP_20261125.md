@@ -88,3 +88,13 @@ The complete source exchanges are in the [verified private validation archive](h
 All 384 screening generations and their full saved text are in the [verified screen archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/7a258e0947401b05d2207f63592bea799e9284bd/miles/difficulty-screen-high-v3).
 Future full rollouts, extracted finals, rubric decisions, request/response receipts, usage and failures follow that private archive policy.
 Large traces stay out of the VM after immutable upload and checksum verification. Checkpoints remain on AMD.
+
+## Verified publication
+
+The [W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/judge-item-v5-20261124) now contains the reviewed setup under Config, Logs and Files.
+All 9 attached files passed byte-for-byte checksum verification, and every nonempty prompt line appeared in the console.
+The original single validation history point and finished state are unchanged. No new provider calls ran.
+The [setup archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/460538cb5c244b0a074560ac03b0d77fb99578b9/miles/setup-review-20261125) passed immutable verification for 18 files.
+The [complete graded example](https://huggingface.co/datasets/3N3G/internalization-runs/blob/460538cb5c244b0a074560ac03b0d77fb99578b9/miles/setup-review-20261125/graded-example.md) is available there.
+The logging changes passed 18 CPU tests plus formatting and lint checks. No GPU training test ran for this metadata-only change.
+Receipts: [W&B](evidence/setup-review-20261125-wandb-setup-receipt.json), [HF](evidence/setup-review-20261125-archive.json), [CPU checks](evidence/setup-review-20261125-logging-validation.json).

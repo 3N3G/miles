@@ -1,0 +1,23 @@
+{
+  "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/judge-item-v5-20261124",
+  "state": "finished",
+  "verified_files": 9,
+  "file_sha256": {
+    "setup-review-20261125/RUN_SETUP.md": "053801086f2988d05fc87870c74a69389bc4af24ece4c1c90a6f5f833627624c",
+    "setup-review-20261125/judge-system-prompt.txt": "8a3f737f10d43655d2cf6b64b7990d3841b75b0d5f8b6ad88971a3c351610926",
+    "setup-review-20261125/judge-request-template.json": "3703e4e6371983163dba739ee40783073c0b070ea808f690b2fbc01332bd3849",
+    "setup-review-20261125/judge-runtime-settings.json": "1e639db22d4eb332b1b76af779076a6ed84b52a6a909f72a3b7f4a6dd5aa2b39",
+    "setup-review-20261125/planned-training-hyperparameters.json": "7fa6ebfc30b7a36eb5c0f2a56f72aca31e82a280863c550c07f41ce52a582acd",
+    "setup-review-20261125/graded-example.json": "74863365e42c8b6696e4377d706e0d78204e2b53b5dd9a613eeb5f8e82dacd96",
+    "setup-review-20261125/graded-example.md": "78cf7b90e1cdc185a6a100be6b93dca9d3e2defb0ae6afcdc82c66cd51736e14",
+    "setup-review-20261125/artifact-links.json": "f67468e5f0252a4534c6749ccf44b39399bc80f1bce0b6021d362549d3394cec",
+    "setup-review-20261125/user-acceptance.json": "c80706ae8fb1e884c4ba83b494c851bef5ed0090b1d92c3c088bc600a27fa761"
+  },
+  "history_rows_before": 1,
+  "history_rows_after": 1,
+  "optimizer_updates": 0,
+  "new_provider_calls": 0,
+  "nested_config_values_verified": true,
+  "numeric_string_encodings": [],
+  "console_prompt_nonempty_lines_verified": 22
+}
