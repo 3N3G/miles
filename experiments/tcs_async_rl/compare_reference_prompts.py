@@ -38,7 +38,7 @@ async def compare(cli):
     validate_labels(packet, labels)
     config = json.loads(cli.config.read_text())
     prompts = config["prompt_files"]
-    if set(prompts) != {"reference_v2", "reference_v3"}:
+    if len(prompts) != 2 or any(not name.startswith("reference_v") for name in prompts):
         raise ValueError("Expected exactly the frozen comparator and component repair")
     judge = judge_settings(cli.config, config)
     if judge["primary_model"] != "gpt-6-luna" or judge["reasoning_effort"] != "high":
@@ -70,7 +70,11 @@ async def compare(cli):
     }
 
     async def one(case, recipe, identity, text):
-        if recipe == "reference_v2" and identity == case["case"] and identity in medium_sources:
+        if (
+            recipe == config.get("baseline_cache_recipe", "reference_v2")
+            and identity == case["case"]
+            and identity in medium_sources
+        ):
             # These exact v2/high verdicts already exist from generation.
             # Reuse immutable copies after labels freeze rather than regrade.
             source = medium_sources[identity]
@@ -159,7 +163,9 @@ async def compare(cli):
         "comparison": {name: {k: v for k, v in row.items() if k != "cases"} for name, row in metrics.items()},
         "controls": len(checks),
         "all_controls_pass": all(row["passed"] for row in checks),
-        "cached_comparator_cases": len(medium_sources),
+        "cached_comparator_cases": sum(
+            grade.get("reused_exact_baseline", False) for grade in grades
+        ),
         "spent_reserved_usd": budget.total,
     }
 

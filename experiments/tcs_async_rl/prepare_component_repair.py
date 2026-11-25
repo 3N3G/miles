@@ -53,7 +53,7 @@ def prepare_easy(root, *, run, audit, previous, excluded):
     )
 
 
-def complete(root, *, screen, excluded):
+def complete(root, *, screen, excluded, previous=(), exposed_files=()):
     import gzip
 
     from experiments.tcs_async_rl.reward_hook import question_key
@@ -74,8 +74,15 @@ def complete(root, *, screen, excluded):
     review = json.loads(excluded.read_text())
     blocked = {(review["question_key"], row["identity"]) for row in review["audits"]}
     blocked.add((review["question_key"], review["additional_7_point_case"]["identity"]))
+    for path in previous:
+        blocked.update(
+            (row["question_key"], row["judge_identity"])
+            for row in json.loads((path / "selection-provenance-not-for-labeling.json").read_text())
+            if row["kind"] == "medium" and "question_key" in row
+        )
     exposed_file = Path(__file__).parent / "evidence/component_repair_exposed_grades_20261124.json"
-    blocked.update((row["question_key"], row["identity"]) for row in json.loads(exposed_file.read_text())["excluded"])
+    for path in (exposed_file, *exposed_files):
+        blocked.update((row["question_key"], row["identity"]) for row in json.loads(path.read_text())["excluded"])
     groups = {key: [] for key in questions}
     with gzip.open(source, "rt") as stream:
         for line in stream:
@@ -130,6 +137,8 @@ def complete(root, *, screen, excluded):
             "medium_questions": len({key for key, _ in chosen}),
             "screen_responses_sha256": complete["responses_sha256"],
             "excluded_seen_grade_sha256": digest(exposed_file),
+            "additional_exposed_grade_sha256": [digest(path) for path in exposed_files],
+            "excluded_packets": [digest(path / "packet.json") for path in previous],
             "heldout_reads": 0,
             "new_solver_generations": 0,
             "new_judge_calls": 0,
@@ -161,8 +170,12 @@ if __name__ == "__main__":
     for name in ("root", "run", "audit", "excluded", "screen"):
         parser.add_argument("--" + name, type=Path, required=name in ("root", "excluded"))
     parser.add_argument("--previous", type=Path, action="append", default=[])
+    parser.add_argument("--exposed-file", type=Path, action="append", default=[])
     args = parser.parse_args()
     if args.stage == "easy":
         prepare_easy(args.root, run=args.run, audit=args.audit, previous=args.previous, excluded=args.excluded)
     else:
-        complete(args.root, screen=args.screen, excluded=args.excluded)
+        complete(
+            args.root, screen=args.screen, excluded=args.excluded,
+            previous=args.previous, exposed_files=args.exposed_file,
+        )

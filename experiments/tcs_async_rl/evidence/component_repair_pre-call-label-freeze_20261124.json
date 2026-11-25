@@ -1,0 +1,10 @@
+{
+  "packet_sha256": "028613a900aa41a1d9401fb223247b12078f2844b7e4763a0de0fad6705e7d1d",
+  "labels_sha256": "effbfbabc95ab8a2ff204d92eeabe9c3c54022759fbaf62f0de50692ff1be75b",
+  "config_sha256": "03b8df8f0b0958aaa1855ee958760405ad2f3d65afbe842f6f96d6b71562403a",
+  "incoming_ledger_sha256": "195669d6d35d44b4c5b770a9a4e2565d6027e9b27f7fb5837cc01662dffa9e6f",
+  "prompt_sha256": {
+    "reference_v2": "527da9b5b47473fa1912dab4a6e21874053520c31259ba7dac55fefd45779e1a",
+    "reference_v3": "61344580a2184414fd5e0473a7de12942bf3ead6bf9dc1ad8c9afb23fb0f0fe5"
+  }
+}
