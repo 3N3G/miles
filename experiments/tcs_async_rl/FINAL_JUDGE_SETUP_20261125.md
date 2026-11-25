@@ -1,5 +1,12 @@
 # Final judge and planned training setup
 
+Scope clarification, November 25: the user requests broader problem coverage.
+The 20/26-question candidates below are the earlier small overfit pilot, not the size of the dataset.
+The eligible pool contains 20 easy, 216 medium and 2,283 hard questions.
+The new corpus choice is pending: all 236 easy+medium or all 2,519 eligible questions.
+The existing W&B setup files preserve the earlier proposed pilot. A broader run needs a fresh data manifest and execution snapshot.
+See the [recorded question](../../QUESTIONS.md).
+
 The user accepted the remaining grading disagreements and retained prompt v5.
 The measured validation remains 34/40 exact scores and 96.17% item agreement, with 132/132 controls passing.
 The [acceptance record](evidence/judge_v5_user_acceptance_20261125.json) preserves the failed original numeric gate.

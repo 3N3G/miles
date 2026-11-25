@@ -1,5 +1,15 @@
 # Open questions
 
+## 2026-11-25: Broader training corpus after the small overfit pilot
+
+- Question: use all 236 easy and medium questions, or all 2,519 eligible questions including hard?
+- Evidence: the pinned eligible corpus contains 20 easy, 216 medium and 2,283 hard questions. The six medium questions were a diagnostic sample, not the available medium pool. The old 20/26-question candidates carried the small overfit pilot forward.
+- User steering: “Wdym selecting. Also there should be much more problems than this”. Broader coverage is requested, but the intended difficulty scope is not yet explicit.
+- Options: all 236 easy+medium, or all 2,519 eligible questions. Keep FOCS2026 and STOC2026 sealed in either case.
+- Recommendation: all 236 easy+medium for the next bounded run. The small medium screen does not measure the whole medium stratum, and hard questions remain unscreened.
+- Blocks: the new training-data manifest and execution snapshot. This is a data-design decision, not a GPU-memory constraint. No existing config, dataset bundle or job was changed.
+- Count sources: [pinned inventory](experiments/tcs_async_rl/PLAN.md) and [screen selection provenance](experiments/tcs_async_rl/evidence/difficulty_screen_selection_20261124.json).
+
 ## 2026-11-24: Implicit monotonicity in an auction proof
 
 - Question: does the auction payment item require an explicit single-bidder monotonicity argument when the candidate states the correct formula?
