@@ -1,0 +1,354 @@
+{
+  "at_utc": "2026-11-25T19:31:19.421252+00:00",
+  "job_id": "549728",
+  "audited_optimizer_steps": [
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124
+  ],
+  "audited_answers": 2048,
+  "distinct_question_rows": 64,
+  "distinct_paper_node_pairs": 58,
+  "papers": 55,
+  "full_credit": 541,
+  "zero": 740,
+  "capped": 717,
+  "capped_empty_final": 451,
+  "constant_groups": 8,
+  "by_difficulty": {
+    "easy": {
+      "answers": 288,
+      "question_rows": 9,
+      "mean_score": 5.5,
+      "full_credit": 187,
+      "zero": 36,
+      "capped": 36
+    },
+    "medium": {
+      "answers": 1760,
+      "question_rows": 55,
+      "mean_score": 2.6363636363636362,
+      "full_credit": 354,
+      "zero": 704,
+      "capped": 681
+    }
+  },
+  "proof_review": {
+    "reviewed_at_utc": "2026-11-25T19:31:19.421252+00:00",
+    "selection_file": "hour07-review-selection.json",
+    "source_steps": [
+      122,
+      123
+    ],
+    "cases": [
+      {
+        "kind": "routine_easy",
+        "file": "example-step-122-group-53.json",
+        "optimizer_step": 122,
+        "sample_index": 1707,
+        "score": 0.0,
+        "final_characters": 5067,
+        "selection": "Random(20261201), uniform among seeded exported examples at this difficulty in completed122\u2013123",
+        "assistant_score_under_current_prompt": 0,
+        "reason": "The answer asserts the removal statement is true and assumes pseudorandomness tests F. It misses the epsilon-dependent template cutoff and supplies neither an admissible counterexample nor a proof of the stated unrestricted assertion. The unsupported appeal to a literature theorem and extremal-edge intuitions establish no scored item.",
+        "uncertainty": null
+      },
+      {
+        "kind": "routine_medium",
+        "file": "example-step-122-group-54.json",
+        "optimizer_step": 122,
+        "sample_index": 1739,
+        "score": 4.0,
+        "final_characters": 7791,
+        "selection": "Random(20261201), uniform among seeded exported examples at this difficulty in completed122\u2013123",
+        "assistant_score_under_current_prompt": 4,
+        "reason": "The normalization, sufficient local comparison, and conditional global assembly are correct. The crucial local weighted-matching certificate is asserted rather than established by averaging or matching-polytope feasibility. Nonnegative total coalition welfare does not justify its signed-edge argument, and odd coalition sizes are not handled.",
+        "uncertainty": null
+      },
+      {
+        "kind": "nonempty_partial",
+        "file": "hour07-nonempty_partial.json",
+        "optimizer_step": 122,
+        "sample_index": 1701,
+        "score": 1.0,
+        "final_characters": 4777,
+        "selection": "Random(20261201), uniform within named diagnostic category after routine selections",
+        "assistant_score_under_current_prompt": 1,
+        "reason": "For the alternative complete-uniform pattern, the displayed density calculation establishes strict balance, including two-edge subgraphs by the same argument despite its initial wording slip. The initial-density argument drops epsilon-to-the-fifth without choosing epsilon, pseudorandomness is only asserted asymptotically, and the actual random terminal graph is incorrectly equated with an extremal F-free graph.",
+        "uncertainty": null
+      },
+      {
+        "kind": "full_medium",
+        "file": "hour07-full_medium.json",
+        "optimizer_step": 123,
+        "sample_index": 1865,
+        "score": 7.0,
+        "final_characters": 6369,
+        "selection": "Random(20261201), uniform within named diagnostic category after routine selections",
+        "assistant_score_under_current_prompt": 7,
+        "reason": "The zero-weight versus unit-single-edge witness is valid. Approximation forces selection probability at least alpha. Every weighted output at zero is identically zero, so every coupling costs the same marginal expected unit-edge weight. Unit input distance gives L at least alpha, with universal constant1.",
+        "uncertainty": null
+      }
+    ],
+    "limits": "Post-grade assistant diagnostics, not independent human calibration or an unbiased agreement sample. All four reviewed saved scores are retained. No valid grade rerolled.",
+    "cross_review_note": "The valid conditional assembly in the hedonic-game strategy receives its separate rubric point. This illustrates why the earlier covariance telescoping ownership disagreement remains worth preserving, but it does not relabel or reroll that earlier verdict.",
+    "new_inference_calls": 0,
+    "new_judge_calls": 0
+  },
+  "empty_cap_format_check": {
+    "at_utc": "2026-11-25T19:30:07.683606+00:00",
+    "steps": [
+      122,
+      123,
+      124
+    ],
+    "empty_cap_count": 45,
+    "caps_with_closing_think": 0,
+    "caps_ending_im_end": 0,
+    "new_inference_or_judge_calls": 0
+  },
+  "flags_to_inspect": {
+    "negative_observed_surrogate_gain": [],
+    "nonpositive_learning_rate": [],
+    "missing_diagnostics": {
+      "109": [],
+      "110": [],
+      "111": [],
+      "112": [],
+      "113": [],
+      "114": [],
+      "115": [],
+      "116": [],
+      "117": [],
+      "118": [],
+      "119": [],
+      "120": [],
+      "121": [],
+      "122": [],
+      "123": [],
+      "124": []
+    }
+  },
+  "within_continuation_matched_visits": {
+    "questions": 0,
+    "mean_change": null,
+    "increased": 0,
+    "decreased": 0,
+    "pairs": []
+  },
+  "local_update_direction": {
+    "train/update_direction/negative_advantage_mean_logprob_change": {
+      "points": 4,
+      "first": -6.321649270072764e-05,
+      "last": -4.027876639582928e-05,
+      "min": -7.947878623326687e-05,
+      "max": -2.887195183529336e-05,
+      "last_step": 120
+    },
+    "train/update_direction/negative_advantage_samples": {
+      "points": 4,
+      "first": 36,
+      "last": 80,
+      "min": 22,
+      "max": 80,
+      "last_step": 120
+    },
+    "train/update_direction/positive_advantage_mean_logprob_change": {
+      "points": 4,
+      "first": 6.193686989111788e-05,
+      "last": 6.275500367773172e-05,
+      "min": 4.0212806815410706e-05,
+      "max": 6.275500367773172e-05,
+      "last_step": 120
+    },
+    "train/update_direction/positive_advantage_samples": {
+      "points": 4,
+      "first": 60,
+      "last": 48,
+      "min": 48,
+      "max": 74,
+      "last_step": 120
+    },
+    "train/update_direction/samples": {
+      "points": 4,
+      "first": 128,
+      "last": 128,
+      "min": 128,
+      "max": 128,
+      "last_step": 120
+    },
+    "train/update_direction/surrogate_gain": {
+      "points": 4,
+      "first": 4.863162716617353e-05,
+      "last": 4.8547008077548526e-05,
+      "min": 3.469936188338352e-05,
+      "max": 4.9429182968907526e-05,
+      "last_step": 120
+    }
+  },
+  "wandb_readback": {
+    "at_utc": "2026-11-25T19:28:21.245462+00:00",
+    "state": "running",
+    "last_verified_optimizer_step": 124,
+    "verified_optimizer_rows": 16,
+    "history_rows": 16,
+    "verified_scalars": 1491,
+    "training_config_matches": true,
+    "operational_save_reserve_seconds": 2700,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261125-132805-437-native"
+  },
+  "checkpoint124": {
+    "at_utc": "2026-11-25T19:28:32.571031+00:00",
+    "tracker": "124",
+    "iterations": [
+      {
+        "name": "iter_0000124",
+        "files": [
+          {
+            "relative_path": ".metadata",
+            "bytes": 544952
+          },
+          {
+            "relative_path": "__0_0.distcp",
+            "bytes": 30288822736
+          },
+          {
+            "relative_path": "__1_0.distcp",
+            "bytes": 30287995046
+          },
+          {
+            "relative_path": "metadata.json",
+            "bytes": 63
+          }
+        ]
+      }
+    ],
+    "protected_source108_exists": true
+  },
+  "gpu_snapshots": [
+    {
+      "at_utc": "2026-11-25T19:25:53.921762+00:00",
+      "job_id": "549728",
+      "devices": [
+        {
+          "device": "card0",
+          "gpu_busy_percent": 3,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 218118963200
+        },
+        {
+          "device": "card8",
+          "gpu_busy_percent": 3,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 217355567104
+        },
+        {
+          "device": "card16",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 197670793216
+        },
+        {
+          "device": "card24",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 197653999616
+        },
+        {
+          "device": "card32",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 198276841472
+        },
+        {
+          "device": "card40",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 198302007296
+        },
+        {
+          "device": "card48",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 196737593344
+        },
+        {
+          "device": "card56",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 196762763264
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-11-25T19:27:47.756706+00:00",
+      "job_id": "549728",
+      "devices": [
+        {
+          "device": "card0",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 218118983680
+        },
+        {
+          "device": "card8",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 217355587584
+        },
+        {
+          "device": "card16",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 197939249152
+        },
+        {
+          "device": "card24",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 197922455552
+        },
+        {
+          "device": "card32",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 196158738432
+        },
+        {
+          "device": "card40",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 196183904256
+        },
+        {
+          "device": "card48",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 196060233728
+        },
+        {
+          "device": "card56",
+          "gpu_busy_percent": 100,
+          "mem_info_vram_total": 309220868096,
+          "mem_info_vram_used": 196085403648
+        }
+      ]
+    }
+  ],
+  "gpu_low_utilization_context": "The first actor snapshot,19:25:53Z, coincided with checkpoint124 writing19:25:49\u201319:26:21Z. Both actor GPUs and all six inference GPUs were at100% in the19:27:48Z follow-up. No restart was needed.",
+  "timer_semantics": "Optional timers are sparse, not forward-filled. Aggregate last values retain their own last_step. Checkpoint duration is emitted in the following trainer performance row; actual save identity comes from checkpoint-retention receipts and filesystem verification.",
+  "interpretation_limit": "No repeated exact question/rubric visits yet. Different-question batch returns do not show matched-question learning. A completed easy zero and a valid medium seven were both verified in this diagnostic review."
+}
