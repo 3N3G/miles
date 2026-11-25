@@ -3550,15 +3550,22 @@
       "actor": "codex",
       "summary": "Verify both startup publications against checkpoint108 and prepare separate difficulty-return panels",
       "revision": 344
+    },
+    {
+      "id": "ddff694e-f011-4a31-a684-42ab915b6e9c",
+      "at": "2026-11-25T14:00:53.786113Z",
+      "actor": "codex",
+      "summary": "First128-answer training cycle started and all eight GPUs are active",
+      "revision": 345
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "AMD549728 is generating on all20 easy and216 medium questions. Both startup publications exactly match source checkpoint108 on all three engines.",
-  "nextAction": "Verify the first128-answer optimizer update, its save and publication, then supervise policy metrics and raw proofs through the12-hour limit.",
+  "summary": "AMD549728 is training its first128-answer batch. All eight GPUs are99–100% busy. Both startup weight publications matched checkpoint108. Baseline regrading continues through the shared judge.",
+  "nextAction": "Verify finite gradients, actual microbatches, first checkpoint and post-update publication, then check native W&B coordinates and difficulty panels.",
   "owner": "Codex",
-  "revision": 344,
-  "updatedAt": "2026-11-25T13:36:38.891328Z"
+  "revision": 345,
+  "updatedAt": "2026-11-25T14:00:53.786113Z"
 }

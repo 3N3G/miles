@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD549728 is generating on all20 easy and216 medium questions. Both startup publications exactly match source checkpoint108 on all three engines. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Verify the first128-answer optimizer update, its save and publication, then supervise policy metrics and raw proofs through the12-hour limit.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD549728 is training its first128-answer batch. All eight GPUs are99–100% busy. Both startup weight publications matched checkpoint108. Baseline regrading continues through the shared judge. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Verify finite gradients, actual microbatches, first checkpoint and post-update publication, then check native W&B coordinates and difficulty panels.
 
 ## Next / blocked
 

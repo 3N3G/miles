@@ -1,0 +1,38 @@
+{
+  "at_utc": "2026-11-25T14:00:53.727354+00:00",
+  "job_id": "549728",
+  "first_train_wait_seconds": 1522.9,
+  "train_started_cluster_time": "2026-11-25 07:56:46.733",
+  "train_started_utc": "2026-11-25T13:56:46.733Z",
+  "gpu_snapshot_utc": "2026-11-25T14:00:17.800160Z",
+  "actor_utilization_percent": [
+    99,
+    99
+  ],
+  "actor_vram_bytes": [
+    215419609088,
+    214144499712
+  ],
+  "rollout_utilization_percent": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "startup_warnings": [
+    {
+      "message": "Failed to collect git info for tilelang at /opt/tilelang",
+      "time_cluster": "07:29:26.163",
+      "classification": "Source provenance collection warning. The process continued to complete checkpoint restore and begin training."
+    },
+    {
+      "message": "post-warmup freeze_gc failed; HTTP connection refused on self startup endpoint",
+      "time_cluster": "07:30:54",
+      "classification": "Caught startup warning on all engines. Later successful generation and exact checkpoint publications establish continued operation. No math or reward change made."
+    }
+  ],
+  "optimizer_updates_verified": 0,
+  "limit": "The first optimizer update has begun. Finite gradients, saving and post-update publications are still pending."
+}
