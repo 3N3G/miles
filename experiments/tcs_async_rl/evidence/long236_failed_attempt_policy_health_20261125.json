@@ -1,0 +1,93 @@
+{
+  "observed_updates": 19,
+  "saved_new_updates": 16,
+  "observed_optimizer_range": [
+    109,
+    127
+  ],
+  "durable_optimizer_range": [
+    109,
+    124
+  ],
+  "all_finite": true,
+  "ranges": {
+    "train/full_policy_entropy": {
+      "n": 19,
+      "minimum": 0.3805599510669708,
+      "maximum": 0.4993477463722229
+    },
+    "train/grad_norm": {
+      "n": 19,
+      "minimum": 0.05848782882094383,
+      "maximum": 0.10246127098798752
+    },
+    "train/kl_loss": {
+      "n": 19,
+      "minimum": 0.008591599762439728,
+      "maximum": 0.011236300691962242
+    },
+    "train/train_rollout_kl": {
+      "n": 19,
+      "minimum": 0.00023946618603076786,
+      "maximum": 0.00029410800198093057
+    },
+    "train/ess_ratio": {
+      "n": 19,
+      "minimum": 0.9994117617607117,
+      "maximum": 0.9995207190513611
+    },
+    "train/pg_clipfrac": {
+      "n": 19,
+      "minimum": 0.0,
+      "maximum": 0.0
+    },
+    "train/num_microbatches": {
+      "n": 19,
+      "minimum": 71,
+      "maximum": 127
+    }
+  },
+  "update_direction_probes": [
+    {
+      "optimizer_step": 109,
+      "train/update_direction/surrogate_gain": 4.863162716617353e-05,
+      "train/update_direction/samples": 128,
+      "train/update_direction/positive_advantage_samples": 60,
+      "train/update_direction/negative_advantage_samples": 36,
+      "train/update_direction/positive_advantage_mean_logprob_change": 6.193686989111788e-05,
+      "train/update_direction/negative_advantage_mean_logprob_change": -6.321649270072764e-05
+    },
+    {
+      "optimizer_step": 110,
+      "train/update_direction/surrogate_gain": 4.9429182968907526e-05,
+      "train/update_direction/samples": 128,
+      "train/update_direction/positive_advantage_samples": 74,
+      "train/update_direction/negative_advantage_samples": 22,
+      "train/update_direction/positive_advantage_mean_logprob_change": 4.0212806815410706e-05,
+      "train/update_direction/negative_advantage_mean_logprob_change": -7.947878623326687e-05
+    },
+    {
+      "optimizer_step": 115,
+      "train/update_direction/surrogate_gain": 3.469936188338352e-05,
+      "train/update_direction/samples": 128,
+      "train/update_direction/positive_advantage_samples": 49,
+      "train/update_direction/negative_advantage_samples": 79,
+      "train/update_direction/positive_advantage_mean_logprob_change": 5.1205394020236816e-05,
+      "train/update_direction/negative_advantage_mean_logprob_change": -2.887195183529336e-05
+    },
+    {
+      "optimizer_step": 120,
+      "train/update_direction/surrogate_gain": 4.8547008077548526e-05,
+      "train/update_direction/samples": 128,
+      "train/update_direction/positive_advantage_samples": 48,
+      "train/update_direction/negative_advantage_samples": 80,
+      "train/update_direction/positive_advantage_mean_logprob_change": 6.275500367773172e-05,
+      "train/update_direction/negative_advantage_mean_logprob_change": -4.027876639582928e-05
+    }
+  ],
+  "limitations": [
+    "Entropy and divergence are observations on different sampled questions, not a fixed-policy trend.",
+    "Positive surrogate gain shows update direction on the consumed samples, not better proof quality.",
+    "Unsaved125\u2013127 were rolled back."
+  ]
+}
