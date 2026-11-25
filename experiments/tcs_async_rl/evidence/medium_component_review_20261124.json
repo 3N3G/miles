@@ -1,0 +1,54 @@
+{
+  "at_utc": "2026-11-25T03:29:17.970943+00:00",
+  "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+  "selection": "Targeted distinct-score medium spot-checks after seeing grades. Development evidence, not blind accuracy.",
+  "judgments_seen": true,
+  "independent_human_calibration": false,
+  "audits": [
+    {
+      "identity": "online-eb71f0273a730311285b217c",
+      "judge_score": 3,
+      "audit_items": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "audit_score": 3,
+      "reason": "Both forced-output regions and a fixed two-edge perturbation family are established. The claimed nearby transition assumes a boundary choice or a nonexistent minimum/monotone threshold. Conditional distance algebra does not establish the actual output bound or infinite supremum."
+    },
+    {
+      "identity": "online-6ded61513fd9a0373160f5d3",
+      "judge_score": 1,
+      "audit_items": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "audit_score": 3,
+      "reason": "Both forced-output regions and a fixed two-edge perturbation family are established. The claimed nearby transition assumes a boundary choice or a nonexistent minimum/monotone threshold. Conditional distance algebra does not establish the actual output bound or infinite supremum."
+    },
+    {
+      "identity": "online-5c1d2e0e51822e134b86c3a1",
+      "judge_score": 5,
+      "audit_items": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      "audit_score": 3,
+      "reason": "Both forced-output regions and a fixed two-edge perturbation family are established. The claimed nearby transition assumes a boundary choice or a nonexistent minimum/monotone threshold. Conditional distance algebra does not establish the actual output bound or infinite supremum."
+    }
+  ],
+  "additional_7_point_case": {
+    "identity": "online-1265d9fe9b487d9493d3b53f",
+    "judge_score": 7,
+    "audit_status": "Contains a plausible valid connectedness mechanism mixed with unjustified fixed-boundary claims. Needs careful final review. Not used alone as decisive variance evidence."
+  },
+  "action": "Preserve live grades. Validate a general dependency clarification on a fresh blinded packet before selecting the RL prompt."
+}
