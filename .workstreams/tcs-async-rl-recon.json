@@ -3739,15 +3739,22 @@
       "actor": "codex",
       "summary": "RL job 549728 is FAILED",
       "revision": 367
+    },
+    {
+      "id": "b870daf0-c4cb-4783-84f0-d6408aaa25ae",
+      "at": "2026-11-25T20:33:46.779362Z",
+      "actor": "codex",
+      "summary": "Job549728 failed on judge item numbering; checkpoint124 preserves16 new updates",
+      "revision": 368
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "RL job 549728 is FAILED",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "Job549728 failed on judge item numbering; checkpoint124 preserves16 new updates",
+  "nextAction": "Finalize and verify the failed attempt. Add and validate a failure-only item-ID clarification, then resume the same experiment within the remaining5h00m57s of GPU allocation and shared25-dollar judge cap.",
   "owner": "Codex",
-  "revision": 367,
-  "updatedAt": "2026-11-25T20:28:12.191490Z"
+  "revision": 368,
+  "updatedAt": "2026-11-25T20:33:46.779362Z"
 }

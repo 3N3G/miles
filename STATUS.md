@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 549728 is FAILED Jobs: hpcfund/549728 FAILED; hpcfund/548575 COMPLETED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Job549728 failed on judge item numbering; checkpoint124 preserves16 new updates Jobs: hpcfund/549728 FAILED; hpcfund/548575 COMPLETED
+  Next: Finalize and verify the failed attempt. Add and validate a failure-only item-ID clarification, then resume the same experiment within the remaining5h00m57s of GPU allocation and sh
 
 ## Next / blocked
 
