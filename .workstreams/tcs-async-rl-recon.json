@@ -3676,15 +3676,22 @@
       "actor": "codex",
       "summary": "Add a tested saved-token support diagnostic for long capped responses",
       "revision": 358
+    },
+    {
+      "id": "647ae7d6-a9ed-4f5e-97c6-3ef96a53b90c",
+      "at": "2026-11-25T18:06:57.867599Z",
+      "actor": "codex",
+      "summary": "Fifth deep review verifies1408 answers, checkpoint119 and1031 W&B scalars",
+      "revision": 359
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Ten finite updates. Prepared a tested diagnostic of token choices through long completed and capped responses. It reads saved traces only. The frozen model, judge and training recipe remain unchanged.",
-  "nextAction": "Verify checkpoint119, run the saved-support diagnostic on the next archived batches, and complete the next hourly proof/metric review before continuing supervision through terminal closure.",
+  "summary": "Fifth deep review verifies1408 answers, checkpoint119 and1031 W&B scalars",
+  "nextAction": "Continue the approved run through final save and terminal verification. Review the next update-direction probe and complete the unchanged final12-question comparison.",
   "owner": "Codex",
-  "revision": 358,
-  "updatedAt": "2026-11-25T17:35:01.937704Z"
+  "revision": 359,
+  "updatedAt": "2026-11-25T18:06:57.867599Z"
 }
