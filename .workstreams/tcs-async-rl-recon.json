@@ -3482,15 +3482,22 @@
       "actor": "codex",
       "summary": "Review the proposed lower-score uncertainty rule against the six saved final-prompt disagreements.",
       "revision": 335
+    },
+    {
+      "id": "251cdaf5-d5f9-41a4-b95e-c7275261cb52",
+      "at": "2026-11-25T10:12:26.695284Z",
+      "actor": "codex",
+      "summary": "Saved verdicts show lower-score tie-breaking cannot fix the four uncertain audits; partial-credit ownership remains unresolved.",
+      "revision": 336
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
-  "state": "running",
-  "summary": "Review the proposed lower-score uncertainty rule against the six saved final-prompt disagreements.",
-  "nextAction": "Check score directions, returned verdict evidence and rubric dependencies without changing frozen labels or submitting jobs.",
+  "state": "needs-you",
+  "summary": "Saved verdicts show lower-score tie-breaking cannot fix the four uncertain audits; partial-credit ownership remains unresolved.",
+  "nextAction": "Review explicit scoring rules for implicit steps and dependencies before any new prompt validation. No labels, rewards, jobs or spending changed.",
   "owner": "Codex",
-  "revision": 335,
-  "updatedAt": "2026-11-25T10:11:32.517328Z"
+  "revision": 336,
+  "updatedAt": "2026-11-25T10:12:26.695284Z"
 }

@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Review the proposed lower-score uncertainty rule against the six saved final-prompt disagreements. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Check score directions, returned verdict evidence and rubric dependencies without changing frozen labels or submitting jobs.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Saved verdicts show lower-score tie-breaking cannot fix the four uncertain audits; partial-credit ownership remains unresolved. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Review explicit scoring rules for implicit steps and dependencies before any new prompt validation. No labels, rewards, jobs or spending changed.
 
 ## Finished
 
