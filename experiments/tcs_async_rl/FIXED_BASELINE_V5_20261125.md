@@ -17,7 +17,7 @@ The seeded easy example earns7 by deriving expected auction surplus of two-third
 The seeded medium example earns3: it correctly forces different path choices in separate regions, but assumes an unjustified nearby transition using an infimum.
 The [private archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/664372cffe49cec49011cfed617f059484175858/miles/checkpoint108-screen-v5-baseline) contains both examples, all grades and original receipts. All1,051 artifacts were checksum-verified.
 
-These are descriptive results from one generation per checkpoint. Easy questions had already entered training. FOCS2026 and STOC2026 remained sealed.
+These are descriptive results from one sampling run per checkpoint. Easy questions had already entered training. FOCS2026 and STOC2026 remained sealed.
 The accepted judge matched assistant reviews on34/40 exact totals and96.17% of rubric items. This is not independent human calibration.
 The current RL corpus contains all236 easy/medium questions. This12-question screen measures fixed-question change after training.
 
