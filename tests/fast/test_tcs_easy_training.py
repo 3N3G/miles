@@ -39,12 +39,13 @@ def question(index):
 
 class EasyDataTests(unittest.TestCase):
     def test_supervisor_owns_three_helpers_and_never_submits(self):
+        from experiments.tcs_async_rl.amd_preflight import load_configs
         from experiments.tcs_async_rl.supervise import supervise
 
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
             config = BASE / "rl_long_high_easy_v1.json"
-            (root / "approved-config.json").write_bytes(config.read_bytes())
+            (root / "approved-config.json").write_text(json.dumps(load_configs(config)[0]))
             (root / "submission.json").write_text(json.dumps({"job_id": "999", "session_uuid": "own"}))
             cli = SimpleNamespace(
                 directory=root,
