@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eighth review verifies2304 answers and distinguishes proof quality, stopping and repetition Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Continue supervision and review new batches by21:20Z. Add a full-response repetition check to the saved-trace diagnostics, then finish the approved final-save and fixed-screen comp
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eighteen finite updates and72 audited questions. Added a tested offline repetition measure that keeps full responses, final answers and generator finish statuses separate. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Apply the new saved-trace diagnostic during the next hourly proof and metric review by21:20Z. Continue through the final save and approved unchanged12-question after screen.
 
 ## Next / blocked
 
