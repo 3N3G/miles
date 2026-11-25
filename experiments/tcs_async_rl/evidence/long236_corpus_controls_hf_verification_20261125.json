@@ -1,0 +1,21 @@
+{
+  "at_utc": "2026-11-25T14:01:57.845977+00:00",
+  "repo": "3N3G/internalization-runs",
+  "revision": "94e072eba6de7dc0abbe47af4f0b95d94123ab4a",
+  "verified_files": 2130,
+  "limits": "Immutable uploaded artifact hashes match the preserved original controls, exact prompt, frozen inputs and708 control grades. This does not replace mathematical auditing or human calibration.",
+  "prefix": "miles/easy-medium-236-v1",
+  "control_presentations": 708,
+  "control_questions": 236,
+  "control_files_sha256": "4c78802443d04d13e5b781581eedb6207570a8d31c06ddb08d3656dc0efdc968",
+  "full_readback_sha256": "783358891b6f19aa6f74f6970a1df33edbb5bc243c3c1e9238d4a2d99bb8ed77",
+  "negative_controls_passed": 472,
+  "reference_full_credit": 232,
+  "reference_scores_below_seven": [
+    6,
+    3,
+    6,
+    4
+  ],
+  "mathematical_review": "experiments/tcs_async_rl/evidence/long236_corpus_control_review_20261125.json"
+}
