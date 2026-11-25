@@ -3564,15 +3564,22 @@
       "actor": "codex",
       "summary": "First update saved and published; verify all103 W&B scalars and complete the fixed384-answer baseline",
       "revision": 346
+    },
+    {
+      "id": "f6ba3b95-0378-400f-bad0-96044457a838",
+      "at": "2026-11-25T14:33:45.397309Z",
+      "actor": "codex",
+      "summary": "First update109 saved and published; fixed384-answer baseline and first hourly proof review verified.",
+      "revision": 347
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "AMD549728 completed and saved update109. All three engines match. All103 W&B scalars and the exact console prompt are verified. The fixed384-answer baseline is regraded: easy5.760/7, medium1.995/7. The second update is training.",
-  "nextAction": "Finish immutable baseline archival and hourly proof/metric review. Supervise the12-hour job through final checkpoint and same-question post-training screen.",
+  "summary": "First update109 saved and published; fixed384-answer baseline and first hourly proof review verified.",
+  "nextAction": "Supervise the remaining approved RL time, inspect updates and proofs hourly, then run the same-question final screen within its separate cap.",
   "owner": "Codex",
-  "revision": 346,
-  "updatedAt": "2026-11-25T14:31:07.769437Z"
+  "revision": 347,
+  "updatedAt": "2026-11-25T14:33:45.397309Z"
 }

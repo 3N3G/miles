@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD549728 completed and saved update109. All three engines match. All103 W&B scalars and the exact console prompt are verified. The fixed384-answer baseline is regraded: easy5.760/7, medium1.995/7. Th Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
-  Next: Finish immutable baseline archival and hourly proof/metric review. Supervise the12-hour job through final checkpoint and same-question post-training screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): First update109 saved and published; fixed384-answer baseline and first hourly proof review verified. Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Supervise the remaining approved RL time, inspect updates and proofs hourly, then run the same-question final screen within its separate cap.
 
 ## Next / blocked
 
