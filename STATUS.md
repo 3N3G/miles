@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD screen546404 is queued; Luna high passes36/40. Verified replay-cache cleanup restores8.0 GiB free on the VM. Jobs: hpcfund/546404 PENDING; hpcfund/544406 COMPLETED
-  Next: Watch the approved screen, inspect its mathematical answers, and execute the selected bounded continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD checkpoint screen 546404 is RUNNING after the queue wait Jobs: hpcfund/546404 RUNNING; hpcfund/544406 COMPLETED
+  Next: Verify restored checkpoint108 and all three engines, audit384 screened answers, then run the selected approved continuation.
 
 ## Next / blocked
 

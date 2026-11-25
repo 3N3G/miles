@@ -897,7 +897,7 @@
     {
       "id": "546404",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "544406",
@@ -3280,15 +3280,22 @@
       "actor": "codex",
       "summary": "Recover 0.65 GiB of verified replay-cache duplicates while keeping the queued screen ready",
       "revision": 311
+    },
+    {
+      "id": "8bd86655-67b3-46c6-be2c-d9d28de62bc0",
+      "at": "2026-11-25T02:11:12.347536Z",
+      "actor": "codex",
+      "summary": "AMD checkpoint screen 546404 is RUNNING after the queue wait",
+      "revision": 312
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "AMD screen546404 is queued; Luna high passes36/40. Verified replay-cache cleanup restores8.0 GiB free on the VM.",
-  "nextAction": "Watch the approved screen, inspect its mathematical answers, and execute the selected bounded continuation.",
+  "summary": "AMD checkpoint screen 546404 is RUNNING after the queue wait",
+  "nextAction": "Verify restored checkpoint108 and all three engines, audit384 screened answers, then run the selected approved continuation.",
   "owner": "Codex",
-  "revision": 311,
-  "updatedAt": "2026-11-25T00:05:20.472904Z"
+  "revision": 312,
+  "updatedAt": "2026-11-25T02:11:12.347536Z"
 }
