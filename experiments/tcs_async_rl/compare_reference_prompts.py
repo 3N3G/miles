@@ -163,9 +163,7 @@ async def compare(cli):
         "comparison": {name: {k: v for k, v in row.items() if k != "cases"} for name, row in metrics.items()},
         "controls": len(checks),
         "all_controls_pass": all(row["passed"] for row in checks),
-        "cached_comparator_cases": sum(
-            grade.get("reused_exact_baseline", False) for grade in grades
-        ),
+        "cached_comparator_cases": sum(grade.get("reused_exact_baseline", False) for grade in grades),
         "spent_reserved_usd": budget.total,
     }
 

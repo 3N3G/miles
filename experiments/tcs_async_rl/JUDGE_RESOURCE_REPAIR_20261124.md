@@ -28,5 +28,11 @@ Freeze each Boolean label and reason before any new grading call.
 Keep the original90% exact-score,95% case-balanced-item and no-clear-false-full gate.
 Use exact-score agreement first, absolute error second. Do not retune against this fresh packet.
 Run reference7, empty0 and irrelevant0 controls for every represented question and both prompts.
+Before the new calls, make the clear-error flag respect the frozen audit confidence.
+Count every full-score disagreement of at least two points separately as an audit false-full flag.
+Call one clear only when the pre-call audit confidence is high.
+Medium-confidence labels explicitly describe unresolved rubric interpretation and cannot establish a clear mathematical error.
+Keep every such case in the exact-score and item-agreement denominators.
+The previous rejected oracle-runtime case had high confidence and remains a clear false full score.
 The existing shared ledger and comparison ceiling remain unchanged. No GPU job or solver generation is added.
 If a prompt qualifies, regrade the existing384-answer screen with explicit new provenance before choosing the approved continuation.

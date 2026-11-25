@@ -222,7 +222,10 @@ def comparison_metrics(cases, labels, results):
                     "exact_score_match": observed == target,
                     "absolute_score_error": abs(observed - target),
                     "item_agreement": agreement,
-                    "clear_false_full_credit": observed == 7 and target <= 5,
+                    "audit_false_full_credit": observed == 7 and target <= 5,
+                    "clear_false_full_credit": observed == 7
+                    and target <= 5
+                    and expected[identity].get("confidence", "high") == "high",
                 }
             )
         exact = statistics.mean(r["exact_score_match"] for r in rows)
@@ -233,6 +236,7 @@ def comparison_metrics(cases, labels, results):
             "case_balanced_item_agreement": item,
             "mean_absolute_score_error": statistics.mean(r["absolute_score_error"] for r in rows),
             "clear_false_full_credit": sum(r["clear_false_full_credit"] for r in rows),
+            "audit_false_full_credit": sum(r["audit_false_full_credit"] for r in rows),
             "passes_observed_gate": exact >= 0.9
             and item >= 0.95
             and not any(r["clear_false_full_credit"] for r in rows),

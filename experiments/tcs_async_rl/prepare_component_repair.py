@@ -176,6 +176,9 @@ if __name__ == "__main__":
         prepare_easy(args.root, run=args.run, audit=args.audit, previous=args.previous, excluded=args.excluded)
     else:
         complete(
-            args.root, screen=args.screen, excluded=args.excluded,
-            previous=args.previous, exposed_files=args.exposed_file,
+            args.root,
+            screen=args.screen,
+            excluded=args.excluded,
+            previous=args.previous,
+            exposed_files=args.exposed_file,
         )

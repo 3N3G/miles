@@ -38,6 +38,13 @@ class ComponentPacketTests(unittest.TestCase):
         metrics = comparison_metrics(cases, labels, results)
         self.assertTrue(metrics["reference_v2"]["passes_observed_gate"])
         self.assertFalse(metrics["reference_v3"]["passes_observed_gate"])
+        for label in labels["cases"]:
+            label["confidence"] = "medium"
+            label["candidate_items"][0]["satisfied"] = False
+        uncertain = comparison_metrics(cases, labels, results)["reference_v2"]
+        self.assertEqual(uncertain["audit_false_full_credit"], 40)
+        self.assertEqual(uncertain["clear_false_full_credit"], 0)
+        self.assertFalse(uncertain["passes_observed_gate"])
         with self.assertRaises(ValueError):
             validate_labels({"cases": cases[:-1]}, labels)
         labels["cases"][0]["candidate_items"][0]["satisfied"] = None
@@ -93,14 +100,31 @@ class ComponentPacketTests(unittest.TestCase):
                     "additional_7_point_case": {"identity": "other-reviewed"},
                 },
             )
-            complete(root, screen=screen, excluded=excluded)
+            previous = root / "previous"
+            previous.mkdir()
+            save(previous / "packet.json", {"cases": []})
+            save(
+                previous / "selection-provenance-not-for-labeling.json",
+                [
+                    {
+                        "kind": "medium",
+                        "question_key": question_key(questions[1]),
+                        "judge_identity": row["judge_identity"],
+                    }
+                    for row in rows[32:64]
+                ],
+            )
+            complete(root, screen=screen, excluded=excluded, previous=[previous])
             cases = json.loads((packet / "packet.json").read_text())["cases"]
             selected = json.loads((packet / "selection-provenance-not-for-labeling.json").read_text())
             self.assertEqual(len(cases), 40)
-            self.assertEqual(len({row["question_key"] for row in selected}), 6)
+            self.assertEqual(len({row["question_key"] for row in selected}), 5)
             self.assertIn(rows[31]["judge_identity"], {row["judge_identity"] for row in selected})
             self.assertFalse(
                 {row["judge_identity"] for row in rows[:31]} & {row["judge_identity"] for row in selected}
+            )
+            self.assertFalse(
+                {row["judge_identity"] for row in rows[32:64]} & {row["judge_identity"] for row in selected}
             )
             self.assertEqual(
                 json.loads((packet / "packet-freeze.json").read_text())["packet_sha256"],

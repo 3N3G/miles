@@ -1,0 +1,1261 @@
+{
+  "kind": "assistant_not_human",
+  "blind_to_new_and_old_judge_outputs": true,
+  "cases": [
+    {
+      "case": "case-01",
+      "candidate_sha256": "f002ee8fa0fd92675bb23aa13027af9c8540576dc6c5d609eab18f7f94f78e8e",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Squares the interval endpoints and obtains d>=n/delta."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Combines this with d<=n/2 and derives delta>=2."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Chooses delta0=1 and explains the quantifier-correct vacuity for every fixed delta below it."
+        }
+      ]
+    },
+    {
+      "case": "case-02",
+      "candidate_sha256": "abb906c688c0c974bade8495b03376b8e0b799fb40204c1fc37694111edce9b8",
+      "confidence": "medium",
+      "ambiguity": "Some intermediate prose wrongly says every parent stays connected to T after all deletions. The subsequent component argument correctly treats nested sampled roots and does not use that claim.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Uses an optimal T-rooted forest and deletes exactly the parent edge of each sampled vertex."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Explains separation from ancestors, separation between sampled descendants, and retention of one original root in every uncut component. Together these establish exactly one new root per spanning component."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Decomposes the cost by child vertex and applies linearity and nonnegative costs using only the marginal nonselection bound, valid also when gamma exceeds1."
+        }
+      ]
+    },
+    {
+      "case": "case-03",
+      "candidate_sha256": "052646cf2ca4e8806bd5fbb7b22f7d24ff6af9a4ef2eaecaedd8f60aaba31e49",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": false,
+          "reason": "Does not identify the large-epsilon template-size loophole."
+        },
+        {
+          "item": 2,
+          "satisfied": false,
+          "reason": "Discusses a triangle, not a valid counterexample and strict-balance verification."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "Does not check all permitted templates and their rooted or empty extension counts."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "Gives no host satisfying the needed counterexample density."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "Claims the false assertion is true by an unspecified random-graph transfer rather than contradicting the conclusion."
+        }
+      ]
+    },
+    {
+      "case": "case-04",
+      "candidate_sha256": "c15866d95aeb893ab56868f70b18377dc44953b57ebec2dea60d9c78cf98af30",
+      "confidence": "medium",
+      "ambiguity": "The elementary independence property of a centered regular simplex is invoked, with a loose phrase about no proper subset lying in a hyperplane. The explicit regular-simplex geometry, full span and zero-sum identity imply the required size-d property without a new construction or substantive estimate.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Chooses the regular simplex centered at the origin, a valid realizable family in each dimension with zero vertex sum."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Uses the standard simplex property that every d centered vertices are independent. Affine independence together with the zero-sum dependence immediately gives this by rank and uniqueness of dependence."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "The uniform zero-sum calculation covers omission of any designated additional row and yields coefficient vector all minus1."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "For each omitted vertex, identifies the inverse-transpose solution with all minus1 and computes squared norm d."
+        }
+      ]
+    },
+    {
+      "case": "case-05",
+      "candidate_sha256": "514d9b0ee3b7d16e7cea3005082b2cdcb8dc59dad95d1171401e7ded34c02449",
+      "confidence": "high",
+      "ambiguity": "A later summary loosely calls the fiber a hyperplane. The actual proof correctly uses an arbitrary-codimension affine subspace and handles empty edges separately.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Uses a nonempty affine fiber rather than incorrectly placing agreeing vertices in the kernel."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Restricts the coordinate encoder to W, identifies its kernel as H_i intersect W, and represents a nonempty fiber as an anchor plus that kernel."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Uses containment of the affine hull in the fiber and equality of its dimension with the kernel dimension."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Proves the estimate coordinate by coordinate and sums, without any cross-coordinate assumption."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Handles an empty edge separately using geometric dimension0 and nonnegative kernel dimension. The fiber argument also covers singleton and zero-omitting edges."
+        }
+      ]
+    },
+    {
+      "case": "case-06",
+      "candidate_sha256": "3871d5f34154b1fdff8beac6e57ec748b6a328df8181730f3883dcff977c510b",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Uses a valid graph with one unit-weight edge versus all-zero weights."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "The approximation guarantee implies expected first weighted output at least alpha."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "For every coupling the pointwise distance equals the first output weight because the second weighted vector is identically zero. Its expectation is fixed by the first marginal."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Computes input distance1 and concludes L>=alpha from the supremum."
+        }
+      ]
+    },
+    {
+      "case": "case-07",
+      "candidate_sha256": "8fba688a3161f14f0c89a593ec9dba322d239a043e6e1977dbe587876fcac0c5",
+      "confidence": "medium",
+      "ambiguity": "The phrase no bare paths overlooks single-edge paths, but the explicit no-degree2 observation and simplicity immediately make all permitted fixed-endpoint exchanges trivial. The n=3 claim and final aside about all p in (0,1) are unnecessary and incorrect, but the n>=4 counterexample is complete.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Uses the allowed density sequence p_n=1 and deterministic complete graphs."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "For n>=4 the full core has all degrees n-1>=3."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Uses absence of degree2 internal vertices and absence of cycle components. The only possible remaining bare paths are single edges, whose fixed-endpoint exchanges are trivial in a simple graph."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Exhibits a transposition in S_n moving vertices of the core."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Shows that the required subgroup is trivial and the event has probability0 for every sufficiently large n."
+        }
+      ]
+    },
+    {
+      "case": "case-08",
+      "candidate_sha256": "24fd2659dae23986dde7c59085f1c1bea483e8ad6f4ee85da045f4719f54573c",
+      "confidence": "medium",
+      "ambiguity": "The algorithm is the correct nonzero test, and the A_n misuse could be intended as a notation slip. It is repeated in the premise, correctness and conclusion, so the primary audit withholds the correctness item instead of silently replacing this assertion. The magnitude calculation is rough but gives the correct degree-based bit scale.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Fixes Q=P, computes the encoding, queries it, and tests nonzeroness."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Checks arity s(n) and the given uniform subpolynomial coordinate-length bound."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "Repeatedly states nonzeroness is equivalent to membership in A_n, which the problem defines as all instances, rather than yes-instances. No correct yes-instance equivalence is supplied, so the written correctness argument is invalid."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Charges s(n), bounds preparation by t(n), and displays the effective answer-bit estimate O(log s+b(s)), which is O(s) by subpolynomial b and thus fits the time budget."
+        }
+      ]
+    },
+    {
+      "case": "case-09",
+      "candidate_sha256": "bacda0b9172ac422f0129a4f758d893ddde762209b5db01285d63f03762c1119",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Explains why Bob needs Alice's selector tuple before constructing effective inputs."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Alice retains x and Bob locally selects y_i,u_i, with the correct coordinatewise output identity."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Encodes the tuple collectively from a set of size kappa^l with fixed length ceil(l log kappa), requiring no framing bits."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Runs the legal optimal binary protocol on the constructed local vectors and adds the two communication costs."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "Does not explicitly handle kappa=1, as this item expressly requires."
+        }
+      ]
+    },
+    {
+      "case": "case-10",
+      "candidate_sha256": "c1e745fa03212065f0626884183e485a7f61c80007ad81315a8795f7213ed69f",
+      "confidence": "medium",
+      "ambiguity": "The upper admissibility bound on r is not separately written, but fixed r=2 and the eventual-large-n choice directly establish it. One sentence says false with probability0 while immediately clarifying always false; the actual contradiction is correct.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Chooses k=1 and fixed r=2. For sufficiently large n, 2<=r<=n/8 follows immediately from this choice."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Uses all singleton edges and computes psi(b)=1 for every sign realization."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Substitutes m=n,k=1,r=2 into the exact threshold and uses sqrt(n)/log(n) tending to infinity for every fixed C and epsilon."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "The uniform epsilon bound is always false, so sound certification succeeds with probability0, contradicting the guarantee."
+        }
+      ]
+    },
+    {
+      "case": "case-11",
+      "candidate_sha256": "6829eae0288c6e2c440b115d7c51a562224b81cbab3645dd40b0236dddfaf00f",
+      "confidence": "medium",
+      "ambiguity": "A late parenthetical gives an overly small bit-length formula for sums of rationals. Earlier text correctly requires only a polynomial sum encoding, which suffices. The original-or-zero invariant follows directly from the explicit update equations.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Tracks positive nonroot penalties and uses the recursion guard to prove strict removal of at least one positive vertex, allowing already-zero members of K."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Explicitly describes a linear chain of at most n invocations, with at most n-1 strict decreases."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Recursive inputs only replace current penalties by zero, so original-or-zero values follow immediately. Scaling is confined to each temporary A input, with polynomial binary size for fixed beta."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Bounds both supplied routines, instance preparation and exact rational sums/comparisons by polynomial work per invocation, then multiplies by the bounded chain length."
+        }
+      ]
+    },
+    {
+      "case": "case-12",
+      "candidate_sha256": "6cc41c3731af43635c7678007de89b86e7049680b95f2a21ae254f839fa5c5ff",
+      "confidence": "medium",
+      "ambiguity": "After writing the full epsilon factor, it suppresses that fixed constant in the asymptotic comparison. Choosing any fixed epsilon in the required interval makes the dominance argument valid. The large-n upper bound on fixed r is immediate.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Chooses k=1 and fixed r=2, which meets the full range for all sufficiently large n."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Uses all singleton edges and aligns each x coordinate with its sign to obtain maximum1 for every sign sample."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Substitutes the exact threshold including epsilon^-4 and observes that its fixed-parameter scale is sqrt(n) log(n), below n eventually for every fixed C and epsilon."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Explains that sound certification has probability0 because the claimed bound is false on every sign realization."
+        }
+      ]
+    },
+    {
+      "case": "case-13",
+      "candidate_sha256": "bda691f3e55ddc176d713c9400ae87e208e606af078b0afef6291dda81fc54df",
+      "confidence": "medium",
+      "ambiguity": "The claimed sum bit bound L+log n for rational inputs is too small, but replacing it by O(nL+log n) is elementary and leaves the required polynomial bound intact. This is a constant-degree polynomial slack issue, not the linear-time resource failure targeted by v4.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Shows the guard is equivalent to K meeting the positive-penalty set and proves strict set removal at each recursive step."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Writes a one-child candidate recurrence and bounds its chain by at most n invocations and n-1 transitions."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "The update equations only zero original entries and temporarily scale the current vector for A. It bounds every recursive encoding by the original size."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Combines polynomial subroutine work, rational sums/comparisons and O(n) generated candidates with the bounded chain to obtain polynomial total time."
+        }
+      ]
+    },
+    {
+      "case": "case-14",
+      "candidate_sha256": "c4c485817ae9161114a25c6b2d1918055d758cefebc54c68c358e2e31b3410e9",
+      "confidence": "medium",
+      "ambiguity": "It incorrectly calls a two-edge multigraph K2 and overclaims c=1 without explaining the sharper identity. Its explicit weaker alpha/2 argument already proves the requested existence of c>0; the graph and weight data specify an admissible witness despite the name.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Specifies two edges with disjoint unit-supported weight vectors, a valid permitted multigraph witness."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Derives first-edge selection probability and second-edge selection probability at least alpha from their respective objective guarantees."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Explicitly gives the weaker bound E[d]>=mu(e1)>=alpha for an arbitrary coupling. This follows immediately by the displayed distance sum's nonnegative e1 contribution and fixed first marginal, independent of its unproved stronger 2alpha assertion."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Computes input distance2 and explicitly observes the valid ratio lower bound alpha/2, sufficient for the requested universal positive constant."
+        }
+      ]
+    },
+    {
+      "case": "case-15",
+      "candidate_sha256": "d1e33ce6320a60cfede7aa7436a5dd92083d64fb6393829d9b58d88c4eacf302",
+      "confidence": "medium",
+      "ambiguity": "One intermediate sum drops unordered-pair braces and appears ordered, but the preceding set P and the explicit binomial count throughout make its intended unordered indexing unambiguous.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Reduces global noninjectivity to a union of local collision events and uses a union bound with no independence assumption."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Defines unordered pairs of distinct elements as witnesses and proves equivalence with a bucket containing two elements."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Uses the per-pair universal bound and explicitly obtains binomial(|S|,2) times2^-r."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Bounds the binomial count by |S| squared/2 and substitutes the size constraint to obtain1/2."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Presents witness reduction, aggregation and the final complement in a coherent complete argument."
+        }
+      ]
+    },
+    {
+      "case": "case-16",
+      "candidate_sha256": "8f54cc6b02df49bbdc287f255b108abb260eb5e3122bf52996b080fd05c8f7c9",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Distinguishes individual collisions from their union and applies a union bound that does not require independence."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Explicitly defines binomial(S,2) and equates noninjectivity with one of those collisions."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Obtains binomial(|S|,2) times2^-r using the universal bound."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Substitutes |S| squared<=2^r and gets failure probability at most1/2, with trivial small-set cases."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Connects each quantified step to the desired injectivity probability."
+        }
+      ]
+    },
+    {
+      "case": "case-17",
+      "candidate_sha256": "9b6964f5f5320f4379c381faabcd0bb6295fa660bbbbde5b423429c36d28cd68",
+      "confidence": "medium",
+      "ambiguity": "The rubric names the reference's C103, but strict balance of the candidate's different F is an independently correct component. The remaining counterexample does not work, and receives no host or final-contradiction credit.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": false,
+          "reason": "Does not identify the epsilon-dependent template cutoff loophole or choose an effective epsilon."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Correctly computes rho(C4)=3/2 and checks all proper subgraphs with at least two edges have density at most1. This independently verifies strict balance of its chosen F."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "Checks only one template, miscomputes its rooted density and zeta*h exponent, and never verifies all four conditions for every permitted template."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "Drops epsilon^5 from the initial-density exponent and supplies no fixed epsilon that justifies its host-density assertion."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "Existence of a cycle decomposition does not imply a random greedy deletion exhausts every edge. No failure-probability bound or universal delta quantifier argument is proved."
+        }
+      ]
+    },
+    {
+      "case": "case-18",
+      "candidate_sha256": "ec870fc7d2df4834afbdd6e47590059b59c64cff93b56d57758b03feedac232a",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Explains the private-selector mismatch and the need to inform Bob."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Gives local x and selected y inputs and the correct coordinatewise output identity."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Specifies a base-kappa integer code of the entire tuple and fixed-length ceil(l log kappa) transmission without extra framing."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Explains every simulated bit uses only the speaker's local transformed input and prior transcript, with total depth D(f^l) plus the code length."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "Does not explicitly handle kappa=1 as required by this scored item."
+        }
+      ]
+    },
+    {
+      "case": "case-19",
+      "candidate_sha256": "bb8ea2c624e0141dd9e8070bd432672d3170ab85ae15fb370434c0ee43bf37e6",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Chooses Q=P and computes the formulation encoding before one exact oracle query and nonzero test."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Checks the arity and the uniform subpolynomial coordinate-bit restriction."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Explicitly states the correct yes-instance equivalence and identifies the returned integer with the formulation's value."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Uses the total encoding-output bit length S<=t(n), bounds every degree-Delta monomial by2^(Delta S), counts polynomially many terms, and proves O(t(n)) returned-bit processing in addition to preprocessing and the arity charge."
+        }
+      ]
+    },
+    {
+      "case": "case-20",
+      "candidate_sha256": "71703e76c74d31369f5221e421dc0133a0eaaeef5ef0ff486628f9e16c250164",
+      "confidence": "medium",
+      "ambiguity": "The blanket phrase no bare paths overlooks single edges, but the immediately preceding length>=2 argument and graph simplicity dispose of those remaining paths without any extra proof mechanism.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Uses p_n=1 and deterministic K_n."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Establishes the entire core and degrees at least3 for n>=4."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Rules out cycles and any bare path of length at least2 by the degree2 condition. The only remaining paths are individual simple edges, with trivial fixed-endpoint exchanges."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Uses the full symmetric group and the nonidentity transposition(12)."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Shows the universal event fails with probability1 for every n>=4, hence its probability has limit0."
+        }
+      ]
+    },
+    {
+      "case": "case-21",
+      "candidate_sha256": "5fdea85d8ea7937cadf876e38d292c9b8d84fd7c0697aad40f5a535944a9daac",
+      "confidence": "medium",
+      "ambiguity": "The final suggested c uses the limiting negative gap rather than half that gap. Replacing it by half is a routine slack correction after the displayed strict limit. The loose phrase almost surely is not the actual proved conclusion.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Counts exponentially many candidate assignments and explicitly states that union bounds need no independence across them."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Derives Gaussian row projections with variance N and independence across rows, yielding feasibility probability(1-Phi(kappa))^M."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Uses the solution count and linearity to obtain2^N times that fixed-assignment probability."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Derives a strictly negative limiting per-N logarithm above the upper bound and invokes M/N convergence to get a fixed negative rate."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Applies Markov to the nonnegative solution count and obtains exponential decay."
+        },
+        {
+          "item": 6,
+          "satisfied": true,
+          "reason": "Gives a coherent one-sided argument without proving existence or equality of a sharp threshold."
+        }
+      ]
+    },
+    {
+      "case": "case-22",
+      "candidate_sha256": "624f1c1825f8481226d67cf7f98d838dbfddae0ce524d53e82e50b4cdba6b633",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Treats every omitted row through a complete two-case construction and verification."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Explicitly constructs the standard basis plus the all-ones row."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Proves independence in every deletion case by examining the missing coordinate."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Solves the inverse-transpose coefficient equations, obtaining all1 or one1 and d-1 minus1, so squared norm is always d."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Orders construction, invertibility, coefficient solution and the universal lower-bound implication correctly."
+        }
+      ]
+    },
+    {
+      "case": "case-23",
+      "candidate_sha256": "2550b642e92b3b527561817fecc704b95366d1185adca1a27ff6b90d04cc1590",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Explicitly requires invertibility and exact norm for every omission, not merely one basis."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Constructs coordinate basis rows and their negative sum."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Checks the two possible deletion types with a full coordinatewise linear-independence argument."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "After correcting intermediate algebra, explicitly uses the zero-sum identity to obtain all minus1 coefficients for every omission and squared norm d."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Connects the construction, checks and uniform coefficient equality to the impossibility of a smaller guarantee."
+        }
+      ]
+    },
+    {
+      "case": "case-24",
+      "candidate_sha256": "a3e25ffaef3ef389bb7445e4045f3faaa08efd829606134888aed66609dddb83",
+      "confidence": "medium",
+      "ambiguity": "It explicitly handles empty fibers, while an empty edge can also have a nonempty fiber. In that remaining case gdim(empty)=0 and nonnegative kernel dimension give the bound immediately from the problem's stated convention, without a new mechanism.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Identifies the received-symbol equation as an affine condition parallel to the kernel condition."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Defines the restricted-coordinate fiber, proves both inclusions in its anchor-plus-kernel representation, and keeps all vectors in W."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Uses affine containment and equality of the fiber dimension with the kernel dimension."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Proves each coordinate estimate and then sums without any need for disjoint hyperedges."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Uses the stated geometric-dimension0 convention and nonnegative kernel dimension for empty edges. Singleton and zero-omitting edges are covered by the general fiber argument."
+        }
+      ]
+    },
+    {
+      "case": "case-25",
+      "candidate_sha256": "823024d80ba73671f018e3b58f2e2f4cbec5597b03545af39962b77809afe920",
+      "confidence": "medium",
+      "ambiguity": "The final epsilon comparison reverses the inequality because log p is negative. The preceding correct strict-limit argument supplies the rate after a routine half-gap repair; it does not need a new probabilistic estimate.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Explicitly separates row independence from arbitrary dependence across candidate assignments."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Proves standard-normal normalized projections and independence across rows, then multiplies their probabilities."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Uses the direct union bound over exactly2^N assignments."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Computes the strictly negative limiting exponent and uses M/N convergence. The final alpha+epsilon inequality has its direction wrong, but choosing a half-gap neighborhood gives the requested fixed negative rate by elementary continuity."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "The union-bound estimate then gives exp(-cN) and vanishing feasibility probability."
+        },
+        {
+          "item": 6,
+          "satisfied": true,
+          "reason": "Proves only the claimed one-sided upper bound with the correct candidate and row scope."
+        }
+      ]
+    },
+    {
+      "case": "case-26",
+      "candidate_sha256": "88023240524233ff4be31c58dcc289c0e23a07a54f32b0f7aa4b5f952e8d87e0",
+      "confidence": "high",
+      "ambiguity": "An unused sentence about the maximum crossing count being at least the real threshold plus1 is not generally valid. The actual strict weighted-sum contradiction and final floor step are correct.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Uses weighted support rather than uniform trees and distinguishes an average from a bound on every tree."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Double-counts the weighted crossing sum and bounds it by the sum of feasible edge loads over C, at most |C|."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Combines the cut-size upper bound, approximate total weight and the precisely stated standard fractional-packing inequality tau>=lambda/2, with correct inequality directions."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Obtains a supported tree with crossings at most2(1+epsilon)beta and applies integer-valuedness to get its floor."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Works for an arbitrary fixed prescribed cut and constructs a witness in the given packing."
+        }
+      ]
+    },
+    {
+      "case": "case-27",
+      "candidate_sha256": "a3d675b88d73a4e965672aee24006f2fdda9b8f84acd6898593d94bc40c88bb8",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Identifies boundedness and conversion from quadratic loss to the linear signed product."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Gives the pointwise projection proof for binary labels, preserves the expected improvement and ensures g in[-1,1]."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Derives the exact squared-loss identity with g squared and obtains correlation>=2gamma+E[g squared]/2, retaining the correct nonnegative remainder."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Composes clipping, loss identity and nonnegative remainder in the right order to prove the target."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Uses exactly the unnormalized signed-label product and explicitly explains no independence or label-balance assumption is needed."
+        }
+      ]
+    },
+    {
+      "case": "case-28",
+      "candidate_sha256": "688e7cc119f7ea5dbd1fdd55343d060b6942e4f42f32e04b881155a73eb92774",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Constructs standard basis rows plus the all-ones row for every d."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "After any deletion it either has the coordinate basis or recovers the missing basis vector from the added row and the others."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "When the added row is omitted the coefficient vector is all1 and squared norm d."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "For any omitted coordinate row, represents it with coefficient1 on the added row and minus1 on each other row, identifies these with inverse-transpose coordinates, and computes squared norm d."
+        }
+      ]
+    },
+    {
+      "case": "case-29",
+      "candidate_sha256": "2a4a5a2c0c88ce6a09371ab5a067b3a179e075b76d5453a553bde328696e68da",
+      "confidence": "medium",
+      "ambiguity": "The first item names the reference's isolated inequality d>=n/delta. The candidate instead performs the equivalent direct endpoint incompatibility calculation and derives the same exact feasibility threshold. Its phrase the probability is1 is shorthand for the explicitly stated vacuity.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Compares the actual interval endpoints using d<=n/2, obtaining k>=sqrt(2n). This is an elementary equivalent feasibility check to isolating d>=n/delta."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Combines sqrt(2n)<=k<=sqrt(delta n) and explicitly derives delta>=2."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Chooses delta0=2 and explains there are no admissible parameter sequences below it, so the implication is vacuous."
+        }
+      ]
+    },
+    {
+      "case": "case-30",
+      "candidate_sha256": "a0af1866b3c56f9a88fbb87f2e0d8852c25976d2bad0775eb4e76b954357bc9b",
+      "confidence": "medium",
+      "ambiguity": "The final target has a valid alternative proof, but this primary audit withholds the item that expressly asks for loss-safe clipping because that claim is not established. Earlier false attempts to exclude h>1,y=0 are corrected by the later explicit nonnegative expression.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Reconciles quadratic improvement with the bounded rescaled output and its signed-label product."
+        },
+        {
+          "item": 2,
+          "satisfied": false,
+          "reason": "Defines clipping and its output range, but does not establish that clipped squared loss is at most original loss. Its alternative remainder inequality proves the final correlation bound without proving this separately scored claim."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Correctly derives E[Zg]>=2gamma+2E[v squared-Z delta] and eventually verifies the remainder is nonnegative in all h and label cases, including its corrected h>1,y=0 calculation."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Orders the algebraic reduction, clipping decomposition and final nonnegative remainder to obtain the target."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Uses the raw signed product, and its final correction handles both labels without distribution restrictions."
+        }
+      ]
+    },
+    {
+      "case": "case-31",
+      "candidate_sha256": "a0a25e8680ed3662ec9789a7a9e350982e799c72c772251128bb81f9ca531ba9",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Uses weights explicitly to transfer aggregate edge loads to one supported tree."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Proves the weighted crossing-sum identity and capacity upper bound."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "Combines approximate W and cut size with precisely stated tau>=lambda/2 in the correct direction."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Uses K=floor(threshold), the strict K+1>threshold inequality and positive support to contradict failure of the desired witness."
+        },
+        {
+          "item": 5,
+          "satisfied": true,
+          "reason": "Works for each prescribed fixed cut and finds a tree in the given packing."
+        }
+      ]
+    },
+    {
+      "case": "case-32",
+      "candidate_sha256": "535d2cfbd42923d60e9a1018059e1e6b86d24cf887b7bc48dbdc624fc9db8888",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": false,
+          "reason": "Deletes all edges incident to sampled vertices, an invalid modification that can isolate nonroot descendants."
+        },
+        {
+          "item": 2,
+          "satisfied": false,
+          "reason": "Wrongly concludes every residual nonsampled component contains the old root, despite acknowledging that paths through S can be cut."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "Uses an incorrect cost subtraction that double-counts edges with two sampled endpoints. The final inequality also mishandles the sign of1-gamma when gamma>1."
+        }
+      ]
+    },
+    {
+      "case": "case-33",
+      "candidate_sha256": "63a5ab42a55cee474cf81e60bc52ca15b7e6cfbcda08b01d7d6027dc050457b8",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Fixes a two-parallel-edge graph and continuous nonnegative weights with distinct forced regions."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Correctly applies finite approximation to force the cheaper edge when the cost ratio exceeds rho in either direction."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "The final arbitrary-partition case assumes an appropriate boundary inside B and that its choices persist when scaling weights. No monotonicity or scale invariance of an arbitrary algorithm is given, and boundary choices at the two proposed extreme points do not handle all cases."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "Distance formulas under assumed outputs do not locate actual nearby different selections with a nonvanishing gap. Scaling the domain does not preserve the algorithm's partition, so the divergent actual ratio is unproved."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "The fixed-graph unboundedness conclusion depends on the missing universal transition-and-gap argument."
+        }
+      ]
+    },
+    {
+      "case": "case-34",
+      "candidate_sha256": "36c8229066325fcb5e4504bec0904dc946658df0d5b2dbfd4dcbbe689b4d157e",
+      "confidence": "high",
+      "ambiguity": "The candidate ends mid-induction. Its nonempty face representation still earns that independent component, but the partially stated adjacency rule is wrong for faces involving the collapsed empty copies.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Identifies every higher-dimensional nonempty cube face by a lower face times a fixed0, fixed1 or free interval coordinate. This gives the required product representation."
+        },
+        {
+          "item": 2,
+          "satisfied": false,
+          "reason": "Incorrectly extends all lower cover edges into the free-coordinate layer: the old empty-to-vertex edge would become empty-to-edge, which is not a cover. It never correctly specifies the empty face's neighbors in all dimensions."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "Stops before giving any inductive ordering or cycle construction."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "Only proves the one-dimensional base; no spanning sequence is supplied for higher dimensions."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "Gives no block junction or endpoint-invariant verification."
+        },
+        {
+          "item": 6,
+          "satisfied": false,
+          "reason": "Does not close a cycle for general n."
+        }
+      ]
+    },
+    {
+      "case": "case-35",
+      "candidate_sha256": "eea3ab38f168f3e5b29028ad628e597f1aeb6f90567544967458de1e7e52e092",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Uses h and delta measurable in sigma(p), replaces Z by its conditional mean, and keeps that distinct from conditioning on X."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Uses delta*h=|delta| and expected calibration error at most2tau to obtain cor(Y,h)>=E|delta|-2tau."
+        },
+        {
+          "item": 3,
+          "satisfied": true,
+          "reason": "For every comparator decomposes its residual, applies multiaccuracy at2tau, and bounds c*delta by |delta|."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Combines the uniform supremum bounds to get the exact loss4tau without assuming a maximizer."
+        }
+      ]
+    },
+    {
+      "case": "case-36",
+      "candidate_sha256": "178a3e595a77d10591b0285c64147b8cbc2f8071528d1777a76105e17859f7b5",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": false,
+          "reason": "Assumes an evaluable probability mu(sigma), which the sampler does not provide, and never implements a comparison-count estimator."
+        },
+        {
+          "item": 2,
+          "satisfied": false,
+          "reason": "The claimed runtime assumes efficient evaluation of an unavailable mass function, so it is not a valid algorithmic bound from the given assumptions."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "No transcript distinction, prefix-free structure or valid counting substitute is established."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "Proves only bounds conditional on knowing the unavailable mass, not a lower-tail bound for a legal comparison estimator."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "The claimed probability-one guarantee uses an inadmissible estimator and does not handle the full constants and T=1 correctly."
+        }
+      ]
+    },
+    {
+      "case": "case-37",
+      "candidate_sha256": "15f9a6151c41eeb2080bf3e8dbec65091453a32cc04382ead4663b816e4baec6",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": false,
+          "reason": "Notes several tempting variance inequalities are false, but never identifies a valid decomposition with the missing residual conditional fluctuations."
+        },
+        {
+          "item": 2,
+          "satisfied": false,
+          "reason": "Defines infima beta_k but supplies neither a usable uniform child fluctuation subgoal nor a valid base case."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "States the desired reciprocal-sum conclusion as an intermediate claim instead of deriving the quantitative averaged fluctuation identity and exact local normalization."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "Restates the averaged energy inequality but never applies child variance or entropy comparison bounds to restricted functions to transfer residual fluctuations."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "Does not state the conditional entropy decomposition of F squared or its required conditional-expectation term."
+        },
+        {
+          "item": 6,
+          "satisfied": false,
+          "reason": "The final substitution assumes the missing local-to-global theorem, and sometimes an unsupported equality. It does not explain the additive coefficient mechanism."
+        }
+      ]
+    },
+    {
+      "case": "case-38",
+      "candidate_sha256": "71303e4a595129e2f3c27ef3b5df2f6aae6552f1bff3ee5680ff1ea2c9d502d8",
+      "confidence": "medium",
+      "ambiguity": "The second-moment bound is expressed through the proved raw-moment inequality and the immediate variance subtraction rather than a separate centered calculation.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Proves E[Y^n]<=mu for every n>=1, which at n=2 gives Var(Y)<=E[Y squared]<=mu, the needed mean-sensitive scale after normalization."
+        },
+        {
+          "item": 2,
+          "satisfied": false,
+          "reason": "Does not control the exponential-series remainder with numerical estimates yielding1/3."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "Explicitly accepts a purported standard cubic moment lemma instead of proving it. That lemma is also false as stated for every real t."
+        },
+        {
+          "item": 4,
+          "satisfied": true,
+          "reason": "Writes the correct exponential Markov bound and the sum of individual log moment-generating functions using independence. The uniform per-variable bounds would not require identical laws."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "Stops during optimization without a valid chosen parameter or verified target exponent."
+        },
+        {
+          "item": 6,
+          "satisfied": false,
+          "reason": "Does not establish a lower tail or handle zero mean with a valid parameter choice."
+        }
+      ]
+    },
+    {
+      "case": "case-39",
+      "candidate_sha256": "6ec41e54a234902ce1258fec4c6e091ce1c220037bc1452222385bed3bb0fa3c",
+      "confidence": "medium",
+      "ambiguity": "The size-one discussion repeatedly mistypes alpha1 as its reciprocal, but also explicitly proves the correct base inequality gamma>=alpha1. This independently earns the uniform-subgoal component, not the failed final constants.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "The correct total-variance identity separates coordinate-visible and residual conditional variance, and the text identifies the latter as requiring additional child-energy control."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "States uniform bounds for every feasible pinning and derives the correct size-one base gamma>=alpha1 directly from P. This is a usable equivalent induction base."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "Although the summed total-variance identity is correct, it never combines its average with the parent local condition to derive the exact1/(k alpha_k) contribution."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "Assumes a stronger unsupplied energy-versus-conditional-variance comparison and incorrectly removes child conditioning when summing local variances. It also reverses the child comparison coefficient in a later step."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "Offers only confused entropy analogies and never states a correct conditional-entropy decomposition."
+        },
+        {
+          "item": 6,
+          "satisfied": false,
+          "reason": "Relies on false added inequalities and unsupported coefficient claims instead of deriving the additive reciprocal-sum induction."
+        }
+      ]
+    },
+    {
+      "case": "case-40",
+      "candidate_sha256": "7e4072a94352ae6d2529bf6b13dde39eca514ab6c02c14a6007b9aaf38527657",
+      "confidence": "high",
+      "ambiguity": "No substantive ambiguity identified.",
+      "candidate_items": [
+        {
+          "item": 1,
+          "satisfied": true,
+          "reason": "Samples once, constructs an oracle from sampled positions and returns the deterministic comparison count."
+        },
+        {
+          "item": 2,
+          "satisfied": true,
+          "reason": "Invokes the deterministic O(log T) comparison/time bounds, with an elementary position array fitting the absorbed O(n) construction budget."
+        },
+        {
+          "item": 3,
+          "satisfied": false,
+          "reason": "Does not prove distinct prefix-free transcripts or provide a valid variable-length transcript count."
+        },
+        {
+          "item": 4,
+          "satisfied": false,
+          "reason": "Again promotes a worst-case information lower bound to a lower bound for every sampled order. It never bounds the probability mass of short executions."
+        },
+        {
+          "item": 5,
+          "satisfied": false,
+          "reason": "The claimed probability-one guarantee relies on that invalid per-order lower bound, despite correctly noting the T=1 case."
+        }
+      ]
+    }
+  ]
+}

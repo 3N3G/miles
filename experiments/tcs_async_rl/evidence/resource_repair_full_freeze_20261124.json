@@ -1,0 +1,22 @@
+{
+  "packet_sha256": "4f12202cad3cb52d76a9db5f27fc26fa50ee988a88a65b7ab1bb82a4f59fe7e3",
+  "cases": 40,
+  "easy_answers": 32,
+  "medium_answers": 8,
+  "medium_questions": 6,
+  "screen_responses_sha256": "09353bd02edb159e11ea8ceb58c9dbe304ff03b83e13a8ce05985b99185e8936",
+  "excluded_seen_grade_sha256": "2e93b6958f17735c4f8ee1c37bca95f428fb24bad3c5abb7eb10a62cbf6d0682",
+  "additional_exposed_grade_sha256": [
+    "4151152512dcd0538e5068cb30aeebd506ffe8bda9f04ba0df57af8a0828f51b"
+  ],
+  "excluded_packets": [
+    "793dc92214c2b67049c2bcf0a36067f552969ae39f52fc22d1f101c8d34918bd",
+    "888fc0f8f27146e1e25addc0862396ca499c2dd286e89e33dc2e798fe6770a30",
+    "028613a900aa41a1d9401fb223247b12078f2844b7e4763a0de0fad6705e7d1d"
+  ],
+  "heldout_reads": 0,
+  "new_solver_generations": 0,
+  "new_judge_calls": 0,
+  "labels_sha256": "57939bad02a4d48f48de08df203deb9055cacef3ca521a743bc0088cfae46b47",
+  "provenance": "All40 primary item labels frozen before any new prompt API call. Assistant audits with explicit confidence and ambiguities, not human calibration."
+}
