@@ -1,0 +1,35 @@
+{
+  "training_config": "config.luna_high_20261124.json",
+  "endpoint": "https://api.openai.com/v1/chat/completions",
+  "max_concurrency": 8,
+  "max_attempts": 3,
+  "timeout_seconds": 600,
+  "usd_cap": 2.6787322,
+  "input_usd_per_million": 0.1,
+  "output_usd_per_million": 0.5,
+  "long_input_threshold_tokens": 272000,
+  "long_input_multiplier": 2,
+  "long_output_multiplier": 1.5,
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+  "grade_status": "fresh40_component_consistency_comparison_before_selection",
+  "answer_extraction": "Final answer only. A recorded empty model-token-cap is judged by the same rubric, with no substituted provider errors.",
+  "length_retry_max_completion_tokens": 32768,
+  "grading_method": "reference_guided",
+  "prompt_files": {
+    "reference_v2": "rubric_judge_reference_v2.txt",
+    "reference_v3": "rubric_judge_reference_v3.txt"
+  },
+  "budget_scope": {
+    "source": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/difficulty-screen-high-v3",
+    "destination": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/judge-comparison-component-v3-20261124",
+    "ledger_sha256": "195669d6d35d44b4c5b770a9a4e2565d6027e9b27f7fb5837cc01662dffa9e6f",
+    "spent_usd": 1.2284205,
+    "settled_calls": 1031,
+    "pending": 0,
+    "prior_comparison_and_initial_control_usd": 0.5496883,
+    "remaining_comparison_allowance_usd": 1.4503116999999999,
+    "absolute_phase_ceiling_usd": 2.6787322,
+    "all_stages_cap_usd": 25,
+    "old_owner_closed": true
+  }
+}

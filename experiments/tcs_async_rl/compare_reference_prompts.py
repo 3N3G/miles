@@ -6,11 +6,12 @@ import hashlib
 import json
 from pathlib import Path
 
+from experiments.tcs_async_rl.diagnose_rl import completed_judge_receipt
 from experiments.tcs_async_rl.grade_group import Budget, grade_one, usage_cost
 from experiments.tcs_async_rl.judge_client import load_credentials
 from experiments.tcs_async_rl.judge_comparison import comparison_metrics, digest, judge_settings, save
 from experiments.tcs_async_rl.reward_hook import question_key
-from experiments.tcs_async_rl.rubric_judge import rubric_items
+from experiments.tcs_async_rl.rubric_judge import messages, parse_grade, rubric_items
 
 
 def validate_labels(packet, labels):
@@ -62,8 +63,42 @@ async def compare(cli):
     save(target, freeze)
     key = load_credentials(Path.home() / ".config/api-keys.env")[judge["api_key_env"]]
     budget, semaphore = Budget(cli.output / "judging", config), asyncio.Semaphore(config["max_concurrency"])
+    medium_sources = {
+        row["case"]: row
+        for row in json.loads((cli.packet / "selection-provenance-not-for-labeling.json").read_text())
+        if row["kind"] == "medium"
+    }
 
     async def one(case, recipe, identity, text):
+        if recipe == "reference_v2" and identity == case["case"] and identity in medium_sources:
+            # These exact v2/high verdicts already exist from generation.
+            # Reuse immutable copies after labels freeze rather than regrade.
+            source = medium_sources[identity]
+            folder = cli.output / "baseline-v2-cache" / source["question_key"]
+            receipt = completed_judge_receipt(folder, source["judge_identity"], 0)
+            if receipt["payload"]["messages"] != messages(
+                case["question"],
+                text,
+                swapped=False,
+                system_prompt=(cli.config.parent / prompts[recipe]).read_text(),
+                grading_method="reference_guided",
+            ) or any(receipt["payload"][name] != judge[name] for name in ("reasoning_effort",)):
+                raise ValueError("Cached comparator differs from the frozen request")
+            if receipt["payload"]["model"] != judge["primary_model"]:
+                raise ValueError("Cached comparator used another model")
+            grade = parse_grade(
+                receipt["body"]["choices"][0]["message"]["content"],
+                rubric_items(case["question"]["rubric"]),
+                answer_labels=("candidate",),
+            )["candidate"]
+            return {
+                "identity": source["judge_identity"],
+                "swapped": False,
+                "candidate": grade,
+                "reference": None,
+                "receipt": str(folder / f"{source['judge_identity']}-order0-{receipt['request_sha256'][:12]}.json"),
+                "reused_exact_baseline": True,
+            }
         folder = cli.output / "judging" / identity / recipe
         folder.mkdir(parents=True, exist_ok=True)
         return await grade_one(
@@ -124,6 +159,7 @@ async def compare(cli):
         "comparison": {name: {k: v for k, v in row.items() if k != "cases"} for name, row in metrics.items()},
         "controls": len(checks),
         "all_controls_pass": all(row["passed"] for row in checks),
+        "cached_comparator_cases": len(medium_sources),
         "spent_reserved_usd": budget.total,
     }
 
