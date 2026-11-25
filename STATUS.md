@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD checkpoint screen 546404 is RUNNING after the queue wait Jobs: hpcfund/546404 RUNNING; hpcfund/544406 COMPLETED
-  Next: Verify restored checkpoint108 and all three engines, audit384 screened answers, then run the selected approved continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen546404 failed before generation in the checkpoint publication validator Jobs: hpcfund/546404 FAILED; hpcfund/544406 COMPLETED
+  Next: Verify appended startup publications against checkpoint108, repair the validator, and rerun within the remaining sixteen GPU-hours.
 
 ## Next / blocked
 
