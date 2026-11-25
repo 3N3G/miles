@@ -921,7 +921,7 @@
     {
       "id": "549728",
       "cluster": "hpcfund",
-      "status": "SUBMITTED"
+      "status": "RUNNING"
     },
     {
       "id": "548575",
@@ -3536,15 +3536,22 @@
       "actor": "codex",
       "summary": "Submitted AMD job549728: all236 easy/medium questions, checkpoint108, fixed Luna/high v5,12-hour cap.",
       "revision": 342
+    },
+    {
+      "id": "5a20de62-3c7d-43ab-b3cf-a5bafed659e7",
+      "at": "2026-11-25T13:27:17.228000Z",
+      "actor": "codex",
+      "summary": "RL job 549728 is RUNNING",
+      "revision": 343
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Submitted AMD job549728: all236 easy/medium questions, checkpoint108, fixed Luna/high v5,12-hour cap.",
-  "nextAction": "Attach the owned supervisor and resource guards, verify checkpoint restoration and first128-answer update, then supervise through terminal checkpoint and archive verification.",
+  "summary": "RL job 549728 is RUNNING",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 342,
-  "updatedAt": "2026-11-25T13:27:13.997551Z"
+  "revision": 343,
+  "updatedAt": "2026-11-25T13:27:17.228000Z"
 }

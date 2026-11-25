@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Submitted AMD job549728: all236 easy/medium questions, checkpoint108, fixed Luna/high v5,12-hour cap. Jobs: hpcfund/549728 SUBMITTED; hpcfund/548575 COMPLETED
-  Next: Attach the owned supervisor and resource guards, verify checkpoint restoration and first128-answer update, then supervise through terminal checkpoint and archive verification.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 549728 is RUNNING Jobs: hpcfund/549728 RUNNING; hpcfund/548575 COMPLETED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
