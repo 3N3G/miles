@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Screen548575 continues; medium audits exposed inconsistent component credit, so RL waits for a fresh prompt validation. Jobs: hpcfund/548575 RUNNING; hpcfund/548472 FAILED
-  Next: Complete the fixed screen, label a disjoint40-answer packet without judge outputs, and compare the documented general prompt repair before RL.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Frozen32 unseen easy-answer audits before prompt calls; screen548575 has345/384 completed answers. Jobs: hpcfund/548575 RUNNING; hpcfund/548472 FAILED
+  Next: Finish the screen, select and label8 fresh medium answers blind, then compare v2/high with the documented v3/high clarification within the shared budget.
 
 ## Next / blocked
 

@@ -3388,15 +3388,22 @@
       "actor": "codex",
       "summary": "Screen548575 continues; medium audits exposed inconsistent component credit, so RL waits for a fresh prompt validation.",
       "revision": 325
+    },
+    {
+      "id": "04edd88a-f197-40ce-83f5-2c9406f03c6d",
+      "at": "2026-11-25T03:47:36.903889Z",
+      "actor": "codex",
+      "summary": "Frozen32 unseen easy-answer audits before prompt calls; screen548575 has345/384 completed answers.",
+      "revision": 326
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Screen548575 continues; medium audits exposed inconsistent component credit, so RL waits for a fresh prompt validation.",
-  "nextAction": "Complete the fixed screen, label a disjoint40-answer packet without judge outputs, and compare the documented general prompt repair before RL.",
+  "summary": "Frozen32 unseen easy-answer audits before prompt calls; screen548575 has345/384 completed answers.",
+  "nextAction": "Finish the screen, select and label8 fresh medium answers blind, then compare v2/high with the documented v3/high clarification within the shared budget.",
   "owner": "Codex",
-  "revision": 325,
-  "updatedAt": "2026-11-25T03:29:47.012099Z"
+  "revision": 326,
+  "updatedAt": "2026-11-25T03:47:36.903889Z"
 }
