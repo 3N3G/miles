@@ -3409,15 +3409,22 @@
       "actor": "codex",
       "summary": "Forty blind audits are frozen; Luna-high original and clarified prompts are being compared without rerolling valid medium verdicts.",
       "revision": 328
+    },
+    {
+      "id": "0c676fdb-7494-4a8f-ac6c-ef5fa164e0a2",
+      "at": "2026-11-25T04:09:25.746771Z",
+      "actor": "codex",
+      "summary": "The fresh prompt comparison fails on a false-full runtime proof; all384 screen answers and prior comparison artifacts have verified private archives.",
+      "revision": 329
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Continue the easy-only Qwen3.5-4B async RL investigation until comparable training rewards increase, with entropy, divergence and rollout checks; preserve all prior runs and held-out data.",
   "state": "running",
-  "summary": "Forty blind audits are frozen; Luna-high original and clarified prompts are being compared without rerolling valid medium verdicts.",
-  "nextAction": "Complete controls and agreement checks, verify the completed screen archive, then use the declared medium rule before the approved continuation.",
+  "summary": "The fresh prompt comparison fails on a false-full runtime proof; all384 screen answers and prior comparison artifacts have verified private archives.",
+  "nextAction": "Validate the documented asymptotic-bound prompt on a new disjoint40-answer blind packet. Preserve the12-hour continuation until the judge gate passes.",
   "owner": "Codex",
-  "revision": 328,
-  "updatedAt": "2026-11-25T04:03:48.568046Z"
+  "revision": 329,
+  "updatedAt": "2026-11-25T04:09:25.746771Z"
 }

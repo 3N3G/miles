@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Forty blind audits are frozen; Luna-high original and clarified prompts are being compared without rerolling valid medium verdicts. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Complete controls and agreement checks, verify the completed screen archive, then use the declared medium rule before the approved continuation.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): The fresh prompt comparison fails on a false-full runtime proof; all384 screen answers and prior comparison artifacts have verified private archives. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Validate the documented asymptotic-bound prompt on a new disjoint40-answer blind packet. Preserve the12-hour continuation until the judge gate passes.
 
 ## Next / blocked
 
