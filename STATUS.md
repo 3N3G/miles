@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): User accepts the remaining judge disagreements; expose the final prompt and prepare complete W&B run provenance. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
+  Next: Show the unchanged v5 prompt and concrete judge/training setup. Add exact prompt, safe hyperparameters, provenance and a graded-example link to W&B without changing old history.
 
 ## Next / blocked
 
@@ -12,8 +13,7 @@
 
 ## Waiting on user
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Saved verdicts show lower-score tie-breaking cannot fix the four uncertain audits; partial-credit ownership remains unresolved. Jobs: hpcfund/548575 COMPLETED; hpcfund/548472 FAILED
-  Next: Review explicit scoring rules for implicit steps and dependencies before any new prompt validation. No labels, rewards, jobs or spending changed.
+- Nothing recorded.
 
 ## Finished
 
