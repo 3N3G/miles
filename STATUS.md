@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eight resumed updates; all32 perfect medium answers use problem-only prompts and a valid sampled proof Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Continue supervision through the resource guard and terminal archive. Complete hourly raw-proof reviews and the approved fixed12-question final screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Nine resumed updates and815 W&B scalars verified; fifth review distinguishes component credit from solved theorems Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Watch through the08:27 UTC resource-save request, verify the final checkpoint and terminal archive, then submit and supervise the approved fixed12-question screen.
 
 ## Next / blocked
 

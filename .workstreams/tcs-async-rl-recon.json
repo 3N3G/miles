@@ -3874,15 +3874,22 @@
       "actor": "codex",
       "summary": "Eight resumed updates; all32 perfect medium answers use problem-only prompts and a valid sampled proof",
       "revision": 385
+    },
+    {
+      "id": "e17db7c2-4c1c-46bd-bd06-0933423bd439",
+      "at": "2026-11-26T07:46:24.812188Z",
+      "actor": "codex",
+      "summary": "Nine resumed updates and815 W&B scalars verified; fifth review distinguishes component credit from solved theorems",
+      "revision": 386
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Eight resumed updates; all32 perfect medium answers use problem-only prompts and a valid sampled proof",
-  "nextAction": "Continue supervision through the resource guard and terminal archive. Complete hourly raw-proof reviews and the approved fixed12-question final screen.",
+  "summary": "Nine resumed updates and815 W&B scalars verified; fifth review distinguishes component credit from solved theorems",
+  "nextAction": "Watch through the08:27 UTC resource-save request, verify the final checkpoint and terminal archive, then submit and supervise the approved fixed12-question screen.",
   "owner": "Codex",
-  "revision": 385,
-  "updatedAt": "2026-11-26T07:18:00.960039Z"
+  "revision": 386,
+  "updatedAt": "2026-11-26T07:46:24.812188Z"
 }
