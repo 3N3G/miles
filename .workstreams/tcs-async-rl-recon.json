@@ -3881,15 +3881,22 @@
       "actor": "codex",
       "summary": "Nine resumed updates and815 W&B scalars verified; fifth review distinguishes component credit from solved theorems",
       "revision": 386
+    },
+    {
+      "id": "d422b003-597b-4b8d-915d-761d31292e49",
+      "at": "2026-11-26T08:03:29.685572Z",
+      "actor": "codex",
+      "summary": "Ten resumed updates and904 W&B scalars verified; same12-question final screen prepared with source iteration pending",
+      "revision": 387
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Nine resumed updates and815 W&B scalars verified; fifth review distinguishes component credit from solved theorems",
-  "nextAction": "Watch through the08:27 UTC resource-save request, verify the final checkpoint and terminal archive, then submit and supervise the approved fixed12-question screen.",
+  "summary": "Ten resumed updates and904 W&B scalars verified; same12-question final screen prepared with source iteration pending",
+  "nextAction": "Supervise through the08:27 UTC save request and final checkpoint. Freeze the final screen source only after training completion, transfer the closed ledger and launch the approved screen.",
   "owner": "Codex",
-  "revision": 386,
-  "updatedAt": "2026-11-26T07:46:24.812188Z"
+  "revision": 387,
+  "updatedAt": "2026-11-26T08:03:29.685572Z"
 }
