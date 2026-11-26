@@ -3998,15 +3998,22 @@
       "actor": "codex",
       "summary": "Completed final comparison, process audit, immutable archives and unchanged-history W&B verification",
       "revision": 398
+    },
+    {
+      "id": "7f820912-5b41-47d2-a3d4-e0f112f834af",
+      "at": "2026-11-26T23:38:58.750124Z",
+      "actor": "codex",
+      "summary": "Claimed requested exact-reward RL control preparation after checking AMD queue",
+      "revision": 399
     }
   ],
   "projectId": "understanding",
-  "title": "Prepare TCS async RL on Ian's Miles fork",
-  "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
-  "state": "finished",
-  "summary": "Approved236-question RL and fixed screen are complete. Easy5.760→5.760, medium1.995→1.969 show no score gain. All3529 final files and17 W&B attachments verify. Shared judge spend11.52USD.",
-  "nextAction": "Review the results and choose a separate follow-up design or model. No GPU jobs or helpers remain active for this experiment.",
+  "title": "Validate the RL pipeline with an exact-reward GSM8K control",
+  "endpoint": "Prepare a reproducible benchmark control with validated rewards and an explicit GPU plan. Run and supervise it once its concrete model/settings and compute limit are approved.",
+  "state": "running",
+  "summary": "User requested an easier exact-reward RL control. Preparing from existing GSM8K learning tests. AMD queue checked empty. No new GPU job submitted.",
+  "nextAction": "Inspect the existing reference recipe, pin and validate GSM8K rewards, and prepare the minimal comparison and compute proposal.",
   "owner": "Codex",
-  "revision": 398,
-  "updatedAt": "2026-11-26T10:46:27.197289Z"
+  "revision": 399,
+  "updatedAt": "2026-11-26T23:38:58.750124Z"
 }

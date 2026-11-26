@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): User requested an easier exact-reward RL control. Preparing from existing GSM8K learning tests. AMD queue checked empty. No new GPU job submitted. Jobs: hpcfund/558806 COMPLETED; hpcfund/552495 COMPLETED
+  Next: Inspect the existing reference recipe, pin and validate GSM8K rewards, and prepare the minimal comparison and compute proposal.
 
 ## Next / blocked
 
@@ -16,6 +17,5 @@
 
 ## Finished
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Approved236-question RL and fixed screen are complete. Easy5.760→5.760, medium1.995→1.969 show no score gain. All3529 final files and17 W&B attachments verify. Shared judge spend11.52USD. Jobs: hpcfund/558806 COMPLETED; hpcfund/552495 COMPLETED
 - [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Moved the Inkling investigation to the separate local repository /home/ubuntu/inkling-interp at the user's request.
-- 1 more records in `.workstreams/`.
+- [Compare Ian's Miles fork with RadixArk](.workstreams/ian-radixark-comparison.json): Compared Ian’s fork with the pinned RadixArk snapshot. Ian added five code commits across 43 files. Findings and workstream records are now published in 3N3G/miles.
