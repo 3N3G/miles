@@ -1,0 +1,93 @@
+{
+  "source": "easy-medium-236-v2/durable-training-exposure-latest.json",
+  "includes_only_durable_updates109_to136": true,
+  "excludes_discarded_old125_to127": true,
+  "screen_questions": [
+    {
+      "question_key": "773de4e3025c45202c9d38314e2abbe4381fe6c2c2cb9f819e0941771e44266f",
+      "paper_id": "Multi-Parameter_Mechanisms_for_Consumer_Surplus_Maximization",
+      "difficulty": "easy",
+      "new_training_answers_since108": 32,
+      "before_mean": 7.0
+    },
+    {
+      "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+      "paper_id": "New_Subset_Selection_Algorithms_for_Low_Rank_Approximation_Offline_and_Online",
+      "difficulty": "easy",
+      "new_training_answers_since108": 32,
+      "before_mean": 7.0
+    },
+    {
+      "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+      "paper_id": "Deterministic_and_Exact_Fully-dynamic_Minimum_Cut_of_Superpolylogarithmic_Size_in_Subpolynomial_Time",
+      "difficulty": "easy",
+      "new_training_answers_since108": 32,
+      "before_mean": 6.9375
+    },
+    {
+      "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+      "paper_id": "The_hypergraph_removal_process",
+      "difficulty": "easy",
+      "new_training_answers_since108": 32,
+      "before_mean": 0.625
+    },
+    {
+      "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+      "paper_id": "Explicit_Folded_Reed-Solomon_and_Multiplicity_Codes_Achieve_Relaxed_Generalized_Singleton_Bounds",
+      "difficulty": "easy",
+      "new_training_answers_since108": 0,
+      "before_mean": 6.90625
+    },
+    {
+      "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+      "paper_id": "Refuting_the_Direct_Sum_Conjecture_for_Total_Functions_in_Deterministic_Communication_Complexity",
+      "difficulty": "easy",
+      "new_training_answers_since108": 32,
+      "before_mean": 6.09375
+    },
+    {
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "paper_id": "Lipschitz_Continuous_Algorithms_for_Graph_Problems",
+      "difficulty": "medium",
+      "new_training_answers_since108": 32,
+      "before_mean": 2.78125
+    },
+    {
+      "question_key": "816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354",
+      "paper_id": "Listing_faces_of_polytopes",
+      "difficulty": "medium",
+      "new_training_answers_since108": 0,
+      "before_mean": 0.875
+    },
+    {
+      "question_key": "ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512",
+      "paper_id": "PageRank_Centrality_in_Directed_Graphs_with_Bounded_In-Degree",
+      "difficulty": "medium",
+      "new_training_answers_since108": 0,
+      "before_mean": 0.84375
+    },
+    {
+      "question_key": "e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3",
+      "paper_id": "Faster_Mixing_of_the_Jerrum-Sinclair_Chain",
+      "difficulty": "medium",
+      "new_training_answers_since108": 0,
+      "before_mean": 0.5
+    },
+    {
+      "question_key": "b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7",
+      "paper_id": "Fast_and_Simple_Sorting_Using_Partial_Information",
+      "difficulty": "medium",
+      "new_training_answers_since108": 0,
+      "before_mean": 0.1875
+    },
+    {
+      "question_key": "979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5",
+      "paper_id": "How_Global_Calibration_Strengthens_Multiaccuracy",
+      "difficulty": "medium",
+      "new_training_answers_since108": 0,
+      "before_mean": 6.78125
+    }
+  ],
+  "screen_question_rows_consumed": 6,
+  "limits": "Prior easy-only training exposure at or before108 is not included. Unseen-in-this-continuation does not mean sealed test data."
+}

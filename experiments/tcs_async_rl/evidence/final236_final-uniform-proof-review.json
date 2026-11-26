@@ -1,0 +1,127 @@
+{
+  "selection": "All12 preselected uniform after-screen examples from screen_results, Random(20261124), pinned question order.",
+  "reviewer": "Codex assistant, grades visible. Not blind or independent human calibration.",
+  "scope": "Read12 final outputs and their problems. Inspected relevant rubric/judge decisions for partial cases. No mathematical correctness claim for hidden reasoning in four empty-final caps.",
+  "cases": [
+    {
+      "label": "E1",
+      "sample_index": 11,
+      "question_key": "773de4e3025c45202c9d38314e2abbe4381fe6c2c2cb9f819e0941771e44266f",
+      "score": 7.0,
+      "status": "completed",
+      "assessment": "Core proof correct",
+      "note": "Externality payments sum to g1+g2-W*, so averaging the three branches cancels grand-bundle values and gives exactly2W*/3.",
+      "raw_example": "comparison/examples/E1-after.json"
+    },
+    {
+      "label": "E2",
+      "sample_index": 32,
+      "question_key": "ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b",
+      "score": 7.0,
+      "status": "completed",
+      "assessment": "Core construction correct",
+      "note": "Coordinate rows plus the negative all-ones row have a full-support equal-magnitude unique dependence. Every deletion is a basis and all representation coefficients are-1.",
+      "raw_example": "comparison/examples/E2-after.json"
+    },
+    {
+      "label": "E3",
+      "sample_index": 66,
+      "question_key": "3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a",
+      "score": 7.0,
+      "status": "completed",
+      "assessment": "Core proof correct, false unused aside",
+      "note": "Weighted cut incidence and tau>=lambda/2 give the floor bound. The parenthetical claim tau>=lambda for bipartite graphs is false: the4-cycle has lambda2 and fractional packing4/3. That stronger claim is unused. A7/7 rubric score does not certify every sentence.",
+      "raw_example": "comparison/examples/E3-after.json"
+    },
+    {
+      "label": "E4",
+      "sample_index": 104,
+      "question_key": "2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92",
+      "score": 1.0,
+      "status": "completed",
+      "assessment": "One component point is reasonable",
+      "note": "K3 is strictly2-balanced with density2. The claimed random-deletion lower bound does not follow from Turan, which is an upper bound on possible triangle-free edges. The candidate does not provide the quantified counterexample.",
+      "raw_example": "comparison/examples/E4-after.json"
+    },
+    {
+      "label": "E5",
+      "sample_index": 157,
+      "question_key": "3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40",
+      "score": 7.0,
+      "status": "completed",
+      "assessment": "Core proof correct",
+      "note": "Differences of points in an agreement hyperedge lie in H_i intersect W. Their span is the affine direction space, so the per-coordinate inequality sums.",
+      "raw_example": "comparison/examples/E5-after.json"
+    },
+    {
+      "label": "E6",
+      "sample_index": 191,
+      "question_key": "8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e",
+      "score": 6.0,
+      "status": "completed",
+      "assessment": "Valid general strategy, six follows explicit rubric",
+      "note": "Collective encoding and legal simulation prove the target. The candidate does not explicitly discuss kappa1, which the original last rubric item requires. This withholds one point despite the general construction covering the case implicitly.",
+      "raw_example": "comparison/examples/E6-after.json"
+    },
+    {
+      "label": "M1",
+      "sample_index": 202,
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "score": 0.0,
+      "status": "truncated",
+      "assessment": "Empty extracted final",
+      "note": "Truncated at90000 with no extracted final. Zero follows final-only grading. Reasoning trace was not mathematically audited.",
+      "raw_example": "comparison/examples/M1-after.json"
+    },
+    {
+      "label": "M2",
+      "sample_index": 252,
+      "question_key": "816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354",
+      "score": 0.0,
+      "status": "truncated",
+      "assessment": "Empty extracted final",
+      "note": "Truncated at90000 with no extracted final. Zero follows final-only grading. Reasoning trace was not mathematically audited.",
+      "raw_example": "comparison/examples/M2-after.json"
+    },
+    {
+      "label": "M3",
+      "sample_index": 283,
+      "question_key": "ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512",
+      "score": 0.0,
+      "status": "truncated",
+      "assessment": "Empty extracted final",
+      "note": "Truncated at90000 with no extracted final. Zero follows final-only grading. Reasoning trace was not mathematically audited.",
+      "raw_example": "comparison/examples/M3-after.json"
+    },
+    {
+      "label": "M4",
+      "sample_index": 303,
+      "question_key": "e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3",
+      "score": 0.0,
+      "status": "truncated",
+      "assessment": "Empty extracted final",
+      "note": "Truncated at90000 with no extracted final. Zero follows final-only grading. Reasoning trace was not mathematically audited.",
+      "raw_example": "comparison/examples/M4-after.json"
+    },
+    {
+      "label": "M5",
+      "sample_index": 324,
+      "question_key": "b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7",
+      "score": 0.0,
+      "status": "completed",
+      "assessment": "Zero is reasonable",
+      "note": "It discards the sample, assumes an extra unknown-order oracle, and treats a worst-case decision-tree information bound as a lower bound on every execution. This does not prove the high-probability estimate.",
+      "raw_example": "comparison/examples/M5-after.json"
+    },
+    {
+      "label": "M6",
+      "sample_index": 352,
+      "question_key": "979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5",
+      "score": 7.0,
+      "status": "completed",
+      "assessment": "Core proof correct",
+      "note": "Conditioning on sigma(p) bounds classifier correlation below by E|2p-1|-2tau. Multiaccuracy bounds each comparator above by E|2p-1|+2tau. Taking the supremum gives4tau.",
+      "raw_example": "comparison/examples/M6-after.json"
+    }
+  ]
+}

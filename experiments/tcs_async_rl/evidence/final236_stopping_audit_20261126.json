@@ -1,0 +1,60 @@
+{
+  "counts": {
+    "before": {
+      "easy": {
+        "answers": 192,
+        "capped": 4,
+        "empty_final": 0,
+        "completed_zero": 16,
+        "nonempty_zero": 16
+      },
+      "medium": {
+        "answers": 192,
+        "capped": 103,
+        "empty_final": 74,
+        "completed_zero": 14,
+        "nonempty_zero": 27
+      }
+    },
+    "after": {
+      "easy": {
+        "answers": 192,
+        "capped": 2,
+        "empty_final": 1,
+        "completed_zero": 13,
+        "nonempty_zero": 13
+      },
+      "medium": {
+        "answers": 192,
+        "capped": 77,
+        "empty_final": 54,
+        "completed_zero": 31,
+        "nonempty_zero": 38,
+        "literal_self_inability_marker": 2
+      }
+    }
+  },
+  "literal_marker_matches": [
+    {
+      "phase": "after",
+      "index": 195,
+      "question_key": "3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b",
+      "score": 4.0,
+      "excerpt": "$.\n$w(A) = M$.\nRatio $\\approx 1/(\\rho-1)$.\nThis is bounded.\nSo parallel edges might be bounded for $\\rho > 1$.\nHowever, I cannot find a counterexample that works for *any* $\\rho$ on parallel edges easily.\nMaybe I should consider $G$ with vertices $s, t$ and edges $e_1, \\dots, e_k$?\nOr just one edge $e_1$ with weight 0? No.\nI will bet on parallel "
+    },
+    {
+      "phase": "after",
+      "index": 246,
+      "question_key": "816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354",
+      "score": 2.0,
+      "excerpt": "he construction for $n=1$ and mention that for general $n$ it is a known result (or constructed recursively).\n    Since I can't produce a rigorous construction for general $n$ in a short time, I will focus on the structure.\n    However, I can prove existence for $n=2$ explicitly.\n    I will present the solution.\n\n    The problem is essentially a"
+    }
+  ],
+  "proxy_limit": "The literal self-inability regex is a text screen, not a semantic refusal classifier. No new judge calls.",
+  "mean_length_decreased_questions": 12,
+  "raw_examples": "comparison/examples",
+  "source_sha256": {
+    "before_compact_answers": "cc0622306b15e33095667f650a1404bb5d4b8c8026b4120c090e2204ad876007",
+    "after_compact_answers": "de8e964ada50792bc2fc1fc91fb8a3abcafdd496d03a9195b23c44ea96e34225"
+  }
+}

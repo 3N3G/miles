@@ -1,6 +1,8 @@
 # Audit of the easy and medium RL continuation
 
-Training finished at checkpoint136. The fixed-question comparison is still pending.
+Training finished at checkpoint136. The matched384-answer screen shows no score gain.
+Easy means are5.760 before and after. Medium means change from1.995 to1.969.
+[The short results report](RESULTS_EASY_MEDIUM_20261126.md) states the setup, counts and limits.
 The mixed-question training curve cannot establish improvement or failure.
 The checks below identify limitations to test. They do not establish a single cause.
 The completed training kept its approved settings and budget.
@@ -17,7 +19,7 @@ One disagreement concerns an implicit feasibility argument. Another concerns an 
 These are assistant assessments, not independent human calibration.
 The [frozen labels and original decisions](evidence/long236_fresh_judge_audit_20261126.json) preserve both disagreements.
 
-The next decisive measurement uses the same twelve questions before and after training.
+The completed comparison uses the same twelve questions before and after training.
 Its baseline is checkpoint108, which already received easy-question RL. It is not the original pretrained model.
 One training seed and twelve training-eligible questions cannot establish held-out generalization.
 
@@ -152,5 +154,31 @@ Another fresh failed online-selection proof receives0/7, correctly identifying i
 A correct summary-aggregation construction receives7/7 and proves a risk gap of at least1/2.
 All three types of evidence matter when assessing the reward.
 
-After the fixed comparison, the audit will distinguish verified implementation faults, measurement confounds,
-and research choices. Any proposed new loss, sampling setting, reward or training budget needs a separate reviewed plan.
+## Final matched screen and proof review
+
+All384 final answers pass the same-question, sampling, judge-receipt and weight-publication checks.
+Five easy questions and one medium question appeared in the28 new durable updates.
+The other six questions were eligible for training. They are not a sealed test set.
+Medium full-credit answers change from34/192 to33/192. Easy full-credit answers change from127/192 to125/192.
+Every question has lower mean response length. Medium empty finals fall from74 to54, while completed zero-score answers rise from14 to31.
+Reduced truncation therefore does not establish improved proofs. These are descriptive changes from one sample per checkpoint.
+
+All twelve preselected uniform final outputs were read. Four medium examples have empty extracted finals after90,000 tokens.
+Their hidden reasoning was not mathematically audited. The sampled sorting answer finishes but confuses a worst-case information lower bound with a per-execution bound.
+It also assumes an unavailable oracle. Its zero score is reasonable.
+The auction, row-selection, agreement-dimension and calibration examples have valid core arguments and receive seven.
+The spanning-tree example also has a valid core argument, but includes a false unused claim about bipartite graphs.
+A four-cycle disproves its extra claim: edge connectivity is2, while maximum fractional tree-packing weight is4/3.
+Its seven-point rubric grade therefore does not certify every sentence.
+The communication example correctly encodes selectors collectively. It earns six because the original rubric explicitly requires discussing kappa=1.
+That is a reward-alignment concern about explicit coverage, rather than evidence that the general construction fails.
+
+The strongest measured limitations are low optimizer throughput, only112/236 rows consumed, active capped reasoning, and four question clusters per update.
+The loss reducer differs from the original CISPO token aggregation, but its local probability updates have the correct direction.
+No demonstrated implementation error uniquely explains the lack of gain.
+Adam epsilon is not dominant for most sampled nonzero optimizer coordinates. FP32-head behavior remains untested.
+Judge agreement and rubric alignment remain limitations. Independent expert proof labels are absent.
+
+Follow-up choices include a controlled shorter-answer/cutoff treatment, a loss-reduction comparison, or a stronger-model inference screen.
+Each changes the approved design or model and needs its own reviewed plan. No new GPU job or hyperparameter change follows from this audit.
+
