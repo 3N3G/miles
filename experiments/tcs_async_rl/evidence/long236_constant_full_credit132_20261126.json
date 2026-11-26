@@ -1,0 +1,15 @@
+{
+  "at_utc": "2026-11-26T07:17:28.268128+00:00",
+  "optimizer_step": 132,
+  "group_index": 93,
+  "question": "Inapproximability of Maximum Diameter Clustering for Few Clusters",
+  "answers": 32,
+  "score": 7,
+  "all32_generator_prompts_exactly_frozen_problem_chat_template": true,
+  "reference_and_rubric_not_in_generator_prompt": true,
+  "formatted_prompt_sha256": "4b5c418520abd8fe2902cb3f2f627750c12ad3fb52f4bc01a2dd38886cfcb817",
+  "uniform_sample_index": 2987,
+  "assistant_preferred_score": 7,
+  "proof_check": "Edges at distance>beta equivalently >=r beta. An induced H gives an r-embedding, so it is forbidden. Color classes exactly match small-diameter clusters, including empty parts. The earlier gap equivalence supplies the available distance<=beta oracle for polynomial construction.",
+  "limits": "One question already easy for this checkpoint. Constant score gives no within-group policy gradient and is not evidence of improvement."
+}
