@@ -3,6 +3,10 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1e1273a54909f9ca53164ef3a95998c2bced8799/miles/gsm8k-control",
+      "label": "CPU-only GSM8K preparation. All16 files/17.7MB hash-verified. No GPU run."
+    },
+    {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/442e9ce6dfdecf101bc23a6de19b7ce90489600f/miles/checkpoint-final236-screen-v5",
       "label": "Complete final384-answer screen, proof audit and W&B receipt. All3529 files checksum-verified."
     },
@@ -4023,6 +4027,13 @@
       "actor": "codex",
       "summary": "All source-label, prompt and round-trip checks pass after escaping Unicode separators",
       "revision": 401
+    },
+    {
+      "id": "59a6c330-14ad-4048-a315-ad5ed4308960",
+      "at": "2026-11-26T23:56:06.462791Z",
+      "actor": "codex",
+      "summary": "Archived and hash-verified prepared GSM8K data, tokenizer, controls and proposed plan",
+      "revision": 402
     }
   ],
   "projectId": "understanding",
@@ -4032,6 +4043,6 @@
   "summary": "Prepared GSM8K control. All 29,892 reward checks and 7,473 prompt/label checks pass. Zero train/validation overlap. Proposed 0.5B reference then CISPO, one seed, four total eight-GPU node-hours. No GPU submission.",
   "nextAction": "Review the concrete plan and compute cap. Then implement launch wiring, validate native args, and supervise the approved control.",
   "owner": "Codex",
-  "revision": 401,
-  "updatedAt": "2026-11-26T23:49:08.222586Z"
+  "revision": 402,
+  "updatedAt": "2026-11-26T23:56:06.462791Z"
 }

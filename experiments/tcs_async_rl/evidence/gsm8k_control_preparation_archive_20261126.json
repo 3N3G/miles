@@ -1,0 +1,10 @@
+{
+  "preparation_commit": "9bea9789",
+  "archive": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/1e1273a54909f9ca53164ef3a95998c2bced8799",
+  "verified_files": 16,
+  "verified_bytes": 17716345,
+  "inference_runs": 0,
+  "optimizer_updates": 0,
+  "paid_judge_calls": 0,
+  "status": "CPU preparation only. GPU plan remains proposed."
+}
