@@ -3786,15 +3786,22 @@
       "actor": "codex",
       "summary": "Recover shared VM monitoring space while the approved continuation waits for priority",
       "revision": 373
+    },
+    {
+      "id": "604292a3-6f7e-4083-a1ae-290551a2e944",
+      "at": "2026-11-26T01:47:26.010901Z",
+      "actor": "codex",
+      "summary": "Queued552495 remains healthy; provisional start now01:46 Eastern with zero new GPU time",
+      "revision": 374
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Job552495 remains queued for the bounded5-hour resume124. Recovered3.09GiB of verified old temporary copies, leaving7.4GiB VM space.",
-  "nextAction": "Continue foreground checks through startup, all RL updates and verified closure. Then run the approved same12-question checkpoint screen within its separate2-hour cap.",
+  "summary": "Queued552495 remains healthy; provisional start now01:46 Eastern with zero new GPU time",
+  "nextAction": "Watch through startup and verify checkpoint124 weights, restored queues, all updates, shared budget and W&B/HF closure. Finish the approved fixed12-question screen afterward.",
   "owner": "Codex",
-  "revision": 373,
-  "updatedAt": "2026-11-25T21:36:25.616143Z"
+  "revision": 374,
+  "updatedAt": "2026-11-26T01:47:26.010901Z"
 }
