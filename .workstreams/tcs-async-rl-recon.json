@@ -317,6 +317,10 @@
   ],
   "evidence": [
     {
+      "path": "experiments/tcs_async_rl/GSM8K_CONTROL_PLAN_20261126.md",
+      "label": "Prepared two-stage exact-reward GSM8K control proposal"
+    },
+    {
       "path": "experiments/tcs_async_rl/RESULTS_EASY_MEDIUM_20261126.md",
       "label": "Completed fixed-question comparison and limits"
     },
@@ -4005,15 +4009,29 @@
       "actor": "codex",
       "summary": "Claimed requested exact-reward RL control preparation after checking AMD queue",
       "revision": 399
+    },
+    {
+      "id": "40e150d4-a10d-43d1-bbde-43f7973361ab",
+      "at": "2026-11-26T23:47:46.616798Z",
+      "actor": "codex",
+      "summary": "Prepared exact-reward control plan and all-row CPU validation; concrete model and compute choice await user review",
+      "revision": 400
+    },
+    {
+      "id": "461cac5f-0841-4f05-8039-4159a1fb25ff",
+      "at": "2026-11-26T23:49:08.222586Z",
+      "actor": "codex",
+      "summary": "All source-label, prompt and round-trip checks pass after escaping Unicode separators",
+      "revision": 401
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Prepare a reproducible benchmark control with validated rewards and an explicit GPU plan. Run and supervise it once its concrete model/settings and compute limit are approved.",
-  "state": "running",
-  "summary": "User requested an easier exact-reward RL control. Preparing from existing GSM8K learning tests. AMD queue checked empty. No new GPU job submitted.",
-  "nextAction": "Inspect the existing reference recipe, pin and validate GSM8K rewards, and prepare the minimal comparison and compute proposal.",
+  "state": "needs-you",
+  "summary": "Prepared GSM8K control. All 29,892 reward checks and 7,473 prompt/label checks pass. Zero train/validation overlap. Proposed 0.5B reference then CISPO, one seed, four total eight-GPU node-hours. No GPU submission.",
+  "nextAction": "Review the concrete plan and compute cap. Then implement launch wiring, validate native args, and supervise the approved control.",
   "owner": "Codex",
-  "revision": 399,
-  "updatedAt": "2026-11-26T23:38:58.750124Z"
+  "revision": 401,
+  "updatedAt": "2026-11-26T23:49:08.222586Z"
 }

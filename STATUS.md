@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): User requested an easier exact-reward RL control. Preparing from existing GSM8K learning tests. AMD queue checked empty. No new GPU job submitted. Jobs: hpcfund/558806 COMPLETED; hpcfund/552495 COMPLETED
-  Next: Inspect the existing reference recipe, pin and validate GSM8K rewards, and prepare the minimal comparison and compute proposal.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -13,7 +12,8 @@
 
 ## Waiting on user
 
-- Nothing recorded.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Prepared GSM8K control. All 29,892 reward checks and 7,473 prompt/label checks pass. Zero train/validation overlap. Proposed 0.5B reference then CISPO, one seed, four total eight-GPU node-hours. No GP Jobs: hpcfund/558806 COMPLETED; hpcfund/552495 COMPLETED
+  Next: Review the concrete plan and compute cap. Then implement launch wiring, validate native args, and supervise the approved control.
 
 ## Finished
 

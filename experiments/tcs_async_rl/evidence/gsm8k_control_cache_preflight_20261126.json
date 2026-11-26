@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-11-26T23:43:51.443732+00:00",
+  "run": "checkpoint-final236-screen-v5",
+  "files_evicted_from_vm_cache": 385,
+  "bytes": 498901668,
+  "free_gib_before": 4.863304138183594,
+  "free_gib_after": 5.329982757568359,
+  "immutable_archive_verified_before_eviction": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/442e9ce6dfdecf101bc23a6de19b7ce90489600f",
+  "amd_originals_changed": false,
+  "all_compact_grades_examples_summaries_preserved": true
+}

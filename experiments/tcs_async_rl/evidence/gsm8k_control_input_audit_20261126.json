@@ -1,0 +1,11 @@
+{
+  "labels_match_supplied_final_numeric_answers": 7473,
+  "problem_only_messages_checked": 7473,
+  "normalized_question_overlap_between_train_validation": 0,
+  "max_prompt_tokens": 239,
+  "max_prompt_plus_response_cap": 1263,
+  "source_train_unique_questions": 7473,
+  "test_question_reads": 0,
+  "jsonl_roundtrip_exact": true,
+  "unicode_separator_encoding_repaired": true
+}

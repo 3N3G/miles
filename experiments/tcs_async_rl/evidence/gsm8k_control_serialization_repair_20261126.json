@@ -1,0 +1,8 @@
+{
+  "reason": "Unicode line separators in GSM8K strings break str.splitlines readers. Escape non-ASCII in JSONL while preserving every decoded source field.",
+  "old_files_sha256": {
+    "train.jsonl": "95484f22a8c3fad3a8c7cb63e636732b2d0a90c72db48208c08cd1b24d202797",
+    "validation.jsonl": "9dedaf25ef08222fa7256f2532496cb1b3bb22287ac6f90a6e1e29f8d69154c6"
+  },
+  "gpu_jobs_affected": 0
+}

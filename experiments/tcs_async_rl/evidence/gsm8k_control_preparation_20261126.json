@@ -1,0 +1,47 @@
+{
+  "dataset": {
+    "repo_id": "zhuzilin/gsm8k",
+    "revision": "0cbd9f31d91ac21a7613dcbc7fef992adac459ae",
+    "file": "train.parquet",
+    "source_sha256": "b96ce2c49d3fb021b771eb15b2ea4a6de6debe8c8840d89a9fc12827ac3b6d86",
+    "rows": 7473
+  },
+  "split_seed": 20261126,
+  "training_rows": 7217,
+  "validation_rows": 256,
+  "official_test_reads": 0,
+  "partition_sha256": {
+    "train": "27f340e0e22107924d78e7e2e58d996afb9bf2d7bd29370972fbe6331711ccef",
+    "validation": "58d178c34eea268b48006f01fdbc9ca095044076b72f8c7ceb453dedfef9e76e"
+  },
+  "grader_source": "miles/rollout/rm_hub/math_utils.py::grade_answer_verl",
+  "grader_source_sha256": "db83eabd2941fb21253c9f733752d775d80488797582e093f2b94bb29d3d39cc",
+  "boxed_correct_controls_passed": 7473,
+  "boxed_wrong_controls_passed": 7473,
+  "empty_controls_passed": 7473,
+  "irrelevant_controls_passed": 7473,
+  "model_tokenizer_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "inference_runs": 0,
+  "optimizer_updates": 0,
+  "paid_judge_calls": 0,
+  "formatted_example": {
+    "source_row": 0,
+    "messages": [
+      {
+        "content": "You are a helpful assistant. Please put the answer within \\boxed{}.",
+        "role": "system"
+      },
+      {
+        "content": "Natalia sold clips to 48 of her friends in April, and then she sold half as many clips in May. How many clips did Natalia sell altogether in April and May?",
+        "role": "user"
+      }
+    ],
+    "label": "72",
+    "formatted_prompt": "<|im_start|>system\nYou are a helpful assistant. Please put the answer within \\boxed{}.<|im_end|>\n<|im_start|>user\nNatalia sold clips to 48 of her friends in April, and then she sold half as many clips in May. How many clips did Natalia sell altogether in April and May?<|im_end|>\n<|im_start|>assistant\n",
+    "prompt_tokens": 66,
+    "correct_example": "\\boxed{72}",
+    "correct_reward": 1,
+    "wrong_example": "\\boxed{73}",
+    "wrong_reward": 0
+  }
+}
