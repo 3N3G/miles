@@ -1,0 +1,53 @@
+{
+  "metadata_sha256": "4a1551704c6aaf043cdaa018b8ad83f86d45f5c12fdf18667acc52b9e0bcd81b",
+  "seed": 20261126,
+  "coordinate_samples": 4096,
+  "population_stored_coordinates": 4326542240,
+  "population_chunks": 874,
+  "records_read": 321,
+  "segment_fixture_passed": true,
+  "small_record_full_read_crosscheck": true,
+  "sqrt_second_moment_quantiles": {
+    "0": 0.0,
+    "0.01": 0.0,
+    "0.1": 0.0,
+    "0.25": 3.437320633076147e-07,
+    "0.5": 9.455114551125187e-07,
+    "0.75": 1.6590953595728504e-06,
+    "0.9": 2.4092421286255974e-06,
+    "0.99": 7.932114990924829e-06,
+    "1": 9.054135359977355e-05
+  },
+  "below_eps_1e8": 541,
+  "zero_coordinates": 505,
+  "raw_denominator_factor_quantiles": {
+    "0": 0.0,
+    "0.01": 0.0,
+    "0.1": 0.0,
+    "0.25": 0.9717300153497712,
+    "0.5": 0.9895344007165017,
+    "0.75": 0.9940087305721351,
+    "0.9": 0.9958664740987786,
+    "0.99": 0.9987408895475038,
+    "1": 0.9998895654277661
+  },
+  "method": "Uniform with replacement over physically stored float32 exp_avg_sq coordinates in the final136 checkpoint, across both stored dp_group_idx buffers and tiny float32 parameter buffers. Includes auxiliary parameters and possible replication. No whole-checkpoint load or model update.",
+  "limits": [
+    "Raw sqrt(second moment) before any bias correction. This is not an exact optimizer update ratio.",
+    "No per-parameter or backbone-only breakdown.",
+    "One checkpoint and coordinate Monte Carlo sample, not instantaneous gradient values.",
+    "Zero state may reflect parameters receiving no gradient.",
+    "Does not identify a unique reason for training behavior."
+  ],
+  "repeated_identical_sample": true,
+  "positive_coordinates": 3591,
+  "positive_below_epsilon": 36,
+  "positive_fraction_below_epsilon": 0.010025062656641603,
+  "code_sha256": "73e456fcc408b3595ecae25c40d0eda167ebcbb73ed17aa3268e261edc5a51a9",
+  "raw_sample_sha256": "d8a7fc00b0ce1cb8b4a9b802921f80e31d7adc8940108b042dae1b11e5d8322d",
+  "executed_code": "experiments/tcs_async_rl/evidence/optimizer136_readonly_probe_20261126.py",
+  "checkpoint_iteration": 136,
+  "checkpoint_metadata_only_diagnostic": true,
+  "new_gpu_jobs": 0,
+  "model_updates": 0
+}

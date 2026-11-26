@@ -120,11 +120,16 @@ Our BF16 head remains a diagnostic candidate, rather than a demonstrated failure
 Finite losses and small average token mismatch do not prove exact numerical equivalence over a long trajectory.
 An isolated fixed-weight probability comparison would be needed before attributing failure to this issue.
 
-Adam's epsilon is also untested. Our parsed value is1e-8, with betas(0.9,0.98).
-MiniMax used1e-15 and(0.9,0.95) after measuring exceptionally small coordinate gradients.
-This is a model-specific observation, not a universal prescription.
-Our aggregate gradient norm and local direction probes cannot measure how many coordinates are suppressed by epsilon.
-A coordinate-gradient or optimizer-state diagnostic would be needed before changing it.
+Adam uses epsilon1e-8 and betas(0.9,0.98). MiniMax used1e-15 and(0.9,0.95) after measuring small gradients.
+A read-only checkpoint diagnostic sampled4,096 coordinates uniformly from4,326,542,240 physically stored second-moment coordinates.
+Of these,505 have zero state. Only36/3,591 nonzero coordinates (1.0%) have raw square-root second moment below1e-8.
+The median raw square-root second moment across all samples is9.46e-7, about95 times epsilon.
+This weakens the hypothesis that epsilon dominates most active coordinates in this checkpoint.
+It does not rule out parameter-specific effects. The sample includes auxiliary parameters and possible replicated coordinates.
+These are stored second moments before bias correction, not instantaneous gradients or exact optimizer-update ratios.
+A bounded standard-library reader checked both a ZIP fixture and one complete small record against direct byte reads.
+The repeated sample was identical. No GPU allocation or model update was needed.
+See the [aggregate, limitations and exact executed probe](evidence/long236_optimizer_epsilon_audit_20261126.json).
 
 The recorded training seed is20261124. Deterministic SGLang inference is disabled, and no explicit server random seed is set.
 The `rollout_seed` value is forwarded per request only when deterministic inference is enabled.

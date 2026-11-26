@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL checkpoint136 and artifacts verified. Final fixed384-answer screen558806 is running. All3 engines match136 across1416 tensor records each. Jobs: hpcfund/558806 RUNNING; hpcfund/552495 COMPLETED
-  Next: Supervise screen through completion, summarize and compare the same12 questions, audit final proofs, then verify archives and W&B.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final screen558806 is running with all engines verified against136. Saved optimizer coordinates do not show widespread epsilon domination. Matched before/after result remains pending. Jobs: hpcfund/558806 RUNNING; hpcfund/552495 COMPLETED
+  Next: Keep foreground screen checks, audit final proofs and compare the same12 questions. Upload and checksum results, then verify W&B without adding optimizer rows.
 
 ## Next / blocked
 

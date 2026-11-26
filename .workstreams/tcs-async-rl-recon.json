@@ -3965,15 +3965,22 @@
       "actor": "codex",
       "summary": "Final fixed screen started and restored weights verified on all3 engines",
       "revision": 395
+    },
+    {
+      "id": "90b3567f-2b13-413f-ad64-e4c8280aae9b",
+      "at": "2026-11-26T09:57:26.767263Z",
+      "actor": "codex",
+      "summary": "Bounded optimizer-state sample checks the Adam epsilon hypothesis",
+      "revision": 396
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "RL checkpoint136 and artifacts verified. Final fixed384-answer screen558806 is running. All3 engines match136 across1416 tensor records each.",
-  "nextAction": "Supervise screen through completion, summarize and compare the same12 questions, audit final proofs, then verify archives and W&B.",
+  "summary": "Final screen558806 is running with all engines verified against136. Saved optimizer coordinates do not show widespread epsilon domination. Matched before/after result remains pending.",
+  "nextAction": "Keep foreground screen checks, audit final proofs and compare the same12 questions. Upload and checksum results, then verify W&B without adding optimizer rows.",
   "owner": "Codex",
-  "revision": 395,
-  "updatedAt": "2026-11-26T09:54:30.169876Z"
+  "revision": 396,
+  "updatedAt": "2026-11-26T09:57:26.767263Z"
 }
