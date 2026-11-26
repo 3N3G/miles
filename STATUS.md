@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Checkpoint129 preserved21 new updates and84 question rows; all-zero group has valid controls and two wrong completed proofs Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Keep the remaining approved RL allocation running. Inspect130 update-direction probe and new proofs, then run the fixed12-question after screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Update 130 moves probabilities in the intended direction; six resumed rows and 547 W&B scalars verified Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Continue supervised training and hourly proof reviews within the remaining allocation. Use the fixed-question final screen to assess proof quality.
 
 ## Next / blocked
 

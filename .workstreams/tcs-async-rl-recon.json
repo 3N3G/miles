@@ -3853,15 +3853,22 @@
       "actor": "codex",
       "summary": "Checkpoint129 preserved21 new updates and84 question rows; all-zero group has valid controls and two wrong completed proofs",
       "revision": 382
+    },
+    {
+      "id": "0ba0886b-f167-4fda-9f6b-e285f3099da7",
+      "at": "2026-11-26T06:34:07.747925Z",
+      "actor": "codex",
+      "summary": "Update 130 moves probabilities in the intended direction; six resumed rows and 547 W&B scalars verified",
+      "revision": 383
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Checkpoint129 preserved21 new updates and84 question rows; all-zero group has valid controls and two wrong completed proofs",
-  "nextAction": "Keep the remaining approved RL allocation running. Inspect130 update-direction probe and new proofs, then run the fixed12-question after screen.",
+  "summary": "Update 130 moves probabilities in the intended direction; six resumed rows and 547 W&B scalars verified",
+  "nextAction": "Continue supervised training and hourly proof reviews within the remaining allocation. Use the fixed-question final screen to assess proof quality.",
   "owner": "Codex",
-  "revision": 382,
-  "updatedAt": "2026-11-26T06:13:02.680024Z"
+  "revision": 383,
+  "updatedAt": "2026-11-26T06:34:07.747925Z"
 }
