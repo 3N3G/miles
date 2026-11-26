@@ -969,7 +969,7 @@
     {
       "id": "558806",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "552495",
@@ -3958,15 +3958,22 @@
       "actor": "codex",
       "summary": "Deep audit evidence recorded while the source-matched final screen waits for priority",
       "revision": 394
+    },
+    {
+      "id": "4848c3f4-1665-4619-92b7-6c843fdc9e43",
+      "at": "2026-11-26T09:54:30.169876Z",
+      "actor": "codex",
+      "summary": "Final fixed screen started and restored weights verified on all3 engines",
+      "revision": 395
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Training136 and all artifacts verified. Final screen558806 remains queued. Process audit records loss normalization, active caps,28-update exposure, and limited within-question judge calibration.",
-  "nextAction": "Keep foreground minute checks until the fixed384-answer screen starts and completes. Verify same weights and judge, then compare scores and audit actual final proofs.",
+  "summary": "RL checkpoint136 and artifacts verified. Final fixed384-answer screen558806 is running. All3 engines match136 across1416 tensor records each.",
+  "nextAction": "Supervise screen through completion, summarize and compare the same12 questions, audit final proofs, then verify archives and W&B.",
   "owner": "Codex",
-  "revision": 394,
-  "updatedAt": "2026-11-26T09:21:45.668674Z"
+  "revision": 395,
+  "updatedAt": "2026-11-26T09:54:30.169876Z"
 }

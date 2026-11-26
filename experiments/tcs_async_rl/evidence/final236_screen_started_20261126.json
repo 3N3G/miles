@@ -1,0 +1,34 @@
+{
+  "checked_at_utc": "2026-11-26T09:54:30.115458+00:00",
+  "job_id": "558806",
+  "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "health": {
+    "at_utc": "2026-11-26T09:54:09.375897+00:00",
+    "scheduler": {
+      "state": "RUNNING",
+      "exit_code": "0:0",
+      "elapsed": "00:05:14",
+      "start_cluster_time": "2026-11-26T03:48:54",
+      "end_cluster_time": "Unknown"
+    },
+    "service": true,
+    "tunnel_helper": true,
+    "service_helper": true,
+    "generated_files": 0,
+    "complete": false,
+    "judge_spent_reserved": 11.005669,
+    "score_errors": 0,
+    "free_gib": 5.85
+  },
+  "source_publication_check": {
+    "rollout_id": 136,
+    "engines": 3,
+    "matches_source": true,
+    "checked_tensor_records_per_engine": 1416,
+    "new_publications_verified": 2,
+    "restored_event_prefix_bytes": 45187926
+  },
+  "scientific_config": "experiments/tcs_async_rl/checkpoint_screen_final236_v1.json",
+  "optimizer_updates": 0,
+  "sampling_verified_against_submitted_config": true
+}

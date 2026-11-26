@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Training136 and all artifacts verified. Final screen558806 remains queued. Process audit records loss normalization, active caps,28-update exposure, and limited within-question judge calibration. Jobs: hpcfund/558806 PENDING; hpcfund/552495 COMPLETED
-  Next: Keep foreground minute checks until the fixed384-answer screen starts and completes. Verify same weights and judge, then compare scores and audit actual final proofs.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL checkpoint136 and artifacts verified. Final fixed384-answer screen558806 is running. All3 engines match136 across1416 tensor records each. Jobs: hpcfund/558806 RUNNING; hpcfund/552495 COMPLETED
+  Next: Supervise screen through completion, summarize and compare the same12 questions, audit final proofs, then verify archives and W&B.
 
 ## Next / blocked
 
