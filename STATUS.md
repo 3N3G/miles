@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Three fresh format retries on the original crash problem verified; checkpoint127 and271 W&B scalars valid Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Keep supervised RL within the remaining approved allocation. Review new proof groups hourly and complete the fixed12-question after screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Four saved resumed updates; eight uniform proofs and two contrasting cases reviewed;360 W&B scalars exact Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Continue health checks and hourly all-metric/raw-proof reviews. Inspect the scheduled130 update-direction probe and finish the fixed12-question after screen.
 
 ## Next / blocked
 
