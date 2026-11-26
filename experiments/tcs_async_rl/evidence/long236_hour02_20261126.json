@@ -1,0 +1,300 @@
+{
+  "at_utc": "2026-11-26T05:49:23.088601+00:00",
+  "optimizer_steps": [
+    127,
+    128
+  ],
+  "verified_answers": 256,
+  "uniform_selection": "One sample per consumed group, Random(20261124).randrange(32)=11. All eight selected final answers read in full, with problems, rubrics and original judge decisions.",
+  "cases": [
+    {
+      "sample_index": 2283,
+      "judge_score": 7,
+      "assistant_score": 7,
+      "reason": "A single edge with weights1 and0 forces selection probability at least alpha. Weighted output distance is its selection indicator under every coupling. Input distance1 yields L>=alpha. No coupling gap."
+    },
+    {
+      "sample_index": 2315,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "The support-spanning-tree cost claim fails for arbitrarily small positive y. The conversion also drops its doubling factor and replaces the stronger requested objective by2LP. No valid decomposition or full polynomial implementation is supplied."
+    },
+    {
+      "sample_index": 2379,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "Capped90000-token response has no extracted final answer."
+    },
+    {
+      "sample_index": 2411,
+      "judge_score": 1,
+      "assistant_preferred_score": 1,
+      "reason": "The exact Bernoulli comparison and signed reduction are asserted, not proved. Only the binomial-mode estimate has a plausible strategy-level route with trivial small-parameter treatment. Several constant calculations are wrong, so this is weak partial credit, not a correct proof."
+    },
+    {
+      "sample_index": 2443,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "Nested partitions do not ensure completed connectivity. The answer omits completion, assumes diameter<=number of levels, treats expectation as high probability, and outputs a tree walk as a Hamiltonian tour without shortcutting."
+    },
+    {
+      "sample_index": 2475,
+      "judge_score": 1,
+      "assistant_score": 1,
+      "reason": "The calibrated quadratic split is absent. Unweighted Schur-complement and entrywise nonnegative off-diagonal facts establish only the two endpoint bounds, which earn their own item."
+    },
+    {
+      "sample_index": 2507,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "The answer repeatedly assumes the LCE state provides direct access to the original bits. Equal LCE values under global bit flip disprove this inference. It never stores the known reference bit or supplies a valid reduction."
+    },
+    {
+      "sample_index": 2539,
+      "judge_score": 6,
+      "assistant_preferred_score": 6,
+      "reason": "Despite extensive later incorrect exploration, the answer explicitly gives independent shared descriptions, median, the strict-majority invariant, Hoeffding exp(-k/18), k>=18ln(3m), and a union bound. That earlier valid mechanism earns six points under v5. It omits the empty-set case and mishandles several proposed numerical constants."
+    }
+  ],
+  "additional_diagnostic_cases": [
+    {
+      "sample_index": 2374,
+      "selection": "Only positive answer out of32 for matching-mechanism question. Diagnostic selection, not representative.",
+      "judge_score": 4,
+      "assistant_plausible_score_range": [
+        2,
+        4
+      ],
+      "reason": "The answer establishes the controller-chain counting idea and eventually corrects the skipped-target menu to empty. It analyzes a common greedy-choice step, then asserts induction. Whether this terse argument proves the full inclusion invariant is uncertain. The non-controller case is wrong because it freezes intervening choices. No valid grade changed or rerolled."
+    },
+    {
+      "sample_index": 2503,
+      "selection": "Lowest index scoring7 on the same central-string question as uniformly selected failed answer2507. Diagnostic success selection.",
+      "judge_score": 7,
+      "assistant_score": 7,
+      "reason": "Stores the known reference bit T[1] beside the unchanged LCE structure. Delta>=1 absorbs one extra word. One LCE(1,j) plus this bit gives random access with O(1) overhead and the required contradiction. A finite-n logarithm convention slip does not affect the asymptotic argument."
+    }
+  ],
+  "limits": "Assistant review after seeing scores, not independent human calibration. No mathematical judge change, valid-grade reroll, sampling change or optimizer change. Distinct questions prevent inferring learning from the mixed reward curve. Semantic reasoning loops can occur without extensive exact20-word repetition.",
+  "native_means_match": true,
+  "durable_lineage_after128": {
+    "new_saved_updates_since108": 20,
+    "answers": 2560,
+    "source109_to124_answers": 2048,
+    "new125_to128_answers": 512,
+    "excluded_old_unsaved_updates": [
+      125,
+      126,
+      127
+    ]
+  },
+  "wandb": {
+    "at_utc": "2026-11-26T05:44:57.623626+00:00",
+    "state": "running",
+    "last_verified_optimizer_step": 128,
+    "verified_optimizer_rows": 4,
+    "history_rows": 4,
+    "verified_scalars": 360,
+    "training_config_matches": true,
+    "operational_save_reserve_seconds": 2700,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261126-041313-318-native"
+  },
+  "groups": [
+    {
+      "optimizer_step": 127,
+      "group_index": 71,
+      "question_key": "b284378d1b1a798252db08285584aaf0f4ed5bf545fa48c74f5d9b8bd6d890a6",
+      "paper_id": "Lipschitz_Continuous_Algorithms_for_Graph_Problems",
+      "prompt_type": "proof_writing",
+      "difficulty": "easy",
+      "samples": 32,
+      "mean_reward": 6.78125,
+      "reward_std": 0.8700899100741849,
+      "conditional_answer_sampling_se": 0.15381161891386236,
+      "zero_rate": 0.0,
+      "full_credit_rate": 0.9375,
+      "cap_rate": 0.09375,
+      "mean_tokens": 57570.375,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-127-group-71.json"
+    },
+    {
+      "optimizer_step": 127,
+      "group_index": 72,
+      "question_key": "b8c676f6aea92f0cb2d219932a3314eef33f0e858ed2ff00c00ed571ca469da4",
+      "paper_id": "An_improved_approximation_guarantee_for_Prize-Collecting_TSP",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.875,
+      "reward_std": 0.9069623173877128,
+      "conditional_answer_sampling_se": 0.16032980122637938,
+      "zero_rate": 0.4375,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.28125,
+      "mean_tokens": 75847.03125,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-127-group-72.json"
+    },
+    {
+      "optimizer_step": 127,
+      "group_index": 74,
+      "question_key": "69536705745fe428b8baa008724a249ac91f1df5ccd847c7f25b9bc4135b23ab",
+      "paper_id": "Structural_Complexities_of_Matching_Mechanisms",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.125,
+      "reward_std": 0.7071067811865476,
+      "conditional_answer_sampling_se": 0.125,
+      "zero_rate": 0.96875,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.34375,
+      "mean_tokens": 80473.59375,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-127-group-74.json"
+    },
+    {
+      "optimizer_step": 127,
+      "group_index": 75,
+      "question_key": "76e8e3acd8327ffc8dcdb54865bba10d99d79b1d4c8d8ed5bbf2929669f56002",
+      "paper_id": "Smoothed_analysis_for_graph_isomorphism",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.46875,
+      "reward_std": 0.7613390156652906,
+      "conditional_answer_sampling_se": 0.13458699518970452,
+      "zero_rate": 0.65625,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.28125,
+      "mean_tokens": 79106.8125,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-127-group-75.json"
+    },
+    {
+      "optimizer_step": 128,
+      "group_index": 76,
+      "question_key": "b3260905afc5880e677a966d3207be00ba7da71a4d2850b6fa7eaf90cae458ff",
+      "paper_id": "Massively_Parallel_Minimum_Spanning_Tree_in_General_Metric_Spaces",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.4375,
+      "reward_std": 0.5040161287741853,
+      "conditional_answer_sampling_se": 0.08909830562090465,
+      "zero_rate": 0.5625,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.03125,
+      "mean_tokens": 64178.28125,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-128-group-76.json"
+    },
+    {
+      "optimizer_step": 128,
+      "group_index": 77,
+      "question_key": "c39ee71364c3b2ec412521ad3b1a83c97a89d81ea9a40206892d6cb197191198",
+      "paper_id": "Dependent_rounding_with_strong_negative-correlation_and_scheduling_on_unrelated_machines_to_minimize_completion_time",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 1.71875,
+      "reward_std": 1.8532338779688906,
+      "conditional_answer_sampling_se": 0.3276085605591113,
+      "zero_rate": 0.25,
+      "full_credit_rate": 0.0625,
+      "cap_rate": 0.46875,
+      "mean_tokens": 81883.0625,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-128-group-77.json"
+    },
+    {
+      "optimizer_step": 128,
+      "group_index": 78,
+      "question_key": "38248091f6196b82b0d420ad9aa68af17d9c74c712ff43c682a234afa5e950b9",
+      "paper_id": "Tight_Lower_Bounds_for_Central_String_Queries_in_Compressed_Space",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 2.21875,
+      "reward_std": 2.825396061302876,
+      "conditional_answer_sampling_se": 0.49946417862125647,
+      "zero_rate": 0.5,
+      "full_credit_rate": 0.21875,
+      "cap_rate": 0.4375,
+      "mean_tokens": 74611.6875,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-128-group-78.json"
+    },
+    {
+      "optimizer_step": 128,
+      "group_index": 79,
+      "question_key": "2a27b9d71bd39cb19017dd38e55cb4b3a0f4de22e3569ac9d64146e060c0a759",
+      "paper_id": "Optimal_tradeoffs_for_estimating_Pauli_observables",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 4.09375,
+      "reward_std": 2.7399008105427654,
+      "conditional_answer_sampling_se": 0.4843506107283268,
+      "zero_rate": 0.21875,
+      "full_credit_rate": 0.3125,
+      "cap_rate": 0.28125,
+      "mean_tokens": 70458.90625,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-128-group-79.json"
+    }
+  ],
+  "completion_outcomes": {
+    "capped_empty_final": {
+      "answers": 31,
+      "full_credit": 0,
+      "full_response": {
+        "measured_answers": 31,
+        "median_repeated_fraction": 0.0002428887569493332,
+        "answers_above_half": 0
+      },
+      "final_answer": {
+        "measured_answers": 0,
+        "median_repeated_fraction": null,
+        "answers_above_half": 0
+      }
+    },
+    "capped_nonempty_final": {
+      "answers": 40,
+      "full_credit": 4,
+      "full_response": {
+        "measured_answers": 40,
+        "median_repeated_fraction": 0.0007977932195500359,
+        "answers_above_half": 0
+      },
+      "final_answer": {
+        "measured_answers": 40,
+        "median_repeated_fraction": 0.0,
+        "answers_above_half": 4
+      }
+    },
+    "completed": {
+      "answers": 185,
+      "full_credit": 45,
+      "full_response": {
+        "measured_answers": 185,
+        "median_repeated_fraction": 0.00026192580951445166,
+        "answers_above_half": 0
+      },
+      "final_answer": {
+        "measured_answers": 185,
+        "median_repeated_fraction": 0.0,
+        "answers_above_half": 0
+      }
+    }
+  }
+}
