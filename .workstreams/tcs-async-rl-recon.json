@@ -961,7 +961,7 @@
     {
       "id": "558806",
       "cluster": "hpcfund",
-      "status": "UNKNOWN"
+      "status": "PENDING"
     },
     {
       "id": "552495",
@@ -3936,15 +3936,22 @@
       "actor": "codex",
       "summary": "Final fixed12-question screen submitted as558806 from verified136. RL archive verifies15780 files and W&B12 rows/1087 scalars.",
       "revision": 392
+    },
+    {
+      "id": "09cfd779-067f-4a17-af4a-72fe583b7bb8",
+      "at": "2026-11-26T08:56:42.837223Z",
+      "actor": "codex",
+      "summary": "Final screen558806 is queued for priority. Detached scorer and tunnel survive launcher exit; all36 controls pass from cache.",
+      "revision": 393
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Final fixed12-question screen submitted as558806 from verified136. RL archive verifies15780 files and W&B12 rows/1087 scalars.",
-  "nextAction": "Supervise the source-matched384-answer screen through completion. Verify publication identity, judge receipts, fixed comparisons, raw proofs, HF and W&B before closing the bounded plan.",
+  "summary": "Final screen558806 is queued for priority. Detached scorer and tunnel survive launcher exit; all36 controls pass from cache.",
+  "nextAction": "Keep foreground minute checks through startup and384 answers. Compare source136 against the same checkpoint108 questions and judge, then finish the audit and verified results.",
   "owner": "Codex",
-  "revision": 392,
-  "updatedAt": "2026-11-26T08:51:29.854311Z"
+  "revision": 393,
+  "updatedAt": "2026-11-26T08:56:42.837223Z"
 }

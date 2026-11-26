@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final fixed12-question screen submitted as558806 from verified136. RL archive verifies15780 files and W&B12 rows/1087 scalars. Jobs: hpcfund/558806 UNKNOWN; hpcfund/552495 COMPLETED
-  Next: Supervise the source-matched384-answer screen through completion. Verify publication identity, judge receipts, fixed comparisons, raw proofs, HF and W&B before closing the bounded 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final screen558806 is queued for priority. Detached scorer and tunnel survive launcher exit; all36 controls pass from cache. Jobs: hpcfund/558806 PENDING; hpcfund/552495 COMPLETED
+  Next: Keep foreground minute checks through startup and384 answers. Compare source136 against the same checkpoint108 questions and judge, then finish the audit and verified results.
 
 ## Next / blocked
 
