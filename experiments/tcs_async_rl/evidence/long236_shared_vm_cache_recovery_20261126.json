@@ -1,0 +1,66 @@
+{
+  "at_utc": "2026-11-26T00:07:32.598321+00:00",
+  "snapshots": [
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-14/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "1f7fb2047db8b7c2e7943c0cf7ae91c250fd4801",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 417249764,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 1516
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-15/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "914932e101d425d76b4f312f9dd8a0387fb95e83",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 428162261,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 1603
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-16/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "e19b287986872a75fa2bef8e2006d77c8616b4f9",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 429818931,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 1653
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-17/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "37628a1857b6e16aa89dcf1f0d4b1f4da55a2587",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 431123692,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 1694
+    },
+    {
+      "snapshot": "/tmp/perplexity-safe-archive-18/autonomous-search-20261125",
+      "archive_repo": "3N3G/internalization-runs",
+      "archive_revision": "82cfa1bf31a5aae958e54490860ae3c1e4bdc477",
+      "archive_prefix": "mini-exps/autonomous-search-20261125/",
+      "verified_bytes": 433245837,
+      "retained_unmatched": [
+        "raw/factuality_sources/omniscience_browser_payload.bin"
+      ],
+      "evicted_verified_files": 1730
+    }
+  ],
+  "evicted_files": 8196,
+  "evicted_content_bytes": 2139600485,
+  "complete_restore_manifest": "vm-shared-staging-verification-second.json",
+  "before_free_bytes": 5216702464,
+  "after_free_bytes": 7373303808,
+  "preserved": "Canonical project repo, all recent snapshots19 onward, unmatched files, environments, processes and immutable remote objects."
+}
