@@ -3807,15 +3807,22 @@
       "actor": "codex",
       "summary": "AMD552495 restored124, verified both publications on three engines and began training125",
       "revision": 376
+    },
+    {
+      "id": "57274bcc-9bfa-49f6-b804-40ce11df402d",
+      "at": "2026-11-26T04:41:39.029710Z",
+      "actor": "codex",
+      "summary": "Resumed125 saved and published; all88 W&B scalars and complete setup verified",
+      "revision": 377
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "AMD552495 restored124, verified both publications on three engines and began training125",
-  "nextAction": "Verify the first finite update, every-update checkpoint and exact W&B row. Continue minute checks and hourly raw-proof audits through finalization, then the approved fixed12-question screen.",
+  "summary": "Resumed125 saved and published; all88 W&B scalars and complete setup verified",
+  "nextAction": "Watch all updates and every-update checkpoints. Audit new sampled proofs hourly and complete the approved fixed-question after screen when training ends.",
   "owner": "Codex",
-  "revision": 376,
-  "updatedAt": "2026-11-26T04:18:21.212812Z"
+  "revision": 377,
+  "updatedAt": "2026-11-26T04:41:39.029710Z"
 }

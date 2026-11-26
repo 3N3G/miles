@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): AMD552495 restored124, verified both publications on three engines and began training125 Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Verify the first finite update, every-update checkpoint and exact W&B row. Continue minute checks and hourly raw-proof audits through finalization, then the approved fixed12-questi
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Resumed125 saved and published; all88 W&B scalars and complete setup verified Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Watch all updates and every-update checkpoints. Audit new sampled proofs hourly and complete the approved fixed-question after screen when training ends.
 
 ## Next / blocked
 
