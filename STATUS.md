@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Resumed125 saved and published; all88 W&B scalars and complete setup verified Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Watch all updates and every-update checkpoints. Audit new sampled proofs hourly and complete the approved fixed-question after screen when training ends.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Two finite resumed updates saved through126. All128 fresh126 trace/judge/mask audits pass; four uniform raw proofs reviewed. W&B2rows/177scalars match. Raw reward2.484 to3.680 uses different questions Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Continue minute health checks and hourly raw-proof reviews within the remaining5-hour allocation. Finish the fixed12-question after screen and matched comparison.
 
 ## Next / blocked
 

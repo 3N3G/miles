@@ -1,0 +1,169 @@
+{
+  "at_utc": "2026-11-26T05:07:19.221667+00:00",
+  "optimizer_step": 126,
+  "selection": "One uniform sample per consumed prompt group, Random(20261124).randrange(32)=11. Read problem, rubric, actual final and original judge.",
+  "cases": [
+    {
+      "sample_index": 2187,
+      "judge_score": 1,
+      "assistant_score": 1,
+      "reason": "Canonical I_f followed by O gives valid functionality correctness. D improperly re-obfuscates its input, supplies no uniform f-dependent classical-advice size bound, and Q invokes S(f) instead of transforming the challenger-supplied implementation. Claimed security then assumes the functionality-preserving reduction that is missing."
+    },
+    {
+      "sample_index": 2219,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "The auction proof reaches the90000-token cap with no extracted final answer. The approved final-only judge sees an empty solution."
+    },
+    {
+      "sample_index": 2251,
+      "judge_score": 7,
+      "assistant_score": 7,
+      "reason": "Positive conjugated matrix gives strict coordinate contraction for nonconstant vectors. The normalized positive-cone section is compact and the limit image lies uniformly inside its interior. The later boundary-distance proof repairs an earlier ratio/norm misstatement and establishes the uniform eventual cone inclusion."
+    },
+    {
+      "sample_index": 2347,
+      "judge_score": 7,
+      "assistant_score": 7,
+      "reason": "The inverse-probability decoder is computable from record and F_i. Expectation is unbiased and zero-safe. Independent variances give the required bound with saturated coordinates zero. Chebyshev and the all-zero case are explicit. Record and header bits are included in O(k log n / epsilon^2). Fixed-width encodings and the F_i=0 sender rule cover minor informal encoding language."
+    }
+  ],
+  "limits": "Assistant diagnostic after seeing grades, not independent human calibration. No grade changed or rerolled. Different questions prevent interpreting two mixed means as learning. A few wording slips in the two full-credit answers do not break their complete arguments.",
+  "verified_answers": 128,
+  "native_batch_means_match": true,
+  "groups": [
+    {
+      "optimizer_step": 126,
+      "group_index": 68,
+      "question_key": "53d930026a5bf8133ffbad84ac0dcd9a151bb4ad76adcf16420cf0779b9e9fee",
+      "paper_id": "How_to_Use_Quantum_Indistinguishability_Obfuscation",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 1.8125,
+      "reward_std": 1.4466312368685639,
+      "conditional_answer_sampling_se": 0.25573068936651105,
+      "zero_rate": 0.0,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.0625,
+      "mean_tokens": 68010.46875,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-126-group-68.json"
+    },
+    {
+      "optimizer_step": 126,
+      "group_index": 69,
+      "question_key": "cdf08cec049ea6628ca33c527c1abfb78086eca9da3830fd5fb2ce13bedea8bd",
+      "paper_id": "The_Price_of_Stability_for_First_Price_Auction",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 2.125,
+      "reward_std": 2.379346616737596,
+      "conditional_answer_sampling_se": 0.42061303187210586,
+      "zero_rate": 0.4375,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.625,
+      "mean_tokens": 84518.46875,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-126-group-69.json"
+    },
+    {
+      "optimizer_step": 126,
+      "group_index": 70,
+      "question_key": "eda0d15aca3015d33b9bbefedcb8382b9d8aaeb3af3001de677a3d7d505e5677",
+      "paper_id": "Positivity_Certificates_for_Linear_Recurrences",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 4.5625,
+      "reward_std": 2.746698898443307,
+      "conditional_answer_sampling_se": 0.48555235424172066,
+      "zero_rate": 0.0625,
+      "full_credit_rate": 0.53125,
+      "cap_rate": 0.15625,
+      "mean_tokens": 71914.90625,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-126-group-70.json"
+    },
+    {
+      "optimizer_step": 126,
+      "group_index": 73,
+      "question_key": "9d28865312b595b5db1bbac854474f9f5cbe31535e4286718250b5e60c926987",
+      "paper_id": "Simple_and_Optimal_Algorithms_for_Heavy_Hitters_and_Frequency_Moments_in_Distributed_Models",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 6.21875,
+      "reward_std": 0.8700899100741849,
+      "conditional_answer_sampling_se": 0.15381161891386236,
+      "zero_rate": 0.0,
+      "full_credit_rate": 0.40625,
+      "cap_rate": 0.0,
+      "mean_tokens": 34986.96875,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-126-group-73.json"
+    }
+  ],
+  "completion_outcomes": {
+    "capped_empty_final": {
+      "answers": 15,
+      "full_credit": 0,
+      "full_response": {
+        "measured_answers": 15,
+        "median_repeated_fraction": 0.0002389272167966361,
+        "answers_above_half": 0
+      },
+      "final_answer": {
+        "measured_answers": 0,
+        "median_repeated_fraction": null,
+        "answers_above_half": 0
+      }
+    },
+    "capped_nonempty_final": {
+      "answers": 12,
+      "full_credit": 2,
+      "full_response": {
+        "measured_answers": 12,
+        "median_repeated_fraction": 0.00037619553406570416,
+        "answers_above_half": 1
+      },
+      "final_answer": {
+        "measured_answers": 12,
+        "median_repeated_fraction": 0.0,
+        "answers_above_half": 1
+      }
+    },
+    "completed": {
+      "answers": 101,
+      "full_credit": 28,
+      "full_response": {
+        "measured_answers": 101,
+        "median_repeated_fraction": 0.0003279959447773928,
+        "answers_above_half": 0
+      },
+      "final_answer": {
+        "measured_answers": 101,
+        "median_repeated_fraction": 0.0,
+        "answers_above_half": 0
+      }
+    }
+  },
+  "wandb": {
+    "at_utc": "2026-11-26T05:06:35.814477+00:00",
+    "state": "running",
+    "last_verified_optimizer_step": 126,
+    "verified_optimizer_rows": 2,
+    "history_rows": 2,
+    "verified_scalars": 177,
+    "training_config_matches": true,
+    "operational_save_reserve_seconds": 2700,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261126-041313-318-native"
+  },
+  "question_order_note": "Consumed group indices68,69,70,73 reflect asynchronous completion, not a contiguous shuffled prefix. Faster groups can finish first. Preserve all236 input rows.",
+  "durable_lineage_note": "First allocation contributes109-124 only. Restored125 is byte-identical to its old unsaved input batch. New126 is fresh generation. Old lost125-127 are excluded from durable training exposure."
+}
