@@ -38,6 +38,17 @@ def question(index):
 
 
 class EasyDataTests(unittest.TestCase):
+    def test_incomplete_job_event_does_not_append_to_registry(self):
+        from experiments.tcs_async_rl.rl_job_state import record
+
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            registry = root / "experiments/tcs_async_rl/jobs.jsonl"
+            registry.parent.mkdir(parents=True)
+            with self.assertRaises(KeyError):
+                record(root, {"job_id": "missing-status"}, summary="invalid event", next_action="unused")
+            self.assertFalse(registry.exists())
+
     def test_output_sync_preserves_session_receipt_while_copying_native_evidence(self):
         from experiments.tcs_async_rl.watch_rl import sync_outputs
 
