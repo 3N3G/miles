@@ -959,6 +959,11 @@
   ],
   "jobs": [
     {
+      "id": "558806",
+      "cluster": "hpcfund",
+      "status": "UNKNOWN"
+    },
+    {
       "id": "552495",
       "cluster": "hpcfund",
       "status": "COMPLETED"
@@ -3924,15 +3929,22 @@
       "actor": "codex",
       "summary": "RL job 552495 ended COMPLETED; acceptance True",
       "revision": 391
+    },
+    {
+      "id": "56ddf581-0da5-481c-966a-c2c18d98f4b4",
+      "at": "2026-11-26T08:51:29.854311Z",
+      "actor": "codex",
+      "summary": "Final fixed12-question screen submitted as558806 from verified136. RL archive verifies15780 files and W&B12 rows/1087 scalars.",
+      "revision": 392
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "RL job 552495 ended COMPLETED; acceptance True",
-  "nextAction": "Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.",
+  "summary": "Final fixed12-question screen submitted as558806 from verified136. RL archive verifies15780 files and W&B12 rows/1087 scalars.",
+  "nextAction": "Supervise the source-matched384-answer screen through completion. Verify publication identity, judge receipts, fixed comparisons, raw proofs, HF and W&B before closing the bounded plan.",
   "owner": "Codex",
-  "revision": 391,
-  "updatedAt": "2026-11-26T08:48:25.460432Z"
+  "revision": 392,
+  "updatedAt": "2026-11-26T08:51:29.854311Z"
 }

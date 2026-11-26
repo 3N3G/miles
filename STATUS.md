@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 552495 ended COMPLETED; acceptance True Jobs: hpcfund/552495 COMPLETED; hpcfund/549728 FAILED
-  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final fixed12-question screen submitted as558806 from verified136. RL archive verifies15780 files and W&B12 rows/1087 scalars. Jobs: hpcfund/558806 UNKNOWN; hpcfund/552495 COMPLETED
+  Next: Supervise the source-matched384-answer screen through completion. Verify publication identity, judge receipts, fixed comparisons, raw proofs, HF and W&B before closing the bounded 
 
 ## Next / blocked
 
