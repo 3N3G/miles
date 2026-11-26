@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Seven resumed updates and636 W&B scalars verified; fourth review preserves a one-point disagreement and explanation error Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Continue supervised training within the remaining allocation. Inspect final checkpoints and run the approved fixed12-question screen before assessing improvement.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eight resumed updates; all32 perfect medium answers use problem-only prompts and a valid sampled proof Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Continue supervision through the resource guard and terminal archive. Complete hourly raw-proof reviews and the approved fixed12-question final screen.
 
 ## Next / blocked
 
