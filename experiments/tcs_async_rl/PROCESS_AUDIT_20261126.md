@@ -95,6 +95,12 @@ Our BF16 head remains a diagnostic candidate, rather than a demonstrated failure
 Finite losses and small average token mismatch do not prove exact numerical equivalence over a long trajectory.
 An isolated fixed-weight probability comparison would be needed before attributing failure to this issue.
 
+Adam's epsilon is also untested. Our parsed value is1e-8, with betas(0.9,0.98).
+MiniMax used1e-15 and(0.9,0.95) after measuring exceptionally small coordinate gradients.
+This is a model-specific observation, not a universal prescription.
+Our aggregate gradient norm and local direction probes cannot measure how many coordinates are suppressed by epsilon.
+A coordinate-gradient or optimizer-state diagnostic would be needed before changing it.
+
 ## Judge checks and unresolved reward alignment
 
 The accepted v5 judge matched34/40 saved totals and96.17% of case-balanced items before launch.
