@@ -1,8 +1,9 @@
 # Audit of the easy and medium RL continuation
 
-The fixed-question comparison is still pending. The mixed-question training curve cannot establish improvement or failure.
+Training finished at checkpoint136. The fixed-question comparison is still pending.
+The mixed-question training curve cannot establish improvement or failure.
 The checks below identify limitations to test. They do not establish a single cause.
-The running experiment keeps its approved settings and budget.
+The completed training kept its approved settings and budget.
 
 The optimizer changes probabilities in the intended direction on saved batches.
 The strongest current concerns are long unfinished answers, few questions per update, loss normalization, and reward validity.
@@ -41,10 +42,10 @@ and [QEDBench](https://arxiv.org/html/2602.20629v2).
 
 ## Direct evidence and limits
 
-- Through checkpoint135, the durable continuation contains27 new updates and3,456 answers.
-  It consumed108/236 question rows:11/20 easy and97/216 medium.
-  Those answers contain240,639,530 generated tokens. Of3,456 answers,1,245 reach the cap (36.0%).
-  Eleven of108 question groups have constant rewards and provide no policy-gradient signal.
+- Through checkpoint136, the durable continuation contains28 new updates and3,584 answers.
+  It consumed112/236 question rows:11/20 easy and101/216 medium.
+  Those answers contain250,598,348 generated tokens. Of3,584 answers,1,308 reach the cap (36.5%).
+  Eleven of112 question groups have constant rewards and provide no policy-gradient signal.
   Prepared corpus size therefore overstates actual training exposure if these counts are omitted.
 - The published update134 has raw return1.695/7, 78/128 caps and57 empty finals.
   Update135 has return3.242/7, 37 caps and25 empty finals.
@@ -89,6 +90,8 @@ The installed Megatron source detaches the main hidden states, token embedding o
 multi-token prediction loss. That auxiliary loss therefore does not supply a competing backbone language-modeling objective.
 The inspected file has SHA256`f9843d7982bb4deb605537dd53a651e829b38628a614fcfabb93d486c11509bf`.
 Relevant lines are1770,2136 and2930. MTP parameters have their own gradient-norm group.
+Speculative decoding is disabled. Training this auxiliary head therefore adds computation without accelerating the current rollouts.
+Its actual time cost has not been isolated.
 
 The MiniMax paper reports an FP32 output-head repair for its hybrid architecture.
 Our BF16 head remains a diagnostic candidate, rather than a demonstrated failure.
@@ -101,6 +104,11 @@ This is a model-specific observation, not a universal prescription.
 Our aggregate gradient norm and local direction probes cannot measure how many coordinates are suppressed by epsilon.
 A coordinate-gradient or optimizer-state diagnostic would be needed before changing it.
 
+The recorded training seed is20261124. Deterministic SGLang inference is disabled, and no explicit server random seed is set.
+The `rollout_seed` value is forwarded per request only when deterministic inference is enabled.
+The two screens therefore match sampling settings, rather than promise identical random draws or bitwise replay.
+The saved outputs remain the reproducible record of what happened.
+
 ## Judge checks and unresolved reward alignment
 
 The accepted v5 judge matched34/40 saved totals and96.17% of case-balanced items before launch.
@@ -108,6 +116,8 @@ It failed the original90% exact-total gate. The user accepted that measured limi
 The reference/empty/irrelevant corpus controls include472 negative answers, all scored zero.
 Four supplied references received less than seven because of reviewed reference gaps.
 These controls do not test sensitivity to a plausible proof with one hidden mathematical error.
+All4,515 inspected attempt receipts report the model alias`gpt-6-luna`.
+That checks the reported model name, but cannot rule out provider changes behind the undated alias.
 
 One inspected matroid answer earns4/7 for separate combinatorial and weight calculations despite failing the matroid axioms.
 That follows the approved component-credit rule. It exposes a possible mismatch between maximizing rubric points and proving the theorem.
