@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Eleven resumed updates and998 W&B scalars verified. Primary-guide audit confirms sequence-mean loss and active capped answers; hidden-score audit matches6/8 totals and38/40 items. Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Keep minute checks through the08:27 UTC save request. Finish source checkpoint and artifacts, then launch the approved same12-question screen. Deepen the process audit if that comp
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Planned final save requested; update136 is in progress. Source135 preserves27 new updates on108 questions; final matched evaluation remains pending. Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Finish and verify the current checkpoint, scheduler, W&B and archive. Transfer the closed ledger and supervise the approved same12-question final screen. Continue the full process 
 
 ## Next / blocked
 

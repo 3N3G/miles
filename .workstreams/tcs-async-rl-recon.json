@@ -3903,15 +3903,22 @@
       "actor": "codex",
       "summary": "Primary RL guides and hidden-score proof audit recorded while supervising update135",
       "revision": 388
+    },
+    {
+      "id": "f34fc770-6d0e-4397-b168-98023496482d",
+      "at": "2026-11-26T08:32:28.860918Z",
+      "actor": "codex",
+      "summary": "Planned final save requested; update136 is in progress. Source135 preserves27 new updates on108 questions; final matched evaluation remains pending.",
+      "revision": 389
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Eleven resumed updates and998 W&B scalars verified. Primary-guide audit confirms sequence-mean loss and active capped answers; hidden-score audit matches6/8 totals and38/40 items.",
-  "nextAction": "Keep minute checks through the08:27 UTC save request. Finish source checkpoint and artifacts, then launch the approved same12-question screen. Deepen the process audit if that comparison shows no gain.",
+  "summary": "Planned final save requested; update136 is in progress. Source135 preserves27 new updates on108 questions; final matched evaluation remains pending.",
+  "nextAction": "Finish and verify the current checkpoint, scheduler, W&B and archive. Transfer the closed ledger and supervise the approved same12-question final screen. Continue the full process audit.",
   "owner": "Codex",
-  "revision": 388,
-  "updatedAt": "2026-11-26T08:21:52.861512Z"
+  "revision": 389,
+  "updatedAt": "2026-11-26T08:32:28.860918Z"
 }
