@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final screen558806 completed0:0 with384 verified answers. Easy5.760→5.760 and medium1.995→1.969 show no fixed-question gain. Deep audit and final publication are in progress. Jobs: hpcfund/558806 COMPLETED; hpcfund/552495 COMPLETED
-  Next: Read final graded proofs and stopping behavior, finish process audit, then checksum all screen artifacts and verify W&B attachments without new history rows.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,5 +16,6 @@
 
 ## Finished
 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Approved236-question RL and fixed screen are complete. Easy5.760→5.760, medium1.995→1.969 show no score gain. All3529 final files and17 W&B attachments verify. Shared judge spend11.52USD. Jobs: hpcfund/558806 COMPLETED; hpcfund/552495 COMPLETED
 - [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Moved the Inkling investigation to the separate local repository /home/ubuntu/inkling-interp at the user's request.
-- [Compare Ian's Miles fork with RadixArk](.workstreams/ian-radixark-comparison.json): Compared Ian’s fork with the pinned RadixArk snapshot. Ian added five code commits across 43 files. Findings and workstream records are now published in 3N3G/miles.
+- 1 more records in `.workstreams/`.

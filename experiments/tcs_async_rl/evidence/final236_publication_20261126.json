@@ -1,0 +1,82 @@
+{
+  "recorded_at_utc": "2026-11-26T10:46:27.140082+00:00",
+  "job_id": "558806",
+  "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "scheduler": {
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:44:46",
+    "start_cluster_time": "2026-11-26T03:48:54",
+    "end_cluster_time": "2026-11-26T04:33:40"
+  },
+  "final_screen_archive": {
+    "verified_at_utc": "2026-11-26T10:44:35.681488+00:00",
+    "commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/442e9ce6dfdecf101bc23a6de19b7ce90489600f",
+    "files": 3529,
+    "bytes": 705079754,
+    "all_files_immutable_hash_verified": true,
+    "checkpoints_uploaded": false,
+    "includes_wandb_readback": true,
+    "scientific_archive": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/7da39fd097ddca0c46f8853b5cf8f3ffc1183f58"
+  },
+  "wandb": {
+    "at_utc": "2026-11-26T10:43:15.684186+00:00",
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261126-041313-318-native",
+    "state": "finished",
+    "optimizer_history_rows_before": 12,
+    "optimizer_history_rows_after": 12,
+    "entire_history_unchanged": true,
+    "verified_native_scalars": 1087,
+    "training_config_unchanged": true,
+    "private_archive_url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7da39fd097ddca0c46f8853b5cf8f3ffc1183f58/miles/checkpoint-final236-screen-v5",
+    "files_downloaded_and_sha256_verified": [
+      "RESULTS.md",
+      "screen-summary.json",
+      "stopping-audit.json",
+      "screen-training-exposure.json",
+      "process-audit/PROCESS_AUDIT_20261126.md",
+      "comparison/comparison.json",
+      "comparison/per-question.csv",
+      "comparison/README.md",
+      "comparison/graded-example-auction.json",
+      "comparison/screen-capped.png",
+      "comparison/screen-full_credit.png",
+      "comparison/screen-mean_response_tokens.png",
+      "comparison/screen-mean_reward.png",
+      "comparison/screen-capped.svg",
+      "comparison/screen-full_credit.svg",
+      "comparison/screen-mean_response_tokens.svg",
+      "comparison/screen-mean_reward.svg"
+    ],
+    "new_optimizer_rows": 0
+  },
+  "comparison": {
+    "easy": {
+      "questions": 6,
+      "answers_per_checkpoint": 192,
+      "before_mean_reward": 5.760416666666667,
+      "after_mean_reward": 5.760416666666667,
+      "change_mean_reward": 0.0
+    },
+    "medium": {
+      "questions": 6,
+      "answers_per_checkpoint": 192,
+      "before_mean_reward": 1.9947916666666667,
+      "after_mean_reward": 1.96875,
+      "change_mean_reward": -0.026041666666666668
+    }
+  },
+  "shared_judge_total_usd": 11.5243763,
+  "unsettled_judge_calls": 0,
+  "rl_saved_new_updates": 28,
+  "rl_question_rows_consumed": 112,
+  "rl_corpus_question_rows": 236,
+  "heldout_question_reads": 0,
+  "rl_allocation_seconds_total": 41259,
+  "screen_allocation_seconds": 2686,
+  "report": "RESULTS_EASY_MEDIUM_20261126.md",
+  "audit": "PROCESS_AUDIT_20261126.md",
+  "raw_final_proof_review": "evidence/final236_final-uniform-proof-review.json",
+  "new_model_or_hyperparameter_changes": false,
+  "followup_requires_new_reviewed_plan": true
+}

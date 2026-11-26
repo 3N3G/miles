@@ -1,0 +1,15 @@
+{
+  "answers": 384,
+  "formatted_prompts_exact_problem_only_thinking": true,
+  "prompt_token_counts_match": true,
+  "response_logprobs_finite_and_complete": true,
+  "response_tokens": 21547222,
+  "response_logprobs_checked": 21547222,
+  "weight_versions": [
+    "137"
+  ],
+  "source_checkpoint": 136,
+  "source_publication_check": "final236_screen_started_20261126.json",
+  "reference_or_rubric_in_model_prompt": false,
+  "note": "Engine internal version137 was published from the verified saved checkpoint136. No optimizer update in this screen."
+}

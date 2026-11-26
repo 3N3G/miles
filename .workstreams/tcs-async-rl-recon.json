@@ -3,6 +3,10 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/442e9ce6dfdecf101bc23a6de19b7ce90489600f/miles/checkpoint-final236-screen-v5",
+      "label": "Complete final384-answer screen, proof audit and W&B receipt. All3529 files checksum-verified."
+    },
+    {
       "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261126-041313-318-native",
       "label": "Current supervised continuation from124; optimizer-coordinate metrics and exact setup"
     },
@@ -312,6 +316,14 @@
     }
   ],
   "evidence": [
+    {
+      "path": "experiments/tcs_async_rl/RESULTS_EASY_MEDIUM_20261126.md",
+      "label": "Completed fixed-question comparison and limits"
+    },
+    {
+      "path": "experiments/tcs_async_rl/PROCESS_AUDIT_20261126.md",
+      "label": "Completed primary-source, implementation, optimizer and raw-proof audit"
+    },
     {
       "path": "experiments/tcs_async_rl/EASY_MEDIUM_236_PLAN_20261125.md",
       "label": "Approved all236-question continuation and fixed grader"
@@ -3979,15 +3991,22 @@
       "actor": "codex",
       "summary": "Final fixed screen completed and shows no score gain on the same12 questions",
       "revision": 397
+    },
+    {
+      "id": "617015c7-5c85-4ef5-921b-9a6e6d4aa019",
+      "at": "2026-11-26T10:46:27.197289Z",
+      "actor": "codex",
+      "summary": "Completed final comparison, process audit, immutable archives and unchanged-history W&B verification",
+      "revision": 398
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
-  "state": "running",
-  "summary": "Final screen558806 completed0:0 with384 verified answers. Easy5.760→5.760 and medium1.995→1.969 show no fixed-question gain. Deep audit and final publication are in progress.",
-  "nextAction": "Read final graded proofs and stopping behavior, finish process audit, then checksum all screen artifacts and verify W&B attachments without new history rows.",
+  "state": "finished",
+  "summary": "Approved236-question RL and fixed screen are complete. Easy5.760→5.760, medium1.995→1.969 show no score gain. All3529 final files and17 W&B attachments verify. Shared judge spend11.52USD.",
+  "nextAction": "Review the results and choose a separate follow-up design or model. No GPU jobs or helpers remain active for this experiment.",
   "owner": "Codex",
-  "revision": 397,
-  "updatedAt": "2026-11-26T10:35:42.403981Z"
+  "revision": 398,
+  "updatedAt": "2026-11-26T10:46:27.197289Z"
 }
