@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Five saved resumed updates through129. One zero-variance group and49.2% caps in129 need raw-proof review. Scorer errors0, finite metrics and two-update maximum staleness. Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Audit the new all-zero group and its controls, inspect130 update-direction probe, then complete the approved fixed12-question after screen.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Checkpoint129 preserved21 new updates and84 question rows; all-zero group has valid controls and two wrong completed proofs Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Keep the remaining approved RL allocation running. Inspect130 update-direction probe and new proofs, then run the fixed12-question after screen.
 
 ## Next / blocked
 

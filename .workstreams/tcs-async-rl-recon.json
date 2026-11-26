@@ -3846,15 +3846,22 @@
       "actor": "codex",
       "summary": "Five saved resumed updates; inspect the newly all-zero group and keep dashboard linked to the current run",
       "revision": 381
+    },
+    {
+      "id": "56b76b30-b1b3-40a0-8f24-095bee064e0a",
+      "at": "2026-11-26T06:13:02.680024Z",
+      "actor": "codex",
+      "summary": "Checkpoint129 preserved21 new updates and84 question rows; all-zero group has valid controls and two wrong completed proofs",
+      "revision": 382
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Five saved resumed updates through129. One zero-variance group and49.2% caps in129 need raw-proof review. Scorer errors0, finite metrics and two-update maximum staleness.",
-  "nextAction": "Audit the new all-zero group and its controls, inspect130 update-direction probe, then complete the approved fixed12-question after screen.",
+  "summary": "Checkpoint129 preserved21 new updates and84 question rows; all-zero group has valid controls and two wrong completed proofs",
+  "nextAction": "Keep the remaining approved RL allocation running. Inspect130 update-direction probe and new proofs, then run the fixed12-question after screen.",
   "owner": "Codex",
-  "revision": 381,
-  "updatedAt": "2026-11-26T06:09:35.113968Z"
+  "revision": 382,
+  "updatedAt": "2026-11-26T06:13:02.680024Z"
 }
