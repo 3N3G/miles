@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final screen558806 is running with all engines verified against136. Saved optimizer coordinates do not show widespread epsilon domination. Matched before/after result remains pending. Jobs: hpcfund/558806 RUNNING; hpcfund/552495 COMPLETED
-  Next: Keep foreground screen checks, audit final proofs and compare the same12 questions. Upload and checksum results, then verify W&B without adding optimizer rows.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final screen558806 completed0:0 with384 verified answers. Easy5.760→5.760 and medium1.995→1.969 show no fixed-question gain. Deep audit and final publication are in progress. Jobs: hpcfund/558806 COMPLETED; hpcfund/552495 COMPLETED
+  Next: Read final graded proofs and stopping behavior, finish process audit, then checksum all screen artifacts and verify W&B attachments without new history rows.
 
 ## Next / blocked
 

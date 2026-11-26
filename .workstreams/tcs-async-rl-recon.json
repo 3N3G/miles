@@ -969,7 +969,7 @@
     {
       "id": "558806",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "552495",
@@ -3972,15 +3972,22 @@
       "actor": "codex",
       "summary": "Bounded optimizer-state sample checks the Adam epsilon hypothesis",
       "revision": 396
+    },
+    {
+      "id": "04563c5a-4a12-4656-a3c1-c5edfb9ae5a1",
+      "at": "2026-11-26T10:35:42.403981Z",
+      "actor": "codex",
+      "summary": "Final fixed screen completed and shows no score gain on the same12 questions",
+      "revision": 397
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Final screen558806 is running with all engines verified against136. Saved optimizer coordinates do not show widespread epsilon domination. Matched before/after result remains pending.",
-  "nextAction": "Keep foreground screen checks, audit final proofs and compare the same12 questions. Upload and checksum results, then verify W&B without adding optimizer rows.",
+  "summary": "Final screen558806 completed0:0 with384 verified answers. Easy5.760→5.760 and medium1.995→1.969 show no fixed-question gain. Deep audit and final publication are in progress.",
+  "nextAction": "Read final graded proofs and stopping behavior, finish process audit, then checksum all screen artifacts and verify W&B attachments without new history rows.",
   "owner": "Codex",
-  "revision": 396,
-  "updatedAt": "2026-11-26T09:57:26.767263Z"
+  "revision": 397,
+  "updatedAt": "2026-11-26T10:35:42.403981Z"
 }
