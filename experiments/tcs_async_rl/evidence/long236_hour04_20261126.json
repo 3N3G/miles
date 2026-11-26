@@ -1,0 +1,245 @@
+{
+  "at_utc": "2026-11-26T06:59:21.077030+00:00",
+  "optimizer_steps": [
+    130,
+    131
+  ],
+  "verified_answers": 256,
+  "native_means_match": true,
+  "selection": "One uniform sample per consumed group, Random(20261124).randrange(32)=11. All eight selected finals read in full (three empty caps), with problems, rubrics and original judge.",
+  "cases": [
+    {
+      "sample_index": 2699,
+      "judge_score": 3,
+      "assistant_preferred_score": 3,
+      "reason": "The monotone quantile Riemann sums telescope correctly and the displayed one-sided comparisons imply the optimality transfer with one error term. Behavioral payment monotonicity is not proved. k=ceil(M/epsilon) fails the normalized additive requirement for small M. Conditional credit for the distribution steps remains an ownership convention."
+    },
+    {
+      "sample_index": 2731,
+      "judge_score": 1,
+      "assistant_preferred_score": 0,
+      "uncertain_score_range": [
+        0,
+        1
+      ],
+      "reason": "The candidate confuses a CG cut with an inequality that must retain all fractional points of P. It never states the dimension-controlled support bottleneck or mDelta-versus-nDelta issue. Its vague observation about weighted right-hand-side control may explain the judge\u2019s one conceptual point, but I would withhold it."
+    },
+    {
+      "sample_index": 2763,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "Capped response with empty extracted final answer."
+    },
+    {
+      "sample_index": 2795,
+      "judge_score": 2,
+      "assistant_score": 2,
+      "reason": "Identifies the affordability obstacle and proves the total-price resource bound. It supplies neither individual scaling nor the sharp truncated-log aggregation.",
+      "judge_reason_error_without_score_effect": "The judge calls maximization over the joint feasible-and-individually-affordable set incorrect. That fact is correct: every such bundle is individually dominated in utility by the equilibrium demand. The final composition item still fails because the T/e gap is merely asserted."
+    },
+    {
+      "sample_index": 2827,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "Capped response with empty extracted final answer."
+    },
+    {
+      "sample_index": 2859,
+      "judge_score": 7,
+      "assistant_preferred_score": 7,
+      "reason": "The covariant product rule gives both differential inequalities, reciprocal-square-root comparison bounds velocity energy, and two-sided integration gives exact factors. Zero evaluations are handled tersely. The already displayed nonnegative differential inequalities with bounded continuous coefficients justify persistence by the elementary integrating-factor argument."
+    },
+    {
+      "sample_index": 2891,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "Capped response with empty extracted final answer."
+    },
+    {
+      "sample_index": 2923,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "The forest-containment step is only assumed. The arbitrary within-part order misses the crucial avoidance invariant, no quotient/path estimate is proved, and g is never constructively bounded. The claimed polynomial conclusion is unsupported."
+    }
+  ],
+  "outcomes": {
+    "('completed', True)": 160,
+    "('truncated', True)": 34,
+    "('truncated', False)": 62
+  },
+  "wandb": {
+    "at_utc": "2026-11-26T06:56:34.559441+00:00",
+    "state": "running",
+    "last_verified_optimizer_step": 131,
+    "verified_optimizer_rows": 7,
+    "history_rows": 7,
+    "verified_scalars": 636,
+    "training_config_matches": true,
+    "operational_save_reserve_seconds": 2700,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261126-041313-318-native"
+  },
+  "probe130": {
+    "optimizer_step": 130,
+    "train/update_direction/surrogate_gain": 6.844470229538935e-05,
+    "train/update_direction/samples": 128,
+    "train/update_direction/positive_advantage_samples": 54,
+    "train/update_direction/negative_advantage_samples": 74,
+    "train/update_direction/positive_advantage_mean_logprob_change": 7.488344093444623e-05,
+    "train/update_direction/negative_advantage_mean_logprob_change": -4.65986676875762e-05
+  },
+  "limits": "Assistant review after seeing judge outputs, not independent calibration. One0-vs1 disagreement and a separate erroneous judge explanation with no total-score effect are preserved. No valid grade changed or rerolled; selected grader remains fixed. Distinct questions do not establish a learning trend.",
+  "groups": [
+    {
+      "optimizer_step": 130,
+      "group_index": 84,
+      "question_key": "23e56e475b23a7fd31c5571f00571c0897a475186ffdf3c3bfddbefbb2ac4704",
+      "paper_id": "Optimal_Pricing_Schemes_for_an_Impatient_Buyer",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 3.1875,
+      "reward_std": 1.712148245013622,
+      "conditional_answer_sampling_se": 0.30266790861144466,
+      "zero_rate": 0.125,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.0,
+      "mean_tokens": 56483.34375,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-130-group-84.json"
+    },
+    {
+      "optimizer_step": 130,
+      "group_index": 85,
+      "question_key": "436b4b4b637930d7c352a0d93b2e087ebdddf3621a59d8258045ccfba513f32f",
+      "paper_id": "A_parameterized_linear_formulation_of_the_integer_hull",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.15625,
+      "reward_std": 0.36890203262847354,
+      "conditional_answer_sampling_se": 0.06521328221627366,
+      "zero_rate": 0.84375,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.03125,
+      "mean_tokens": 70150.09375,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-130-group-85.json"
+    },
+    {
+      "optimizer_step": 130,
+      "group_index": 86,
+      "question_key": "8a48fa38a2981ab991240f4ecfce939d3e734410d3e97b2ebaddd8d3d25b0d1a",
+      "paper_id": "Refuting_the_Direct_Sum_Conjecture_for_Total_Functions_in_Deterministic_Communication_Complexity",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.40625,
+      "reward_std": 0.49899091723584604,
+      "conditional_answer_sampling_se": 0.0882099653319905,
+      "zero_rate": 0.59375,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.71875,
+      "mean_tokens": 84042.40625,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-130-group-86.json"
+    },
+    {
+      "optimizer_step": 130,
+      "group_index": 87,
+      "question_key": "97ddac69a05d830c2787a584f8dbbaeca73576da6eaceb7867436a18a658a618",
+      "paper_id": "Approximating_Competitive_Equilibrium_by_Nash_Welfare",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.8125,
+      "reward_std": 0.8590129369261278,
+      "conditional_answer_sampling_se": 0.15185346820685924,
+      "zero_rate": 0.4375,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.09375,
+      "mean_tokens": 68480.59375,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-130-group-87.json"
+    },
+    {
+      "optimizer_step": 131,
+      "group_index": 88,
+      "question_key": "f692cb9363022d45c86f50a3242c53c40eac06336aac9076ec525f2434cd9dcc",
+      "paper_id": "Online_Edge_Coloring_Sharp_Thresholds",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.125,
+      "reward_std": 0.4918693768379647,
+      "conditional_answer_sampling_se": 0.08695104295503155,
+      "zero_rate": 0.9375,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.90625,
+      "mean_tokens": 89093.59375,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-131-group-88.json"
+    },
+    {
+      "optimizer_step": 131,
+      "group_index": 89,
+      "question_key": "3909e4e57d5dd5157e5b11b64ce7f5edb0d73958187e3a9d11f5973af8ff68b0",
+      "paper_id": "Interior-point_methods_on_manifolds_theory_and_applications",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 5.78125,
+      "reward_std": 1.313315798693054,
+      "conditional_answer_sampling_se": 0.23216362677382127,
+      "zero_rate": 0.03125,
+      "full_credit_rate": 0.09375,
+      "cap_rate": 0.0625,
+      "mean_tokens": 38868.78125,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-131-group-89.json"
+    },
+    {
+      "optimizer_step": 131,
+      "group_index": 90,
+      "question_key": "c90ba4fd984cdd27835583b9fd6ae5956c3c947234b262cce74209f5a8873c7c",
+      "paper_id": "A_Broader_View_on_Clustering_under_Cluster-Aware_Norm_Objectives",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.28125,
+      "reward_std": 0.5811209967839966,
+      "conditional_answer_sampling_se": 0.10272864937896246,
+      "zero_rate": 0.78125,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.84375,
+      "mean_tokens": 89233.0625,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-131-group-90.json"
+    },
+    {
+      "optimizer_step": 131,
+      "group_index": 91,
+      "question_key": "01014bcd1e5879d9d70350987a0a41bb96fc8fd1b99b2dca4a50a8460802ae90",
+      "paper_id": "The_Grid-Minor_Theorem_Revisited",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.46875,
+      "reward_std": 0.5070073486774164,
+      "conditional_answer_sampling_se": 0.08962708359030336,
+      "zero_rate": 0.53125,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.34375,
+      "mean_tokens": 80709.375,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-131-group-91.json"
+    }
+  ]
+}
