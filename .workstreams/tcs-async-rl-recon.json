@@ -3,12 +3,16 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261126-041313-318-native",
+      "label": "Current supervised continuation from124; optimizer-coordinate metrics and exact setup"
+    },
+    {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/664372cffe49cec49011cfed617f059484175858/miles/checkpoint108-screen-v5-baseline",
       "label": "Fixed v5 baseline:384 unchanged answers and1051 verified artifacts"
     },
     {
       "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261125-132805-437-native",
-      "label": "Live236-question continuation, native optimizer coordinates and exact setup"
+      "label": "First236-question allocation ended FAILED;19 observed,16 durable updates"
     },
     {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/d4d68e07f0de4ebe2c91597d8eff2b51d608a75c/miles/judge-comparison-item-v5-20261124",
@@ -3835,15 +3839,22 @@
       "actor": "codex",
       "summary": "Four saved resumed updates; eight uniform proofs and two contrasting cases reviewed;360 W&B scalars exact",
       "revision": 380
+    },
+    {
+      "id": "6b5092fa-5d73-4915-bfae-0d1760031764",
+      "at": "2026-11-26T06:09:35.113968Z",
+      "actor": "codex",
+      "summary": "Five saved resumed updates; inspect the newly all-zero group and keep dashboard linked to the current run",
+      "revision": 381
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Four saved resumed updates; eight uniform proofs and two contrasting cases reviewed;360 W&B scalars exact",
-  "nextAction": "Continue health checks and hourly all-metric/raw-proof reviews. Inspect the scheduled130 update-direction probe and finish the fixed12-question after screen.",
+  "summary": "Five saved resumed updates through129. One zero-variance group and49.2% caps in129 need raw-proof review. Scorer errors0, finite metrics and two-update maximum staleness.",
+  "nextAction": "Audit the new all-zero group and its controls, inspect130 update-direction probe, then complete the approved fixed12-question after screen.",
   "owner": "Codex",
-  "revision": 380,
-  "updatedAt": "2026-11-26T05:49:59.906739Z"
+  "revision": 381,
+  "updatedAt": "2026-11-26T06:09:35.113968Z"
 }
