@@ -3800,15 +3800,22 @@
       "actor": "codex",
       "summary": "RL job 552495 is RUNNING",
       "revision": 375
+    },
+    {
+      "id": "9de0d3f9-ff09-4200-8133-d1345035ce3d",
+      "at": "2026-11-26T04:18:21.212812Z",
+      "actor": "codex",
+      "summary": "AMD552495 restored124, verified both publications on three engines and began training125",
+      "revision": 376
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "RL job 552495 is RUNNING",
-  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
+  "summary": "AMD552495 restored124, verified both publications on three engines and began training125",
+  "nextAction": "Verify the first finite update, every-update checkpoint and exact W&B row. Continue minute checks and hourly raw-proof audits through finalization, then the approved fixed12-question screen.",
   "owner": "Codex",
-  "revision": 375,
-  "updatedAt": "2026-11-26T04:13:05.616735Z"
+  "revision": 376,
+  "updatedAt": "2026-11-26T04:18:21.212812Z"
 }
