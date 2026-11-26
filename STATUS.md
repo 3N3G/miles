@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Update 130 moves probabilities in the intended direction; six resumed rows and 547 W&B scalars verified Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Continue supervised training and hourly proof reviews within the remaining allocation. Use the fixed-question final screen to assess proof quality.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Seven resumed updates and636 W&B scalars verified; fourth review preserves a one-point disagreement and explanation error Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Continue supervised training within the remaining allocation. Inspect final checkpoints and run the approved fixed12-question screen before assessing improvement.
 
 ## Next / blocked
 

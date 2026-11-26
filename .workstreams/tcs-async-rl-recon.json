@@ -3860,15 +3860,22 @@
       "actor": "codex",
       "summary": "Update 130 moves probabilities in the intended direction; six resumed rows and 547 W&B scalars verified",
       "revision": 383
+    },
+    {
+      "id": "94f756d9-c262-43ac-8b6b-cce81cbcf143",
+      "at": "2026-11-26T06:59:46.101823Z",
+      "actor": "codex",
+      "summary": "Seven resumed updates and636 W&B scalars verified; fourth review preserves a one-point disagreement and explanation error",
+      "revision": 384
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Update 130 moves probabilities in the intended direction; six resumed rows and 547 W&B scalars verified",
-  "nextAction": "Continue supervised training and hourly proof reviews within the remaining allocation. Use the fixed-question final screen to assess proof quality.",
+  "summary": "Seven resumed updates and636 W&B scalars verified; fourth review preserves a one-point disagreement and explanation error",
+  "nextAction": "Continue supervised training within the remaining allocation. Inspect final checkpoints and run the approved fixed12-question screen before assessing improvement.",
   "owner": "Codex",
-  "revision": 383,
-  "updatedAt": "2026-11-26T06:34:07.747925Z"
+  "revision": 384,
+  "updatedAt": "2026-11-26T06:59:46.101823Z"
 }
