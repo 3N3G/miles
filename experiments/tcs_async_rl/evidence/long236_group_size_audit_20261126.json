@@ -1,0 +1,38 @@
+{
+  "at_utc": "2026-11-26T09:18:43.524882+00:00",
+  "source_question_groups": 112,
+  "source_answers": 3584,
+  "table": [
+    {
+      "answers_per_question": 4,
+      "questions_per128_answers": 32,
+      "mean_constant_fraction_for_subgroups_of_saved32": 0.3271492134117273,
+      "mean_varied_question_groups_per128_if_same_mix": 21.531225170824726
+    },
+    {
+      "answers_per_question": 8,
+      "questions_per128_answers": 16,
+      "mean_constant_fraction_for_subgroups_of_saved32": 0.21038316383283012,
+      "mean_varied_question_groups_per128_if_same_mix": 12.633869378674717
+    },
+    {
+      "answers_per_question": 16,
+      "questions_per128_answers": 8,
+      "mean_constant_fraction_for_subgroups_of_saved32": 0.14108788599094754,
+      "mean_varied_question_groups_per128_if_same_mix": 6.871296912072419
+    },
+    {
+      "answers_per_question": 32,
+      "questions_per128_answers": 4,
+      "mean_constant_fraction_for_subgroups_of_saved32": 0.09821428571428571,
+      "mean_varied_question_groups_per128_if_same_mix": 3.607142857142857
+    }
+  ],
+  "limitations": [
+    "Exact finite-population calculation for uniformly chosen subgroups of each saved32-answer group.",
+    "Not a new generation experiment or a prediction for future policies or prompts.",
+    "The batches came from different checkpoints and questions.",
+    "More varied question groups does not establish better gradient estimates or faster learning.",
+    "Smaller groups make reward means and standard deviations noisier; no training setting has changed."
+  ]
+}

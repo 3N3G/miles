@@ -71,6 +71,28 @@ sampling support and weight-version counts. Both native reward/length means agre
 All256 formatted prompts equal the pinned problem-only Qwen thinking template. They contain neither reference nor rubric.
 The raw eight-answer review is separate from the uniform examples used in hourly monitoring.
 
+## Group-size and ranking diagnostics
+
+Within the saved32-answer groups, exact counting gives the following constant-score fractions for uniformly selected subgroups.
+This is a calculation on saved answers from different policies. It does not predict a new run.
+
+| Answers per question | Questions per128 answers | Constant-score subgroup fraction |
+|---|---:|---:|
+| 4 | 32 | 32.7% |
+| 8 | 16 | 21.0% |
+| 16 | 8 | 14.1% |
+| 32 | 4 | 9.8% |
+
+Smaller groups could spread the same answer budget across more questions.
+They also give noisier within-question means and standard deviations. These counts do not establish a better training setting.
+See the [exact finite-population calculation](evidence/long236_group_size_audit_20261126.json).
+
+The frozen40-answer qualification file covers22 question identities.
+It supplies only18 within-question pairs:11 ties in both assessments, six correctly ordered strict pairs, and one assistant tie separated by Luna.
+No strict ordering reversal appears, but six informative pairs are too few to validate group reward ranking broadly.
+These are reused assistant labels and dependent pair counts, not new expert judgments or a new qualification test.
+See the [ranking diagnostic](evidence/long236_judge_rank_audit_20261126.json).
+
 ## Code paths checked
 
 - [CISPO weights](../../miles/backends/training_utils/loss/hub/math_utils.py): `compute_cispo_loss`.

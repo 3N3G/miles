@@ -1,0 +1,37 @@
+{
+  "at_utc": "2026-11-26T09:16:19.761961+00:00",
+  "source": "long236_judge_comparison_20261125.json",
+  "answers": 40,
+  "questions": 22,
+  "pairs": 18,
+  "counts": {
+    "both_tie": 11,
+    "correct_strict_order": 6,
+    "judge_separates_audit_tie": 1
+  },
+  "disagreements": [
+    {
+      "question_key": "0fa677f95cf0e9291a23b449d2df7f9fee42c2bfc77581cdcb6d5bac1847fc2f",
+      "cases": [
+        "case-29",
+        "case-31"
+      ],
+      "frozen_assistant_scores": [
+        7.0,
+        7.0
+      ],
+      "judge_scores": [
+        5.0,
+        7.0
+      ],
+      "kind": "judge_separates_audit_tie"
+    }
+  ],
+  "limitations": [
+    "Reused assistant-labeled calibration packet, not expert human accuracy.",
+    "All pairs share answers. Counts are dependent, with no new independent sample size.",
+    "Scores span questions with different items. Only within-question pairs are compared.",
+    "Preserves original frozen labels, including ambiguity.",
+    "This is a post-hoc diagnostic of relative reward ranking, not a new qualification gate."
+  ]
+}
