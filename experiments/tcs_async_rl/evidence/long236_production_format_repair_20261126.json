@@ -1,0 +1,46 @@
+{
+  "at_utc": "2026-11-26T05:25:51.144158+00:00",
+  "links": [
+    {
+      "question_key": "fd32b919a83950d5b7358c6a4864a3725d7d8283c8b08c04e059c5240b49e040",
+      "identity": "online-abdcaf4895ea898ff130e579",
+      "manual_validation": false,
+      "completed": true,
+      "source_request_sha256": "c744344fa6ea04840e08957e8057a611c583c3091a881acea51fd9a638f57ddd",
+      "repaired_request_sha256": "67bce306df8beab1b76c23e1f61067d99c26f5f4b35aadd66ab95aa01d387797",
+      "score": 1.0,
+      "decisions": 6,
+      "original_invalid_attempts": 3,
+      "exact_contract_and_preserved_original_payload_verified": true
+    },
+    {
+      "question_key": "fd32b919a83950d5b7358c6a4864a3725d7d8283c8b08c04e059c5240b49e040",
+      "identity": "online-e97efc006407cf24d8f0cfca",
+      "manual_validation": false,
+      "completed": true,
+      "source_request_sha256": "1364ba34445d485ad9a878d35873e832628c49815d6f102977f033ed7be1244f",
+      "repaired_request_sha256": "adc6efebcbf65d88127a6a95c341cb43e300aec184d1ac7d96cff34ddad419ea",
+      "score": 0.0,
+      "decisions": 6,
+      "original_invalid_attempts": 3,
+      "exact_contract_and_preserved_original_payload_verified": true
+    },
+    {
+      "question_key": "fd32b919a83950d5b7358c6a4864a3725d7d8283c8b08c04e059c5240b49e040",
+      "identity": "online-1221dd77734dfaacd6f94ce8",
+      "manual_validation": false,
+      "completed": true,
+      "source_request_sha256": "906bf539d53cf1deb8b84d2713073ff2b082d267f855dad81fa1935b4aa2dfdd",
+      "repaired_request_sha256": "5f2db425b002ddd77b1b7318f3d72de1e9e7a0a940f872de89c4126b957d6b77",
+      "score": 1.0,
+      "decisions": 6,
+      "original_invalid_attempts": 3,
+      "exact_contract_and_preserved_original_payload_verified": true
+    }
+  ],
+  "production_completed": 3,
+  "production_pending": 0,
+  "reward_service_errors": 0,
+  "manual_validation_links_excluded": 2,
+  "limits": "These are fresh production format retries after three invalid responses. Original valid grades are never retried. This is a schema repair, not evidence of mathematical judge accuracy."
+}
