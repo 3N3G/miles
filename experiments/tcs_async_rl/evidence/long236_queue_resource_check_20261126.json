@@ -1,0 +1,20 @@
+{
+  "at_utc": "2026-11-26T00:51:24.334888+00:00",
+  "job_id": "552495",
+  "scheduler_state": "PENDING",
+  "estimated_start_cluster": "2026-11-26T05:29:24-06:00",
+  "estimated_start_utc": "2026-11-26T11:29:24+00:00",
+  "alternative_partition": "mi3008x",
+  "alternative_node_states": {
+    "k002-002": "alloc",
+    "k002-003": "alloc"
+  },
+  "original_job_gpu_memory_observations": 13,
+  "maximum_observed_device_used_bytes": 218119229440,
+  "maximum_observed_device_used_gib": 203.13936233520508,
+  "maximum_observation_at": "2026-11-25T20:21:58.830826+00:00",
+  "device": "card0",
+  "mi300x_capacity_gib": 192,
+  "decision": "Keep the frozen MI350 allocation. Both MI300 nodes are allocated. Observed actor memory exceeds192GiB, so an unchanged move is not supported. No job or scientific setting changed.",
+  "limitations": "Thirteen point-in-time snapshots are not a continuous peak trace."
+}
