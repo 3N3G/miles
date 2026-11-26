@@ -1,0 +1,122 @@
+{
+  "submission": {
+    "job_id": "558806",
+    "submitted_at_utc": "2026-11-26T08:51:28.844393+00:00",
+    "source_commit": "a9a315c02d8f10a836afbb22d74d10a638322cbe",
+    "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+    "remote_run_dir": "/work1/aviralkumar/geney/tcs-async-rl/runs/checkpoint-final236-screen-v5"
+  },
+  "source_checkpoint": {
+    "at_utc": "2026-11-26T08:42:41.786271+00:00",
+    "checkpoint_iteration": 136,
+    "checkpoint_bytes": 60577362797,
+    "source_publication": {
+      "engines": 3,
+      "tensor_records_per_engine": 1416,
+      "all_equal": true,
+      "events_sha256": "61b9baef4b14861d823181ee9cfd8506f7a3caeeec433f73e7cc1e6d587f8703"
+    },
+    "launcher_completed": true
+  },
+  "source_archive": {
+    "at_utc": "2026-11-26T08:50:44.000877+00:00",
+    "commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/2c13f79698fb28c1170615b2fb542c21e40efba4",
+    "verified_files": 15780,
+    "verified_local_bytes": 412844660,
+    "exclusions": "Upload-helper lock/cache/checkpoint rules and mutable verification/upload receipts. Evicted traces have independent immutable commits in archive-index.json."
+  },
+  "source_wandb": {
+    "at_utc": "2026-11-26T08:47:09.256091+00:00",
+    "state": "finished",
+    "last_verified_optimizer_step": 136,
+    "verified_optimizer_rows": 12,
+    "history_rows": 12,
+    "verified_scalars": 1087,
+    "training_config_matches": true,
+    "operational_save_reserve_seconds": 2700,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261126-041313-318-native"
+  },
+  "budget_transfer": {
+    "at_utc": "2026-11-26T08:49:04.991438+00:00",
+    "source": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/easy-medium-236-v2",
+    "destination": "/home/ubuntu/.cache/miles/tcs-async-rl/runs/checkpoint-final236-screen-v5",
+    "source_service_closed": true,
+    "ledger_sha256": "3b48e413df58b1bb8c4ca5ec206026631a0400c47fccd732993e59d150a5b7f7",
+    "spent_reserved_usd": 11.0056695,
+    "questions_cached": 12
+  },
+  "online_controls": 36,
+  "helper_repair": {
+    "at_utc": "2026-11-26T08:54:24.107296+00:00",
+    "old_helpers": {
+      "reward-service-process.json": {
+        "pid": 1721341,
+        "argv": [
+          "/home/ubuntu/.cache/miles/tcs-async-rl/service-env-v15/bin/python",
+          "-m",
+          "experiments.tcs_async_rl.reward_service",
+          "--input-file",
+          "/home/ubuntu/.cache/miles/tcs-async-rl/runs/checkpoint-final236-screen-v5/input.json",
+          "--directory",
+          "/home/ubuntu/.cache/miles/tcs-async-rl/runs/checkpoint-final236-screen-v5/judging",
+          "--port",
+          "18500",
+          "--config",
+          "/home/ubuntu/miles/experiments/tcs_async_rl/judge_reference_v5_20261125.json"
+        ],
+        "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+        "health": {
+          "ready": true,
+          "protocol_version": 3,
+          "question_key": "8cf953e027ac79f09e9e0487d0c86a8c371d94addc305518bfcfb65beb8b6220",
+          "model": "gpt-6-luna",
+          "reasoning_effort": "high"
+        }
+      },
+      "tunnel-controller-process.json": {
+        "pid": 1721539,
+        "argv": [
+          "/home/ubuntu/.cache/miles/tcs-async-rl/service-env-v15/bin/python",
+          "-m",
+          "experiments.tcs_async_rl.reward_tunnel",
+          "--job-id",
+          "558806",
+          "--config",
+          "/home/ubuntu/miles/experiments/tcs_async_rl/checkpoint_screen_final236_v1.json",
+          "--run-dir",
+          "/home/ubuntu/.cache/miles/tcs-async-rl/runs/checkpoint-final236-screen-v5",
+          "--input-file",
+          "/home/ubuntu/.cache/miles/tcs-async-rl/runs/checkpoint-final236-screen-v5/input.json"
+        ],
+        "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71"
+      }
+    },
+    "reason": "Original helper processes ended with the spawning exec process group. No GPU job was running.",
+    "repair": "Launch each existing helper CLI with start_new_session=True; exact unchanged inputs/config/ledger.",
+    "health_verified": {
+      "ready": true,
+      "protocol_version": 3,
+      "question_key": "8cf953e027ac79f09e9e0487d0c86a8c371d94addc305518bfcfb65beb8b6220",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high"
+    }
+  },
+  "fresh_health": {
+    "at_utc": "2026-11-26T08:54:34.070247+00:00",
+    "scheduler": {
+      "state": "PENDING",
+      "exit_code": "0:0",
+      "elapsed": "00:00:00",
+      "start_cluster_time": "Unknown",
+      "end_cluster_time": "Unknown"
+    },
+    "service": true,
+    "tunnel_helper": true,
+    "service_helper": true,
+    "generated_files": 0,
+    "complete": false,
+    "judge_spent_reserved": 11.005669,
+    "score_errors": 0,
+    "free_gib": 5.95
+  }
+}
