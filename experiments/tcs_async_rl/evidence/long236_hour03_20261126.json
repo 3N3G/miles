@@ -1,0 +1,196 @@
+{
+  "at_utc": "2026-11-26T06:12:32.481065+00:00",
+  "optimizer_step": 129,
+  "verified_answers": 128,
+  "native_means_match": true,
+  "uniform_selection": "Random(20261124).randrange(32)=11 in each group. Four final answers read in full with problem/rubric/original judge.",
+  "cases": [
+    {
+      "sample_index": 2571,
+      "judge_score": 1,
+      "assistant_score": 1,
+      "reason": "Correct list labels/sum and determinant/distinct-point checks earn the arithmetic/geometric item. Other items fail: dummy/padding is not uniform, omitted witness edges do not establish graph nonedges, weighted records and threshold are missing, and empty families are not handled."
+    },
+    {
+      "sample_index": 2603,
+      "judge_score": 2,
+      "assistant_score": 2,
+      "reason": "A fixed triangle plus isolated vertices really has a uniform fractional co-independent cover certificate of1. The alleged hard source is counting fixed-size triangles, which is polynomial-time computable, so the hardness and full composition fail."
+    },
+    {
+      "sample_index": 2635,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "The harmonic face-count lower bound is asserted without the required counting/probability mechanism. The later correct integral estimate is conditional on that missing assertion and does not establish the all-n theorem."
+    },
+    {
+      "sample_index": 2667,
+      "judge_score": 2,
+      "assistant_score": 2,
+      "reason": "The mean-sensitive variance bound and the independence/Markov reduction are valid. The cubic MGF bound, its optimization and constant recovery are unsupported or false. The same-mean lower-tail case and boundaries are not established."
+    }
+  ],
+  "all_zero_question": {
+    "question_key": "7b40b52d659ca942f3f952444ac681a570ce97a13cb19052046c1ea9cc3f5a07",
+    "zero_answers": 32,
+    "capped_answers": 22,
+    "completed_answers": 10,
+    "qualified_controls": [
+      {
+        "question_key": "7b40b52d659ca942f3f952444ac681a570ce97a13cb19052046c1ea9cc3f5a07",
+        "name": "reference",
+        "expected": 7,
+        "reward": 7.0,
+        "scores": [
+          7.0
+        ],
+        "identity": "online-8a4f2a0b778c32313aa59042",
+        "grading_method": "reference_guided",
+        "judge_presentations": 1,
+        "generator_truncated": false
+      },
+      {
+        "question_key": "7b40b52d659ca942f3f952444ac681a570ce97a13cb19052046c1ea9cc3f5a07",
+        "name": "empty",
+        "expected": 0,
+        "reward": 0.0,
+        "scores": [
+          0.0
+        ],
+        "identity": "online-e3b0c44298fc1c149afbf4c8",
+        "grading_method": "reference_guided",
+        "judge_presentations": 1,
+        "generator_truncated": true
+      },
+      {
+        "question_key": "7b40b52d659ca942f3f952444ac681a570ce97a13cb19052046c1ea9cc3f5a07",
+        "name": "irrelevant",
+        "expected": 0,
+        "reward": 0.0,
+        "scores": [
+          0.0
+        ],
+        "identity": "online-97b38b2ebda1ca4cf4ea2910",
+        "grading_method": "reference_guided",
+        "judge_presentations": 1,
+        "generator_truncated": false
+      }
+    ],
+    "additional_completed_sample": {
+      "sample_index": 2628,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "reason": "Confuses maximum with minimum genus and repeatedly reverses the Euler-characteristic algebra. The claimed quadratic face lower bound is false and unsupported. Read its full final answer."
+    }
+  },
+  "update129": {
+    "raw_reward": 0.7890625,
+    "capped_answers": 63,
+    "answers": 128,
+    "constant_reward_groups": 1,
+    "prompt_groups": 4,
+    "full_policy_entropy": 0.49806827306747437,
+    "gradient_norm": 0.06816604733467102
+  },
+  "durable_training_exposure": {
+    "at_utc": "2026-11-26T06:12:31.927385+00:00",
+    "new_saved_updates_since108": 21,
+    "answers": 2688,
+    "question_rows": 84,
+    "by_difficulty": {
+      "medium": 74,
+      "easy": 10
+    },
+    "excludes": "Historical<=108 and old unsaved125-127. Restored125 input is counted once in the durable lineage."
+  },
+  "wandb": {
+    "at_utc": "2026-11-26T06:09:22.067707+00:00",
+    "state": "running",
+    "last_verified_optimizer_step": 129,
+    "verified_optimizer_rows": 5,
+    "history_rows": 5,
+    "verified_scalars": 450,
+    "training_config_matches": true,
+    "operational_save_reserve_seconds": 2700,
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/261126-041313-318-native"
+  },
+  "limits": "Assistant diagnostic after seeing scores, not independent calibration. Same-question controls and two invalid completed proofs support these zero decisions, but do not prove every judgment correct. Keep all236 questions and the accepted scoring recipe unchanged.",
+  "groups": [
+    {
+      "optimizer_step": 129,
+      "group_index": 80,
+      "question_key": "fd32b919a83950d5b7358c6a4864a3725d7d8283c8b08c04e059c5240b49e040",
+      "paper_id": "Computations_with_polynomial_evaluation_oracle_ruling_out_superlinear_SETH-based_lower_bounds",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.34375,
+      "reward_std": 0.4825587044348143,
+      "conditional_answer_sampling_se": 0.08530513305661303,
+      "zero_rate": 0.65625,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.34375,
+      "mean_tokens": 74651.90625,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-129-group-80.json"
+    },
+    {
+      "optimizer_step": 129,
+      "group_index": 81,
+      "question_key": "26cac0f98939ea425d3e059307b914d96e0b9a0650403776ae3b35a1fee1aa3c",
+      "paper_id": "The_Complexity_of_Counting_Small_Sub-Hypergraphs",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.90625,
+      "reward_std": 1.352640786304403,
+      "conditional_answer_sampling_se": 0.23911536812633674,
+      "zero_rate": 0.65625,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.75,
+      "mean_tokens": 86129.25,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-129-group-81.json"
+    },
+    {
+      "optimizer_step": 129,
+      "group_index": 82,
+      "question_key": "7b40b52d659ca942f3f952444ac681a570ce97a13cb19052046c1ea9cc3f5a07",
+      "paper_id": "Random_Embeddings_of_Graphs_The_Expected_Number_of_Faces_in_Most_Graphs_is_Logarithmic",
+      "prompt_type": "proof_writing",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 0.0,
+      "reward_std": 0.0,
+      "conditional_answer_sampling_se": 0.0,
+      "zero_rate": 1.0,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.6875,
+      "mean_tokens": 86703.15625,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-129-group-82.json"
+    },
+    {
+      "optimizer_step": 129,
+      "group_index": 83,
+      "question_key": "f3fa36573dcec1c3c90bced46e2fd408b680faf7ac67a5a3c7e4e1816327b223",
+      "paper_id": "PageRank_Centrality_in_Directed_Graphs_with_Bounded_In-Degree",
+      "prompt_type": "proof_strategy",
+      "difficulty": "medium",
+      "samples": 32,
+      "mean_reward": 1.90625,
+      "reward_std": 1.3995246888993098,
+      "conditional_answer_sampling_se": 0.2474033494896738,
+      "zero_rate": 0.21875,
+      "full_credit_rate": 0.0,
+      "cap_rate": 0.1875,
+      "mean_tokens": 72281.96875,
+      "mean_order_gap": null,
+      "order_disagreement_rate": null,
+      "example": "example-step-129-group-83.json"
+    }
+  ]
+}
