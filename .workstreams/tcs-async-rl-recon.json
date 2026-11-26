@@ -955,6 +955,14 @@
     {
       "path": "experiments/tcs_async_rl/evidence/long236_fresh_judge_audit_20261126.json",
       "label": "Eight fresh answers labeled before viewing Luna scores"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/long236_judge_rank_audit_20261126.json",
+      "label": "Calibration has only six strict within-question comparisons"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/long236_group_size_audit_20261126.json",
+      "label": "Exact subgroup-count tradeoffs on saved answers"
     }
   ],
   "jobs": [
@@ -3943,15 +3951,22 @@
       "actor": "codex",
       "summary": "Final screen558806 is queued for priority. Detached scorer and tunnel survive launcher exit; all36 controls pass from cache.",
       "revision": 393
+    },
+    {
+      "id": "03f59aad-8b09-43de-8d34-8e783eeca629",
+      "at": "2026-11-26T09:21:45.668674Z",
+      "actor": "codex",
+      "summary": "Deep audit evidence recorded while the source-matched final screen waits for priority",
+      "revision": 394
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Final screen558806 is queued for priority. Detached scorer and tunnel survive launcher exit; all36 controls pass from cache.",
-  "nextAction": "Keep foreground minute checks through startup and384 answers. Compare source136 against the same checkpoint108 questions and judge, then finish the audit and verified results.",
+  "summary": "Training136 and all artifacts verified. Final screen558806 remains queued. Process audit records loss normalization, active caps,28-update exposure, and limited within-question judge calibration.",
+  "nextAction": "Keep foreground minute checks until the fixed384-answer screen starts and completes. Verify same weights and judge, then compare scores and audit actual final proofs.",
   "owner": "Codex",
-  "revision": 393,
-  "updatedAt": "2026-11-26T08:56:42.837223Z"
+  "revision": 394,
+  "updatedAt": "2026-11-26T09:21:45.668674Z"
 }

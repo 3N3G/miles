@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Final screen558806 is queued for priority. Detached scorer and tunnel survive launcher exit; all36 controls pass from cache. Jobs: hpcfund/558806 PENDING; hpcfund/552495 COMPLETED
-  Next: Keep foreground minute checks through startup and384 answers. Compare source136 against the same checkpoint108 questions and judge, then finish the audit and verified results.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Training136 and all artifacts verified. Final screen558806 remains queued. Process audit records loss normalization, active caps,28-update exposure, and limited within-question judge calibration. Jobs: hpcfund/558806 PENDING; hpcfund/552495 COMPLETED
+  Next: Keep foreground minute checks until the fixed384-answer screen starts and completes. Verify same weights and judge, then compare scores and audit actual final proofs.
 
 ## Next / blocked
 
