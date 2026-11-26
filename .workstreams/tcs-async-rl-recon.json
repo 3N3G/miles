@@ -947,6 +947,14 @@
     {
       "path": "experiments/tcs_async_rl/SCREEN_HIGH_OPERATIONS_20261124.md",
       "label": "Approved screen and exact runtime supervision"
+    },
+    {
+      "path": "experiments/tcs_async_rl/PROCESS_AUDIT_20261126.md",
+      "label": "Primary-guide and code audit, fixed evaluation still pending"
+    },
+    {
+      "path": "experiments/tcs_async_rl/evidence/long236_fresh_judge_audit_20261126.json",
+      "label": "Eight fresh answers labeled before viewing Luna scores"
     }
   ],
   "jobs": [
@@ -3888,15 +3896,22 @@
       "actor": "codex",
       "summary": "Ten resumed updates and904 W&B scalars verified; same12-question final screen prepared with source iteration pending",
       "revision": 387
+    },
+    {
+      "id": "86ba405d-9d8b-4dcc-bb84-13743144fe70",
+      "at": "2026-11-26T08:21:52.861512Z",
+      "actor": "codex",
+      "summary": "Primary RL guides and hidden-score proof audit recorded while supervising update135",
+      "revision": 388
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Ten resumed updates and904 W&B scalars verified; same12-question final screen prepared with source iteration pending",
-  "nextAction": "Supervise through the08:27 UTC save request and final checkpoint. Freeze the final screen source only after training completion, transfer the closed ledger and launch the approved screen.",
+  "summary": "Eleven resumed updates and998 W&B scalars verified. Primary-guide audit confirms sequence-mean loss and active capped answers; hidden-score audit matches6/8 totals and38/40 items.",
+  "nextAction": "Keep minute checks through the08:27 UTC save request. Finish source checkpoint and artifacts, then launch the approved same12-question screen. Deepen the process audit if that comparison shows no gain.",
   "owner": "Codex",
-  "revision": 387,
-  "updatedAt": "2026-11-26T08:03:29.685572Z"
+  "revision": 388,
+  "updatedAt": "2026-11-26T08:21:52.861512Z"
 }

@@ -1,0 +1,555 @@
+{
+  "at_utc": "2026-11-26T08:19:59.200671+00:00",
+  "scope": "Eight fresh completed nonempty answers, one per group from consumed134135. Scores/reasons hidden before assistant labels. No new generation, paid judge call, reward change, or valid-grade reroll.",
+  "label_freeze": {
+    "at_utc": "2026-11-26T08:15:24.401174+00:00",
+    "label_sha256": "6adfe6e1d932a99842c469aff06ff45185f171d54eb4e3b15ad25a460e58849f",
+    "cases": 8,
+    "judge_outputs_hidden": true,
+    "limitation": "Assistant assessments, not independent expert human labels. Completed nonempty answers only, one per question group, not an accuracy estimate for all rollouts."
+  },
+  "exact_total_matches": 6,
+  "answers": 8,
+  "matched_items": 38,
+  "items": 40,
+  "within_predeclared_assistant_ranges": 8,
+  "clear_false_full_credit": 0,
+  "limitations": [
+    "Assistant audit, not independent human mathematical labels.",
+    "One completed answer per question group, excluding prior uniform slot11. Does not estimate overall judge accuracy.",
+    "Four full-score verdicts include a defensible implicit finite-family extension.",
+    "No conclusions about uninspected answers or empty caps."
+  ],
+  "cases": [
+    {
+      "file": "case-01.json",
+      "sample_index": 3216,
+      "question_key": "b32bc64cf38c7ed20871cf2863e0a48ae5fe8c2fce1c763a9ce2eacf30f143d9",
+      "sha256": "1438e9261419a314cb68269adfcca26aceb834196ab6865bac20cf2c10c1046b",
+      "final_chars": 19263,
+      "assistant": {
+        "satisfied": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "score": 0,
+        "plausible_score_range": [
+          0,
+          0
+        ],
+        "reason": "No independent retention, no implementable contracted-layer test. Assumes access to unknown y. False equivalence of span test and independence of U plus e. Repeatedly assumes accepted set lies in U and imposes a chain-compatible order. No retained-product proof or pointwise almighty-order event."
+      },
+      "judge": {
+        "order_scores": [
+          0.0
+        ],
+        "reference_scores": [],
+        "candidate_decisions": [
+          [
+            {
+              "item": 1,
+              "satisfied": false,
+              "reason": "The proposed tests use a separately generated R(λx), which the algorithm cannot sample without access to x; no independent retention of active arrivals or valid online rank test after contracting the next link is constructed."
+            },
+            {
+              "item": 2,
+              "satisfied": false,
+              "reason": "There is no local rank invariant or backward-induction/submodularity proof that the accepted set is independent. The candidate’s own discussion recognizes that the proposed acceptance test need not preserve feasibility."
+            },
+            {
+              "item": 3,
+              "satisfied": false,
+              "reason": "A hypothetical fresh product sample R(λx) is described as independent of the chain and of R(x), but the candidate does not obtain it by thinning active elements, nor establish the required conditional independence when an element is both active and retained."
+            },
+            {
+              "item": 4,
+              "satisfied": false,
+              "reason": "No order-independent sufficient acceptance event is proved. The argument relies on processing elements in chain order, which the adversary controls, then assumes the desired acceptance probability despite the unresolved feasibility issue; it also does not handle λ=0."
+            }
+          ]
+        ],
+        "sample_index": 3216,
+        "assistant_score": 0,
+        "exact_total": true,
+        "within_assistant_range": true
+      },
+      "post_unblinding": null
+    },
+    {
+      "file": "case-02.json",
+      "sample_index": 3258,
+      "question_key": "1fc423b0b7e9a82fb6e5b12973a08ff7ab5a80c9b23313c8aba431978306bd0c",
+      "sha256": "2bec5c17f3a5edad7c486b95796ea40ea8d03c557bb3fe09418aa86f6d9acacb",
+      "final_chars": 6586,
+      "assistant": {
+        "satisfied": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "score": 7,
+        "plausible_score_range": [
+          7,
+          7
+        ],
+        "reason": "Explicit reflected reference witness satisfies all bounds. Marginal means0 and xB/2, joint xA+xB zero risk, two opposite labels collide at(0,0) and force risk>=1/2. Conditional probability1/4 instead of1/2 in zero cancellation is harmless."
+      },
+      "judge": {
+        "order_scores": [
+          7.0
+        ],
+        "reference_scores": [],
+        "candidate_decisions": [
+          [
+            {
+              "item": 1,
+              "satisfied": true,
+              "reason": "The construction identifies the information bottleneck: the individually optimal summaries collide even though the raw feature pair distinguishes labels, so the obstruction applies beyond linear aggregation."
+            },
+            {
+              "item": 2,
+              "satisfied": true,
+              "reason": "It gives four explicit equally likely support points, with all features in [-2,2] and labels in [-1,1], and a concrete mechanism for separation."
+            },
+            {
+              "item": 3,
+              "satisfied": true,
+              "reason": "It computes the individual conditional means on every feature value: h_A^*=0 and h_B^*=x_B/2. Both are in their prescribed classes."
+            },
+            {
+              "item": 4,
+              "satisfied": true,
+              "reason": "The joint conditional mean is y=x_A+x_B, an admissible predictor with risk zero, so the joint benchmark is evaluated."
+            },
+            {
+              "item": 5,
+              "satisfied": true,
+              "reason": "Both summary values equal (0,0) on the two x_B=0 points, which have opposite labels and total probability 1/2. Their contribution to any aggregator's risk is u^2/2+1/2, hence at least 1/2."
+            },
+            {
+              "item": 6,
+              "satisfied": true,
+              "reason": "The outline proceeds from the explicit distribution through the conditional-mean and joint-risk checks to an aggregation-independent lower bound, which strictly exceeds the zero joint risk."
+            }
+          ]
+        ],
+        "sample_index": 3258,
+        "assistant_score": 7,
+        "exact_total": true,
+        "within_assistant_range": true
+      },
+      "post_unblinding": null
+    },
+    {
+      "file": "case-03.json",
+      "sample_index": 3267,
+      "question_key": "80ee0dfb30acf424aecd0d4363c4c7e21c607a094b1b41a6696d9d66d08a3d9f",
+      "sha256": "d4a261daf42eaa42b51fdc4b935531bf85427acaba516abcadff203d73393f4d",
+      "final_chars": 5941,
+      "assistant": {
+        "satisfied": [
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "score": 2,
+        "plausible_score_range": [
+          2,
+          2
+        ],
+        "reason": "The two-point family with L>=1 has actual OPT2 by exhaustive facility sets. This separate component is correct. Construction has no desired gap, online distance becomes0 after opening y, Cx~kL is false for fixed positive p, final quadratic has no root for large q and claimed limit is unsupported."
+      },
+      "judge": {
+        "order_scores": [
+          2.0
+        ],
+        "reference_scores": [],
+        "candidate_decisions": [
+          [
+            {
+              "item": 1,
+              "satisfied": false,
+              "reason": "The two-point family does not establish the required asymptotic online/offline gap: it gives no vanishing scale with diverging aggregate assignment cost, or equivalent valid analysis, and does not justify the claimed choice of distances."
+            },
+            {
+              "item": 2,
+              "satisfied": false,
+              "reason": "No history-independent nearest-facility distance is proved. In fact, repeated demands at y can have distance zero after a facility opens there, while x can face distance L."
+            },
+            {
+              "item": 3,
+              "satisfied": false,
+              "reason": "The conditional cost p+(1-p)L for x after a y-first arrival is correct, but the x-first case is only estimated informally, so there is no rigorous expected-cost expression for the algorithm."
+            },
+            {
+              "item": 4,
+              "satisfied": true,
+              "reason": "For L≥1, the listed nonempty facility sets give OPT=min(1+kL,1+L,2)=2, so the offline optimum is determined exactly."
+            },
+            {
+              "item": 5,
+              "satisfied": false,
+              "reason": "The proposed distance choices are not shown to yield the target limit; the expected-cost approximations and quadratic argument do not establish a valid sequence for all q."
+            }
+          ]
+        ],
+        "sample_index": 3267,
+        "assistant_score": 2,
+        "exact_total": true,
+        "within_assistant_range": true
+      },
+      "post_unblinding": null
+    },
+    {
+      "file": "case-04.json",
+      "sample_index": 3317,
+      "question_key": "7d9a8a0bd2163fa915ea52808d833115c1ca44526bd32f60e657c8a43a838e99",
+      "sha256": "11257c905227b1e263ca24ce58eeae38d2f5032db6fdca01b27ab3296e309e86",
+      "final_chars": 6651,
+      "assistant": {
+        "satisfied": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "score": 6,
+        "plausible_score_range": [
+          4,
+          6
+        ],
+        "reason": "Correct positive weighted-subset representation, prefix DP, reverse conditional sampler and recursive law proof. Recurrence and positivity imply forced decisions, although invariant/boundaries are terse, so item3 is uncertain. Item5 fails: computes N exponentials and scans N even when k0, never immediate empty return, so claimed uniform O(1+kn^2) is false at k0."
+      },
+      "judge": {
+        "order_scores": [
+          4.0
+        ],
+        "reference_scores": [],
+        "candidate_decisions": [
+          [
+            {
+              "item": 1,
+              "satisfied": true,
+              "reason": "The candidate expresses each subset’s weight as the product of its U_i values and identifies the fixed-size partition sum, giving the target weighted-subset law."
+            },
+            {
+              "item": 2,
+              "satisfied": true,
+              "reason": "It defines prefix partition sums, gives the include/exclude recurrence and boundary values, and computes only O(Nk) relevant entries."
+            },
+            {
+              "item": 3,
+              "satisfied": false,
+              "reason": "The transition formula is correct, but the proof does not establish that every state remains feasible or check the forced inclusion when the remaining demand equals the number of remaining indices; thus it does not establish the required denominator and exact-cardinality guarantees."
+            },
+            {
+              "item": 4,
+              "satisfied": true,
+              "reason": "It derives the inclusion probability from the partition-sum decomposition and explains recursively that the remaining subset is sampled with the required conditional weighted law."
+            },
+            {
+              "item": 5,
+              "satisfied": false,
+              "reason": "For k≥1 the stated costs give O(Nk), but the algorithm still computes all N exponentials when k=0, rather than returning the empty set in O(1) time as required."
+            }
+          ]
+        ],
+        "sample_index": 3317,
+        "assistant_score": 6,
+        "exact_total": false,
+        "within_assistant_range": true
+      },
+      "post_unblinding": "The correct recurrence makes the remaining-count forced step elementary, but the rubric expressly requests the feasibility proof. Luna4 lies within the prior4..6 uncertainty range. Both audits withhold k0 runtime credit."
+    },
+    {
+      "file": "case-05.json",
+      "sample_index": 3332,
+      "question_key": "66446dd1650e3e2c8b9fb4c76bafd061f01a6a1ed3fb4540e9072efee3b54f8f",
+      "sha256": "6afef694415c277239ed5d0841620e4f54ad4608f55040f08fe63732b0f2e0ef",
+      "final_chars": 12861,
+      "assistant": {
+        "satisfied": [
+          false,
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "score": 1,
+        "plausible_score_range": [
+          1,
+          1
+        ],
+        "reason": "Forward gap gives V<r=V<=r-eps and relative openness for every threshold. Converse repeatedly asserts false consequences of Noetherianity, has wrong exhaustion as V<=r, no component choice and no Baire/uncountability argument. Does not supply the missing substantive principle."
+      },
+      "judge": {
+        "order_scores": [
+          1.0
+        ],
+        "reference_scores": [],
+        "candidate_decisions": [
+          [
+            {
+              "item": 1,
+              "satisfied": false,
+              "reason": "It notices possible lower accumulation, but does not identify the ascending-chain issue: it instead invokes Noetherianity as if it ruled out the accumulation."
+            },
+            {
+              "item": 2,
+              "satisfied": true,
+              "reason": "A gap below r gives V_<r = V_≤r−ε, which is closed by hypothesis. Since V_=r is its complement in the closed set V_≤r, this establishes relative openness, including when r is outside the image."
+            },
+            {
+              "item": 3,
+              "satisfied": false,
+              "reason": "It does not give a valid converse obstruction. The proposed exhaustion is misstated as covering V_≤r, and the claims that V_<r is dense in V_≤r or that some infinite union is not closed are unsupported; properness and nonattainment are not established."
+            },
+            {
+              "item": 4,
+              "satisfied": false,
+              "reason": "It does not reduce the exhaustion to an irreducible component or otherwise handle reducibility."
+            },
+            {
+              "item": 5,
+              "satisfied": false,
+              "reason": "It supplies no justified dense-open or Euclidean Baire-category argument."
+            },
+            {
+              "item": 6,
+              "satisfied": false,
+              "reason": "Although the forward implication is valid, the converse ends in unsupported assertions rather than a contradiction ruling out precisely lower accumulation."
+            }
+          ]
+        ],
+        "sample_index": 3332,
+        "assistant_score": 1,
+        "exact_total": true,
+        "within_assistant_range": true
+      },
+      "post_unblinding": null
+    },
+    {
+      "file": "case-06.json",
+      "sample_index": 3390,
+      "question_key": "29fade1645d572251797ec2c33babefd18fb2da9640b370d791a3e676e43f931",
+      "sha256": "08f16608bdb3200f2720f767002b34a2694dd7d597a9e6060226a76301725a2f",
+      "final_chars": 4371,
+      "assistant": {
+        "satisfied": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "score": 7,
+        "plausible_score_range": [
+          7,
+          7
+        ],
+        "reason": "k1,r2 automatically admissible for large n. Singleton signs give value1 deterministically, m=n exceeds constant times sqrt(n)log n for fixed epsilon, so sound certification probability0. Omitted sqrt2 in approximate density expression is a harmless constant for eventual large n."
+      },
+      "judge": {
+        "order_scores": [
+          7.0
+        ],
+        "reference_scores": [],
+        "candidate_decisions": [
+          [
+            {
+              "item": 1,
+              "satisfied": true,
+              "reason": "It chooses k=1 and r=2; for sufficiently large n, 2≤r≤n/8, so the parameters are admissible."
+            },
+            {
+              "item": 2,
+              "satisfied": true,
+              "reason": "For the singleton hypergraph, choosing each x_i to equal its edge sign gives ψ(x)=1 for every sign realization."
+            },
+            {
+              "item": 3,
+              "satisfied": true,
+              "reason": "With k=1 and r=2, the threshold is a fixed constant times √n log n (for fixed ε), which is eventually less than m=n for any fixed C. The omitted factor √2 does not change this asymptotic conclusion."
+            },
+            {
+              "item": 4,
+              "satisfied": true,
+              "reason": "Since ε<1/2, the certified bound is false on every realization. Soundness therefore makes the probability of certifying it zero, contradicting the asserted high-probability guarantee."
+            }
+          ]
+        ],
+        "sample_index": 3390,
+        "assistant_score": 7,
+        "exact_total": true,
+        "within_assistant_range": true
+      },
+      "post_unblinding": null
+    },
+    {
+      "file": "case-07.json",
+      "sample_index": 3411,
+      "question_key": "f10081387db66d691751b9e723d4cd9ee81b4bfa7f5a5815f6b782324e2055df",
+      "sha256": "d1aa7e32e1adf4e043dbed5338dac85625382fa9d2f6f9493485c55fa91e0a3c",
+      "final_chars": 3630,
+      "assistant": {
+        "satisfied": [
+          true,
+          true,
+          true,
+          true,
+          false
+        ],
+        "score": 6,
+        "plausible_score_range": [
+          6,
+          7
+        ],
+        "reason": "Correct agreement sets and X incidence identity, Cauchy-Schwarz, pair count and case split X<n or kC<1 to preserve numerator C. Treats k=|S| as a finite number without the expressly requested finite-subfamily argument for possibly infinite field/family. Could regard the extension as implicit, but preferred withhold last scope item."
+      },
+      "judge": {
+        "order_scores": [
+          7.0
+        ],
+        "reference_scores": [],
+        "candidate_decisions": [
+          [
+            {
+              "item": 1,
+              "satisfied": true,
+              "reason": "Defines agreement sets and establishes |A_f|≥Cn and |A_f∩A_g|≤δn for distinct qualifying functions."
+            },
+            {
+              "item": 2,
+              "satisfied": true,
+              "reason": "Uses the unnormalized incidence total X, with X≥kCn, and correctly identifies the diagonal contribution as X. The cases handle small X without losing the factor C."
+            },
+            {
+              "item": 3,
+              "satisfied": true,
+              "reason": "Applies Cauchy–Schwarz to obtain ∑u_x²≥X²/n and includes the diagonal term exactly before deriving the needed inequality."
+            },
+            {
+              "item": 4,
+              "satisfied": true,
+              "reason": "Bounds each ordered off-diagonal intersection by δn and counts k(k−1) ordered pairs correctly."
+            },
+            {
+              "item": 5,
+              "satisfied": true,
+              "reason": "The cases combine to give the claimed bound and use C²−δ>0 for division. The empty case is handled; moreover, C>√δ≥δ and the displayed size/intersection bounds force distinct qualifying functions to have distinct agreement sets, so S is finite as L has only finitely many subsets."
+            }
+          ]
+        ],
+        "sample_index": 3411,
+        "assistant_score": 6,
+        "exact_total": false,
+        "within_assistant_range": true
+      },
+      "post_unblinding": "Luna supplies a valid elementary finiteness argument from facts actually displayed: equal agreement sets would give pairwise agreement>=C>delta, impossible. There are at most2^|L| agreement sets. Under v5 accepting direct elementary implications,7 is defensible. The original preferred6 and ambiguity remain frozen."
+    },
+    {
+      "file": "case-08.json",
+      "sample_index": 3434,
+      "question_key": "26df9b887711d7aca3afcfc6c9d94040ede21cca2676265987f90dc0da068ca1",
+      "sha256": "5766689758b5148218eb02c5daeb97b508d920dadc75ee61e59bab646541086d",
+      "final_chars": 6212,
+      "assistant": {
+        "satisfied": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "score": 7,
+        "plausible_score_range": [
+          7,
+          7
+        ],
+        "reason": "Full valid complementary-hyperplane product and degreeD, nonzero diagonal, zero off-diagonal, normalized cardinal polynomials form basis via standard stated dim V_D formula. General argument covers D0 using empty product. No substantive gap."
+      },
+      "judge": {
+        "order_scores": [
+          7.0
+        ],
+        "reference_scores": [],
+        "candidate_decisions": [
+          [
+            {
+              "item": 1,
+              "satisfied": true,
+              "reason": "Distinct m-subsets have a union of at least m+1 indices, whose hyperplanes cannot share the point; thus the intersection points are distinct and |T|=binom(m+D,m)."
+            },
+            {
+              "item": 2,
+              "satisfied": true,
+              "reason": "For each m-subset S, the product of defining affine-linear forms indexed outside S has D factors, so it lies in V_D."
+            },
+            {
+              "item": 3,
+              "satisfied": true,
+              "reason": "The product is nonzero at x_S because no hyperplane outside S contains it, and vanishes at x_{S'} for S'≠S using an index in S'\\S. It is normalized by its nonzero value, valid over any field."
+            },
+            {
+              "item": 4,
+              "satisfied": true,
+              "reason": "The normalized polynomials have delta-function evaluations on T, so their linear combinations realize every function on T."
+            },
+            {
+              "item": 5,
+              "satisfied": true,
+              "reason": "The candidate uses dim V_D=binom(m+D,m), the standard count of monomials of total degree at most D. The delta-evaluation polynomials are then a basis, and their restrictions give uniqueness."
+            }
+          ]
+        ],
+        "sample_index": 3434,
+        "assistant_score": 7,
+        "exact_total": true,
+        "within_assistant_range": true
+      },
+      "post_unblinding": null
+    }
+  ],
+  "recent_trace_summary": {
+    "134": {
+      "answers": 128,
+      "raw_mean": 1.6953125,
+      "caps": 78,
+      "empty_caps": 57,
+      "capped_positive": 16,
+      "all_capped_tokens_active": true,
+      "constant_groups": 0,
+      "full_credit": 8,
+      "zero_reward": 68,
+      "mean_tokens": 79025.4375,
+      "zero_reward_mean_tokens": 88840.7794117647,
+      "positive_reward_mean_tokens": 67901.38333333333,
+      "single_token_sampling_support_fraction": 0.5501602727602742
+    },
+    "135": {
+      "answers": 128,
+      "raw_mean": 3.2421875,
+      "caps": 37,
+      "empty_caps": 25,
+      "capped_positive": 11,
+      "all_capped_tokens_active": true,
+      "constant_groups": 0,
+      "full_credit": 22,
+      "zero_reward": 31,
+      "mean_tokens": 63167.1875,
+      "zero_reward_mean_tokens": 86384.58064516129,
+      "positive_reward_mean_tokens": 55747.19587628866,
+      "single_token_sampling_support_fraction": 0.5757497464565761
+    }
+  },
+  "native134135_means_exact": true,
+  "raw_evidence_relative_to_run": "hourly-reviews/fresh-hidden-grade-audit134135"
+}
