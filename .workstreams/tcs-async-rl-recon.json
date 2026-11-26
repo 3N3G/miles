@@ -949,7 +949,7 @@
     {
       "id": "552495",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "549728",
@@ -3793,15 +3793,22 @@
       "actor": "codex",
       "summary": "Queued552495 remains healthy; provisional start now01:46 Eastern with zero new GPU time",
       "revision": 374
+    },
+    {
+      "id": "bee058a3-c6bf-43d5-b5ae-49f7be6dc1a6",
+      "at": "2026-11-26T04:13:05.616735Z",
+      "actor": "codex",
+      "summary": "RL job 552495 is RUNNING",
+      "revision": 375
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Queued552495 remains healthy; provisional start now01:46 Eastern with zero new GPU time",
-  "nextAction": "Watch through startup and verify checkpoint124 weights, restored queues, all updates, shared budget and W&B/HF closure. Finish the approved fixed12-question screen afterward.",
+  "summary": "RL job 552495 is RUNNING",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 374,
-  "updatedAt": "2026-11-26T01:47:26.010901Z"
+  "revision": 375,
+  "updatedAt": "2026-11-26T04:13:05.616735Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Queued552495 remains healthy; provisional start now01:46 Eastern with zero new GPU time Jobs: hpcfund/552495 PENDING; hpcfund/549728 FAILED
-  Next: Watch through startup and verify checkpoint124 weights, restored queues, all updates, shared budget and W&B/HF closure. Finish the approved fixed12-question screen afterward.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 552495 is RUNNING Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
