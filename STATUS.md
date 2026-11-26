@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 552495 is COMPLETED Jobs: hpcfund/552495 COMPLETED; hpcfund/549728 FAILED
-  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 552495 ended COMPLETED; acceptance True Jobs: hpcfund/552495 COMPLETED; hpcfund/549728 FAILED
+  Next: Review exact updates, reward traces, weight versions and checkpoint evidence. Diagnose failed acceptance checks before a repair.
 
 ## Next / blocked
 
