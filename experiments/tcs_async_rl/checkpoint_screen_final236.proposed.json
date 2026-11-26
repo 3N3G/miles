@@ -1,0 +1,121 @@
+{
+  "status": "approved_final_screen_pending_training_checkpoint_20261126",
+  "mode": "rl_smoke",
+  "job_name": "tcs-final236-v5",
+  "host_python": "/usr/bin/python3.12",
+  "training_config": "config.luna_high_20261124.json",
+  "container_config": "qualification.proposed.json",
+  "allocation": {
+    "partition": "mi3508x",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "nodes": 1,
+    "gpus": 8,
+    "cpus_per_task": 64,
+    "walltime": "02:00:00"
+  },
+  "overrides": {
+    "rollout_batch_size": 4,
+    "global_batch_size": 128,
+    "async_max_concurrent_samples": 96,
+    "rollout_skip_special_tokens": false,
+    "save_interval": 5,
+    "seed": 20261124,
+    "max_position_embeddings": 98304,
+    "custom_rm_path": "experiments.tcs_async_rl.reward_hook.reward",
+    "rm_url": "http://127.0.0.1:18500/score",
+    "use_wandb": false,
+    "wandb_mode": "offline",
+    "wandb_project": "tcs-async-rl",
+    "disable_wandb_random_suffix": true,
+    "wandb_always_use_train_step": true,
+    "use_tensorboard": false,
+    "check_weight_update_equal": true,
+    "wandb_team": "geney",
+    "custom_rollout_log_function_path": "experiments.tcs_async_rl.rl_artifacts.log_rollout",
+    "check_weight_update_skip_list": [
+      "visual."
+    ],
+    "observe_training_entropy": true,
+    "use_kl_loss": true,
+    "kl_loss_coef": 0.0,
+    "kl_loss_type": "low_var_kl",
+    "observe_update_direction_steps": [
+      65,
+      66,
+      70,
+      80,
+      90,
+      100
+    ],
+    "use_checkpoint_opt_param_scheduler": true,
+    "save_trigger_sentinel": "/work1/aviralkumar/geney/tcs-async-rl/runs/checkpoint-final236-screen-v5/checkpoint-request",
+    "single_checkpoint": false,
+    "rollout_seed": 20261124,
+    "reset_rollout_state": true,
+    "eval_interval": 1,
+    "eval_prompt_data": [
+      "difficulty_screen",
+      "/work1/aviralkumar/geney/tcs-async-rl/runs/checkpoint-final236-screen-v5/input.jsonl"
+    ],
+    "n_samples_per_eval_prompt": 32,
+    "eval_temperature": 1.0,
+    "eval_top_p": 0.95,
+    "eval_top_k": 20,
+    "eval_max_response_len": 90000,
+    "sglang_server_concurrency": 32,
+    "log_inference_engine_weight_checksums": true
+  },
+  "scope": {
+    "purpose": "Approved fixed same12-question after-training screen under the selected unchanged v5 Luna/high judge, compared with the regraded checkpoint108 baseline. No optimizer updates and no question selection.",
+    "prompt_count": 12,
+    "optimizer_updates": 0,
+    "heldout_reads": 0,
+    "maximum_gpu_hours": 16,
+    "judge_usd_cap": 25,
+    "retained_checkpoints": 0,
+    "budget_note": "Same append-only total25USD ledger, transferred only after the training scorer and owner close. Training allocation-hours are capped separately at12; this final screen adds at most2 eight-GPU allocation-hours."
+  },
+  "dataset_file": "/work1/aviralkumar/geney/tcs-async-rl/inputs/screen-12-bundle-high-v1.json",
+  "dataset_sha256": "4ecded3e9db2947b19eb13ca8f1589a239b206f6607c684eae88f04da8fbbea0",
+  "artifact_compression": "gzip",
+  "incremental_archive": true,
+  "judge_config": "judge_reference_v5_20261125.json",
+  "resume": {
+    "checkpoint_root": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-medium-236-v2/checkpoints",
+    "iteration": null,
+    "source_run": "easy-medium-236-v2"
+  },
+  "wandb_metrics_source": "native_vm",
+  "archive_interval_seconds": 600,
+  "execution": "checkpoint_screen",
+  "dataset_contract": {
+    "questions": 12,
+    "difficulties": [
+      "easy",
+      "medium"
+    ]
+  },
+  "source_publication_file": "/work1/aviralkumar/geney/tcs-async-rl/runs/easy-medium-236-v2/events/main.jsonl",
+  "judge_qualification": {
+    "selection": {
+      "file": "evidence/long236_judge_selection_20261125.json",
+      "sha256": "0d72c85b0d81799d22641f2c365c1c845272224b2c18979c6cff7ed859abb4c8"
+    },
+    "comparison": {
+      "file": "evidence/long236_judge_comparison_20261125.json",
+      "sha256": "588332738a41584c7ca66b0f3790236dccd45e6ae3660dfa7e8a04bacb4e981b"
+    },
+    "controls": {
+      "file": "evidence/long236_judge_controls_20261125.json",
+      "sha256": "4ce3adb7856fab1ef33bdbbd362617bcbf51fe9a23a9fd32a10ffc70622fe35f"
+    },
+    "user_acceptance": {
+      "file": "evidence/final12_v5_judge_acceptance_20261126.json",
+      "sha256": "5949cff59f478f3ed551f6fce20cf9b5295231b5a789ffdde657f697293da69c"
+    },
+    "runtime_config_sha256": "2b6e8a85b0b083cf2f872fe23775ddd8fdbffb16716ac7503ae96d8dbb9154a4",
+    "training_config_sha256": "2344da3a1dc6b08dd73e9ac8be86ad092ab6a1417ba62ed073d47c2f3a177427",
+    "prompt_sha256": "8a3f737f10d43655d2cf6b64b7990d3841b75b0d5f8b6ad88971a3c351610926"
+  }
+}
