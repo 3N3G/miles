@@ -3821,15 +3821,22 @@
       "actor": "codex",
       "summary": "First resumed hourly review:128 fresh answers audited, two finite updates saved,177 W&B scalars exact",
       "revision": 378
+    },
+    {
+      "id": "a84c9f9e-dfe3-4866-99e2-10553144b2a9",
+      "at": "2026-11-26T05:26:07.019525Z",
+      "actor": "codex",
+      "summary": "Three fresh format retries on the original crash problem verified; checkpoint127 and271 W&B scalars valid",
+      "revision": 379
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Two finite resumed updates saved through126. All128 fresh126 trace/judge/mask audits pass; four uniform raw proofs reviewed. W&B2rows/177scalars match. Raw reward2.484 to3.680 uses different questions and does not show learning.",
-  "nextAction": "Continue minute health checks and hourly raw-proof reviews within the remaining5-hour allocation. Finish the fixed12-question after screen and matched comparison.",
+  "summary": "Three fresh format retries on the original crash problem verified; checkpoint127 and271 W&B scalars valid",
+  "nextAction": "Keep supervised RL within the remaining approved allocation. Review new proof groups hourly and complete the fixed12-question after screen.",
   "owner": "Codex",
-  "revision": 378,
-  "updatedAt": "2026-11-26T05:07:30.229330Z"
+  "revision": 379,
+  "updatedAt": "2026-11-26T05:26:07.019525Z"
 }
