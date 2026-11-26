@@ -1,0 +1,21 @@
+{
+  "at_utc": "2026-11-26T04:44:03.901727+00:00",
+  "restored_samples": 128,
+  "changed_top_level_fields": {},
+  "all_portable_samples_exact": true,
+  "sources": {
+    "easy-medium-236-v1": {
+      "sha256": "40a91fe337383ab4ec4d3807681e70038656ea87583e5135968bd864516c8378",
+      "bytes": 117666687,
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/6e620fd4a8118248b09b53b35610c43e4badb16a"
+    },
+    "easy-medium-236-v2": {
+      "sha256": "f6e3e84d69d13ea89396354a04eb7ac6f716538c1f91108e794436ae98e66dd2",
+      "bytes": 117666687,
+      "hf_commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/d21edf8bc09e10c22f134869c18288cc080eb752"
+    }
+  },
+  "complete_judge_loss_mask_sampling_support_and_weight_version_audit_passed": true,
+  "new_judge_or_generation_calls": 0,
+  "scientific_limit": "This validates the restored queue, not learning. Old unsaved125 is excluded from durable training counts."
+}

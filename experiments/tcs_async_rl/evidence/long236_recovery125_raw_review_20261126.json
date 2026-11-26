@@ -1,0 +1,38 @@
+{
+  "at_utc": "2026-11-26T04:47:40.611821+00:00",
+  "optimizer_step": 125,
+  "selection": "One uniform sample per prompt group, Random(20261124).randrange(32)=11. These are restored answers, not new solver generations.",
+  "cases": [
+    {
+      "sample_index": 2059,
+      "judge_score": 7,
+      "assistant_score": 7,
+      "reason": "Both universal inequalities, an augmented input X=(U,V) realizing an arbitrary coupling, an epsilon approximation, and the identity lift are supplied. One stray equality to a specific kappa is harmless in the surrounding infimum argument."
+    },
+    {
+      "sample_index": 2091,
+      "judge_score": 0,
+      "assistant_preferred_score": 1,
+      "uncertain_score_range": [
+        0,
+        1
+      ],
+      "disputed_item": 2,
+      "reason": "The essential lower/upper sharpness constructions are absent or wrong, and endpoint equality is falsely asserted. The universal post-processing construction itself is correct for every admissible kappa. I would credit that strategy-level comparison item after interpreting the minimizer as an approximate minimizer. The judge requires the missing attainment/infimum argument. This is a one-item ownership disagreement, not a correct overall proof."
+    },
+    {
+      "sample_index": 2123,
+      "judge_score": 0,
+      "assistant_score": 0,
+      "generator_status": "truncated",
+      "reason": "The90000-token cap occurs without a closing thinking delimiter or extracted final answer. The unchanged final-only reward sees an empty solution."
+    },
+    {
+      "sample_index": 2155,
+      "judge_score": 3,
+      "assistant_score": 3,
+      "reason": "The interpolation cancels lambda and proves the conversion prerequisites. The repeated product1.3371*1.99732 is2.670616572, above2.67059. Tool3 uses an input-dependent tau despite only fixed-parameter polynomial guarantees; no valid endpoint alternative is supplied."
+    }
+  ],
+  "limits": "Assistant diagnostic after seeing the grades. Not independent human calibration or an agreement estimate. No valid grade rerolled or changed. The accepted v5 grader remains frozen."
+}
