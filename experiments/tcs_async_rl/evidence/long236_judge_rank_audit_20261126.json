@@ -29,9 +29,10 @@
   ],
   "limitations": [
     "Reused assistant-labeled calibration packet, not expert human accuracy.",
-    "All pairs share answers. Counts are dependent, with no new independent sample size.",
+    "Pairs reuse the22-question development packet, rather than adding a new independent validation sample. No seed or population uncertainty estimate.",
     "Scores span questions with different items. Only within-question pairs are compared.",
     "Preserves original frozen labels, including ambiguity.",
     "This is a post-hoc diagnostic of relative reward ranking, not a new qualification gate."
-  ]
+  ],
+  "pairs_share_answers": false
 }

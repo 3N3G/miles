@@ -90,7 +90,7 @@ See the [exact finite-population calculation](evidence/long236_group_size_audit_
 The frozen40-answer qualification file covers22 question identities.
 It supplies only18 within-question pairs:11 ties in both assessments, six correctly ordered strict pairs, and one assistant tie separated by Luna.
 No strict ordering reversal appears, but six informative pairs are too few to validate group reward ranking broadly.
-These are reused assistant labels and dependent pair counts, not new expert judgments or a new qualification test.
+The18 pairs do not share answers. They reuse development labels and supply no new expert judgments or qualification test.
 See the [ranking diagnostic](evidence/long236_judge_rank_audit_20261126.json).
 
 ## Code paths checked
