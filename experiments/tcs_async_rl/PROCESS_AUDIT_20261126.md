@@ -41,6 +41,11 @@ and [QEDBench](https://arxiv.org/html/2602.20629v2).
 
 ## Direct evidence and limits
 
+- Through checkpoint135, the durable continuation contains27 new updates and3,456 answers.
+  It consumed108/236 question rows:11/20 easy and97/216 medium.
+  Those answers contain240,639,530 generated tokens. Of3,456 answers,1,245 reach the cap (36.0%).
+  Eleven of108 question groups have constant rewards and provide no policy-gradient signal.
+  Prepared corpus size therefore overstates actual training exposure if these counts are omitted.
 - The published update134 has raw return1.695/7, 78/128 caps and57 empty finals.
   Update135 has return3.242/7, 37 caps and25 empty finals.
   These batches use different questions. Their reward difference is not a learning estimate.
@@ -62,6 +67,7 @@ and [QEDBench](https://arxiv.org/html/2602.20629v2).
 
 The recent trace audit verifies all256 answers, original judge requests, score parsing, masks, behavior probabilities,
 sampling support and weight-version counts. Both native reward/length means agree exactly.
+All256 formatted prompts equal the pinned problem-only Qwen thinking template. They contain neither reference nor rubric.
 The raw eight-answer review is separate from the uniform examples used in hourly monitoring.
 
 ## Code paths checked
