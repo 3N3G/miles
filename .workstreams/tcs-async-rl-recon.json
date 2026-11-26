@@ -961,7 +961,7 @@
     {
       "id": "552495",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "549728",
@@ -3910,15 +3910,22 @@
       "actor": "codex",
       "summary": "Planned final save requested; update136 is in progress. Source135 preserves27 new updates on108 questions; final matched evaluation remains pending.",
       "revision": 389
+    },
+    {
+      "id": "a130134c-ca39-4521-a3a8-fb2948783d58",
+      "at": "2026-11-26T08:41:32.953923Z",
+      "actor": "codex",
+      "summary": "RL job 552495 is COMPLETED",
+      "revision": 390
     }
   ],
   "projectId": "understanding",
   "title": "Prepare TCS async RL on Ian's Miles fork",
   "endpoint": "Supervise the approved all236 easy/medium continuation through terminal state, raw-proof review, checkpoint inspection and verified W&B/HF results.",
   "state": "running",
-  "summary": "Planned final save requested; update136 is in progress. Source135 preserves27 new updates on108 questions; final matched evaluation remains pending.",
-  "nextAction": "Finish and verify the current checkpoint, scheduler, W&B and archive. Transfer the closed ledger and supervise the approved same12-question final screen. Continue the full process audit.",
+  "summary": "RL job 552495 is COMPLETED",
+  "nextAction": "Monitor owned RL logs, optimizer updates, weight publication and saving.",
   "owner": "Codex",
-  "revision": 389,
-  "updatedAt": "2026-11-26T08:32:28.860918Z"
+  "revision": 390,
+  "updatedAt": "2026-11-26T08:41:32.953923Z"
 }

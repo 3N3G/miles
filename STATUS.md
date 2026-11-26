@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): Planned final save requested; update136 is in progress. Source135 preserves27 new updates on108 questions; final matched evaluation remains pending. Jobs: hpcfund/552495 RUNNING; hpcfund/549728 FAILED
-  Next: Finish and verify the current checkpoint, scheduler, W&B and archive. Transfer the closed ledger and supervise the approved same12-question final screen. Continue the full process 
+- [Prepare TCS async RL on Ian's Miles fork](.workstreams/tcs-async-rl-recon.json): RL job 552495 is COMPLETED Jobs: hpcfund/552495 COMPLETED; hpcfund/549728 FAILED
+  Next: Monitor owned RL logs, optimizer updates, weight publication and saving.
 
 ## Next / blocked
 
