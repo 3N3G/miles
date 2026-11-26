@@ -1,0 +1,26 @@
+{
+  "at_utc": "2026-11-26T06:33:38.672679+00:00",
+  "probe": {
+    "optimizer_step": 130,
+    "train/update_direction/surrogate_gain": 6.844470229538935e-05,
+    "train/update_direction/samples": 128,
+    "train/update_direction/positive_advantage_samples": 54,
+    "train/update_direction/negative_advantage_samples": 74,
+    "train/update_direction/positive_advantage_mean_logprob_change": 7.488344093444623e-05,
+    "train/update_direction/negative_advantage_mean_logprob_change": -4.65986676875762e-05
+  },
+  "interpretation_limit": "A local probability change on the same consumed batch, not better proofs or a frozen-policy evaluation. Positive and negative advantage cases are all128 samples, with recorded loss masks and rollout probabilities.",
+  "health": {
+    "rollout/episode_raw_reward": 1.140625,
+    "rollout/truncated": 0.2109375,
+    "train/full_policy_entropy": 0.4385429322719574,
+    "train/sampling_entropy": 0.3638787269592285,
+    "train/kl_loss": 0.009685000404715538,
+    "train/train_rollout_kl": 0.0002662545011844486,
+    "train/grad_norm": 0.08191276341676712,
+    "train/ess_ratio": 0.9994673132896423,
+    "train/num_microbatches": 117,
+    "rollout/fully_async/max_staleness": 2
+  },
+  "probe_recipe": "Same actor before/after log-probabilities around one actual optimizer update, under identical recorded sampling support."
+}
