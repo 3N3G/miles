@@ -32,7 +32,7 @@ def plot(directory):
     native = read_native_metrics(directory, allow_pending=True, require_publication=True)
     if len(native) != updates:
         raise ValueError("Training plots and final checkpoint update counts differ")
-    outputs = []
+    outputs, figure_captions = [], {}
 
     def save(name, x, y, label, *, probability=False, validation=False):
         fig, axis = plt.subplots(figsize=(7.2, 4.4), layout="constrained")
@@ -41,10 +41,16 @@ def plot(directory):
         axis.grid(alpha=0.2)
         if probability:
             axis.set_ylim(0, 1)
+        else:
+            axis.set_ylim(bottom=min(0, min(y)))
         path = folder / f"{name}.png"
         fig.savefig(path, dpi=160)
         plt.close(fig)
         outputs.append(str(path.relative_to(directory)))
+        figure_captions[str(path.relative_to(directory))] = (
+            f"{label}: {y[0]:.6g} at update {x[0]} and {y[-1]:.6g} at update {x[-1]}. "
+            "One training seed; no seed error bars."
+        )
 
     eval_steps = [point["optimizer_updates"] for point in evaluations]
     save("validation-accuracy", eval_steps, [x["accuracy"] for x in evaluations], "Exact boxed-answer validation accuracy", probability=True, validation=True)
@@ -66,6 +72,7 @@ def plot(directory):
         json.dumps(
             {
                 "plots": outputs,
+                "figure_captions": figure_captions,
                 "seed_count": 1,
                 "validation_questions": 256,
                 "accuracy_uncertainty": "Line plots have no error bars. Final paired question-bootstrap uncertainty is in control-results.json.",
