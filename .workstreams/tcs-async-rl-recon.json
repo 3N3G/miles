@@ -4107,15 +4107,22 @@
       "actor": "codex",
       "summary": "GSM8K reference561193 queued; no allocated GPU time at22:35 Eastern",
       "revision": 411
+    },
+    {
+      "id": "73a38a69-b237-4fda-b295-a1862f601bd0",
+      "at": "2026-11-27T06:27:29.825973Z",
+      "actor": "codex",
+      "summary": "GSM8K reference561193 remains queued at01:27 Eastern; monitoring healthy",
+      "revision": 412
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K reference561193 queued; no allocated GPU time at22:35 Eastern",
-  "nextAction": "Continue foreground supervision through allocation, training and verified finalization. Current start estimate is07:34 Eastern Nov27, subject to scheduler changes.",
+  "summary": "GSM8K reference561193 remains queued at01:27 Eastern; monitoring healthy",
+  "nextAction": "Continue foreground monitoring. Await AMD capacity, then validate baseline and optimizer progress. No GPU time has been used.",
   "owner": "Codex",
-  "revision": 411,
-  "updatedAt": "2026-11-27T03:36:14.087346Z"
+  "revision": 412,
+  "updatedAt": "2026-11-27T06:27:29.825973Z"
 }
