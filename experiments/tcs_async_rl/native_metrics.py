@@ -48,7 +48,7 @@ def training_log_config(directory, resolved):
     scope = approved.get("scope", {})
     validated = directory / "validated-native-arguments.json"
     arguments = json.loads(validated.read_text())["validated"] if validated.exists() else resolved["args"]
-    return {
+    result = {
         **provenance_config(directory, resolved, approved),
         "native_metrics_source": "VM single writer",
         "training": {name: value for name, value in arguments.items() if name in PUBLIC_TRAINING_ARGUMENTS},
@@ -78,6 +78,13 @@ def training_log_config(directory, resolved):
         },
         "gradient_accumulation": "Dynamic token batches; actual count is audit/train/num_microbatches per update",
     }
+    if resolved.get("benchmark") == "gsm8k":
+        result.update(
+            benchmark="gsm8k", arm=resolved["arm"], model=approved["model"], data=approved["data"],
+            reward_definition="Native math checker: boxed numeric answer equivalence, reward0 or1. No API judge.",
+            benchmark_settings={key: approved[key] for key in ("shared", "arms", "partitions")},
+        )
+    return result
 
 
 def published_optimizer_steps(directory, *, allow_pending):
@@ -102,7 +109,8 @@ def read_native_metrics(directory, *, allow_pending=False, require_publication=F
     # Restoring a checkpoint also restores its historical event files. The
     # reviewed checkpoint owns the boundary between inherited and new updates.
     config_path = directory / "approved-config.json"
-    initial = initial_optimizer_updates(json.loads(config_path.read_text())) if config_path.exists() else 0
+    approved = json.loads(config_path.read_text()) if config_path.exists() else {}
+    initial = initial_optimizer_updates(approved)
     rows = {}
     sources = ["actor_cell00000_rank00000.jsonl", "rollout_executor.jsonl"]
     for name in sources:
@@ -125,6 +133,8 @@ def read_native_metrics(directory, *, allow_pending=False, require_publication=F
             metrics = event["metrics"]
             row = rows.setdefault(step, {"optimizer_step": step})
             for key, value in metrics.items():
+                if approved.get("benchmark") == "gsm8k" and key.startswith("eval/"):
+                    continue  # Evaluations have a separate axis and delivery receipt.
                 if not isinstance(value, (int, float)) or isinstance(value, bool):
                     continue
                 if not math.isfinite(value):
@@ -320,7 +330,7 @@ def live_status_summary(directory, native, scheduler_state):
         if reserve_path.exists()
         else {}
     )
-    return {
+    result = {
         "monitor/slurm_state": scheduler_state,
         "monitor/completed_updates": len(native),
         "monitor/saved_total_optimizer_updates": latest + 1,
@@ -330,6 +340,11 @@ def live_status_summary(directory, native, scheduler_state):
         "monitor/shared_judge_pending_calls": sum(not call["settled"] for call in calls.values()),
         **reserve,
     }
+    if approved.exists() and json.loads(approved.read_text()).get("benchmark") == "gsm8k":
+        from experiments.tcs_async_rl.gsm8k_wandb import status_summary
+
+        result.update(status_summary(directory))
+    return result
 
 
 def sync_terminal_audit(directory, output):
@@ -456,10 +471,19 @@ def sync_live_audit(directory, output, scheduler_state):
             try:
                 publish_run_setup(run, directory, training_log_config(directory, config))
                 publish_audit(pending, run)
+                delivered_evaluations = None
+                if config.get("benchmark") == "gsm8k":
+                    from experiments.tcs_async_rl.gsm8k_wandb import publish_evaluations
+
+                    delivered_evaluations = publish_evaluations(run, directory)
                 run.summary.update(live_status_summary(directory, native, scheduler_state))
                 run.summary["monitor/finalization_pending"] = drain["finalization_pending"]
             finally:
                 run.finish(exit_code=0 if not close_run or scheduler_state == "COMPLETED" else 1)
+            if delivered_evaluations is not None:
+                from experiments.tcs_async_rl.gsm8k_wandb import acknowledge_evaluations
+
+                acknowledge_evaluations(directory, delivered_evaluations)
             # SDK success and API verification are separate acknowledgements.
             # Persist delivery before waiting for indexing, so monitor retries
             # do not resend a successful upload whose readback was delayed.

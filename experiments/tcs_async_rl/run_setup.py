@@ -73,6 +73,10 @@ def provenance_config(directory, resolved, approved):
 
 def publish_run_setup(run, directory, config):
     """Print once and attach files through the existing single writer, without run.log."""
+    if config.get("benchmark") == "gsm8k":
+        from experiments.tcs_async_rl.gsm8k_wandb import publish_setup
+
+        return publish_setup(run, directory, config)
     if "judge_system_prompt" not in config:
         return
     receipt = directory / "setup-publication.json"

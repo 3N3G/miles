@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-11-27T00:18:24.218175+00:00",
+  "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "cpu_checks": "52 unittest cases passed across GSM8K control, native diagnostics, launcher and AMD preflight.",
+  "native_driver": "train_async.train is delegated unchanged. Wrapper records evaluations, applies the approved baseline gate, and evaluates after a requested save before disposal.",
+  "cold_start": "Both arms explicitly load the pinned original HF weights with finetune and no optimizer/RNG restoration.",
+  "context_capacity": {
+    "tokens": 4096,
+    "maximum_prepared_prompt_plus_output": 1263,
+    "generated_token_limit": 1024,
+    "reason": "Capacity exceeds every prepared prompt plus the unchanged approved output budget."
+  },
+  "walltime_save_reserve_seconds": 900,
+  "checkpoint_policy": "Periodic20 updates and final save; retain the latest checkpoint from this arm only.",
+  "wandb": "Existing serialized VM native publisher. Evaluation rows use a separate completed-update axis and delivery receipt. No key forwarded to AMD.",
+  "gpu_runtime_validated": false
+}
