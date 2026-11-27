@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference submitted as 561051 Jobs: hpcfund/561051 PENDING; hpcfund/558806 COMPLETED
-  Next: Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference561051 queued; first slot90 minutes within two-hour arm cap Jobs: hpcfund/561051 PENDING; hpcfund/558806 COMPLETED
+  Next: Continue foreground queue checks and supervise initial baseline and training when allocated.
 
 ## Next / blocked
 

@@ -4053,15 +4053,22 @@
       "actor": "codex",
       "summary": "GSM8K reference submitted as 561051",
       "revision": 404
+    },
+    {
+      "id": "83d7a588-2ff8-42d5-92f4-0af2b28aa342",
+      "at": "2026-11-27T00:30:13.713555Z",
+      "actor": "codex",
+      "summary": "GSM8K reference561051 queued; first slot90 minutes within two-hour arm cap",
+      "revision": 405
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K reference submitted as 561051",
-  "nextAction": "Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.",
+  "summary": "GSM8K reference561051 queued; first slot90 minutes within two-hour arm cap",
+  "nextAction": "Continue foreground queue checks and supervise initial baseline and training when allocated.",
   "owner": "Codex",
-  "revision": 404,
-  "updatedAt": "2026-11-27T00:19:49.113597Z"
+  "revision": 405,
+  "updatedAt": "2026-11-27T00:30:13.713555Z"
 }
