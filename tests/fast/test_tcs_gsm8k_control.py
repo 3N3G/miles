@@ -11,9 +11,23 @@ from experiments.tcs_async_rl import gsm8k_driver
 from experiments.tcs_async_rl.gsm8k_control import CONFIG, render_job, resolved_args
 from experiments.tcs_async_rl.gsm8k_wandb import acknowledge_evaluations, publish_evaluations
 from experiments.tcs_async_rl.native_metrics import read_native_metrics
+from experiments.tcs_async_rl.gsm8k_results import paired_accuracy
 
 
 class GsmControlTests(unittest.TestCase):
+    def test_paired_analysis_distinguishes_no_change_and_unanimous_improvement(self):
+        before = {str(i):0 for i in range(8)}
+        unchanged = paired_accuracy(before, before, bootstrap_samples=100)
+        self.assertEqual(unchanged['change'], 0)
+        self.assertEqual(unchanged['mcnemar_two_sided_exact_p'], 1)
+        self.assertEqual(unchanged['paired_problem_bootstrap_95_interval'], [0, 0])
+        improved = paired_accuracy(before, {key:1 for key in before}, bootstrap_samples=100)
+        self.assertEqual(improved['change'], 1)
+        self.assertEqual(improved['mcnemar_two_sided_exact_p'], 2/256)
+        self.assertEqual(improved['bonferroni_two_comparisons_p'], 4/256)
+        with self.assertRaises(ValueError):
+            paired_accuracy(before, {'other':1})
+
     def test_evaluation_history_has_its_own_axis_and_acknowledged_points_are_not_resent(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
