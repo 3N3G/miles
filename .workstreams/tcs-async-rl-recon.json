@@ -987,6 +987,11 @@
   ],
   "jobs": [
     {
+      "id": "561051",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
       "id": "558806",
       "cluster": "hpcfund",
       "status": "COMPLETED"
@@ -4041,15 +4046,22 @@
       "actor": "codex",
       "summary": "Recorded user approval and claimed implementation and submission of the GSM8K control",
       "revision": 403
+    },
+    {
+      "id": "6979dd8c-489f-448d-a6d3-f43d852fce1e",
+      "at": "2026-11-27T00:19:49.113597Z",
+      "actor": "codex",
+      "summary": "GSM8K reference submitted as 561051",
+      "revision": 404
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "User approved the prepared GSM8K control and four-hour total cap. AMD queue is empty. Implementing runtime wiring before the reference submission.",
-  "nextAction": "Validate the frozen configuration and launcher, then submit and monitor the reference stage.",
+  "summary": "GSM8K reference submitted as 561051",
+  "nextAction": "Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.",
   "owner": "Codex",
-  "revision": 403,
-  "updatedAt": "2026-11-27T00:01:57.276633Z"
+  "revision": 404,
+  "updatedAt": "2026-11-27T00:19:49.113597Z"
 }

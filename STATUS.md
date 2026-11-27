@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): User approved the prepared GSM8K control and four-hour total cap. AMD queue is empty. Implementing runtime wiring before the reference submission. Jobs: hpcfund/558806 COMPLETED; hpcfund/552495 COMPLETED
-  Next: Validate the frozen configuration and launcher, then submit and monitor the reference stage.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference submitted as 561051 Jobs: hpcfund/561051 PENDING; hpcfund/558806 COMPLETED
+  Next: Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.
 
 ## Next / blocked
 
