@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K562230 running with writable Bridge cache; prior charge319 seconds Jobs: hpcfund/562230 RUNNING; hpcfund/562208 FAILED
-  Next: Verify real Bridge preflight, actor initialization, baseline and first published optimizer step. Continue through verified results and W&B publication.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference baseline172/256; update20 validation179/256,35 steps verified Jobs: hpcfund/562230 RUNNING; hpcfund/562208 FAILED
+  Next: Continue all250 planned updates, inspect further fixed validation and raw answers, and verify W&B indexing before the final CISPO gate.
 
 ## Next / blocked
 
