@@ -135,3 +135,10 @@ For the all236-question continuation, add `--difficulty-breakdown` to the propos
 This adds separate easy/medium raw returns, corpus coverage and constant-reward group plots.
 Wait until both difficulties have verified optimizer points before applying that proposal.
 Sparse difficulty series contain points only when an update consumed that difficulty.
+
+The exact-reward benchmark uses a separate **GSM8K control** section with zero-to-one axes.
+Fixed-validation accuracy and capped responses use `control/eval_optimizer_updates`, the completed update count.
+Consumed training reward and constant-group fractions use the zero-based `audit/optimizer_step` axis.
+The reference filters for varied-reward groups, so its consumed training reward is not corpus accuracy.
+Use fixed validation to assess learning. Add `--gsm8k-control` to the workspace helper above to prepare and apply this layout.
+This mode preserves all existing TCS sections. Its readback checks the control series and unchanged terminal run history.

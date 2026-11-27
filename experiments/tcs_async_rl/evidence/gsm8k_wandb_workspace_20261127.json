@@ -1,0 +1,29 @@
+{
+  "applied": true,
+  "view_id": "VmlldzoxODM0NTU1OQ==",
+  "run_path": "geney/tcs-async-rl/gsm8k-reference-261127-090520-021-native",
+  "history_rows": 264,
+  "history_sha256": "6eeab7f5fab7a5960e86a01424e46f8720c0203bccf99618c9a577dc510fbae3",
+  "validated_metrics": {
+    "control/eval/accuracy": 14,
+    "audit/rollout/episode_raw_reward": 250,
+    "audit/rollout/zero_std/all_one_percentage": 250,
+    "audit/rollout/zero_std/all_zero_percentage": 250,
+    "control/eval/capped_fraction": 14
+  },
+  "sections": [
+    "GSM8K control",
+    "Return",
+    "Policy health",
+    "Generation",
+    "Run status",
+    "Training coverage",
+    "audit",
+    "perf",
+    "rollout",
+    "train",
+    "System",
+    "Hidden Panels"
+  ],
+  "existing_sections_preserved": true
+}

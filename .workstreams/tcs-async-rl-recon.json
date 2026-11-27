@@ -3,6 +3,14 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/318eecb525cdd1606602ac62facda521b2313ead/miles/gsm8k-reference-v4",
+      "label": "Completed GSM8K reference:250 updates,172 to185/256;596 artifacts verified."
+    },
+    {
+      "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native",
+      "label": "Finished GSM8K reference; all18,029 training scalars and56 eval scalars verified."
+    },
+    {
       "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/1e1273a54909f9ca53164ef3a95998c2bced8799/miles/gsm8k-control",
       "label": "CPU-only GSM8K preparation. All16 files/17.7MB hash-verified. No GPU run."
     },
@@ -4227,6 +4235,13 @@
       "actor": "codex",
       "summary": "GSM8K reference596-file archive verified; CISPO562347 awaits AMD priority",
       "revision": 426
+    },
+    {
+      "id": "9de2ebe9-f86a-4f5a-bc87-10dbaa0817d5",
+      "at": "2026-11-27T10:06:18.993854Z",
+      "actor": "codex",
+      "summary": "Link the verified GSM8K reference archive and W&B history",
+      "revision": 427
     }
   ],
   "projectId": "understanding",
@@ -4236,6 +4251,6 @@
   "summary": "GSM8K reference596-file archive verified; CISPO562347 awaits AMD priority",
   "nextAction": "Keep foreground supervision of CISPO and its continuous observer. Verify baseline and real optimizer updates, then final checkpoint, paired accuracy, full W&B readback and immutable archive.",
   "owner": "Codex",
-  "revision": 426,
-  "updatedAt": "2026-11-27T10:02:05.236194Z"
+  "revision": 427,
+  "updatedAt": "2026-11-27T10:06:18.993854Z"
 }

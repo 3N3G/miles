@@ -18,6 +18,8 @@ from wandb_workspaces._graphql import execute_graphql
 from wandb_workspaces.reports import v2 as panels
 
 AXIS = "audit/optimizer_step"
+EVAL_AXIS = "control/eval_optimizer_updates"
+GSM8K_SECTION = "GSM8K control"
 VIEW_QUERY = """
 query DashboardViews($entity: String!, $project: String!) {
   project(name: $project, entityName: $entity) {
@@ -31,9 +33,7 @@ query DashboardViews($entity: String!, $project: String!) {
 
 def read_view(api, entity, project, name):
     result = execute_graphql(api, VIEW_QUERY, {"entity": entity, "project": project})
-    matches = [
-        edge["node"] for edge in result["project"]["allViews"]["edges"] if edge["node"]["name"] == name
-    ]
+    matches = [edge["node"] for edge in result["project"]["allViews"]["edges"] if edge["node"]["name"] == name]
     if len(matches) != 1:
         raise ValueError("Expected exactly one existing workspace with the requested name")
     return matches[0]
@@ -92,13 +92,9 @@ def key_sections(*, difficulty_breakdown=False):
         (
             "Run status",
             [
-                panels.ScalarChart(
-                    title="Total saved updates", metric="monitor/saved_total_optimizer_updates"
-                ),
+                panels.ScalarChart(title="Total saved updates", metric="monitor/saved_total_optimizer_updates"),
                 panels.ScalarChart(title="New saved updates", metric="monitor/new_durable_updates"),
-                panels.ScalarChart(
-                    title="Shared judge spend (USD)", metric="monitor/shared_judge_settled_usd"
-                ),
+                panels.ScalarChart(title="Shared judge spend (USD)", metric="monitor/shared_judge_settled_usd"),
             ],
             3,
         ),
@@ -138,9 +134,7 @@ def key_sections(*, difficulty_breakdown=False):
             panels=charts,
             is_open=True,
             pinned=name == "Return",
-            layout_settings=ws.SectionLayoutSettings(
-                columns=columns, rows=(2 if difficulty_breakdown else 1) if name == "Return" else 2
-            ),
+            layout_settings=ws.SectionLayoutSettings(columns=columns, rows=(2 if difficulty_breakdown else 1) if name == "Return" else 2),
             panel_settings=ws.SectionPanelSettings(x_axis=AXIS),
         )
         ._to_model()
@@ -149,15 +143,47 @@ def key_sections(*, difficulty_breakdown=False):
     ]
 
 
-def updated_spec(original, *, difficulty_breakdown=False):
+def gsm8k_sections():
+    definitions = [
+        ("Fixed-validation exact accuracy", EVAL_AXIS, ["control/eval/accuracy"]),
+        ("Consumed training reward", AXIS, ["audit/rollout/episode_raw_reward"]),
+        ("Constant-reward training groups", AXIS, ["audit/rollout/zero_std/all_one_percentage", "audit/rollout/zero_std/all_zero_percentage"]),
+        ("Validation answers reaching the token cap", EVAL_AXIS, ["control/eval/capped_fraction"]),
+    ]
+    charts = [
+        panels.LinePlot(
+            title=title,
+            x=axis,
+            y=metrics,
+            title_x="Completed optimizer updates" if axis == EVAL_AXIS else "Optimizer update (zero-based)",
+            title_y="Fraction",
+            range_y=(0, 1),
+            smoothing_type="none",
+            smoothing_factor=0,
+            aggregate=False,
+        )
+        for title, axis, metrics in definitions
+    ]
+    return [
+        ws.Section(
+            name=GSM8K_SECTION,
+            panels=charts,
+            is_open=True,
+            pinned=True,
+            layout_settings=ws.SectionLayoutSettings(columns=2, rows=2),
+        )
+        ._to_model()
+        .model_dump(mode="json", by_alias=True, exclude_none=True)
+    ]
+
+
+def updated_spec(original, *, difficulty_breakdown=False, gsm8k_control=False):
     spec = copy.deepcopy(original)
     old = spec["section"]["panelBankConfig"]["sections"]
     by_name = {section["name"]: section for section in old}
-    selected = key_sections(difficulty_breakdown=difficulty_breakdown)
+    selected = gsm8k_sections() if gsm8k_control else key_sections(difficulty_breakdown=difficulty_breakdown)
     for section in selected:
-        previous = by_name.get(
-            section["name"], by_name.get("monitor", {}) if section["name"] == "Run status" else {}
-        )
+        previous = by_name.get(section["name"], by_name.get("monitor", {}) if section["name"] == "Run status" else {})
         if "__id__" in previous:
             section["__id__"] = previous["__id__"]
         section["isPanelsAuto"] = False
@@ -165,9 +191,11 @@ def updated_spec(original, *, difficulty_breakdown=False):
             panel["isAuto"] = False
         if section["name"] == "Run status":
             section["defaultName"] = "monitor"
-    managed = {section["name"] for section in selected} | {"monitor"}
+    managed = {section["name"] for section in selected} | (set() if gsm8k_control else {"monitor"})
     remaining = [section for section in old if section["name"] not in managed]
     for section in remaining:
+        if gsm8k_control:
+            continue  # Preserve all existing TCS panels and their open/closed state.
         section["isOpen"] = False
         if section["name"] == "audit":
             section.setdefault("localPanelSettings", {}).update(xAxis=AXIS, xAxisActive=True)
@@ -175,9 +203,11 @@ def updated_spec(original, *, difficulty_breakdown=False):
     return spec
 
 
-def validate_panels(spec, history, summary):
+def validate_panels(spec, history, summary, *, gsm8k_control=False):
     counts = {}
     for section in spec["section"]["panelBankConfig"]["sections"]:
+        if gsm8k_control and section["name"] != GSM8K_SECTION:
+            continue
         if section.get("isPanelsAuto") is not False or section["name"] == "Hidden Panels":
             continue
         for panel in section["panels"]:
@@ -188,9 +218,10 @@ def validate_panels(spec, history, summary):
                         raise ValueError(f"Summary card has no numeric value: {metric}")
                     counts[metric] = summary[metric]
                 else:
-                    if config["xAxis"] != AXIS:
+                    expected_axis = EVAL_AXIS if metric.startswith("control/eval/") else AXIS
+                    if config["xAxis"] != expected_axis:
                         raise ValueError("A key chart has the wrong optimizer axis")
-                    points = [row for row in history if AXIS in row and metric in row]
+                    points = [row for row in history if expected_axis in row and metric in row]
                     if not points or not all(math.isfinite(row[metric]) for row in points):
                         raise ValueError(f"Chart has no finite aligned values: {metric}")
                     counts[metric] = len(points)
@@ -210,6 +241,7 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--difficulty-breakdown", action="store_true")
+    parser.add_argument("--gsm8k-control", action="store_true")
     cli = parser.parse_args()
     cli.output.mkdir(parents=True, exist_ok=True)
     api = wandb.Api()
@@ -222,15 +254,13 @@ def main():
     else:
         save_json(before, view)
     if not proposed.exists():
-        save_json(
-            proposed, updated_spec(json.loads(view["spec"]), difficulty_breakdown=cli.difficulty_breakdown)
-        )
+        save_json(proposed, updated_spec(json.loads(view["spec"]), difficulty_breakdown=cli.difficulty_breakdown, gsm8k_control=cli.gsm8k_control))
     spec = json.loads(proposed.read_text())
     run_path = f"{cli.entity}/{cli.project}/{cli.run_id}"
     run = api.run(run_path)
     history = list(run.scan_history(use_cache=False))
     digest = hashlib.sha256(json.dumps(history, sort_keys=True).encode()).hexdigest()
-    counts = validate_panels(spec, history, dict(run.summary))
+    counts = validate_panels(spec, history, dict(run.summary), gsm8k_control=cli.gsm8k_control)
     if cli.apply:
         query = """
         mutation SaveDashboard($id: ID!, $entity: String!, $project: String!, $name: String!, $display: String!, $spec: String!) {
@@ -260,10 +290,7 @@ def main():
             raise RuntimeError("Saved dashboard differs from its proposal")
         remote = api.run(run_path)
         actual = list(remote.scan_history(use_cache=False))
-        if (
-            hashlib.sha256(json.dumps(actual, sort_keys=True).encode()).hexdigest() != digest
-            or remote.state != run.state
-        ):
+        if hashlib.sha256(json.dumps(actual, sort_keys=True).encode()).hexdigest() != digest or remote.state != run.state:
             raise RuntimeError("Run history or terminal state changed during a dashboard-only update")
     receipt = {
         "applied": cli.apply,
