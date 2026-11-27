@@ -67,6 +67,8 @@ All three local optimizer-direction checks were positive. Gradients stayed finit
 The saved iteration 249 matches 250 completed updates. W&B matched all 18,029 native training scalars and 56 validation scalars.
 Baseline/final valid-box fractions were 253/256 and 255/256. Token caps affected zero and one validation answer respectively.
 The official GSM8K test split remains unread.
+An [independent arithmetic audit](evidence/gsm8k_numeric_audit_20261127.json) matched 3,556 parsed numeric values across all 14 validation checkpoints, with zero disagreements.
+It also checked 18 missing-box zeros. Ten symbolic or nonscalar boxes remain outside that checker. This does not independently validate box extraction or benchmark labels.
 
 The reference used 3,398 allocated node-seconds across attempts, including 319 seconds in two startup failures. Judge cost was zero.
 Its [immutable archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/318eecb525cdd1606602ac62facda521b2313ead/miles/gsm8k-reference-v4)
