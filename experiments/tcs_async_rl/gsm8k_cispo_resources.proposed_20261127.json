@@ -1,0 +1,68 @@
+{
+  "status": "resource_choices_not_submission_authorization",
+  "original_config": "experiments/tcs_async_rl/gsm8k_control.approved_20261126.json",
+  "unchanged": [
+    "model and original weights",
+    "GSM8K train/validation membership",
+    "numeric reward and prompt",
+    "CISPO loss and clipping",
+    "4 questions x32 answers;global batch128",
+    "learning rate and all optimizer settings",
+    "sampling temperature/top-p/top-k/support replay",
+    "maximum250 updates;maximum7200 allocated node-seconds;no API judge"
+  ],
+  "choices": [
+    {
+      "id": "original",
+      "partition": "mi3508x",
+      "gpus": 8,
+      "actor_gpus": 2,
+      "rollout_gpus": 6,
+      "pause_generation_mode": "in_place",
+      "colocate": false,
+      "forecast_cluster_time": "2026-11-29T10:33:47",
+      "requires_new_approval": false
+    },
+    {
+      "id": "one_mi350",
+      "partition": "mi3501x",
+      "gpus": 1,
+      "actor_gpus": 1,
+      "rollout_gpus": 1,
+      "cpus_per_task": 16,
+      "pause_generation_mode": "retract",
+      "colocate": true,
+      "offload_train": true,
+      "offload_rollout": true,
+      "forecast_cluster_time": "2026-11-27T06:03:39",
+      "requires_new_approval": true,
+      "limit": "Changes scheduling, colocation and pause behavior. This tests a resource variant rather than the exact original bundle. GPU runtime not yet validated."
+    },
+    {
+      "id": "four_mi210",
+      "partition": "mi2104x",
+      "gpus": 4,
+      "actor_gpus": 2,
+      "rollout_gpus": 2,
+      "cpus_per_task": 64,
+      "pause_generation_mode": "in_place",
+      "colocate": false,
+      "forecast_cluster_time": "2026-11-27T11:57:08",
+      "requires_new_approval": true,
+      "limit": "Changes GPU architecture and rollout engine count. Image compatibility and throughput are unverified."
+    }
+  ],
+  "forecast_timezone": "America/Chicago (UTC-06:00 in these allocation records)",
+  "forecasts_are_nonbinding": true,
+  "actual_cispo_submissions": {
+    "562347": "Original eight-MI350 job remains queued. No alternative submitted."
+  },
+  "test_only_ids_not_jobs": [
+    "562366",
+    "562367",
+    "562368",
+    "562371",
+    "562375",
+    "562380"
+  ]
+}

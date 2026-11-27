@@ -1,5 +1,15 @@
 # Open questions
 
+## 2026-11-27: GSM8K CISPO scheduling versus resource changes
+
+- Question: keep the approved eight-MI350 job queued, or approve a smaller resource variant?
+- Evidence: [resource choices](experiments/tcs_async_rl/gsm8k_cispo_resources.proposed_20261127.json). Slurm test-only forecasts are about54 hours for eight MI350 GPUs, two hours for one MI350 GPU, and eight hours for four MI210 GPUs. Forecasts are not guarantees. All test-only calls submitted zero jobs.
+- Options: keep the existing eight-MI350 job; use one shared MI350 GPU with retract-style pauses; or use four MI210 GPUs with the original in-place pause mode.
+- Recommendation: one MI350 GPU for a faster CISPO smoke test, with the changed scheduling recorded as a limitation. Keep the exact original bundle if comparability matters more than the wait.
+- Unchanged in either proposed variant: model, data, prompt, reward, optimizer, sampling, four questions x32 answers,250-update maximum and two-hour allocation cap.
+- Blocks: submitting a resource variant. It does not block the approved eight-GPU job562347, which remains queued and supervised.
+- Permission basis: global AGENTS.md reserves experiment changes and new GPU jobs for the user. Colocation requires `pause_generation_mode=retract` in this framework, so a one-GPU run would change more than the GPU count.
+
 ## 2026-11-24: Implicit monotonicity in an auction proof
 
 - Question: does the auction payment item require an explicit single-bidder monotonicity argument when the candidate states the correct formula?
