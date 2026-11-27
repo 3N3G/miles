@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference completed250 updates:172 to185/256; CISPO gate passed Jobs: hpcfund/562230 COMPLETED; hpcfund/562208 FAILED
-  Next: Submit the approved fresh-weight CISPO arm. Complete immutable reference publication while supervising CISPO through its final checkpoint and verified report.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K CISPO submitted as 562347 Jobs: hpcfund/562347 PENDING; hpcfund/562230 COMPLETED
+  Next: Supervise baseline, first optimizer update, final evaluation and verified publication. Complete the approved CISPO arm and verify the final paired analysis, checkpoint, archive and
 
 ## Next / blocked
 
