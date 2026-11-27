@@ -324,4 +324,4 @@ a valid complete hidden-intermediate evaluation or a better vocabulary lens.
 
 Human reports are local review drafts:reports/RECURRING_EXPERT_PHASE.md and
 reports/RECURRING_EXPERT_PHASE_DETAILS.md. Preserve them on the local
-review/recurring-expert-phase branch. Do not push that prose branch.
+codex/review-recurring-expert-phase branch. Do not push that prose branch.
