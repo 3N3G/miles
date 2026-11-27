@@ -7,25 +7,308 @@
       "run": "easy-medium-236-v1",
       "revision": "1e1d18a3613dcb38557b34921d7381115480c285",
       "files": 7,
-      "bytes_removed": 74771508
+      "bytes_removed": 74771508,
+      "verified_objects": [
+        {
+          "path": "miles/easy-medium-236-v1/events/actor_cell00000_rank00000.jsonl",
+          "bytes": 5455790,
+          "sha256": "6ff3541210179bc5f077e5417847aa0db94ad5b773276e704cfeb035c1ec0161"
+        },
+        {
+          "path": "miles/easy-medium-236-v1/events/actor_cell00000_rank00001.jsonl",
+          "bytes": 5361910,
+          "sha256": "702c051a8f7d0e0879948add7e02c3a55b5d209e62b0ee58d80bf9836ff59002"
+        },
+        {
+          "path": "miles/easy-medium-236-v1/events/inference_controller.jsonl",
+          "bytes": 7285252,
+          "sha256": "273e067dbef0f0525b1b6d4ad0bd7cbf597db947a5404948bdbe84c0b5ec60ef"
+        },
+        {
+          "path": "miles/easy-medium-236-v1/events/main.jsonl",
+          "bytes": 41853564,
+          "sha256": "f6702c0f8cde45228e07fee1c042e65b0ee74ac3e8c493ca658b1a880f1123db"
+        },
+        {
+          "path": "miles/easy-medium-236-v1/events/rollout_executor.jsonl",
+          "bytes": 4962948,
+          "sha256": "5725f4d5682338b587644036d436ecc1ded613581c9c5d49117839522d710805"
+        },
+        {
+          "path": "miles/easy-medium-236-v1/events/trainer_controller_actor.jsonl",
+          "bytes": 4941548,
+          "sha256": "1fb6632cf3a38dc8996b8aff17284f409b7242778c44e82868936f6ac416dbad"
+        },
+        {
+          "path": "miles/easy-medium-236-v1/events/worker_manager.jsonl",
+          "bytes": 4910496,
+          "sha256": "c15770c9b8505935ee8cfb08685666481dce5fb752cfac38bb06a2feea2806df"
+        }
+      ]
     },
     {
       "run": "difficulty-screen-high-v2",
       "revision": "e4abe404af2bfd561f65a6619abf8b1117c1f213",
       "files": 6,
-      "bytes_removed": 26491001
+      "bytes_removed": 26491001,
+      "verified_objects": [
+        {
+          "path": "miles/difficulty-screen-high-v2/events/actor_cell00000_rank00000.jsonl",
+          "bytes": 4474090,
+          "sha256": "0a8cc21c12c8697565955d01cffacc6e8b1df8528745624446324a080e30babb"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v2/events/actor_cell00000_rank00001.jsonl",
+          "bytes": 4425483,
+          "sha256": "db11d7e65e4b0c1c570bc84f4097c351e36ac4cd88700231695729ac7bbd34dd"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v2/events/inference_controller.jsonl",
+          "bytes": 5618631,
+          "sha256": "1dc1040d840de67107a3386c2be8ccbfeb69d5240a4f867571fc319f5053c4ca"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v2/events/rollout_executor.jsonl",
+          "bytes": 3992870,
+          "sha256": "cb6d809ae24e3ed94755cf2e17047930aef9f649d925a76a5a74b4fd77275d35"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v2/events/trainer_controller_actor.jsonl",
+          "bytes": 4002995,
+          "sha256": "a7b6f44856defb2ff59d03956a723843a80025e05a10e86682861ebb62898771"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v2/events/worker_manager.jsonl",
+          "bytes": 3976932,
+          "sha256": "f1ab3b0ce79038f94cf829d7e68d105c8d68f7d19ff06da95ab9bf9922913c58"
+        }
+      ]
     },
     {
       "run": "difficulty-screen-high-v3",
       "revision": "7a258e0947401b05d2207f63592bea799e9284bd",
       "files": 6,
-      "bytes_removed": 26492566
+      "bytes_removed": 26492566,
+      "verified_objects": [
+        {
+          "path": "miles/difficulty-screen-high-v3/events/actor_cell00000_rank00000.jsonl",
+          "bytes": 4474090,
+          "sha256": "384952e27e1780f2a8f44eaba227ce7aaeceaada1fa2c77f26e425dcda7f951a"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v3/events/actor_cell00000_rank00001.jsonl",
+          "bytes": 4425483,
+          "sha256": "1bd010000cee0b61298ad957138dec3869652287b97fac9cfde68b95026cd37e"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v3/events/inference_controller.jsonl",
+          "bytes": 5618626,
+          "sha256": "d897b46368e3e2f879f66b9ad597b76ac663d29530723024f3e6d61bc1c5f89d"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v3/events/rollout_executor.jsonl",
+          "bytes": 3994446,
+          "sha256": "24fbc388b0280dd1084844b0dd506783a3e1a83200f5dbd8a8e5b172bce577f9"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v3/events/trainer_controller_actor.jsonl",
+          "bytes": 4002992,
+          "sha256": "635468a8df9750ad672cecd6ee3798180da1f21ac7e1ac25fdc955a69cb169fe"
+        },
+        {
+          "path": "miles/difficulty-screen-high-v3/events/worker_manager.jsonl",
+          "bytes": 3976929,
+          "sha256": "252f051880a80a331049ac9b37d03c4c34ce8bbf5a240d9f3f3c43b3bda3968d"
+        }
+      ]
     },
     {
       "run": "checkpoint-final236-screen-v5",
       "revision": "442e9ce6dfdecf101bc23a6de19b7ce90489600f",
       "files": 36,
-      "bytes_removed": 60084493
+      "bytes_removed": 60084493,
+      "verified_objects": [
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E1-after.json",
+          "bytes": 1383823,
+          "sha256": "e821f89642e0875e060d7bf80da8feec421ba71dc1e3b04fb8a78a63bb58f7e7"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E1-before.json",
+          "bytes": 13955,
+          "sha256": "6383bae62168ff401189782ceb9975eb0ca1d5a6d7cc21649945ef68bb4c10c0"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E2-after.json",
+          "bytes": 1337770,
+          "sha256": "680bbecda9e1887bab6f36bf82f0c682aedc6c47f97bfe38805e1435750d73df"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E2-before.json",
+          "bytes": 21398,
+          "sha256": "a1bf8267db32ee2b628c6680d39fd9f6bd9b9cc3b4d6438c682f14daed2953cf"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E3-after.json",
+          "bytes": 2205526,
+          "sha256": "7e8bec64a915bc8a9369ed68c2b1de7be84cefc31cee511e455438e3cd7ffb4d"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E3-before.json",
+          "bytes": 17599,
+          "sha256": "d43bd3391eee44edf1d6b2a149157642b12459bc789367088288672f069ee219"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E4-after.json",
+          "bytes": 2917501,
+          "sha256": "466c16c5fb9121b3ce45d5d1efa4f2e37c7b31b8cbf27e90a108093fb98296c2"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E4-before.json",
+          "bytes": 25583,
+          "sha256": "e6f268f074a81a14010a80589a792fa9dd3a95652a65ca7a09f692a2bbe48690"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E5-after.json",
+          "bytes": 1016436,
+          "sha256": "01abd958b07e39614caf9b3323cbf9cd75a0fe0a44423828c6e28af8e860f570"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E5-before.json",
+          "bytes": 19984,
+          "sha256": "4d926fb9a97c81346cf69596b19425a8a9431ca82650a44f28dede2c9fb109c1"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E6-after.json",
+          "bytes": 1539922,
+          "sha256": "f03673f2d60eec67d54c4bb734b6e340711b7ffe9d7c26f0654ac83526bef885"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/E6-before.json",
+          "bytes": 19752,
+          "sha256": "093fdbfbf3d206c4411f206c95620175225ad0bfa9ebb53f87c03806d09cfc46"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M1-after.json",
+          "bytes": 3843116,
+          "sha256": "47532702bee6ae351ba658348e2bf63336f92c882dca4fe5a453b16ad72cb9a7"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M1-before.json",
+          "bytes": 16644,
+          "sha256": "9c7fe5a1d61e7ceb10a97c5265f59f08d7df0a72e201795f59c6c69c79decd61"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M2-after.json",
+          "bytes": 4025480,
+          "sha256": "35663749a50182eb69d424af27d1726032a4cf6e27fecfa2c5801c1d8e356ede"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M2-before.json",
+          "bytes": 10485,
+          "sha256": "1fc86ccab09ed53bfa482db2467a281a4a9127f824fca3387849a36f8b048880"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M3-after.json",
+          "bytes": 3800136,
+          "sha256": "5cc79ff112a035d670626ffa015100a91dd4e4218356fa9a1d010ceb4ca61bc2"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M3-before.json",
+          "bytes": 13830,
+          "sha256": "c3e0350a4cb96a30cdebb9f72fd597f54602895ac8ce1c10df45e21e00ddaba5"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M4-after.json",
+          "bytes": 3871041,
+          "sha256": "0137d354f5dcdd8a2d8f943bf8a5b0987ea75dcd11584b5334943c69d1f7245b"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M4-before.json",
+          "bytes": 18810,
+          "sha256": "ce65582b7cba57d83b2df9a09540174caad70d21f570ae1dc01a4d706a09be54"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M5-after.json",
+          "bytes": 2886161,
+          "sha256": "b8a06a44142eb5f8666050c85c152fc4b0b08c70539243b86436fe2f841ac814"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M5-before.json",
+          "bytes": 10985,
+          "sha256": "ddeba1b457279e384128fa30262e5c42e1e15aed305584009992dc7207f744a1"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M6-after.json",
+          "bytes": 1112813,
+          "sha256": "0fc80cd0ce708b35e9cd5a0e616b05bf1cb74d10f5538bf94945255b9cd65d71"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/comparison/examples/M6-before.json",
+          "bytes": 16018,
+          "sha256": "705af83ed5a78ea4a924ea8a2ec3c4223c3778615f571ef8d358c50cef83d967"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/2218f2201f7ab485623faa891b4166e3bf3b309c6b7c00afe84be3aa6ac23a92.json",
+          "bytes": 2917501,
+          "sha256": "466c16c5fb9121b3ce45d5d1efa4f2e37c7b31b8cbf27e90a108093fb98296c2"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/3a06e4abc11d96e9190d25cc967a973ce313d002ca2955f87affd0cb5846bc2b.json",
+          "bytes": 3843116,
+          "sha256": "47532702bee6ae351ba658348e2bf63336f92c882dca4fe5a453b16ad72cb9a7"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/3ab5d1672d62fae54db7a933fe8bce9954872224d06cadd92c2fd76a5ab0d99a.json",
+          "bytes": 2205526,
+          "sha256": "7e8bec64a915bc8a9369ed68c2b1de7be84cefc31cee511e455438e3cd7ffb4d"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/3b098eec6803db70a482f8673a35a307deaa5d06e3415f8b69e0c98584da2a40.json",
+          "bytes": 1016436,
+          "sha256": "01abd958b07e39614caf9b3323cbf9cd75a0fe0a44423828c6e28af8e860f570"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/773de4e3025c45202c9d38314e2abbe4381fe6c2c2cb9f819e0941771e44266f.json",
+          "bytes": 1383823,
+          "sha256": "e821f89642e0875e060d7bf80da8feec421ba71dc1e3b04fb8a78a63bb58f7e7"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/816fe102055f2126a1369bc50f8508eb6e038f0e5beb6135b37ae09574208354.json",
+          "bytes": 4025480,
+          "sha256": "35663749a50182eb69d424af27d1726032a4cf6e27fecfa2c5801c1d8e356ede"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/8506388cfb6a45f077d850014c92f6490108bfaf0cc382555d68f06581c9fc9e.json",
+          "bytes": 1539922,
+          "sha256": "f03673f2d60eec67d54c4bb734b6e340711b7ffe9d7c26f0654ac83526bef885"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/979fa2d863673c313d1b62cd6e69eb0abd19654f9dcd13f633cd86f39b31ced5.json",
+          "bytes": 1112813,
+          "sha256": "0fc80cd0ce708b35e9cd5a0e616b05bf1cb74d10f5538bf94945255b9cd65d71"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/b317cea6bf1082110992be2d1708dc8817aa42804117e732864bbc31e3453cf7.json",
+          "bytes": 2886161,
+          "sha256": "b8a06a44142eb5f8666050c85c152fc4b0b08c70539243b86436fe2f841ac814"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/e94698d4e05fa442ff8ddc197302d6b9ee7e45c591185c5f07fcb4793fe4b5c3.json",
+          "bytes": 3871041,
+          "sha256": "0137d354f5dcdd8a2d8f943bf8a5b0987ea75dcd11584b5334943c69d1f7245b"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/ec185a92605b5a73007154a175f69d05c69d271ebef09d95ca7d36739017e512.json",
+          "bytes": 3800136,
+          "sha256": "5cc79ff112a035d670626ffa015100a91dd4e4218356fa9a1d010ceb4ca61bc2"
+        },
+        {
+          "path": "miles/checkpoint-final236-screen-v5/seeded-examples/ee22dc3e667060dae022c9631d8ef4b0fac15271833f4c97c2ba08180dbd9d2b.json",
+          "bytes": 1337770,
+          "sha256": "680bbecda9e1887bab6f36bf82f0c682aedc6c47f97bfe38805e1435750d73df"
+        }
+      ]
     }
   ],
   "unrelated_project_files_modified": false
