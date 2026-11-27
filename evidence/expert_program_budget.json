@@ -165,8 +165,14 @@
   "used_gpu_seconds": 6523,
   "remaining_gpu_seconds": 11477,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [],
-  "unreserved_gpu_seconds": 11477,
-  "reserved_gpu_seconds": 0,
+  "pending_reservations": [
+    {
+      "run_name": "extended-unit-phase-v1",
+      "maximum_gpu_seconds": 900,
+      "reason": "plans/extended_unit_phase.md"
+    }
+  ],
+  "unreserved_gpu_seconds": 10577,
+  "reserved_gpu_seconds": 900,
   "observed_at": "2026-11-27T06:32:19.435382+00:00"
 }
