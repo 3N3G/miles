@@ -104,6 +104,28 @@ class GsmControlTests(unittest.TestCase):
                 stream.write(json.dumps({'type':'metric','rollout_id':0,'metrics':{'eval/gsm8k':0.5}})+'\n')
             self.assertEqual(before, read_native_metrics(root))
 
+    def test_unscoped_baseline_and_startup_events_are_not_optimizer_rows(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root/'events').mkdir()
+            (root/'approved-config.json').write_text(json.dumps({'benchmark':'gsm8k'}))
+            train = {'type':'metric','rollout_id':0,'metrics':{'train/pg_loss':0.1}}
+            (root/'events/actor_cell00000_rank00000.jsonl').write_text(json.dumps(train)+'\n')
+            events = [
+                {'type':'metric','rollout_id':None,'metrics':{'eval/gsm8k':0.67,'eval/step':0}},
+                {'type':'metric','rollout_id':None,'metrics':{'perf/init_time':3.0}},
+                {'type':'metric','rollout_id':0,'metrics':{'rollout/episode_raw_reward':0.5}},
+            ]
+            path = root/'events/rollout_executor.jsonl'
+            path.write_text('\n'.join(map(json.dumps,events))+'\n')
+            self.assertEqual(read_native_metrics(root),[
+                {'optimizer_step':0,'train/pg_loss':0.1,'rollout/episode_raw_reward':0.5}])
+            with path.open('a') as stream:
+                stream.write(json.dumps({'type':'metric','rollout_id':None,
+                                         'metrics':{'rollout/episode_raw_reward':0.5}})+'\n')
+            with self.assertRaisesRegex(ValueError,'no optimizer rollout ID'):
+                read_native_metrics(root)
+
     def test_both_arms_start_from_identical_pinned_weights_and_keep_approved_batches(self):
         config = json.loads(CONFIG.read_text())
         args = {arm: resolved_args(config, arm=arm, work_dir=Path('/work'),

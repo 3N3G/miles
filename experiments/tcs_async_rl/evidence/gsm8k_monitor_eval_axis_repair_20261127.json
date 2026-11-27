@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-11-27T09:16:05.798180+00:00",
+  "job_id": "562230",
+  "issue": "Native baseline evaluation emits event.rollout_id=null and eval/step=0. The optimizer reader compared null against the initial optimizer index before filtering eval metrics.",
+  "repair": "Exclude GSM8K eval metrics before optimizer-row construction. Skip unscoped startup metrics. Unscoped policy-loss or training-reward metrics still fail.",
+  "training_changed": false,
+  "gpu_restarted": false,
+  "targeted_cpu_cases_passed": 32,
+  "lint_passed": true,
+  "observed_after_fix": {
+    "verified_optimizer_updates": 35,
+    "baseline_correct": 172,
+    "validation_questions": 256,
+    "updates20_correct": 179,
+    "direction_checks": {
+      "0": 0.0004898990665918035,
+      "1": 0.0007440560610820768,
+      "10": 0.0004031983583079324
+    },
+    "direction_samples_per_check": 256
+  },
+  "raw_audit": "VM runs/gsm8k-reference-v4/seeded-raw-answer-audit.json",
+  "raw_audit_limits": "Two seeded random baseline errors and one seeded training group were read. Correct unboxed answers receive0 under the approved boxed-answer rule."
+}

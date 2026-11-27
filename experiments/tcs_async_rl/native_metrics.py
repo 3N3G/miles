@@ -127,14 +127,20 @@ def read_native_metrics(directory, *, allow_pending=False, require_publication=F
                 raise
             if event["type"] != "metric":
                 continue
+            metrics = event["metrics"]
+            if approved.get("benchmark") == "gsm8k":
+                metrics = {key: value for key, value in metrics.items() if not key.startswith("eval/")}
+            if not metrics:
+                continue
             step = event["rollout_id"]
+            if step is None:
+                if {"train/pg_loss", "rollout/episode_raw_reward"} & metrics.keys():
+                    raise ValueError("Optimizer or training-reward metric has no optimizer rollout ID")
+                continue  # Startup timings and baseline evals are not optimizer updates.
             if step < initial:
                 continue
-            metrics = event["metrics"]
             row = rows.setdefault(step, {"optimizer_step": step})
             for key, value in metrics.items():
-                if approved.get("benchmark") == "gsm8k" and key.startswith("eval/"):
-                    continue  # Evaluations have a separate axis and delivery receipt.
                 if not isinstance(value, (int, float)) or isinstance(value, bool):
                     continue
                 if not math.isfinite(value):
