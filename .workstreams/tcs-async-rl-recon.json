@@ -3,8 +3,8 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
-      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/3ffc7d9afe11c2ffbe98fef505fdc439470f756a/miles/gsm8k-reference-v4",
-      "label": "Completed reference plus numeric, grouping and plot audits; all 604 artifacts verified."
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/c508743f4161496a0c7cc9728d8c3be289c3260b/miles/gsm8k-reference-v4",
+      "label": "Completed reference and scoring/grouping/plot audits; all 605 artifacts verified."
     },
     {
       "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native",
@@ -4326,6 +4326,13 @@
       "actor": "codex",
       "summary": "Reference finished 250 updates: 67.2% to 72.3%. Gain CI includes zero. CISPO remains queued.",
       "revision": 439
+    },
+    {
+      "id": "4b2186de-a724-4afc-9749-ca17c9fffcf2",
+      "at": "2026-11-27T17:28:56.286878Z",
+      "actor": "codex",
+      "summary": "Link the complete reference archive including the review of ten scoring exceptions",
+      "revision": 440
     }
   ],
   "projectId": "understanding",
@@ -4335,6 +4342,6 @@
   "summary": "Reference finished 250 updates: 67.2% to 72.3%. Gain CI includes zero. CISPO remains queued.",
   "nextAction": "Watch CISPO job 562347 and its observer. Keep the original eight-GPU setup while the resource decision is open.",
   "owner": "Codex",
-  "revision": 439,
-  "updatedAt": "2026-11-27T17:28:54.851183Z"
+  "revision": 440,
+  "updatedAt": "2026-11-27T17:28:56.286878Z"
 }
