@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference561193 running on AMD; inspecting startup and baseline Jobs: hpcfund/561193 RUNNING; hpcfund/561051 CANCELLED
-  Next: Verify baseline, first finite optimizer update, direction check and six-engine weight delivery. Publish W&B from one VM writer.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K561193 failed in argument validation;37 seconds used, no inference Jobs: hpcfund/561193 FAILED; hpcfund/561051 CANCELLED
+  Next: Repair read-only direction observation for ordinary DP2 and reference actor-forward probabilities. Keep optimization unchanged, then rerun within7163 seconds remaining.
 
 ## Next / blocked
 
