@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-11-27T12:45:47.991375+00:00",
+  "kind": "Read-only source audit of an unapproved resource option; no GPU execution",
+  "source_commit": "0103e18518cb42f4f898817b2247300c8e51c98f",
+  "files": {
+    "tests/e2e/short/test_qwen2.5_0.5B_fully_async_colocate.py": "db84748ec5fceb51dfae97f30a69dd8a138044ac52532efcb349495dc6daea1a",
+    "miles/backends/training_utils/weight_update/protocols/cuda_ipc.py": "2a0405d11cb920479f0fda5b7f513a01ebd72968d37d09e0218f043cb797a72b",
+    "miles/backends/megatron_utils/actor.py": "e96b5f8c8b6f28c7d1b5c81413ee6e33892abca5cea95c75feee7f6a29ba88d3",
+    "miles/backends/sglang_utils/sglang_engine.py": "840cf4340df9a596b59045a7e772605a8f854e206598dee63a4f74784011a6fc"
+  },
+  "observations": [
+    "Native short E2E test uses Qwen2.5-0.5B-Instruct, train_async.py, fully-async, colocate and one GPU.",
+    "That E2E test registers CUDA Hopper/Blackwell coverage only. Four updates do not establish learning.",
+    "Colocated weight transfer serializes GPU tensors, gathers IPC handles with Gloo, awaits engine import, and retains producer tensors through the import barrier.",
+    "Megatron offload calls torch_memory_saver pause/resume and reloads training process groups.",
+    "SGLang enables its memory saver when offload_rollout is true.",
+    "CUDA API names alone do not establish incompatibility with HIP. No runtime conclusion follows from these source reads."
+  ],
+  "unverified": [
+    "ROCm colocation/offload and IPC imports in the pinned container",
+    "One-GPU throughput and actual CISPO optimizer updates"
+  ],
+  "jobs_submitted": 0,
+  "actual_cispo_job": "562347 remains PENDING on original mi3508x allocation. No resource change applied.",
+  "decision": "Keep the approved original job queued while the optional resource-choice question remains unanswered."
+}
