@@ -987,6 +987,11 @@
   ],
   "jobs": [
     {
+      "id": "562230",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
       "id": "562208",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -4168,15 +4173,22 @@
       "actor": "codex",
       "summary": "GSM8K562208 failed on Bridge cache path;319 total seconds used, no answers",
       "revision": 419
+    },
+    {
+      "id": "e365150f-99ad-4a2b-8c43-ebaa98234150",
+      "at": "2026-11-27T09:04:33.057189Z",
+      "actor": "codex",
+      "summary": "GSM8K reference submitted as 562230",
+      "revision": 420
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K562208 failed on Bridge cache path;319 total seconds used, no answers",
-  "nextAction": "Redirect only the Bridge lock cache to writable work storage, validate the path, and rerun within6881 seconds remaining. Preserve and archive this failed attempt.",
+  "summary": "GSM8K reference submitted as 562230",
+  "nextAction": "Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.",
   "owner": "Codex",
-  "revision": 419,
-  "updatedAt": "2026-11-27T08:59:26.933418Z"
+  "revision": 420,
+  "updatedAt": "2026-11-27T09:04:33.057189Z"
 }
