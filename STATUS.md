@@ -4,7 +4,8 @@
 
 ## Running
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Testing whether native expert effects recur beyond three passes, and whether the mechanism helps single-visit token readouts under the clarified challenge rules.
+  Next: Freeze a bounded phase test, inspect unused evaluation data, and run within the remaining11477 GPU seconds.
 
 ## Next / blocked
 
@@ -16,4 +17,4 @@
 
 ## Finished
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Five illustrated expert case studies are ready. They include gate/up switches, opposite activities with matching routing effects, and a shared gate change producing opposite outputs at two tokens. All
+- Nothing recorded.

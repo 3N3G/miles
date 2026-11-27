@@ -335,15 +335,22 @@
       "actor": "codex",
       "summary": "Verify and preserve the final shared-gate explanation in the illustrated casebook",
       "revision": 43
+    },
+    {
+      "id": "67701233-a6d6-4e8d-b392-d6ee71da13d6",
+      "at": "2026-11-27T06:34:31.856951Z",
+      "actor": "codex",
+      "summary": "Resume authorized follow-up on loop phase and implications for single-visit lenses",
+      "revision": 44
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
-  "state": "finished",
-  "summary": "Five illustrated expert case studies are ready. They include gate/up switches, opposite activities with matching routing effects, and a shared gate change producing opposite outputs at two tokens. All30 displayed values and45 sources were audited.",
-  "nextAction": "Read the local draft at reports/EXPERT_CASE_STUDIES.md. No additional GPU time was used.",
+  "state": "running",
+  "summary": "Testing whether native expert effects recur beyond three passes, and whether the mechanism helps single-visit token readouts under the clarified challenge rules.",
+  "nextAction": "Freeze a bounded phase test, inspect unused evaluation data, and run within the remaining11477 GPU seconds.",
   "owner": "Codex",
-  "revision": 43,
-  "updatedAt": "2026-11-23T13:01:34.973559Z"
+  "revision": 44,
+  "updatedAt": "2026-11-27T06:34:31.856951Z"
 }
