@@ -54,6 +54,7 @@ Sources: [GSM8K](https://github.com/openai/grade-school-math) and [Qwen model ca
 
 The reference completed 250 optimizer updates and consumed 64,000 answers. Final fixed-validation accuracy was 185/256 (72.27%), versus 172/256 (67.19%) initially.
 Thirty questions changed from wrong to right, while 17 changed from right to wrong. The gain was 5.08 percentage points.
+A [seeded arithmetic improvement](evidence/gsm8k_boxed_improvement_example_20261127.json) changed 3 × 8 = 24 into 3 × (8 + 6) = 42, correctly including both required tasks. Both outputs used the requested box.
 The 95% paired question-bootstrap interval was 0–10.16 points. The exact paired McNemar p-value was 0.07894, or 0.15788 after the planned two-comparison correction.
 This uncertainty concerns validation questions. One training seed does not measure variation across training seeds.
 The final checkpoint supplied the primary result, even though an intermediate checkpoint scored higher.
