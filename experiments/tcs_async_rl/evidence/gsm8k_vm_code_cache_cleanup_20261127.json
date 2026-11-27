@@ -1,0 +1,141 @@
+{
+  "at_utc": "2026-11-27T06:44:29.789478+00:00",
+  "scope": "Unused clean VM code worktrees only. Every removed commit is an ancestor of the verified GitHub origin/main. No run artifacts removed.",
+  "free_bytes_before": 4673990656,
+  "free_bytes_after": 5342916608,
+  "recovered_bytes": 668925952,
+  "removed": [
+    {
+      "name": "easy-medium-monitor-v1",
+      "commit": "3f6d46993c15e3584ec2f286e21869b327ce84ae",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "easy-overfit-controller-v10",
+      "commit": "c55fbdef4003fb1059797c9a33f1334363fcdfdf",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "easy-overfit-controller-v11",
+      "commit": "df5e5624abcc15e0b4d2766e6027db7aac161108",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "easy-overfit-controller-v12",
+      "commit": "61bfb46077807e9b1f37da3e3035e5512ff968a7",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "easy-overfit-controller-v13",
+      "commit": "1b44d8b7b42565dd236b378da53407d9d8b25b5f",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "easy-overfit-controller-v14",
+      "commit": "3f33bbd0d370d31126e792750f3a363f83a5c5e6",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "easy-overfit-controller-v15",
+      "commit": "1620b3a0569f9192696406d51332b513f3d793e0",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "easy-overfit-controller-v16",
+      "commit": "4fb3ca73fe9667fe19766d1626671df8d275283e",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "easy-overfit-controller-v17",
+      "commit": "ae2ba558539c15188c19b3c5c112acaffee4210f",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "grade-service-v12-e2396e9b",
+      "commit": "e2396e9bba7a788df163afbbcbeabadb2f668c20",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "group-monitor-v1",
+      "commit": "9e9a162bd0d32ded80de2876075ad4f6f1087a51",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "group-monitor-v2",
+      "commit": "aca2f99f2aa909f5c8ac1336f51f75c8557af4ec",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "group-monitor-v3",
+      "commit": "c8b8af6c22125f6d73cc418e1070d1698c9aeb10",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "group-monitor-v4",
+      "commit": "d22f801493fa8987169868c6d331a6d59c98dd35",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "medium-rl-handoff-v1",
+      "commit": "3dd8414fddfcd7bbea9248d991b7aa495e5ab343",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    },
+    {
+      "name": "rl-smoke-v1",
+      "commit": "bb15cd4d308147a486372a1d235183841ae6ac45",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false
+    }
+  ],
+  "skipped": [
+    {
+      "name": "easy-overfit-log-finalizer-v2",
+      "commit": "5c1f75c8c1db38d3bf54b33577b3e0fd503aebe2",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": false,
+      "fresh_active_cwd": false,
+      "unexpected_ignored_files": 4
+    },
+    {
+      "name": "reward-service-v2",
+      "commit": "afd3e9f4d456e4fca3bbab48d821fac86bbd4a41",
+      "clean": true,
+      "github_main_ancestor": true,
+      "active_process_cwd": true
+    }
+  ],
+  "gpu_job": "561193",
+  "gpu_runtime_paths_changed": false
+}

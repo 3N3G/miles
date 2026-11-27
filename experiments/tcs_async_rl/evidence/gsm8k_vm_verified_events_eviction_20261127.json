@@ -1,0 +1,79 @@
+{
+  "at_utc": "2026-11-27T06:46:51.450169+00:00",
+  "free_bytes_before": 4982411264,
+  "free_bytes_after": 5153959936,
+  "recovered_bytes": 171548672,
+  "immutable_hf_verified": true,
+  "removed_vm_event_copies": [
+    {
+      "run": "easy-medium-236-v2",
+      "revision": "2c13f79698fb28c1170615b2fb542c21e40efba4",
+      "entries": {
+        "events/actor_cell00000_rank00001.jsonl": {
+          "sha256": "bca09f1535d7b56e4c59dce10614b29a1f1b8b6bc1c7ca82a71ed8c8b44e1068",
+          "bytes": 6256699
+        },
+        "events/actor_cell00000_rank00000.jsonl": {
+          "sha256": "f47d949fc105c85f649b0dafe2953488511c6887ec3995e82200bd118a44c627",
+          "bytes": 6371790
+        },
+        "events/inference_controller.jsonl": {
+          "sha256": "9ae0a37a1f9a678a89691c4cead3069347619d68690a928b7ba07b6f02053b00",
+          "bytes": 8592612
+        },
+        "events/rollout_executor.jsonl": {
+          "sha256": "3d08ce02fbe51c0e5e0731c841092986df32ec0eed967afafa91bd9b55fb6604",
+          "bytes": 5799016
+        },
+        "events/main.jsonl": {
+          "sha256": "61b9baef4b14861d823181ee9cfd8506f7a3caeeec433f73e7cc1e6d587f8703",
+          "bytes": 45463594
+        },
+        "events/worker_manager.jsonl": {
+          "sha256": "2ee4f404db52225babb7aa5791969b0870602147f66150eed30dbad8191e3379",
+          "bytes": 5729846
+        },
+        "events/trainer_controller_actor.jsonl": {
+          "sha256": "23a127af5e71e417ce405aefcf2e974ab2cd611731e6b06ab2c721781518a96c",
+          "bytes": 5762605
+        }
+      }
+    },
+    {
+      "run": "checkpoint-final236-screen-v5",
+      "revision": "442e9ce6dfdecf101bc23a6de19b7ce90489600f",
+      "entries": {
+        "events/actor_cell00000_rank00001.jsonl": {
+          "sha256": "2d9a123e97cfec994784e791512f57e4ab5687f75991cbfc1dc08e0721ea1a39",
+          "bytes": 6777318
+        },
+        "events/actor_cell00000_rank00000.jsonl": {
+          "sha256": "94d7c357bc7e0447679eb73503411ca0d4bdfc9cb7180923c550e391dbb595ec",
+          "bytes": 6892409
+        },
+        "events/inference_controller.jsonl": {
+          "sha256": "a08617f96558e7e508d24f0baab0515c828fb7f8f5c9de4f6ff505926e23c5d9",
+          "bytes": 9160134
+        },
+        "events/rollout_executor.jsonl": {
+          "sha256": "4ca6d4377e4a619cde4d289514b16e42c31dc3bbf6df294b3b7099d5ece5d2c2",
+          "bytes": 6246268
+        },
+        "events/main.jsonl": {
+          "sha256": "e1b7207743ae75c184f4284fc19a5685ebe1d4d7b1649d30d7da83f4b1eb39f1",
+          "bytes": 46206248
+        },
+        "events/worker_manager.jsonl": {
+          "sha256": "3e7e19e5bcdc71c8a0a4a77ace51d8d5422b5dd6e764a26f947f892e9f2a6959",
+          "bytes": 6176068
+        },
+        "events/trainer_controller_actor.jsonl": {
+          "sha256": "4e6095cc2ff901b43bb51b5a3e2f77bbd9ecc70f9b81c7734b8d77fa05495f97",
+          "bytes": 6208653
+        }
+      }
+    }
+  ],
+  "amd_originals_changed": false,
+  "hub_files_changed": false
+}
