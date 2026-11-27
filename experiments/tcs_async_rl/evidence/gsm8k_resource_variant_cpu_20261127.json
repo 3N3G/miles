@@ -1,0 +1,38 @@
+{
+  "gpu_jobs_submitted": 0,
+  "actual_native_async_validator_used": true,
+  "retract_colocation_accepted": true,
+  "in_place_colocation_rejection": "--fully-async --colocate releases the KV cache to make room for training, so the in_place promise to keep it cannot hold: use --pause-generation-mode retract",
+  "only_cli_differences": {
+    "rollout_num_gpus": {
+      "before": 6,
+      "after": 1
+    },
+    "pause_generation_mode": {
+      "before": "in_place",
+      "after": "retract"
+    },
+    "actor_num_gpus_per_node": {
+      "before": 2,
+      "after": 1
+    },
+    "num_gpus_per_node": {
+      "before": 8,
+      "after": 1
+    },
+    "offload_train": {
+      "before": null,
+      "after": true
+    },
+    "offload_rollout": {
+      "before": null,
+      "after": true
+    },
+    "colocate": {
+      "before": null,
+      "after": true
+    }
+  },
+  "slurm_cpu_override_checked": 16,
+  "current_8gpu_submission_unchanged": true
+}

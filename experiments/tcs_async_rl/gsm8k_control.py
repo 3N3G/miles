@@ -97,7 +97,8 @@ def prepare_inputs(source_dir, run_dir, preparation):
     write_json(run_dir / "input-provenance.json", preparation)
 
 
-def render_job(*, repo, work_dir, run_dir, config, config_path, arm, expected_commit, seconds=7200):
+def render_job(*, repo, work_dir, run_dir, config, config_path, arm, expected_commit, seconds=7200,
+               cpus_per_task=64):
     if arm not in ("reference", "cispo") or not 60 <= seconds <= 7200:
         raise ValueError("An attempt must fit the approved arm and remaining two-hour budget")
     minutes = seconds // 60
@@ -110,14 +111,14 @@ def render_job(*, repo, work_dir, run_dir, config, config_path, arm, expected_co
         "#!/usr/bin/python3.12", f"#SBATCH --job-name=gsm8k-{arm}",
         f"#SBATCH --partition={allocation['partition']}", f"#SBATCH --account={allocation['account']}",
         f"#SBATCH --qos={allocation['qos']}", "#SBATCH --nodes=1", "#SBATCH --ntasks=1",
-        "#SBATCH --cpus-per-task=64", "#SBATCH --exclusive", f"#SBATCH --time={walltime}",
+        f"#SBATCH --cpus-per-task={cpus_per_task}", "#SBATCH --exclusive", f"#SBATCH --time={walltime}",
         f"#SBATCH --chdir={repo}", f"#SBATCH --output={run_dir}/slurm-%j.log",
         "import subprocess", f"subprocess.run({argv!r}, check=True)", "",
     ])
 
 
 def run_host(cli, config):
-    if not os.environ.get("SLURM_JOB_ID") or os.environ.get("SLURM_JOB_PARTITION") != "mi3508x":
+    if not os.environ.get("SLURM_JOB_ID") or os.environ.get("SLURM_JOB_PARTITION") != config["allocation"]["partition"]:
         raise RuntimeError("Requires this control's approved AMD allocation")
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
     dirty = subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()
@@ -137,7 +138,8 @@ def run_host(cli, config):
     runtime = cli.run_dir / "ray"
     runtime.mkdir(exist_ok=True)
     prefix = container_prefix(image=image, repo=ROOT, work_dir=cli.work_dir,
-                              isolate_processes=True, runtime_dir=runtime, cache_namespace="mi3508x")
+                              isolate_processes=True, runtime_dir=runtime,
+                              cache_namespace=config["allocation"]["partition"])
     # Leave fifteen minutes for a completed save, final eval and orderly cleanup.
     def request_save():
         if not (cli.run_dir / "training-finished.json").exists():
@@ -168,8 +170,9 @@ def run_gpu(cli, config):
     from miles.utils.external_utils.model_args_utils import load_model_args
 
     namespace = os.environ.get("TCS_HOST_PID_NAMESPACE")
-    if not torch.version.hip or torch.cuda.device_count() != 8 or not namespace:
-        raise RuntimeError("Requires eight allocated ROCm GPUs")
+    physical_gpus = config["allocation"]["physical_gpus"]
+    if not torch.version.hip or torch.cuda.device_count() != physical_gpus or not namespace:
+        raise RuntimeError(f"Requires exactly {physical_gpus} allocated ROCm GPUs")
     if os.readlink("/proc/self/ns/pid") == namespace:
         raise RuntimeError("Ray cleanup requires our private PID namespace")
     run_id = f"gsm8k-{cli.arm}-" + U.create_run_id()
@@ -203,7 +206,7 @@ def run_gpu(cli, config):
     if os.environ.get("HIP_VISIBLE_DEVICES"):
         os.environ["CUDA_VISIBLE_DEVICES"] = os.environ["HIP_VISIBLE_DEVICES"]
     forwarded = forwarded_runtime_environment(os.environ)
-    backend.execute_train(train_args=shlex.join(native_argv(args)), num_gpus_per_node=8,
+    backend.execute_train(train_args=shlex.join(native_argv(args)), num_gpus_per_node=physical_gpus,
                           megatron_model_type=MODEL_TYPE, train_script="experiments/tcs_async_rl/gsm8k_driver.py",
                           extra_env_vars=forwarded, job_lifetime="launcher")
     write_json(cli.run_dir / "training-finished.json", {"launcher_completed": True, "run_id": run_id})
