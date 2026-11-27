@@ -1,0 +1,102 @@
+{
+  "job_id": "562230",
+  "state": "COMPLETED",
+  "allocated_seconds": 3079,
+  "prior_reference_attempt_seconds": 319,
+  "total_reference_node_seconds": 3398,
+  "native_source_commit": "0f6f0b3c97c351de01fb563e2ebe2cf3085ac08a",
+  "final_checkpoint": {
+    "tracker": "249",
+    "iterations": [
+      {
+        "name": "iter_0000249",
+        "files": 4,
+        "bytes": 6917933347
+      }
+    ]
+  },
+  "result": {
+    "optimizer_updates": 250,
+    "paired": {
+      "questions": 256,
+      "before_accuracy": 0.671875,
+      "after_accuracy": 0.72265625,
+      "change": 0.05078125,
+      "wrong_to_right": 30,
+      "right_to_wrong": 17,
+      "mcnemar_two_sided_exact_p": 0.07894069368148848,
+      "bonferroni_two_comparisons_p": 0.15788138736297697,
+      "paired_problem_bootstrap_95_interval": [
+        0,
+        0.1015625
+      ],
+      "bootstrap_samples": 10000,
+      "bootstrap_seed": 20261126,
+      "uncertainty_unit": "Validation questions. One training seed. Not training-seed uncertainty."
+    },
+    "direction_checks": [
+      0.0004898990665918035,
+      0.0007440560610820768,
+      0.0004031983583079324
+    ],
+    "mean_direction_gain": 0.0005457178286606043,
+    "gate_passed": true,
+    "baseline": {
+      "optimizer_updates": 0,
+      "rollout_id": 0,
+      "answers": 256,
+      "correct": 172,
+      "accuracy": 0.671875,
+      "valid_box_fraction": 0.98828125,
+      "capped_fraction": 0,
+      "mean_response_tokens": 278.703125,
+      "responses": "evaluations/baseline.jsonl.gz",
+      "sha256": "8656599eaec5227a282df82800b9352338a4d2993d06049953c9784fe68b6e82"
+    },
+    "final": {
+      "optimizer_updates": 250,
+      "rollout_id": 249,
+      "answers": 256,
+      "correct": 185,
+      "accuracy": 0.72265625,
+      "valid_box_fraction": 0.99609375,
+      "capped_fraction": 0.00390625,
+      "mean_response_tokens": 285.18359375,
+      "responses": "evaluations/updates-000250.jsonl.gz",
+      "sha256": "7a12af80967975c7592ff04d827e48dab0da9393bee9597b85be10d3ae2d62b0"
+    }
+  },
+  "wandb_full_verification": {
+    "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native",
+    "state": "finished",
+    "history_rows": 264,
+    "native_training_points": 250,
+    "wandb_training_rows": 250,
+    "native_scalars_checked": 18029,
+    "evaluation_rows": 14,
+    "evaluation_scalars_checked": 56,
+    "conflicting_coordinates": [],
+    "missing_native_scalars": [],
+    "differing_native_scalars": [],
+    "evaluation_errors": [],
+    "unexpected_training_steps": [],
+    "passed": true
+  },
+  "formatted_answer_check": {
+    "both_stages_have_boxes": 252,
+    "before_correct": 172,
+    "after_correct": 182,
+    "wrong_to_right": 27,
+    "right_to_wrong": 17
+  },
+  "reporting_tests": "38 CPU unittest cases passed; Ruff format/check and actual rendering of eight reference figures passed.",
+  "next_arm": {
+    "run": "gsm8k-cispo-v1",
+    "source_commit": "463a0bfb21f581f21e504baa431bf8a3068f0db4",
+    "allocated_node_seconds_cap": 7200,
+    "maximum_optimizer_updates": 250,
+    "initial_weights": "Fresh original pinned Qwen2.5-0.5B-Instruct, not reference final checkpoint",
+    "authorization": "Approved GSM8K plan; reference gate passed.",
+    "settings": "experiments/tcs_async_rl/gsm8k_control.approved_20261126.json"
+  }
+}
