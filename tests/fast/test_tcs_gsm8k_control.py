@@ -9,6 +9,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from experiments.tcs_async_rl import gsm8k_driver
+from experiments.tcs_async_rl import gsm8k_watch
 from experiments.tcs_async_rl.gsm8k_control import (
     CONFIG, configure_bridge_cache, forwarded_runtime_environment, render_job, resolved_args,
 )
@@ -18,6 +19,46 @@ from experiments.tcs_async_rl.gsm8k_results import analyze, paired_accuracy
 
 
 class GsmControlTests(unittest.TestCase):
+    def test_watcher_verifies_the_same_snapshot_before_archiving(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root/'submission.json').write_text(json.dumps({'job_id':'1','remote_run':'/work/run'}))
+            order = []
+            def publish(*args):
+                order.append('publish' if order.count('publish')==0 else 'verify')
+                return {'verified_points':1 if 'verify' in order else 0}
+            def archive(*args):
+                order.append('archive')
+                return 'https://example.org/immutable'
+            with patch.object(gsm8k_watch,'remote_state',return_value={'state':'RUNNING'}), \
+                 patch.object(gsm8k_watch,'sync_outputs',side_effect=lambda *a,**k: order.append('sync')), \
+                 patch.object(gsm8k_watch,'read_native_metrics',return_value=[{'optimizer_step':0}]), \
+                 patch.object(gsm8k_watch,'sync_native_wandb',side_effect=publish), \
+                 patch.object(gsm8k_watch,'trace_paths',return_value=[types.SimpleNamespace(
+                     stat=lambda:types.SimpleNamespace(st_size=64*2**20))]), \
+                 patch.object(gsm8k_watch,'archive_chunks',side_effect=archive), \
+                 patch.object(gsm8k_watch,'read_index',return_value={}):
+                self.assertFalse(gsm8k_watch.cycle(root))
+            self.assertEqual(order,['sync','publish','verify','archive'])
+            self.assertEqual(json.loads((root/'monitor-heartbeat.json').read_text())['wandb']['verified_points'],1)
+
+    def test_watcher_does_not_finish_unknown_jobs_and_stops_copying_at_low_space(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root/'submission.json').write_text(json.dumps({'job_id':'1','remote_run':'/work/run'}))
+            with patch.object(gsm8k_watch,'remote_state',return_value={'state':'UNKNOWN'}), \
+                 patch.object(gsm8k_watch,'sync_outputs') as sync, \
+                 patch.object(gsm8k_watch,'read_native_metrics',return_value=[]), \
+                 patch.object(gsm8k_watch,'trace_paths',return_value=[]), \
+                 patch.object(gsm8k_watch,'read_index',return_value={}):
+                self.assertFalse(gsm8k_watch.cycle(root))
+                self.assertFalse((root/'monitor-complete.json').exists())
+                sync.reset_mock()
+                with patch.object(gsm8k_watch.shutil,'disk_usage',return_value=types.SimpleNamespace(free=2**30)):
+                    with self.assertRaisesRegex(RuntimeError,'reserve'):
+                        gsm8k_watch.cycle(root)
+                sync.assert_not_called()
+
     def test_bridge_cache_uses_work_storage_and_reaches_workers_without_home_or_keys(self):
         with tempfile.TemporaryDirectory() as name, patch.dict(os.environ, {}, clear=True):
             directory = configure_bridge_cache(Path(name))
