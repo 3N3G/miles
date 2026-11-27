@@ -1,0 +1,23 @@
+{
+  "status": "Post-hoc descriptive subgroups. Original primary eight-unit test remains unchanged.",
+  "groups": [
+    {
+      "group": "six_new",
+      "cases": 2112,
+      "mae": {
+        "predicted_full": 4.330718452884297e-06,
+        "predicted_dot_only": 2.1097244103166565e-05
+      },
+      "dot_only_error_divided_by_full": 4.871534442308438
+    },
+    {
+      "group": "two_known",
+      "cases": 704,
+      "mae": {
+        "predicted_full": 4.009389858076902e-06,
+        "predicted_dot_only": 0.00013721320397127893
+      },
+      "dot_only_error_divided_by_full": 34.22296379955753
+    }
+  ]
+}

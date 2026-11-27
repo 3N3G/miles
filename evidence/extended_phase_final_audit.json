@@ -1,0 +1,17 @@
+{
+  "unit_article_pass_rows": 3072,
+  "native_controls": 36,
+  "all_four_primary_intervals_below_zero": true,
+  "prior_article_overlap": 0,
+  "prior64_token_prefix_overlap": 0,
+  "readout_questions": 106,
+  "visits_per_method": 10,
+  "tokens_per_visit": 10,
+  "report_images_exist": true,
+  "all16_lossless_state_shapes": [
+    24,
+    2,
+    128,
+    2304
+  ]
+}

@@ -75,6 +75,7 @@ def main():
         checks.append({'id':record['id'],'check':'native_three_pass_prefix','maximum_state_error':0,'maximum_reader_error':0})
         del native,native_capture,native_states
         # Store BF16 bit patterns losslessly, without converting through float16.
+        assert states.dtype==torch.bfloat16 and states.shape==(24,2,128,2304)
         np.savez_compressed(a.out/(record['id']+'-states.npz'),states_bf16_bits=states.view(torch.uint16).cpu().numpy(),
                             reader_weights=base,token_ids=np.array(record['token_ids']))
         (a.out/(record['id']+'-units.json')).write_text(json.dumps(observe.values)+'\n');del states

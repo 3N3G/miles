@@ -4,8 +4,7 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Native unit effects recur over three-pass phases. The unfitted native block-reader token candidate did not improve recovery. Jobs: hpcfund/561982 SUBMITTED
-  Next: Validate cached completion controls, archive results, and finish the standalone report.
+- Nothing recorded.
 
 ## Next / blocked
 
@@ -17,4 +16,4 @@
 
 ## Finished
 
-- Nothing recorded.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): On16 new articles, native unit effects show recurring three-pass phase. A state-aware local predictor reduces error about12-fold. The token candidate shows no exact-label gain; hidden-reasoning evalua

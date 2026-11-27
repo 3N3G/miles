@@ -36,3 +36,10 @@ its controls pass, one completion job at most30 minutes (1800 GPU seconds).
 Reserve each before submission, one allocation at a time, within the
 remaining five-hour program. Preserve failed runs and any partial results.
 Archive raw outputs, input identities, controls, timings and logs.
+
+## Results
+
+The first cached diagnostic failed its exact12-token prefix guard. Its Slurm
+allocation used75 seconds. The conditional74-question completion job was not
+submitted. A separate generation-path diagnosis preserved the failure and
+obtained two uncached examples. No cached equivalence was assumed.

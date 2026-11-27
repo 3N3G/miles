@@ -451,5 +451,41 @@
     "files": 7,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7a872cf5e31507a581c2daaa2dd74ee7035774ff/inkling-interp/native-reader-lens-v2",
     "verified_at": "2026-11-27T07:05:04.386155+00:00"
+  },
+  {
+    "stage": "native-reader-capability-diagnostic-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "a8fdf9ab5f3b843665d44edb6e0ded3c415acf21",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/a8fdf9ab5f3b843665d44edb6e0ded3c415acf21/inkling-interp/native-reader-capability-diagnostic-v1",
+    "verified_at": "2026-11-27T07:11:35.846233+00:00"
+  },
+  {
+    "stage": "reader-generation-path-diagnosis-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "ca8d3a451dd3326d02dbbf393c0d5b394dfcc819",
+    "private": true,
+    "files": 5,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ca8d3a451dd3326d02dbbf393c0d5b394dfcc819/inkling-interp/reader-generation-path-diagnosis-v1",
+    "verified_at": "2026-11-27T07:14:33.966891+00:00"
+  },
+  {
+    "stage": "native-reader-lens-v2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "185df312a4d50121f78ae4aacc8fd93b6c019599",
+    "private": true,
+    "files": 8,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/185df312a4d50121f78ae4aacc8fd93b6c019599/inkling-interp/native-reader-lens-v2",
+    "verified_at": "2026-11-27T07:18:44.452207+00:00"
+  },
+  {
+    "stage": "extended-unit-phase-v2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "e2ce8f98ed51a8037ec26b53991901066cf3c43f",
+    "private": true,
+    "files": 42,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/e2ce8f98ed51a8037ec26b53991901066cf3c43f/inkling-interp/extended-unit-phase-v2",
+    "verified_at": "2026-11-27T07:18:50.248379+00:00"
   }
 ]

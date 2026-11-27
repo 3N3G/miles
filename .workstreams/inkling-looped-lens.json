@@ -5,20 +5,26 @@
   "evidence": [
     {
       "path": "evidence/extended_unit_phase_result.json",
-      "label": "24-pass fixed-unit causal test on 16 fresh articles"
+      "label": "Prospective 24-pass causal test on16 new articles"
     },
     {
-      "path": "plans/native_reader_lens.md",
-      "label": "Frozen native-reader versus partial-buffer token test"
-    }
-  ],
-  "jobs": [
+      "path": "evidence/extended_state_component_description.json",
+      "label": "Exploratory outlier/shared-component controls and counterexample"
+    },
     {
-      "cluster": "hpcfund",
-      "id": "561982",
-      "status": "SUBMITTED"
+      "path": "evidence/native_reader_lens_result.json",
+      "label": "Fixed same-visit token comparison"
+    },
+    {
+      "path": "evidence/reader_generation_diagnosis_result.json",
+      "label": "Rejected cache shortcut and complete uncached raw examples"
+    },
+    {
+      "path": "evidence/extended_phase_final_audit.json",
+      "label": "Measurement and input-separation audit"
     }
   ],
+  "jobs": [],
   "sessions": [
     {
       "agent": "codex",
@@ -382,15 +388,29 @@
       "actor": "codex",
       "summary": "Complete token readout test and repair censored capability controls",
       "revision": 50
+    },
+    {
+      "id": "70b27258-83f9-4c92-81e9-f2637a1cc52f",
+      "at": "2026-11-27T07:09:41.172605Z",
+      "actor": "codex",
+      "summary": "Reject cached shortcut after exact-prefix guard failure and isolate generation paths",
+      "revision": 51
+    },
+    {
+      "id": "625a48dc-3af2-419c-a18e-3408b0b3d5df",
+      "at": "2026-11-27T07:22:12.471533Z",
+      "actor": "codex",
+      "summary": "Finish recurring-unit phase investigation with independent controls, null token result, archived diagnostics and review drafts",
+      "revision": 52
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
-  "state": "running",
-  "summary": "Native unit effects recur over three-pass phases. The unfitted native block-reader token candidate did not improve recovery.",
-  "nextAction": "Validate cached completion controls, archive results, and finish the standalone report.",
+  "state": "finished",
+  "summary": "On16 new articles, native unit effects show recurring three-pass phase. A state-aware local predictor reduces error about12-fold. The token candidate shows no exact-label gain; hidden-reasoning evaluation remains unestablished.",
+  "nextAction": "Review local reports/RECURRING_EXPERT_PHASE.md and linked details. No GPU jobs or reservations remain.9850 GPU seconds remain authorized.",
   "owner": "Codex",
-  "revision": 50,
-  "updatedAt": "2026-11-27T07:04:23.764532Z"
+  "revision": 52,
+  "updatedAt": "2026-11-27T07:22:12.471533Z"
 }

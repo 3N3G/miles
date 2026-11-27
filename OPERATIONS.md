@@ -281,3 +281,47 @@ The updated local `review/expert-case-studies` commit is
 `9ab71daefc42e82b1649729ac3c5b580802c940f`. Its parent preserves the previous draft.
 The audit includes this gate/up sign check and still verifies30 displayed
 numbers against45 source files.
+
+## 2026-11-27: recurring unit phase and fixed token readouts
+
+Session01a1fd03-2b6c-7151-9835-2cb592949d73, agentCodex, machinehome,
+original directory/home/ubuntu/miles. Work remained/home/ubuntu/inkling-interp.
+The user requested phase specificity and lens ramifications within the previously
+authorized five-GPU-hour expert program. No external messages or submissions.
+
+- extended-unit-phase-v1,561939:FAILED,57 GPU seconds. Final-head check missed
+  the native BF16 cast. No article outcomes. Preserved and repaired unchanged.
+- extended-unit-phase-v2,561942:COMPLETED,276 seconds. All16 new articles and
+  all36 recorded controls passed. Four corrected primary contrasts passed.
+- native-reader-lens-v1,561956:FAILED,48 seconds. Physical layer0 has no block
+  reader. Skip only its hook. None of the fixed ten visits reads that layer.
+- native-reader-lens-v2,561960:COMPLETED,850 seconds. All106 questions recorded.
+  Primary64 arithmetic labels:1/64 for both methods. Direct-source labels18/32
+  versus14/32. Public practice exact labels6/10 versus4/10. Capability prefixes
+  all censored at12 tokens. Preserve counts and source-applicability caveats.
+- native-reader-capability-diagnostic-v1,561982:FAILED,75 seconds. Cached
+  generation did not reproduce the saved uncached prefix. Rejected as planned.
+- reader-generation-path-diagnosis-v1,561984:TIMEOUT,321 seconds. All intended
+  files and both uncached completions were written before finishing timeout.
+  Count all321 seconds. Neither cached path matched32 native tokens, so the
+  conditional74-question cached completion stage was not submitted. Both
+  uncached examples answered correctly and wrote their intermediate in thinking.
+
+Scheduler rejections allocated no GPU. Exact receipts, including those failures,
+are in jobs.jsonl. Total new allocation1627 seconds (27m07s). Program total8150
+seconds (2h15m50s),9850 seconds (2h44m10s) left. No pending reservation.
+All raw runs, including failures, were uploaded and private immutable links
+verified in evidence/artifact_archives.json. The latest augmented phase archive
+ends e2ce8f98ed51a8037ec26b53991901066cf3c43f. The augmented token archive ends
+185df312a4d50121f78ae4aacc8fd93b6c019599. The path diagnosis archive ends
+ca8d3a451dd3326d02dbbf393c0d5b394dfcc819. Original versions remain immutable.
+
+Derived state controls and static-template failure are exploratory. The latter
+does not isolate phase because development calibration also changes articles
+and initial-transient behavior. The source direct family has six subjective
+preference labels and is not a factual answer-accuracy set. We did not establish
+a valid complete hidden-intermediate evaluation or a better vocabulary lens.
+
+Human reports are local review drafts:reports/RECURRING_EXPERT_PHASE.md and
+reports/RECURRING_EXPERT_PHASE_DETAILS.md. Preserve them on the local
+review/recurring-expert-phase branch. Do not push that prose branch.

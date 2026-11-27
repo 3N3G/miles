@@ -98,4 +98,24 @@ before adding Results. Archive frozen inputs, outputs, native controls and log.
 
 ## Results
 
-Pending.
+Completed the106-question fixed readout comparison. The primary64 arithmetic
+questions gave1/64 exact intermediate recoveries for each method, with no
+paired discordances. The empirical paired bootstrap collapses to[0,0], which
+does not establish population equivalence. Direct source-label recovery was
+18/32 for the buffer and14/32 for the current reader. Public practice was6/10
+versus4/10. All106 initial generations reached the12-token budget unfinished.
+Those capability and unspoken gates remain unknown in this bounded test.
+
+A source audit found six direct questions with subjective preference labels
+from the source model. Their aggregate is not factual answer accuracy.
+Frozen-label counts are preserved. Source subgroups and raw examples are in
+evidence/native_reader_lens_data_audit.json and evidence/native_reader_lens_result.json.
+
+The longer completion shortcut failed the planned native prefix guard. A
+bounded diagnosis completed the first two questions without cache. Both gave
+the correct final answer but wrote the intermediate in native thinking text.
+No larger cached stage ran. The remaining62 arithmetic gates are unknown.
+This test does not establish a hidden-intermediate benchmark for Inkling.
+
+Private immutable initial readout archive:
+https://huggingface.co/datasets/3N3G/internalization-runs/tree/7a872cf5e31507a581c2daaa2dd74ee7035774ff/inkling-interp/native-reader-lens-v2

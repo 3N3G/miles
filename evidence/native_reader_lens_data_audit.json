@@ -1,0 +1,59 @@
+{
+  "status": "Post-hoc source-applicability audit. Does not alter primary endpoint.",
+  "direct_subfamilies": {
+    "entity": {
+      "n": 14,
+      "buffer": 12,
+      "native_reader": 9,
+      "prompts": [
+        "Which instrument is the musician Jimi Hendrix famous for playing? Answer in one word.",
+        "In which country is the Colosseum? Answer in one word.",
+        "Which instrument is the musician Elton John famous for playing? Answer in one word.",
+        "Which instrument is the musician Yo-Yo Ma famous for playing? Answer in one word.",
+        "Which instrument is the musician Louis Armstrong famous for playing? Answer in one word.",
+        "In which country is the Eiffel Tower? Answer in one word.",
+        "In which country is Christ the Redeemer? Answer in one word.",
+        "In which country is the Great Pyramid of Giza? Answer in one word.",
+        "In which country is Angkor Wat? Answer in one word.",
+        "What sport does the athlete Sachin Tendulkar play? Answer in one word.",
+        "In which country is Machu Picchu? Answer in one word.",
+        "In which country is Big Ben? Answer in one word.",
+        "What sport does the athlete Wayne Gretzky play? Answer in one word.",
+        "Which instrument is the musician Ludwig van Beethoven famous for playing? Answer in one word."
+      ]
+    },
+    "processing": {
+      "n": 12,
+      "buffer": 1,
+      "native_reader": 0,
+      "prompts": [
+        "What is the day before Saturday? Answer in one word.",
+        "What is 6 - 2? Answer in one word.",
+        "What is the day before Thursday? Answer in one word.",
+        "What is the day after Sunday? Answer in one word.",
+        "What is the month after May? Answer in one word.",
+        "What is the day after Monday? Answer in one word.",
+        "What is the day before Wednesday? Answer in one word.",
+        "What is 2 + 2? Answer in one word.",
+        "What is 7 + 2? Answer in one word.",
+        "What is the day before Tuesday? Answer in one word.",
+        "What is the month after February? Answer in one word.",
+        "What is the day after Tuesday? Answer in one word."
+      ]
+    },
+    "implicit": {
+      "n": 6,
+      "buffer": 5,
+      "native_reader": 5,
+      "prompts": [
+        "What is your favorite musical instrument? Answer in one word.",
+        "What is your favorite flower? Answer in one word.",
+        "What is your favorite tree? Answer in one word.",
+        "What is your favorite constellation? Answer in one word.",
+        "What is your favorite shape? Answer in one word.",
+        "What is your favorite Shakespeare play? Answer in one word."
+      ]
+    }
+  },
+  "limitation": "The six implicit preference labels were selected for the source model. They are not factual ground truth for Inkling. The ungated direct aggregate is source-label recovery only."
+}
