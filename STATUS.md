@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference561193 remains queued at01:27 Eastern; monitoring healthy Jobs: hpcfund/561193 PENDING; hpcfund/561051 CANCELLED
-  Next: Continue foreground monitoring. Await AMD capacity, then validate baseline and optimizer progress. No GPU time has been used.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K561193 still queued; recovered0.78 GiB of VM cache space Jobs: hpcfund/561193 PENDING; hpcfund/561051 CANCELLED
+  Next: Continue queue and disk checks. Supervise baseline and training when allocated. Archive growing rollout copies during training.
 
 ## Next / blocked
 
