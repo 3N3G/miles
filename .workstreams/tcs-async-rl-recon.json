@@ -989,7 +989,7 @@
     {
       "id": "562230",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "COMPLETED"
     },
     {
       "id": "562208",
@@ -4201,15 +4201,22 @@
       "actor": "codex",
       "summary": "GSM8K continuous observer started;126 W&B training coordinates verified",
       "revision": 423
+    },
+    {
+      "id": "e133da4a-73ad-40bd-8e8e-ee831fe515ea",
+      "at": "2026-11-27T09:58:39.272452Z",
+      "actor": "codex",
+      "summary": "GSM8K reference completed250 updates:172 to185/256; CISPO gate passed",
+      "revision": 424
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K continuous observer started;126 W&B training coordinates verified",
-  "nextAction": "Keep foreground checks of GPU progress and observer heartbeat. Finish250 updates, inspect checkpoint/eval match, verify archive and W&B, then apply the CISPO gate.",
+  "summary": "GSM8K reference completed250 updates:172 to185/256; CISPO gate passed",
+  "nextAction": "Submit the approved fresh-weight CISPO arm. Complete immutable reference publication while supervising CISPO through its final checkpoint and verified report.",
   "owner": "Codex",
-  "revision": 423,
-  "updatedAt": "2026-11-27T09:36:06.500562Z"
+  "revision": 424,
+  "updatedAt": "2026-11-27T09:58:39.272452Z"
 }
