@@ -1,0 +1,11 @@
+{
+  "validation_figures_and_primary_statistics_unchanged": true,
+  "sha256": {
+    "figures/validation-box-format.png": "260b0e66153e0aaf49fa219dd8e02101702a8cc926176de99becb4cc8edb2eba",
+    "figures/validation-accuracy.png": "60db345956f78a24f73b6ab55f7be8e72f62975e9ce9e2b9507f5bb3723264c2",
+    "figures/validation-capped.png": "46524e773d81902ed907353ab9bbcc0784b678ce61cbbb8396c065fd44e3d656",
+    "control-results.json": "c49fc99847254b4d0c4cc3136a0f56aa244836745f33470c91db7f35957da56b"
+  },
+  "training_axis": "One-based optimizer update index. Diagnostics are computed before the indicated optimizer step.",
+  "gpu_jobs_submitted": 0
+}

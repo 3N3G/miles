@@ -34,10 +34,10 @@ def plot(directory):
         raise ValueError("Training plots and final checkpoint update counts differ")
     outputs = []
 
-    def save(name, x, y, label, *, probability=False):
+    def save(name, x, y, label, *, probability=False, validation=False):
         fig, axis = plt.subplots(figsize=(7.2, 4.4), layout="constrained")
         axis.plot(x, y, color=color, marker="o" if len(x) < 20 else None, linewidth=1.4)
-        axis.set(xlabel="Completed optimizer updates", ylabel=label, title=arm.capitalize())
+        axis.set(xlabel="Completed optimizer updates" if validation else "Optimizer update (one-based)", ylabel=label, title=arm.capitalize())
         axis.grid(alpha=0.2)
         if probability:
             axis.set_ylim(0, 1)
@@ -47,9 +47,9 @@ def plot(directory):
         outputs.append(str(path.relative_to(directory)))
 
     eval_steps = [point["optimizer_updates"] for point in evaluations]
-    save("validation-accuracy", eval_steps, [x["accuracy"] for x in evaluations], "Exact boxed-answer validation accuracy", probability=True)
-    save("validation-box-format", eval_steps, [x["valid_box_fraction"] for x in evaluations], "Validation answers with a parsable box (fraction)", probability=True)
-    save("validation-capped", eval_steps, [x["capped_fraction"] for x in evaluations], "Validation answers reaching1,024 tokens (fraction)", probability=True)
+    save("validation-accuracy", eval_steps, [x["accuracy"] for x in evaluations], "Exact boxed-answer validation accuracy", probability=True, validation=True)
+    save("validation-box-format", eval_steps, [x["valid_box_fraction"] for x in evaluations], "Validation answers with a parsable box (fraction)", probability=True, validation=True)
+    save("validation-capped", eval_steps, [x["capped_fraction"] for x in evaluations], "Validation answers reaching1,024 tokens (fraction)", probability=True, validation=True)
     if summaries:
         save("training-reward", [x["optimizer_step"] + 1 for x in summaries], [x["accuracy"] for x in summaries], "Consumed training reward (mixed groups only)" if arm == "reference" else "Consumed training reward", probability=True)
     diagnostics = [
@@ -70,7 +70,8 @@ def plot(directory):
                 "validation_questions": 256,
                 "accuracy_uncertainty": "Line plots have no error bars. Final paired question-bootstrap uncertainty is in control-results.json.",
                 "training_reward_scope": "The reference filters for mixed-reward groups. Use fixed validation to assess learning.",
-                "optimizer_axis": "Native rollout ID plus1. Validation already records completed updates.",
+                "optimizer_axis": "Training uses native rollout ID plus1, the one-based update index. Validation records completed updates.",
+                "training_diagnostic_timing": "Training diagnostics are scored during the indicated update, before its optimizer step. They are not after-update measurements.",
             },
             indent=2,
         )
