@@ -1,0 +1,131 @@
+{
+  "kind": "Post-hoc assistant review of all10 boxes unsupported by the independent numeric checker. Not expert calibration or an automated proof.",
+  "reviewed_at_utc": "2026-11-27T17:26:43.204243+00:00",
+  "agent_session": "01a1ed24-1032-7731-910b-824f484f5f71",
+  "scope": "Existing14 validation checkpoints only. No new inference, judge call, data change or reward change. The native box extractor is not independently verified.",
+  "reviewed_responses": 10,
+  "unique_questions": 5,
+  "agreements_under_existing_numeric_target_contract": 10,
+  "disagreements": 0,
+  "important_limit": "Zero numeric reward does not imply every intermediate reasoning step is wrong. Two2P outputs express a useful relation but omit the available numeric solution.",
+  "native_rewards_changed": false,
+  "primary_accuracy_result_changed": false,
+  "case_summaries": [
+    {
+      "file": "baseline.jsonl.gz",
+      "source_row": 4478,
+      "answer": "4 \\text{ dollars and } 2 \\text{ dollars}",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 2,
+        "reason": "Nora=30, Tamara=10 and Lulu=6. The remainder is6, giving2 each. The response instead totals54 and gives two conflicting amounts."
+      }
+    },
+    {
+      "file": "updates-000020.jsonl.gz",
+      "source_row": 4555,
+      "answer": "0 \\text{ weeks and } \\frac{3}{7} \\text{ weeks}",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 4,
+        "reason": "Forty eggs at two per school day last20 school days, or four five-day school weeks. The response gives0+3/7 weeks."
+      }
+    },
+    {
+      "file": "updates-000020.jsonl.gz",
+      "source_row": 6411,
+      "answer": "12B",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 24,
+        "reason": "Four pairs contain eight earrings. Each requires one button and three gemstones, giving24. The response reverses the button relation and leaves12B unresolved."
+      }
+    },
+    {
+      "file": "updates-000060.jsonl.gz",
+      "source_row": 947,
+      "answer": "3P",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 80,
+        "reason": "Current practice corresponds to40 daily sessions because D-20=D/2. Tripling requires80 additional days. Every reviewed box leaves P unresolved. The2P responses have a correct intermediate relation if P denotes current days, but do not solve P=40 or give the numeric target."
+      }
+    },
+    {
+      "file": "updates-000080.jsonl.gz",
+      "source_row": 947,
+      "answer": "P",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 80,
+        "reason": "Current practice corresponds to40 daily sessions because D-20=D/2. Tripling requires80 additional days. Every reviewed box leaves P unresolved. The2P responses have a correct intermediate relation if P denotes current days, but do not solve P=40 or give the numeric target."
+      }
+    },
+    {
+      "file": "updates-000100.jsonl.gz",
+      "source_row": 947,
+      "answer": "\\left\\lceil \\frac{5P}{2} \\right\\rceil",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 80,
+        "reason": "Current practice corresponds to40 daily sessions because D-20=D/2. Tripling requires80 additional days. Every reviewed box leaves P unresolved. The2P responses have a correct intermediate relation if P denotes current days, but do not solve P=40 or give the numeric target."
+      }
+    },
+    {
+      "file": "updates-000120.jsonl.gz",
+      "source_row": 947,
+      "answer": "2P",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 80,
+        "reason": "Current practice corresponds to40 daily sessions because D-20=D/2. Tripling requires80 additional days. Every reviewed box leaves P unresolved. The2P responses have a correct intermediate relation if P denotes current days, but do not solve P=40 or give the numeric target."
+      }
+    },
+    {
+      "file": "updates-000140.jsonl.gz",
+      "source_row": 5019,
+      "answer": "\\frac{S}{4}",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 11,
+        "reason": "Backward from Callie: Taylor received6, Harmony9, and Molly11. Jen gave11 and ate the other half, also11. S/4 leaves the numeric answer unresolved."
+      }
+    },
+    {
+      "file": "updates-000180.jsonl.gz",
+      "source_row": 947,
+      "answer": "2P",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 80,
+        "reason": "Current practice corresponds to40 daily sessions because D-20=D/2. Tripling requires80 additional days. Every reviewed box leaves P unresolved. The2P responses have a correct intermediate relation if P denotes current days, but do not solve P=40 or give the numeric target."
+      }
+    },
+    {
+      "file": "updates-000200.jsonl.gz",
+      "source_row": 947,
+      "answer": "P",
+      "native_reward": 0,
+      "assistant_review_expected_numeric_reward": 0,
+      "assessment": {
+        "computed_label": 80,
+        "reason": "Current practice corresponds to40 daily sessions because D-20=D/2. Tripling requires80 additional days. Every reviewed box leaves P unresolved. The2P responses have a correct intermediate relation if P denotes current days, but do not solve P=40 or give the numeric target."
+      }
+    }
+  ],
+  "full_transcripts_artifact": {
+    "path": "symbolic-box-review.json",
+    "sha256": "cfca1141931f14aaa9adcf25b486bbfaa4e6a88d9493dfbe67c4cfcf47240189",
+    "bytes": 29744,
+    "archive_url": "https://huggingface.co/datasets/3N3G/internalization-runs/blob/c508743f4161496a0c7cc9728d8c3be289c3260b/miles/gsm8k-reference-v4/symbolic-box-review.json"
+  }
+}

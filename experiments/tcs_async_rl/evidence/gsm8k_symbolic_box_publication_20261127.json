@@ -1,0 +1,15 @@
+{
+  "kind": "Post-hoc assistant review archive, primary results unchanged",
+  "commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/c508743f4161496a0c7cc9728d8c3be289c3260b",
+  "path": "miles/gsm8k-reference-v4",
+  "verified": true,
+  "verified_files": 605,
+  "verified_bytes": 243867365,
+  "local_files": 419,
+  "previously_evicted_files": 186,
+  "checkpoints_uploaded": false,
+  "review": "gsm8k_symbolic_box_review_20261127.json",
+  "numeric_checker": "gsm8k_numeric_audit_20261127.json",
+  "new_gpu_jobs": 0,
+  "new_api_judge_calls": 0
+}
