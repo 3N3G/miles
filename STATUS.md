@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Repaired GSM8K reference561193 queued; unstarted first attempt archived Jobs: hpcfund/561193 PENDING; hpcfund/561051 CANCELLED
-  Next: Continue foreground supervision. Inspect baseline, optimizer direction and six-engine weight publication after AMD allocation.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference561193 queued; no allocated GPU time at22:35 Eastern Jobs: hpcfund/561193 PENDING; hpcfund/561051 CANCELLED
+  Next: Continue foreground supervision through allocation, training and verified finalization. Current start estimate is07:34 Eastern Nov27, subject to scheduler changes.
 
 ## Next / blocked
 
