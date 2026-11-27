@@ -4,7 +4,7 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Three-pass recurrence extends to native unit deletion effects. Full local predictor generalizes to untested visits with about12-fold lower error than dot-only. Jobs: hpcfund/561956 SUBMITTED
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Three-pass recurrence extends to native unit deletion effects. Full local predictor generalizes to untested visits with about12-fold lower error than dot-only. Jobs: hpcfund/561960 SUBMITTED
   Next: Finish the fixed same-visit vocabulary lens test and write standalone results with limits.
 
 ## Next / blocked

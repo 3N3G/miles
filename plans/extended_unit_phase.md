@@ -91,4 +91,23 @@ results, controls, states and logs in the private run store after completion.
 
 ## Results
 
-Pending.
+Completed on16 new articles. All36 recorded controls passed, including14
+local/full-forward deletion comparisons with maximum error0. Native first-three
+states and reader weights matched exactly for all16 articles.
+
+Late full-state distance was0.18646 at lag3 and0.69467 at lag1. Mean absolute
+causal effect difference was0.001863 percentage points at lag3 versus0.008701
+at lag1. Both preregistered contrasts excluded zero after four-test correction.
+The full predictor's MAE on22 new visit numbers was0.000425 percentage points,
+versus0.005013 for frozen RMS and0.007920 for predicting zero. Both prediction
+contrasts also passed the four-test correction. Detailed intervals and the
+first frozen article example are in evidence/extended_unit_phase_result.json.
+
+The original unit45:1127 had positive deletion effects at passes1,4,7,...,22,
+and negative effects at passes3,6,9,...,24. Some other units changed between
+initial and later cycles, so this is not a universal per-unit phase counter.
+The extension is outside the trained three-pass horizon. It does not establish
+a stable limit cycle or better semantic token recovery.
+
+Private immutable run archive:
+https://huggingface.co/datasets/3N3G/internalization-runs/tree/d92b6e8633d32f1210e02869cf958b7a47e3eb25/inkling-interp/extended-unit-phase-v2

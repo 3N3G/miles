@@ -27,6 +27,17 @@ def main():
     fig.tight_layout(rect=(.025,.065,1,.97));fig.text(.08,.018,'16 new WikiText articles, eight fixed layer-12 units. Read at native layer 13.\nShading: descriptive 95% article-bootstrap intervals. Extension begins after pass 3.\nFull native prefix and local replay checks are required before interpreting trajectories.',fontsize=9)
     for suffix in ['png','pdf']:fig.savefig('figures/extended_unit_effects.'+suffix,dpi=180)
     plt.close(fig)
+    u=next(u for u in d['per_unit'] if (u['expert'],u['unit'])==(45,1127))
+    r=[{'mean':v['mean']*100,'interval':(np.array(v['interval'])*100).tolist()} for v in u['exact_effect_by_visit']]
+    fig,ax=plt.subplots(figsize=(8.4,4.5));line(ax,r,'#0072B2',None)
+    ax.axhline(0,color='#555555',lw=.8);ax.axvline(3.5,color='#999999',lw=.9,ls=':')
+    ax.set(xlabel='Pass number',ylabel='Change in Block 2 read weight\nwhen the unit is deleted (percentage points)',
+           title='The original unit’s opposing routing effects recur',xticks=range(1,25),xlim=(.7,24.3))
+    ax.text(4,.022,'Extended beyond the trained 3 passes',fontsize=9,color='#555555')
+    fig.subplots_adjust(left=.16,bottom=.26)
+    fig.text(.16,.035,'Inkling 2 Mini, physical layer 12, expert 45, unit 1127. 16 new articles.\nPositive: deleting the unit makes the next layer read Block 2 more.\nNegative: deleting it makes the next layer read Block 2 less. Shading: 95% article bootstrap.',fontsize=9)
+    for suffix in ['png','pdf']:fig.savefig('figures/extended_unit45_recurrence.'+suffix,dpi=180)
+    plt.close(fig)
     fig,ax=plt.subplots(figsize=(7.6,4.8))
     for lag,c in [(1,'#D55E00'),(3,'#0072B2'),(6,'#009E73')]:line(ax,d['state_distance_by_visit'][str(lag)],c,f'Lag {lag}')
     ax.set(xlabel='Pass number',ylabel='Normalized whole-state RMS distance',title='Compare the full recurrent state at different lags',ylim=(0,None))

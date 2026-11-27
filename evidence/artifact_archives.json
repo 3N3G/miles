@@ -406,5 +406,32 @@
     "files": 14,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/60c0b39c0833eea2307a74b9129b71750307484a/inkling-interp/expert-blog-examples-v1",
     "verified_at": "2026-11-23T13:00:54.224458+00:00"
+  },
+  {
+    "stage": "extended-unit-phase-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "ae873d3631cff06492ec0d1c87710401986986f0",
+    "private": true,
+    "files": 4,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ae873d3631cff06492ec0d1c87710401986986f0/inkling-interp/extended-unit-phase-v1",
+    "verified_at": "2026-11-27T06:48:54.204824+00:00"
+  },
+  {
+    "stage": "extended-unit-phase-v2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "d92b6e8633d32f1210e02869cf958b7a47e3eb25",
+    "private": true,
+    "files": 39,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/d92b6e8633d32f1210e02869cf958b7a47e3eb25/inkling-interp/extended-unit-phase-v2",
+    "verified_at": "2026-11-27T06:49:04.984353+00:00"
+  },
+  {
+    "stage": "native-reader-lens-v1",
+    "repo": "3N3G/internalization-runs",
+    "revision": "ed8937f9087b1029c5606841fea0c72b8ddb6cfc",
+    "private": true,
+    "files": 3,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ed8937f9087b1029c5606841fea0c72b8ddb6cfc/inkling-interp/native-reader-lens-v1",
+    "verified_at": "2026-11-27T06:49:10.570714+00:00"
   }
 ]

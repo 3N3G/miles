@@ -15,7 +15,7 @@
   "jobs": [
     {
       "cluster": "hpcfund",
-      "id": "561956",
+      "id": "561960",
       "status": "SUBMITTED"
     }
   ],
@@ -368,6 +368,13 @@
       "actor": "codex",
       "summary": "Set token-lens job reference from exact scheduler receipt",
       "revision": 48
+    },
+    {
+      "id": "1dde7cca-b0f2-4d4b-8879-a29ef11797b2",
+      "at": "2026-11-27T06:49:13.315931Z",
+      "actor": "codex",
+      "summary": "Record unchanged native reader comparison rerun after skipping absent layer-zero module",
+      "revision": 49
     }
   ],
   "projectId": "interpretability",
@@ -377,6 +384,6 @@
   "summary": "Three-pass recurrence extends to native unit deletion effects. Full local predictor generalizes to untested visits with about12-fold lower error than dot-only.",
   "nextAction": "Finish the fixed same-visit vocabulary lens test and write standalone results with limits.",
   "owner": "Codex",
-  "revision": 48,
-  "updatedAt": "2026-11-27T06:47:13.972824Z"
+  "revision": 49,
+  "updatedAt": "2026-11-27T06:49:13.315931Z"
 }
