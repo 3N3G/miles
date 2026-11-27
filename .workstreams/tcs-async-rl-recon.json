@@ -3,8 +3,8 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
-      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/967727a5979992126309e3803df2a1039c87d431/miles/gsm8k-reference-v4",
-      "label": "Completed reference plus independent arithmetic audit; all599 artifacts verified."
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/0af9d74f1f781fd99620834f4bdcda824086a587/miles/gsm8k-reference-v4",
+      "label": "Completed reference plus arithmetic audits and clarified figures; all601 artifacts verified."
     },
     {
       "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native",
@@ -4263,6 +4263,13 @@
       "actor": "codex",
       "summary": "CISPO queued and supervised; reclaimed179 MiB of verified old VM copies",
       "revision": 430
+    },
+    {
+      "id": "b9dc984c-7821-42c0-9f60-55cf9feac0bd",
+      "at": "2026-11-27T11:12:23.253800Z",
+      "actor": "codex",
+      "summary": "Preserve the final reference figures and unchanged primary statistics",
+      "revision": 431
     }
   ],
   "projectId": "understanding",
@@ -4272,6 +4279,6 @@
   "summary": "CISPO queued and supervised; reclaimed179 MiB of verified old VM copies",
   "nextAction": "Keep foreground checks of the queued original job and monitor. Await the resource-choice answer before any variant. Diagnose immediately if GPU startup, observer errors or low space changes the state.",
   "owner": "Codex",
-  "revision": 430,
-  "updatedAt": "2026-11-27T10:57:44.460025Z"
+  "revision": 431,
+  "updatedAt": "2026-11-27T11:12:23.253800Z"
 }

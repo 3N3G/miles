@@ -1,0 +1,19 @@
+{
+  "reference_final_archive": {
+    "commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/0af9d74f1f781fd99620834f4bdcda824086a587",
+    "path": "miles/gsm8k-reference-v4",
+    "verified": true,
+    "verified_files": 601,
+    "verified_bytes": 243831484,
+    "local_files": 415,
+    "previously_evicted_files": 186,
+    "checkpoints_uploaded": false
+  },
+  "primary_accuracy_statistics_unchanged": true,
+  "validation_plot_bytes_unchanged": true,
+  "training_diagnostic_axes_clarified": true,
+  "zero_baselines_shown": true,
+  "resource_variant_approval_pending": true,
+  "original_cispo_job_id": "562347",
+  "resource_variants_submitted": 0
+}
