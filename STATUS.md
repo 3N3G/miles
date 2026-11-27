@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference250 updates:67.2% to72.3%, gain CI includes zero. CISPO still queued with zero GPU time. Jobs: hpcfund/562347 PENDING; hpcfund/562230 COMPLETED
-  Next: Watch queued CISPO562347 and its observer. Keep eight GPUs unless the user approves a resource variant.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference finished 250 updates: 67.2% to 72.3%. Gain CI includes zero. CISPO remains queued. Jobs: hpcfund/562347 PENDING; hpcfund/562230 COMPLETED
+  Next: Watch CISPO562347 and its observer. Slurm tentatively predicts November28 at04:52 Eastern. Keep eight GPUs unless the user approves a variant.
 
 ## Next / blocked
 
