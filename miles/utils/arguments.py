@@ -4304,20 +4304,7 @@ def miles_validate_args(args):
     if args.skip_actor_forward_only:
         validate_skip_actor_forward_only(args)
 
-    if args.observe_update_direction_steps:
-        if any(step < 0 for step in args.observe_update_direction_steps):
-            raise ValueError("--observe-update-direction-steps requires nonnegative rollout IDs")
-        if (
-            args.train_backend != "megatron"
-            or args.loss_type != "policy_loss"
-            or not args.use_rollout_logprobs
-            or args.context_parallel_size != 1
-            or args.pipeline_model_parallel_size != 1
-            or args.actor_num_nodes * args.actor_num_gpus_per_node != args.tensor_model_parallel_size
-        ):
-            raise ValueError(
-                "Update-direction observation requires one Megatron TP cell, CP1/PP1 and rollout log-probs"
-            )
+    validate_update_direction_args(args)
 
     validate_score_centering_args(args)
 
@@ -4330,6 +4317,25 @@ def miles_validate_args(args):
         raise ValueError("--mini-ft-controller-enable requires --api-server-port to be set (non-zero)")
 
     _validate_deploy_component(args)
+
+
+def validate_update_direction_args(args) -> None:
+    if not args.observe_update_direction_steps:
+        return
+    if any(step < 0 for step in args.observe_update_direction_steps):
+        raise ValueError("--observe-update-direction-steps requires nonnegative rollout IDs")
+    if (
+        args.train_backend != "megatron"
+        or args.loss_type != "policy_loss"
+        or args.context_parallel_size != 1
+        or args.pipeline_model_parallel_size != 1
+        or args.indep_dp
+        or (args.skip_actor_forward_only and not args.use_rollout_logprobs)
+    ):
+        raise ValueError(
+            "Update-direction observation requires Megatron policy loss, CP1/PP1, ordinary DP "
+            "and rollout or actor-forward log-probs"
+        )
 
 
 def validate_skip_actor_forward_only(args) -> None:

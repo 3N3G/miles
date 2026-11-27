@@ -9,8 +9,8 @@ from pathlib import Path
 from experiments.tcs_async_rl.rl_artifacts import _atomic_bytes, file_sha256, portable_sample
 
 
-def write_json(path, value):
-    _atomic_bytes(path, (json.dumps(value, indent=2, allow_nan=False) + "\n").encode())
+def write_json(path, value, *, default=None):
+    _atomic_bytes(path, (json.dumps(value, indent=2, allow_nan=False, default=default) + "\n").encode())
 
 
 def numeric_rows(samples):

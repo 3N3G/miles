@@ -1,9 +1,10 @@
 """Read-only before/after scores on the exact batch used for an optimizer step."""
 
 import torch
+import torch.distributed as dist
 
 
-def compute_update_direction(before, after, *, advantages, behavior, loss_masks, eps_clip, eps_clip_high):
+def compute_update_direction(before, after, *, advantages, behavior, loss_masks, eps_clip, eps_clip_high, allow_empty=False):
     """Measure improvement of the detached-weight CISPO surrogate on fixed data.
 
     Positive gain means the update favors positive advantages and suppresses
@@ -28,10 +29,10 @@ def compute_update_direction(before, after, *, advantages, behavior, loss_masks,
             positive.append(float(change.mean()))
         elif mean_advantage < 0:
             negative.append(float(change.mean()))
-    if not gains:
+    if not gains and not allow_empty:
         raise ValueError("Update-direction observation has no active samples")
     result = {
-        "surrogate_gain": sum(gains) / len(gains),
+        "surrogate_gain": sum(gains) / len(gains) if gains else 0.0,
         "samples": len(gains),
         "positive_advantage_samples": len(positive),
         "negative_advantage_samples": len(negative),
@@ -40,4 +41,27 @@ def compute_update_direction(before, after, *, advantages, behavior, loss_masks,
         result["positive_advantage_mean_logprob_change"] = sum(positive) / len(positive)
     if negative:
         result["negative_advantage_mean_logprob_change"] = sum(negative) / len(negative)
+    return result
+
+
+def aggregate_update_direction(local, *, dp_group, dp_size):
+    """Combine per-sequence means across ordinary data-parallel shards."""
+    parts = [local]
+    if dp_size > 1:
+        if dp_group is None:
+            raise ValueError("Data-parallel direction observation requires its explicit process group")
+        parts = [None] * dp_size
+        dist.all_gather_object(parts, local, group=dp_group)
+    counts = {key: sum(part[key] for part in parts) for key in ("samples", "positive_advantage_samples", "negative_advantage_samples")}
+    if not counts["samples"]:
+        raise ValueError("Update-direction observation has no active samples across data-parallel shards")
+    result = {
+        **counts,
+        "surrogate_gain": sum(part["surrogate_gain"] * part["samples"] for part in parts) / counts["samples"],
+    }
+    for sign in ("positive", "negative"):
+        count_key = f"{sign}_advantage_samples"
+        value_key = f"{sign}_advantage_mean_logprob_change"
+        if counts[count_key]:
+            result[value_key] = sum(part[value_key] * part[count_key] for part in parts if part[count_key]) / counts[count_key]
     return result

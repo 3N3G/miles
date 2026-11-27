@@ -1,0 +1,23 @@
+{
+  "at_utc": "2026-11-27T08:51:38.468121+00:00",
+  "failed_job": "561193",
+  "failed_source": "29fdfcb9236e7205065f01b9b78115ff73e5080c",
+  "allocated_seconds": 37,
+  "remaining_reference_seconds": 7163,
+  "new_request_seconds": 7140,
+  "maximum_reference_total_seconds": 7177,
+  "scientific_config_sha256": "ee1b7fef60069c6428b5e4681075449f98e34388238ec03c57dde74f96f99892",
+  "optimization_changed": false,
+  "tests": {
+    "command": "/home/ubuntu/.venvs/dit-inversion-cpu/bin/python -m unittest tests.fast.test_tcs_update_direction tests.fast.test_tcs_gsm8k_control tests.fast.test_tcs_rl_diagnostics",
+    "cases": 34,
+    "passed": true,
+    "distributed_cpu_checks": "Two Gloo ranks, unequal sample counts, and fully masked shard."
+  },
+  "lint_passed": true,
+  "gpu_runtime_validated": false,
+  "plan": "experiments/tcs_async_rl/GSM8K_DIAGNOSTIC_REPAIR_20261127.md",
+  "vm_start_reserve_bytes": 3221225472,
+  "vm_diagnosis_reserve_bytes": 2147483648,
+  "portable_archive_threshold_bytes": 67108864
+}

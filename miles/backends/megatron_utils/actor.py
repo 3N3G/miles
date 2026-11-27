@@ -30,7 +30,7 @@ from miles.backends.training_utils.loss.objective import (
 )
 from miles.backends.training_utils.metrics import train_dump
 from miles.backends.training_utils.metrics.log_utils import log_cpu_memory, log_perf_data, log_rollout_data
-from miles.backends.training_utils.metrics.update_direction import compute_update_direction
+from miles.backends.training_utils.metrics.update_direction import aggregate_update_direction, compute_update_direction
 from miles.backends.training_utils.model_companion import (
     ModelCompanionInstallationUtils,
     ModelCompanionWeightVersionUtils,
@@ -800,16 +800,22 @@ class MegatronTrainRayActor(TrainRayActor):
                 after_update_log_probs = self._compute_log_prob(
                     data_iterator, num_microbatches, rollout_id=rollout_id
                 )["log_probs"]
-                if is_first_replica_megatron_main_rank():
+                parallel = get_parallel_state()
+                if parallel.tp.rank == 0:
                     direction = compute_update_direction(
                         before_update_log_probs,
                         after_update_log_probs,
                         advantages=rollout_data["advantages"],
-                        behavior=rollout_data["rollout_log_probs"],
+                        behavior=rollout_data["rollout_log_probs" if self.args.use_rollout_logprobs else "log_probs"],
                         loss_masks=rollout_data["loss_masks"],
                         eps_clip=self.args.eps_clip,
                         eps_clip_high=self.args.eps_clip_high,
+                        allow_empty=True,
                     )
+                    direction = aggregate_update_direction(
+                        direction, dp_group=parallel.intra_dp.gloo_group, dp_size=parallel.intra_dp.size
+                    )
+                if is_first_replica_megatron_main_rank():
                     tracking.log(
                         self.args,
                         {"train/step": rollout_id, **{f"train/update_direction/{k}": v for k, v in direction.items()}},

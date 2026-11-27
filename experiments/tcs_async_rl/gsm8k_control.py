@@ -6,7 +6,6 @@ owns Ray and training. This wrapper supplies bounded Slurm execution and evidenc
 
 import argparse
 import datetime
-import hashlib
 import importlib.metadata
 import json
 import os
@@ -15,7 +14,6 @@ import shutil
 import subprocess
 import sys
 import threading
-import time
 from pathlib import Path
 
 from experiments.tcs_async_rl.amd_preflight import _public_environment, _run, container_prefix
@@ -171,7 +169,7 @@ def run_gpu(cli, config):
     sys.argv = [sys.argv[0], *shlex.split(load_model_args(MODEL_TYPE)), *native_argv(args)]
     parsed = parse_args()
     write_json(cli.run_dir / "validated-native-arguments.json",
-               {"requested": args, "validated": vars(parsed)})
+               {"requested": args, "validated": vars(parsed)}, default=str)
     write_json(cli.run_dir / "resolved-config.json", {
         "args": args, "run_id": run_id, "benchmark": "gsm8k", "arm": cli.arm,
         "dataset_sha256": {name: file_sha256(cli.run_dir / f"{name}.jsonl") for name in ("train", "validation")},
