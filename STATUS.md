@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Cancelled unstarted561051 after recipe-parity repair Jobs: hpcfund/561051 CANCELLED; hpcfund/558806 COMPLETED
-  Next: Submit repaired referencev2, up to7200 allocated seconds. No GPU budget consumed.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference submitted as 561193 Jobs: hpcfund/561193 PENDING; hpcfund/561051 CANCELLED
+  Next: Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.
 
 ## Next / blocked
 

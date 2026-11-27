@@ -987,6 +987,11 @@
   ],
   "jobs": [
     {
+      "id": "561193",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
       "id": "561051",
       "cluster": "hpcfund",
       "status": "CANCELLED"
@@ -4081,15 +4086,22 @@
       "actor": "codex",
       "summary": "Cancelled unstarted561051 after recipe-parity repair",
       "revision": 408
+    },
+    {
+      "id": "2bb3c0c9-bb93-428e-a10e-3f4ef11a6d2c",
+      "at": "2026-11-27T01:40:54.218046Z",
+      "actor": "codex",
+      "summary": "GSM8K reference submitted as 561193",
+      "revision": 409
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "Cancelled unstarted561051 after recipe-parity repair",
-  "nextAction": "Submit repaired referencev2, up to7200 allocated seconds. No GPU budget consumed.",
+  "summary": "GSM8K reference submitted as 561193",
+  "nextAction": "Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.",
   "owner": "Codex",
-  "revision": 408,
-  "updatedAt": "2026-11-27T01:40:17.654196Z"
+  "revision": 409,
+  "updatedAt": "2026-11-27T01:40:54.218046Z"
 }
