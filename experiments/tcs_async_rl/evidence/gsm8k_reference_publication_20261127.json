@@ -1,0 +1,36 @@
+{
+  "reference_job_id": "562230",
+  "final_publication": {
+    "commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/318eecb525cdd1606602ac62facda521b2313ead",
+    "path": "miles/gsm8k-reference-v4",
+    "verified": true,
+    "verified_files": 596,
+    "verified_bytes": 243818178,
+    "local_files": 410,
+    "previously_evicted_files": 186,
+    "checkpoints_uploaded": false
+  },
+  "weight_publication": {
+    "published_updates": 250,
+    "six_engine_checksum_mismatches": 0,
+    "weights_changed_every_update": true
+  },
+  "cispo_job_id": "562347",
+  "cispo_status_last_checked": "PENDING",
+  "cispo_monitor": {
+    "pid": 1830349,
+    "command": [
+      "/usr/bin/python3",
+      "-u",
+      "-m",
+      "experiments.tcs_async_rl.gsm8k_watch",
+      "--directory",
+      "/home/ubuntu/.cache/miles/tcs-async-rl/runs/gsm8k-cispo-v1",
+      "--interval",
+      "25"
+    ],
+    "started_at_utc": "2026-11-27T09:59:11.709755+00:00",
+    "source_commit": "d22108a9c2472d41113d7405a1b32e64e7eb0d2b",
+    "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71"
+  }
+}
