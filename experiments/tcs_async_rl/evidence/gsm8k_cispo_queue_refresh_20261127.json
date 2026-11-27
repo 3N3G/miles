@@ -1,0 +1,27 @@
+{
+  "at_utc": "2026-11-27T11:47:23.008062+00:00",
+  "existing_job_status": "562347|PENDING|N/A|Priority|(null)",
+  "matching_new_request_forecasts": [
+    {
+      "partition": "mi3508x",
+      "test_only_id_not_job": "562512",
+      "forecast_utc": "2026-11-29T14:18:47+00:00",
+      "hours_after_query": 50.523331093888885
+    },
+    {
+      "partition": "mi3501x",
+      "test_only_id_not_job": "562513",
+      "forecast_utc": "2026-11-27T12:46:21+00:00",
+      "hours_after_query": 0.9827755383333334
+    },
+    {
+      "partition": "mi2104x",
+      "test_only_id_not_job": "562514",
+      "forecast_utc": "2026-11-27T17:18:22+00:00",
+      "hours_after_query": 5.516386649444444
+    }
+  ],
+  "gpu_jobs_submitted_or_modified": 0,
+  "forecasts_nonbinding": true,
+  "resource_approval_still_pending": true
+}
