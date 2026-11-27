@@ -1,6 +1,6 @@
 {
   "prepared_at_utc": "2026-11-27T15:41:31.328585+00:00",
-  "status": "prepared_before_scheduler_update",
+  "status": "applied_and_verified",
   "job_id": "562347",
   "observed_scheduler_before": "JobId=562347 JobName=gsm8k-cispo UserId=geney(3414) GroupId=aviralkumar(2185) MCS_label=N/A Priority=121 Nice=0 Account=aviralkumar QOS=alloc_aviralkumar_09082026_09302027 JobState=PENDING Reason=Priority Dependency=(null) Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=02:00:00 TimeMin=N/A SubmitTime=2026-11-27T03:58:58 EligibleTime=2026-11-27T03:58:58 AccrueTime=2026-11-27T03:58:58 StartTime=2026-11-28T03:11:00 EndTime=2026-11-28T05:11:00 Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-27T09:41:28 Scheduler=Backfill:* Partition=mi3508x AllocNode:Sid=aus-amd-hpcfund-admin02:3943298 ReqNodeList=(null) ExcNodeList=(null) NodeList= SchedNodeList=k007-003 NumNodes=1-1 NumCPUs=64 NumTasks=1 CPUs/Task=64 ReqB:S:C:T=0:0:*:* TRES=cpu=64,mem=1M,node=1 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=64 MinMemoryNode=0 MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null) Command=/work1/aviralkumar/geney/tcs-async-rl/runs/gsm8k-cispo-v1/job.py WorkDir=/work1/aviralkumar/geney/tcs-async-rl/checkouts/gsm8k-cispo-v1 StdErr=/work1/aviralkumar/geney/tcs-async-rl/runs/gsm8k-cispo-v1/slurm-562347.log StdIn=/dev/null StdOut=/work1/aviralkumar/geney/tcs-async-rl/runs/gsm8k-cispo-v1/slurm-562347.log Power= \n6a4810897592628b0751f7612093c0dc6cf3f9879733a9df2c28fdfdaee7324f  /work1/aviralkumar/geney/tcs-async-rl/runs/gsm8k-cispo-v1/job.py\nee1b7fef60069c6428b5e4681075449f98e34388238ec03c57dde74f96f99892  /work1/aviralkumar/geney/tcs-async-rl/checkouts/gsm8k-cispo-v1/experiments/tcs_async_rl/gsm8k_control.approved_20261126.json\n",
   "issue": "Slurm permits automatic reallocation after node failure, while the approved arm budget must count each allocation explicitly. The existing fresh-directory guard prevents a silent resumed training run, but only after a new allocation begins.",
@@ -11,5 +11,22 @@
   ],
   "validation": "12 existing GSM8K CPU tests passed. No new GPU execution. Scheduler readback and original-file hash equality required after update.",
   "new_gpu_jobs_submitted": 0,
-  "allocated_cispo_seconds": 0
+  "allocated_cispo_seconds": 0,
+  "verified_at_utc": "2026-11-27T15:41:53.405823+00:00",
+  "observed_scheduler_after": "JobId=562347 JobName=gsm8k-cispo UserId=geney(3414) GroupId=aviralkumar(2185) MCS_label=N/A Priority=121 Nice=0 Account=aviralkumar QOS=alloc_aviralkumar_09082026_09302027 JobState=PENDING Reason=Priority Dependency=(null) Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:00 TimeLimit=02:00:00 TimeMin=N/A SubmitTime=2026-11-27T03:58:58 EligibleTime=2026-11-27T03:58:58 AccrueTime=2026-11-27T03:58:58 StartTime=2026-11-28T03:11:00 EndTime=2026-11-28T05:11:00 Deadline=N/A SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-27T09:41:52 Scheduler=Main Partition=mi3508x AllocNode:Sid=aus-amd-hpcfund-admin02:3943298 ReqNodeList=(null) ExcNodeList=(null) NodeList= SchedNodeList=k007-003 NumNodes=1-1 NumCPUs=64 NumTasks=1 CPUs/Task=64 ReqB:S:C:T=0:0:*:* TRES=cpu=64,mem=1M,node=1 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=64 MinMemoryNode=0 MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null) Command=/work1/aviralkumar/geney/tcs-async-rl/runs/gsm8k-cispo-v1/job.py WorkDir=/work1/aviralkumar/geney/tcs-async-rl/checkouts/gsm8k-cispo-v1 StdErr=/work1/aviralkumar/geney/tcs-async-rl/runs/gsm8k-cispo-v1/slurm-562347.log StdIn=/dev/null StdOut=/work1/aviralkumar/geney/tcs-async-rl/runs/gsm8k-cispo-v1/slurm-562347.log Power= \n6a4810897592628b0751f7612093c0dc6cf3f9879733a9df2c28fdfdaee7324f  /work1/aviralkumar/geney/tcs-async-rl/runs/gsm8k-cispo-v1/job.py\nee1b7fef60069c6428b5e4681075449f98e34388238ec03c57dde74f96f99892  /work1/aviralkumar/geney/tcs-async-rl/checkouts/gsm8k-cispo-v1/experiments/tcs_async_rl/gsm8k_control.approved_20261126.json\n",
+  "immutable_script_and_config_hashes_match": true,
+  "unchanged_scheduler_fields": [
+    "JobId",
+    "UserId",
+    "Account",
+    "QOS",
+    "Partition",
+    "TimeLimit",
+    "NumNodes",
+    "NumCPUs",
+    "CPUs/Task",
+    "Command",
+    "WorkDir"
+  ],
+  "result": "Requeue=0. Original job remains PENDING, with zero restarts and zero allocated seconds. No resubmission or scientific setting change."
 }
