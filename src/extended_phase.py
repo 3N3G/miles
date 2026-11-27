@@ -36,7 +36,7 @@ def run(model,ids,count,control=None,retain=False):
     try:
         llm.config.loop_num_passes=count
         logits=model(input_ids=ids,use_cache=False,logits_to_keep=1).logits[0].float()
-        rebuilt=model.logit_softcap(model.lm_head(llm.norm(final[0][:,-1:])).float())[0]
+        rebuilt=model.logit_softcap(model.lm_head(llm.norm(final[0][:,-1:]).to(model.lm_head.weight.dtype)).float())[0]
         assert torch.equal(rebuilt,logits),'Final head reconstruction differs'
     finally:
         llm.config.loop_num_passes=old
