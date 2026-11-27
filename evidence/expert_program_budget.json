@@ -172,19 +172,23 @@
       "observed_allocation_seconds": 57,
       "actual_allocation_seconds": 57,
       "actual_gpu_seconds": 57
+    },
+    {
+      "run_name": "extended-unit-phase-v2",
+      "job_id": "561942",
+      "gpus": 1,
+      "maximum_allocation_seconds": 900,
+      "maximum_gpu_seconds": 900,
+      "status": "RUNNING",
+      "reserved_gpu_seconds": 900,
+      "observed_allocation_seconds": 27
     }
   ],
   "used_gpu_seconds": 6580,
   "remaining_gpu_seconds": 11420,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [
-    {
-      "run_name": "extended-unit-phase-v2",
-      "maximum_gpu_seconds": 900,
-      "reason": "plans/extended_unit_phase_repair.md"
-    }
-  ],
+  "pending_reservations": [],
   "unreserved_gpu_seconds": 10520,
   "reserved_gpu_seconds": 900,
-  "observed_at": "2026-11-27T06:40:32.884195+00:00"
+  "observed_at": "2026-11-27T06:41:03.328074+00:00"
 }

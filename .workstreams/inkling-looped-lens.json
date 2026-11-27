@@ -23,7 +23,7 @@
   "jobs": [
     {
       "cluster": "hpcfund",
-      "id": "561939",
+      "id": "561942",
       "status": "RUNNING"
     }
   ],
@@ -355,6 +355,13 @@
       "actor": "codex",
       "summary": "Freeze and start 24-pass fixed-unit causal test on 16 new articles",
       "revision": 45
+    },
+    {
+      "id": "5faa04cf-f54b-44ec-93a2-d4816e941abd",
+      "at": "2026-11-27T06:41:03.383556Z",
+      "actor": "codex",
+      "summary": "Repair head-check dtype and rerun the same frozen phase test",
+      "revision": 46
     }
   ],
   "projectId": "interpretability",
@@ -362,8 +369,8 @@
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
   "summary": "Running a fixed-unit 24-pass test of recurring causal phase on 16 new articles, with exact native-prefix controls.",
-  "nextAction": "Monitor native controls and recurrence. Prepare an independent same-visit readout comparison.",
+  "nextAction": "Monitor repaired native-prefix and local-replay controls. Evaluate native reader activations with fixed challenge visits.",
   "owner": "Codex",
-  "revision": 45,
-  "updatedAt": "2026-11-27T06:39:37.841510Z"
+  "revision": 46,
+  "updatedAt": "2026-11-27T06:41:03.383556Z"
 }

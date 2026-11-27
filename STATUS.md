@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Running a fixed-unit 24-pass test of recurring causal phase on 16 new articles, with exact native-prefix controls. Jobs: hpcfund/561939 RUNNING
-  Next: Monitor native controls and recurrence. Prepare an independent same-visit readout comparison.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Running a fixed-unit 24-pass test of recurring causal phase on 16 new articles, with exact native-prefix controls. Jobs: hpcfund/561942 RUNNING
+  Next: Monitor repaired native-prefix and local-replay controls. Evaluate native reader activations with fixed challenge visits.
 
 ## Next / blocked
 
