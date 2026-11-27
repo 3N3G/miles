@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-11-27T01:41:14.757206+00:00",
+  "status": "cancelled_before_allocation",
+  "job_id": "561051",
+  "archive": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/aaa07e6416fa0b4773d9c96ed06db270a37dea12",
+  "hf_path": "miles/gsm8k-reference-v1",
+  "files": 18,
+  "bytes": 7794984,
+  "verified": true,
+  "inference_answers": 0,
+  "optimizer_updates": 0,
+  "allocated_seconds": 0
+}
