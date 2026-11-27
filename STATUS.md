@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K CISPO submitted as 562347 Jobs: hpcfund/562347 PENDING; hpcfund/562230 COMPLETED
-  Next: Supervise baseline, first optimizer update, final evaluation and verified publication. Complete the approved CISPO arm and verify the final paired analysis, checkpoint, archive and
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference596-file archive verified; CISPO562347 awaits AMD priority Jobs: hpcfund/562347 PENDING; hpcfund/562230 COMPLETED
+  Next: Keep foreground supervision of CISPO and its continuous observer. Verify baseline and real optimizer updates, then final checkpoint, paired accuracy, full W&B readback and immutabl
 
 ## Next / blocked
 

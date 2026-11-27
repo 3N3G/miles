@@ -4220,15 +4220,22 @@
       "actor": "codex",
       "summary": "GSM8K CISPO submitted as 562347",
       "revision": 425
+    },
+    {
+      "id": "0f850b57-5b6b-4e6b-ba85-198f8d120914",
+      "at": "2026-11-27T10:02:05.236194Z",
+      "actor": "codex",
+      "summary": "GSM8K reference596-file archive verified; CISPO562347 awaits AMD priority",
+      "revision": 426
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K CISPO submitted as 562347",
-  "nextAction": "Supervise baseline, first optimizer update, final evaluation and verified publication. Complete the approved CISPO arm and verify the final paired analysis, checkpoint, archive and W&B.",
+  "summary": "GSM8K reference596-file archive verified; CISPO562347 awaits AMD priority",
+  "nextAction": "Keep foreground supervision of CISPO and its continuous observer. Verify baseline and real optimizer updates, then final checkpoint, paired accuracy, full W&B readback and immutable archive.",
   "owner": "Codex",
-  "revision": 425,
-  "updatedAt": "2026-11-27T09:58:59.340544Z"
+  "revision": 426,
+  "updatedAt": "2026-11-27T10:02:05.236194Z"
 }
