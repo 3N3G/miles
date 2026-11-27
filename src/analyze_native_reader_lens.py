@@ -57,6 +57,7 @@ def main():
                 'The arithmetic intermediate is a benchmark hypothesis, not a proven uniquely necessary computation.',
                 'Direct and public practice tasks test answer visibility rather than hidden intermediate computations.',
                 'The comparison is fixed and unfitted but only covers these prompts and ten chosen visits.',
+                'If no paired discordances occur, the empirical paired bootstrap collapses to zero. That is not evidence of population equivalence.',
                 'Capability requires a completed generation, with a conservative word/number match. Truncated twelve-token prefixes remain unknown.',
                 'Without complete outputs, the test cannot establish that intermediates stay unspoken.']}
     (a.run/'analysis.json').write_text(json.dumps(result,indent=2)+'\n');(a.run/'scored_questions.json').write_text(json.dumps(rows,indent=2)+'\n')

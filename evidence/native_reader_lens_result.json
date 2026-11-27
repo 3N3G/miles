@@ -1,0 +1,1103 @@
+{
+  "primary_math": {
+    "n": 64,
+    "partial_buffer": 1,
+    "native_attention_reader": 1,
+    "native_only": 0,
+    "buffer_only": 0,
+    "native_minus_buffer_rate": 0.0,
+    "paired_question_bootstrap95": [
+      0.0,
+      0.0
+    ],
+    "resamples": 10000,
+    "seed": 1729
+  },
+  "by_family": {
+    "arithmetic": {
+      "n": 32,
+      "partial_buffer": 1,
+      "native_attention_reader": 1,
+      "native_only": 0,
+      "buffer_only": 0
+    },
+    "chain": {
+      "n": 32,
+      "partial_buffer": 0,
+      "native_attention_reader": 0,
+      "native_only": 0,
+      "buffer_only": 0
+    },
+    "direct": {
+      "n": 32,
+      "partial_buffer": 18,
+      "native_attention_reader": 14,
+      "native_only": 0,
+      "buffer_only": 4
+    },
+    "practice": {
+      "n": 10,
+      "partial_buffer": 6,
+      "native_attention_reader": 4,
+      "native_only": 0,
+      "buffer_only": 2
+    }
+  },
+  "math_by_visit": {
+    "partial_buffer": {
+      "12": 0,
+      "24": 0,
+      "34": 0,
+      "35": 0,
+      "36": 0,
+      "43": 0,
+      "44": 1,
+      "45": 1,
+      "46": 1,
+      "47": 0
+    },
+    "native_attention_reader": {
+      "12": 0,
+      "24": 0,
+      "34": 0,
+      "35": 0,
+      "36": 0,
+      "43": 0,
+      "44": 0,
+      "45": 0,
+      "46": 1,
+      "47": 0
+    }
+  },
+  "secondary_capable_unspoken_math": {
+    "n": 0,
+    "partial_buffer": 0,
+    "native_attention_reader": 0,
+    "native_only": 0,
+    "buffer_only": 0
+  },
+  "capability_counts": {
+    "arithmetic": {
+      "completed_correct": 0,
+      "completed_incorrect": 0,
+      "truncated_unknown": 32,
+      "n": 32
+    },
+    "chain": {
+      "completed_correct": 0,
+      "completed_incorrect": 0,
+      "truncated_unknown": 32,
+      "n": 32
+    },
+    "direct": {
+      "completed_correct": 0,
+      "completed_incorrect": 0,
+      "truncated_unknown": 32,
+      "n": 32
+    },
+    "practice": {
+      "completed_correct": 0,
+      "completed_incorrect": 0,
+      "truncated_unknown": 10,
+      "n": 10
+    }
+  },
+  "examples": [
+    {
+      "selection": "first_frozen_question",
+      "id": "arithmetic-muladd-076",
+      "family": "arithmetic",
+      "prompt": "Compute (19 * 44) + 739. Reply with only the final number, nothing else.",
+      "model_input": "<|message_system|><|content_text|>Thinking effort level: 0<|end_message|><|message_user|><|content_text|>Compute (19 * 44) + 739. Reply with only the final number, nothing else.<|end_message|><|message_model|>",
+      "token_ids": [
+        200002,
+        200004,
+        34182,
+        279,
+        154554,
+        150628,
+        25,
+        220,
+        15,
+        200010,
+        200000,
+        200004,
+        97600,
+        196976,
+        68028,
+        196987,
+        220,
+        68559,
+        8,
+        196986,
+        220,
+        103905,
+        13,
+        164896,
+        149899,
+        150130,
+        149876,
+        150400,
+        150107,
+        11,
+        153575,
+        150506,
+        13,
+        200010,
+        200001
+      ],
+      "read_position": 34,
+      "read_token": "",
+      "labels": [
+        "836"
+      ],
+      "target": "1575",
+      "source_file": "evals/computational/arithmetic_intermediates/items_v2.json",
+      "source_name": "muladd-076",
+      "all_source_intermediates": [
+        "836"
+      ],
+      "generation": {
+        "token_ids": [
+          200008,
+          371,
+          150409,
+          159306,
+          149991,
+          149882,
+          155262,
+          196976,
+          68028,
+          196987,
+          220,
+          68559
+        ],
+        "text": "The user wants me to compute (19 * 44",
+        "raw": "<|content_thinking|>The user wants me to compute (19 * 44"
+      },
+      "readouts": {
+        "partial_buffer": [
+          {
+            "visit": 12,
+            "tokens": [
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 191577,
+                "token": " \u0430\u0440\u0438\u0444\u043c\u0435\u0442"
+              },
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 169292,
+                "token": " arithmetic"
+              },
+              {
+                "id": 196973,
+                "token": " -"
+              },
+              {
+                "id": 150451,
+                "token": " \u03ba\u03b1\u03b9"
+              },
+              {
+                "id": 13,
+                "token": "."
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 702,
+                "token": "\ufffd"
+              }
+            ]
+          },
+          {
+            "visit": 24,
+            "tokens": [
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 196986,
+                "token": " +"
+              },
+              {
+                "id": 25,
+                "token": ":"
+              },
+              {
+                "id": 198383,
+                "token": " PHP"
+              },
+              {
+                "id": 150451,
+                "token": " \u03ba\u03b1\u03b9"
+              },
+              {
+                "id": 157936,
+                "token": " Mari"
+              },
+              {
+                "id": 12,
+                "token": "-"
+              }
+            ]
+          },
+          {
+            "visit": 34,
+            "tokens": [
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 25,
+                "token": ":"
+              },
+              {
+                "id": 14,
+                "token": "/"
+              },
+              {
+                "id": 26,
+                "token": ";"
+              },
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 13,
+                "token": "."
+              },
+              {
+                "id": 149918,
+                "token": " or"
+              },
+              {
+                "id": 12,
+                "token": "-"
+              }
+            ]
+          },
+          {
+            "visit": 35,
+            "tokens": [
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 25,
+                "token": ":"
+              },
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 26,
+                "token": ";"
+              },
+              {
+                "id": 14,
+                "token": "/"
+              },
+              {
+                "id": 13,
+                "token": "."
+              },
+              {
+                "id": 149918,
+                "token": " or"
+              },
+              {
+                "id": 196986,
+                "token": " +"
+              }
+            ]
+          },
+          {
+            "visit": 36,
+            "tokens": [
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 160381,
+                "token": " multiplication"
+              },
+              {
+                "id": 196986,
+                "token": " +"
+              },
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 186520,
+                "token": " Kilogram"
+              },
+              {
+                "id": 68341,
+                "token": "32"
+              },
+              {
+                "id": 25,
+                "token": ":"
+              },
+              {
+                "id": 69663,
+                "token": "72"
+              }
+            ]
+          },
+          {
+            "visit": 43,
+            "tokens": [
+              {
+                "id": 169292,
+                "token": " arithmetic"
+              },
+              {
+                "id": 160381,
+                "token": " multiplication"
+              },
+              {
+                "id": 158380,
+                "token": " calculation"
+              },
+              {
+                "id": 166669,
+                "token": " calculator"
+              },
+              {
+                "id": 167527,
+                "token": " computation"
+              },
+              {
+                "id": 155262,
+                "token": " compute"
+              },
+              {
+                "id": 160139,
+                "token": " calculations"
+              },
+              {
+                "id": 23463,
+                "token": "\u7b97"
+              },
+              {
+                "id": 149881,
+                "token": " in"
+              },
+              {
+                "id": 149923,
+                "token": " no"
+              }
+            ]
+          },
+          {
+            "visit": 44,
+            "tokens": [
+              {
+                "id": 158380,
+                "token": " calculation"
+              },
+              {
+                "id": 160381,
+                "token": " multiplication"
+              },
+              {
+                "id": 153021,
+                "token": " calculate"
+              },
+              {
+                "id": 155262,
+                "token": " compute"
+              },
+              {
+                "id": 169292,
+                "token": " arithmetic"
+              },
+              {
+                "id": 153637,
+                "token": " Calcul"
+              },
+              {
+                "id": 94608,
+                "token": "\u8ba1\u7b97"
+              },
+              {
+                "id": 101432,
+                "token": "\uacc4\uc0b0"
+              },
+              {
+                "id": 166669,
+                "token": " calculator"
+              },
+              {
+                "id": 167527,
+                "token": " computation"
+              }
+            ]
+          },
+          {
+            "visit": 45,
+            "tokens": [
+              {
+                "id": 158380,
+                "token": " calculation"
+              },
+              {
+                "id": 169292,
+                "token": " arithmetic"
+              },
+              {
+                "id": 160381,
+                "token": " multiplication"
+              },
+              {
+                "id": 153021,
+                "token": " calculate"
+              },
+              {
+                "id": 94608,
+                "token": "\u8ba1\u7b97"
+              },
+              {
+                "id": 155262,
+                "token": " compute"
+              },
+              {
+                "id": 160416,
+                "token": " multiply"
+              },
+              {
+                "id": 151855,
+                "token": " calcul"
+              },
+              {
+                "id": 116413,
+                "token": "\u8a08\u7b97"
+              },
+              {
+                "id": 101432,
+                "token": "\uacc4\uc0b0"
+              }
+            ]
+          },
+          {
+            "visit": 46,
+            "tokens": [
+              {
+                "id": 158380,
+                "token": " calculation"
+              },
+              {
+                "id": 169292,
+                "token": " arithmetic"
+              },
+              {
+                "id": 153021,
+                "token": " calculate"
+              },
+              {
+                "id": 153637,
+                "token": " Calcul"
+              },
+              {
+                "id": 160381,
+                "token": " multiplication"
+              },
+              {
+                "id": 91618,
+                "token": "c\u00e1lculo"
+              },
+              {
+                "id": 116413,
+                "token": "\u8a08\u7b97"
+              },
+              {
+                "id": 25856,
+                "token": "\uac10"
+              },
+              {
+                "id": 157282,
+                "token": " prompt"
+              },
+              {
+                "id": 170896,
+                "token": " calculating"
+              }
+            ]
+          },
+          {
+            "visit": 47,
+            "tokens": [
+              {
+                "id": 114393,
+                "token": "\u4f5c\u8005"
+              },
+              {
+                "id": 122204,
+                "token": "\ucc4a"
+              },
+              {
+                "id": 132690,
+                "token": "emt"
+              },
+              {
+                "id": 22402,
+                "token": "\u611f"
+              },
+              {
+                "id": 13667,
+                "token": "\u6392"
+              },
+              {
+                "id": 89788,
+                "token": "\u05d1\u05e0\u05d5"
+              },
+              {
+                "id": 138957,
+                "token": "\ufffd"
+              },
+              {
+                "id": 2986,
+                "token": "user"
+              },
+              {
+                "id": 75252,
+                "token": "\u0639\u0627\u062c"
+              },
+              {
+                "id": 106295,
+                "token": "kubernetes"
+              }
+            ]
+          }
+        ],
+        "native_attention_reader": [
+          {
+            "visit": 12,
+            "tokens": [
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 196973,
+                "token": " -"
+              },
+              {
+                "id": 13,
+                "token": "."
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 150451,
+                "token": " \u03ba\u03b1\u03b9"
+              },
+              {
+                "id": 191577,
+                "token": " \u0430\u0440\u0438\u0444\u043c\u0435\u0442"
+              },
+              {
+                "id": 169292,
+                "token": " arithmetic"
+              },
+              {
+                "id": 14,
+                "token": "/"
+              }
+            ]
+          },
+          {
+            "visit": 24,
+            "tokens": [
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 196986,
+                "token": " +"
+              },
+              {
+                "id": 25,
+                "token": ":"
+              },
+              {
+                "id": 150451,
+                "token": " \u03ba\u03b1\u03b9"
+              },
+              {
+                "id": 12,
+                "token": "-"
+              },
+              {
+                "id": 198383,
+                "token": " PHP"
+              },
+              {
+                "id": 13,
+                "token": "."
+              }
+            ]
+          },
+          {
+            "visit": 34,
+            "tokens": [
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 25,
+                "token": ":"
+              },
+              {
+                "id": 14,
+                "token": "/"
+              },
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 26,
+                "token": ";"
+              },
+              {
+                "id": 13,
+                "token": "."
+              },
+              {
+                "id": 149918,
+                "token": " or"
+              },
+              {
+                "id": 12,
+                "token": "-"
+              }
+            ]
+          },
+          {
+            "visit": 35,
+            "tokens": [
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 25,
+                "token": ":"
+              },
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 26,
+                "token": ";"
+              },
+              {
+                "id": 14,
+                "token": "/"
+              },
+              {
+                "id": 13,
+                "token": "."
+              },
+              {
+                "id": 149918,
+                "token": " or"
+              },
+              {
+                "id": 196986,
+                "token": " +"
+              }
+            ]
+          },
+          {
+            "visit": 36,
+            "tokens": [
+              {
+                "id": 11,
+                "token": ","
+              },
+              {
+                "id": 149880,
+                "token": " and"
+              },
+              {
+                "id": 196976,
+                "token": " ("
+              },
+              {
+                "id": 160381,
+                "token": " multiplication"
+              },
+              {
+                "id": 196986,
+                "token": " +"
+              },
+              {
+                "id": 149931,
+                "token": " \u0438"
+              },
+              {
+                "id": 25,
+                "token": ":"
+              },
+              {
+                "id": 68341,
+                "token": "32"
+              },
+              {
+                "id": 186520,
+                "token": " Kilogram"
+              },
+              {
+                "id": 69663,
+                "token": "72"
+              }
+            ]
+          },
+          {
+            "visit": 43,
+            "tokens": [
+              {
+                "id": 89662,
+                "token": "\u05d5\u05d3"
+              },
+              {
+                "id": 169292,
+                "token": " arithmetic"
+              },
+              {
+                "id": 160381,
+                "token": " multiplication"
+              },
+              {
+                "id": 158380,
+                "token": " calculation"
+              },
+              {
+                "id": 153637,
+                "token": " Calcul"
+              },
+              {
+                "id": 180583,
+                "token": " berechnen"
+              },
+              {
+                "id": 23880,
+                "token": "\u5334"
+              },
+              {
+                "id": 101432,
+                "token": "\uacc4\uc0b0"
+              },
+              {
+                "id": 166669,
+                "token": " calculator"
+              },
+              {
+                "id": 172501,
+                "token": " calculer"
+              }
+            ]
+          },
+          {
+            "visit": 44,
+            "tokens": [
+              {
+                "id": 158380,
+                "token": " calculation"
+              },
+              {
+                "id": 153637,
+                "token": " Calcul"
+              },
+              {
+                "id": 101432,
+                "token": "\uacc4\uc0b0"
+              },
+              {
+                "id": 160381,
+                "token": " multiplication"
+              },
+              {
+                "id": 169292,
+                "token": " arithmetic"
+              },
+              {
+                "id": 166669,
+                "token": " calculator"
+              },
+              {
+                "id": 153021,
+                "token": " calculate"
+              },
+              {
+                "id": 180583,
+                "token": " berechnen"
+              },
+              {
+                "id": 181447,
+                "token": " calcula"
+              },
+              {
+                "id": 89662,
+                "token": "\u05d5\u05d3"
+              }
+            ]
+          },
+          {
+            "visit": 45,
+            "tokens": [
+              {
+                "id": 180583,
+                "token": " berechnen"
+              },
+              {
+                "id": 101432,
+                "token": "\uacc4\uc0b0"
+              },
+              {
+                "id": 158380,
+                "token": " calculation"
+              },
+              {
+                "id": 172501,
+                "token": " calculer"
+              },
+              {
+                "id": 189234,
+                "token": " bereken"
+              },
+              {
+                "id": 181447,
+                "token": " calcula"
+              },
+              {
+                "id": 153637,
+                "token": " Calcul"
+              },
+              {
+                "id": 89662,
+                "token": "\u05d5\u05d3"
+              },
+              {
+                "id": 166669,
+                "token": " calculator"
+              },
+              {
+                "id": 158596,
+                "token": " Calculate"
+              }
+            ]
+          },
+          {
+            "visit": 46,
+            "tokens": [
+              {
+                "id": 180583,
+                "token": " berechnen"
+              },
+              {
+                "id": 89662,
+                "token": "\u05d5\u05d3"
+              },
+              {
+                "id": 172501,
+                "token": " calculer"
+              },
+              {
+                "id": 158380,
+                "token": " calculation"
+              },
+              {
+                "id": 133402,
+                "token": "\u0565\u0582"
+              },
+              {
+                "id": 101432,
+                "token": "\uacc4\uc0b0"
+              },
+              {
+                "id": 189234,
+                "token": " bereken"
+              },
+              {
+                "id": 181447,
+                "token": " calcula"
+              },
+              {
+                "id": 153637,
+                "token": " Calcul"
+              },
+              {
+                "id": 23438,
+                "token": "\u7bb5"
+              }
+            ]
+          },
+          {
+            "visit": 47,
+            "tokens": [
+              {
+                "id": 114393,
+                "token": "\u4f5c\u8005"
+              },
+              {
+                "id": 122204,
+                "token": "\ucc4a"
+              },
+              {
+                "id": 132690,
+                "token": "emt"
+              },
+              {
+                "id": 138957,
+                "token": "\ufffd"
+              },
+              {
+                "id": 22402,
+                "token": "\u611f"
+              },
+              {
+                "id": 128388,
+                "token": "\ucdff"
+              },
+              {
+                "id": 30,
+                "token": "?"
+              },
+              {
+                "id": 68619,
+                "token": "\u200b"
+              },
+              {
+                "id": 158771,
+                "token": " darauf"
+              },
+              {
+                "id": 34581,
+                "token": "baron"
+              }
+            ]
+          }
+        ]
+      },
+      "hit": {
+        "partial_buffer": false,
+        "native_attention_reader": false
+      },
+      "capable": null,
+      "unspoken": null,
+      "generation_completed": false,
+      "target_mentioned_in_prefix": false
+    }
+  ],
+  "limits": [
+    "Exact token matching misses paraphrases and alternative concept spellings.",
+    "The arithmetic intermediate is a benchmark hypothesis, not a proven uniquely necessary computation.",
+    "Direct and public practice tasks test answer visibility rather than hidden intermediate computations.",
+    "The comparison is fixed and unfitted but only covers these prompts and ten chosen visits.",
+    "If no paired discordances occur, the empirical paired bootstrap collapses to zero. That is not evidence of population equivalence.",
+    "Capability requires a completed generation, with a conservative word/number match. Truncated twelve-token prefixes remain unknown.",
+    "Without complete outputs, the test cannot establish that intermediates stay unspoken."
+  ]
+}

@@ -15,7 +15,7 @@
   "jobs": [
     {
       "cluster": "hpcfund",
-      "id": "561960",
+      "id": "561982",
       "status": "SUBMITTED"
     }
   ],
@@ -375,15 +375,22 @@
       "actor": "codex",
       "summary": "Record unchanged native reader comparison rerun after skipping absent layer-zero module",
       "revision": 49
+    },
+    {
+      "id": "19c97aac-8f47-4749-b086-3ac068616c51",
+      "at": "2026-11-27T07:04:23.764532Z",
+      "actor": "codex",
+      "summary": "Complete token readout test and repair censored capability controls",
+      "revision": 50
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Three-pass recurrence extends to native unit deletion effects. Full local predictor generalizes to untested visits with about12-fold lower error than dot-only.",
-  "nextAction": "Finish the fixed same-visit vocabulary lens test and write standalone results with limits.",
+  "summary": "Native unit effects recur over three-pass phases. The unfitted native block-reader token candidate did not improve recovery.",
+  "nextAction": "Validate cached completion controls, archive results, and finish the standalone report.",
   "owner": "Codex",
-  "revision": 49,
-  "updatedAt": "2026-11-27T06:49:13.315931Z"
+  "revision": 50,
+  "updatedAt": "2026-11-27T07:04:23.764532Z"
 }
