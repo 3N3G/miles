@@ -203,13 +203,15 @@
       "gpus": 1,
       "maximum_allocation_seconds": 1200,
       "maximum_gpu_seconds": 1200,
-      "status": "RUNNING",
-      "reserved_gpu_seconds": 1200,
-      "observed_allocation_seconds": 56
+      "status": "COMPLETED",
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 850,
+      "actual_allocation_seconds": 850,
+      "actual_gpu_seconds": 850
     }
   ],
-  "used_gpu_seconds": 6904,
-  "remaining_gpu_seconds": 11096,
+  "used_gpu_seconds": 7754,
+  "remaining_gpu_seconds": 10246,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
   "pending_reservations": [
     {
@@ -218,7 +220,7 @@
       "reason": "plans/native_reader_capability_repair.md"
     }
   ],
-  "unreserved_gpu_seconds": 9596,
-  "reserved_gpu_seconds": 1500,
-  "observed_at": "2026-11-27T06:49:13.259985+00:00"
+  "unreserved_gpu_seconds": 9946,
+  "reserved_gpu_seconds": 300,
+  "observed_at": "2026-11-27T07:02:48.859414+00:00"
 }
