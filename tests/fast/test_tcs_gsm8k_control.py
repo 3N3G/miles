@@ -103,6 +103,7 @@ class GsmControlTests(unittest.TestCase):
             self.assertTrue(a['finetune'])
             self.assertEqual(a['ref_load'], a['load'])
             self.assertEqual(a['rm_type'], 'math')
+            self.assertTrue(a['rollout_shuffle'])
             self.assertNotIn('custom_rm_path', a)
             self.assertEqual(a['save'], '/work/' + arm + '/checkpoints')
         self.assertFalse(args['reference']['fully_async'])

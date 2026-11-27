@@ -4067,15 +4067,22 @@
       "actor": "codex",
       "summary": "Validate terminal GSM8K analysis against deadline-stop prefetch",
       "revision": 406
+    },
+    {
+      "id": "79e3c2de-5d7b-49d8-86a4-563052ca8a8c",
+      "at": "2026-11-27T01:39:53.132733Z",
+      "actor": "codex",
+      "summary": "Restore missing reference prompt-shuffle setting before allocation",
+      "revision": 407
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K reference561051 queued; terminal analysis now handles an untrained prefetched batch.",
-  "nextAction": "Supervise initial baseline and training when AMD allocates eight GPUs. Verify final optimizer prefix and W&B coordinates.",
+  "summary": "Reference launch omitted prompt shuffling. Repair validated before allocation. Replace pending561051.",
+  "nextAction": "Cancel the queued own attempt and submit the repaired reference within the unchanged two-hour arm cap.",
   "owner": "Codex",
-  "revision": 406,
-  "updatedAt": "2026-11-27T00:49:32.970853Z"
+  "revision": 407,
+  "updatedAt": "2026-11-27T01:39:53.132733Z"
 }

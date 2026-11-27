@@ -1,0 +1,150 @@
+{
+  "status": "approved_20261126",
+  "question": "Can the existing learning reference and our fully-async CISPO setting bundle improve exact GSM8K accuracy on a model with headroom?",
+  "model": {
+    "repo_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "fresh_initialization_per_arm": true
+  },
+  "data": {
+    "repo_id": "zhuzilin/gsm8k",
+    "revision": "0cbd9f31d91ac21a7613dcbc7fef992adac459ae",
+    "file": "train.parquet",
+    "source_sha256": "b96ce2c49d3fb021b771eb15b2ea4a6de6debe8c8840d89a9fc12827ac3b6d86",
+    "rows": 7473
+  },
+  "partitions": {
+    "seed": 20261126,
+    "train_rows": 7217,
+    "validation_rows": 256,
+    "official_test_reads": 0
+  },
+  "reference_recipe": {
+    "file": "tests/e2e/long/test_qwen2.5_0.5B_gsm8k_async.py",
+    "sha256": "5e87311f98d443cd4cfd740940f9d42312aa149a5767897007db0652e09dd592",
+    "source_commit": "3a40931f",
+    "note": "The checked-in test registers ROCm and an absolute eval threshold0.55. This is a recipe, not a verified convergence result for our current image or our new validation split."
+  },
+  "allocation": {
+    "cluster": "hpcfund",
+    "host": "amd",
+    "partition": "mi3508x",
+    "nodes": 1,
+    "physical_gpus": 8,
+    "actor_gpus": 2,
+    "rollout_gpus": 6,
+    "rollout_gpus_per_engine": 1,
+    "actor_tensor_parallel_size": 1,
+    "actor_data_parallel_size": 2,
+    "maximum_total_node_hours": 4,
+    "maximum_hours_per_arm": 2,
+    "maximum_total_gpu_hours": 32,
+    "paid_judge_usd": 0,
+    "note": "Partition reports exclusive nodes. Use all8 GPUs rather than represent a2-GPU request as a2-GPU allocation.",
+    "account": "aviralkumar",
+    "qos": "alloc_aviralkumar_09082026_09302027",
+    "container_recipe": "qualification.proposed.json"
+  },
+  "shared": {
+    "entrypoint": "train_async.py",
+    "rm_type": "math",
+    "input_key": "messages",
+    "label_key": "label",
+    "apply_chat_template": true,
+    "maximum_optimizer_updates": 250,
+    "rollout_max_response_len": 1024,
+    "rollout_temperature": 1.0,
+    "eval_interval": 20,
+    "n_samples_per_eval_prompt": 1,
+    "eval_max_response_len": 1024,
+    "eval_top_k": 1,
+    "lr": 1e-06,
+    "lr_decay_style": "constant",
+    "weight_decay": 0.1,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.98,
+    "entropy_coef": 0.0,
+    "kl_loss_coef": 0.0,
+    "seeds": [
+      20261126
+    ],
+    "max_tokens_per_gpu": 9216
+  },
+  "arms": [
+    {
+      "id": "reference",
+      "source_recipe": "tests/e2e/long/test_qwen2.5_0.5B_gsm8k_async.py",
+      "fully_async": false,
+      "policy_loss_type": "ppo",
+      "rollout_batch_size": 32,
+      "n_samples_per_prompt": 8,
+      "global_batch_size": 256,
+      "eps_clip": 0.2,
+      "eps_clip_high": 0.28,
+      "over_sampling_batch_size": 64,
+      "dynamic_sampling_filter_path": "miles.rollout.filter_hub.dynamic_sampling_filters.check_reward_nonzero_std",
+      "role": "Establish learning under the existing GRPO clipped-PPO reference recipe. Machine allocation, validation split and logging differ explicitly."
+    },
+    {
+      "id": "cispo",
+      "fully_async": true,
+      "policy_loss_type": "cispo",
+      "rollout_batch_size": 4,
+      "n_samples_per_prompt": 32,
+      "global_batch_size": 128,
+      "eps_clip": 10.0,
+      "eps_clip_high": 4.0,
+      "use_rollout_logprobs": true,
+      "skip_actor_forward_only": true,
+      "rollout_top_p": 0.95,
+      "rollout_top_k": 20,
+      "use_sampling_support_replay": true,
+      "pause_generation_mode": "in_place",
+      "async_max_concurrent_samples": 96,
+      "max_weight_staleness": 6,
+      "async_data_buffer_capacity_factor": 1,
+      "async_unused_samples_handler": "retry",
+      "role": "Test the actual TCS batch/loss/sampler setting bundle on the same small model and exact reward. This changes multiple settings, so failures do not identify one causal knob."
+    }
+  ],
+  "gates": {
+    "reward_controls": "All7473 boxed correct, boxed +1 wrong, empty and irrelevant controls already pass.",
+    "baseline": "Baseline the fixed validation set before any update. If accuracy>=0.95 or no varied training groups appear in the first eight groups, stop as uninformative.",
+    "reference": "Run reference first. If it fails to show a positive final-minus-baseline accuracy change with a positive local optimizer-direction check, inspect and report before spending on CISPO.",
+    "cispo": "Only after the reference gate. Both arms start from the same original checkpoint.",
+    "budget": "Save and stop before each allocation deadline. Total4 node-hours includes startup, preparation, inference repair and finalization. No unbounded retries."
+  },
+  "statistics": {
+    "purpose": "Single-seed implementation diagnostic, not seed-generalization evidence. Three-seed replication is a separate follow-up after a successful control.",
+    "primary": "Final-minus-initial exact accuracy on256 fixed validation questions. Final checkpoint only, no best-step selection.",
+    "test": "Two-sided exact paired McNemar test. Report both arm p-values with Bonferroni correction for two planned comparisons.",
+    "uncertainty": "95% paired problem-bootstrap interval for accuracy change. This measures question variation, not training-seed variation.",
+    "bootstrap_seed": 20261126
+  },
+  "logging": {
+    "wandb_entity": "geney",
+    "wandb_project": "tcs-async-rl",
+    "one_serialized_vm_writer": true,
+    "native_optimizer_axis": true,
+    "archive_repo": "3N3G/internalization-runs",
+    "upload_checkpoints": false,
+    "retain_raw_answers_and_numeric_verdicts": true
+  },
+  "limits": [
+    "A successful0.5B control does not validate the Qwen3.5 hybrid kernels or90k-token learning.",
+    "Pretraining contamination is unknown. This is a software and setting-bundle control, not benchmark generalization research.",
+    "No inference or optimizer update has run in this preparation."
+  ],
+  "readiness": {
+    "cpu_reward_controls": "evidence/gsm8k_control_preparation_20261126.json",
+    "actual_input_check": "evidence/gsm8k_control_input_audit_20261126.json",
+    "gpu_runtime_validated": false,
+    "job_launcher_implemented": false,
+    "note": "Concrete scientific settings are proposed. GPU launch wiring and native argument validation follow plan approval."
+  },
+  "approval": {
+    "statement": "approved, run it",
+    "at_utc": "2026-11-27T00:01:57.221337+00:00",
+    "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71"
+  }
+}

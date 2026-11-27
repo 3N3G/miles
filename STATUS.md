@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference561051 queued; terminal analysis now handles an untrained prefetched batch. Jobs: hpcfund/561051 PENDING; hpcfund/558806 COMPLETED
-  Next: Supervise initial baseline and training when AMD allocates eight GPUs. Verify final optimizer prefix and W&B coordinates.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference launch omitted prompt shuffling. Repair validated before allocation. Replace pending561051. Jobs: hpcfund/561051 PENDING; hpcfund/558806 COMPLETED
+  Next: Cancel the queued own attempt and submit the repaired reference within the unchanged two-hour arm cap.
 
 ## Next / blocked
 

@@ -68,7 +68,8 @@
     "seeds": [
       20261126
     ],
-    "max_tokens_per_gpu": 9216
+    "max_tokens_per_gpu": 9216,
+    "rollout_shuffle": true
   },
   "arms": [
     {
@@ -146,5 +147,18 @@
     "statement": "approved, run it",
     "at_utc": "2026-11-27T00:01:57.221337+00:00",
     "session_uuid": "01a1ed24-1032-7731-910b-824f484f5f71"
+  },
+  "runtime_repair": {
+    "reason": "Restore --rollout-shuffle from the approved reference recipe and the existing TCS bundle. The wrapper omitted it.",
+    "archived_previous_config": "gsm8k_control.approved_20261126.before_shuffle_repair.json",
+    "source_training_cli": "tests/e2e/long/test_qwen2.5_0.5B_gsm8k_async.py",
+    "changes_to_model_dataset_membership_reward_or_budget_caps": false,
+    "changed_setting": {
+      "rollout_shuffle": {
+        "before": false,
+        "after": true
+      },
+      "unchanged_native_rollout_seed": 42
+    }
   }
 }

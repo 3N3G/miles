@@ -1,0 +1,31 @@
+{
+  "at_utc": "2026-11-27T01:39:53.014005+00:00",
+  "old_job_id": "561051",
+  "fresh_scheduler": {
+    "state": "PENDING",
+    "exit_code": "0:0",
+    "elapsed": "00:00:00",
+    "start_cluster_time": "Unknown",
+    "end_cluster_time": "Unknown"
+  },
+  "old_training_source": "cc36cff6d4e84aa0a07635e57319e9a883d9c3c6",
+  "repair_plan": "experiments/tcs_async_rl/GSM8K_RUNTIME_REPAIR_20261126.md",
+  "repair": {
+    "reason": "Restore --rollout-shuffle from the approved reference recipe and the existing TCS bundle. The wrapper omitted it.",
+    "archived_previous_config": "gsm8k_control.approved_20261126.before_shuffle_repair.json",
+    "source_training_cli": "tests/e2e/long/test_qwen2.5_0.5B_gsm8k_async.py",
+    "changes_to_model_dataset_membership_reward_or_budget_caps": false,
+    "changed_setting": {
+      "rollout_shuffle": {
+        "before": false,
+        "after": true
+      },
+      "unchanged_native_rollout_seed": 42
+    }
+  },
+  "tests": {
+    "cases": 30,
+    "passed": true
+  },
+  "allocated_seconds_before_replacement": 0
+}
