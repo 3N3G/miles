@@ -1,0 +1,29 @@
+{
+  "kind": "CPU audit of production transformations on actual binary rewards; no new model run",
+  "source_file": "miles/ray/rollout/train_data_conversion.py",
+  "source_commit": "0f6f0b3c97c351de01fb563e2ebe2cf3085ac08a",
+  "compared_source_commit": "463a0bfb21f581f21e504baa431bf8a3068f0db4",
+  "source_sha256": "12531d78598da7cc186097ebdb1fc53220d58c1b6800c09cc8c805fa043edee0",
+  "batch_file": "rollout-186.jsonl.gz",
+  "batch_sha256": "eeb5131b7e46a833340323a3ffe11962bfd16a6a948f3582e15f5f8b935bba38",
+  "samples": 256,
+  "groups": 32,
+  "group_sizes": [
+    8
+  ],
+  "maximum_absolute_error": 1.140931686904878e-07,
+  "permutation_seed": 20261126,
+  "data_shard_counts_checked": [
+    1,
+    2
+  ],
+  "parser_defaults": {
+    "rewards_normalization": true,
+    "grpo_std_normalization": true,
+    "balance_data": false,
+    "kl_coef": 0.0,
+    "kl_loss_coef": 0.0
+  },
+  "limitation": "Assumes the approved single-turn trajectory format. Tests frozen CPU transformations, not a new GPU optimizer update.",
+  "gpu_jobs_submitted": 0
+}
