@@ -111,7 +111,8 @@ def render_job(*, repo, work_dir, run_dir, config, config_path, arm, expected_co
         "#!/usr/bin/python3.12", f"#SBATCH --job-name=gsm8k-{arm}",
         f"#SBATCH --partition={allocation['partition']}", f"#SBATCH --account={allocation['account']}",
         f"#SBATCH --qos={allocation['qos']}", "#SBATCH --nodes=1", "#SBATCH --ntasks=1",
-        f"#SBATCH --cpus-per-task={cpus_per_task}", "#SBATCH --exclusive", f"#SBATCH --time={walltime}",
+        f"#SBATCH --cpus-per-task={cpus_per_task}", "#SBATCH --exclusive", "#SBATCH --no-requeue",
+        f"#SBATCH --time={walltime}",
         f"#SBATCH --chdir={repo}", f"#SBATCH --output={run_dir}/slurm-%j.log",
         "import subprocess", f"subprocess.run({argv!r}, check=True)", "",
     ])
