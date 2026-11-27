@@ -11,10 +11,37 @@ from experiments.tcs_async_rl import gsm8k_driver
 from experiments.tcs_async_rl.gsm8k_control import CONFIG, render_job, resolved_args
 from experiments.tcs_async_rl.gsm8k_wandb import acknowledge_evaluations, publish_evaluations
 from experiments.tcs_async_rl.native_metrics import read_native_metrics
-from experiments.tcs_async_rl.gsm8k_results import paired_accuracy
+from experiments.tcs_async_rl.gsm8k_results import analyze, paired_accuracy
 
 
 class GsmControlTests(unittest.TestCase):
+    def test_terminal_analysis_allows_untrained_prefetch_but_requires_final_weight_publication(self):
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            (root/'events').mkdir()
+            (root/'evaluations').mkdir()
+            (root/'approved-config.json').write_text(json.dumps({'benchmark':'gsm8k'}))
+            (root/'control-complete.json').write_text(json.dumps({'uninformative':False,'optimizer_updates':1}))
+            for filename, updates, scores in [('baseline',0,{'1':0,'2':1}),
+                                              ('updates-000001',1,{'1':1,'2':1})]:
+                (root/'evaluations'/f'{filename}.json').write_text(json.dumps({
+                    'optimizer_updates':updates,'scores':scores}))
+            train = {'type':'metric','rollout_id':0,'metrics':{
+                'train/pg_loss':0.1,'perf/update_weights_time':0.1,
+                'train/update_direction/surrogate_gain':0.01}}
+            (root/'events/actor_cell00000_rank00000.jsonl').write_text(json.dumps(train)+'\n')
+            rollout = [{'type':'metric','rollout_id':i,'metrics':{'rollout/episode_raw_reward':0.5}}
+                       for i in (0,1)]
+            (root/'events/rollout_executor.jsonl').write_text('\n'.join(map(json.dumps,rollout))+'\n')
+            publication = root/'events/main.jsonl'
+            publication.write_text(json.dumps({'type':'inference_engine_weight_checksum','rollout_id':0})+'\n')
+            result = analyze(root)
+            self.assertEqual(result['optimizer_updates'],1)
+            self.assertTrue(result['gate_passed'])
+            publication.write_text('')
+            with self.assertRaisesRegex(ValueError,'optimizer history differ'):
+                analyze(root)
+
     def test_paired_analysis_distinguishes_no_change_and_unanimous_improvement(self):
         before = {str(i):0 for i in range(8)}
         unchanged = paired_accuracy(before, before, bootstrap_samples=100)

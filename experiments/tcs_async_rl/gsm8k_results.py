@@ -44,7 +44,10 @@ def analyze(directory):
         before = json.loads((directory / "evaluations/baseline.json").read_text())
         updates = complete["optimizer_updates"]
         after = json.loads((directory / f"evaluations/updates-{updates:06d}.json").read_text())
-        native = read_native_metrics(directory)
+        # A deadline save can leave the next prefetched rollout untrained.
+        # Require the complete published optimizer prefix, then match its count
+        # to the driver's final checkpoint/evaluation boundary below.
+        native = read_native_metrics(directory, allow_pending=True, require_publication=True)
         if len(native) != updates or [x["optimizer_step"] for x in native] != list(range(updates)):
             raise ValueError("Final evaluation and actual optimizer history differ")
         direction = [row["train/update_direction/surrogate_gain"] for row in native

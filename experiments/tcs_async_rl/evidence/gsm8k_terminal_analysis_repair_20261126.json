@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-11-27T00:49:32.853816+00:00",
+  "issue": "A requested save/stop can leave one generated next-rollout batch without an optimizer step. Strict all-row analysis would reject that legitimate prefetch.",
+  "repair": "Analyze the complete published optimizer prefix and require it to match the driver final evaluation/update count. Unpublished completed steps still fail.",
+  "training_source_unchanged": "cc36cff6d4e84aa0a07635e57319e9a883d9c3c6",
+  "verification": {
+    "command": "python3 -m unittest tests.fast.test_tcs_gsm8k_control tests.fast.test_tcs_rl_diagnostics",
+    "cases": 30,
+    "passed": true
+  },
+  "gpu_runtime_validation": "Pending job561051. No measured GPU updates."
+}
