@@ -1,0 +1,32 @@
+{
+  "at_utc": "2026-11-27T10:29:41.164376+00:00",
+  "free_before": 3263688704,
+  "free_after": 3451609088,
+  "evictions": [
+    {
+      "run": "easy-medium-236-v1",
+      "revision": "1e1d18a3613dcb38557b34921d7381115480c285",
+      "files": 7,
+      "bytes_removed": 74771508
+    },
+    {
+      "run": "difficulty-screen-high-v2",
+      "revision": "e4abe404af2bfd561f65a6619abf8b1117c1f213",
+      "files": 6,
+      "bytes_removed": 26491001
+    },
+    {
+      "run": "difficulty-screen-high-v3",
+      "revision": "7a258e0947401b05d2207f63592bea799e9284bd",
+      "files": 6,
+      "bytes_removed": 26492566
+    },
+    {
+      "run": "checkpoint-final236-screen-v5",
+      "revision": "442e9ce6dfdecf101bc23a6de19b7ce90489600f",
+      "files": 36,
+      "bytes_removed": 60084493
+    }
+  ],
+  "unrelated_project_files_modified": false
+}
