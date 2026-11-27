@@ -1,0 +1,17 @@
+{
+  "final_reference_archive": {
+    "commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/967727a5979992126309e3803df2a1039c87d431",
+    "path": "miles/gsm8k-reference-v4",
+    "verified": true,
+    "verified_files": 599,
+    "verified_bytes": 243832352,
+    "local_files": 413,
+    "previously_evicted_files": 186,
+    "checkpoints_uploaded": false
+  },
+  "independent_reward_audit": "experiments/tcs_async_rl/evidence/gsm8k_numeric_audit_20261127.json",
+  "resource_question": "QUESTIONS.md",
+  "resource_choices": "experiments/tcs_async_rl/gsm8k_cispo_resources.proposed_20261127.json",
+  "resource_variants_submitted": 0,
+  "original_cispo_job_id": "562347"
+}

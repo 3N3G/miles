@@ -3,8 +3,8 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
-      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/318eecb525cdd1606602ac62facda521b2313ead/miles/gsm8k-reference-v4",
-      "label": "Completed GSM8K reference:250 updates,172 to185/256;596 artifacts verified."
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/967727a5979992126309e3803df2a1039c87d431/miles/gsm8k-reference-v4",
+      "label": "Completed reference plus independent arithmetic audit; all599 artifacts verified."
     },
     {
       "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native",
@@ -4249,6 +4249,13 @@
       "actor": "codex",
       "summary": "GSM8K reference fully audited; original CISPO queued while resource choice is pending",
       "revision": 428
+    },
+    {
+      "id": "558ed5f1-676a-40c5-9efa-0fd6885e0f4d",
+      "at": "2026-11-27T10:25:12.425027Z",
+      "actor": "codex",
+      "summary": "Link the final reference archive including independent numeric checks",
+      "revision": 429
     }
   ],
   "projectId": "understanding",
@@ -4258,6 +4265,6 @@
   "summary": "GSM8K reference fully audited; original CISPO queued while resource choice is pending",
   "nextAction": "Continue foreground supervision of the original eight-MI350 job and its observer. Await the optional resource choice before submitting any variant. No alternative GPU job is authorized yet.",
   "owner": "Codex",
-  "revision": 428,
-  "updatedAt": "2026-11-27T10:24:52.935284Z"
+  "revision": 429,
+  "updatedAt": "2026-11-27T10:25:12.425027Z"
 }
