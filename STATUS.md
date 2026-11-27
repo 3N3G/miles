@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K562208 running; repaired native args validated, eight GPUs placed Jobs: hpcfund/562208 RUNNING; hpcfund/561193 FAILED
-  Next: Inspect model initialization and fixed validation baseline, then the first published optimizer update and W&B readback.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K562208 failed on Bridge cache path;319 total seconds used, no answers Jobs: hpcfund/562208 FAILED; hpcfund/561193 FAILED
+  Next: Redirect only the Bridge lock cache to writable work storage, validate the path, and rerun within6881 seconds remaining. Preserve and archive this failed attempt.
 
 ## Next / blocked
 
