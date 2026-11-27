@@ -4194,15 +4194,22 @@
       "actor": "codex",
       "summary": "GSM8K reference baseline172/256; update20 validation179/256,35 steps verified",
       "revision": 422
+    },
+    {
+      "id": "a05d0b6d-b8a5-4da5-aaf5-6374d51da2c6",
+      "at": "2026-11-27T09:36:06.500562Z",
+      "actor": "codex",
+      "summary": "GSM8K continuous observer started;126 W&B training coordinates verified",
+      "revision": 423
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K reference baseline172/256; update20 validation179/256,35 steps verified",
-  "nextAction": "Continue all250 planned updates, inspect further fixed validation and raw answers, and verify W&B indexing before the final CISPO gate.",
+  "summary": "GSM8K continuous observer started;126 W&B training coordinates verified",
+  "nextAction": "Keep foreground checks of GPU progress and observer heartbeat. Finish250 updates, inspect checkpoint/eval match, verify archive and W&B, then apply the CISPO gate.",
   "owner": "Codex",
-  "revision": 422,
-  "updatedAt": "2026-11-27T09:16:05.944588Z"
+  "revision": 423,
+  "updatedAt": "2026-11-27T09:36:06.500562Z"
 }

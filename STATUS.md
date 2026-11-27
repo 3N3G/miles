@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference baseline172/256; update20 validation179/256,35 steps verified Jobs: hpcfund/562230 RUNNING; hpcfund/562208 FAILED
-  Next: Continue all250 planned updates, inspect further fixed validation and raw answers, and verify W&B indexing before the final CISPO gate.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K continuous observer started;126 W&B training coordinates verified Jobs: hpcfund/562230 RUNNING; hpcfund/562208 FAILED
+  Next: Keep foreground checks of GPU progress and observer heartbeat. Finish250 updates, inspect checkpoint/eval match, verify archive and W&B, then apply the CISPO gate.
 
 ## Next / blocked
 
