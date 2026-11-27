@@ -989,7 +989,7 @@
     {
       "id": "562230",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "562208",
@@ -4180,15 +4180,22 @@
       "actor": "codex",
       "summary": "GSM8K reference submitted as 562230",
       "revision": 420
+    },
+    {
+      "id": "0cbf0009-d941-4526-ad26-8f9f8c850fa4",
+      "at": "2026-11-27T09:05:49.645906Z",
+      "actor": "codex",
+      "summary": "GSM8K562230 running with writable Bridge cache; prior charge319 seconds",
+      "revision": 421
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K reference submitted as 562230",
-  "nextAction": "Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.",
+  "summary": "GSM8K562230 running with writable Bridge cache; prior charge319 seconds",
+  "nextAction": "Verify real Bridge preflight, actor initialization, baseline and first published optimizer step. Continue through verified results and W&B publication.",
   "owner": "Codex",
-  "revision": 420,
-  "updatedAt": "2026-11-27T09:04:33.057189Z"
+  "revision": 421,
+  "updatedAt": "2026-11-27T09:05:49.645906Z"
 }
