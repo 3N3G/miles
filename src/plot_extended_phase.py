@@ -33,9 +33,8 @@ def main():
     ax.axhline(0,color='#555555',lw=.8);ax.axvline(3.5,color='#999999',lw=.9,ls=':')
     ax.set(xlabel='Pass number',ylabel='Change in Block 2 read weight\nwhen the unit is deleted (percentage points)',
            title='The original unit’s opposing routing effects recur',xticks=range(1,25),xlim=(.7,24.3))
-    ax.text(4,.022,'Extended beyond the trained 3 passes',fontsize=9,color='#555555')
     fig.subplots_adjust(left=.16,bottom=.26)
-    fig.text(.16,.035,'Inkling 2 Mini, physical layer 12, expert 45, unit 1127. 16 new articles.\nPositive: deleting the unit makes the next layer read Block 2 more.\nNegative: deleting it makes the next layer read Block 2 less. Shading: 95% article bootstrap.',fontsize=9)
+    fig.text(.16,.022,'Inkling 2 Mini, physical layer 12, expert 45, unit 1127. 16 new articles.\nPositive: deleting the unit makes the next layer read Block 2 more.\nNegative: deleting it makes the next layer read Block 2 less.\nShading: 95% article bootstrap. Dotted line: the trained three-pass horizon.',fontsize=9)
     for suffix in ['png','pdf']:fig.savefig('figures/extended_unit45_recurrence.'+suffix,dpi=180)
     plt.close(fig)
     fig,ax=plt.subplots(figsize=(7.6,4.8))

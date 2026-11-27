@@ -1,0 +1,528 @@
+{
+  "status": "Exploratory controls after primary results. Descriptive 95% intervals, no new confirmatory family.",
+  "purpose": "Check whether recurrence disappears when one known outlier or the within-pass component shared across tokens is removed.",
+  "summary": {
+    "original": {
+      "lag1": {
+        "mean": 0.6946696322411299,
+        "interval": [
+          0.6290774679742753,
+          0.7393745508044958
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "lag3": {
+        "mean": 0.18646114924922585,
+        "interval": [
+          0.16204562482889742,
+          0.21292062299326062
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "paired_difference": {
+        "mean": -0.508208482991904,
+        "interval": [
+          -0.5702554922667332,
+          -0.42213343603070824
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "mean_article_ratio_lag3_to_lag1": 0.3017366945718162,
+      "articles_with_lag3_less_than_lag1": 15
+    },
+    "without_coordinate2027": {
+      "lag1": {
+        "mean": 0.6827069092541933,
+        "interval": [
+          0.6214677568990737,
+          0.7250426390208304
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "lag3": {
+        "mean": 0.20900367433205247,
+        "interval": [
+          0.18291268714237957,
+          0.23673761202953755
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "paired_difference": {
+        "mean": -0.47370323492214084,
+        "interval": [
+          -0.5328266597352922,
+          -0.39196828033309433
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "mean_article_ratio_lag3_to_lag1": 0.3363978678953795,
+      "articles_with_lag3_less_than_lag1": 15
+    },
+    "centered_across_tokens": {
+      "lag1": {
+        "mean": 0.5041357427835464,
+        "interval": [
+          0.46955564529635013,
+          0.5275676349643618
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "lag3": {
+        "mean": 0.18487249920144677,
+        "interval": [
+          0.16066193620208652,
+          0.2110992337227799
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "paired_difference": {
+        "mean": -0.3192632435820997,
+        "interval": [
+          -0.3552946566720493,
+          -0.26537201545434075
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "mean_article_ratio_lag3_to_lag1": 0.3859775230421363,
+      "articles_with_lag3_less_than_lag1": 15
+    },
+    "without2027_then_centered": {
+      "lag1": {
+        "mean": 0.5476478151977062,
+        "interval": [
+          0.5086213507689535,
+          0.5744691191241145
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "lag3": {
+        "mean": 0.20725970435887575,
+        "interval": [
+          0.18141522957012057,
+          0.23476320568006487
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "paired_difference": {
+        "mean": -0.34038811083883047,
+        "interval": [
+          -0.38085116758011284,
+          -0.2816307772882283
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "mean_article_ratio_lag3_to_lag1": 0.39867526337393566,
+      "articles_with_lag3_less_than_lag1": 15
+    }
+  },
+  "per_article": [
+    {
+      "id": "extended-phase-000",
+      "article": "= Oribi =",
+      "original": {
+        "1": 0.7503087520599365,
+        "3": 0.15896250307559967
+      },
+      "without_coordinate2027": {
+        "1": 0.735011100769043,
+        "3": 0.18097613751888275
+      },
+      "centered_across_tokens": {
+        "1": 0.5170106291770935,
+        "3": 0.15789152681827545
+      },
+      "without2027_then_centered": {
+        "1": 0.5663501024246216,
+        "3": 0.17975091934204102
+      },
+      "late_normalized_energy_after_token_centering": 0.3601011335849762,
+      "late_raw_energy_share_coordinate2027": 0.23353064060211182
+    },
+    {
+      "id": "extended-phase-001",
+      "article": "= The Fox , the Wolf and the Husbandman =",
+      "original": {
+        "1": 0.7789337038993835,
+        "3": 0.20064376294612885
+      },
+      "without_coordinate2027": {
+        "1": 0.773479700088501,
+        "3": 0.2295163869857788
+      },
+      "centered_across_tokens": {
+        "1": 0.5567881464958191,
+        "3": 0.19904524087905884
+      },
+      "without2027_then_centered": {
+        "1": 0.6130790114402771,
+        "3": 0.22768624126911163
+      },
+      "late_normalized_energy_after_token_centering": 0.36398908495903015,
+      "late_raw_energy_share_coordinate2027": 0.22907906770706177
+    },
+    {
+      "id": "extended-phase-002",
+      "article": "= Action of 13 September 1810 =",
+      "original": {
+        "1": 0.7385339736938477,
+        "3": 0.15725411474704742
+      },
+      "without_coordinate2027": {
+        "1": 0.7170493006706238,
+        "3": 0.17721199989318848
+      },
+      "centered_across_tokens": {
+        "1": 0.5144128799438477,
+        "3": 0.15592952072620392
+      },
+      "without2027_then_centered": {
+        "1": 0.5619453191757202,
+        "3": 0.17570312321186066
+      },
+      "late_normalized_energy_after_token_centering": 0.35710757970809937,
+      "late_raw_energy_share_coordinate2027": 0.22104579210281372
+    },
+    {
+      "id": "extended-phase-003",
+      "article": "= Max Mosley =",
+      "original": {
+        "1": 0.6952808499336243,
+        "3": 0.17927862703800201
+      },
+      "without_coordinate2027": {
+        "1": 0.6728553175926208,
+        "3": 0.20165686309337616
+      },
+      "centered_across_tokens": {
+        "1": 0.5025340914726257,
+        "3": 0.1774066686630249
+      },
+      "without2027_then_centered": {
+        "1": 0.545458972454071,
+        "3": 0.19960518181324005
+      },
+      "late_normalized_energy_after_token_centering": 0.3812830150127411,
+      "late_raw_energy_share_coordinate2027": 0.21572089195251465
+    },
+    {
+      "id": "extended-phase-004",
+      "article": "= Krak des Chevaliers =",
+      "original": {
+        "1": 0.7100658416748047,
+        "3": 0.16333656013011932
+      },
+      "without_coordinate2027": {
+        "1": 0.6940417885780334,
+        "3": 0.18255288898944855
+      },
+      "centered_across_tokens": {
+        "1": 0.5165998935699463,
+        "3": 0.16220775246620178
+      },
+      "without2027_then_centered": {
+        "1": 0.5584918856620789,
+        "3": 0.18128441274166107
+      },
+      "late_normalized_energy_after_token_centering": 0.3923456370830536,
+      "late_raw_energy_share_coordinate2027": 0.20849716663360596
+    },
+    {
+      "id": "extended-phase-005",
+      "article": "= Weather buoy =",
+      "original": {
+        "1": 0.7667364478111267,
+        "3": 0.13811402022838593
+      },
+      "without_coordinate2027": {
+        "1": 0.7566452622413635,
+        "3": 0.15829968452453613
+      },
+      "centered_across_tokens": {
+        "1": 0.5249295830726624,
+        "3": 0.13709604740142822
+      },
+      "without2027_then_centered": {
+        "1": 0.5757021903991699,
+        "3": 0.15714512765407562
+      },
+      "late_normalized_energy_after_token_centering": 0.34219124913215637,
+      "late_raw_energy_share_coordinate2027": 0.24000640213489532
+    },
+    {
+      "id": "extended-phase-006",
+      "article": "= Chris Turner ( American football ) =",
+      "original": {
+        "1": 0.7409598231315613,
+        "3": 0.2025335282087326
+      },
+      "without_coordinate2027": {
+        "1": 0.724729597568512,
+        "3": 0.22870296239852905
+      },
+      "centered_across_tokens": {
+        "1": 0.5271899104118347,
+        "3": 0.20108765363693237
+      },
+      "without2027_then_centered": {
+        "1": 0.5760417580604553,
+        "3": 0.22705940902233124
+      },
+      "late_normalized_energy_after_token_centering": 0.3753751218318939,
+      "late_raw_energy_share_coordinate2027": 0.2244206666946411
+    },
+    {
+      "id": "extended-phase-007",
+      "article": "= Ghost in the Shell ( 1995 film ) =",
+      "original": {
+        "1": 0.7336401343345642,
+        "3": 0.18181772530078888
+      },
+      "without_coordinate2027": {
+        "1": 0.7272657752037048,
+        "3": 0.20723766088485718
+      },
+      "centered_across_tokens": {
+        "1": 0.532947838306427,
+        "3": 0.18035216629505157
+      },
+      "without2027_then_centered": {
+        "1": 0.5844273567199707,
+        "3": 0.20556266605854034
+      },
+      "late_normalized_energy_after_token_centering": 0.3506508469581604,
+      "late_raw_energy_share_coordinate2027": 0.2267656773328781
+    },
+    {
+      "id": "extended-phase-008",
+      "article": "= Loose ( Nelly Furtado album ) =",
+      "original": {
+        "1": 0.5756987929344177,
+        "3": 0.19584478437900543
+      },
+      "without_coordinate2027": {
+        "1": 0.5681097507476807,
+        "3": 0.21424269676208496
+      },
+      "centered_across_tokens": {
+        "1": 0.46621111035346985,
+        "3": 0.19414283335208893
+      },
+      "without2027_then_centered": {
+        "1": 0.49372434616088867,
+        "3": 0.212507963180542
+      },
+      "late_normalized_energy_after_token_centering": 0.43495410680770874,
+      "late_raw_energy_share_coordinate2027": 0.17165732383728027
+    },
+    {
+      "id": "extended-phase-009",
+      "article": "= A4232 road =",
+      "original": {
+        "1": 0.6476014256477356,
+        "3": 0.27030637860298157
+      },
+      "without_coordinate2027": {
+        "1": 0.6520105004310608,
+        "3": 0.29965469241142273
+      },
+      "centered_across_tokens": {
+        "1": 0.54314786195755,
+        "3": 0.26833489537239075
+      },
+      "without2027_then_centered": {
+        "1": 0.5718051791191101,
+        "3": 0.29747405648231506
+      },
+      "late_normalized_energy_after_token_centering": 0.43013495206832886,
+      "late_raw_energy_share_coordinate2027": 0.2103191763162613
+    },
+    {
+      "id": "extended-phase-010",
+      "article": "= First @-@ move advantage in chess =",
+      "original": {
+        "1": 0.7270472645759583,
+        "3": 0.22035478055477142
+      },
+      "without_coordinate2027": {
+        "1": 0.7102484703063965,
+        "3": 0.24881906807422638
+      },
+      "centered_across_tokens": {
+        "1": 0.5182647109031677,
+        "3": 0.2170369178056717
+      },
+      "without2027_then_centered": {
+        "1": 0.5668129324913025,
+        "3": 0.24550361931324005
+      },
+      "late_normalized_energy_after_token_centering": 0.38059374690055847,
+      "late_raw_energy_share_coordinate2027": 0.22914552688598633
+    },
+    {
+      "id": "extended-phase-011",
+      "article": "= Jin \u2013 Song Wars =",
+      "original": {
+        "1": 0.7449048161506653,
+        "3": 0.13124069571495056
+      },
+      "without_coordinate2027": {
+        "1": 0.7255260944366455,
+        "3": 0.14893461763858795
+      },
+      "centered_across_tokens": {
+        "1": 0.5204004645347595,
+        "3": 0.13001121580600739
+      },
+      "without2027_then_centered": {
+        "1": 0.5685287714004517,
+        "3": 0.14754842221736908
+      },
+      "late_normalized_energy_after_token_centering": 0.362265408039093,
+      "late_raw_energy_share_coordinate2027": 0.22034339606761932
+    },
+    {
+      "id": "extended-phase-012",
+      "article": "= North @-@ Eastern Area Command ( RAAF ) =",
+      "original": {
+        "1": 0.7421350479125977,
+        "3": 0.15421855449676514
+      },
+      "without_coordinate2027": {
+        "1": 0.7237381935119629,
+        "3": 0.1746416687965393
+      },
+      "centered_across_tokens": {
+        "1": 0.5220655202865601,
+        "3": 0.15282994508743286
+      },
+      "without2027_then_centered": {
+        "1": 0.5684160590171814,
+        "3": 0.173079252243042
+      },
+      "late_normalized_energy_after_token_centering": 0.3700977563858032,
+      "late_raw_energy_share_coordinate2027": 0.22088201344013214
+    },
+    {
+      "id": "extended-phase-013",
+      "article": "= Kir 'Shara =",
+      "original": {
+        "1": 0.28817394375801086,
+        "3": 0.3136693835258484
+      },
+      "without_coordinate2027": {
+        "1": 0.3067450225353241,
+        "3": 0.33711016178131104
+      },
+      "centered_across_tokens": {
+        "1": 0.2859744727611542,
+        "3": 0.31091824173927307
+      },
+      "without2027_then_centered": {
+        "1": 0.304405152797699,
+        "3": 0.3341468870639801
+      },
+      "late_normalized_energy_after_token_centering": 0.43591994047164917,
+      "late_raw_energy_share_coordinate2027": 0.16264204680919647
+    },
+    {
+      "id": "extended-phase-014",
+      "article": "= South of Heaven =",
+      "original": {
+        "1": 0.7648536562919617,
+        "3": 0.21505482494831085
+      },
+      "without_coordinate2027": {
+        "1": 0.7489726543426514,
+        "3": 0.23947328329086304
+      },
+      "centered_across_tokens": {
+        "1": 0.5487460494041443,
+        "3": 0.213797926902771
+      },
+      "without2027_then_centered": {
+        "1": 0.5962948203086853,
+        "3": 0.2380450963973999
+      },
+      "late_normalized_energy_after_token_centering": 0.3921065032482147,
+      "late_raw_energy_share_coordinate2027": 0.2204090803861618
+    },
+    {
+      "id": "extended-phase-015",
+      "article": "= Florida Atlantic University =",
+      "original": {
+        "1": 0.7098396420478821,
+        "3": 0.10074814409017563
+      },
+      "without_coordinate2027": {
+        "1": 0.6868820190429688,
+        "3": 0.115028016269207
+      },
+      "centered_across_tokens": {
+        "1": 0.46894872188568115,
+        "3": 0.0998714342713356
+      },
+      "without2027_then_centered": {
+        "1": 0.5108811855316162,
+        "3": 0.11405289173126221
+      },
+      "late_normalized_energy_after_token_centering": 0.33242058753967285,
+      "late_raw_energy_share_coordinate2027": 0.2361498326063156
+    }
+  ],
+  "mean_remaining_energy_after_token_centering": 0.37884604185819626,
+  "mean_energy_share_coordinate2027": 0.21691341884434223,
+  "limits": [
+    "Centering removes the per-pass, per-block mean across128 token positions. It does not identify a semantic subspace.",
+    "Centered states are not renormalized, so lower absolute distances partly reflect removed energy.",
+    "Removing coordinate2027 leaves other possible control coordinates intact.",
+    "These transformations are offline diagnostics, not competition readouts."
+  ]
+}

@@ -111,3 +111,7 @@ a stable limit cycle or better semantic token recovery.
 
 Private immutable run archive:
 https://huggingface.co/datasets/3N3G/internalization-runs/tree/d92b6e8633d32f1210e02869cf958b7a47e3eb25/inkling-interp/extended-unit-phase-v2
+
+Exploratory component controls and static-template checks were added afterward.
+They preserve the primary analysis. Their augmented private archive is:
+https://huggingface.co/datasets/3N3G/internalization-runs/tree/d9eca5bbab9c88adf2fc75c5df459403a22dd28d/inkling-interp/extended-unit-phase-v2

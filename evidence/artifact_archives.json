@@ -433,5 +433,14 @@
     "files": 3,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/ed8937f9087b1029c5606841fea0c72b8ddb6cfc/inkling-interp/native-reader-lens-v1",
     "verified_at": "2026-11-27T06:49:10.570714+00:00"
+  },
+  {
+    "stage": "extended-unit-phase-v2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "d9eca5bbab9c88adf2fc75c5df459403a22dd28d",
+    "private": true,
+    "files": 41,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/d9eca5bbab9c88adf2fc75c5df459403a22dd28d/inkling-interp/extended-unit-phase-v2",
+    "verified_at": "2026-11-27T06:57:50.060423+00:00"
   }
 ]
