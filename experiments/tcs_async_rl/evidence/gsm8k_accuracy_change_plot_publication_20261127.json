@@ -1,0 +1,17 @@
+{
+  "kind": "Reference uncertainty plot added. Primary statistics and original eight figures unchanged.",
+  "commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/a5629569af75f609a3a50e78c74c41e354a21223",
+  "path": "miles/gsm8k-reference-v4",
+  "verified": true,
+  "verified_files": 608,
+  "verified_bytes": 243919545,
+  "local_files": 422,
+  "previously_evicted_files": 186,
+  "checkpoints_uploaded": false,
+  "validation": "gsm8k_accuracy_change_plot_validation_20261127.json",
+  "plot": "figures/final-accuracy-change.png",
+  "source_result_sha256": "c49fc99847254b4d0c4cc3136a0f56aa244836745f33470c91db7f35957da56b",
+  "renderer_commit": "e2188421",
+  "new_gpu_jobs": 0,
+  "new_api_judge_calls": 0
+}

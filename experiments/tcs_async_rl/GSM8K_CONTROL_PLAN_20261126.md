@@ -73,8 +73,8 @@ It also checked 18 missing-box zeros. Ten symbolic or nonscalar boxes remain out
 A separate [assistant review](evidence/gsm8k_symbolic_box_review_20261127.json) agreed with all ten remaining zeros under the numeric-target contract.
 
 The reference used 3,398 allocated node-seconds across attempts, including 319 seconds in two startup failures. Judge cost was zero.
-Its [immutable archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/c508743f4161496a0c7cc9728d8c3be289c3260b/miles/gsm8k-reference-v4)
-contains 605 verified artifacts. Its [W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native) is finished.
+Its [immutable archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/a5629569af75f609a3a50e78c74c41e354a21223/miles/gsm8k-reference-v4)
+contains 608 verified artifacts. Its [W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native) is finished.
 The [machine-readable result](evidence/gsm8k_reference_final_20261127.json) owns the exact measurements.
 
 CISPO job 562347 remains queued with zero allocated seconds and zero updates. The [resource choice](../../QUESTIONS.md) remains open.
