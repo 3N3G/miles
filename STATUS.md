@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Testing whether native expert effects recur beyond three passes, and whether the mechanism helps single-visit token readouts under the clarified challenge rules.
-  Next: Freeze a bounded phase test, inspect unused evaluation data, and run within the remaining11477 GPU seconds.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Running a fixed-unit 24-pass test of recurring causal phase on 16 new articles, with exact native-prefix controls. Jobs: hpcfund/561939 RUNNING
+  Next: Monitor native controls and recurrence. Prepare an independent same-visit readout comparison.
 
 ## Next / blocked
 

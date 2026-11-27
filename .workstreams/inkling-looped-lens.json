@@ -20,7 +20,13 @@
       "label": "Independent expert necessity tests"
     }
   ],
-  "jobs": [],
+  "jobs": [
+    {
+      "cluster": "hpcfund",
+      "id": "561939",
+      "status": "RUNNING"
+    }
+  ],
   "sessions": [
     {
       "agent": "codex",
@@ -342,15 +348,22 @@
       "actor": "codex",
       "summary": "Resume authorized follow-up on loop phase and implications for single-visit lenses",
       "revision": 44
+    },
+    {
+      "id": "b602afe3-55e2-4da3-be41-29dabf0aa75e",
+      "at": "2026-11-27T06:39:37.841510Z",
+      "actor": "codex",
+      "summary": "Freeze and start 24-pass fixed-unit causal test on 16 new articles",
+      "revision": 45
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Testing whether native expert effects recur beyond three passes, and whether the mechanism helps single-visit token readouts under the clarified challenge rules.",
-  "nextAction": "Freeze a bounded phase test, inspect unused evaluation data, and run within the remaining11477 GPU seconds.",
+  "summary": "Running a fixed-unit 24-pass test of recurring causal phase on 16 new articles, with exact native-prefix controls.",
+  "nextAction": "Monitor native controls and recurrence. Prepare an independent same-visit readout comparison.",
   "owner": "Codex",
-  "revision": 44,
-  "updatedAt": "2026-11-27T06:34:31.856951Z"
+  "revision": 45,
+  "updatedAt": "2026-11-27T06:39:37.841510Z"
 }
