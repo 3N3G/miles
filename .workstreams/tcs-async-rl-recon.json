@@ -4121,15 +4121,22 @@
       "actor": "codex",
       "summary": "GSM8K561193 still queued; recovered0.78 GiB of VM cache space",
       "revision": 413
+    },
+    {
+      "id": "57ed2a05-43fb-4402-ac06-af6bffa7b4c4",
+      "at": "2026-11-27T07:46:24.303773Z",
+      "actor": "codex",
+      "summary": "GSM8K reference561193 pending; Slurm withdrew its start estimate",
+      "revision": 414
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K561193 still queued; recovered0.78 GiB of VM cache space",
-  "nextAction": "Continue queue and disk checks. Supervise baseline and training when allocated. Archive growing rollout copies during training.",
+  "summary": "GSM8K reference561193 pending; Slurm withdrew its start estimate",
+  "nextAction": "Continue foreground queue and storage checks. Baseline and training have not started. Apply the declared CISPO gate only after actual reference results.",
   "owner": "Codex",
-  "revision": 413,
-  "updatedAt": "2026-11-27T06:47:57.104674Z"
+  "revision": 414,
+  "updatedAt": "2026-11-27T07:46:24.303773Z"
 }
