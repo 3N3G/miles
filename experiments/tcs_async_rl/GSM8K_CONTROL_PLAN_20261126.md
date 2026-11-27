@@ -6,9 +6,10 @@ No GPU inference or training had run at approval.
 
 ## TLDR
 
-First reproduce the repository's small-model GSM8K learning recipe. Then test the TCS CISPO/fully-async setting bundle on the same model.
-Use Qwen2.5-0.5B-Instruct and deterministic numeric rewards. Cap the two stages at four total AMD node-hours on eight GPUs.
-Both stages start from the original model. This is a one-seed diagnostic, not a three-seed performance claim.
+The reference completed250 updates. Fixed-validation accuracy rose from172/256(67.2%) to185/256(72.3%).
+The paired95% interval for the change includes zero. This single-seed result passes the predeclared gate, but does not establish repeatable improvement.
+The fresh-weight CISPO stage is queued. No CISPO inference or training has run. Its original eight-MI350 setup remains authorized.
+The approved cap remains four total AMD node-hours on eight GPUs, with no paid judge.
 
 ## Background / motivation
 
@@ -51,9 +52,29 @@ Sources: [GSM8K](https://github.com/openai/grade-school-math) and [Qwen model ca
 
 ## Results
 
-Only CPU data preparation and reward validation have run.
-The [preparation evidence](evidence/gsm8k_control_preparation_20261126.json) records hashes, partitions and the complete formatted example.
-GPU inference, optimizer updates, validation changes and learning outcomes are unmeasured.
+The reference completed250 optimizer updates and consumed64,000 answers. Final fixed-validation accuracy was185/256(72.27%), versus172/256(67.19%) initially.
+Thirty questions changed from wrong to right, while17 changed from right to wrong. The gain was5.08 percentage points.
+The95% paired question-bootstrap interval was0–10.16 points. The exact paired McNemar p-value was0.07894, or0.15788 after the planned two-comparison correction.
+This uncertainty concerns validation questions. One training seed does not measure variation across training seeds.
+The final checkpoint supplied the primary result, even though an intermediate checkpoint scored higher.
+
+Formatting explains some improvement. A seeded example reasoned correctly that four bottles need4×85−33=307 stars, but omitted the required box before training.
+The final answer boxed307 and earned one point. Among252 responses with boxes at both stages, correct answers increased from172 to182.
+A seeded regression changed a correct zoo total of144 to108 after using the wrong giraffe-enclosure count.
+Full paired examples are in `paired-raw-answer-audit.json` in the archive below.
+
+All three local optimizer-direction checks were positive. Gradients stayed finite, and six rollout engines agreed on each of250 updated weight publications.
+The saved iteration249 matches250 completed updates. W&B matched all18,029 native training scalars and56 validation scalars.
+Baseline/final valid-box fractions were253/256 and255/256. Token caps affected zero and one validation answer respectively.
+The official GSM8K test split remains unread.
+
+The reference used3,398 allocated node-seconds across attempts, including319 seconds in two startup failures. Judge cost was zero.
+Its [immutable archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/318eecb525cdd1606602ac62facda521b2313ead/miles/gsm8k-reference-v4)
+contains596 verified artifacts. Its [W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native) is finished.
+The [machine-readable result](evidence/gsm8k_reference_final_20261127.json) owns the exact measurements.
+
+CISPO job562347 remains queued with zero allocated seconds and zero updates. The [resource choice](../../QUESTIONS.md) remains open.
+This positive0.5B reference result does not validate the original TCS CISPO bundle, Qwen3.5 kernels, long responses, or the proof judge.
 
 Planned plots:
 - Exact training reward and fixed-validation accuracy versus optimizer update, shown separately.
@@ -63,15 +84,16 @@ Planned plots:
 
 ## Global takeaways
 
-Not yet measured. The completed TCS run remains unchanged.
+Interpretation remains open. The measured reference gain passes the declared gate. The CISPO stage has not run.
 
 ## Next steps
 
-1. Review the model choice and four-hour total cap.
-2. Freeze the approved configs and validate native arguments before submission.
-3. Run the reference, inspect its learning and raw answers, then apply the declared gate for CISPO.
-4. Supervise through terminal state, immutable upload and W&B readback.
+1. Keep the approved CISPO job queued and supervised while the resource-variant question is pending.
+2. Run CISPO from fresh original weights, using either the original allocation or an explicitly approved resource variant.
+3. Inspect its final checkpoint, matched-question accuracy, optimizer diagnostics and raw answers.
+4. Verify all W&B scalars and the immutable result archive before reporting completion.
 
 ## Questions
 
-Approve this small-model, one-seed control and its four-hour total eight-GPU cap, or keep Qwen3.5-4B for a baseline-only GSM8K ceiling check first?
+The small-model, one-seed control and four-hour total eight-GPU cap were approved. The original resource plan remains authorized.
+A smaller-resource variant needs the user's decision because it changes scheduling or hardware. See [the recorded choices](gsm8k_cispo_resources.proposed_20261127.json).
