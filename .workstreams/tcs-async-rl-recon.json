@@ -989,7 +989,7 @@
     {
       "id": "561051",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "CANCELLED"
     },
     {
       "id": "558806",
@@ -4074,15 +4074,22 @@
       "actor": "codex",
       "summary": "Restore missing reference prompt-shuffle setting before allocation",
       "revision": 407
+    },
+    {
+      "id": "e66b22ad-e6d9-47e9-9abd-b2142a841aa5",
+      "at": "2026-11-27T01:40:17.654196Z",
+      "actor": "codex",
+      "summary": "Cancelled unstarted561051 after recipe-parity repair",
+      "revision": 408
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "Reference launch omitted prompt shuffling. Repair validated before allocation. Replace pending561051.",
-  "nextAction": "Cancel the queued own attempt and submit the repaired reference within the unchanged two-hour arm cap.",
+  "summary": "Cancelled unstarted561051 after recipe-parity repair",
+  "nextAction": "Submit repaired referencev2, up to7200 allocated seconds. No GPU budget consumed.",
   "owner": "Codex",
-  "revision": 407,
-  "updatedAt": "2026-11-27T01:39:53.132733Z"
+  "revision": 408,
+  "updatedAt": "2026-11-27T01:40:17.654196Z"
 }

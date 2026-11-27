@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference launch omitted prompt shuffling. Repair validated before allocation. Replace pending561051. Jobs: hpcfund/561051 PENDING; hpcfund/558806 COMPLETED
-  Next: Cancel the queued own attempt and submit the repaired reference within the unchanged two-hour arm cap.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Cancelled unstarted561051 after recipe-parity repair Jobs: hpcfund/561051 CANCELLED; hpcfund/558806 COMPLETED
+  Next: Submit repaired referencev2, up to7200 allocated seconds. No GPU budget consumed.
 
 ## Next / blocked
 
