@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-11-21T08:02:01.295309+00:00",
+  "model": {
+    "id": "thinkingmachines/Inkling-2-Mini",
+    "revision": "ed40e7da625f594fc9c4990f5f66be24873c22d7",
+    "config_sha256": "a7a349601f0984c4abf999c480ef775d8567d21f5f84b4e8a3e035b44f288dc2"
+  },
+  "implementation": {
+    "repo": "https://github.com/huggingface/transformers",
+    "commit": "6173a2f679ff4ed393afc499aefc569da7e68bc1",
+    "branch_at_inspection": "add-inkling2-mini",
+    "source": "src/transformers/models/inkling2_loop/modeling_inkling2_loop.py"
+  },
+  "source_bank": {
+    "repo": "https://github.com/camila-blank/workspace-bench",
+    "commit": "abd152e20aa2fa5d7df7f01ade6759ebe0f858fb",
+    "selection_file": "evidence/pilot_items.json"
+  },
+  "challenge": {
+    "url": "https://ndif.us/looped-lens-challenge/",
+    "opens": "2026-11-23",
+    "contract_limits": "N, K, script size, exact permitted read sites not specified on inspected page",
+    "official_evaluation_accessed": false
+  },
+  "prior_analysis": {
+    "url": "https://www.goodfire.com/research/interpreting-inkling-2-mini/",
+    "known_results": "block routing, coordinate 2027, and lens comparisons already reported there"
+  },
+  "limits": [
+    "Official BF16 conversion was used. Native quantized-runtime equivalence was not tested.",
+    "No full Jacobian lens was fitted.",
+    "The development sample is not an official competition evaluation."
+  ]
+}

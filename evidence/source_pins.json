@@ -30,5 +30,20 @@
     "Official BF16 conversion was used. Native quantized-runtime equivalence was not tested.",
     "No full Jacobian lens was fitted.",
     "The development sample is not an official competition evaluation."
-  ]
+  ],
+  "challenge_current": {
+    "checked_local_date": "2026-11-27",
+    "rules_updated": "2026-11-24",
+    "url": "https://ndif.us/looped-lens-challenge/",
+    "starter_repo": "https://github.com/ndif-team/looped-lens-challenge",
+    "starter_commit": "651ab2e30a590a5a1460257bb67949a90dc06255",
+    "maximum_visits": 10,
+    "top_tokens_per_visit": 10,
+    "positions_per_prompt": 1,
+    "prompt_based_readout_filtering": false,
+    "same_visit_ensembles": true,
+    "native_coda_allowed": true,
+    "public_practice_questions": 10,
+    "scored_questions_accessed": false
+  }
 }

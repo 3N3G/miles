@@ -15,3 +15,14 @@ Rerun the unchanged frozen test as native-reader-lens-v2, one MI210 devel
 allocation, at most20 minutes (1200 GPU seconds). Reserve the full limit and
 count the failed allocation within the existing five-hour program. This is
 an inference repair covered by the user's standing authorization.
+
+## Correct censoring for the bounded generation control
+
+The unchanged run's first arithmetic prompts begin with reasoning text and
+reach the12-token budget. Such prefixes do not establish inability to answer
+or that the intermediate stays unspoken. Before scoring the completed test,
+make capability and unspoken status unknown for truncated generations. The
+pinned generation_config.json has eos_token_id200006. Require this terminal
+token for those secondary gates. Report truncated counts explicitly.
+This changes no native inference, primary token-recovery endpoint or readout.
+No answer-capability or hidden-reasoning claim is made from incomplete text.

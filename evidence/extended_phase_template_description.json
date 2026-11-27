@@ -1,0 +1,105 @@
+{
+  "status": "Post-hoc descriptive check, not preregistered confirmation. No model fitting or GPU inference.",
+  "calibration_source": "Stored per-pass development means in native_unit_atlas_spec.json, all six candidates with such values.",
+  "evaluation": "16 new articles from completed extended test. Visits2 and4..24.",
+  "mae": {
+    "current_state": 4.330718452884297e-06,
+    "stored_three_phase": 0.00012105277663997929,
+    "stored_pooled": 0.00011269676556694115,
+    "zero": 7.952794118963339e-05
+  },
+  "per_unit": [
+    {
+      "expert": 83,
+      "unit": 1107,
+      "mae": {
+        "current_state": 1.8497249476662393e-06,
+        "stored_three_phase": 8.916235692333507e-05,
+        "stored_pooled": 7.783198838775292e-05,
+        "zero": 2.1827119183858793e-05
+      }
+    },
+    {
+      "expert": 52,
+      "unit": 585,
+      "mae": {
+        "current_state": 1.450210596622274e-06,
+        "stored_three_phase": 8.298912569003966e-05,
+        "stored_pooled": 6.850099712093377e-05,
+        "zero": 3.250330002324805e-05
+      }
+    },
+    {
+      "expert": 58,
+      "unit": 285,
+      "mae": {
+        "current_state": 7.140769857921276e-06,
+        "stored_three_phase": 0.00013362117212523117,
+        "stored_pooled": 9.990643742567458e-05,
+        "zero": 0.00011298210097395027
+      }
+    },
+    {
+      "expert": 44,
+      "unit": 492,
+      "mae": {
+        "current_state": 5.967586321098395e-06,
+        "stored_three_phase": 0.00017128858451450927,
+        "stored_pooled": 0.00015516478165307618,
+        "zero": 0.00010531645059758625
+      }
+    },
+    {
+      "expert": 38,
+      "unit": 1033,
+      "mae": {
+        "current_state": 5.875145788954497e-06,
+        "stored_three_phase": 0.00010679649620613591,
+        "stored_pooled": 0.00013304416155911683,
+        "zero": 0.00019678570995181765
+      }
+    },
+    {
+      "expert": 111,
+      "unit": 310,
+      "mae": {
+        "current_state": 3.7008732050430997e-06,
+        "stored_three_phase": 0.00014245892438062474,
+        "stored_pooled": 0.00014173222725509264,
+        "zero": 7.752966407339329e-06
+      }
+    }
+  ],
+  "unit45_mean_weighted_activation_per_position_by_visit": [
+    -0.08517664271762117,
+    -0.015335167451792944,
+    0.09266248242585919,
+    -0.05569017538935636,
+    0.008014067714352027,
+    0.08358168654674254,
+    -0.05183725717472499,
+    0.011836485041385458,
+    0.08189365100461794,
+    -0.050341021797342886,
+    0.013733982341899978,
+    0.08080614680717497,
+    -0.04653398121849202,
+    0.014643872255062109,
+    0.0786791584763234,
+    -0.047576636340376614,
+    0.016539615042607436,
+    0.07908628989595659,
+    -0.04720865568960368,
+    0.014964862079657287,
+    0.08167635539518464,
+    -0.046483304003735224,
+    0.017852888921644144,
+    0.07967007890884555
+  ],
+  "limits": [
+    "Stored development averages are poorly calibrated on these articles and later passes.",
+    "This failure does not isolate phase as the cause. Article variation, selection and transient state changes can all matter.",
+    "It does not compare a well-tuned phase-specific translator with a phase-agnostic translator.",
+    "Current-state forecasts use a local gradient at each actual state. They are not a single fixed readout."
+  ]
+}

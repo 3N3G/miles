@@ -28,9 +28,14 @@ def main():
     for record in inputs['records']:
         row=observed[record['id']];labels={canonical(s) for s in record['labels']}
         hit={m:any(canonical(t['token']) in labels for read in rs for t in read['tokens']) for m,rs in row['readouts'].items()}
-        capability=named(row['generation']['text'],record['target'])
-        unspoken=not any(named(row['generation']['text'],s) for s in record['labels'])
-        rows.append({**record,**row,'hit':hit,'capable':capability,'unspoken':unspoken})
+        # Pinned generation_config.json defines eos_token_id=200006. A prefix
+        # that reached its budget cannot establish failure or a hidden label.
+        completed=bool(row['generation']['token_ids'] and row['generation']['token_ids'][-1]==200006)
+        target_mentioned=named(row['generation']['text'],record['target'])
+        capability=target_mentioned if completed else None
+        unspoken=(not any(named(row['generation']['text'],s) for s in record['labels'])) if completed else None
+        rows.append({**record,**row,'hit':hit,'capable':capability,'unspoken':unspoken,
+                     'generation_completed':completed,'target_mentioned_in_prefix':target_mentioned})
     math=[r for r in rows if r['family'] in ['arithmetic','chain']];assert len(math)==64
     delta=np.array([int(r['hit']['native_attention_reader'])-int(r['hit']['partial_buffer']) for r in math])
     draw=np.random.default_rng(1729).integers(0,64,(10000,64));ci=np.quantile(delta[draw].mean(-1),[.025,.975])
@@ -43,13 +48,17 @@ def main():
     if not examples:examples=[{'selection':'first_frozen_question',**rows[0]}]
     result={'primary_math':{**summarize(math),'native_minus_buffer_rate':float(delta.mean()),'paired_question_bootstrap95':ci.tolist(),
                             'resamples':10000,'seed':1729},'by_family':by_family,'math_by_visit':by_visit,
-            'secondary_capable_unspoken_math':summarize([r for r in math if r['capable'] and r['unspoken']]),
-            'capability_counts':{family:{'correct':sum(r['capable'] for r in rows if r['family']==family),'n':sum(r['family']==family for r in rows)} for family in by_family},
+            'secondary_capable_unspoken_math':summarize([r for r in math if r['capable'] is True and r['unspoken'] is True]),
+            'capability_counts':{family:{'completed_correct':sum(r['capable'] is True for r in rows if r['family']==family),
+                'completed_incorrect':sum(r['capable'] is False for r in rows if r['family']==family),
+                'truncated_unknown':sum(r['capable'] is None for r in rows if r['family']==family),
+                'n':sum(r['family']==family for r in rows)} for family in by_family},
             'examples':examples,'limits':['Exact token matching misses paraphrases and alternative concept spellings.',
                 'The arithmetic intermediate is a benchmark hypothesis, not a proven uniquely necessary computation.',
                 'Direct and public practice tasks test answer visibility rather than hidden intermediate computations.',
                 'The comparison is fixed and unfitted but only covers these prompts and ten chosen visits.',
-                'Capability uses a conservative word/number match in up to twelve generated tokens.']}
+                'Capability requires a completed generation, with a conservative word/number match. Truncated twelve-token prefixes remain unknown.',
+                'Without complete outputs, the test cannot establish that intermediates stay unspoken.']}
     (a.run/'analysis.json').write_text(json.dumps(result,indent=2)+'\n');(a.run/'scored_questions.json').write_text(json.dumps(rows,indent=2)+'\n')
     print(json.dumps({k:result[k] for k in ['primary_math','by_family','capability_counts','secondary_capable_unspoken_math']},indent=2))
 
