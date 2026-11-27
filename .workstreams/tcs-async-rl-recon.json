@@ -989,7 +989,7 @@
     {
       "id": "561193",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "561051",
@@ -4128,15 +4128,22 @@
       "actor": "codex",
       "summary": "GSM8K reference561193 pending; Slurm withdrew its start estimate",
       "revision": 414
+    },
+    {
+      "id": "ca4f3c73-8981-43e0-9557-ee5be39180cf",
+      "at": "2026-11-27T08:38:39.892749Z",
+      "actor": "codex",
+      "summary": "GSM8K reference561193 running on AMD; inspecting startup and baseline",
+      "revision": 415
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K reference561193 pending; Slurm withdrew its start estimate",
-  "nextAction": "Continue foreground queue and storage checks. Baseline and training have not started. Apply the declared CISPO gate only after actual reference results.",
+  "summary": "GSM8K reference561193 running on AMD; inspecting startup and baseline",
+  "nextAction": "Verify baseline, first finite optimizer update, direction check and six-engine weight delivery. Publish W&B from one VM writer.",
   "owner": "Codex",
-  "revision": 414,
-  "updatedAt": "2026-11-27T07:46:24.303773Z"
+  "revision": 415,
+  "updatedAt": "2026-11-27T08:38:39.892749Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference561193 pending; Slurm withdrew its start estimate Jobs: hpcfund/561193 PENDING; hpcfund/561051 CANCELLED
-  Next: Continue foreground queue and storage checks. Baseline and training have not started. Apply the declared CISPO gate only after actual reference results.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference561193 running on AMD; inspecting startup and baseline Jobs: hpcfund/561193 RUNNING; hpcfund/561051 CANCELLED
+  Next: Verify baseline, first finite optimizer update, direction check and six-engine weight delivery. Publish W&B from one VM writer.
 
 ## Next / blocked
 
