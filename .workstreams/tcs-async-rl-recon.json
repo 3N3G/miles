@@ -989,7 +989,7 @@
     {
       "id": "562208",
       "cluster": "hpcfund",
-      "status": "PENDING"
+      "status": "RUNNING"
     },
     {
       "id": "561193",
@@ -4154,15 +4154,22 @@
       "actor": "codex",
       "summary": "GSM8K reference submitted as 562208",
       "revision": 417
+    },
+    {
+      "id": "16656fce-6308-44a0-8781-38905f32b9e0",
+      "at": "2026-11-27T08:55:19.808948Z",
+      "actor": "codex",
+      "summary": "GSM8K562208 running; repaired native args validated, eight GPUs placed",
+      "revision": 418
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K reference submitted as 562208",
-  "nextAction": "Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.",
+  "summary": "GSM8K562208 running; repaired native args validated, eight GPUs placed",
+  "nextAction": "Inspect model initialization and fixed validation baseline, then the first published optimizer update and W&B readback.",
   "owner": "Codex",
-  "revision": 417,
-  "updatedAt": "2026-11-27T08:53:09.639050Z"
+  "revision": 418,
+  "updatedAt": "2026-11-27T08:55:19.808948Z"
 }

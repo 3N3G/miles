@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference submitted as 562208 Jobs: hpcfund/562208 PENDING; hpcfund/561193 FAILED
-  Next: Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K562208 running; repaired native args validated, eight GPUs placed Jobs: hpcfund/562208 RUNNING; hpcfund/561193 FAILED
+  Next: Inspect model initialization and fixed validation baseline, then the first published optimizer update and W&B readback.
 
 ## Next / blocked
 
