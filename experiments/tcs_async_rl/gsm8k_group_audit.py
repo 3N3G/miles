@@ -80,6 +80,8 @@ def audit(directory, batch, *, compare_source=None):
     if len(samples) != args.global_batch_size or len({s.index for s in samples}) != len(samples):
         raise ValueError("The actual batch is incomplete or contains repeated sample indices")
     expected, groups = independent_advantages(samples)
+    if len(groups) != args.rollout_batch_size or any(len(group) != args.n_samples_per_prompt for group in groups.values()):
+        raise ValueError("Actual question groups differ from the approved fixed fanout")
     errors = []
     for permuted in (False, True):
         ordered = samples.copy()

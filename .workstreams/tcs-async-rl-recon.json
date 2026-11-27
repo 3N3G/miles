@@ -3,8 +3,8 @@
   "id": "tcs-async-rl-recon",
   "sources": [
     {
-      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/0af9d74f1f781fd99620834f4bdcda824086a587/miles/gsm8k-reference-v4",
-      "label": "Completed reference plus arithmetic audits and clarified figures; all601 artifacts verified."
+      "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/3ffc7d9afe11c2ffbe98fef505fdc439470f756a/miles/gsm8k-reference-v4",
+      "label": "Completed reference plus numeric, grouping and plot audits; all 604 artifacts verified."
     },
     {
       "url": "https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native",
@@ -4277,15 +4277,22 @@
       "actor": "codex",
       "summary": "CISPO remains queued without assigned start; smaller-resource choice still open",
       "revision": 432
+    },
+    {
+      "id": "0d3bcee9-21b1-4a01-bc87-6a8c66ad3751",
+      "at": "2026-11-27T12:29:02.712088Z",
+      "actor": "codex",
+      "summary": "Keep the completed reference result visible while CISPO waits",
+      "revision": 433
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "CISPO remains queued without assigned start; smaller-resource choice still open",
+  "summary": "Reference finished 250 updates: 67.2% to 72.3%; gain CI includes zero. CISPO queued.",
   "nextAction": "Continue foreground supervision of the original job and observer. Apply a resource variant only after its decision. Matching new-job forecasts are nonbinding and do not assign the existing job a start time.",
   "owner": "Codex",
-  "revision": 432,
-  "updatedAt": "2026-11-27T11:48:37.161060Z"
+  "revision": 433,
+  "updatedAt": "2026-11-27T12:29:02.712088Z"
 }

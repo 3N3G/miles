@@ -1,0 +1,16 @@
+{
+  "publication": {
+    "commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/3ffc7d9afe11c2ffbe98fef505fdc439470f756a",
+    "path": "miles/gsm8k-reference-v4",
+    "verified": true,
+    "verified_files": 604,
+    "verified_bytes": 243837621,
+    "local_files": 418,
+    "previously_evicted_files": 186,
+    "checkpoints_uploaded": false
+  },
+  "group_audit": "experiments/tcs_async_rl/evidence/gsm8k_reward_group_audit_20261127.json",
+  "reference_primary_statistics_unchanged": true,
+  "alternative_gpu_jobs_submitted": 0,
+  "original_cispo_job_id": "562347"
+}
