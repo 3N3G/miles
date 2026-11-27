@@ -4305,6 +4305,13 @@
       "actor": "codex",
       "summary": "Reference finished 250 updates: 67.2% to 72.3%. Gain CI includes zero. CISPO remains queued.",
       "revision": 436
+    },
+    {
+      "id": "9ea967fe-efca-4808-97ea-a143e19020a1",
+      "at": "2026-11-27T15:42:09.715536Z",
+      "actor": "codex",
+      "summary": "Reference finished 250 updates: 67.2% to 72.3%. Gain CI includes zero. CISPO remains queued.",
+      "revision": 437
     }
   ],
   "projectId": "understanding",
@@ -4314,6 +4321,6 @@
   "summary": "Reference finished 250 updates: 67.2% to 72.3%. Gain CI includes zero. CISPO remains queued.",
   "nextAction": "Watch CISPO job 562347 and its observer. Keep the original eight-GPU setup while the resource decision is open.",
   "owner": "Codex",
-  "revision": 436,
-  "updatedAt": "2026-11-27T15:30:13.228830Z"
+  "revision": 437,
+  "updatedAt": "2026-11-27T15:42:09.715536Z"
 }
