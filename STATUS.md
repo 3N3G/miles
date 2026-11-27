@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference finished 250 updates: 67.2% to 72.3%; gain CI includes zero. CISPO queued. Jobs: hpcfund/562347 PENDING; hpcfund/562230 COMPLETED
-  Next: Continue foreground supervision of the original job and observer. Apply a resource variant only after its decision. Matching new-job forecasts are nonbinding and do not assign the 
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference250 updates:67.2% to72.3%, gain CI includes zero. CISPO still queued with zero GPU time. Jobs: hpcfund/562347 PENDING; hpcfund/562230 COMPLETED
+  Next: Watch queued CISPO562347 and its observer. Keep eight GPUs unless the user approves a resource variant.
 
 ## Next / blocked
 

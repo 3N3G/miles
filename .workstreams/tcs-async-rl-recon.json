@@ -4284,15 +4284,22 @@
       "actor": "codex",
       "summary": "Keep the completed reference result visible while CISPO waits",
       "revision": 433
+    },
+    {
+      "id": "3d578b84-2bb2-4b78-a268-0945d3731853",
+      "at": "2026-11-27T13:30:04.182107Z",
+      "actor": "codex",
+      "summary": "Reference250 updates:67.2% to72.3%, gain CI includes zero. CISPO still queued with zero GPU time.",
+      "revision": 434
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "Reference finished 250 updates: 67.2% to 72.3%; gain CI includes zero. CISPO queued.",
-  "nextAction": "Continue foreground supervision of the original job and observer. Apply a resource variant only after its decision. Matching new-job forecasts are nonbinding and do not assign the existing job a start time.",
+  "summary": "Reference250 updates:67.2% to72.3%, gain CI includes zero. CISPO still queued with zero GPU time.",
+  "nextAction": "Watch queued CISPO562347 and its observer. Keep eight GPUs unless the user approves a resource variant.",
   "owner": "Codex",
-  "revision": 433,
-  "updatedAt": "2026-11-27T12:29:02.712088Z"
+  "revision": 434,
+  "updatedAt": "2026-11-27T13:30:04.182107Z"
 }
