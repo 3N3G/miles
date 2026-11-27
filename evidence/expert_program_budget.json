@@ -187,8 +187,14 @@
   "used_gpu_seconds": 6580,
   "remaining_gpu_seconds": 11420,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [],
-  "unreserved_gpu_seconds": 10520,
-  "reserved_gpu_seconds": 900,
+  "pending_reservations": [
+    {
+      "run_name": "native-reader-lens-v1",
+      "maximum_gpu_seconds": 1200,
+      "reason": "plans/native_reader_lens.md"
+    }
+  ],
+  "unreserved_gpu_seconds": 9320,
+  "reserved_gpu_seconds": 2100,
   "observed_at": "2026-11-27T06:41:03.328074+00:00"
 }
