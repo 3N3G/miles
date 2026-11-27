@@ -4,27 +4,19 @@
   "sources": [],
   "evidence": [
     {
-      "path": "evidence/expert_blog_examples.json",
-      "label": "Five concrete examples with selection rules and source hashes"
+      "path": "evidence/extended_unit_phase_result.json",
+      "label": "24-pass fixed-unit causal test on 16 fresh articles"
     },
     {
-      "path": "evidence/expert_blog_audit.json",
-      "label": "Displayed values and token offsets checked"
-    },
-    {
-      "path": "evidence/native_unit_atlas_confirmation_result.json",
-      "label": "Independent native unit intervention results"
-    },
-    {
-      "path": "evidence/native_expert_confirmation_result.json",
-      "label": "Independent expert necessity tests"
+      "path": "plans/native_reader_lens.md",
+      "label": "Frozen native-reader versus partial-buffer token test"
     }
   ],
   "jobs": [
     {
       "cluster": "hpcfund",
-      "id": "561942",
-      "status": "RUNNING"
+      "id": "561956",
+      "status": "SUBMITTED"
     }
   ],
   "sessions": [
@@ -362,15 +354,29 @@
       "actor": "codex",
       "summary": "Repair head-check dtype and rerun the same frozen phase test",
       "revision": 46
+    },
+    {
+      "id": "a23e973a-aeb2-4e95-8b06-d8a568bfa906",
+      "at": "2026-11-27T06:47:02.967359Z",
+      "actor": "codex",
+      "summary": "Verify recurring three-pass causal roles on 16 fresh articles and start fixed token-lens comparison",
+      "revision": 47
+    },
+    {
+      "id": "2ed0f99a-03e6-4eb3-8917-8067c819de3b",
+      "at": "2026-11-27T06:47:13.972824Z",
+      "actor": "codex",
+      "summary": "Set token-lens job reference from exact scheduler receipt",
+      "revision": 48
     }
   ],
   "projectId": "interpretability",
   "title": "Investigate lenses for Inkling 2 Mini",
   "endpoint": "Uncover and causally test reusable expert roles across Inkling passes within 300 GPU-minutes, with frozen confirmation data and standalone reports.",
   "state": "running",
-  "summary": "Running a fixed-unit 24-pass test of recurring causal phase on 16 new articles, with exact native-prefix controls.",
-  "nextAction": "Monitor repaired native-prefix and local-replay controls. Evaluate native reader activations with fixed challenge visits.",
+  "summary": "Three-pass recurrence extends to native unit deletion effects. Full local predictor generalizes to untested visits with about12-fold lower error than dot-only.",
+  "nextAction": "Finish the fixed same-visit vocabulary lens test and write standalone results with limits.",
   "owner": "Codex",
-  "revision": 46,
-  "updatedAt": "2026-11-27T06:41:03.383556Z"
+  "revision": 48,
+  "updatedAt": "2026-11-27T06:47:13.972824Z"
 }

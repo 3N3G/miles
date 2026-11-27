@@ -1,0 +1,4176 @@
+{
+  "article_count": 16,
+  "passes": 24,
+  "primary_contrasts": [
+    {
+      "contrast": "late_state_lag3_minus_lag1",
+      "mean": -0.5082084779472401,
+      "interval": [
+        -0.5793247133590437,
+        -0.39096236201585266
+      ],
+      "family_size": 4,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    {
+      "contrast": "late_causal_lag3_minus_lag1",
+      "mean": -6.838159362753727e-05,
+      "interval": [
+        -9.068998979538835e-05,
+        -4.545187341980593e-05
+      ],
+      "family_size": 4,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    {
+      "contrast": "MAE_full_minus_dot_only_new_visits",
+      "mean": -4.587584776601221e-05,
+      "interval": [
+        -5.964820296346415e-05,
+        -3.2855038549577765e-05
+      ],
+      "family_size": 4,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    {
+      "contrast": "MAE_full_minus_zero_new_visits",
+      "mean": -7.494897677623402e-05,
+      "interval": [
+        -8.81357413155864e-05,
+        -6.174185436913119e-05
+      ],
+      "family_size": 4,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    }
+  ],
+  "passes_recurring_causal_phase_rule": true,
+  "passes_new_visit_forecast_rule": true,
+  "late_state_distances": {
+    "1": {
+      "mean": 0.6946696241696675,
+      "interval": [
+        0.6290774588861192,
+        0.7393745336215943
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "2": {
+      "mean": 0.6951956748962402,
+      "interval": [
+        0.6288243552592273,
+        0.7403871758918589
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "3": {
+      "mean": 0.1864611462224275,
+      "interval": [
+        0.16204562422547802,
+        0.21292062150508476
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "6": {
+      "mean": 0.19222070292259258,
+      "interval": [
+        0.1644718741590623,
+        0.22420345242911327
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    }
+  },
+  "state_distance_by_visit": {
+    "1": [
+      null,
+      {
+        "mean": 0.48328040540218353,
+        "interval": [
+          0.47592214569449426,
+          0.49087531310506166
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.9917376302182674,
+        "interval": [
+          0.9881972697563469,
+          0.9955738170072437
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8957491405308247,
+        "interval": [
+          0.8829002002254128,
+          0.9087905255146325
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5258292201906443,
+        "interval": [
+          0.5130608033388853,
+          0.5378766332753002
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8598680607974529,
+        "interval": [
+          0.8409577859565616,
+          0.8770462474785745
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8615449108183384,
+        "interval": [
+          0.8482089058496058,
+          0.8744477372616529
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5186982229351997,
+        "interval": [
+          0.5058614179026335,
+          0.5304392097052186
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8154994174838066,
+        "interval": [
+          0.7761031230911613,
+          0.8501916723325849
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8365418650209904,
+        "interval": [
+          0.798471876885742,
+          0.8644824017770588
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5135679990053177,
+        "interval": [
+          0.49850886859931054,
+          0.528403638349846
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.7944186944514513,
+        "interval": [
+          0.7337573932018131,
+          0.8446691361255944
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8180682510137558,
+        "interval": [
+          0.7549883266910911,
+          0.8610098895616829
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5050848610699177,
+        "interval": [
+          0.48035052395425737,
+          0.5238668406382203
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.7897541206330061,
+        "interval": [
+          0.7155432722065598,
+          0.8470267779193819
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8155122548341751,
+        "interval": [
+          0.7422927933745086,
+          0.8644869573414325
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5042541697621346,
+        "interval": [
+          0.4750677946023643,
+          0.525597185920924
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.7760752402245998,
+        "interval": [
+          0.6930186896584928,
+          0.8402950281277299
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8059065360575914,
+        "interval": [
+          0.7246693612076343,
+          0.8600836622528731
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5002695899456739,
+        "interval": [
+          0.4664721046574414,
+          0.5238933835178614
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.7797894552350044,
+        "interval": [
+          0.6941087062470614,
+          0.8445909339934587
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.807219848036766,
+        "interval": [
+          0.722843436151743,
+          0.86386433923617
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5006383042782545,
+        "interval": [
+          0.4652981368359178,
+          0.524641539156437
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.774194011464715,
+        "interval": [
+          0.6864705632440746,
+          0.8414427066221833
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      }
+    ],
+    "2": [
+      null,
+      null,
+      {
+        "mean": 1.0662701204419136,
+        "interval": [
+          1.0604753313586115,
+          1.0717770898714662
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5884595848619938,
+        "interval": [
+          0.5771975633688271,
+          0.599160479567945
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.9024041704833508,
+        "interval": [
+          0.8898690609261394,
+          0.9139613531529903
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8625936806201935,
+        "interval": [
+          0.8483688062988222,
+          0.8755859723314643
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5181125774979591,
+        "interval": [
+          0.5057986092753708,
+          0.5289650848601013
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8326481357216835,
+        "interval": [
+          0.80388452867046,
+          0.859373162407428
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8455600924789906,
+        "interval": [
+          0.8179708643816411,
+          0.8680855514481663
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5157830566167831,
+        "interval": [
+          0.5033896701410413,
+          0.5281531625427306
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8057276606559753,
+        "interval": [
+          0.7555977556854486,
+          0.8481100265868008
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8246924839913845,
+        "interval": [
+          0.7732649582438171,
+          0.8614393347874284
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5090823825448751,
+        "interval": [
+          0.4923116964753717,
+          0.523465826222673
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.7923694364726543,
+        "interval": [
+          0.7230743510648608,
+          0.8469452625140548
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.818269856274128,
+        "interval": [
+          0.7497471082955599,
+          0.8651222557760775
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5057464148849249,
+        "interval": [
+          0.478726770542562,
+          0.5263409987557679
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.782250290736556,
+        "interval": [
+          0.7020876720082014,
+          0.8438958209939301
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8093839623034,
+        "interval": [
+          0.7303398344665766,
+          0.861636882275343
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.500799223780632,
+        "interval": [
+          0.4655563622713089,
+          0.524595611076802
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.7796330507844687,
+        "interval": [
+          0.6938597499392927,
+          0.8444669623859227
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8070187382400036,
+        "interval": [
+          0.7233600159175694,
+          0.8632232726551592
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.5002899821847677,
+        "interval": [
+          0.4651983318384737,
+          0.5244156308937817
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.7772754896432161,
+        "interval": [
+          0.6905199701432139,
+          0.8434045989066362
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.8061575647443533,
+        "interval": [
+          0.7213537125382572,
+          0.863330818619579
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      }
+    ],
+    "3": [
+      null,
+      null,
+      null,
+      {
+        "mean": 0.5966548547148705,
+        "interval": [
+          0.583754648361355,
+          0.6085226917639375
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.4424591697752476,
+        "interval": [
+          0.42755851899273695,
+          0.4571525215636939
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.34921515733003616,
+        "interval": [
+          0.325997769087553,
+          0.37326625515706835
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.30769001320004463,
+        "interval": [
+          0.2903251794632524,
+          0.3232379352673888
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.24417317658662796,
+        "interval": [
+          0.22561459960415958,
+          0.26161154026631267
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.2345458846539259,
+        "interval": [
+          0.20591106170322745,
+          0.26400847809854894
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.23672418110072613,
+        "interval": [
+          0.21276645953767,
+          0.26192938347812744
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.20440665911883116,
+        "interval": [
+          0.18094369126483797,
+          0.23015846493653952
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.20245632715523243,
+        "interval": [
+          0.17059103648643942,
+          0.23640922643244267
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.2160862097516656,
+        "interval": [
+          0.18955965333152563,
+          0.2457990010967478
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.19246209459379315,
+        "interval": [
+          0.1672653106157668,
+          0.22090562606463204
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.1904301750473678,
+        "interval": [
+          0.1595665601664223,
+          0.22253030970459803
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.20313818706199527,
+        "interval": [
+          0.18087825514376163,
+          0.2268869436113164
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.18042062548920512,
+        "interval": [
+          0.15461397026665508,
+          0.20932617478538304
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.1859845146536827,
+        "interval": [
+          0.15729141253978013,
+          0.21518724954221397
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.19995349179953337,
+        "interval": [
+          0.17888342549558728,
+          0.22220902547705917
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.17895878199487925,
+        "interval": [
+          0.1540194704197347,
+          0.20668910180684177
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.18369638454169035,
+        "interval": [
+          0.1533917429856956,
+          0.21624522884376346
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.19631899893283844,
+        "interval": [
+          0.1759213604265824,
+          0.21805390683002768
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.1781190405599773,
+        "interval": [
+          0.15327774677425623,
+          0.20610176214249804
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.18172017950564623,
+        "interval": [
+          0.15378607012098655,
+          0.21168942004442212
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      }
+    ],
+    "6": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "mean": 0.5951816625893116,
+        "interval": [
+          0.5818759710527956,
+          0.6073992695659399
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.46750484965741634,
+        "interval": [
+          0.44500784315168856,
+          0.49094087202101944
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.38030438125133514,
+        "interval": [
+          0.35017957710660996,
+          0.4108370096422732
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.3301710616797209,
+        "interval": [
+          0.3066858715843409,
+          0.3533241561148316
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.27063040249049664,
+        "interval": [
+          0.24088146837893873,
+          0.3026777647435665
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.2654276951216161,
+        "interval": [
+          0.2224384914385155,
+          0.31363085901830345
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.26172680128365755,
+        "interval": [
+          0.22709982844535262,
+          0.3027784053934738
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.21906392835080624,
+        "interval": [
+          0.18619988011196256,
+          0.2583285770146176
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.2133096642792225,
+        "interval": [
+          0.17578842849470674,
+          0.25612958241254086
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.22430514637380838,
+        "interval": [
+          0.19356508331838995,
+          0.2608314755838364
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.1976470034569502,
+        "interval": [
+          0.16873073037713765,
+          0.23335658758878708
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.19719278486445546,
+        "interval": [
+          0.1632122654817067,
+          0.23527550019789487
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.21047899313271046,
+        "interval": [
+          0.18548783797305077,
+          0.24023727590683847
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.1885306970216334,
+        "interval": [
+          0.1596869454253465,
+          0.22317549744620918
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.18712314032018185,
+        "interval": [
+          0.1545767501462251,
+          0.22395219914615155
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.20224651275202632,
+        "interval": [
+          0.178945322369691,
+          0.2293778333812952
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.17863416858017445,
+        "interval": [
+          0.15127923646941782,
+          0.21067931526340544
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      {
+        "mean": 0.1863107057288289,
+        "interval": [
+          0.1544355394784361,
+          0.2215690173441544
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      }
+    ]
+  },
+  "late_causal_distances": {
+    "1": {
+      "mean": 8.701356561233208e-05,
+      "interval": [
+        6.990209951491651e-05,
+        0.0001043388043660368
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "2": {
+      "mean": 8.758814969091937e-05,
+      "interval": [
+        7.085520813971905e-05,
+        0.00010436258407885524
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "3": {
+      "mean": 1.8631971984794807e-05,
+      "interval": [
+        1.6260953782687778e-05,
+        2.1045142793254908e-05
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "6": {
+      "mean": 2.0099194196224265e-05,
+      "interval": [
+        1.7418196970437182e-05,
+        2.2862808554365404e-05
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    }
+  },
+  "mae_new_visits": {
+    "full": {
+      "mean": 4.250386304182448e-06,
+      "interval": [
+        3.5093015095208087e-06,
+        5.160882515164391e-06
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "dot_only": {
+      "mean": 5.0126234070194665e-05,
+      "interval": [
+        3.9631011406249006e-05,
+        6.101493087508718e-05
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    },
+    "zero": {
+      "mean": 7.919936308041647e-05,
+      "interval": [
+        6.844901119571018e-05,
+        9.014712086619036e-05
+      ],
+      "family_size": 1,
+      "sampling_unit": "article",
+      "articles": 16,
+      "resamples": 10000,
+      "seed": 1729
+    }
+  },
+  "new_visit_numbers": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "per_unit": [
+    {
+      "expert": 83,
+      "unit": 1107,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.00024163852503988892,
+        6.339412720990367e-06,
+        -4.3080104660475627e-05
+      ],
+      "exact_effect_by_visit": [
+        {
+          "mean": 3.763604181017399e-05,
+          "interval": [
+            1.596577603493188e-05,
+            6.337975219352642e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -7.688367119840223e-06,
+          "interval": [
+            -1.5855615577820004e-05,
+            7.672684908754903e-07
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.352700436247801e-05,
+          "interval": [
+            -3.800737082979566e-05,
+            -1.2157966285109013e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 2.392201863199439e-05,
+          "interval": [
+            5.08196378654624e-06,
+            4.8943622463060156e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.5119756101356074e-05,
+          "interval": [
+            -2.969116383684245e-05,
+            -3.032894483556705e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.224939614769994e-05,
+          "interval": [
+            -3.675802228890746e-05,
+            -1.059644119068004e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 1.2661779216216473e-05,
+          "interval": [
+            -2.409283013804497e-06,
+            2.900977562028117e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.2647959257261476e-05,
+          "interval": [
+            -2.5117874335467417e-05,
+            -1.4823660380747276e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.391307073623672e-05,
+          "interval": [
+            -3.795786578178473e-05,
+            -1.2471752255505124e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 1.7359104326430952e-05,
+          "interval": [
+            3.391877564951074e-06,
+            3.388425334147623e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.6873303152920016e-05,
+          "interval": [
+            -3.0981566813181874e-05,
+            -5.618303873866639e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.4680048653635822e-05,
+          "interval": [
+            -3.833412956133486e-05,
+            -1.2579230316944745e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 2.1934575769932962e-05,
+          "interval": [
+            4.076609183201186e-06,
+            4.355496471255544e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.726841686300329e-05,
+          "interval": [
+            -3.063778172135156e-05,
+            -5.891584802339425e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.3326104869880737e-05,
+          "interval": [
+            -3.662816785521272e-05,
+            -1.1872141081070709e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 1.4743352025448075e-05,
+          "interval": [
+            2.7213334675479927e-06,
+            2.875095730914267e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.5712808683066015e-05,
+          "interval": [
+            -2.954031456851025e-05,
+            -3.0824656935712967e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.4786218949301997e-05,
+          "interval": [
+            -3.901788961777619e-05,
+            -1.2899087876316888e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 1.658168285903483e-05,
+          "interval": [
+            3.4382304419593166e-06,
+            3.323301873328076e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.5434841957429057e-05,
+          "interval": [
+            -2.961847126181638e-05,
+            -2.602220017067227e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.5069440944491816e-05,
+          "interval": [
+            -4.067886474352633e-05,
+            -1.2268911088675341e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 1.517275803029558e-05,
+          "interval": [
+            1.271855016528583e-06,
+            3.1248148168369185e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.7742160814293584e-05,
+          "interval": [
+            -3.179774156158999e-05,
+            -5.816431478145045e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.4831255359458737e-05,
+          "interval": [
+            -3.783829375763048e-05,
+            -1.3124987279411473e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "late_mean_absolute_effect": {
+        "mean": 2.2181653439495967e-05,
+        "interval": [
+          1.1322257045653205e-05,
+          3.470713533494917e-05
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "late_lag_absolute_difference": {
+        "1": {
+          "mean": 2.9537205942790218e-05,
+          "interval": [
+            1.4136544594792822e-05,
+            4.7712553439479175e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "2": {
+          "mean": 2.9536928699154762e-05,
+          "interval": [
+            1.4399485314935761e-05,
+            4.717778628798882e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "3": {
+          "mean": 5.358763731410157e-06,
+          "interval": [
+            3.4189770767044668e-06,
+            7.483484256713226e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "6": {
+          "mean": 6.331898746697479e-06,
+          "interval": [
+            3.672489213733593e-06,
+            9.389413773190359e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      }
+    },
+    {
+      "expert": 52,
+      "unit": 585,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.00022232660558074713,
+        -1.4705464309372474e-05,
+        -5.312289431458339e-05
+      ],
+      "exact_effect_by_visit": [
+        {
+          "mean": 0.00011887368441421131,
+          "interval": [
+            3.665495112556982e-05,
+            0.00025810599292697134
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -9.321241691395699e-06,
+          "interval": [
+            -2.2051633045094832e-05,
+            3.277656859523854e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.9445659350813003e-05,
+          "interval": [
+            -4.381895037539607e-05,
+            -1.676411176703141e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.946666642524633e-05,
+          "interval": [
+            9.883560892376408e-06,
+            0.00010456941273204733
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 8.150336114454149e-06,
+          "interval": [
+            -7.237304442497816e-06,
+            2.9547312200506326e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -3.171825247250126e-05,
+          "interval": [
+            -4.698501451727566e-05,
+            -1.721166660431095e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.2320196371292695e-05,
+          "interval": [
+            8.18212948558994e-06,
+            9.526852582553142e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.81337470858989e-06,
+          "interval": [
+            -1.3400751296188673e-05,
+            2.897479973000827e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -3.385676873790544e-05,
+          "interval": [
+            -5.080324610773346e-05,
+            -1.792617306008993e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.6542113052161493e-05,
+          "interval": [
+            5.367245161536083e-06,
+            0.00010158427356338207
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.72113837579613e-07,
+          "interval": [
+            -1.706474897646415e-05,
+            1.9982102778642865e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.8588310470922806e-05,
+          "interval": [
+            -4.389776191189298e-05,
+            -1.4138291945187125e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 5.5024833649497396e-05,
+          "interval": [
+            1.0416554327186134e-05,
+            0.0001179973052980898
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 3.62078290772061e-06,
+          "interval": [
+            -1.3436953919898631e-05,
+            2.4398820690496592e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.766716556834581e-05,
+          "interval": [
+            -4.553119514554283e-05,
+            -9.64623973089829e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.2290060816796426e-05,
+          "interval": [
+            8.620388200597517e-06,
+            9.578109630723473e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 3.447390099609038e-06,
+          "interval": [
+            -1.4595559721808371e-05,
+            2.6227246455379194e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.873416175930288e-05,
+          "interval": [
+            -4.548967412816296e-05,
+            -1.2179535853107383e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.5331893065991835e-05,
+          "interval": [
+            5.769695646051786e-06,
+            0.00010585507998825957
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.2486707241521344e-06,
+          "interval": [
+            -1.4034169055765489e-05,
+            1.519351749124098e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.6554335349260327e-05,
+          "interval": [
+            -4.3781490066407966e-05,
+            -9.227129183742027e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.000399605352811e-05,
+          "interval": [
+            6.120350263794095e-06,
+            9.326885027456377e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.4881870038507827e-06,
+          "interval": [
+            -1.5096554231663895e-05,
+            1.7169657404814113e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.629652485097722e-05,
+          "interval": [
+            -4.217483416155687e-05,
+            -1.129967354103202e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "late_mean_absolute_effect": {
+        "mean": 3.0454469857499333e-05,
+        "interval": [
+          1.2576342069573846e-05,
+          5.657184311301429e-05
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "late_lag_absolute_difference": {
+        "1": {
+          "mean": 4.8746238298313926e-05,
+          "interval": [
+            1.8856357423121157e-05,
+            9.273782522255154e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "2": {
+          "mean": 4.892353876432645e-05,
+          "interval": [
+            1.9120153433527243e-05,
+            9.284182836466111e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "3": {
+          "mean": 9.791282520617745e-06,
+          "interval": [
+            5.191282393564773e-06,
+            1.5093158732792933e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "6": {
+          "mean": 9.263843870159032e-06,
+          "interval": [
+            5.067622028744519e-06,
+            1.4268627139420639e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      }
+    },
+    {
+      "expert": 58,
+      "unit": 285,
+      "category": "phase",
+      "predicted_per_pass": [
+        -2.0250390662113205e-05,
+        7.166717841755599e-05,
+        0.00022751458163838834
+      ],
+      "exact_effect_by_visit": [
+        {
+          "mean": -9.174711391324308e-05,
+          "interval": [
+            -0.00018439902938212073,
+            -2.4385523475700674e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.077386796552673e-05,
+          "interval": [
+            5.323842797366752e-06,
+            8.171506542780091e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0003761972708389294,
+          "interval": [
+            0.00020864279149463983,
+            0.0005850168423705781
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0001399818937670716,
+          "interval": [
+            6.04313320906158e-05,
+            0.0002385949773525908
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 8.115777829686976e-05,
+          "interval": [
+            2.6996877132035024e-05,
+            0.00014292257130250617
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0001012544191780762,
+          "interval": [
+            3.6654139535130525e-05,
+            0.0001809751347934707
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00011537333841715736,
+          "interval": [
+            6.154937909172987e-05,
+            0.00018225038850800955
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00010761798147029822,
+          "interval": [
+            4.9678367413008574e-05,
+            0.00017241371344027808
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00011510498347888642,
+          "interval": [
+            4.908839040353996e-05,
+            0.00019572819734889888
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00012061428788001649,
+          "interval": [
+            6.245284714054833e-05,
+            0.00018621215349980951
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00011201139561478612,
+          "interval": [
+            5.3606493754543295e-05,
+            0.0001740901134020589
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 9.487812116049099e-05,
+          "interval": [
+            3.47967362230861e-05,
+            0.00016283747857528393
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00011241482616242138,
+          "interval": [
+            5.9165202085864624e-05,
+            0.0001744276937415634
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 8.798929567888081e-05,
+          "interval": [
+            3.304593202955175e-05,
+            0.00015163933955051332
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 8.006909578739396e-05,
+          "interval": [
+            3.0846550556873355e-05,
+            0.00013530904690099986
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00010611697246076801,
+          "interval": [
+            5.408834284708064e-05,
+            0.000162849075604754
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00010316240314978131,
+          "interval": [
+            5.0010296857294637e-05,
+            0.00016122036449246478
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 8.414951821578143e-05,
+          "interval": [
+            2.9776779400947364e-05,
+            0.00014355947814408409
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00010684571611818683,
+          "interval": [
+            5.4586090260499984e-05,
+            0.00016178862908873266
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00010715897471413882,
+          "interval": [
+            4.260758470806536e-05,
+            0.0001788209181256661
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 9.372041972710576e-05,
+          "interval": [
+            3.0501098206059395e-05,
+            0.00016647596591496945
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 9.17845994763411e-05,
+          "interval": [
+            3.370591873306239e-05,
+            0.00015234472805616405
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 9.233245289408387e-05,
+          "interval": [
+            3.677512148314577e-05,
+            0.00016065841831078843
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00010429798231825771,
+          "interval": [
+            4.204298821548491e-05,
+            0.00017473399794170063
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "late_mean_absolute_effect": {
+        "mean": 0.00011665320276440147,
+        "interval": [
+          7.548539810482425e-05,
+          0.0001633727702436379
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "late_lag_absolute_difference": {
+        "1": {
+          "mean": 8.096990075519746e-05,
+          "interval": [
+            4.8199617400612735e-05,
+            0.00012001182847427571
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "2": {
+          "mean": 8.134361509111915e-05,
+          "interval": [
+            5.047664215549474e-05,
+            0.00011681442381282398
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "3": {
+          "mean": 3.7673763796893425e-05,
+          "interval": [
+            2.6883690409699548e-05,
+            4.938464044741408e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "6": {
+          "mean": 4.3506232261828856e-05,
+          "interval": [
+            3.097464257416268e-05,
+            5.711047218526962e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      }
+    },
+    {
+      "expert": 44,
+      "unit": 492,
+      "category": "phase",
+      "predicted_per_pass": [
+        0.0001253370865015313,
+        0.00020596665854100138,
+        -0.00012218246411066502
+      ],
+      "exact_effect_by_visit": [
+        {
+          "mean": 0.00014050348144678537,
+          "interval": [
+            1.087805453146018e-05,
+            0.0003091633371038682
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00020349172035594165,
+          "interval": [
+            0.00010929891795257163,
+            0.00031609937875600727
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.0001875560921291708,
+          "interval": [
+            -0.00025861090322791823,
+            -0.0001215894325291345
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -3.122819432377355e-05,
+          "interval": [
+            -8.278095121472262e-05,
+            1.7121198429492744e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.826090986867257e-06,
+          "interval": [
+            -4.114096167882053e-05,
+            3.504960724907135e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00020136075488608185,
+          "interval": [
+            -0.0002790474715908431,
+            -0.0001293694177434191
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.6786274571245485e-05,
+          "interval": [
+            -5.6580243026971286e-05,
+            3.096341330568464e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.1364572930338e-05,
+          "interval": [
+            -5.716397764494729e-05,
+            9.936475085936528e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.0002035210590065617,
+          "interval": [
+            -0.0002803293978104193,
+            -0.00013290549031239607
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.7889260988113165e-05,
+          "interval": [
+            -6.751185397568804e-05,
+            4.622656719490691e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.0926908004194047e-05,
+          "interval": [
+            -4.734350277146859e-05,
+            2.0883698877582857e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.0001871499367780416,
+          "interval": [
+            -0.0002629160277422216,
+            -0.00012083159387259461
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -3.185537259930982e-05,
+          "interval": [
+            -8.299800473134943e-05,
+            3.777922829732993e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -5.292955485458606e-06,
+          "interval": [
+            -3.5075260881001215e-05,
+            2.3051826862285872e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00018238605801457197,
+          "interval": [
+            -0.0002612731390271961,
+            -0.00011118705558104127
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -3.110785465310073e-05,
+          "interval": [
+            -7.700047494481055e-05,
+            2.7469783449873824e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.2796837893347401e-05,
+          "interval": [
+            -5.062313779262695e-05,
+            1.9513102172652437e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00016613909872376098,
+          "interval": [
+            -0.00024096923723959662,
+            -9.870620057625957e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.954419713319112e-05,
+          "interval": [
+            -7.07506735452057e-05,
+            2.2956120979955585e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -7.109284126727289e-06,
+          "interval": [
+            -3.306680159127495e-05,
+            1.727713969970068e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.0001763050854606263,
+          "interval": [
+            -0.00025935001424670645,
+            -0.00010312536430490128
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.902569020728606e-05,
+          "interval": [
+            -7.419410447049302e-05,
+            5.319663775225079e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -5.319116127111556e-06,
+          "interval": [
+            -3.704744679779992e-05,
+            2.0530309878097342e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00016995838512912087,
+          "interval": [
+            -0.0002514411311082654,
+            -9.735031898827633e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "late_mean_absolute_effect": {
+        "mean": 9.638843518426181e-05,
+        "interval": [
+          6.202980694366052e-05,
+          0.0001334714272467489
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "late_lag_absolute_difference": {
+        "1": {
+          "mean": 0.00013173548880729413,
+          "interval": [
+            8.024889139986631e-05,
+            0.0001882607026436981
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "2": {
+          "mean": 0.0001323075536371713,
+          "interval": [
+            8.096836467892387e-05,
+            0.00018903203426485032
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "3": {
+          "mean": 2.532511983351545e-05,
+          "interval": [
+            1.7103440044448822e-05,
+            3.462217859784288e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "6": {
+          "mean": 2.594669681036758e-05,
+          "interval": [
+            1.833121067914186e-05,
+            3.458657277910504e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      }
+    },
+    {
+      "expert": 38,
+      "unit": 1033,
+      "category": "stable",
+      "predicted_per_pass": [
+        0.00022653101768810302,
+        0.00016336620319634676,
+        6.738172669429332e-05
+      ],
+      "exact_effect_by_visit": [
+        {
+          "mean": 0.0003218521260350826,
+          "interval": [
+            0.0002464132766021976,
+            0.00040693046829574084
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0001543046184906416,
+          "interval": [
+            0.00010309763960663077,
+            0.00021411097568488913
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 6.364435611772024e-05,
+          "interval": [
+            3.141936996335915e-05,
+            0.0001029321382173265
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00036235655807104195,
+          "interval": [
+            0.00026117118119373117,
+            0.0004715545576118529
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00022555861141881905,
+          "interval": [
+            0.0001517999118050284,
+            0.0003154083841081956
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 6.125428356940077e-05,
+          "interval": [
+            4.34263314124661e-05,
+            8.02742791977673e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0003711355561790697,
+          "interval": [
+            0.00026222353311595726,
+            0.0005035130211695103
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00018755140388293512,
+          "interval": [
+            0.0001331895231572844,
+            0.0002481168421155644
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 7.086270387292662e-05,
+          "interval": [
+            4.197337337075611e-05,
+            0.00010554714796841627
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0003543713307863072,
+          "interval": [
+            0.00025485634532742554,
+            0.00046859624467288064
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0001775671609038909,
+          "interval": [
+            0.00012369745565479206,
+            0.00024034509632429033
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 7.28335001536351e-05,
+          "interval": [
+            4.193877395368695e-05,
+            0.00010986426548069695
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0003440594790617979,
+          "interval": [
+            0.00023970870508094322,
+            0.0004691792459880162
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00017002940126076282,
+          "interval": [
+            0.00012765381040367175,
+            0.00021393229640125354
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 6.919863107412993e-05,
+          "interval": [
+            4.501646070060872e-05,
+            9.643392844189691e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00030581400642404333,
+          "interval": [
+            0.00021234293799921033,
+            0.0004128733069819645
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00018857725433463202,
+          "interval": [
+            0.00012914275974651446,
+            0.00025585513995736165
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 7.361168497510562e-05,
+          "interval": [
+            4.5979696720976906e-05,
+            0.00010732616100010971
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0003103275921603199,
+          "interval": [
+            0.00021248378312748172,
+            0.00041901589228814367
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00017783727321329934,
+          "interval": [
+            0.00012236183222285034,
+            0.00023905058251330046
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 7.049612968668129e-05,
+          "interval": [
+            4.5969437453030614e-05,
+            0.00010356288110460187
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.0003359602500268011,
+          "interval": [
+            0.00022589862647919292,
+            0.0004644628384767202
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00017003219613798137,
+          "interval": [
+            0.00012027023678911064,
+            0.00022223847504392323
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 7.416883324573575e-05,
+          "interval": [
+            4.501395241085504e-05,
+            0.00010588005937557376
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "late_mean_absolute_effect": {
+        "mean": 0.00018993192448624185,
+        "interval": [
+          0.00014100164236241866,
+          0.00024699337343146624
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "late_lag_absolute_difference": {
+        "1": {
+          "mean": 0.00018863942329971906,
+          "interval": [
+            0.0001352482709246298,
+            0.000247887019980908
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "2": {
+          "mean": 0.00019188954568486832,
+          "interval": [
+            0.0001395930897563365,
+            0.00024986441612829445
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "3": {
+          "mean": 4.9757758087428286e-05,
+          "interval": [
+            4.0485971738979386e-05,
+            5.976981480049954e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "6": {
+          "mean": 5.2190379571973956e-05,
+          "interval": [
+            4.141890882451242e-05,
+            6.42331223931499e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      }
+    },
+    {
+      "expert": 111,
+      "unit": 310,
+      "category": "stable",
+      "predicted_per_pass": [
+        8.857088687364012e-05,
+        0.0001537932112114504,
+        0.0002013250777963549
+      ],
+      "exact_effect_by_visit": [
+        {
+          "mean": 4.080157377295279e-06,
+          "interval": [
+            -1.9962360560121794e-07,
+            9.153424748697955e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 3.3205309436512565e-06,
+          "interval": [
+            -9.345373024577385e-07,
+            1.0623270113693795e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 1.111367176731548e-06,
+          "interval": [
+            -7.667412585898869e-07,
+            3.3483524451927146e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 7.486187141747536e-06,
+          "interval": [
+            -4.6655892786962023e-07,
+            1.9530324044292322e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 7.492356874916339e-06,
+          "interval": [
+            2.64256954540798e-07,
+            2.03154468140454e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 2.3794958723399873e-06,
+          "interval": [
+            1.900189052550516e-07,
+            5.5284487798124e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 8.04019092592867e-06,
+          "interval": [
+            1.168224869985135e-06,
+            1.8504202784042072e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.245434130356607e-06,
+          "interval": [
+            -2.292939524195514e-06,
+            1.5284342809473985e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 2.8269631713317978e-06,
+          "interval": [
+            -1.0484471929250727e-06,
+            9.143829042373985e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 1.1893538072627052e-05,
+          "interval": [
+            1.4411422238236326e-06,
+            2.8230475770474327e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 5.983647743512677e-06,
+          "interval": [
+            -2.374483411560213e-06,
+            2.01435527080962e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 2.416865229837306e-06,
+          "interval": [
+            2.179752309566797e-07,
+            5.124284385346621e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 7.303597975294451e-06,
+          "interval": [
+            1.0193383483958485e-06,
+            1.7857608270421816e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 5.459712277930406e-06,
+          "interval": [
+            -6.773709046812432e-07,
+            1.605693167383952e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 9.746224242379586e-06,
+          "interval": [
+            -7.935283383928016e-07,
+            2.9258396738784942e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 1.3056477120354515e-05,
+          "interval": [
+            9.388653927522307e-07,
+            3.224336322223964e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.397189641736077e-06,
+          "interval": [
+            -1.8242122438394404e-06,
+            1.3998479167121043e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 5.872188569844283e-06,
+          "interval": [
+            -1.899449155962074e-07,
+            1.6438299682097755e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 9.015701479597737e-06,
+          "interval": [
+            -1.9926939871517384e-07,
+            2.326296714425524e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 3.134332843490739e-06,
+          "interval": [
+            -1.8442997324230603e-06,
+            1.103895307679181e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.232029732938181e-06,
+          "interval": [
+            -2.032463562944703e-06,
+            1.5199551706100707e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 9.26920424415556e-06,
+          "interval": [
+            2.4316067297247556e-06,
+            1.8050835750038628e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.06924774132289e-06,
+          "interval": [
+            -8.089418611578747e-07,
+            1.205627028957323e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.339015393872714e-06,
+          "interval": [
+            -1.3642370289779216e-06,
+            1.4049614284361573e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "late_mean_absolute_effect": {
+        "mean": 7.4697947544562215e-06,
+        "interval": [
+          1.876406125252168e-06,
+          1.6801879948230767e-05
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "late_lag_absolute_difference": {
+        "1": {
+          "mean": 5.649704970855929e-06,
+          "interval": [
+            2.6152229653223872e-06,
+            9.213232913151308e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "2": {
+          "mean": 5.386409539861099e-06,
+          "interval": [
+            2.470553829051388e-06,
+            8.769675271047548e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "3": {
+          "mean": 4.548399310133623e-06,
+          "interval": [
+            2.0767153598731193e-06,
+            7.416706560003926e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "6": {
+          "mean": 4.571039222336695e-06,
+          "interval": [
+            1.571143476839706e-06,
+            9.317764902177337e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      }
+    },
+    {
+      "expert": 45,
+      "unit": 1127,
+      "category": "known",
+      "exact_effect_by_visit": [
+        {
+          "mean": 0.0001134214360343222,
+          "interval": [
+            6.413694102322954e-05,
+            0.00016824700596433922
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 4.798699401931117e-05,
+          "interval": [
+            1.906588036320045e-05,
+            8.012021374383948e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00021345880315948307,
+          "interval": [
+            -0.0003122434844755162,
+            -0.00012258669864877446
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00013381583795535335,
+          "interval": [
+            7.115415465648311e-05,
+            0.00020074928241697873
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.286656417282984e-05,
+          "interval": [
+            -6.299982669606407e-05,
+            1.3155152498001137e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.0002010341259932602,
+          "interval": [
+            -0.0002972612209138248,
+            -0.00011501740291954833
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00012142495677380793,
+          "interval": [
+            6.374868428054015e-05,
+            0.0001846539624779097
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -3.775056177346414e-05,
+          "interval": [
+            -8.743875614527496e-05,
+            6.260406556179986e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00019425769143310845,
+          "interval": [
+            -0.00028901116028841046,
+            -0.00010971126592629334
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00011118666111542552,
+          "interval": [
+            5.6472764929083044e-05,
+            0.00016964520182938256
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.471140044870481e-05,
+          "interval": [
+            -9.453791813314183e-05,
+            1.7854706143793804e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00019558200181535312,
+          "interval": [
+            -0.00029301876461840237,
+            -0.00010820354403922042
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00010262733918153799,
+          "interval": [
+            4.979313675175235e-05,
+            0.0001592706456507997
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.497978687822979e-05,
+          "interval": [
+            -9.990525351497582e-05,
+            2.2468400381114573e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00018732007259814054,
+          "interval": [
+            -0.0002831263367141901,
+            -0.00010154852742374488
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00010428185265709544,
+          "interval": [
+            5.3190536731051453e-05,
+            0.00015997529897902036
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -5.307071791094131e-05,
+          "interval": [
+            -0.00011311400124327519,
+            -2.2121587903711914e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00018647805170246556,
+          "interval": [
+            -0.0002795783213429104,
+            -0.00010269160367393228
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 0.00010407536319689825,
+          "interval": [
+            5.236036551536927e-05,
+            0.00015937168494417614
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.7855312317324206e-05,
+          "interval": [
+            -0.0001056659008433769,
+            1.971685692581097e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.000192519973694516,
+          "interval": [
+            -0.000287196704363879,
+            -0.00010649496647232582
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": 9.89295900808429e-05,
+          "interval": [
+            4.869569120984352e-05,
+            0.00015302032226998107
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -5.125300867803162e-05,
+          "interval": [
+            -0.00011486185785472002,
+            1.2773666874466009e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -0.00018756291342469922,
+          "interval": [
+            -0.0002819099902239941,
+            -0.00010250916785139453
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "late_mean_absolute_effect": {
+        "mean": 0.00012266971541900298,
+        "interval": [
+          7.148362738386519e-05,
+          0.00017698254890561314
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "late_lag_absolute_difference": {
+        "1": {
+          "mean": 0.00019541080491336515,
+          "interval": [
+            0.0001082653752727462,
+            0.0002890978861299705
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "2": {
+          "mean": 0.00019605596218970806,
+          "interval": [
+            0.00010915434332788486,
+            0.0002893876578574132
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "3": {
+          "mean": 1.095445131464127e-05,
+          "interval": [
+            7.639297928048923e-06,
+            1.4266449529879802e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "6": {
+          "mean": 1.345318122147887e-05,
+          "interval": [
+            8.961571441901129e-06,
+            1.8102629386381365e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      }
+    },
+    {
+      "expert": 3,
+      "unit": 664,
+      "category": "known",
+      "exact_effect_by_visit": [
+        {
+          "mean": -2.6407983533260904e-06,
+          "interval": [
+            -1.0906024965162685e-05,
+            5.3645384971545634e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -1.3628076548144463e-05,
+          "interval": [
+            -2.317984657524974e-05,
+            -4.840666506478186e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.486423653560223e-05,
+          "interval": [
+            -6.659646942566155e-05,
+            -2.5076178077121373e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.4623969019366143e-05,
+          "interval": [
+            -4.1236483638584784e-05,
+            -1.005900297526008e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -3.7427392893363276e-05,
+          "interval": [
+            -5.6482123037771004e-05,
+            -2.030252453533167e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.156991507997532e-05,
+          "interval": [
+            -6.235525214632886e-05,
+            -2.2722071010594652e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.7613215388910817e-05,
+          "interval": [
+            -4.7613386686062856e-05,
+            -1.0712038230797922e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -3.9834196755350604e-05,
+          "interval": [
+            -5.871465468061387e-05,
+            -2.2099191830804462e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.271201582606299e-05,
+          "interval": [
+            -6.481956127228072e-05,
+            -2.268994859621343e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.89191626450247e-05,
+          "interval": [
+            -4.9333481631919084e-05,
+            -1.1636885598420579e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.184655205108356e-05,
+          "interval": [
+            -6.200884279792263e-05,
+            -2.327856210655455e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.3791302731577275e-05,
+          "interval": [
+            -6.59327544084931e-05,
+            -2.3414769303053992e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.6209546327038424e-05,
+          "interval": [
+            -4.648014178680882e-05,
+            -9.13835180629264e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.026207243257307e-05,
+          "interval": [
+            -6.141174311533604e-05,
+            -2.1033910461781827e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.282956225232226e-05,
+          "interval": [
+            -6.385267824726704e-05,
+            -2.3711273832693907e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.3923215692889244e-05,
+          "interval": [
+            -4.173455187803654e-05,
+            -8.931319556992899e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.079332539452807e-05,
+          "interval": [
+            -6.144106520622472e-05,
+            -2.190587722858963e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.243418309357594e-05,
+          "interval": [
+            -6.272320292435296e-05,
+            -2.339413959422388e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.8430384446664902e-05,
+          "interval": [
+            -5.0137609226652556e-05,
+            -1.0677092868860435e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.059811452350459e-05,
+          "interval": [
+            -6.122687700234053e-05,
+            -2.1677198031255788e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.129324561930048e-05,
+          "interval": [
+            -6.135078714963882e-05,
+            -2.2759785525039435e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -2.6084549290317227e-05,
+          "interval": [
+            -4.577460886281415e-05,
+            -1.0117881141979994e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.2077619555769274e-05,
+          "interval": [
+            -6.337403101950301e-05,
+            -2.281778121933087e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        {
+          "mean": -4.30764299093056e-05,
+          "interval": [
+            -6.51762936577427e-05,
+            -2.289703557858403e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      ],
+      "late_mean_absolute_effect": {
+        "mean": 3.700374648651916e-05,
+        "interval": [
+          1.944834612806664e-05,
+          5.6818407794005185e-05
+        ],
+        "family_size": 1,
+        "sampling_unit": "article",
+        "articles": 16,
+        "resamples": 10000,
+        "seed": 1729
+      },
+      "late_lag_absolute_difference": {
+        "1": {
+          "mean": 1.5419757911120748e-05,
+          "interval": [
+            7.979418991917638e-06,
+            2.3614169925282678e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "2": {
+          "mean": 1.526164392114578e-05,
+          "interval": [
+            8.026031931035462e-06,
+            2.312547345607966e-05
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "3": {
+          "mean": 5.6462372837184915e-06,
+          "interval": [
+            3.426940699848465e-06,
+            7.910772352507735e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        },
+        "6": {
+          "mean": 5.530281864951636e-06,
+          "interval": [
+            3.208924479099207e-06,
+            8.207331669083753e-06
+          ],
+          "family_size": 1,
+          "sampling_unit": "article",
+          "articles": 16,
+          "resamples": 10000,
+          "seed": 1729
+        }
+      }
+    }
+  ],
+  "first_article_example": {
+    "article": "= Oribi =",
+    "prompt": " Typically diurnal , the oribi is active mainly during the day . Small herds of up to four members are common ; males defend their group 's territory , 25 \u2013 100 hectares ( 62 \u2013 247 acres ) large . The oribi is primarily a grazer , and prefers fresh grasses and browses occasionally . A seasonal breeder , the time when mating occurs varies geographically . Unlike all other small antelopes , oribi can exhibit three types of mating systems , depending on the habitat \u2013 polyandry , polygyny and polygynandry . Gestation lasts",
+    "unit45_1127_effects": [
+      0.00013789588410872966,
+      5.050855179433711e-05,
+      -0.00016525175306014717,
+      0.00019500937196426094,
+      -4.4930726289749146e-05,
+      -0.0001783333718776703,
+      0.00014476531941909343,
+      -3.453610042924993e-05,
+      -0.00017461340758018196,
+      0.0001678610424278304,
+      -4.319686922826804e-05,
+      -0.00019684273866005242,
+      0.00017062520782928914,
+      -3.987018499174155e-05,
+      -0.00018081867892760783,
+      0.000160456242156215,
+      -5.050855179433711e-05,
+      -0.000177726149559021,
+      0.00019260974659118801,
+      -5.526415043277666e-05,
+      -0.0001798783050617203,
+      0.0001565148850204423,
+      -5.834496550960466e-05,
+      -0.00017566712631378323
+    ]
+  },
+  "limits": [
+    "The extension exceeds the checkpoint training horizon of three passes.",
+    "The test concerns eight fixed units at one physical layer, not all expert units.",
+    "The endpoint is the immediate Block 2 reader weight, not token recovery or answer quality.",
+    "Finite approximate recurrence is not proof of a stable limit cycle."
+  ]
+}

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Running a fixed-unit 24-pass test of recurring causal phase on 16 new articles, with exact native-prefix controls. Jobs: hpcfund/561942 RUNNING
-  Next: Monitor repaired native-prefix and local-replay controls. Evaluate native reader activations with fixed challenge visits.
+- [Investigate lenses for Inkling 2 Mini](.workstreams/inkling-looped-lens.json): Three-pass recurrence extends to native unit deletion effects. Full local predictor generalizes to untested visits with about12-fold lower error than dot-only. Jobs: hpcfund/561956 SUBMITTED
+  Next: Finish the fixed same-visit vocabulary lens test and write standalone results with limits.
 
 ## Next / blocked
 
