@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-11-27T14:29:26Z",
+  "job_id": "562347",
+  "state": "PENDING",
+  "reason": "Priority",
+  "elapsed_seconds": 0,
+  "estimated_start_cluster_time": "2026-11-28T03:52:00-06:00",
+  "estimated_start_utc": "2026-11-28T09:52:00Z",
+  "estimated_start_eastern": "2026-11-28T04:52:00-05:00",
+  "estimate_is_binding": false,
+  "estimated_node": "k007-003",
+  "requested_walltime_seconds": 7200,
+  "squeue_output": "562347|PENDING|0:00|2026-11-28T03:52:00|(Priority)",
+  "sacct_output": "562347|PENDING|0|Unknown|Unknown|None assigned",
+  "slurm_source": "scontrol show job 562347 -o: JobState=PENDING Reason=Priority RunTime=00:00:00 TimeLimit=02:00:00 StartTime=2026-11-28T03:52:00 Scheduler=Backfill:* SchedNodeList=k007-003",
+  "resource_variant_submitted": false,
+  "new_jobs_submitted": 0
+}

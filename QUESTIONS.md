@@ -3,7 +3,7 @@
 ## 2026-11-27: GSM8K CISPO scheduling versus resource changes
 
 - Question: keep the approved eight-MI350 job queued, or approve a smaller resource variant?
-- Evidence: [resource choices](experiments/tcs_async_rl/gsm8k_cispo_resources.proposed_20261127.json). Slurm test-only forecasts are about54 hours for eight MI350 GPUs, two hours for one MI350 GPU, and eight hours for four MI210 GPUs. Forecasts are not guarantees. All test-only calls submitted zero jobs.
+- Evidence: [resource choices](experiments/tcs_async_rl/gsm8k_cispo_resources.proposed_20261127.json). Initial test-only forecasts were about 54 hours for eight MI350 GPUs, two hours for one MI350 GPU, and eight hours for four MI210 GPUs. Those are historical forecasts for matching new requests, not current guarantees. All test-only calls submitted zero jobs. The existing job now has a [tentative November 28, 04:52 Eastern start](experiments/tcs_async_rl/evidence/gsm8k_cispo_actual_start_estimate_20261127T1429Z.json).
 - Options: keep the existing eight-MI350 job; use one shared MI350 GPU with retract-style pauses; or use four MI210 GPUs with the original in-place pause mode.
 - Recommendation: one MI350 GPU for a faster CISPO smoke test, with the changed scheduling recorded as a limitation. Keep the exact original bundle if comparability matters more than the wait.
 - Unchanged in either proposed variant: model, data, prompt, reward, optimizer, sampling, four questions x32 answers,250-update maximum and two-hour allocation cap.
