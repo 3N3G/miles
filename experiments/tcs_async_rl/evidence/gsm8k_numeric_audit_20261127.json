@@ -1,0 +1,86 @@
+{
+  "scope": "Independent exact arithmetic on native-extracted values. Does not independently validate box extraction or benchmark labels.",
+  "validation_checkpoints": 14,
+  "counts": {
+    "responses": 3584,
+    "decimal": 3520,
+    "missing_parsed_box": 18,
+    "fraction": 31,
+    "unsupported_expression": 10,
+    "squared_radical": 5
+  },
+  "mismatches": [],
+  "unsupported": [
+    {
+      "file": "baseline.jsonl.gz",
+      "source_row": 4478,
+      "label": "2",
+      "answer": "4 \\text{ dollars and } 2 \\text{ dollars}",
+      "native_reward": 0
+    },
+    {
+      "file": "updates-000020.jsonl.gz",
+      "source_row": 4555,
+      "label": "4",
+      "answer": "0 \\text{ weeks and } \\frac{3}{7} \\text{ weeks}",
+      "native_reward": 0
+    },
+    {
+      "file": "updates-000020.jsonl.gz",
+      "source_row": 6411,
+      "label": "24",
+      "answer": "12B",
+      "native_reward": 0
+    },
+    {
+      "file": "updates-000060.jsonl.gz",
+      "source_row": 947,
+      "label": "80",
+      "answer": "3P",
+      "native_reward": 0
+    },
+    {
+      "file": "updates-000080.jsonl.gz",
+      "source_row": 947,
+      "label": "80",
+      "answer": "P",
+      "native_reward": 0
+    },
+    {
+      "file": "updates-000100.jsonl.gz",
+      "source_row": 947,
+      "label": "80",
+      "answer": "\\left\\lceil \\frac{5P}{2} \\right\\rceil",
+      "native_reward": 0
+    },
+    {
+      "file": "updates-000120.jsonl.gz",
+      "source_row": 947,
+      "label": "80",
+      "answer": "2P",
+      "native_reward": 0
+    },
+    {
+      "file": "updates-000140.jsonl.gz",
+      "source_row": 5019,
+      "label": "11",
+      "answer": "\\frac{S}{4}",
+      "native_reward": 0
+    },
+    {
+      "file": "updates-000180.jsonl.gz",
+      "source_row": 947,
+      "label": "80",
+      "answer": "2P",
+      "native_reward": 0
+    },
+    {
+      "file": "updates-000200.jsonl.gz",
+      "source_row": 947,
+      "label": "80",
+      "answer": "P",
+      "native_reward": 0
+    }
+  ],
+  "rewards_changed": false
+}
