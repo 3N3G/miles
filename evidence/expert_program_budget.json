@@ -211,8 +211,14 @@
   "used_gpu_seconds": 6904,
   "remaining_gpu_seconds": 11096,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [],
-  "unreserved_gpu_seconds": 9896,
-  "reserved_gpu_seconds": 1200,
+  "pending_reservations": [
+    {
+      "run_name": "native-reader-capability-diagnostic-v1",
+      "maximum_gpu_seconds": 300,
+      "reason": "plans/native_reader_capability_repair.md"
+    }
+  ],
+  "unreserved_gpu_seconds": 9596,
+  "reserved_gpu_seconds": 1500,
   "observed_at": "2026-11-27T06:49:13.259985+00:00"
 }
