@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): CISPO queued and supervised; reclaimed179 MiB of verified old VM copies Jobs: hpcfund/562347 PENDING; hpcfund/562230 COMPLETED
-  Next: Keep foreground checks of the queued original job and monitor. Await the resource-choice answer before any variant. Diagnose immediately if GPU startup, observer errors or low spac
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): CISPO remains queued without assigned start; smaller-resource choice still open Jobs: hpcfund/562347 PENDING; hpcfund/562230 COMPLETED
+  Next: Continue foreground supervision of the original job and observer. Apply a resource variant only after its decision. Matching new-job forecasts are nonbinding and do not assign the 
 
 ## Next / blocked
 

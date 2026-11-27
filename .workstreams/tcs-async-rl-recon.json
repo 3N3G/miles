@@ -4270,15 +4270,22 @@
       "actor": "codex",
       "summary": "Preserve the final reference figures and unchanged primary statistics",
       "revision": 431
+    },
+    {
+      "id": "12d345a1-addc-4bbc-a7b5-d70a52613adc",
+      "at": "2026-11-27T11:48:37.161060Z",
+      "actor": "codex",
+      "summary": "CISPO remains queued without assigned start; smaller-resource choice still open",
+      "revision": 432
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "CISPO queued and supervised; reclaimed179 MiB of verified old VM copies",
-  "nextAction": "Keep foreground checks of the queued original job and monitor. Await the resource-choice answer before any variant. Diagnose immediately if GPU startup, observer errors or low space changes the state.",
+  "summary": "CISPO remains queued without assigned start; smaller-resource choice still open",
+  "nextAction": "Continue foreground supervision of the original job and observer. Apply a resource variant only after its decision. Matching new-job forecasts are nonbinding and do not assign the existing job a start time.",
   "owner": "Codex",
-  "revision": 431,
-  "updatedAt": "2026-11-27T11:12:23.253800Z"
+  "revision": 432,
+  "updatedAt": "2026-11-27T11:48:37.161060Z"
 }
