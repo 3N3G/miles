@@ -4242,15 +4242,22 @@
       "actor": "codex",
       "summary": "Link the verified GSM8K reference archive and W&B history",
       "revision": 427
+    },
+    {
+      "id": "f32dc2b9-dfa7-4660-9fcb-15afaa99c066",
+      "at": "2026-11-27T10:24:52.935284Z",
+      "actor": "codex",
+      "summary": "GSM8K reference fully audited; original CISPO queued while resource choice is pending",
+      "revision": 428
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K reference596-file archive verified; CISPO562347 awaits AMD priority",
-  "nextAction": "Keep foreground supervision of CISPO and its continuous observer. Verify baseline and real optimizer updates, then final checkpoint, paired accuracy, full W&B readback and immutable archive.",
+  "summary": "GSM8K reference fully audited; original CISPO queued while resource choice is pending",
+  "nextAction": "Continue foreground supervision of the original eight-MI350 job and its observer. Await the optional resource choice before submitting any variant. No alternative GPU job is authorized yet.",
   "owner": "Codex",
-  "revision": 427,
-  "updatedAt": "2026-11-27T10:06:18.993854Z"
+  "revision": 428,
+  "updatedAt": "2026-11-27T10:24:52.935284Z"
 }
