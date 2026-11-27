@@ -6,8 +6,8 @@ No GPU inference or training had run at approval.
 
 ## TLDR
 
-The reference completed250 updates. Fixed-validation accuracy rose from172/256(67.2%) to185/256(72.3%).
-The paired95% interval for the change includes zero. This single-seed result passes the predeclared gate, but does not establish repeatable improvement.
+The reference completed 250 updates. Fixed-validation accuracy rose from 172/256 (67.2%) to 185/256 (72.3%).
+The paired 95% interval for the change includes zero. This single-seed result passes the predeclared gate, but does not establish repeatable improvement.
 The fresh-weight CISPO stage is queued. No CISPO inference or training has run. Its original eight-MI350 setup remains authorized.
 The approved cap remains four total AMD node-hours on eight GPUs, with no paid judge.
 
@@ -52,31 +52,31 @@ Sources: [GSM8K](https://github.com/openai/grade-school-math) and [Qwen model ca
 
 ## Results
 
-The reference completed250 optimizer updates and consumed64,000 answers. Final fixed-validation accuracy was185/256(72.27%), versus172/256(67.19%) initially.
-Thirty questions changed from wrong to right, while17 changed from right to wrong. The gain was5.08 percentage points.
-The95% paired question-bootstrap interval was0–10.16 points. The exact paired McNemar p-value was0.07894, or0.15788 after the planned two-comparison correction.
+The reference completed 250 optimizer updates and consumed 64,000 answers. Final fixed-validation accuracy was 185/256 (72.27%), versus 172/256 (67.19%) initially.
+Thirty questions changed from wrong to right, while 17 changed from right to wrong. The gain was 5.08 percentage points.
+The 95% paired question-bootstrap interval was 0–10.16 points. The exact paired McNemar p-value was 0.07894, or 0.15788 after the planned two-comparison correction.
 This uncertainty concerns validation questions. One training seed does not measure variation across training seeds.
 The final checkpoint supplied the primary result, even though an intermediate checkpoint scored higher.
 
-Formatting explains some improvement. A seeded example reasoned correctly that four bottles need4×85−33=307 stars, but omitted the required box before training.
-The final answer boxed307 and earned one point. Among252 responses with boxes at both stages, correct answers increased from172 to182.
-A seeded regression changed a correct zoo total of144 to108 after using the wrong giraffe-enclosure count.
+Formatting explains some improvement. A seeded example reasoned correctly that four bottles need 4 × 85 − 33 = 307 stars, but omitted the required box before training.
+The final answer boxed 307 and earned one point. Among 252 responses with boxes at both stages, correct answers increased from 172 to 182.
+A seeded regression changed a correct zoo total of 144 to 108 after using the wrong giraffe-enclosure count.
 Full paired examples are in `paired-raw-answer-audit.json` in the archive below.
 
-All three local optimizer-direction checks were positive. Gradients stayed finite, and six rollout engines agreed on each of250 updated weight publications.
-The saved iteration249 matches250 completed updates. W&B matched all18,029 native training scalars and56 validation scalars.
-Baseline/final valid-box fractions were253/256 and255/256. Token caps affected zero and one validation answer respectively.
+All three local optimizer-direction checks were positive. Gradients stayed finite, and six rollout engines agreed on each of 250 updated weight publications.
+The saved iteration 249 matches 250 completed updates. W&B matched all 18,029 native training scalars and 56 validation scalars.
+Baseline/final valid-box fractions were 253/256 and 255/256. Token caps affected zero and one validation answer respectively.
 The official GSM8K test split remains unread.
 
-The reference used3,398 allocated node-seconds across attempts, including319 seconds in two startup failures. Judge cost was zero.
+The reference used 3,398 allocated node-seconds across attempts, including 319 seconds in two startup failures. Judge cost was zero.
 Its [immutable archive](https://huggingface.co/datasets/3N3G/internalization-runs/tree/318eecb525cdd1606602ac62facda521b2313ead/miles/gsm8k-reference-v4)
-contains596 verified artifacts. Its [W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native) is finished.
+contains 596 verified artifacts. Its [W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native) is finished.
 The [machine-readable result](evidence/gsm8k_reference_final_20261127.json) owns the exact measurements.
 
-CISPO job562347 remains queued with zero allocated seconds and zero updates. The [resource choice](../../QUESTIONS.md) remains open.
-This positive0.5B reference result does not validate the original TCS CISPO bundle, Qwen3.5 kernels, long responses, or the proof judge.
+CISPO job 562347 remains queued with zero allocated seconds and zero updates. The [resource choice](../../QUESTIONS.md) remains open.
+This positive 0.5B reference result does not validate the original TCS CISPO bundle, Qwen3.5 kernels, long responses, or the proof judge.
 
-Planned plots:
+Plots (reference complete, CISPO pending):
 - Exact training reward and fixed-validation accuracy versus optimizer update, shown separately.
 - Valid-box and capped-response fractions versus update.
 - Entropy, reference divergence, trainer/rollout mismatch and gradient norm, one quantity per panel.
