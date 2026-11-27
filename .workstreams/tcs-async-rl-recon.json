@@ -4034,15 +4034,22 @@
       "actor": "codex",
       "summary": "Archived and hash-verified prepared GSM8K data, tokenizer, controls and proposed plan",
       "revision": 402
+    },
+    {
+      "id": "333c2972-a66c-4d75-93cc-61ac7454c939",
+      "at": "2026-11-27T00:01:57.276633Z",
+      "actor": "codex",
+      "summary": "Recorded user approval and claimed implementation and submission of the GSM8K control",
+      "revision": 403
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
-  "endpoint": "Prepare a reproducible benchmark control with validated rewards and an explicit GPU plan. Run and supervise it once its concrete model/settings and compute limit are approved.",
-  "state": "needs-you",
-  "summary": "Prepared GSM8K control. All 29,892 reward checks and 7,473 prompt/label checks pass. Zero train/validation overlap. Proposed 0.5B reference then CISPO, one seed, four total eight-GPU node-hours. No GPU submission.",
-  "nextAction": "Review the concrete plan and compute cap. Then implement launch wiring, validate native args, and supervise the approved control.",
+  "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
+  "state": "running",
+  "summary": "User approved the prepared GSM8K control and four-hour total cap. AMD queue is empty. Implementing runtime wiring before the reference submission.",
+  "nextAction": "Validate the frozen configuration and launcher, then submit and monitor the reference stage.",
   "owner": "Codex",
-  "revision": 402,
-  "updatedAt": "2026-11-26T23:56:06.462791Z"
+  "revision": 403,
+  "updatedAt": "2026-11-27T00:01:57.276633Z"
 }

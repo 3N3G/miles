@@ -1,8 +1,8 @@
 # Experiment: GSM8K positive control for the RL pipeline
 
-Status: proposed. No GPU inference or training has run.
-The user approved the direction of an exact-reward benchmark control. The concrete model pair and compute limit await approval.
-The [configuration](gsm8k_control.proposed.json) owns the exact proposed settings.
+Status: approved on 2026-11-26. User: “approved, run it”.
+The [approved configuration](gsm8k_control.approved_20261126.json) owns the exact scientific settings.
+No GPU inference or training had run at approval.
 
 ## TLDR
 

@@ -1,13 +1,5 @@
 # Open questions
 
-## 2026-11-26: Exact-reward RL control and compute cap
-
-- Question: approve the prepared Qwen2.5-0.5B GSM8K reference-then-CISPO diagnostic, capped at four total eight-GPU node-hours?
-- Options: approve the small-model control with one initial diagnostic seed, or first measure GSM8K headroom with the existing Qwen3.5-4B.
-- Recommendation: start with the small-model control because the repo supplies a learning recipe and the 4B may be near ceiling. That ceiling has not been measured.
-- Evidence: [concrete plan](experiments/tcs_async_rl/GSM8K_CONTROL_PLAN_20261126.md) and [all-row reward controls](experiments/tcs_async_rl/evidence/gsm8k_control_preparation_20261126.json).
-- Blocks: new GPU submissions and the model/budget choice. CPU data preparation and validation are complete. No GPU job has been submitted.
-
 ## 2026-11-24: Implicit monotonicity in an auction proof
 
 - Question: does the auction payment item require an explicit single-bidder monotonicity argument when the candidate states the correct formula?
@@ -298,3 +290,14 @@
 - Blocks: the new training-data manifest and execution snapshot. This is a data-design decision, not a GPU-memory constraint. No existing config, dataset bundle or job was changed.
 - Count sources: [pinned inventory](experiments/tcs_async_rl/PLAN.md) and [screen selection provenance](experiments/tcs_async_rl/evidence/difficulty_screen_selection_20261124.json).
 - Answer, 2026-11-25: “Try all easy and medium. Think about why the current plots show reward flat. Then launch I give you permission”. Use every one of the236 easy/medium questions and preserve the established12-hour,8-GPU and shared$25 limits.
+
+## 2026-11-26: Exact-reward RL control and compute cap
+
+- Question: approve the prepared Qwen2.5-0.5B GSM8K reference-then-CISPO diagnostic, capped at four total eight-GPU node-hours?
+- Options: approve the small-model control with one initial diagnostic seed, or first measure GSM8K headroom with the existing Qwen3.5-4B.
+- Recommendation: start with the small-model control because the repo supplies a learning recipe and the 4B may be near ceiling. That ceiling has not been measured.
+- Evidence: [concrete plan](experiments/tcs_async_rl/GSM8K_CONTROL_PLAN_20261126.md) and [all-row reward controls](experiments/tcs_async_rl/evidence/gsm8k_control_preparation_20261126.json).
+- Blocks: new GPU submissions and the model/budget choice. CPU data preparation and validation are complete. No GPU job has been submitted.
+
+- Answer: approved on 2026-11-26. User: “approved, run it”. One initial seed and four total eight-GPU node-hours cover the reference and conditional CISPO stages.
+
