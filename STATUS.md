@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K561193 failed in argument validation;37 seconds used, no inference Jobs: hpcfund/561193 FAILED; hpcfund/561051 CANCELLED
-  Next: Repair read-only direction observation for ordinary DP2 and reference actor-forward probabilities. Keep optimization unchanged, then rerun within7163 seconds remaining.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K reference submitted as 562208 Jobs: hpcfund/562208 PENDING; hpcfund/561193 FAILED
+  Next: Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.
 
 ## Next / blocked
 

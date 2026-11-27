@@ -987,6 +987,11 @@
   ],
   "jobs": [
     {
+      "id": "562208",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
       "id": "561193",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -4142,15 +4147,22 @@
       "actor": "codex",
       "summary": "GSM8K561193 failed in argument validation;37 seconds used, no inference",
       "revision": 416
+    },
+    {
+      "id": "e72d8eb2-52f8-43e6-b020-4f80a6c05a6b",
+      "at": "2026-11-27T08:53:09.639050Z",
+      "actor": "codex",
+      "summary": "GSM8K reference submitted as 562208",
+      "revision": 417
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "GSM8K561193 failed in argument validation;37 seconds used, no inference",
-  "nextAction": "Repair read-only direction observation for ordinary DP2 and reference actor-forward probabilities. Keep optimization unchanged, then rerun within7163 seconds remaining.",
+  "summary": "GSM8K reference submitted as 562208",
+  "nextAction": "Supervise baseline, first optimizer update, final evaluation and verified publication. CISPO remains gated on reference learning.",
   "owner": "Codex",
-  "revision": 416,
-  "updatedAt": "2026-11-27T08:40:45.904678Z"
+  "revision": 417,
+  "updatedAt": "2026-11-27T08:53:09.639050Z"
 }
