@@ -30,7 +30,8 @@ def trace(model,ids,visits,tokenizer):
         if counter[0] in visits:rows['native_attention_reader'].append({'visit':counter[0],'tokens':cleaned_top10(head(output[0][:,-1:]),tokenizer)})
     handles=[]
     for layer in llm.layers:
-        handles.extend([layer.register_forward_pre_hook(enter),layer.attention_input.register_forward_hook(reader)])
+        handles.append(layer.register_forward_pre_hook(enter))
+        if layer.attention_input is not None:handles.append(layer.attention_input.register_forward_hook(reader))
     handles.append(llm.final_input.register_forward_hook(lambda m,a,o:final.append(o[0][:,-1:].detach())))
     try:
         logits=model(input_ids=ids,use_cache=False,logits_to_keep=1).logits[0,-1].float()

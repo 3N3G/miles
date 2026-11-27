@@ -191,16 +191,24 @@
       "gpus": 1,
       "maximum_allocation_seconds": 1200,
       "maximum_gpu_seconds": 1200,
-      "status": "RUNNING",
-      "reserved_gpu_seconds": 1200,
-      "observed_allocation_seconds": 17
+      "status": "FAILED",
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 48,
+      "actual_allocation_seconds": 48,
+      "actual_gpu_seconds": 48
     }
   ],
-  "used_gpu_seconds": 6856,
-  "remaining_gpu_seconds": 11144,
+  "used_gpu_seconds": 6904,
+  "remaining_gpu_seconds": 11096,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [],
-  "unreserved_gpu_seconds": 9944,
+  "pending_reservations": [
+    {
+      "run_name": "native-reader-lens-v2",
+      "maximum_gpu_seconds": 1200,
+      "reason": "plans/native_reader_lens_repair.md"
+    }
+  ],
+  "unreserved_gpu_seconds": 9896,
   "reserved_gpu_seconds": 1200,
-  "observed_at": "2026-11-27T06:47:02.906980+00:00"
+  "observed_at": "2026-11-27T06:48:12.705086+00:00"
 }
