@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-11-27T09:03:30.724893+00:00",
+  "failed_job": "562208",
+  "failed_source": "9a555530eca40938845183b25a382c4bea588092",
+  "failed_allocated_seconds": 282,
+  "total_allocated_reference_seconds": 319,
+  "remaining_reference_seconds": 6881,
+  "replacement_maximum_seconds": 6840,
+  "maximum_reference_total_seconds": 7159,
+  "scientific_config_sha256": "ee1b7fef60069c6428b5e4681075449f98e34388238ec03c57dde74f96f99892",
+  "repair_environment_variable": "MEGATRON_CONFIG_LOCK_DIR",
+  "cache_relative_path": "cache/megatron-config-locks",
+  "cpu_tests_passed": 35,
+  "targeted_lint_passed": true,
+  "gpu_loader_preflight_passed": false,
+  "plan": "experiments/tcs_async_rl/GSM8K_BRIDGE_CACHE_REPAIR_20261127.md"
+}

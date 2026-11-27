@@ -26,6 +26,21 @@ CONFIG = Path(__file__).with_name("gsm8k_control.approved_20261126.json")
 MODEL_TYPE = "qwen2.5-0.5B"
 
 
+def configure_bridge_cache(work_dir):
+    directory = work_dir / "cache" / "megatron-config-locks"
+    directory.mkdir(parents=True, exist_ok=True)
+    os.environ["MEGATRON_CONFIG_LOCK_DIR"] = str(directory)
+    return directory
+
+
+def forwarded_runtime_environment(environment):
+    allowed = {"HF_HOME", "XDG_CACHE_HOME", "RAY_TMPDIR", "MEGATRON_CONFIG_LOCK_DIR",
+               "MILES_HARDWARE_PLATFORM", "AITER_JIT_DIR", "AITER_ROOT_DIR", "MIOPEN_USER_DB_PATH",
+               "MIOPEN_CUSTOM_CACHE_DIR", "NCCL_NVLS_ENABLE", "RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES",
+               "RAY_EXPERIMENTAL_NOSET_CUDA_VISIBLE_DEVICES"}
+    return {key: environment[key] for key in environment if key.endswith("CACHE_DIR") or key in allowed}
+
+
 def resolved_args(config, *, arm, work_dir, run_dir, run_id):
     if config["status"] != "approved_20261126" or arm not in ("reference", "cispo"):
         raise ValueError("Requires the approved control and a declared arm")
@@ -144,7 +159,9 @@ def run_host(cli, config):
 
 def run_gpu(cli, config):
     os.environ.setdefault("CUDA_DEVICE_MAX_CONNECTIONS", "1")
+    bridge_cache = configure_bridge_cache(cli.work_dir)
     import torch
+    from megatron.bridge import AutoBridge
     from transformers import AutoTokenizer
     from miles.utils.arguments import parse_args
     from miles.utils.external_utils import command_utils as U
@@ -170,6 +187,12 @@ def run_gpu(cli, config):
     parsed = parse_args()
     write_json(cli.run_dir / "validated-native-arguments.json",
                {"requested": args, "validated": vars(parsed)}, default=str)
+    # Check the actor's real config loader before starting six rollout engines.
+    bridge = AutoBridge.from_hf_pretrained(args["hf_checkpoint"], trust_remote_code=True)
+    write_json(cli.run_dir / "bridge-cache-preflight.json", {
+        "directory": str(bridge_cache), "loader": "AutoBridge.from_hf_pretrained",
+        "loaded_type": type(bridge).__name__, "passed": True,
+    })
     write_json(cli.run_dir / "resolved-config.json", {
         "args": args, "run_id": run_id, "benchmark": "gsm8k", "arm": cli.arm,
         "dataset_sha256": {name: file_sha256(cli.run_dir / f"{name}.jsonl") for name in ("train", "validation")},
@@ -179,11 +202,7 @@ def run_gpu(cli, config):
                       RAY_EXPERIMENTAL_NOSET_CUDA_VISIBLE_DEVICES="1")
     if os.environ.get("HIP_VISIBLE_DEVICES"):
         os.environ["CUDA_VISIBLE_DEVICES"] = os.environ["HIP_VISIBLE_DEVICES"]
-    forwarded = {key: value for key, value in os.environ.items()
-                 if key.endswith("CACHE_DIR") or key in {"HF_HOME", "XDG_CACHE_HOME", "RAY_TMPDIR",
-                    "MILES_HARDWARE_PLATFORM", "AITER_JIT_DIR", "AITER_ROOT_DIR", "MIOPEN_USER_DB_PATH",
-                    "MIOPEN_CUSTOM_CACHE_DIR", "NCCL_NVLS_ENABLE", "RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES",
-                    "RAY_EXPERIMENTAL_NOSET_CUDA_VISIBLE_DEVICES"}}
+    forwarded = forwarded_runtime_environment(os.environ)
     backend.execute_train(train_args=shlex.join(native_argv(args)), num_gpus_per_node=8,
                           megatron_model_type=MODEL_TYPE, train_script="experiments/tcs_async_rl/gsm8k_driver.py",
                           extra_env_vars=forwarded, job_lifetime="launcher")

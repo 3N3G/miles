@@ -1,0 +1,11 @@
+{
+  "job_id": "562208",
+  "archive": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/d83867903016c9c62c755b05419b261883708bc0",
+  "hf_path": "miles/gsm8k-reference-v3",
+  "verified_files": 31,
+  "verified_bytes": 11110279,
+  "allocated_seconds": 282,
+  "reference_total_allocated_seconds": 319,
+  "inference_answers": 0,
+  "optimizer_updates": 0
+}

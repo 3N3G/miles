@@ -1,6 +1,7 @@
 import asyncio
 import copy
 import json
+import os
 import tempfile
 import types
 import unittest
@@ -8,13 +9,28 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from experiments.tcs_async_rl import gsm8k_driver
-from experiments.tcs_async_rl.gsm8k_control import CONFIG, render_job, resolved_args
+from experiments.tcs_async_rl.gsm8k_control import (
+    CONFIG, configure_bridge_cache, forwarded_runtime_environment, render_job, resolved_args,
+)
 from experiments.tcs_async_rl.gsm8k_wandb import acknowledge_evaluations, publish_evaluations
 from experiments.tcs_async_rl.native_metrics import read_native_metrics
 from experiments.tcs_async_rl.gsm8k_results import analyze, paired_accuracy
 
 
 class GsmControlTests(unittest.TestCase):
+    def test_bridge_cache_uses_work_storage_and_reaches_workers_without_home_or_keys(self):
+        with tempfile.TemporaryDirectory() as name, patch.dict(os.environ, {}, clear=True):
+            directory = configure_bridge_cache(Path(name))
+            self.assertTrue(directory.is_dir())
+            environment = {**os.environ, 'HOME':'/read-only/home', 'HF_HOME':'/work/hf',
+                           'OPENAI_API_KEY':'synthetic-placeholder', 'TRITON_CACHE_DIR':'/work/triton'}
+            forwarded = forwarded_runtime_environment(environment)
+            self.assertEqual(forwarded['MEGATRON_CONFIG_LOCK_DIR'], str(directory))
+            self.assertEqual(forwarded['HF_HOME'], '/work/hf')
+            self.assertEqual(forwarded['TRITON_CACHE_DIR'], '/work/triton')
+            self.assertNotIn('HOME', forwarded)
+            self.assertNotIn('OPENAI_API_KEY', forwarded)
+
     def test_terminal_analysis_allows_untrained_prefetch_but_requires_final_weight_publication(self):
         with tempfile.TemporaryDirectory() as name:
             root = Path(name)
