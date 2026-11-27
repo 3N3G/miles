@@ -1,0 +1,27 @@
+{
+  "kind": "Static code-contract audit, not CISPO GPU execution",
+  "queued_cispo_source_commit": "463a0bfb21f581f21e504baa431bf8a3068f0db4",
+  "same_core_files_as_queued_source": true,
+  "source_sha256": {
+    "miles/backends/training_utils/loss/hub/losses.py": "9f766385a85c871815095b3632e03e1c5c69e8129b90f44fcb7796a29a63e0b8",
+    "miles/backends/training_utils/loss/hub/math_utils.py": "249d0a74ab2e1ad2bbc1de8a90d3004776b62a9cb61c313701c33ee845243c2d",
+    "miles/backends/training_utils/loss/hub/logit_processors.py": "5f6a17e18c01bac33b77b8f17000c8a2ea035c8f17ae17eab48d2809c3eeced9",
+    "miles/rollout/generate_utils/sampling_mask.py": "51ab80017ea701eea844b6389de81e8cd1618fb1c8fe33c3895e38fd780f7ded"
+  },
+  "findings": [
+    "Realized support and corresponding sampled-token log probabilities are required together; missing fields or wrong token counts raise errors.",
+    "The Torch score path replays sampling support. Fused LM-head scoring rejects sampling masks and is not the configured default.",
+    "At zero KL coefficient, the diagnostic explicitly scores unfiltered actor probabilities against unfiltered reference probabilities.",
+    "Observed full-policy entropy uses unmasked logits. Sampling entropy is a separate metric."
+  ],
+  "verified_reference_parser_defaults": {
+    "log_probs_backend": "torch",
+    "true_on_policy_mode": false,
+    "use_distributed_optimizer": true,
+    "clip_grad": 1.0,
+    "update_weights_interval": 1
+  },
+  "limitation": "CISPO parser resolution, actual sampling-mask alignment, first-update mismatch and local update direction still require its allocated GPU run.",
+  "paid_api_calls": 0,
+  "gpu_jobs_submitted": 0
+}
