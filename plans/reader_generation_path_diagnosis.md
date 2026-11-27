@@ -1,0 +1,27 @@
+# Diagnose the failed cached generation control
+
+The first cached diagnostic failed the frozen prefix-equality guard before
+its first result. Do not use that generation as an equivalent capability
+control. Preserve its log and inputs. No lens scores or states changed.
+
+Use the first frozen arithmetic question to compare32 greedy tokens from:
+manual uncached forwarding, generate(use_cache=False), generate(use_cache=True),
+and manual native-cache forwarding without an explicit mask. Record every
+token sequence and first mismatch before interpreting. Also compare native
+prefill logits with an explicit all-ones mask and with a native cache.
+The manual uncached reference must match the saved12-token prefix exactly.
+
+Complete the first two frozen questions without cache, maximum256 tokens,
+and record raw native thinking/final-channel output. These are diagnostic
+examples, not a complete new capability evaluation. This cheaply checks
+whether the benchmark's proposed intermediates are written in normal output.
+
+If a cached path reproduces32 reference tokens exactly, it can replace the
+failed generation path under the existing completion repair plan. If no
+cached path passes, do not run the conditional74-question cached stage.
+Keep untested capability states unknown and make no hidden-computation
+claim from the bounded token comparison. No prefix guard is relaxed.
+
+One MI210 devel allocation, maximum5 minutes (300 GPU seconds), within the
+remaining five-hour program. Preserve the earlier failed diagnostics. This
+is a repair diagnosis under standing inference-repair authorization.

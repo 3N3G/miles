@@ -215,16 +215,24 @@
       "gpus": 1,
       "maximum_allocation_seconds": 300,
       "maximum_gpu_seconds": 300,
-      "status": "RUNNING",
-      "reserved_gpu_seconds": 300,
-      "observed_allocation_seconds": 33
+      "status": "FAILED",
+      "reserved_gpu_seconds": 0,
+      "observed_allocation_seconds": 75,
+      "actual_allocation_seconds": 75,
+      "actual_gpu_seconds": 75
     }
   ],
-  "used_gpu_seconds": 7754,
-  "remaining_gpu_seconds": 10246,
+  "used_gpu_seconds": 7829,
+  "remaining_gpu_seconds": 10171,
   "accounting": "One allocation at a time. Count every GPU in an exclusive node, including loading and idle time. Reserve the full limit of each submitted job. Queue time and unrelated jobs do not count.",
-  "pending_reservations": [],
-  "unreserved_gpu_seconds": 9946,
+  "pending_reservations": [
+    {
+      "run_name": "reader-generation-path-diagnosis-v1",
+      "maximum_gpu_seconds": 300,
+      "reason": "plans/reader_generation_path_diagnosis.md"
+    }
+  ],
+  "unreserved_gpu_seconds": 9871,
   "reserved_gpu_seconds": 300,
-  "observed_at": "2026-11-27T07:04:24.655886+00:00"
+  "observed_at": "2026-11-27T07:08:24.458253+00:00"
 }

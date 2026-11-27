@@ -442,5 +442,14 @@
     "files": 41,
     "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/d9eca5bbab9c88adf2fc75c5df459403a22dd28d/inkling-interp/extended-unit-phase-v2",
     "verified_at": "2026-11-27T06:57:50.060423+00:00"
+  },
+  {
+    "stage": "native-reader-lens-v2",
+    "repo": "3N3G/internalization-runs",
+    "revision": "7a872cf5e31507a581c2daaa2dd74ee7035774ff",
+    "private": true,
+    "files": 7,
+    "url": "https://huggingface.co/datasets/3N3G/internalization-runs/tree/7a872cf5e31507a581c2daaa2dd74ee7035774ff/inkling-interp/native-reader-lens-v2",
+    "verified_at": "2026-11-27T07:05:04.386155+00:00"
   }
 ]
