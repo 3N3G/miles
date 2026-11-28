@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): CISPO remains queued with zero updates. Slurm withdrew the start estimate. Monitor healthy. Jobs: hpcfund/563768 PENDING; hpcfund/562347 FAILED
-  Next: Keep foreground supervision of563768 and observer1903615. Validate initial weights, native replay, baseline, optimizer progress and final artifacts on start. One-MI350/retract chan
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): CISPO remains queued with no inference or updates. Monitor healthy. Latest tentative start12:23 Eastern. Jobs: hpcfund/563768 PENDING; hpcfund/562347 FAILED
+  Next: Supervise563768 and observer1903615 through terminal state and final artifacts. Check initial weights, native replay and learning diagnostics on start. Optional one-MI350/retract c
 
 ## Next / blocked
 
