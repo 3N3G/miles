@@ -1,0 +1,12 @@
+{
+  "commit_url": "https://huggingface.co/datasets/3N3G/internalization-runs/commit/7325b16a87195b8bb5838b9b97935a27f2ede086",
+  "path": "miles/gsm8k-cispo-v1",
+  "verified_files": 34,
+  "verified_bytes": 8018670,
+  "job_id": "562347",
+  "state": "FAILED",
+  "allocated_seconds": 34,
+  "answers": 0,
+  "optimizer_updates": 0,
+  "exclusion": "Mutable upload.log written after upload"
+}
