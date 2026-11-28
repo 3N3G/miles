@@ -1,0 +1,36 @@
+{
+  "checked_at_utc": "2026-11-28T05:15:48.094743+00:00",
+  "status": "four_mi210_recommendation_withdrawn_before_submission",
+  "earlier_advice": "Four MI210 GPUs were recommended for preserving in_place pauses and actor DP2, described as runtime-unvalidated.",
+  "correction": "Historical tests with the exact current image already failed basic GPU operations on MI210. Describing compatibility as merely unvalidated omitted material negative evidence.",
+  "same_image_uri": "docker://rocm/sgl-dev@sha256:25597c01ab3fc8e77bfeb48434262c535080dc6857c8d591165b4b9304425019",
+  "image_identity_owner": "experiments/tcs_async_rl/qualification.proposed.json",
+  "prior_findings": [
+    {
+      "job_id": "534037",
+      "document": "experiments/tcs_async_rl/MI210_COMPATIBILITY_20261120.md",
+      "result": "Torch-only FP32 tensor creation failed with hipErrorInvalidImage before SGLang/AITER import."
+    },
+    {
+      "job_id": "534048",
+      "document": "experiments/tcs_async_rl/MI210_BUNDLED_ROCM_20261120.md",
+      "result": "Bundled-userspace variant failed GPU initialization."
+    },
+    {
+      "job_id": "534065",
+      "document": "experiments/tcs_async_rl/VLLM_GROUP_REPAIR_20261120.md",
+      "result": "Primary image failed basic Torch operations. A different vLLM-only image passed, but lacks SGLang and trainer dependencies."
+    }
+  ],
+  "implication": "Do not submit a GSM8K MI210 training variant using this known-failing image. A compatible training runtime would first need qualification. No current evidence proves the old failure resolved.",
+  "active_job": "563768",
+  "active_job_change": "None. Original eight-MI350 retry remains queued and supervised.",
+  "current_options": [
+    "Keep the original eight-MI350 job.",
+    "If the user approves the scheduling change, prepare the one-MI350 colocated/retract variant."
+  ],
+  "earlier_question_superseded": true,
+  "new_jobs_submitted": 0,
+  "new_gpu_seconds": 0,
+  "new_paid_judge_calls": 0
+}
