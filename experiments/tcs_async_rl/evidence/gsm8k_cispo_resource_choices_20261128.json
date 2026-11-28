@@ -1,0 +1,45 @@
+{
+  "checked_at_utc": "2026-11-28T03:41:49.137064+00:00",
+  "status": "resource_choices_require_user_decision",
+  "actual_job": {
+    "job_id": "563768",
+    "state": "PENDING",
+    "configuration": "Original8 MI350, actor2, rollout6, fully-async in_place",
+    "estimated_start_eastern": "2026-11-28T09:23:59-05:00"
+  },
+  "choices": [
+    {
+      "id": "four_mi210",
+      "partition": "mi2104x",
+      "physical_gpus": 4,
+      "actor_gpus": 2,
+      "rollout_gpus": 2,
+      "pause_generation_mode": "in_place",
+      "estimated_start_eastern": "2026-11-28T02:57:08-05:00",
+      "limit": "GPU architecture and rollout count change. Runtime compatibility has not been validated."
+    },
+    {
+      "id": "one_mi350",
+      "partition": "mi3501x",
+      "physical_gpus": 1,
+      "actor_gpus": 1,
+      "rollout_gpus": 1,
+      "pause_generation_mode": "retract",
+      "colocate": true,
+      "offload_train": true,
+      "offload_rollout": true,
+      "cpus_per_task": 16,
+      "estimated_start_eastern": "2026-11-28T01:19:21-05:00",
+      "limit": "Colocation and retract pauses do not validate the original in_place async path."
+    }
+  ],
+  "unchanged": "Pinned model, data membership, prompt, numeric reward, CISPO loss, batch128/four questions x32, optimizer, sampler, at most250 updates. Requested119 allocated minutes plus34 prior seconds fits7200-second arm cap.",
+  "all_forecasts_nonbinding": true,
+  "new_resource_variant_submissions": 0,
+  "test_only_ids_not_jobs": [
+    "563770",
+    "563771",
+    "563776"
+  ],
+  "recommendation": "Four MI210s preserve in_place and actor DP2 while reducing the forecast wait. Keep original job queued until the user decides."
+}
