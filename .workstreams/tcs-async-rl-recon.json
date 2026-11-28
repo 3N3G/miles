@@ -4450,15 +4450,22 @@
       "actor": "codex",
       "summary": "Reference: +5.1 points, interval includes zero. CISPO CLI repair passed13 CPU checks. Retry queued.",
       "revision": 456
+    },
+    {
+      "id": "5af8e9b5-f157-42be-8d43-d07abd8cf988",
+      "at": "2026-11-28T03:46:12.350621Z",
+      "actor": "codex",
+      "summary": "CISPO CLI repair retry queued and supervised. Reference gained5.1 points with uncertainty including zero.",
+      "revision": 457
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "Reference: +5.1 points, interval includes zero. CISPO CLI repair passed13 CPU checks. Retry queued.",
-  "nextAction": "Watch CISPO retry563768 and observer1903615. Validate the real parsed support-replay setting, baseline, reward groups and updates. Keep the two-hour arm cap.",
+  "summary": "CISPO CLI repair retry queued and supervised. Reference gained5.1 points with uncertainty including zero.",
+  "nextAction": "Watch563768 and observer1903615 through real native parsing, baseline and updates. Resource variants wait for the user. Keep the two-hour CISPO cap.",
   "owner": "Codex",
-  "revision": 456,
-  "updatedAt": "2026-11-28T03:39:15.167884Z"
+  "revision": 457,
+  "updatedAt": "2026-11-28T03:46:12.350621Z"
 }
