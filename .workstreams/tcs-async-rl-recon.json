@@ -4492,15 +4492,22 @@
       "actor": "codex",
       "summary": "CISPO remains queued with no inference or updates. Monitor healthy. Latest tentative start12:23 Eastern.",
       "revision": 462
+    },
+    {
+      "id": "4fb71b9c-ef48-4b87-a8b4-64c25dac9d39",
+      "at": "2026-11-28T08:20:11.831768Z",
+      "actor": "codex",
+      "summary": "CISPO retry still queued with no additional GPU time. Both monitors healthy. Tentative start12:23 Eastern.",
+      "revision": 463
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "CISPO remains queued with no inference or updates. Monitor healthy. Latest tentative start12:23 Eastern.",
-  "nextAction": "Supervise563768 and observer1903615 through terminal state and final artifacts. Check initial weights, native replay and learning diagnostics on start. Optional one-MI350/retract choice remains open.",
+  "summary": "CISPO retry still queued with no additional GPU time. Both monitors healthy. Tentative start12:23 Eastern.",
+  "nextAction": "Keep foreground supervision of563768 and observer1903615. On start compare the170 initial native parameter checksums, validate replay and learning diagnostics. Finish checkpoint, W&B and HF audits after terminal state.",
   "owner": "Codex",
-  "revision": 462,
-  "updatedAt": "2026-11-28T07:24:47.166353Z"
+  "revision": 463,
+  "updatedAt": "2026-11-28T08:20:11.831768Z"
 }
