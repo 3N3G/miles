@@ -1,0 +1,22 @@
+{
+  "checked_at_utc": "2026-11-28T01:36:35.290467+00:00",
+  "kind": "VM storage observation and quieter foreground wait; no scientific or GPU configuration change",
+  "free_vm_bytes": 2750705664,
+  "previous_checked_free_GiB": 3.21,
+  "subsequent_observed_free_GiB": 2.61,
+  "cause": "Unidentified. Recent-file metadata checks do not establish which writes caused the drop.",
+  "large_open_deleted_files_over10MiB": 0,
+  "credentials_or_message_contents_read": false,
+  "active_codex_databases_or_logs_modified": false,
+  "other_project_files_modified": false,
+  "foreground_wait_pid": 1895628,
+  "foreground_tool_session": 90171,
+  "foreground_read_interval_seconds": 5,
+  "foreground_output": "Only scheduler state, optimizer count or alert changes. Poll tool returns within55 seconds.",
+  "foreground_space_alert_GiB": 2.25,
+  "background_observer_space_reserve_GiB": 2,
+  "background_observer_pid": 1830349,
+  "background_observer_error": null,
+  "approved_gpu_allocation_changed": false,
+  "new_gpu_jobs": 0
+}
