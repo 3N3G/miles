@@ -4513,15 +4513,22 @@
       "actor": "codex",
       "summary": "CISPO queued. Recovered133 MiB from verified old receipt copies. Monitor healthy. Tentative start15:24 Eastern.",
       "revision": 465
+    },
+    {
+      "id": "f4119414-e529-4288-b6b1-a5eeb0ddfa97",
+      "at": "2026-11-28T11:08:06.089954Z",
+      "actor": "codex",
+      "summary": "CISPO retry still queued. Monitor healthy and VM free2.44 GiB. Tentative start12:53 Eastern.",
+      "revision": 466
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "CISPO queued. Recovered133 MiB from verified old receipt copies. Monitor healthy. Tentative start15:24 Eastern.",
-  "nextAction": "Keep foreground supervision of563768 and observer1903615 through final artifacts. Validate fresh weights, replay masks and optimizer diagnostics on start. Optional one-MI350/retract choice remains open.",
+  "summary": "CISPO retry still queued. Monitor healthy and VM free2.44 GiB. Tentative start12:53 Eastern.",
+  "nextAction": "Keep foreground supervision of563768 and observer1903615. Watch VM reserve. On start validate fresh weights, native replay, optimizer progress and final artifacts. Optional one-MI350/retract awaits user choice.",
   "owner": "Codex",
-  "revision": 465,
-  "updatedAt": "2026-11-28T10:12:28.702543Z"
+  "revision": 466,
+  "updatedAt": "2026-11-28T11:08:06.089954Z"
 }

@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): CISPO queued. Recovered133 MiB from verified old receipt copies. Monitor healthy. Tentative start15:24 Eastern. Jobs: hpcfund/563768 PENDING; hpcfund/562347 FAILED
-  Next: Keep foreground supervision of563768 and observer1903615 through final artifacts. Validate fresh weights, replay masks and optimizer diagnostics on start. Optional one-MI350/retrac
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): CISPO retry still queued. Monitor healthy and VM free2.44 GiB. Tentative start12:53 Eastern. Jobs: hpcfund/563768 PENDING; hpcfund/562347 FAILED
+  Next: Keep foreground supervision of563768 and observer1903615. Watch VM reserve. On start validate fresh weights, native replay, optimizer progress and final artifacts. Optional one-MI3
 
 ## Next / blocked
 
