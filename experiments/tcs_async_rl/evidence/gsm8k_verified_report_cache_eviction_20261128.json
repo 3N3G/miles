@@ -1,0 +1,1242 @@
+{
+  "status": "evicted_verified_cache_copies",
+  "checked_at_utc": "2026-11-28T01:19:58.435156+00:00",
+  "repo": "3N3G/internalization-runs",
+  "groups": [
+    {
+      "run": "easy-overfit-v9",
+      "revision": "30f1b70453f4449740d4d4a003919cf5dc5205d1",
+      "verified": [
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_6.parquet",
+          "bytes": 3764310,
+          "sha256": "a0c8dbf1571a34136d2f10442ac0abb5cfd98d3b598fecfca0dfecafaab0ab11",
+          "mtime_ns": 1795252008179241570
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_2.parquet",
+          "bytes": 3793796,
+          "sha256": "95c02e4fd8f990aba1bc7fb558bb877ad18de63ec74ec878c170cba745179326",
+          "mtime_ns": 1795250438639361096
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_22.parquet",
+          "bytes": 4593102,
+          "sha256": "37bd03c356f8f422ae25932f2fc4704ed90f7a3d18467503eaa168ad5cee4765",
+          "mtime_ns": 1795260093595893551
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_13.parquet",
+          "bytes": 1841920,
+          "sha256": "314141aafd297a10d4822889c2f4e01f86ce5624afe663d0f8a7bcc3e7234391",
+          "mtime_ns": 1795255463532748324
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_11.parquet",
+          "bytes": 2193749,
+          "sha256": "e6136ea1553d3d968d9f191de701d994601360d5b9ae3600891b7fb4259ffcdd",
+          "mtime_ns": 1795254549859724100
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_25.parquet",
+          "bytes": 1594059,
+          "sha256": "dc095e7d5e25a21f101717c66693b8001321e1dd41518d9168dcb412c788f8b3",
+          "mtime_ns": 1795261837168748530
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_5.parquet",
+          "bytes": 2216491,
+          "sha256": "35d31e7c11f2fb79b166efdf6c6ecf413083a59efd2f8c266318206343c54d18",
+          "mtime_ns": 1795251410418860952
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_16.parquet",
+          "bytes": 1222973,
+          "sha256": "4f9a7b6ae9838e1594e3ce69739259dc10b0a5bc0e4709163f679c954d124bb9",
+          "mtime_ns": 1795256740974939675
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_10.parquet",
+          "bytes": 1352712,
+          "sha256": "675718b76c91ecdbaa4194e8db2680369fa9923f145c4b44953bb9de5bc0455c",
+          "mtime_ns": 1795254052520353126
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_21.parquet",
+          "bytes": 2277256,
+          "sha256": "6e8649196ecd59f088acbd45bd48ce68ff61a8a449e0a429f89a15e2e2e31f77",
+          "mtime_ns": 1795259413666143717
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_1.parquet",
+          "bytes": 4813478,
+          "sha256": "c195acd9197eae16fa7fe50a458ebd4803d0b1c1c5a5b76d6edce33e3e1202cb",
+          "mtime_ns": 1795249747098421431
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_24.parquet",
+          "bytes": 5309450,
+          "sha256": "a8cf08d55a3610a2bac7544a08c738fc19dffe592480463cc80da90198495268",
+          "mtime_ns": 1795261396037958175
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_8.parquet",
+          "bytes": 5314402,
+          "sha256": "01986cabf266c44090c5d1c95289c09e62ec4fa27b20a8f6a122aaac6d139d18",
+          "mtime_ns": 1795253176715632149
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_3.parquet",
+          "bytes": 2318003,
+          "sha256": "6d5ea481ec878aa6c62d2348c86d0588c088bae9b2ebcba66936cf75eefa7178",
+          "mtime_ns": 1795250842031872561
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_18.parquet",
+          "bytes": 3904682,
+          "sha256": "a841d2683d6699a3b3cac44ee1b9d72d7b5abec46e0dc43234fc5cba14d07baa",
+          "mtime_ns": 1795257971377668836
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_14.parquet",
+          "bytes": 3650944,
+          "sha256": "b734a377b37dff9130425370e2c02f1e52331f13d06a454213fb54a74677e512",
+          "mtime_ns": 1795255913130691668
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_4.parquet",
+          "bytes": 768369,
+          "sha256": "89fe98c5a56fb8668b52db94bb5db12486edfda19f7fb53d27c447e8c43f48ba",
+          "mtime_ns": 1795251065768828602
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_9.parquet",
+          "bytes": 2460008,
+          "sha256": "c273b8fc17e98a288c34d15abe73aa9596f4c689e5f7355ff374c3b212b08f51",
+          "mtime_ns": 1795253621477558734
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_7.parquet",
+          "bytes": 1455281,
+          "sha256": "c660472120fb77b798974c9fcbd1c08d0b3ca5d2deec88123e735ec9330685b4",
+          "mtime_ns": 1795252364644434830
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_23.parquet",
+          "bytes": 3892691,
+          "sha256": "88e8c5d0a70d4e18c1e8d30a023be7d8adc2a5fd8660eec6845c8a803aa663f3",
+          "mtime_ns": 1795260622178352676
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_20.parquet",
+          "bytes": 2545286,
+          "sha256": "625acdd6bbb0c3b519692c587c3c4ae540f1d80b8ce4bee2ea12680a71a6782c",
+          "mtime_ns": 1795259049627014051
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_26.parquet",
+          "bytes": 1416623,
+          "sha256": "52c7c96345d12c13bdf6fdbbeaf7766cfe241bab766cc7dd8dd48a7d709b12f1",
+          "mtime_ns": 1795262310036862622
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_15.parquet",
+          "bytes": 3034520,
+          "sha256": "085670cc4c839af700d170bd865ef369580563f960d3d67bf002df7a51775f7f",
+          "mtime_ns": 1795256345020475357
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_12.parquet",
+          "bytes": 1829541,
+          "sha256": "9b490925bbb075083f37b3ae203290a4af99e884cc42f6b68e0450d31fe73ea6",
+          "mtime_ns": 1795255062555229649
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_0.parquet",
+          "bytes": 2675479,
+          "sha256": "a6953cfe8db6cd1531f39547b213b6e2b72379dc48693965bb8045562e141260",
+          "mtime_ns": 1795248994742202042
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_19.parquet",
+          "bytes": 1517675,
+          "sha256": "bf6881822e3818b34b22a52e9a980679f9834f8601166d5cf86fd232592919cb",
+          "mtime_ns": 1795258435969709099
+        },
+        {
+          "path": "miles/easy-overfit-v9/dashboard_columns/rollout_17.parquet",
+          "bytes": 2601537,
+          "sha256": "03205cf57b701fd377535910cba30b5adaf2d9a47d3a05a5329cd0daf1438783",
+          "mtime_ns": 1795257262264491407
+        },
+        {
+          "path": "miles/easy-overfit-v9/events/actor_cell00000_rank00001.jsonl",
+          "bytes": 1080393,
+          "sha256": "016fc2006ed0b6b823c4fa55cbb86ef61d464eed5bcd7cf83c5113fc3d558ad1",
+          "mtime_ns": 1795261987696057906
+        },
+        {
+          "path": "miles/easy-overfit-v9/events/actor_cell00000_rank00000.jsonl",
+          "bytes": 942358,
+          "sha256": "7267f38b959a0a57b7c6f62948945cbffa92f68ca8167c5fc1cee65a0174d573",
+          "mtime_ns": 1795262363089323940
+        },
+        {
+          "path": "miles/easy-overfit-v9/events/inference_controller.jsonl",
+          "bytes": 1306022,
+          "sha256": "44a07093f332e0a6f558f12dce03dfbf06189791ba7b4cf935e58ea7b51005fb",
+          "mtime_ns": 1795259176288103995
+        },
+        {
+          "path": "miles/easy-overfit-v9/events/rollout_executor.jsonl",
+          "bytes": 1054742,
+          "sha256": "bde4abf53959d4aada9dadbcb4dca5b7d1e193354a630fd69ec84002d514d1cd",
+          "mtime_ns": 1795262398485631898
+        },
+        {
+          "path": "miles/easy-overfit-v9/events/worker_manager.jsonl",
+          "bytes": 1004630,
+          "sha256": "7cd9e99d5273eab35cdb00d9226700949cc56d2b2228fbd9348517dd1736c570",
+          "mtime_ns": 1795262249316334080
+        },
+        {
+          "path": "miles/easy-overfit-v9/events/trainer_controller_actor.jsonl",
+          "bytes": 1011172,
+          "sha256": "1ba71fc0c566edc27cd0d4d6b6049eb5916da5b0f272330cd0e89c2079c14346",
+          "mtime_ns": 1795262363101324044
+        }
+      ],
+      "source_stat": {
+        "dashboard_columns/rollout_6.parquet": {
+          "bytes": 3764310,
+          "sha256": "a0c8dbf1571a34136d2f10442ac0abb5cfd98d3b598fecfca0dfecafaab0ab11",
+          "mtime_ns": 1795252008179241570
+        },
+        "dashboard_columns/rollout_2.parquet": {
+          "bytes": 3793796,
+          "sha256": "95c02e4fd8f990aba1bc7fb558bb877ad18de63ec74ec878c170cba745179326",
+          "mtime_ns": 1795250438639361096
+        },
+        "dashboard_columns/rollout_22.parquet": {
+          "bytes": 4593102,
+          "sha256": "37bd03c356f8f422ae25932f2fc4704ed90f7a3d18467503eaa168ad5cee4765",
+          "mtime_ns": 1795260093595893551
+        },
+        "dashboard_columns/rollout_13.parquet": {
+          "bytes": 1841920,
+          "sha256": "314141aafd297a10d4822889c2f4e01f86ce5624afe663d0f8a7bcc3e7234391",
+          "mtime_ns": 1795255463532748324
+        },
+        "dashboard_columns/rollout_11.parquet": {
+          "bytes": 2193749,
+          "sha256": "e6136ea1553d3d968d9f191de701d994601360d5b9ae3600891b7fb4259ffcdd",
+          "mtime_ns": 1795254549859724100
+        },
+        "dashboard_columns/rollout_25.parquet": {
+          "bytes": 1594059,
+          "sha256": "dc095e7d5e25a21f101717c66693b8001321e1dd41518d9168dcb412c788f8b3",
+          "mtime_ns": 1795261837168748530
+        },
+        "dashboard_columns/rollout_5.parquet": {
+          "bytes": 2216491,
+          "sha256": "35d31e7c11f2fb79b166efdf6c6ecf413083a59efd2f8c266318206343c54d18",
+          "mtime_ns": 1795251410418860952
+        },
+        "dashboard_columns/rollout_16.parquet": {
+          "bytes": 1222973,
+          "sha256": "4f9a7b6ae9838e1594e3ce69739259dc10b0a5bc0e4709163f679c954d124bb9",
+          "mtime_ns": 1795256740974939675
+        },
+        "dashboard_columns/rollout_10.parquet": {
+          "bytes": 1352712,
+          "sha256": "675718b76c91ecdbaa4194e8db2680369fa9923f145c4b44953bb9de5bc0455c",
+          "mtime_ns": 1795254052520353126
+        },
+        "dashboard_columns/rollout_21.parquet": {
+          "bytes": 2277256,
+          "sha256": "6e8649196ecd59f088acbd45bd48ce68ff61a8a449e0a429f89a15e2e2e31f77",
+          "mtime_ns": 1795259413666143717
+        },
+        "dashboard_columns/rollout_1.parquet": {
+          "bytes": 4813478,
+          "sha256": "c195acd9197eae16fa7fe50a458ebd4803d0b1c1c5a5b76d6edce33e3e1202cb",
+          "mtime_ns": 1795249747098421431
+        },
+        "dashboard_columns/rollout_24.parquet": {
+          "bytes": 5309450,
+          "sha256": "a8cf08d55a3610a2bac7544a08c738fc19dffe592480463cc80da90198495268",
+          "mtime_ns": 1795261396037958175
+        },
+        "dashboard_columns/rollout_8.parquet": {
+          "bytes": 5314402,
+          "sha256": "01986cabf266c44090c5d1c95289c09e62ec4fa27b20a8f6a122aaac6d139d18",
+          "mtime_ns": 1795253176715632149
+        },
+        "dashboard_columns/rollout_3.parquet": {
+          "bytes": 2318003,
+          "sha256": "6d5ea481ec878aa6c62d2348c86d0588c088bae9b2ebcba66936cf75eefa7178",
+          "mtime_ns": 1795250842031872561
+        },
+        "dashboard_columns/rollout_18.parquet": {
+          "bytes": 3904682,
+          "sha256": "a841d2683d6699a3b3cac44ee1b9d72d7b5abec46e0dc43234fc5cba14d07baa",
+          "mtime_ns": 1795257971377668836
+        },
+        "dashboard_columns/rollout_14.parquet": {
+          "bytes": 3650944,
+          "sha256": "b734a377b37dff9130425370e2c02f1e52331f13d06a454213fb54a74677e512",
+          "mtime_ns": 1795255913130691668
+        },
+        "dashboard_columns/rollout_4.parquet": {
+          "bytes": 768369,
+          "sha256": "89fe98c5a56fb8668b52db94bb5db12486edfda19f7fb53d27c447e8c43f48ba",
+          "mtime_ns": 1795251065768828602
+        },
+        "dashboard_columns/rollout_9.parquet": {
+          "bytes": 2460008,
+          "sha256": "c273b8fc17e98a288c34d15abe73aa9596f4c689e5f7355ff374c3b212b08f51",
+          "mtime_ns": 1795253621477558734
+        },
+        "dashboard_columns/rollout_7.parquet": {
+          "bytes": 1455281,
+          "sha256": "c660472120fb77b798974c9fcbd1c08d0b3ca5d2deec88123e735ec9330685b4",
+          "mtime_ns": 1795252364644434830
+        },
+        "dashboard_columns/rollout_23.parquet": {
+          "bytes": 3892691,
+          "sha256": "88e8c5d0a70d4e18c1e8d30a023be7d8adc2a5fd8660eec6845c8a803aa663f3",
+          "mtime_ns": 1795260622178352676
+        },
+        "dashboard_columns/rollout_20.parquet": {
+          "bytes": 2545286,
+          "sha256": "625acdd6bbb0c3b519692c587c3c4ae540f1d80b8ce4bee2ea12680a71a6782c",
+          "mtime_ns": 1795259049627014051
+        },
+        "dashboard_columns/rollout_26.parquet": {
+          "bytes": 1416623,
+          "sha256": "52c7c96345d12c13bdf6fdbbeaf7766cfe241bab766cc7dd8dd48a7d709b12f1",
+          "mtime_ns": 1795262310036862622
+        },
+        "dashboard_columns/rollout_15.parquet": {
+          "bytes": 3034520,
+          "sha256": "085670cc4c839af700d170bd865ef369580563f960d3d67bf002df7a51775f7f",
+          "mtime_ns": 1795256345020475357
+        },
+        "dashboard_columns/rollout_12.parquet": {
+          "bytes": 1829541,
+          "sha256": "9b490925bbb075083f37b3ae203290a4af99e884cc42f6b68e0450d31fe73ea6",
+          "mtime_ns": 1795255062555229649
+        },
+        "dashboard_columns/rollout_0.parquet": {
+          "bytes": 2675479,
+          "sha256": "a6953cfe8db6cd1531f39547b213b6e2b72379dc48693965bb8045562e141260",
+          "mtime_ns": 1795248994742202042
+        },
+        "dashboard_columns/rollout_19.parquet": {
+          "bytes": 1517675,
+          "sha256": "bf6881822e3818b34b22a52e9a980679f9834f8601166d5cf86fd232592919cb",
+          "mtime_ns": 1795258435969709099
+        },
+        "dashboard_columns/rollout_17.parquet": {
+          "bytes": 2601537,
+          "sha256": "03205cf57b701fd377535910cba30b5adaf2d9a47d3a05a5329cd0daf1438783",
+          "mtime_ns": 1795257262264491407
+        },
+        "events/actor_cell00000_rank00001.jsonl": {
+          "bytes": 1080393,
+          "sha256": "016fc2006ed0b6b823c4fa55cbb86ef61d464eed5bcd7cf83c5113fc3d558ad1",
+          "mtime_ns": 1795261987696057906
+        },
+        "events/actor_cell00000_rank00000.jsonl": {
+          "bytes": 942358,
+          "sha256": "7267f38b959a0a57b7c6f62948945cbffa92f68ca8167c5fc1cee65a0174d573",
+          "mtime_ns": 1795262363089323940
+        },
+        "events/inference_controller.jsonl": {
+          "bytes": 1306022,
+          "sha256": "44a07093f332e0a6f558f12dce03dfbf06189791ba7b4cf935e58ea7b51005fb",
+          "mtime_ns": 1795259176288103995
+        },
+        "events/rollout_executor.jsonl": {
+          "bytes": 1054742,
+          "sha256": "bde4abf53959d4aada9dadbcb4dca5b7d1e193354a630fd69ec84002d514d1cd",
+          "mtime_ns": 1795262398485631898
+        },
+        "events/worker_manager.jsonl": {
+          "bytes": 1004630,
+          "sha256": "7cd9e99d5273eab35cdb00d9226700949cc56d2b2228fbd9348517dd1736c570",
+          "mtime_ns": 1795262249316334080
+        },
+        "events/trainer_controller_actor.jsonl": {
+          "bytes": 1011172,
+          "sha256": "1ba71fc0c566edc27cd0d4d6b6049eb5916da5b0f272330cd0e89c2079c14346",
+          "mtime_ns": 1795262363101324044
+        }
+      },
+      "skipped_missing_from_archive": []
+    },
+    {
+      "run": "easy-medium-236-v1",
+      "revision": "1e1d18a3613dcb38557b34921d7381115480c285",
+      "verified": [
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour07/example-step-122-group-53.json",
+          "bytes": 192119,
+          "sha256": "b2f905bb501df3589ac50473883d1648f9a52e633053935084d4a6a03b7be537",
+          "mtime_ns": 1795634760249006089
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour07/example-step-122-group-54.json",
+          "bytes": 252841,
+          "sha256": "ea9e7c5d0ab5a927bac9d7f624e5119ba3103294b3ae6acbfc6186a36f54267f",
+          "mtime_ns": 1795634763141425266
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour06/example-step-121-group-48.json",
+          "bytes": 274615,
+          "sha256": "6f9e2443285386ebafa6977a6a8542a92b49929266f95e6c4958f668199099e2",
+          "mtime_ns": 1795631737667661620
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour06/example-step-121-group-50.json",
+          "bytes": 123369,
+          "sha256": "3ea189ef090f77e86c3e2614bc4431b93a0d4ff1f6619fd33389b18f4c5c536e",
+          "mtime_ns": 1795631744830637937
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour08/example-step-126-group-68.json",
+          "bytes": 440208,
+          "sha256": "dfd64c0eebf852724c153e89c86e1ebca2b6e2ff12fb0f6566fee2986eeaef0e",
+          "mtime_ns": 1795637576829135941
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour08/example-step-126-group-71.json",
+          "bytes": 314522,
+          "sha256": "6dde26125dbab8dd2d7d98ee0c98381357e73cf48452aefa67e964e6a717baa8",
+          "mtime_ns": 1795637587336269253
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour04/example-step-116-group-32.json",
+          "bytes": 80129,
+          "sha256": "e2d12cb916a7375548db23a3441fcd20229569393bcad62c1691458ddc307006",
+          "mtime_ns": 1795625401802459289
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour04/example-step-115-group-24.json",
+          "bytes": 313151,
+          "sha256": "ef77a347dfce3a7fa0f7a4b037414ec4061da0b85c55dbf49177d98b56d245b2",
+          "mtime_ns": 1795625377938494666
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-111-group-9.json",
+          "bytes": 161579,
+          "sha256": "b312dcc7d893bc4479ec41e588d5609c8fbd40b96bd80244c6ce6518f5d7667a",
+          "mtime_ns": 1795620300476241981
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-112-group-13.json",
+          "bytes": 243911,
+          "sha256": "ad13c28d968ede3f7dc6f6506f34ee571736537d9309ca330bf00fa947fd9693",
+          "mtime_ns": 1795620315775573176
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-112-group-14.json",
+          "bytes": 133794,
+          "sha256": "edd056c931bde0df3f2e188b540baef5dccc8377ad18efb25a62c63c7a683bb7",
+          "mtime_ns": 1795620318807305608
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-111-group-7.json",
+          "bytes": 210459,
+          "sha256": "a4abb8f295f1cb9fc53702fb6009a7968c1338d648ae987a03ce757832ed776f",
+          "mtime_ns": 1795620296806579050
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-111-group-11.json",
+          "bytes": 493707,
+          "sha256": "de2595b0698900b93bf42ca092b206a0cb07901f6be5b0e8278a6d47d604cb6e",
+          "mtime_ns": 1795620307823298008
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-110-group-4.json",
+          "bytes": 159173,
+          "sha256": "def42851426a0852bd087a5127a6b0e99bf78439362b640a20e34b50e0f42c25",
+          "mtime_ns": 1795620287600137328
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-110-group-6.json",
+          "bytes": 116764,
+          "sha256": "d44879578d858dde84df67e129acc172afe5d2a2aba697ccff104573a749c433",
+          "mtime_ns": 1795620292465109460
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-112-group-15.json",
+          "bytes": 162373,
+          "sha256": "ff4a7204b898288bf57c55b1533b350e85d591ea93a090e03e167ce5bf4261cc",
+          "mtime_ns": 1795620320728818225
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-111-group-10.json",
+          "bytes": 256747,
+          "sha256": "1df2c2a82f953e77ccf7172419eeafabd7b942f38273f1f9b0fd564f88220483",
+          "mtime_ns": 1795620303864073363
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-110-group-5.json",
+          "bytes": 117270,
+          "sha256": "6d587a55eeec5ad93dd81b1cc8d9054f65f5ff606997c4a4d002dfa05b90cfda",
+          "mtime_ns": 1795620290635610625
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-112-group-12.json",
+          "bytes": 227575,
+          "sha256": "79178999b1875b5e1a4106d6427206afcf7e8d877db3f7b117a331c17336d47d",
+          "mtime_ns": 1795620311957766290
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour02/example-step-110-group-8.json",
+          "bytes": 163346,
+          "sha256": "a6d10e18487aad8c1fc4c7ee08c9f207eb5fd8aec203a7b4e02f74d1ab28e141",
+          "mtime_ns": 1795620294149512715
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour05/example-step-117-group-34.json",
+          "bytes": 158035,
+          "sha256": "c61f5380a043299b74a9f5ba91abb1ae71f63369d650a24e922b7ef583ed7bba",
+          "mtime_ns": 1795628159154362816
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour05/example-step-118-group-37.json",
+          "bytes": 266160,
+          "sha256": "98b52099f3434b5642b760e670ce1201d12c2f942ad17b78c9c1d1ac6d4e0b1a",
+          "mtime_ns": 1795628167867164003
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour01/example-step-109-group-0.json",
+          "bytes": 213889,
+          "sha256": "3f9b5d3e329980c099a37afb571cd3881b0fad06b7bf2b104c9a4fe2239e43cc",
+          "mtime_ns": 1795616785592935925
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour01/example-step-109-group-1.json",
+          "bytes": 236344,
+          "sha256": "6b6241af617f360f847903f0d62fe35f8d5432717e9c5cb416532529b0596b15",
+          "mtime_ns": 1795616789096956528
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour01/example-step-109-group-2.json",
+          "bytes": 133161,
+          "sha256": "637d2c8d0177d6bc4e7068375e3de1d486e5eae13170ff3b2097c6db79d81eb0",
+          "mtime_ns": 1795616791994109123
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour01/example-step-109-group-3.json",
+          "bytes": 298618,
+          "sha256": "4b13a64b62b870190246a35f39c8c7307fe9c456a31675b0a279a920a77edab9",
+          "mtime_ns": 1795616794915013258
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour03/example-step-114-group-20.json",
+          "bytes": 178354,
+          "sha256": "bbab5c5e1b609fa9d9ced462445cbd80d10fa8aeebaa16852569ab553a56052a",
+          "mtime_ns": 1795623358076507053
+        },
+        {
+          "path": "miles/easy-medium-236-v1/hourly-reviews/hour03/example-step-114-group-21.json",
+          "bytes": 205703,
+          "sha256": "161e0fd8774d05034c9bea0e6dbe73042afa2a13fcd5111a7da129883826a318",
+          "mtime_ns": 1795623360870660894
+        }
+      ],
+      "source_stat": {
+        "hourly-reviews/hour07/example-step-122-group-53.json": {
+          "bytes": 192119,
+          "sha256": "b2f905bb501df3589ac50473883d1648f9a52e633053935084d4a6a03b7be537",
+          "mtime_ns": 1795634760249006089
+        },
+        "hourly-reviews/hour07/example-step-122-group-54.json": {
+          "bytes": 252841,
+          "sha256": "ea9e7c5d0ab5a927bac9d7f624e5119ba3103294b3ae6acbfc6186a36f54267f",
+          "mtime_ns": 1795634763141425266
+        },
+        "hourly-reviews/hour06/example-step-121-group-48.json": {
+          "bytes": 274615,
+          "sha256": "6f9e2443285386ebafa6977a6a8542a92b49929266f95e6c4958f668199099e2",
+          "mtime_ns": 1795631737667661620
+        },
+        "hourly-reviews/hour06/example-step-121-group-50.json": {
+          "bytes": 123369,
+          "sha256": "3ea189ef090f77e86c3e2614bc4431b93a0d4ff1f6619fd33389b18f4c5c536e",
+          "mtime_ns": 1795631744830637937
+        },
+        "hourly-reviews/hour08/example-step-126-group-68.json": {
+          "bytes": 440208,
+          "sha256": "dfd64c0eebf852724c153e89c86e1ebca2b6e2ff12fb0f6566fee2986eeaef0e",
+          "mtime_ns": 1795637576829135941
+        },
+        "hourly-reviews/hour08/example-step-126-group-71.json": {
+          "bytes": 314522,
+          "sha256": "6dde26125dbab8dd2d7d98ee0c98381357e73cf48452aefa67e964e6a717baa8",
+          "mtime_ns": 1795637587336269253
+        },
+        "hourly-reviews/hour04/example-step-116-group-32.json": {
+          "bytes": 80129,
+          "sha256": "e2d12cb916a7375548db23a3441fcd20229569393bcad62c1691458ddc307006",
+          "mtime_ns": 1795625401802459289
+        },
+        "hourly-reviews/hour04/example-step-115-group-24.json": {
+          "bytes": 313151,
+          "sha256": "ef77a347dfce3a7fa0f7a4b037414ec4061da0b85c55dbf49177d98b56d245b2",
+          "mtime_ns": 1795625377938494666
+        },
+        "hourly-reviews/hour02/example-step-111-group-9.json": {
+          "bytes": 161579,
+          "sha256": "b312dcc7d893bc4479ec41e588d5609c8fbd40b96bd80244c6ce6518f5d7667a",
+          "mtime_ns": 1795620300476241981
+        },
+        "hourly-reviews/hour02/example-step-112-group-13.json": {
+          "bytes": 243911,
+          "sha256": "ad13c28d968ede3f7dc6f6506f34ee571736537d9309ca330bf00fa947fd9693",
+          "mtime_ns": 1795620315775573176
+        },
+        "hourly-reviews/hour02/example-step-112-group-14.json": {
+          "bytes": 133794,
+          "sha256": "edd056c931bde0df3f2e188b540baef5dccc8377ad18efb25a62c63c7a683bb7",
+          "mtime_ns": 1795620318807305608
+        },
+        "hourly-reviews/hour02/example-step-111-group-7.json": {
+          "bytes": 210459,
+          "sha256": "a4abb8f295f1cb9fc53702fb6009a7968c1338d648ae987a03ce757832ed776f",
+          "mtime_ns": 1795620296806579050
+        },
+        "hourly-reviews/hour02/example-step-111-group-11.json": {
+          "bytes": 493707,
+          "sha256": "de2595b0698900b93bf42ca092b206a0cb07901f6be5b0e8278a6d47d604cb6e",
+          "mtime_ns": 1795620307823298008
+        },
+        "hourly-reviews/hour02/example-step-110-group-4.json": {
+          "bytes": 159173,
+          "sha256": "def42851426a0852bd087a5127a6b0e99bf78439362b640a20e34b50e0f42c25",
+          "mtime_ns": 1795620287600137328
+        },
+        "hourly-reviews/hour02/example-step-110-group-6.json": {
+          "bytes": 116764,
+          "sha256": "d44879578d858dde84df67e129acc172afe5d2a2aba697ccff104573a749c433",
+          "mtime_ns": 1795620292465109460
+        },
+        "hourly-reviews/hour02/example-step-112-group-15.json": {
+          "bytes": 162373,
+          "sha256": "ff4a7204b898288bf57c55b1533b350e85d591ea93a090e03e167ce5bf4261cc",
+          "mtime_ns": 1795620320728818225
+        },
+        "hourly-reviews/hour02/example-step-111-group-10.json": {
+          "bytes": 256747,
+          "sha256": "1df2c2a82f953e77ccf7172419eeafabd7b942f38273f1f9b0fd564f88220483",
+          "mtime_ns": 1795620303864073363
+        },
+        "hourly-reviews/hour02/example-step-110-group-5.json": {
+          "bytes": 117270,
+          "sha256": "6d587a55eeec5ad93dd81b1cc8d9054f65f5ff606997c4a4d002dfa05b90cfda",
+          "mtime_ns": 1795620290635610625
+        },
+        "hourly-reviews/hour02/example-step-112-group-12.json": {
+          "bytes": 227575,
+          "sha256": "79178999b1875b5e1a4106d6427206afcf7e8d877db3f7b117a331c17336d47d",
+          "mtime_ns": 1795620311957766290
+        },
+        "hourly-reviews/hour02/example-step-110-group-8.json": {
+          "bytes": 163346,
+          "sha256": "a6d10e18487aad8c1fc4c7ee08c9f207eb5fd8aec203a7b4e02f74d1ab28e141",
+          "mtime_ns": 1795620294149512715
+        },
+        "hourly-reviews/hour05/example-step-117-group-34.json": {
+          "bytes": 158035,
+          "sha256": "c61f5380a043299b74a9f5ba91abb1ae71f63369d650a24e922b7ef583ed7bba",
+          "mtime_ns": 1795628159154362816
+        },
+        "hourly-reviews/hour05/example-step-118-group-37.json": {
+          "bytes": 266160,
+          "sha256": "98b52099f3434b5642b760e670ce1201d12c2f942ad17b78c9c1d1ac6d4e0b1a",
+          "mtime_ns": 1795628167867164003
+        },
+        "hourly-reviews/hour01/example-step-109-group-0.json": {
+          "bytes": 213889,
+          "sha256": "3f9b5d3e329980c099a37afb571cd3881b0fad06b7bf2b104c9a4fe2239e43cc",
+          "mtime_ns": 1795616785592935925
+        },
+        "hourly-reviews/hour01/example-step-109-group-1.json": {
+          "bytes": 236344,
+          "sha256": "6b6241af617f360f847903f0d62fe35f8d5432717e9c5cb416532529b0596b15",
+          "mtime_ns": 1795616789096956528
+        },
+        "hourly-reviews/hour01/example-step-109-group-2.json": {
+          "bytes": 133161,
+          "sha256": "637d2c8d0177d6bc4e7068375e3de1d486e5eae13170ff3b2097c6db79d81eb0",
+          "mtime_ns": 1795616791994109123
+        },
+        "hourly-reviews/hour01/example-step-109-group-3.json": {
+          "bytes": 298618,
+          "sha256": "4b13a64b62b870190246a35f39c8c7307fe9c456a31675b0a279a920a77edab9",
+          "mtime_ns": 1795616794915013258
+        },
+        "hourly-reviews/hour03/example-step-114-group-20.json": {
+          "bytes": 178354,
+          "sha256": "bbab5c5e1b609fa9d9ced462445cbd80d10fa8aeebaa16852569ab553a56052a",
+          "mtime_ns": 1795623358076507053
+        },
+        "hourly-reviews/hour03/example-step-114-group-21.json": {
+          "bytes": 205703,
+          "sha256": "161e0fd8774d05034c9bea0e6dbe73042afa2a13fcd5111a7da129883826a318",
+          "mtime_ns": 1795623360870660894
+        }
+      },
+      "skipped_missing_from_archive": []
+    },
+    {
+      "run": "easy-medium-236-v2",
+      "revision": "2c13f79698fb28c1170615b2fb542c21e40efba4",
+      "verified": [
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/recovery125/example-step-125-group-67.json",
+          "bytes": 130594,
+          "sha256": "729d49568f7af2c4acee2d517bfd37a6c6788ef2ad8235e9874be6d152bb63a9",
+          "mtime_ns": 1795668241898643003
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/recovery125/example-step-125-group-64.json",
+          "bytes": 169939,
+          "sha256": "034a2de39e2bd0ba169356f2aae66d2cf904431fe1cbe850bf81f04e35571903",
+          "mtime_ns": 1795668231546804183
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/recovery125/example-step-125-group-65.json",
+          "bytes": 255143,
+          "sha256": "b9de708a248512d074eb729a7ad4aece26adaa0ef53d63cb82caa9bdd6ce9626",
+          "mtime_ns": 1795668234749667363
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/recovery125/example-step-125-group-66.json",
+          "bytes": 289716,
+          "sha256": "ac942ffd523b09a0a7b4cb1654d971476d320d89364a1bf0f688750d59a46a8f",
+          "mtime_ns": 1795668238164405449
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/final136/example-step-136-group-108.json",
+          "bytes": 255064,
+          "sha256": "e1ad548cb0104055ad4a61dd911e50765eb94278995a908667e6e59681230ac9",
+          "mtime_ns": 1795682638550065249
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/final136/example-step-136-group-109.json",
+          "bytes": 192847,
+          "sha256": "72e435c6230a191d3b8cb15d940f39fd346062c9e48d5185332d73c578f9a58b",
+          "mtime_ns": 1795682642129504332
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/final136/example-step-136-group-111.json",
+          "bytes": 238111,
+          "sha256": "18073aca3835247f13a98056b2eca71e716143ba29052ef4f7559228f2877bf2",
+          "mtime_ns": 1795682649187373493
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/final136/example-step-136-group-110.json",
+          "bytes": 227578,
+          "sha256": "16d85bfc986034399436532d35f6d30f24f3226d29f65380d6145400e205a879",
+          "mtime_ns": 1795682645343624393
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour06/example-step-135-group-106.json",
+          "bytes": 229745,
+          "sha256": "40ea36a5070c389133f5a5400ce28e280ec1be44359fb6c1e594100ec73471cf",
+          "mtime_ns": 1795681101492675625
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour06/example-step-134-group-101.json",
+          "bytes": 228337,
+          "sha256": "af787755e908e4f2917b4ea8b85bf78c0f706aaf03eb1052b2785b88077d9a1a",
+          "mtime_ns": 1795681084325351163
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour06/example-step-135-group-104.json",
+          "bytes": 221662,
+          "sha256": "910f53b5f205972cd2bed089e76359442570d97a000a9caa595cc9dc03e533a7",
+          "mtime_ns": 1795681095391454606
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour06/example-step-134-group-102.json",
+          "bytes": 237072,
+          "sha256": "e16d6943aad4337f534aa09fba0a4dc3d507336f85fcab83632ec66ff8b13afc",
+          "mtime_ns": 1795681088278185973
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour06/example-step-135-group-105.json",
+          "bytes": 239923,
+          "sha256": "3e41f7f56cb2f3a34b75e1936c7ddf2d397bfb02251288d40631c867d96efc37",
+          "mtime_ns": 1795681098629247488
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour06/example-step-135-group-107.json",
+          "bytes": 102425,
+          "sha256": "d5e532baed1009f1374e93eb137e17282ea83f4f5259d5e4870c95fbbc5b74cc",
+          "mtime_ns": 1795681104330281368
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour06/example-step-134-group-103.json",
+          "bytes": 206282,
+          "sha256": "70cff3f37c8d626945427267a64dea604fd35b4918fa1c0a61bc9d2c2ec5f3be",
+          "mtime_ns": 1795681092068208497
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour06/example-step-134-group-100.json",
+          "bytes": 278804,
+          "sha256": "31e1cd1c9e156a9458ceabaa46451ff54a0fa6ff8cc87402bf5f8e7ddfa3413f",
+          "mtime_ns": 1795681080336485657
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour04/example-step-131-group-88.json",
+          "bytes": 265986,
+          "sha256": "75ea588150c0f92274fdc55521b51c538c597a2885e347ca032e583f8f292820",
+          "mtime_ns": 1795676224320097454
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour04/example-step-130-group-84.json",
+          "bytes": 210201,
+          "sha256": "769182e251f96346be9c516a540829b3f4ac344089d79e116b22c2c3579807e8",
+          "mtime_ns": 1795676210505379767
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour04/example-step-130-group-87.json",
+          "bytes": 222087,
+          "sha256": "f07e9405e7231ebafc4fc6dd037295285c131de378707ad9b7449e41cdc12007",
+          "mtime_ns": 1795676220603329375
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour04/example-step-130-group-85.json",
+          "bytes": 195631,
+          "sha256": "33435dfdc8203fd88e04d0f8ea6bca711b024a9853523f71e743b39c2d6a38ac",
+          "mtime_ns": 1795676213394295072
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour04/example-step-130-group-86.json",
+          "bytes": 249887,
+          "sha256": "d691bbb410dd0a3ff43f2e0c0d2e37667ffc15594cc9a992a9cbe185d4b9201a",
+          "mtime_ns": 1795676216904126799
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour04/example-step-131-group-89.json",
+          "bytes": 89649,
+          "sha256": "8aabfe931104a59c54dac7da01835c6c083656b1bbef52ab00ef9dc1c5730fdd",
+          "mtime_ns": 1795676227729672062
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour04/example-step-131-group-90.json",
+          "bytes": 278459,
+          "sha256": "8affecbed50dcf40aa34f7e59c9e6fb38f46d8b06e531c1c11dd1396fd7fd804",
+          "mtime_ns": 1795676230361236911
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour04/example-step-131-group-91.json",
+          "bytes": 231362,
+          "sha256": "9cec165fd48cf4c8925ce85dd89f0f844d62e553dc7704a7931f2b1315bb3737",
+          "mtime_ns": 1795676234582640038
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour02/example-step-128-group-79.json",
+          "bytes": 281484,
+          "sha256": "4b31dd8bc1f6b052ea8a6566b81a1819f6a702fc727d82b3ab5ceb755e7f84a4",
+          "mtime_ns": 1795671936285814123
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour02/example-step-128-group-76.json",
+          "bytes": 230742,
+          "sha256": "e3c081f02066c53b1cc9aed3bdf02eda747be9740cded95709483a776fecbc3a",
+          "mtime_ns": 1795671925701609544
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour02/example-step-127-group-71.json",
+          "bytes": 128534,
+          "sha256": "4585b42056ae91ab25daca11d826dc1d13061b88be32d4d2bb4868dc73837801",
+          "mtime_ns": 1795671911106386751
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour02/example-step-127-group-72.json",
+          "bytes": 191974,
+          "sha256": "a7c3bf88ca9378d38d10434e008a3f03ab853adc955c62f81639a42695c240de",
+          "mtime_ns": 1795671914201123854
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour02/example-step-128-group-77.json",
+          "bytes": 215775,
+          "sha256": "db9dc67ca9e86c035396bc1a1e12c16c27405cfa435dbc344b53814e62bd0785",
+          "mtime_ns": 1795671929081288985
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour02/example-step-127-group-74.json",
+          "bytes": 261229,
+          "sha256": "145b6c2b4a7c7351b37497c6306ea537f79d30937accdb0f1bc8fcfccbc87c8c",
+          "mtime_ns": 1795671918076331693
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour02/example-step-128-group-78.json",
+          "bytes": 310074,
+          "sha256": "12fdc4a9c44ace5069cdbeafe42b351d30a8bd88da9af40e52786304e34f0fce",
+          "mtime_ns": 1795671932579792016
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour02/example-step-127-group-75.json",
+          "bytes": 169252,
+          "sha256": "942bb4969cd90f5b6264935b13d653b743b00ddb8cc1ae90fdac3148a9c58c7c",
+          "mtime_ns": 1795671921910442047
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour05/example-step-133-group-99.json",
+          "bytes": 265360,
+          "sha256": "604b479dfbf91c42f93a73d82198642139891612e440a2872349c0119da64575",
+          "mtime_ns": 1795679067352341383
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour05/example-step-133-group-96.json",
+          "bytes": 231329,
+          "sha256": "a1e0361e0f603d603d802fd923618c231af1894d3d289c0970483e415993b65a",
+          "mtime_ns": 1795679057291329544
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour05/example-step-133-group-97.json",
+          "bytes": 208723,
+          "sha256": "6713d94ad71c615d72c2c7bdcca849d733099ed8e2cb521b9f4fe52ccb0014c0",
+          "mtime_ns": 1795679060639164336
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour05/example-step-132-group-94.json",
+          "bytes": 275041,
+          "sha256": "bf2d9b51ec8cc28a9a15b55f5fe176c1089145ca1f91af0ad47d10cf99fb659e",
+          "mtime_ns": 1795677377460416109
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour05/example-step-132-group-93.json",
+          "bytes": 80136,
+          "sha256": "b0c20623e8bd2e797eba4d4f57917fec11836674aca9523e43aae58d469cde8a",
+          "mtime_ns": 1795677375264488519
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour05/example-step-132-group-92.json",
+          "bytes": 263013,
+          "sha256": "54194ee0c4d5b2de40de39669dccd0ae72db276ad488f2e3a6818306bc6946bc",
+          "mtime_ns": 1795677372168664715
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour05/example-step-132-group-95.json",
+          "bytes": 270146,
+          "sha256": "26d3faae8d94e1aa8ba32b6e122e7b087a927777406bdb7a82d37775507eb5e3",
+          "mtime_ns": 1795677381109941698
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour05/example-step-133-group-98.json",
+          "bytes": 210523,
+          "sha256": "c35fdf3c3ccc3587b6302b8ad382e1b9c5751150d4c46d7d73cf7be75504c9f8",
+          "mtime_ns": 1795679063852670449
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour01/example-step-126-group-68.json",
+          "bytes": 280465,
+          "sha256": "7a5a870f5b8e571e086350152cc1e2184f35ed5cf588e24ff3fc6d37a6219153",
+          "mtime_ns": 1795669127353611173
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour01/example-step-126-group-69.json",
+          "bytes": 239186,
+          "sha256": "f460df3799ee8cdab709e67a443b5aee4e2ff9d9a970601f3719339f150ed402",
+          "mtime_ns": 1795669131010410036
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour01/example-step-126-group-70.json",
+          "bytes": 167144,
+          "sha256": "656eba00f06554ba12aa1855f861d999d244c45ae71a87cc3028d8e0977bda2f",
+          "mtime_ns": 1795669134845099223
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour01/example-step-126-group-73.json",
+          "bytes": 99103,
+          "sha256": "53f2fdfcf6ec48b547add48b4cf458a037aea6a0f38a5d94c60160466e132af9",
+          "mtime_ns": 1795669137514887027
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour03/example-step-129-group-82.json",
+          "bytes": 199659,
+          "sha256": "09d7be2c1e79b32d07af8a7c0a031346400016773b2a14efdd9ab19a6f09ff32",
+          "mtime_ns": 1795673436211671224
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour03/example-step-129-group-80.json",
+          "bytes": 236091,
+          "sha256": "9539f9f405787932832bb8e4a1f35c8b80f23770c1f85de2d1eb795a37250e97",
+          "mtime_ns": 1795673428055647581
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour03/example-step-129-group-83.json",
+          "bytes": 303957,
+          "sha256": "23a87c851ecffd8a10e202da9c653c2bbf753b8a812d08826fb5a8d7de9cc8fc",
+          "mtime_ns": 1795673440064425193
+        },
+        {
+          "path": "miles/easy-medium-236-v2/hourly-reviews/hour03/example-step-129-group-81.json",
+          "bytes": 276356,
+          "sha256": "c671657adf9a4fd1ce5af9fb830ae8c7e5c850a1659d7a8bf704e76fed1f8e7a",
+          "mtime_ns": 1795673432133285659
+        }
+      ],
+      "source_stat": {
+        "hourly-reviews/recovery125/example-step-125-group-67.json": {
+          "bytes": 130594,
+          "sha256": "729d49568f7af2c4acee2d517bfd37a6c6788ef2ad8235e9874be6d152bb63a9",
+          "mtime_ns": 1795668241898643003
+        },
+        "hourly-reviews/recovery125/example-step-125-group-64.json": {
+          "bytes": 169939,
+          "sha256": "034a2de39e2bd0ba169356f2aae66d2cf904431fe1cbe850bf81f04e35571903",
+          "mtime_ns": 1795668231546804183
+        },
+        "hourly-reviews/recovery125/example-step-125-group-65.json": {
+          "bytes": 255143,
+          "sha256": "b9de708a248512d074eb729a7ad4aece26adaa0ef53d63cb82caa9bdd6ce9626",
+          "mtime_ns": 1795668234749667363
+        },
+        "hourly-reviews/recovery125/example-step-125-group-66.json": {
+          "bytes": 289716,
+          "sha256": "ac942ffd523b09a0a7b4cb1654d971476d320d89364a1bf0f688750d59a46a8f",
+          "mtime_ns": 1795668238164405449
+        },
+        "hourly-reviews/final136/example-step-136-group-108.json": {
+          "bytes": 255064,
+          "sha256": "e1ad548cb0104055ad4a61dd911e50765eb94278995a908667e6e59681230ac9",
+          "mtime_ns": 1795682638550065249
+        },
+        "hourly-reviews/final136/example-step-136-group-109.json": {
+          "bytes": 192847,
+          "sha256": "72e435c6230a191d3b8cb15d940f39fd346062c9e48d5185332d73c578f9a58b",
+          "mtime_ns": 1795682642129504332
+        },
+        "hourly-reviews/final136/example-step-136-group-111.json": {
+          "bytes": 238111,
+          "sha256": "18073aca3835247f13a98056b2eca71e716143ba29052ef4f7559228f2877bf2",
+          "mtime_ns": 1795682649187373493
+        },
+        "hourly-reviews/final136/example-step-136-group-110.json": {
+          "bytes": 227578,
+          "sha256": "16d85bfc986034399436532d35f6d30f24f3226d29f65380d6145400e205a879",
+          "mtime_ns": 1795682645343624393
+        },
+        "hourly-reviews/hour06/example-step-135-group-106.json": {
+          "bytes": 229745,
+          "sha256": "40ea36a5070c389133f5a5400ce28e280ec1be44359fb6c1e594100ec73471cf",
+          "mtime_ns": 1795681101492675625
+        },
+        "hourly-reviews/hour06/example-step-134-group-101.json": {
+          "bytes": 228337,
+          "sha256": "af787755e908e4f2917b4ea8b85bf78c0f706aaf03eb1052b2785b88077d9a1a",
+          "mtime_ns": 1795681084325351163
+        },
+        "hourly-reviews/hour06/example-step-135-group-104.json": {
+          "bytes": 221662,
+          "sha256": "910f53b5f205972cd2bed089e76359442570d97a000a9caa595cc9dc03e533a7",
+          "mtime_ns": 1795681095391454606
+        },
+        "hourly-reviews/hour06/example-step-134-group-102.json": {
+          "bytes": 237072,
+          "sha256": "e16d6943aad4337f534aa09fba0a4dc3d507336f85fcab83632ec66ff8b13afc",
+          "mtime_ns": 1795681088278185973
+        },
+        "hourly-reviews/hour06/example-step-135-group-105.json": {
+          "bytes": 239923,
+          "sha256": "3e41f7f56cb2f3a34b75e1936c7ddf2d397bfb02251288d40631c867d96efc37",
+          "mtime_ns": 1795681098629247488
+        },
+        "hourly-reviews/hour06/example-step-135-group-107.json": {
+          "bytes": 102425,
+          "sha256": "d5e532baed1009f1374e93eb137e17282ea83f4f5259d5e4870c95fbbc5b74cc",
+          "mtime_ns": 1795681104330281368
+        },
+        "hourly-reviews/hour06/example-step-134-group-103.json": {
+          "bytes": 206282,
+          "sha256": "70cff3f37c8d626945427267a64dea604fd35b4918fa1c0a61bc9d2c2ec5f3be",
+          "mtime_ns": 1795681092068208497
+        },
+        "hourly-reviews/hour06/example-step-134-group-100.json": {
+          "bytes": 278804,
+          "sha256": "31e1cd1c9e156a9458ceabaa46451ff54a0fa6ff8cc87402bf5f8e7ddfa3413f",
+          "mtime_ns": 1795681080336485657
+        },
+        "hourly-reviews/hour04/example-step-131-group-88.json": {
+          "bytes": 265986,
+          "sha256": "75ea588150c0f92274fdc55521b51c538c597a2885e347ca032e583f8f292820",
+          "mtime_ns": 1795676224320097454
+        },
+        "hourly-reviews/hour04/example-step-130-group-84.json": {
+          "bytes": 210201,
+          "sha256": "769182e251f96346be9c516a540829b3f4ac344089d79e116b22c2c3579807e8",
+          "mtime_ns": 1795676210505379767
+        },
+        "hourly-reviews/hour04/example-step-130-group-87.json": {
+          "bytes": 222087,
+          "sha256": "f07e9405e7231ebafc4fc6dd037295285c131de378707ad9b7449e41cdc12007",
+          "mtime_ns": 1795676220603329375
+        },
+        "hourly-reviews/hour04/example-step-130-group-85.json": {
+          "bytes": 195631,
+          "sha256": "33435dfdc8203fd88e04d0f8ea6bca711b024a9853523f71e743b39c2d6a38ac",
+          "mtime_ns": 1795676213394295072
+        },
+        "hourly-reviews/hour04/example-step-130-group-86.json": {
+          "bytes": 249887,
+          "sha256": "d691bbb410dd0a3ff43f2e0c0d2e37667ffc15594cc9a992a9cbe185d4b9201a",
+          "mtime_ns": 1795676216904126799
+        },
+        "hourly-reviews/hour04/example-step-131-group-89.json": {
+          "bytes": 89649,
+          "sha256": "8aabfe931104a59c54dac7da01835c6c083656b1bbef52ab00ef9dc1c5730fdd",
+          "mtime_ns": 1795676227729672062
+        },
+        "hourly-reviews/hour04/example-step-131-group-90.json": {
+          "bytes": 278459,
+          "sha256": "8affecbed50dcf40aa34f7e59c9e6fb38f46d8b06e531c1c11dd1396fd7fd804",
+          "mtime_ns": 1795676230361236911
+        },
+        "hourly-reviews/hour04/example-step-131-group-91.json": {
+          "bytes": 231362,
+          "sha256": "9cec165fd48cf4c8925ce85dd89f0f844d62e553dc7704a7931f2b1315bb3737",
+          "mtime_ns": 1795676234582640038
+        },
+        "hourly-reviews/hour02/example-step-128-group-79.json": {
+          "bytes": 281484,
+          "sha256": "4b31dd8bc1f6b052ea8a6566b81a1819f6a702fc727d82b3ab5ceb755e7f84a4",
+          "mtime_ns": 1795671936285814123
+        },
+        "hourly-reviews/hour02/example-step-128-group-76.json": {
+          "bytes": 230742,
+          "sha256": "e3c081f02066c53b1cc9aed3bdf02eda747be9740cded95709483a776fecbc3a",
+          "mtime_ns": 1795671925701609544
+        },
+        "hourly-reviews/hour02/example-step-127-group-71.json": {
+          "bytes": 128534,
+          "sha256": "4585b42056ae91ab25daca11d826dc1d13061b88be32d4d2bb4868dc73837801",
+          "mtime_ns": 1795671911106386751
+        },
+        "hourly-reviews/hour02/example-step-127-group-72.json": {
+          "bytes": 191974,
+          "sha256": "a7c3bf88ca9378d38d10434e008a3f03ab853adc955c62f81639a42695c240de",
+          "mtime_ns": 1795671914201123854
+        },
+        "hourly-reviews/hour02/example-step-128-group-77.json": {
+          "bytes": 215775,
+          "sha256": "db9dc67ca9e86c035396bc1a1e12c16c27405cfa435dbc344b53814e62bd0785",
+          "mtime_ns": 1795671929081288985
+        },
+        "hourly-reviews/hour02/example-step-127-group-74.json": {
+          "bytes": 261229,
+          "sha256": "145b6c2b4a7c7351b37497c6306ea537f79d30937accdb0f1bc8fcfccbc87c8c",
+          "mtime_ns": 1795671918076331693
+        },
+        "hourly-reviews/hour02/example-step-128-group-78.json": {
+          "bytes": 310074,
+          "sha256": "12fdc4a9c44ace5069cdbeafe42b351d30a8bd88da9af40e52786304e34f0fce",
+          "mtime_ns": 1795671932579792016
+        },
+        "hourly-reviews/hour02/example-step-127-group-75.json": {
+          "bytes": 169252,
+          "sha256": "942bb4969cd90f5b6264935b13d653b743b00ddb8cc1ae90fdac3148a9c58c7c",
+          "mtime_ns": 1795671921910442047
+        },
+        "hourly-reviews/hour05/example-step-133-group-99.json": {
+          "bytes": 265360,
+          "sha256": "604b479dfbf91c42f93a73d82198642139891612e440a2872349c0119da64575",
+          "mtime_ns": 1795679067352341383
+        },
+        "hourly-reviews/hour05/example-step-133-group-96.json": {
+          "bytes": 231329,
+          "sha256": "a1e0361e0f603d603d802fd923618c231af1894d3d289c0970483e415993b65a",
+          "mtime_ns": 1795679057291329544
+        },
+        "hourly-reviews/hour05/example-step-133-group-97.json": {
+          "bytes": 208723,
+          "sha256": "6713d94ad71c615d72c2c7bdcca849d733099ed8e2cb521b9f4fe52ccb0014c0",
+          "mtime_ns": 1795679060639164336
+        },
+        "hourly-reviews/hour05/example-step-132-group-94.json": {
+          "bytes": 275041,
+          "sha256": "bf2d9b51ec8cc28a9a15b55f5fe176c1089145ca1f91af0ad47d10cf99fb659e",
+          "mtime_ns": 1795677377460416109
+        },
+        "hourly-reviews/hour05/example-step-132-group-93.json": {
+          "bytes": 80136,
+          "sha256": "b0c20623e8bd2e797eba4d4f57917fec11836674aca9523e43aae58d469cde8a",
+          "mtime_ns": 1795677375264488519
+        },
+        "hourly-reviews/hour05/example-step-132-group-92.json": {
+          "bytes": 263013,
+          "sha256": "54194ee0c4d5b2de40de39669dccd0ae72db276ad488f2e3a6818306bc6946bc",
+          "mtime_ns": 1795677372168664715
+        },
+        "hourly-reviews/hour05/example-step-132-group-95.json": {
+          "bytes": 270146,
+          "sha256": "26d3faae8d94e1aa8ba32b6e122e7b087a927777406bdb7a82d37775507eb5e3",
+          "mtime_ns": 1795677381109941698
+        },
+        "hourly-reviews/hour05/example-step-133-group-98.json": {
+          "bytes": 210523,
+          "sha256": "c35fdf3c3ccc3587b6302b8ad382e1b9c5751150d4c46d7d73cf7be75504c9f8",
+          "mtime_ns": 1795679063852670449
+        },
+        "hourly-reviews/hour01/example-step-126-group-68.json": {
+          "bytes": 280465,
+          "sha256": "7a5a870f5b8e571e086350152cc1e2184f35ed5cf588e24ff3fc6d37a6219153",
+          "mtime_ns": 1795669127353611173
+        },
+        "hourly-reviews/hour01/example-step-126-group-69.json": {
+          "bytes": 239186,
+          "sha256": "f460df3799ee8cdab709e67a443b5aee4e2ff9d9a970601f3719339f150ed402",
+          "mtime_ns": 1795669131010410036
+        },
+        "hourly-reviews/hour01/example-step-126-group-70.json": {
+          "bytes": 167144,
+          "sha256": "656eba00f06554ba12aa1855f861d999d244c45ae71a87cc3028d8e0977bda2f",
+          "mtime_ns": 1795669134845099223
+        },
+        "hourly-reviews/hour01/example-step-126-group-73.json": {
+          "bytes": 99103,
+          "sha256": "53f2fdfcf6ec48b547add48b4cf458a037aea6a0f38a5d94c60160466e132af9",
+          "mtime_ns": 1795669137514887027
+        },
+        "hourly-reviews/hour03/example-step-129-group-82.json": {
+          "bytes": 199659,
+          "sha256": "09d7be2c1e79b32d07af8a7c0a031346400016773b2a14efdd9ab19a6f09ff32",
+          "mtime_ns": 1795673436211671224
+        },
+        "hourly-reviews/hour03/example-step-129-group-80.json": {
+          "bytes": 236091,
+          "sha256": "9539f9f405787932832bb8e4a1f35c8b80f23770c1f85de2d1eb795a37250e97",
+          "mtime_ns": 1795673428055647581
+        },
+        "hourly-reviews/hour03/example-step-129-group-83.json": {
+          "bytes": 303957,
+          "sha256": "23a87c851ecffd8a10e202da9c653c2bbf753b8a812d08826fb5a8d7de9cc8fc",
+          "mtime_ns": 1795673440064425193
+        },
+        "hourly-reviews/hour03/example-step-129-group-81.json": {
+          "bytes": 276356,
+          "sha256": "c671657adf9a4fd1ce5af9fb830ae8c7e5c850a1659d7a8bf704e76fed1f8e7a",
+          "mtime_ns": 1795673432133285659
+        }
+      },
+      "skipped_missing_from_archive": []
+    }
+  ],
+  "free_vm_bytes_before": 3351113728,
+  "open_file_check_passed": true,
+  "removed_at_utc": "2026-11-28T01:20:55.473334+00:00",
+  "removed_files": 109,
+  "removed_bytes": 97527370,
+  "free_vm_bytes_after": 3448786944,
+  "active_gsm8k_directories_modified": false,
+  "preexisting_processes_modified": false,
+  "unrelated_project_caches_modified": false
+}
