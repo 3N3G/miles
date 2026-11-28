@@ -995,6 +995,11 @@
   ],
   "jobs": [
     {
+      "id": "563768",
+      "cluster": "hpcfund",
+      "status": "PENDING"
+    },
+    {
       "id": "562347",
       "cluster": "hpcfund",
       "status": "FAILED"
@@ -4431,15 +4436,22 @@
       "actor": "codex",
       "summary": "Reference gained 5.1 points with CI including zero. CISPO failed before inference. CLI repair validated.",
       "revision": 454
+    },
+    {
+      "id": "96f90d28-a78e-40ba-9a81-87d415831963",
+      "at": "2026-11-28T03:36:18.247026Z",
+      "actor": "codex",
+      "summary": "GSM8K CISPO submitted as 563768",
+      "revision": 455
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "Reference gained 5.1 points with CI including zero. CISPO failed before inference. CLI repair validated.",
-  "nextAction": "Archive the failed attempt and launch fresh CISPOv2 with the same scientific configuration within the remaining7,166 allocated seconds.",
+  "summary": "GSM8K CISPO submitted as 563768",
+  "nextAction": "Supervise baseline, first optimizer update, final evaluation and verified publication. Complete the approved CISPO arm and verify the final paired analysis, checkpoint, archive and W&B.",
   "owner": "Codex",
-  "revision": 454,
-  "updatedAt": "2026-11-28T03:30:03.543553Z"
+  "revision": 455,
+  "updatedAt": "2026-11-28T03:36:18.247026Z"
 }
