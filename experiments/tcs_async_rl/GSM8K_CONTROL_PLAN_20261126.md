@@ -77,7 +77,10 @@ Its [immutable archive](https://huggingface.co/datasets/3N3G/internalization-run
 contains 608 verified artifacts. Its [W&B run](https://forge.coreweave.com/wandb/geney/tcs-async-rl/runs/gsm8k-reference-261127-090520-021-native) is finished.
 The [machine-readable result](evidence/gsm8k_reference_final_20261127.json) owns the exact measurements.
 
-CISPO job 562347 remains queued with zero allocated seconds and zero updates. The [resource choice](../../QUESTIONS.md) remains open.
+The first CISPO attempt failed during argument parsing, before inference, after 34 allocated seconds.
+The [validated CLI repair](evidence/gsm8k_cispo_cli_repair_20261128.json) removes an unsupported switch. Native parsing derives the same approved support-replay setting from top-p and top-k.
+All scientific settings remain unchanged. The corrected original eight-GPU job is queued.
+The [updated resource choice](evidence/gsm8k_cispo_resource_choices_20261128.json) remains open. No resource variant has been submitted.
 This positive 0.5B reference result does not validate the original TCS CISPO bundle, Qwen3.5 kernels, long responses, or the proof judge.
 
 Plots (reference complete, CISPO pending):
