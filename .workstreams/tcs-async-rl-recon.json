@@ -4478,15 +4478,22 @@
       "actor": "codex",
       "summary": "CISPO retry queued with no updates. Monitor healthy. Queue estimate slipped to13:12 Eastern.",
       "revision": 460
+    },
+    {
+      "id": "c550a77d-2ba3-4475-9859-30221c88f38e",
+      "at": "2026-11-28T06:29:18.272747Z",
+      "actor": "codex",
+      "summary": "CISPO remains queued with zero updates. Slurm withdrew the start estimate. Monitor healthy.",
+      "revision": 461
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "CISPO retry queued with no updates. Monitor healthy. Queue estimate slipped to13:12 Eastern.",
-  "nextAction": "Watch563768 and observer1903615. Validate fresh initialization and actual native CISPO behavior on start. Optional one-MI350/retract choice remains open. Keep the two-hour arm cap.",
+  "summary": "CISPO remains queued with zero updates. Slurm withdrew the start estimate. Monitor healthy.",
+  "nextAction": "Keep foreground supervision of563768 and observer1903615. Validate initial weights, native replay, baseline, optimizer progress and final artifacts on start. One-MI350/retract change awaits user choice.",
   "owner": "Codex",
-  "revision": 460,
-  "updatedAt": "2026-11-28T05:33:45.030833Z"
+  "revision": 461,
+  "updatedAt": "2026-11-28T06:29:18.272747Z"
 }
