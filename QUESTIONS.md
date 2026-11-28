@@ -7,7 +7,7 @@
 - Options: keep the existing eight-MI350 job; use one shared MI350 GPU with retract-style pauses; or use four MI210 GPUs with the original in-place pause mode.
 - Recommendation: one MI350 GPU for a faster CISPO smoke test, with the changed scheduling recorded as a limitation. Keep the exact original bundle if comparability matters more than the wait.
 - Unchanged in either proposed variant: model, data, prompt, reward, optimizer, sampling, four questions x32 answers,250-update maximum and two-hour allocation cap.
-- Blocks: submitting a resource variant. It does not block the approved eight-GPU job562347, which remains queued and supervised.
+- Blocks: submitting a resource variant. The approved eight-GPU retry563768 remains queued and supervised. Its predecessor562347 failed before inference after34 seconds. The [validated CLI repair](experiments/tcs_async_rl/evidence/gsm8k_cispo_cli_repair_20261128.json) preserves all scientific settings.
 - Permission basis: global AGENTS.md reserves experiment changes and new GPU jobs for the user. Colocation requires `pause_generation_mode=retract` in this framework, so a one-GPU run would change more than the GPU count.
 
 ## 2026-11-24: Implicit monotonicity in an auction proof
