@@ -50,7 +50,9 @@ def resolved_args(config, *, arm, work_dir, run_dir, run_id):
     hf = work_dir / "models" / (model["repo_id"].split("/")[-1] + "-" + model["revision"])
     excluded = {"entrypoint", "maximum_optimizer_updates", "seeds"}
     args = {key: value for key, value in shared.items() if key not in excluded}
-    args.update({key: value for key, value in selected.items() if key not in {"id", "source_recipe", "role"}})
+    # The native parser derives support replay from top-p/top-k; it has no CLI switch.
+    args.update({key: value for key, value in selected.items()
+                 if key not in {"id", "source_recipe", "role", "use_sampling_support_replay"}})
     args.update(
         num_rollout=shared["maximum_optimizer_updates"], seed=shared["seeds"][0],
         hf_checkpoint=str(hf), ref_load=str(hf), load=str(hf), finetune=True,
@@ -79,6 +81,13 @@ def resolved_args(config, *, arm, work_dir, run_dir, run_id):
         save_trigger_sentinel=str(run_dir / "checkpoint-request"), stop_after_save_trigger=True,
     )
     return args
+
+
+def validate_derived_arguments(config, arm, parsed):
+    selected = next(item for item in config["arms"] if item["id"] == arm)
+    if "use_sampling_support_replay" in selected:
+        if parsed.use_sampling_support_replay != selected["use_sampling_support_replay"]:
+            raise ValueError("Native sampling-support replay differs from the approved setting")
 
 
 def prepare_inputs(source_dir, run_dir, preparation):
@@ -189,6 +198,7 @@ def run_gpu(cli, config):
     (cli.run_dir / "formatted-prompt.txt").write_text(prompt)
     sys.argv = [sys.argv[0], *shlex.split(load_model_args(MODEL_TYPE)), *native_argv(args)]
     parsed = parse_args()
+    validate_derived_arguments(config, cli.arm, parsed)
     write_json(cli.run_dir / "validated-native-arguments.json",
                {"requested": args, "validated": vars(parsed)}, default=str)
     # Check the actor's real config loader before starting six rollout engines.

@@ -1,4 +1,5 @@
 import asyncio
+import ast
 import copy
 import json
 import os
@@ -12,7 +13,9 @@ from experiments.tcs_async_rl import gsm8k_driver
 from experiments.tcs_async_rl import gsm8k_watch
 from experiments.tcs_async_rl.gsm8k_control import (
     CONFIG, configure_bridge_cache, forwarded_runtime_environment, render_job, resolved_args,
+    validate_derived_arguments,
 )
+from experiments.tcs_async_rl.rl_smoke import native_argv
 from experiments.tcs_async_rl.gsm8k_wandb import acknowledge_evaluations, publish_evaluations
 from experiments.tcs_async_rl.native_metrics import read_native_metrics
 from experiments.tcs_async_rl.gsm8k_results import analyze, paired_accuracy
@@ -187,7 +190,7 @@ class GsmControlTests(unittest.TestCase):
             self.assertEqual(a['save'], '/work/' + arm + '/checkpoints')
         self.assertFalse(args['reference']['fully_async'])
         self.assertTrue(args['cispo']['fully_async'])
-        self.assertTrue(args['cispo']['use_sampling_support_replay'])
+        self.assertNotIn('use_sampling_support_replay', args['cispo'])
         unapproved = copy.deepcopy(config)
         unapproved['status'] = 'proposed_requires_plan_approval'
         with self.assertRaises(ValueError):
@@ -201,6 +204,42 @@ class GsmControlTests(unittest.TestCase):
         for seconds in (0, 59, 7201):
             with self.assertRaises(ValueError):
                 render_job(**kwargs, seconds=seconds)
+
+    def test_control_cli_matches_native_options_and_derives_sampler_support(self):
+        config = json.loads(CONFIG.read_text())
+        fixture = json.loads((CONFIG.parent/'evidence/gsm8k_native_cli_options_20261128.json').read_text())
+        source = CONFIG.parents[2]/'miles/utils/arguments.py'
+        tree = ast.parse(source.read_text())
+        literal = {a.value for n in ast.walk(tree)
+                   if isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute) and n.func.attr == 'add_argument'
+                   for a in n.args if isinstance(a, ast.Constant) and isinstance(a.value, str) and a.value.startswith('--')}
+        defaults = {}
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Call):
+                continue
+            for argument in node.args:
+                if isinstance(argument, ast.Constant) and argument.value in ('--rollout-top-p', '--rollout-top-k'):
+                    defaults[argument.value[2:].replace('-', '_')] = ast.literal_eval(
+                        next(keyword.value for keyword in node.keywords if keyword.arg == 'default'))
+        registered = literal | set(fixture['frozen_external_option_names'])
+        names = {'use_sampling_support_replay', 'rollout_sampling_logprobs_mode'}
+        assignments = [n for n in ast.walk(tree) if isinstance(n, ast.Assign) and len(n.targets) == 1
+                       and isinstance(n.targets[0], ast.Attribute) and n.targets[0].attr in names
+                       and isinstance(n.targets[0].value, ast.Name) and n.targets[0].value.id == 'args']
+        self.assertEqual(len(assignments), 2)
+        native_derivation = compile(ast.Module(body=assignments, type_ignores=[]), str(source), 'exec')
+        for arm in ('reference', 'cispo'):
+            args = resolved_args(config, arm=arm, work_dir=Path('/work'), run_dir=Path('/run'), run_id='check')
+            flags = {value for value in native_argv(args) if value.startswith('--')}
+            self.assertEqual(flags - registered, set())
+            parsed = types.SimpleNamespace(**{**defaults, **args})
+            exec(native_derivation, {'args': parsed})
+            validate_derived_arguments(config, arm, parsed)
+            self.assertEqual(parsed.use_sampling_support_replay, arm == 'cispo')
+            self.assertEqual(parsed.rollout_sampling_logprobs_mode, 'support' if arm == 'cispo' else 'selected')
+        parsed.use_sampling_support_replay = False
+        with self.assertRaisesRegex(ValueError, 'approved setting'):
+            validate_derived_arguments(config, 'cispo', parsed)
 
     def driver_fixture(self, root, baseline, *, fail=False):
         calls = []

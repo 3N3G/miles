@@ -1,0 +1,33 @@
+{
+  "kind": "Inference startup repair under the existing approved control",
+  "failed_job": "562347",
+  "allocated_seconds": 34,
+  "inference_answers": 0,
+  "optimizer_updates": 0,
+  "failure": "unrecognized arguments: --use-sampling-support-replay",
+  "failed_log_sha256": "ceb4bee1e06f0466d9c96acee4a09df9a225a474bd4b6cc573b3ce28837375c6",
+  "cause": "The wrapper treated a derived native setting as a public CLI option. Its earlier CPU test checked the dictionary but did not validate all emitted options.",
+  "repair": "Keep top-p0.95 and top-k20. Omit only the nonexistent switch. Let the native parser derive support replay and assert it matches the approved true setting before Ray starts.",
+  "only_argument_mapping_difference": {
+    "use_sampling_support_replay": {
+      "before": true,
+      "after": null
+    }
+  },
+  "approved_config_sha256": "ee1b7fef60069c6428b5e4681075449f98e34388238ec03c57dde74f96f99892",
+  "approved_config_byte_identical": true,
+  "validation": {
+    "existing_and_new_cpu_tests_passed": 13,
+    "native_public_options_from_real_usage": 2614,
+    "external_options_used": 33,
+    "native_derivation_test": "Executes exact assignments and defaults from miles/utils/arguments.py for both approved arms",
+    "ruff_syntax_checks_passed": true
+  },
+  "native_gpu_runtime_validation": "Pending replacement startup. No inference has run in this arm.",
+  "maximum_arm_seconds": 7200,
+  "allocated_arm_seconds_so_far": 34,
+  "maximum_remaining_seconds": 7166,
+  "planned_retry_walltime_seconds": 7140,
+  "new_run": "gsm8k-cispo-v2",
+  "models_data_prompts_reward_loss_optimizer_sampling_heldout_split_unchanged": true
+}
