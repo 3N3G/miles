@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference:67.2% to72.3%, interval includes zero. CISPO retry queued. Monitor healthy. Jobs: hpcfund/563768 PENDING; hpcfund/562347 FAILED
-  Next: Watch563768 and observer1903615 through native parsing, baseline, optimizer updates and finalization. Resource variants wait for the user. Keep the two-hour CISPO cap.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): CISPO retry queued. MI210 advice withdrawn: this image failed there. Original MI350 setup unchanged. Jobs: hpcfund/563768 PENDING; hpcfund/562347 FAILED
+  Next: Supervise563768 and observer1903615. Compare fresh initialization, validate native replay, baseline and real updates. Only one-MI350/retract remains an optional user decision. Keep
 
 ## Next / blocked
 

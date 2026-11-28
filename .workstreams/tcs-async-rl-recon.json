@@ -4464,15 +4464,22 @@
       "actor": "codex",
       "summary": "Reference:67.2% to72.3%, interval includes zero. CISPO retry queued. Monitor healthy.",
       "revision": 458
+    },
+    {
+      "id": "56db6e68-814d-4087-b8d1-de0b4356217a",
+      "at": "2026-11-28T05:16:04.042098Z",
+      "actor": "codex",
+      "summary": "CISPO retry queued. MI210 advice withdrawn: this image failed there. Original MI350 setup unchanged.",
+      "revision": 459
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "Reference:67.2% to72.3%, interval includes zero. CISPO retry queued. Monitor healthy.",
-  "nextAction": "Watch563768 and observer1903615 through native parsing, baseline, optimizer updates and finalization. Resource variants wait for the user. Keep the two-hour CISPO cap.",
+  "summary": "CISPO retry queued. MI210 advice withdrawn: this image failed there. Original MI350 setup unchanged.",
+  "nextAction": "Supervise563768 and observer1903615. Compare fresh initialization, validate native replay, baseline and real updates. Only one-MI350/retract remains an optional user decision. Keep the two-hour CISPO cap.",
   "owner": "Codex",
-  "revision": 458,
-  "updatedAt": "2026-11-28T04:38:48.556195Z"
+  "revision": 459,
+  "updatedAt": "2026-11-28T05:16:04.042098Z"
 }
