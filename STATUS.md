@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): GSM8K CISPO submitted as 563768 Jobs: hpcfund/563768 PENDING; hpcfund/562347 FAILED
-  Next: Supervise baseline, first optimizer update, final evaluation and verified publication. Complete the approved CISPO arm and verify the final paired analysis, checkpoint, archive and
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference: +5.1 points, interval includes zero. CISPO CLI repair passed13 CPU checks. Retry queued. Jobs: hpcfund/563768 PENDING; hpcfund/562347 FAILED
+  Next: Watch CISPO retry563768 and observer1903615. Validate the real parsed support-replay setting, baseline, reward groups and updates. Keep the two-hour arm cap.
 
 ## Next / blocked
 
