@@ -4403,6 +4403,13 @@
       "actor": "codex",
       "summary": "Reference finished 250 updates: 67.2% to 72.3%. Gain CI includes zero. CISPO remains queued.",
       "revision": 450
+    },
+    {
+      "id": "131cdfce-4793-4d6b-b027-4476ae2640c9",
+      "at": "2026-11-28T01:36:35.411023Z",
+      "actor": "codex",
+      "summary": "Reference finished 250 updates: 67.2% to 72.3%. Gain CI includes zero. CISPO remains queued.",
+      "revision": 451
     }
   ],
   "projectId": "understanding",
@@ -4410,8 +4417,8 @@
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
   "summary": "Reference finished 250 updates: 67.2% to 72.3%. Gain CI includes zero. CISPO remains queued.",
-  "nextAction": "Watch CISPO job 562347 and its observer. Keep the original eight-GPU setup while the resource decision is open.",
+  "nextAction": "Watch CISPO job 562347, its observer and VM space. Keep eight GPUs while the resource decision is open.",
   "owner": "Codex",
-  "revision": 450,
-  "updatedAt": "2026-11-28T01:21:27.352475Z"
+  "revision": 451,
+  "updatedAt": "2026-11-28T01:36:35.411023Z"
 }
