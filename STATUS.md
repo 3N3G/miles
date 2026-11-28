@@ -4,8 +4,8 @@
 
 ## Running
 
-- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference finished 250 updates: 67.2% to 72.3%. CISPO is now running on eight MI350 GPUs. Jobs: hpcfund/562347 RUNNING; hpcfund/562230 COMPLETED
-  Next: Inspect CISPO startup, baseline, actual reward groups, sampler support and optimizer diagnostics. Supervise to final evaluation, checkpoint and verified archives.
+- [Validate the RL pipeline with an exact-reward GSM8K control](.workstreams/tcs-async-rl-recon.json): Reference gained 5.1 points with CI including zero. CISPO failed before inference. CLI repair validated. Jobs: hpcfund/562347 FAILED; hpcfund/562230 COMPLETED
+  Next: Archive the failed attempt and launch fresh CISPOv2 with the same scientific configuration within the remaining7,166 allocated seconds.
 
 ## Next / blocked
 

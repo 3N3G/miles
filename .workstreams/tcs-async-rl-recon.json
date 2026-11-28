@@ -997,7 +997,7 @@
     {
       "id": "562347",
       "cluster": "hpcfund",
-      "status": "RUNNING"
+      "status": "FAILED"
     },
     {
       "id": "562230",
@@ -4424,15 +4424,22 @@
       "actor": "codex",
       "summary": "Reference finished 250 updates: 67.2% to 72.3%. CISPO is now running on eight MI350 GPUs.",
       "revision": 453
+    },
+    {
+      "id": "1b5e408e-f566-4fd7-8266-36d7ef415c50",
+      "at": "2026-11-28T03:30:03.543553Z",
+      "actor": "codex",
+      "summary": "Reference gained 5.1 points with CI including zero. CISPO failed before inference. CLI repair validated.",
+      "revision": 454
     }
   ],
   "projectId": "understanding",
   "title": "Validate the RL pipeline with an exact-reward GSM8K control",
   "endpoint": "Run the approved exact-reward GSM8K reference and conditional CISPO stages within four total eight-GPU node-hours. Supervise through final evaluation, proof checks and verified HF/W&B publication.",
   "state": "running",
-  "summary": "Reference finished 250 updates: 67.2% to 72.3%. CISPO is now running on eight MI350 GPUs.",
-  "nextAction": "Inspect CISPO startup, baseline, actual reward groups, sampler support and optimizer diagnostics. Supervise to final evaluation, checkpoint and verified archives.",
+  "summary": "Reference gained 5.1 points with CI including zero. CISPO failed before inference. CLI repair validated.",
+  "nextAction": "Archive the failed attempt and launch fresh CISPOv2 with the same scientific configuration within the remaining7,166 allocated seconds.",
   "owner": "Codex",
-  "revision": 453,
-  "updatedAt": "2026-11-28T03:23:31.576371Z"
+  "revision": 454,
+  "updatedAt": "2026-11-28T03:30:03.543553Z"
 }
